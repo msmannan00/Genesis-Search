@@ -1,0 +1,108 @@
+/*Privacy Policy Text*/
+
+.pc__body{
+    margin-top: 30px;
+    padding: 70px 70px 0px;
+    background-image: linear-gradient(to bottom,#f3f3fb, #f3f3fb);
+}
+
+.pc{
+    background: #f3f3fb ;
+}
+
+.pc__body-list{
+    font-size:15px;
+    margin-top:10px;
+    padding-left: 15px;
+}
+
+.pc__hr{
+    margin-top: 25px;
+    border: 1px solid #d9d9d9;
+}
+
+.pc_logo_image--center{
+    max-width: 90px;
+    width: 30%;
+    height: auto;
+    padding-top: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pc__welcome-info{
+    font-size: 18px;
+    text-align:center;
+    color: whitesmoke;
+    margin-top: 25px;
+    padding-top: 3px
+}
+
+.pc__welcome-mail{
+    font-size: 15px;
+    text-align:center;
+    margin: 25px auto auto;
+    font-weight: bold;
+    padding: 13px;
+    width: 200px;
+    border-radius: 5px;
+    border: 2px solid white;
+    cursor: pointer;
+    color: white;
+}
+
+.pc__welcome-mail:hover{
+    background: white;
+    color: darkslategray;
+    text-underline: none;
+    text-decoration: none;
+    border: 2px solid white;
+}
+
+.pc__welcome-header{
+    font-size: 28px;
+    text-align:center;
+    color: whitesmoke;
+    margin-top: 1px;
+    padding-top: 3px
+}
+
+.pc_title--text--bottom{
+    margin-top: -31px;
+}
+
+/*Footer-bar Style*/
+.pc__body--info{
+    font-size: 15px;
+    color:#666666;
+    text-align: justify;
+}
+
+.pc__welcome{
+    height: 380px;
+    background-image: linear-gradient(to bottom, #5c5cd6, #5c5cd6);
+}
+
+
+.pc__body{
+    font-size: 18px;
+}
+
+.pc__body-header{
+    padding-left: 10px;
+    border-left: 4px solid darkslategray;
+    padding-bottom: 7px;
+    padding-top:2px;
+    font-size:20px;
+    margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 943px) {
+    .pc__body {
+        padding-left:4%;
+        padding-right:4%;
+        padding-top:20px;
+    }
+}
+

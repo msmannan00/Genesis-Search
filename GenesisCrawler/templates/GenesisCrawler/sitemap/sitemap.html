@@ -1,0 +1,73 @@
+{% load static %}
+{% include 'GenesisCrawler\sitemap\local_imports.html' %}
+{% include 'GenesisCrawler\blades\blades_shared_initialization.html' %}
+
+
+<!--script initialization-->
+<html lang="en">
+    <body>
+        <!--footer-->
+        {% include 'GenesisCrawler\blades\blade_light_header.html' %}
+        <div class="sm">
+            <form id="sm_search" method="POST" action="" enctype="multipart/form-data" class="sm__form">
+                <h6 class="sm__form-header"> Submit your website </h6>
+                <p class="sm__form-description sm__form-header--top">Welcome to the process of website submission. It is to be noted that if you want to provide any onion service, you have to make sure that the service exists at the time of crawling. <br><br>Important Notice <b>(Secret Key)</b>
+                <ul class="sm__form-ul">
+                    <li>Secret key is mandatory in website submission</li>
+                    <li>Secret key must be added as first line of your website</li>
+                    <li>Its format is <b style="color:#336699">"&lt;!-- key:your_secret_key --&gt;"</b></li>
+                    <li>Same secret key should be used to update website</li>
+                    <a href="../secretkey"> <input type="button" class="sm__form-sample-submit" value="Sample"/></a>
+                </ul>
+                <hr class="hr"/>
+                <div class="sm__form-title">Secret key</div>
+                <input class="form-control sm__form-input {% if mSecretKeyError != '' %} sm__input-danger sm__input-danger--placeholder {% endif %}" autocomplete="off" type="text" name="pSitemapSecretKey" value="{{mSecretKeyValue}}" placeholder="Secret key to update later">
+                <label class="sm_form__warning disable-highlight {% if mSecretKeyError != '' %} alert alert-danger sm__form-warning--error {% endif %}">{{mSecretKeyError}}</label>
+                <div class="sm__form-title">Site title</div>
+                <input class="form-control sm__form-input {% if mSitemapNameError != '' %} sm__input-danger sm__input-danger--placeholder {% endif %}" autocomplete="off" type="text" name="pSitemapName" value="{{mSitemapNameValue}}" placeholder="Site name">
+                <label class="sm_form__warning disable-highlight {% if mSitemapNameError != '' %} alert alert-danger sm__form-warning--error {% endif %}">{{mSitemapNameError}}</label>
+                <div class="sm__form-title">Site URL</div>
+                <input class="form-control sm__form-input {% if mSitemapURLError != '' %} sm__input-danger sm__input-danger--placeholder {% endif %}" autocomplete="off" type="text" name="pSitemapURL" value="{{mSitemapURLValue}}" placeholder="Site URL">
+                <label class="sm_form__warning disable-highlight {% if mSitemapURLError != '' %} alert alert-danger sm__form-warning--error {% endif %}">{{mSitemapURLError}}</label>
+                <div class="sm__form-title">Site keyword</div>
+                <input class="form-control sm__form-input {% if mSitemapKeywordError != '' %} sm__input-danger sm__input-danger--placeholder {% endif %}" autocomplete="off" type="text" name="pSitemapKeyword" value="{{mSitemapKeywordValue}}" placeholder="Site keyword Comma Seperated">
+                <label class="sm_form__warning disable-highlight {% if mSitemapKeywordError != '' %} alert alert-danger sm__form-warning--error {% endif %}">{{mSitemapKeywordError}}</label>
+                <div class="sm__form-title">Submission rule</div>
+                <select class="sm__select-rules minimal" name="pSitemapSubmissionRule">
+                    <option selected hidden>{{mSitemapSubmissionRule}}</option>
+                    <option value="New Onion Service">New Onion Service</option>
+                    <option value="Update Onion Service">Update Onion Service</option>
+                </select>
+                <label class="sm_form__warning disable-highlight {% if mSitemapSubmissionRulesError != '' %} alert alert-danger sm__form-warning--error {% endif %}">{{mSitemapSubmissionRulesError}}</label>
+                <div class="sm__form-title"><b> -- Please Accept the Agreement -- <br><br></b></div>
+
+                <div class="list-group">
+                    <label class="sm__check-box list-group-item list-group-item-action">
+                        <input class="form-check-input me-1" type="checkbox" name="pSitemapParamAgreement_1" {% if mSitemapAgreement_1 != '' %} checked {% endif %}> &nbsp;&nbsp;This site does not link to illegal content
+                    </label>
+                    <label class="sm__check-box list-group-item list-group-item-action">
+                        <input class="form-check-input me-1" type="checkbox" name="pSitemapParamAgreement_2" {% if mSitemapAgreement_2 != '' %} checked {% endif %}> &nbsp;&nbsp;This site does not link to sexually explicit content
+                    </label>
+                    <label class="sm__check-box list-group-item list-group-item-action">
+                        <input class="form-check-input me-1" type="checkbox" name="pSitemapParamAgreement_3" {% if mSitemapAgreement_3 != '' %} checked {% endif %}>&nbsp;&nbsp;This site would be useful
+                    </label>
+                    <label class="sm__check-box list-group-item list-group-item-action">
+                        <input class="form-check-input me-1" type="checkbox" name="pSitemapParamAgreement_4" {% if mSitemapAgreement_4 != '' %} checked {% endif %}>&nbsp;&nbsp;This site will remain alive consistently and constantly
+                    </label>
+                    <label class="sm__check-box list-group-item list-group-item-action">
+                        <input class="form-check-input me-1" type="checkbox" name="pSitemapParamAgreement_5" {% if mSitemapAgreement_5 != '' %} checked {% endif %}>&nbsp;&nbsp;This site doesn't go against the terms of use
+                    </label>
+                </div>
+
+                <label class="sm_form__warning sm__form-warning--top disable-highlight {% if mSitemapSubmissionError != '' %} alert alert-danger sm__form-warning--error {% endif %}">{{mSitemapSubmissionError}}</label>
+                {% if mSitemapSubmissionError != '' %} <br><br> {% endif %}
+                <div class="sm__form-title">Your email (optional)</div>
+                <input class="form-control sm__form-input {% if mSitemapEmailError != '' %} sm__input-danger sm__input-danger--placeholder {% endif %}" autocomplete="off" type="text" name="pSitemapEmail" value="{{mSitemapEmailValue}}" placeholder="Email Address (Optional)">
+                <label class="sm_form__warning sm_form__warning-email--top disable-highlight {% if mSitemapEmailError != '' %} alert alert-danger sm__form-warning--error {% endif %}">{{mSitemapEmailError}}</label><br>
+                <input type="submit" class="sm_form_submit" value="Submit">
+
+            </form>
+        </div>
+        {% include 'GenesisCrawler\blades\blade_footer.html' %}
+    </body>
+</html>

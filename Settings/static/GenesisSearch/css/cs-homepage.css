@@ -1,0 +1,153 @@
+/*search style*/
+#hp_search {
+    margin-top:17vh;
+}
+
+
+@media only screen and (max-width: 943px) {
+    #hp_search {
+        margin-top:15%
+    }
+}
+
+@media only screen and (max-width: 943px) {
+    .hp_container_size {
+        margin-bottom:100px !important;
+    }
+}
+
+.hp_search__logo{
+
+    font-family: Calibri;
+    text-align: center;
+    color: lightblue;
+    color: #003d99;
+    margin-bottom: -17px;
+
+    font-style: normal;
+    font-variant: normal;
+    font-weight:501;
+    line-height: 26.4px;
+
+    font-family: helvetica;
+    font-weight:bold;
+
+}
+
+#hp_logo {
+        font-size: calc(21px + 0.9vw);
+}
+
+@media only screen and (max-width: 943px) {
+    #hp_logo {
+        font-size: calc(24px + 0.95vw);
+    }
+}
+
+
+.hp_search__search-box{
+	border-radius: 23px;
+	align-self: center;
+	height:45px;
+	box-shadow: 0 1.00px 2px -1px #999999;
+	border-color: #e7e7e7;
+	width:90%;
+    max-width: 575px;
+	margin:0 auto;
+	display:block;
+	font:16px arial,sans-serif;
+	color: black;
+	padding-left:22px;
+    margin-bottom: 5px;
+}
+
+/*footer-bar style*/
+.footer-bar{
+    position: relative;
+    bottom: 0px;
+}
+
+.hp_search__logo{
+	margin:0 auto;
+	display:block;
+    width: 90%;
+    max-width: 400px;
+
+}
+
+.hp_search__language-text{
+	font-size: 14px;
+	text-align:center;
+	padding-top: 3px
+}
+
+.hp_search__language-name{
+	color:#7173f8;
+}
+
+.hc__search-button{
+	margin-top: 12px;
+	background-color:#f2f2f2;
+	height: 35px;
+	width:110%;
+	text-align:center;
+    max-width: 130px;
+	border-width: 0;
+	color:#6c6c6c;
+	font-size: 14.3px;
+}
+
+.hc__search-button-container{
+	margin:0 auto;
+	display:block;
+	margin-bottom: 26px;
+    text-align: center;
+	width: 43%;
+}
+
+.hc__search-button--left-spacing{
+	margin-left: 0
+}
+
+.hc__search-button--right-spacing{
+	margin-left: 0px
+}
+
+/*search events*/
+.hp_search__search-box:hover{
+    box-shadow : 0 3px 4px -1.5px #cccccc;
+}
+
+.hp_search__search-box:focus{
+    box-shadow : 0 4px 8px -1.5px #cccccc;
+}
+
+.hc__search-button:hover{
+	color : #000000;
+    background: linear-gradient(#f7f7f7,#f1f1f1);
+	border-style: solid;
+	border-width: 0.8px;
+	border-color:#C4C4C4;
+	border-radius: 4px;
+	cursor:pointer;
+}
+
+#hc_id_search_button {
+	font-size: 14.3px;
+}
+
+@media only screen and (max-width: 943px) {
+    #hc_id_search_button {
+    	font-size: 13.0px;
+    }
+}
+#hc_id_lucky_button {
+	font-size: 14.3px;
+}
+
+@media only screen and (max-width: 943px) {
+    #hc_id_lucky_button {
+    	font-size: 13.0px;
+    }
+}
+

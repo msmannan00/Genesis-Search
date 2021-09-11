@@ -1,0 +1,18 @@
+{% load static %}
+
+<div class="lhc" style="user-select: none;">
+    <a href="../" ><img class="lhc__logo gc-disable-highlight" src="{% static 'GenesisCrawler/images/favicon-home.png' %}" alt="Loading..."></a>
+
+    <form method="GET" class="lhc__form" action="../search" enctype="multipart/form-data">
+        <input class="form-control lhc__searchbox" autocomplete="off" type="search" name="q" placeholder=" Search the web anonymously">
+        <input type="hidden" name="p_num" value="1">
+        <input type="hidden" name="s_type" value="all">
+    </form>
+
+    <div class="lhc__menu gs-disable-highlight">
+        <span ><a href="https://www.bitfinex.com/" class="lhc-status_bar__category lhc__catagory--bold" id="lhc__catagory-mobile--identifier">Bitcoin Market</a></span>
+        <label class="lhc_vertical_line"></label>
+        <span ><a href="https://protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion" class="lhc-status_bar__category lhc__catagory_non_important lhc__catagory--margin-right"><b>Proton mail</b></a></span>
+        <span ><a href="/search?q=random&p_num=1&s_type=image" class="lhc-status_bar__category lhc__catagory_non_important lhc__catagory--margin-right"><b>Images</b></a></span>
+    </div>
+</div>

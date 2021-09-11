@@ -1,0 +1,20 @@
+{% load static %}
+{% include 'GenesisCrawler\notice\local_imports.html' %}
+{% include 'GenesisCrawler\blades\blades_shared_initialization.html' %}
+
+
+<!--script initialization-->
+<html lang="en">
+    <body >
+        <!--footer-->
+        {% include 'GenesisCrawler\blades\blade_light_header.html' %}
+
+        {% if mNoticeType == 'report' %}
+            {% include 'GenesisCrawler\blades\blade_report_website_notice.html' %}
+        {% elif mNoticeType == 'upload' %}
+            {% include 'GenesisCrawler\blades\blade_upload_website_notice.html' %}
+        {% endif %}
+        <!--footer-->
+        {% include 'GenesisCrawler\blades\blade_footer.html' %}
+    </body>
+</html>

@@ -1,0 +1,119 @@
+/* OVERRIDES */
+
+.pc_status_bar{
+    color:#000000;
+    height: 60px;
+    text-align: right;
+    background-image: linear-gradient(to bottom, #5c5cd6, #5c5cd6) !important;
+    border-bottom-color:#4747d1 !important;
+    border-style: solid;border-right-width: 0;
+    border-left-width: 0;border-top-width: 0;
+    border-bottom-width: 1px;
+}
+
+/* Dark Header Overrize*/
+
+.pc_dark_header--menu{
+    padding-top: 17px;
+    margin-right: 10px;
+}
+
+.pc_status-bar__category{
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    padding: 0 15px 15px;
+    border-bottom: 4px solid #5c5cd6;
+}
+
+
+.pc_status-bar__category:hover{
+    color: wheat;
+    text-decoration: none;
+    border-bottom: 4px solid whitesmoke;
+	transition: border-bottom-color 0.25s ease-in-out;
+}
+
+.pc_status-bar__category:focus{
+    color: wheat;
+    text-decoration: none;
+    border-bottom: 4px solid whitesmoke;
+}
+.pc_status_bar{
+    color:#000000;
+    height: 60px;
+    text-align: right;
+    background-image: linear-gradient(to right, #f7f7f7, #f8f8f8);
+    border-bottom-color:#cfe2e2;
+    border-style: solid;border-right-width: 0;
+    border-left-width: 0;border-top-width: 0;
+    border-bottom-width: 1px;
+}
+
+.pc_status_bar__image{
+    height: auto;
+    display: block;
+    margin-right: auto;
+    width: 11%;
+    max-width: 40px;
+    margin-top: 9.5px;
+    cursor: pointer;
+    margin-left: 10px;
+    float: left;
+}
+
+.pc_status_bar__form{
+    margin-top: -16px;
+}
+
+
+.pc_status_bar__searchbox{
+    border-radius: 5px 5px 5px 5px;
+
+    align-self: center;
+    height:44px;
+    width:85%;
+    max-width: 575px;
+    display:block;
+    font:14px arial,sans-serif;
+    padding-left:10px;
+    padding-right:15px;
+    margin-left: 10px;
+    float: left;
+    border-left: 6px solid #ffe0b3;
+    margin-top: 7px;
+    color: #595959 !important;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #b3b3b3 !important;
+  opacity: 1; /* Firefox */
+}
+
+.pc_status_bar__searchbox:hover {
+    outline: 0 !important;
+    box-shadow: 0 0 0 #ffffff;
+    border-left: 6px solid #ff9900;
+}
+
+.pc_status_bar__searchbox:focus{
+    outline: 0 !important;
+    box-shadow: 0 0 0 #ffffff;
+    border-left: 6px solid #ff9900;
+}
+
+
+@media only screen and (max-width: 943px) {
+    .pc_status_bar__searchbox {
+        width:83.5%;
+        max-width: 650px;
+        margin-left:2.2%;
+    }
+    .pc_status_bar__image {
+        margin-left: 2%;
+    }
+    .pc_dark_header--menu {
+        visibility: hidden;
+    }
+}

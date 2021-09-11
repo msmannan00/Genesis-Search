@@ -1,0 +1,20 @@
+{% load static %}
+{% include 'GenesisCrawler\homepage\local_imports.html' %}
+{% include 'GenesisCrawler\blades\blades_shared_initialization.html' %}
+
+<!--Local Imports-->
+<html lang="en">
+
+    <body class="body" style="-moz-user-select: none" onload="onLoad()">
+
+        <!--top bar-->
+        {% include 'GenesisCrawler\blades\blade_home_header.html' %}
+        {% include 'GenesisCrawler\blades\blade_sidebar.html' %}
+
+        Searching...
+        <!--footer-->
+        {% include 'GenesisCrawler\blades\blade_footer.html' %}
+
+    </body>
+
+</html>

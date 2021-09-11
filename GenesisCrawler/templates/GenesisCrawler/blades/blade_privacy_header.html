@@ -1,0 +1,17 @@
+{% load static %}
+
+<div class="pc_status_bar" >
+    <a href="../" ><img class="pc_status_bar__image gs-disable-highlight" src="{% static 'GenesisCrawler/images/favicon-home.png' %}" alt="Loading..."></a>
+
+    <form method="GET" class="pc_status_bar__form" action="../search" enctype="multipart/form-data">
+        <input class="form-control pc_status_bar__searchbox" autocomplete="off" type="text" name="q" placeholder="Search the web anonymously">
+        <input type="hidden" name="p_num" value="1">
+        <input type="hidden" name="s_type" value="all">
+    </form>
+
+    <div class="pc_dark_header--menu gs-disable-highlight">
+        <span ><a href="https://www.bitfinex.com/" class="pc_status-bar__category" id="mobid">Bitcoin Market</a></span>
+        <span ><a href="http://protonirockerxow.onion" class="pc_status-bar__category">Proton Mail</a></span>
+        <span ><a href="/search?q=random&p_num=1&s_type=image" class="pc_status-bar__category pc_status_bar__category--right">Images</a></span>
+    </div>
+</div>
