@@ -1,108 +1,124 @@
 /*Privacy Policy Text*/
-
-.pc__body{
-    margin-top: 30px;
-    padding: 70px 70px 0px;
-    background-image: linear-gradient(to bottom,#f3f3fb, #f3f3fb);
+.privacy{
+    background: #ffffff ;
 }
-
-.pc{
-    background: #f3f3fb ;
+.privacy__welcome{
+    height: 400px;
+    background-image: linear-gradient(to bottom, #ffb31a, #ffb31a);
 }
-
-.pc__body-list{
-    font-size:15px;
-    margin-top:10px;
-    padding-left: 15px;
-}
-
-.pc__hr{
-    margin-top: 25px;
-    border: 1px solid #d9d9d9;
-}
-
-.pc_logo_image--center{
-    max-width: 90px;
-    width: 30%;
-    height: auto;
-    padding-top: 25px;
+.privacy__icon{
+    width: 80px;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-
-.pc__welcome-info{
+.privacy__welcome-header{
+    font-size: 28px;
+    text-align:center;
+    color: whitesmoke;
+    margin-top: 0;
+    padding-top: 3px
+}
+.privacy__welcome-header--bottom{
+    margin-top: -31px;
+}
+.privacy__welcome-info{
     font-size: 18px;
     text-align:center;
     color: whitesmoke;
     margin-top: 25px;
     padding-top: 3px
 }
-
-.pc__welcome-mail{
-    font-size: 15px;
+.privacy__welcome-mail{
+    font-size: 15px;/
     text-align:center;
     margin: 25px auto auto;
     font-weight: bold;
-    padding: 13px;
+    padding: 13px 13px 13px 33px;
     width: 200px;
     border-radius: 5px;
     border: 2px solid white;
     cursor: pointer;
     color: white;
 }
-
-.pc__welcome-mail:hover{
+.privacy__welcome-mail:hover{
     background: white;
     color: darkslategray;
     text-underline: none;
     text-decoration: none;
     border: 2px solid white;
 }
-
-.pc__welcome-header{
-    font-size: 28px;
-    text-align:center;
-    color: whitesmoke;
-    margin-top: 1px;
-    padding-top: 3px
+.privacy__body{
+    background-image: linear-gradient(to bottom,#ffffff, #ffffff);
+    font-size: 18px;
 }
-
-.pc_title--text--bottom{
-    margin-top: -31px;
+.privacy__paragraph-container{
+    padding-top: 30px;
+    padding-left: 2%;
+    padding-right: 4%;
+    background-image: linear-gradient(to bottom, #f7f7f7, #f7f7f7, #ffffff);
 }
-
-/*Footer-bar Style*/
-.pc__body--info{
+.privacy__paragraph-container--top{
+    padding-top: 60px;
+}
+.privacy__body-header{
+    padding-bottom: 7px;
+    padding-top:2px;
+    text-align: start;
+    margin-bottom: 30px;
+    color: #0c5460;
+}
+.privacy__body--info{
     font-size: 15px;
     color:#666666;
     text-align: justify;
 }
-
-.pc__welcome{
-    height: 380px;
-    background-image: linear-gradient(to bottom, #5c5cd6, #5c5cd6);
+.privacy__body-list{
+    font-size:15px;
+    margin-top:10px;
+    padding-left: 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;.
+}
+.privacy__line-break{
+    background: #ffb31a;
+    border: 0;
+    height: 4px;
+    margin-top: 100px;
+    margin-bottom: 0;
+    margin-left: 30px;
+    width: 95%;
 }
 
-
-.pc__body{
-    font-size: 18px;
-}
-
-.pc__body-header{
-    padding-left: 10px;
-    border-left: 4px solid darkslategray;
-    padding-bottom: 7px;
-    padding-top:2px;
-    font-size:20px;
-    margin-bottom: 30px;
-}
+/*Footer-bar Style*/
 
 @media only screen and (max-width: 943px) {
-    .pc__body {
-        padding-left:4%;
-        padding-right:4%;
-        padding-top:20px;
+    .privacy__body {
+        padding-left:0;
+        padding-right:0;
+        padding-top:0;
+    }
+    .privacy__paragraph-container{
+        padding-top: 30px;
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+    .privacy__paragraph-container--top{
+        padding-top: 50px;
+    }
+    .privacy__line-break{
+        background: #ffb31a;
+        border: 0;
+        height: 6px;
+        margin: 60px 40% 0;
+        width: auto;
+    }
+    .privacy__body-header{
+        padding-bottom: 7px;
+        padding-top:2px;
+        text-align: center;
+        margin-bottom: 30px;
+        color: #0c5460;
     }
 }
 

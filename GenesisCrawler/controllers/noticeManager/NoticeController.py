@@ -1,9 +1,6 @@
-import json
-
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from GenesisCrawler.constants.constants import constants
-from GenesisCrawler.constants.enums import ErrorMessages
 from GenesisCrawler.controllers.noticeManager.NoticeControllerEnums import NoticeModelCommands
 from GenesisCrawler.controllers.noticeManager.NoticeModel import NoticeModel
 
@@ -11,7 +8,7 @@ class NoticeController:
 
     # Private Variables
     __instance = None
-    mNoticeModel = None
+    __m_notice_model = None
 
     # Initializations
     @staticmethod
@@ -22,17 +19,17 @@ class NoticeController:
 
     def __init__(self):
         if NoticeController.__instance is not None:
-            raise Exception(ErrorMessages.M_SINGLETON_EXCEPTION)
+            raise Exception(NoticeModelCommands.ErrorMessages.M_SINGLETON_EXCEPTION)
         else:
             NoticeController.__instance = self
-            self.mNoticeModel = NoticeModel()
+            self.__m_notice_model = NoticeModel()
 
     # External Request Callbacks
-    def invokeTrigger(self, pCommand, pData):
-        if pCommand == NoticeModelCommands.M_INIT:
-            mResponse, mStatus = self.mNoticeModel.invokeTrigger(NoticeModelCommands.M_INIT, pData)
-            if mStatus is True:
-                return render(None, constants.S_NOTICE_WEBSITE_PATH, mResponse)
+    def invoke_trigger(self, p_command, p_data):
+        if p_command == NoticeModelCommands.M_INIT:
+            m_response, m_status = self.__m_notice_model.invoke_trigger(NoticeModelCommands.M_INIT, p_data)
+            if m_status is True:
+                return render(None, constants.S_TEMPLATE_NOTICE_WEBSITE_PATH, m_response)
             else:
                 return HttpResponseRedirect(redirect_to="../")
 

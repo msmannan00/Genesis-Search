@@ -102,7 +102,7 @@
             DateTimeShortcuts.clockInputs[num] = inp;
             DateTimeShortcuts.dismissClockFunc[num] = function() { DateTimeShortcuts.dismissClock(num); return true; };
 
-            // Shortcut links (clock icon and "Now" link)
+            // Shortcut directory (clock icon and "Now" link)
             const shortcuts_span = document.createElement('span');
             shortcuts_span.className = DateTimeShortcuts.shortCutsClass;
             inp.parentNode.insertBefore(shortcuts_span, inp.nextSibling);
@@ -230,7 +230,7 @@
             DateTimeShortcuts.calendarInputs[num] = inp;
             DateTimeShortcuts.dismissCalendarFunc[num] = function() { DateTimeShortcuts.dismissCalendar(num); return true; };
 
-            // Shortcut links (calendar icon and "Today" link)
+            // Shortcut directory (calendar icon and "Today" link)
             const shortcuts_span = document.createElement('span');
             shortcuts_span.className = DateTimeShortcuts.shortCutsClass;
             inp.parentNode.insertBefore(shortcuts_span, inp.nextSibling);
@@ -285,7 +285,7 @@
             document.body.appendChild(cal_box);
             cal_box.addEventListener('click', function(e) { e.stopPropagation(); });
 
-            // next-prev links
+            // next-prev directory
             const cal_nav = quickElement('div', cal_box);
             const cal_nav_prev = quickElement('a', cal_nav, '<', 'href', '#');
             cal_nav_prev.className = 'calendarnav-previous';

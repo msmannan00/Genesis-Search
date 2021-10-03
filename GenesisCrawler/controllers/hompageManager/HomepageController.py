@@ -1,16 +1,14 @@
 from django.shortcuts import render
 from GenesisCrawler.constants.constants import constants
-from GenesisCrawler.constants.enums import ErrorMessages, MongoDBCommands
 from GenesisCrawler.controllers.hompageManager.HomepageEnums import HomepageModelCommands
 from GenesisCrawler.controllers.hompageManager.HomepageModel import HomepageModel
-from GenesisCrawler.controllers.mongoDBManager.mongoDBController import mongoDBController
 
 
 class HomepageController:
 
     # Private Variables
     __instance = None
-    mHomePageModel = None
+    __m_homepage_model = None
 
     # Initializations
     @staticmethod
@@ -21,18 +19,21 @@ class HomepageController:
 
     def __init__(self):
         if HomepageController.__instance is not None:
-            raise Exception(ErrorMessages.M_SINGLETON_EXCEPTION)
+            raise Exception(HomepageModelCommands.ErrorMessages.M_SINGLETON_EXCEPTION)
         else:
             HomepageController.__instance = self
-            self.mHomePageModel = HomepageModel()
+            self.__m_homepage_model = HomepageModel()
 
     # External Request Callbacks
-    def invokeTrigger(self, pCommand):
-        if pCommand == HomepageModelCommands.M_INIT:
-            m_response = self.mHomePageModel.invokeTrigger(HomepageModelCommands.M_INIT, None)
-            return render(None, constants.S_INDEX_PATH, m_response)
+    def invoke_trigger(self, p_command):
+        if p_command == HomepageModelCommands.M_INIT:
+            m_response, m_status = self.__m_homepage_model.invoke_trigger(HomepageModelCommands.M_INIT, None)
+            return render(None, constants.S_TEMPLATE_INDEX_PATH, m_response)
         else:
             m_response = None
         return m_response
 
-mongoDBController.getInstance().invokeTrigger(MongoDBCommands.M_SEARCH, "SEX")
+
+'''
+    SearchController.getInstance().invokeTrigger(SearchModelCommands.M_INIT, None)
+'''

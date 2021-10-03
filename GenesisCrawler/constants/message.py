@@ -3,7 +3,7 @@ S_GENERAL_INVALID_SECRETKEY_SPECIAL_CHARACTER = "Sorry, only letters (a-z) and n
 
 # REPORT
 S_REPORT_URL_INCOMPLETE_ERROR = "Please fill in the URL"
-S_REPORT_URL_INVALID_ERROR = "Please provide a valid website"
+S_REPORT_URL_INVALID_ERROR = "Please provide a valid (Onion V3) address"
 S_REPORT_URL_INVALID_PROTOCOL = "Please add a supported protocol, http:// or https://"
 S_REPORT_URL_INVALID_EMAIL = "Email address in not valid"
 

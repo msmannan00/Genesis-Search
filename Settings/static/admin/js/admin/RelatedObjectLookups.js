@@ -1,6 +1,6 @@
 /*global SelectBox, interpolate*/
 // Handles related-objects functionality: lookup link for raw_id_fields
-// and Add Another links.
+// and Add Another directory.
 'use strict';
 {
     const $ = django.jQuery;
@@ -66,7 +66,7 @@
                     elem.value = newId;
                 }
             }
-            // Trigger a change event to update related links if required.
+            // Trigger a change event to update related directory if required.
             $(elem).trigger('change');
         } else {
             const toId = name + "_to";

@@ -1,85 +1,46 @@
 
 from GenesisCrawler.constants import strings
 from GenesisCrawler.constants.enums import MongoDBCommands
-from GenesisCrawler.constants.keys import *
-from GenesisCrawler.constants.message import *
+from GenesisCrawler.controllers.dataManager.mongoDBManager.MongoDBController import MongoDBController
 from GenesisCrawler.controllers.helperManager.helperController import HelperController
-from GenesisCrawler.controllers.mongoDBManager.mongoDBController import mongoDBController
-from GenesisCrawler.controllers.reportManager.ReportControllerEnums import ReportModelCommands
+from GenesisCrawler.controllers.reportManager.ReportControllerEnums import ReportModelCommands, ReportCallback, ReportParam, ReportSessionCommands
+from GenesisCrawler.controllers.reportManager.ReportSessionController import ReportSessionController
+from GenesisCrawler.controllers.sharedModel.RequestHandler import RequestHandler
 
-
-class ReportModel:
+class ReportModel(RequestHandler):
 
     # Private Variables
     __instance = None
+    __m_session = None
 
     # Initializations
     def __init__(self):
+        self.__m_session = ReportSessionController()
         pass
 
-    def validateParameters(self, pData, pContext):
-        mValidityStatus = True
-
-        if pContext[K_REPORT_URL] == strings.S_GENERAL_EMPTY:
-            pContext[K_REPORT_URL_ERROR] = S_REPORT_URL_INCOMPLETE_ERROR
-            mValidityStatus = False
-        elif pContext[K_REPORT_URL].startswith("http") is False:
-            pContext[K_REPORT_URL_ERROR] = S_REPORT_URL_INVALID_PROTOCOL
-            mValidityStatus = False
-        elif HelperController.isURLValid(pContext[K_REPORT_URL]) is False:
-            pContext[K_REPORT_URL_ERROR] = S_REPORT_URL_INVALID_ERROR
-            mValidityStatus = False
-
-        if pContext[K_REPORT_EMAIL] != strings.S_GENERAL_EMPTY and HelperController.isMailValid(pContext[K_REPORT_EMAIL]) is False:
-            pContext[K_REPORT_EMAIL_ERROR] = S_REPORT_URL_INVALID_EMAIL
-            mValidityStatus = False
-
-        return pContext, mValidityStatus
-
-    def initParameters(self, pData):
-        mContext = {
-            K_REPORT_URL: strings.S_GENERAL_EMPTY,
-            K_REPORT_EMAIL: strings.S_GENERAL_EMPTY,
-            K_REPORT_MESSAGE: strings.S_GENERAL_EMPTY,
-            K_REPORT_URL_ERROR: strings.S_GENERAL_EMPTY,
-            K_REPORT_EMAIL_ERROR: strings.S_GENERAL_EMPTY,
+    def __upload_website(self, p_context):
+        m_data = {
+            ReportParam.M_URL: p_context[ReportCallback.M_URL],
+            ReportParam.M_EMAIL: p_context[ReportCallback.M_EMAIL],
+            ReportParam.M_MESSAGE: p_context[ReportCallback.M_MESSAGE],
         }
 
-        if K_REPORT_PARAM_URL in pData.POST:
-            mContext[K_REPORT_URL] = pData.POST[K_REPORT_PARAM_URL]
-        else:
-            return mContext, False
+        MongoDBController.getInstance().invoke_trigger(MongoDBCommands.M_REPORT_URL, m_data)
 
-        if K_REPORT_PARAM_EMAIL in pData.POST:
-            mContext[K_REPORT_EMAIL] = pData.POST[K_REPORT_PARAM_EMAIL]
-        if K_REPORT_PARAM_MESSAGE in pData.POST:
-            mContext[K_REPORT_MESSAGE] = pData.POST[K_REPORT_PARAM_MESSAGE]
+    def __init_page(self, p_data):
 
-        return mContext, True
+        m_context, m_status = self.__m_session.invoke_trigger(ReportSessionCommands.M_INIT, [p_data])
+        if m_status is False:
+            return m_context, False
 
-    def uploadWebsite(self, pContext):
-        mData = {
-            K_MONGO_REPORT_URL: pContext[K_REPORT_URL],
-            K_MONGO_REPORT_EMAIL: pContext[K_REPORT_EMAIL],
-            K_MONGO_REPORT_MESSAGE: pContext[K_REPORT_MESSAGE],
-        }
+        m_context, m_status = self.__m_session.invoke_trigger(ReportSessionCommands.M_VALIDATE, [m_context])
+        if m_status is True and strings.S_GENERAL_ONION_DOMAIN in HelperController.getHost(m_context[ReportCallback.M_URL]):
+            self.__upload_website(m_context)
+            m_context = {}
 
-        mongoDBController.getInstance().invokeTrigger(MongoDBCommands.M_REPORT_URL, mData)
-
-    def onInitPage(self, pData):
-
-        mContext, mStatus = self.initParameters(pData)
-        if mStatus is False:
-            return mContext, False
-
-        mContext, mStatus = self.validateParameters(pData, mContext)
-        if mStatus is True and '.onion' in HelperController.getHost(mContext[K_REPORT_URL]):
-            self.uploadWebsite(mContext)
-            mContext = {}
-
-        return mContext, mStatus
+        return m_context, m_status
 
     # External Request Callbacks
-    def invokeTrigger(self, pCommand, pData):
-        if pCommand == ReportModelCommands.M_INIT:
-            return self.onInitPage(pData)
+    def invoke_trigger(self, p_command, p_data):
+        if p_command == ReportModelCommands.M_INIT:
+            return self.__init_page(p_data)

@@ -887,7 +887,7 @@ table#change-history tbody th {
     float: right;
 }
 
-.popup .colM {
+.search-content__danger-popup-container .colM {
     width: auto;
 }
 
@@ -1039,14 +1039,14 @@ table#change-history tbody th {
 }
 
 /* POPUP */
-.popup #content {
+.search-content__danger-popup-container #content {
     padding: 20px;
 }
 
-.popup #container {
+.search-content__danger-popup-container #container {
     min-width: 0;
 }
 
-.popup #header {
+.search-content__danger-popup-container #header {
     padding: 10px 20px;
 }

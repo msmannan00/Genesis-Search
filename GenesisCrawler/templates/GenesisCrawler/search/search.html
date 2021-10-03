@@ -1,19 +1,31 @@
 {% load static %}
-{% include 'GenesisCrawler\homepage\local_imports.html' %}
+
+<!-- local imports -->
+{% include 'GenesisCrawler\search\local_imports.html' %}
 {% include 'GenesisCrawler\blades\blades_shared_initialization.html' %}
 
-<!--Local Imports-->
 <html lang="en">
 
-    <body class="body" style="-moz-user-select: none" onload="onLoad()">
+    <body class="body">
 
-        <!--top bar-->
-        {% include 'GenesisCrawler\blades\blade_home_header.html' %}
-        {% include 'GenesisCrawler\blades\blade_sidebar.html' %}
+        <div class="search">
+            <!-- top bar -->
+            {% include 'GenesisCrawler\blades\search_template\blade_search_header.html' %}
 
-        Searching...
-        <!--footer-->
-        {% include 'GenesisCrawler\blades\blade_footer.html' %}
+            <!-- content bar -->
+            {% include 'GenesisCrawler\blades\search_template\blade_search_content.html' %}
+        </div>
+
+        <!-- pagination -->
+        {% include 'GenesisCrawler\blades\search_template\blade_search_pagination.html' %}
+
+        <!-- footer -->
+        {% include 'GenesisCrawler\blades\shared_blades\blade_footer.html' %}
+
+        <!-- content warning -->
+        <div class="search-footer__report">
+            <div class="search__content-warning"><span><b>Notice</b> </span><span class="search__description"> We don't own any of the content. We are just showing their links so if you found something disturbing<a href="/report" class="search-footer__report-link"><b> - Report Us</b></a></span></div>
+        </div>
 
     </body>
 

@@ -1,0 +1,92 @@
+{% load static %}
+
+<!-- result counts -->
+{% if mSearchCallbackRelevantDocument|length != 0 %}
+    <div class="search-result__status disable-highlight" >About {{mSearchCallbackResultCount}} results found</div>
+{% endif %}
+
+<!-- safe search -->
+{% if mSearchCallbackSaveSearch == 'False' %}
+    <a class="search-result__safe-search-container search-result__safe-search-container--danger" style="text-decoration: none" href="./?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=True">
+        <label class="search-result__safe-search">
+            <label class="search-result__safe-search--label"> Save Search </label>
+        </label>
+        <label class="switch"><span class="slider round"></span></label>
+    </a>
+{% else %}
+    <a class="search-result__safe-search-container search-result__safe-search-container--normal" style="text-decoration: none" href="./?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=False">
+        <label class="search-result__safe-search">
+            <label class="search-result__safe-search--label"> Save Search </label>
+        </label>
+        <label class="switch"><span class="slider-checked round"></span></label>
+    </a>
+{% endif %}
+
+<!-- spelling error -->
+{% if mSearchCallbackQueryError != '' %}
+    <br><h6 class="search-result__query-error--container"><span class="search-result__query-error--header">Did you mean: </span><span class="search-result__query-error--info"><a href="./?q={{mSearchCallbackQueryError}}">{{mSearchCallbackQueryError}}</a></span></h6>
+{% else %}
+    <br>
+{% endif %}
+
+<!-- no search results -->
+{% if mSearchCallbackRelevantDocument|length == 0 %}
+    {% include 'GenesisCrawler\blades\search_template\blade_search_no_suggestion.html' %}
+{% endif %}
+
+<!-- search content -->
+{% if mSearchCallbackRelevantSearchType == 'all' %}
+
+    <!-- search content url based -->
+    {% for mDoc in mSearchCallbackRelevantDocument %}
+
+        {% if forloop.counter == 3 and mSearchCallbackRelevantDocument|length > 3 %}
+            {% include 'GenesisCrawler\blades\search_template\blade_search_engine_suggestion.html' %}
+        {% endif %}
+
+        <a href="{% if mDoc.mSearchCallbackRelevantSearchType == 'I' %}#search-content__danger-popup{% else %}{{mDoc.mSearchCallbackRelevantDocumentURL}}{% endif %}">
+            <div class="search-result__content-webpages {% if mDoc.mSearchCallbackRelevantSearchType == 'I' %}search-result__content-webpages--danger{% else %}search-result__content-webpages--normal{% endif %}">
+                <label class="search-content__webpages-header">{{mDoc.mSearchCallbackRelevantDocumentTitle}}</label><br>
+                <label class="search-content__webpages-url">{{mDoc.mSearchCallbackRelevantDocumentURL}}</label><br>
+                <hr class="search-content__webpages-divider">
+                <label class="search-content__webpages-description">{{mDoc.mSearchCallbackRelevantDocumentDescription}}</label>
+            </div>
+        </a>
+
+        <div id="search-content__danger-popup" class="overlay">
+            <div class="search-content__danger-popup-container" >
+                <div class="content">
+                    <div class="search-content__info-danger-container">
+                        <p class="search-content__info-danger-header">Threat Found</p>
+                        <p class="search-content__info-danger-body">Illegal content such as <b class="search-content__info-danger-porn">Porn</b> detected in requsted URL. Please be caution and select the steps below.</p>
+                    </div><br><br>
+                    <div class="search-content__danger-button-container">
+                        <a href="{{mDoc.mSearchCallbackRelevantDocumentURL}}" style="text-decoration: none;"><button class="search-content__danger-button search-content__danger-button-auto">Open Website</button></a>
+                        <a href="../report?pReportParamURL={{mDoc.mSearchCallbackRelevantDocumentURL}}" style="text-decoration: none;"><button class="search-content__danger-button search-content__danger-button-top" >Report URL</button></a>
+                        <a href="#" style="text-decoration: none;"><button class="search-content__danger-button search-content__danger-button-top" >Go Back</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <!-- search content file based -->
+    <div class="search-file__reference_container">
+
+            {% for mDoc in mSearchCallbackRelevantDocument %}
+            <div style="float: left" class="search-file__item-container">
+                <a href="{{mDoc.mSearchCallbackRelevantDocumentURL}}"><img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/7D6A/production/_120660123_frenchsub.jpg" class="search-file__item" alt=""></a>
+                <div style="clear: left"></div>
+                <hr class="search-file__item-divider">
+                <div class="search-file__info_container">
+                    <label class="search-file__item-header">{{mDoc.mSearchCallbackRelevantDocumentTitle}}</label><br>
+                    <label class="search-file__item-url">{{mDoc.mSearchCallbackRelevantDocumentURL}}</label>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div style="clear: left"></div>
+{% endif %}

@@ -1,23 +1,25 @@
-from GenesisCrawler.constants.constants import constants
-from GenesisCrawler.constants.keys import K_HOME_CALLBACK_REFERENCE
-from GenesisCrawler.controllers.helperManager.helperController import HelperController
-from GenesisCrawler.controllers.hompageManager.HomepageEnums import HomepageModelCommands
+from GenesisCrawler.controllers.hompageManager.HomepageEnums import HomepageModelCommands, HomepageSessionCommands
+from GenesisCrawler.controllers.hompageManager.HomepageSessionController import HomepageSessionController
+from GenesisCrawler.controllers.sharedModel.RequestHandler import RequestHandler
 
 
-class HomepageModel:
+class HomepageModel(RequestHandler):
 
     # Private Variables
     __instance = None
+    __m_session = None
 
     # Initializations
     def __init__(self):
+        self.__m_session = HomepageSessionController()
         pass
 
-    def onInitPage(self):
-        mContext = {K_HOME_CALLBACK_REFERENCE: HelperController.loadJSON(constants.S_REFERENCE_WEBSITE_URL)}
-        return mContext
+    def __init_page(self):
+        m_context, m_status = self.__m_session.invoke_trigger(HomepageSessionCommands.M_INIT, None)
 
-    # External Request Callbacks
-    def invokeTrigger(self, pCommand, pData):
-        if pCommand == HomepageModelCommands.M_INIT:
-            return self.onInitPage()
+        return m_context, m_status
+
+    # External Request Handler
+    def invoke_trigger(self, p_command, p_data):
+        if p_command == HomepageModelCommands.M_INIT:
+            return self.__init_page()

@@ -5170,7 +5170,7 @@ jQuery.event = {
 				}
 			}
 
-			// Remove generic event handler if we removed something and no more handlers exist
+			// Remove shared_blades event handler if we removed something and no more handlers exist
 			// (avoids potential for endless recursion during removal of special event handlers)
 			if ( origCount && !handlers.length ) {
 				if ( !special.teardown ||
@@ -5389,7 +5389,7 @@ jQuery.event = {
 				return true;
 			},
 
-			// For cross-browser consistency, suppress native .click() on links
+			// For cross-browser consistency, suppress native .click() on directory
 			// Also prevent it if we're currently inside a leveraged native-event stack
 			_default: function( event ) {
 				var target = event.target;

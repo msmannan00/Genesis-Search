@@ -257,7 +257,7 @@ fieldset.monospace textarea {
     overflow: hidden;
 }
 
-body.popup .submit-row {
+body.search-content__danger-popup-container .submit-row {
     overflow: auto;
 }
 

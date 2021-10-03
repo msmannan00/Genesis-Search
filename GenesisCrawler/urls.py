@@ -25,5 +25,6 @@ urlpatterns = [
     path('', views.notice, name='notice'),
     path('', views.sitemap, name='sitemap'),
     path('', views.secretkey, name='secretkey'),
-    path('', views.secretkey, name='search'),
+    path('', views.directory, name='directory'),
+    path('', views.search, name='search'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

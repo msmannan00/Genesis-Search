@@ -1,0 +1,112 @@
+.search__pagination{
+    display:inline-block;
+    width: auto;
+    margin-left: 6.9em;
+    max-width: 400px;
+    margin-top: 50px;
+    padding-left: 5px;
+    position: fixed;
+    box-shadow: 0 2px 2px 0 #cccccc;
+    border: 1px solid #EEE;
+    padding-top: 6px;
+    border-radius: 6px;
+    height: 50px;
+}
+.search__page-navigation{
+    color:darkgray;
+    font-size: 20px;
+    text-align: center;
+    border:0;
+    background-color: #f2f2f2;
+    border-radius: 13%;
+    width:35px;
+    margin-top: -2px;
+    padding-top: 3px;
+    margin-left: 0;
+    padding-bottom: 7px;
+}
+.search__page-navigation:hover{
+    cursor:pointer;
+    color:#ffffff;
+    font-weight: bold;
+    background: orange;
+    border:0;
+}
+.search__navigation--focus{
+    text-decoration: none;
+    background: #ededed;
+    color:#1A73E8;
+    border-bottom: 4px solid #ffc14d;
+}
+.search__pagination--border-right{
+    margin-right: 5px;
+    float:left;
+}
+.search__pagination--border-right:hover{
+    border-width: 0.8px;
+    border-left-width: 0;
+}
+.search__pagination--border-start-right{
+    margin-right: 19px;
+    float:left;
+}
+.search__pagination--block{
+    opacity: 0.6;
+    pointer-events: none;
+}
+.search__pagination-icon--border-left{
+    margin-left: 15px;
+}
+.search__navigation{
+    width:39px;
+    font-size:17px;
+    text-decoration: none;
+    text-align:center;
+    margin-left: 3px;
+    height:41px;
+    border-radius: 5px;
+    margin-right: 3px;
+    padding-top: 7px;
+    margin-top:-2px;
+    font-weight: bold;
+}
+
+.search__navigation:hover{
+    text-decoration: none;
+    color: #1a0dab;
+    border-bottom: 4px solid #ffa500;
+    background: #f0f0f0;
+}
+.search__navigation--normal{
+    color:darkgray;
+    background: #f9f9f9;
+    border-bottom: 4px solid #cccccc;
+}
+
+.search__pagination--border-left{
+    float:left;
+    margin-left: 18px;
+}
+.search__pagination-container a.active {
+    color:black;
+    border-bottom : 3px solid #404040;
+}
+
+/*result-url events*/
+
+
+@media only screen and (max-width: 943px) {
+    .search__pagination{
+        display:table;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        padding-left: 5px;
+        box-shadow: 0 2px 2px 0 #cccccc;
+        border: 1px solid #EEE;
+        padding-top: 6px;
+        border-radius: 8px;
+        height: 50px;
+    }
+}

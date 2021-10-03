@@ -3,9 +3,7 @@ import json
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from GenesisCrawler.constants.constants import constants
-from GenesisCrawler.constants.enums import ErrorMessages
-from GenesisCrawler.constants.keys import K_SITEMAP_SECRETKEY
-from GenesisCrawler.controllers.sitemapManager.sitemapControllerEnums import SitemapModelCommands
+from GenesisCrawler.controllers.sitemapManager.sitemapControllerEnums import SitemapModelCommands, SitemapCallback
 from GenesisCrawler.controllers.sitemapManager.sitemapModel import SitemapModel
 
 
@@ -13,7 +11,7 @@ class SitemapController:
 
     # Private Variables
     __instance = None
-    mNoticeModel = None
+    __m_notice_model = None
 
     # Initializations
     @staticmethod
@@ -24,17 +22,17 @@ class SitemapController:
 
     def __init__(self):
         if SitemapController.__instance is not None:
-            raise Exception(ErrorMessages.M_SINGLETON_EXCEPTION)
+            raise Exception(SitemapModelCommands.ErrorMessages.M_SINGLETON_EXCEPTION)
         else:
             SitemapController.__instance = self
-            self.mNoticeModel = SitemapModel()
+            self.__m_notice_model = SitemapModel()
 
     # External Request Callbacks
-    def invokeTrigger(self, pCommand, pData):
-        if pCommand == SitemapModelCommands.M_INIT:
-            mResponse, mStatus = self.mNoticeModel.invokeTrigger(SitemapModelCommands.M_INIT, pData)
-            if mStatus is False:
-                return render(None, constants.S_SITEMAP_WEBSITE_PATH, mResponse)
+    def invoke_trigger(self, p_command, p_data):
+        if p_command == SitemapModelCommands.M_INIT:
+            m_response, m_status = self.__m_notice_model.invoke_trigger(SitemapModelCommands.M_INIT, p_data)
+            if m_status is False:
+                return render(None, constants.S_TEMPLATE_SITEMAP_WEBSITE_PATH, m_response)
             else:
-                return HttpResponseRedirect(redirect_to=constants.S_NOTICE_WEBSITE_UPLOAD_SUCCESS + "&mData=" + mResponse[K_SITEMAP_SECRETKEY])
+                return HttpResponseRedirect(redirect_to=constants.S_TEMPLATE_NOTICE_WEBSITE_UPLOAD + "&mNoticeParamData=" + m_response[SitemapCallback.M_SECRETKEY])
 

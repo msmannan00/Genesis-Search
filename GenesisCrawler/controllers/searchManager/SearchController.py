@@ -1,17 +1,14 @@
-
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from GenesisCrawler.constants.constants import constants
-from GenesisCrawler.constants.enums import ErrorMessages
 from GenesisCrawler.controllers.searchManager.SearchControllerEnums import SearchModelCommands
 from GenesisCrawler.controllers.searchManager.SearchModel import SearchModel
-
 
 class SearchController:
 
     # Private Variables
     __instance = None
-    mSearchModel = None
+    __m_search_model = None
 
     # Initializations
     @staticmethod
@@ -22,21 +19,20 @@ class SearchController:
 
     def __init__(self):
         if SearchController.__instance is not None:
-            raise Exception(ErrorMessages.M_SINGLETON_EXCEPTION)
+            raise Exception(SearchModelCommands.ErrorMessages.M_SINGLETON_EXCEPTION)
         else:
             SearchController.__instance = self
-            self.mSearchModel = SearchModel()
+            self.__m_search_model = SearchModel()
 
     # External Request Callbacks
-    def invokeTrigger(self, pCommand, pData):
-        if pCommand == SearchModelCommands.M_INIT:
-            mStatus, m_response = self.mSearchModel.invokeTrigger(SearchModelCommands.M_INIT, pData)
-            if mStatus is True:
-                return render(None, constants.S_SEARCH_WEBSITE_PATH, m_response)
+    def invoke_trigger(self, p_command, p_data):
+        if p_command == SearchModelCommands.M_INIT:
+            m_status, m_response = self.__m_search_model.invoke_trigger(SearchModelCommands.M_INIT, p_data)
+            if m_status is True:
+                return render(None, constants.S_TEMPLATE_SEARCH_WEBSITE_PATH, m_response)
             else:
-                return HttpResponseRedirect(redirect_to=constants.S_NOTICE_WEBSITE_REPORT_SUCCESS)
+                return HttpResponseRedirect(redirect_to=constants.S_TEMPLATE_PARENT)
         else:
             m_response = None
 
         return m_response
-

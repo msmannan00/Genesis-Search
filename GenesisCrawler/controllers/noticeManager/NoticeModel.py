@@ -1,35 +1,25 @@
 from GenesisCrawler.constants import strings
-from GenesisCrawler.constants.keys import *
 from GenesisCrawler.controllers.noticeManager.NoticeControllerEnums import *
+from GenesisCrawler.controllers.noticeManager.NoticeSessionController import NoticeSessionController
+from GenesisCrawler.controllers.sharedModel.RequestHandler import RequestHandler
 
 
-class NoticeModel:
+class NoticeModel(RequestHandler):
 
     # Private Variables
     __instance = None
+    __m_session = None
 
     # Initializations
     def __init__(self):
-        pass
+        self.__m_session = NoticeSessionController()
 
+    def __init_page(self, p_data):
+        m_context, m_status = self.__m_session.invoke_trigger(NoticeSessionCommands.M_INIT, [p_data])
 
-    def onInitPage(self, pData):
+        return m_context, m_status
 
-        mContext = {
-            K_NOTICE_HEADER: strings.S_GENERAL_EMPTY,
-            K_NOTICE_DATA: strings.S_GENERAL_EMPTY,
-        }
-
-        if K_NOTICE_PARAM_DATA in pData.GET:
-            mContext[K_NOTICE_DATA] = pData.GET[K_NOTICE_PARAM_DATA]
-
-        if K_NOTICE_PARAM_HEADER in pData.GET:
-            mContext[K_NOTICE_HEADER] = pData.GET[K_NOTICE_PARAM_HEADER]
-            return mContext, True
-        else:
-            return mContext, False
-
-    # External Request Callbacks
-    def invokeTrigger(self, pCommand, pData):
-        if pCommand == NoticeModelCommands.M_INIT:
-            return self.onInitPage(pData)
+    # External Request Handler
+    def invoke_trigger(self, p_command, p_data):
+        if p_command == NoticeModelCommands.M_INIT:
+            return self.__init_page(p_data)

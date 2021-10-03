@@ -26,6 +26,7 @@ urlpatterns = [
     path('notice/', views.notice),
     path('sitemap/', views.sitemap),
     path('secretkey/', views.secretkey),
+    path('directory/', views.directory),
     path('search/', views.search),
     path('', views.index),
 ]
