@@ -1,6 +1,6 @@
 
 from django.shortcuts import render
-from GenesisCrawler.constants.constants import constants
+from GenesisCrawler.constants.constant import constants
 from GenesisCrawler.controllers.directoryManager.DirectoryControllerEnums import DirectoryModelCommands
 from GenesisCrawler.controllers.directoryManager.DirectoryModel import DirectoryModel
 from GenesisCrawler.controllers.sharedModel.RequestHandler import RequestHandler

@@ -1,6 +1,6 @@
 
 from GenesisCrawler.constants import strings
-from GenesisCrawler.constants.constants import constants
+from GenesisCrawler.constants.constant import constants
 from GenesisCrawler.constants.enums import MongoDBCommands, TFIDFCommands
 from GenesisCrawler.controllers.dataManager.TfIdfManager.TfIdfController import TfIdfController
 from GenesisCrawler.controllers.dataManager.mongoDBManager.MongoDBController import MongoDBController

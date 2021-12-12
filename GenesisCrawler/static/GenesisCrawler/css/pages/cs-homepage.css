@@ -126,7 +126,7 @@
     padding-top: 14px;
     padding-bottom: 14px;
 	margin: 70px auto 50px;
-	width: 89.5%;
+	width: 65%;
 }
 .home__reference_container{
 	margin-top: 40px;
@@ -254,6 +254,7 @@
 		visibility: hidden;
 		height: 0;
 		width: 0;
+		margin-bottom: -40px;
 	}
     .home__search-button {
 		visibility: hidden;

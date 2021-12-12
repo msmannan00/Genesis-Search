@@ -1,6 +1,6 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from GenesisCrawler.constants.constants import constants
+from GenesisCrawler.constants.constant import constants
 from GenesisCrawler.controllers.noticeManager.NoticeControllerEnums import NoticeModelCommands
 from GenesisCrawler.controllers.noticeManager.NoticeModel import NoticeModel
 

@@ -3,7 +3,7 @@ import pymongo
 from bson import ObjectId
 
 from GenesisCrawler.constants import strings
-from GenesisCrawler.constants.constants import constants
+from GenesisCrawler.constants.constant import constants
 from GenesisCrawler.constants.enums import MongoDBCommands
 from GenesisCrawler.controllers.sitemapManager.sitemapControllerEnums import SitemapParam
 

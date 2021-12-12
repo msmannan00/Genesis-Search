@@ -26,6 +26,7 @@
 {
     clear: left;
     margin-left: 12px;
+    padding: 0;
 }
 .search__no-suggestion--item
 {

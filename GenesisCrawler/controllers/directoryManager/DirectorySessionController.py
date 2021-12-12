@@ -1,4 +1,4 @@
-from GenesisCrawler.constants.constants import constants
+from GenesisCrawler.constants.constant import constants
 from GenesisCrawler.controllers.directoryManager.DirectoryControllerEnums import DirectoryParam, DirectoryCallback, DirectorySessionCommands
 from GenesisCrawler.controllers.directoryManager.directoryModel.queryModel import QueryModel
 from GenesisCrawler.controllers.sharedModel.RequestHandler import RequestHandler

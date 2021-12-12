@@ -5,28 +5,36 @@
     <div class="search-result__status disable-highlight" >About {{mSearchCallbackResultCount}} results found</div>
 {% endif %}
 
-<!-- safe search -->
-{% if mSearchCallbackSaveSearch == 'False' %}
-    <a class="search-result__safe-search-container search-result__safe-search-container--danger" style="text-decoration: none" href="./?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=True">
-        <label class="search-result__safe-search">
-            <label class="search-result__safe-search--label"> Save Search </label>
-        </label>
-        <label class="switch"><span class="slider round"></span></label>
-    </a>
-{% else %}
-    <a class="search-result__safe-search-container search-result__safe-search-container--normal" style="text-decoration: none" href="./?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=False">
-        <label class="search-result__safe-search">
-            <label class="search-result__safe-search--label"> Save Search </label>
-        </label>
-        <label class="switch"><span class="slider-checked round"></span></label>
-    </a>
-{% endif %}
-
 <!-- spelling error -->
 {% if mSearchCallbackQueryError != '' %}
-    <br><h6 class="search-result__query-error--container"><span class="search-result__query-error--header">Did you mean: </span><span class="search-result__query-error--info"><a href="./?q={{mSearchCallbackQueryError}}">{{mSearchCallbackQueryError}}</a></span></h6>
+    <h6 class="search-result__query-error--container"><span class="search-result__query-error--header">Did you mean: </span><span class="search-result__query-error--info"><a href="./?q={{mSearchCallbackQueryError}}">{{mSearchCallbackQueryError}}</a></span></h6>
+{% endif %}
+
+<!-- safe search -->
+{% if mSearchCallbackSaveSearch == 'False' %}
+    <br><br>
+    <a class="search-result__safe-search-container search-result__safe-search-container--border search-result__safe-search-container--non-interactable" style="text-decoration: none" href="./?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=True">
+        <label class="search-result__safe-search search-result__safe-search--info">
+            <label class="search-result__safe-search--label"> Safe Search </label>
+        </label>
+    </a>
+    <a class="search-result__safe-search-container search-result__safe-search-container--switch search-result__safe-search-container--danger" style="text-decoration: none" href="./?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=True">
+        <label class="search-result__safe-search search-result__safe-search--switch">
+            <label class="search-result__safe-search--label"> Disabled </label>
+        </label>
+    </a>
 {% else %}
-    <br>
+    <br><br>
+    <a class="search-result__safe-search-container search-result__safe-search-container--border search-result__safe-search-container--non-interactable" style="text-decoration: none" href="./?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=False">
+        <label class="search-result__safe-search search-result__safe-search--info">
+            <label class="search-result__safe-search--label"> Safe Search </label>
+        </label>
+    </a>
+    <a class="search-result__safe-search-container search-result__safe-search-container--switch search-result__safe-search-container--normal" style="text-decoration: none" href="./?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=False">
+        <label class="search-result__safe-search search-result__safe-search--switch">
+            <label class="search-result__safe-search--label"> Enabled </label>
+        </label>
+    </a>
 {% endif %}
 
 <!-- no search results -->
@@ -74,16 +82,26 @@
 {% else %}
 
     <!-- search content file based -->
+    <div style="width: 100%;padding: 10px">
+        <a href="{{mDoc.mSearchCallbackRelevantDocumentURL}}"><img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/7D6A/production/_120660123_frenchsub.jpg" class="search-file__item" alt=""></a>
+        <div style="clear: left"></div>
+        <!-- <hr class="search-file__item-divider"> -->
+        <div class="search-file__info_container">
+            <label class="search-file__item-header">USA Submarine</label><br>
+            <label class="search-file__item-url"><i class="fas fa-globe search-file__item-url--icon"></i>Ahmia.+66qfi</label>
+        </div>
+    </div>
+
     <div class="search-file__reference_container">
 
             {% for mDoc in mSearchCallbackRelevantDocument %}
             <div style="float: left" class="search-file__item-container">
                 <a href="{{mDoc.mSearchCallbackRelevantDocumentURL}}"><img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/7D6A/production/_120660123_frenchsub.jpg" class="search-file__item" alt=""></a>
                 <div style="clear: left"></div>
-                <hr class="search-file__item-divider">
+                <!-- <hr class="search-file__item-divider"> -->
                 <div class="search-file__info_container">
                     <label class="search-file__item-header">{{mDoc.mSearchCallbackRelevantDocumentTitle}}</label><br>
-                    <label class="search-file__item-url">{{mDoc.mSearchCallbackRelevantDocumentURL}}</label>
+                    <label class="search-file__item-url"><i class="fas fa-globe search-file__item-url--icon"></i>{{mDoc.mSearchCallbackRelevantDocumentURL}}</label>
                 </div>
             </div>
         {% endfor %}

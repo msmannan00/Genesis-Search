@@ -1,6 +1,6 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from GenesisCrawler.constants.constants import constants
+from GenesisCrawler.constants.constant import constants
 from GenesisCrawler.controllers.searchManager.SearchControllerEnums import SearchModelCommands
 from GenesisCrawler.controllers.searchManager.SearchModel import SearchModel
 

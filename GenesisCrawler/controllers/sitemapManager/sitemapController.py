@@ -2,7 +2,7 @@ import json
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from GenesisCrawler.constants.constants import constants
+from GenesisCrawler.constants.constant import constants
 from GenesisCrawler.controllers.sitemapManager.sitemapControllerEnums import SitemapModelCommands, SitemapCallback
 from GenesisCrawler.controllers.sitemapManager.sitemapModel import SitemapModel
 

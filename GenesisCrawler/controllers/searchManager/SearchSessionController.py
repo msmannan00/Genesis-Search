@@ -1,5 +1,5 @@
 from GenesisCrawler.constants import strings
-from GenesisCrawler.constants.constants import constants
+from GenesisCrawler.constants.constant import constants
 from GenesisCrawler.controllers.helperManager.helperController import HelperController
 from GenesisCrawler.controllers.searchManager.SearchControllerEnums import SearchSessionCommands, SearchParam, SearchCallback, SearchDocumentCallback
 from GenesisCrawler.controllers.searchManager.searchModel.queryModel import QueryModel

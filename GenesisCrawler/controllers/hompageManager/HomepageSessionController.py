@@ -1,4 +1,4 @@
-from GenesisCrawler.constants.constants import constants
+from GenesisCrawler.constants.constant import constants
 from GenesisCrawler.controllers.helperManager.helperController import HelperController
 from GenesisCrawler.controllers.hompageManager.HomepageEnums import HomepageCallback, HomepageSessionCommands
 from GenesisCrawler.controllers.sharedModel.RequestHandler import RequestHandler

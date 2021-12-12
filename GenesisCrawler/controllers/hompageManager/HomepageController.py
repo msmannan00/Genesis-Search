@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from GenesisCrawler.constants.constants import constants
+
+from GenesisCrawler.constants.constant import constants
 from GenesisCrawler.controllers.hompageManager.HomepageEnums import HomepageModelCommands
 from GenesisCrawler.controllers.hompageManager.HomepageModel import HomepageModel
 

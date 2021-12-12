@@ -38,6 +38,10 @@ class HelperController:
         else:
             parsed_uri = urlparse(p_url)
             result = '{uri.scheme}://{uri.netloc}/'.format(uri=parsed_uri)
+
+            url = re.compile(r"https?://(www\.)?")
+            result = url.sub('', result).strip().strip('/')
+
             return result
 
     @staticmethod

@@ -1,7 +1,7 @@
 from autocorrect import Speller
 
 from GenesisCrawler.constants import strings
-from GenesisCrawler.constants.constants import constants
+from GenesisCrawler.constants.constant import constants
 from GenesisCrawler.controllers.searchManager.SearchControllerEnums import SearchModelSpellCheckerCommands
 from GenesisCrawler.controllers.sharedModel.RequestHandler import RequestHandler
 

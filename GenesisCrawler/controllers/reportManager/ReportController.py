@@ -1,7 +1,7 @@
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from GenesisCrawler.constants.constants import constants
+from GenesisCrawler.constants.constant import constants
 from GenesisCrawler.controllers.reportManager.ReportControllerEnums import ReportModelCommands
 from GenesisCrawler.controllers.reportManager.ReportModel import ReportModel
 from GenesisCrawler.controllers.sharedModel.RequestHandler import RequestHandler
