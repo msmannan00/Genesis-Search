@@ -47,16 +47,24 @@ class MongoDBController:
             return None
 
     def __get_service_by_token(self, p_tokens_list, p_query_model):
+
         m_collection = self.__m_connection[constants.S_MONGO_DATABASE_SEARCH_DOCUMENT_NAME]
 
         m_word_filter = []
 
         for m_tokens in p_tokens_list:
-            m_word_filter.append({"m_score." + m_tokens: {"$exists": True}})
+            m_word_filter.append({"m_uniary_tfidf_score." + m_tokens: {"$exists": True}})
 
         m_filter = []
+        m_safe_search_status = p_query_model.get_safe_search_status()
+
+
         if p_query_model.get_search_type() != "all":
             m_filter.append({"$match": {'m_content_type': {"$eq": p_query_model.get_search_type_mapped()[0], }}})
+        elif m_safe_search_status is 'True':
+            m_filter.append({"$match": {'m_content_type': {"$ne": 'a', }}})
+
+
         m_filter.append({"$match": {"$or":m_word_filter}})
 
         mResult = m_collection.aggregate(m_filter)

@@ -13,24 +13,24 @@
 <!-- safe search -->
 {% if mSearchCallbackSaveSearch == 'False' %}
     <br><br>
-    <a class="search-result__safe-search-container search-result__safe-search-container--border search-result__safe-search-container--non-interactable" style="text-decoration: none" href="./?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=True">
+    <a class="search-result__safe-search-container search-result__safe-search-container--border search-result__safe-search-container--non-interactable" style="text-decoration: none" href="./?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=True&pSearchParamType={{mSearchCallbackRelevantSearchType}}">
         <label class="search-result__safe-search search-result__safe-search--info">
             <label class="search-result__safe-search--label"> Safe Search </label>
         </label>
     </a>
-    <a class="search-result__safe-search-container search-result__safe-search-container--switch search-result__safe-search-container--danger" style="text-decoration: none" href="./?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=True">
+    <a class="search-result__safe-search-container search-result__safe-search-container--switch search-result__safe-search-container--danger" style="text-decoration: none" href="./?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=True&pSearchParamType={{mSearchCallbackRelevantSearchType}}">
         <label class="search-result__safe-search search-result__safe-search--switch">
             <label class="search-result__safe-search--label"> Disabled </label>
         </label>
     </a>
 {% else %}
     <br><br>
-    <a class="search-result__safe-search-container search-result__safe-search-container--border search-result__safe-search-container--non-interactable" style="text-decoration: none" href="./?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=False">
+    <a class="search-result__safe-search-container search-result__safe-search-container--border search-result__safe-search-container--non-interactable" style="text-decoration: none" href="./?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=False&pSearchParamType={{mSearchCallbackRelevantSearchType}}">
         <label class="search-result__safe-search search-result__safe-search--info">
             <label class="search-result__safe-search--label"> Safe Search </label>
         </label>
     </a>
-    <a class="search-result__safe-search-container search-result__safe-search-container--switch search-result__safe-search-container--normal" style="text-decoration: none" href="./?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=False">
+    <a class="search-result__safe-search-container search-result__safe-search-container--switch search-result__safe-search-container--normal" style="text-decoration: none" href="./?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=False&pSearchParamType={{mSearchCallbackRelevantSearchType}}">
         <label class="search-result__safe-search search-result__safe-search--switch">
             <label class="search-result__safe-search--label"> Enabled </label>
         </label>
@@ -43,13 +43,45 @@
 {% endif %}
 
 <!-- search content -->
-{% if mSearchCallbackRelevantSearchType == 'all' %}
+{% if mSearchCallbackRelevantSearchType == 'all' or mSearchCallbackRelevantSearchType == 'news' or mSearchCallbackRelevantSearchType == 'finance' %}
 
     <!-- search content url based -->
     {% for mDoc in mSearchCallbackRelevantDocument %}
 
         {% if forloop.counter == 3 and mSearchCallbackRelevantDocument|length > 3 %}
             {% include 'GenesisCrawler\blades\search_template\blade_search_engine_suggestion.html' %}
+        {% endif %}
+
+        {% if forloop.counter == 6 and mSearchCallbackRelevantBusiness|length > 1 %}
+            <ul class="list-group search-engine-highlights">
+              {% for mDoc in mSearchCallbackRelevantBusiness %}
+                <a class="search-engine-highlights-item" href="{{mDoc.mSearchCallbackRelevantDocumentURL}}">
+                  {{mDoc.mSearchCallbackRelevantDocumentTitle}}
+                </a>
+              {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if forloop.counter == 10 and mSearchCallbackRelevantNews|length > 1 %}
+            <ul class="list-group search-engine-highlights">
+              {% for mDoc in mSearchCallbackRelevantNews %}
+                <a class="search-engine-highlights-item" href="{{mDoc.mSearchCallbackRelevantDocumentURL}}">
+                  {{mDoc.mSearchCallbackRelevantDocumentTitle}}
+                </a>
+              {% endfor %}
+            </ul>
+        {% endif %}
+
+
+        {% if forloop.counter == 10 and mSearchCallbackRelevantDocumentFiles|length > 1 %}
+            <hr class="search-engine-suggestion__catagory-divider">
+            <div class="row search-engine-highlights--images-header">
+                <div class="col">
+                  {% for mDoc in mSearchCallbackRelevantDocumentFiles %}
+                    <a href="{{mDoc.mSearchCallbackRelevantDocumentURL}}"> <img class="search-engine-highlights--images" src="{% static 'GenesisCrawler/images/img_download.png' %}" alt=""> </a>
+                  {% endfor %}
+                </div>
+            </div>
         {% endif %}
 
         <a href="{% if mDoc.mSearchCallbackRelevantSearchType == 'I' %}#search-content__danger-popup{% else %}{{mDoc.mSearchCallbackRelevantDocumentURL}}{% endif %}">
@@ -82,23 +114,29 @@
 {% else %}
 
     <!-- search content file based -->
-    <div style="width: 100%;padding: 10px">
-        <a href="{{mDoc.mSearchCallbackRelevantDocumentURL}}"><img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/7D6A/production/_120660123_frenchsub.jpg" class="search-file__item" alt=""></a>
-        <div style="clear: left"></div>
-        <!-- <hr class="search-file__item-divider"> -->
-        <div class="search-file__info_container">
-            <label class="search-file__item-header">USA Submarine</label><br>
-            <label class="search-file__item-url"><i class="fas fa-globe search-file__item-url--icon"></i>Ahmia.+66qfi</label>
-        </div>
-    </div>
-
     <div class="search-file__reference_container">
+        {% for mDoc in mSearchCallbackRelevantDocument %}
 
-            {% for mDoc in mSearchCallbackRelevantDocument %}
+            <div id="search-content__danger-popup" class="overlay">
+                <div class="search-content__danger-popup-container" >
+                    <div class="content">
+                        <div class="search-content__info-danger-container">
+                            <p class="search-content__info-danger-header">Threat Found</p>
+                            <p class="search-content__info-danger-body">Illegal content such as <b class="search-content__info-danger-porn">Porn</b> detected in requsted URL. Please be caution and select the steps below.</p>
+                        </div><br><br>
+                        <div class="search-content__danger-button-container">
+                            <a href="{{mDoc.mSearchCallbackRelevantDocumentURL}}" target="_blank" style="text-decoration: none;"><button class="search-content__danger-button search-content__danger-button-auto">Open Image</button></a>
+                            <a href="../report?pReportParamURL={{mDoc.mSearchCallbackRelevantDocumentURL}}" style="text-decoration: none;"><button class="search-content__danger-button search-content__danger-button-top" >Report URL</button></a>
+                            <a href="#" style="text-decoration: none;"><button class="search-content__danger-button search-content__danger-button-top" >Go Back</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div style="float: left" class="search-file__item-container">
-                <a href="{{mDoc.mSearchCallbackRelevantDocumentURL}}"><img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/7D6A/production/_120660123_frenchsub.jpg" class="search-file__item" alt=""></a>
+                <a href="{% if mDoc.mSearchCallbackRelevantSearchType == 'a' %}#search-content__danger-popup{% else %}{{mDoc.mSearchCallbackRelevantDocumentURL}} {% endif %}" target="{% if mDoc.mSearchCallbackRelevantSearchType != 'a' %} _blank {% endif %}" ><img src="{{mDoc.mSearchCallbackRelevantDocumentURL}}" class="search-file__item" alt=""></a>
                 <div style="clear: left"></div>
-                <!-- <hr class="search-file__item-divider"> -->
                 <div class="search-file__info_container">
                     <label class="search-file__item-header">{{mDoc.mSearchCallbackRelevantDocumentTitle}}</label><br>
                     <label class="search-file__item-url"><i class="fas fa-globe search-file__item-url--icon"></i>{{mDoc.mSearchCallbackRelevantDocumentURL}}</label>

@@ -20,6 +20,8 @@ class SearchCallback(str, enum.Enum):
     M_DOCUMENT = "mSearchCallbackRelevantDocument"
     M_TITLE = "mSearchCallbackRelevantDocumentTitle"
     M_URL = "mSearchCallbackRelevantDocumentURL"
+    M_IMAGE_TYPE = "m_type"
+    M_IMAGE_URL = "m_url"
     M_DESCRIPTION = "mSearchCallbackRelevantDocumentDescription"
     K_SEARCH_TYPE = "mSearchCallbackRelevantSearchType"
     M_MAX_PAGINATION = "mSearchCallbackMaxPagination"
@@ -28,13 +30,16 @@ class SearchCallback(str, enum.Enum):
     M_SAFE_SEARCH = "mSearchCallbackSaveSearch"
     M_CURRENT_PAGE_NUM = "mSearchCallbackCurrentPageNumber"
     M_RESULT_COUNT = "mSearchCallbackResultCount"
+    M_RELATED_BUSINESS_SITES = "mSearchCallbackRelevantBusiness"
+    M_RELATED_NEWS_SITES = "mSearchCallbackRelevantDocumentNews"
+    M_RELATED_FILES = "mSearchCallbackRelevantDocumentFiles"
 
 class SearchDocumentCallback(str, enum.Enum):
     M_TITLE = "m_title"
     M_URL = "m_url"
     M_DESCRIPTION = "m_description"
     M_CONTENT_TYPE = "m_content_type"
-    M_IMAGE = "m_image_url"
+    M_IMAGE = "m_images"
 
 class SearchModelSpellCheckerCommands(enum.Enum):
     M_CHECK_SPELLING = 1

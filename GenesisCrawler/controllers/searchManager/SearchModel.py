@@ -35,7 +35,10 @@ class SearchModel(RequestHandler):
         if p_query_model.get_page_number() > len(m_documents) / m_size:
             p_query_model.set_page_number(len(m_documents) / m_size)
 
-        m_best_list = m_documents[int(p_query_model.get_page_number())*m_size:int(p_query_model.get_page_number()) * m_size + m_size]
+        if p_query_model.get_page_number() == 1:
+            m_best_list = m_documents[int(p_query_model.get_page_number())*m_size:int(p_query_model.get_page_number()) * m_size + m_size + 20]
+        else:
+            m_best_list = m_documents[int(p_query_model.get_page_number()) * m_size:int(p_query_model.get_page_number()) * m_size + m_size]
         return m_best_list
 
     def __query_results(self, p_data):

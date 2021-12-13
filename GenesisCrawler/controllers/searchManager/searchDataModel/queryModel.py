@@ -20,15 +20,15 @@ class QueryModel:
 
     def get_search_type_mapped(self):
         if self.__m_search_type == "all":
-            return "G"
+            return "a"
         if self.__m_search_type == "images":
-            return "G"
+            return "g"
         if self.__m_search_type == "doc":
-            return "D"
+            return "d"
         if self.__m_search_type == "finance":
-            return "F"
+            return "b"
         if self.__m_search_type == "news":
-            return "N"
+            return "n"
         return self.__m_search_type
 
     def get_page_number(self):

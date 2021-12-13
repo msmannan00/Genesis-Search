@@ -58,10 +58,10 @@ class TfIdfController:
 
             for m_word in p_search:
                 if m_document['_id'] not in m_tf_score:
-                    if m_word not in m_document['m_score']:
+                    if m_word not in m_document['m_uniary_tfidf_score']:
                         m_binary_counter += 1
                         continue
-                    m_tf_score[str(m_document['_id'])][m_word] = float(m_document['m_score'][m_word])
+                    m_tf_score[str(m_document['_id'])][m_word] = float(m_document['m_uniary_tfidf_score'][m_word])
                     m_doc_to_url[str(m_document['_id'])] = HelperController.getHost(m_document['m_url'])
                     m_doc_to_title[str(m_document['_id'])] = m_document['m_title']
                     m_doc_to_desc[str(m_document['_id'])] = m_document['m_description']
@@ -81,10 +81,10 @@ class TfIdfController:
                         continue
 
                     m_binary_word = m_word + " " + p_search[m_binary_counter]
-                    if m_binary_word not in m_document['m_binary_score']:
+                    if m_binary_word not in m_document['m_binary_tfidf_score']:
                         continue
 
-                    m_tf_score[str(m_document['_id'])][m_binary_word] = float(m_document['m_binary_score'][m_binary_word])
+                    m_tf_score[str(m_document['_id'])][m_binary_word] = float(m_document['m_binary_tfidf_score'][m_binary_word])
 
                     m_binary_counter+=1
                     if m_binary_word in m_idf_score:

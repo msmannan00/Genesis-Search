@@ -2,7 +2,7 @@ from GenesisCrawler.constants import strings
 from GenesisCrawler.constants.constant import constants
 from GenesisCrawler.controllers.helperManager.helperController import HelperController
 from GenesisCrawler.controllers.searchManager.SearchControllerEnums import SearchSessionCommands, SearchParam, SearchCallback, SearchDocumentCallback
-from GenesisCrawler.controllers.searchManager.searchModel.queryModel import QueryModel
+from GenesisCrawler.controllers.searchManager.searchDataModel.queryModel import QueryModel
 from GenesisCrawler.controllers.sharedModel.RequestHandler import RequestHandler
 
 
@@ -31,19 +31,57 @@ class SearchSessionController(RequestHandler):
 
     def __init_parameters(self, p_document_list, p_search_model):
         mRelevanceContextList = []
+        mRelatedBusinessList = []
+        mRelatedNewsList = []
+        mRelatedFilesList = []
 
+        m_links_counter=0
         for m_document in p_document_list:
-            if p_search_model.get_search_type() != strings.S_SEARCH_CONTENT_TYPE_IMAGE or len(m_document[SearchDocumentCallback.M_IMAGE]) > 0:
+            m_links_counter+=1
+            if p_search_model.get_search_type() != strings.S_SEARCH_CONTENT_TYPE_IMAGE:
                 mRelevanceContext = {
                     SearchCallback.M_TITLE: m_document[SearchDocumentCallback.M_TITLE],
                     SearchCallback.M_URL: m_document[SearchDocumentCallback.M_URL],
                     SearchCallback.M_DESCRIPTION: m_document[SearchDocumentCallback.M_DESCRIPTION][0:230] + strings.S_GENERAL_CONTENT_CONTINUE,
                     SearchCallback.K_SEARCH_TYPE: m_document[SearchDocumentCallback.M_CONTENT_TYPE],
                 }
-                if p_search_model.get_search_type() == strings.S_SEARCH_CONTENT_TYPE_IMAGE:
-                    mRelevanceContext[SearchCallback.M_URL] = HelperController.getHost(mRelevanceContext[SearchCallback.M_URL])
+
+                if p_search_model.get_page_number() == 1:
+                    m_images = m_document[SearchDocumentCallback.M_IMAGE]
+
+                    if m_links_counter > constants.S_SETTINGS_SEARCHED_DOCUMENT_SIZE:
+                        if m_document[SearchDocumentCallback.M_CONTENT_TYPE] == 'b':
+                            if len(mRelatedBusinessList) < 4:
+                                mRelatedBusinessList.append(mRelevanceContext)
+                        elif m_document[SearchDocumentCallback.M_CONTENT_TYPE] == 'n':
+                            if len(mRelatedNewsList) < 4:
+                                mRelatedNewsList.append(mRelevanceContext)
+                        continue
+                    elif len(m_images)>0:
+                        if len(mRelatedFilesList) < 4:
+                            m_url = mRelevanceContext[SearchCallback.M_URL]
+                            mRelevanceContext[SearchCallback.M_URL] = m_images[0][SearchCallback.M_IMAGE_URL]
+                            mRelatedFilesList.append(mRelevanceContext)
+                            mRelevanceContext[SearchCallback.M_URL] = m_url
 
                 mRelevanceContextList.append(mRelevanceContext)
+
+            elif p_search_model.get_search_type() == strings.S_SEARCH_CONTENT_TYPE_IMAGE:
+                mRelevanceContext = {
+                    SearchCallback.M_TITLE: m_document[SearchDocumentCallback.M_TITLE],
+                    SearchCallback.K_SEARCH_TYPE: m_document[SearchDocumentCallback.M_CONTENT_TYPE],
+                }
+                m_counter=0
+                for m_image_file in m_document[SearchDocumentCallback.M_IMAGE]:
+                    m_counter+=1
+                    if m_counter>4:
+                        break
+                    mRelevanceContext[SearchCallback.M_URL] = m_image_file[SearchCallback.M_IMAGE_URL]
+                    if mRelevanceContext[SearchCallback.K_SEARCH_TYPE] != 'a':
+                        mRelevanceContext[SearchCallback.K_SEARCH_TYPE] = m_image_file[SearchCallback.M_IMAGE_TYPE]
+
+                    if p_search_model.get_safe_search_status() == 'False' or p_search_model.get_safe_search_status() == 'True' and mRelevanceContext[SearchCallback.K_SEARCH_TYPE] != 'a':
+                        mRelevanceContextList.append(mRelevanceContext)
 
         if p_search_model.get_page_number()<=3:
             min_range = 1
@@ -81,15 +119,16 @@ class SearchSessionController(RequestHandler):
             SearchCallback.M_DOCUMENT: mRelevanceContextList,
             SearchCallback.M_PAGE_NUM: m_range,
             SearchCallback.M_MAX_PAGINATION: m_max_page_reached,
-            SearchCallback.M_RESULT_COUNT: strings.S_GENERAL_EMPTY
+            SearchCallback.M_RESULT_COUNT: strings.S_GENERAL_EMPTY,
+            SearchCallback.M_RELATED_BUSINESS_SITES: mRelatedBusinessList,
+            SearchCallback.M_RELATED_NEWS_SITES: mRelatedNewsList,
+            SearchCallback.M_RELATED_FILES: mRelatedFilesList
         }
 
-        if p_search_model.get_total_documents() > constants.S_SETTINGS_MAX_DOCUMENT_SHOWN_LENGTH:
+        if p_search_model.get_total_documents() - p_search_model.get_page_number() * constants.S_SETTINGS_MAX_DOCUMENT_SHOWN_LENGTH>constants.S_SETTINGS_SEARCHED_DOCUMENT_SIZE:
             mContext[SearchCallback.M_RESULT_COUNT] = HelperController.onCreateRandomSearchCount(p_search_model.get_total_documents())
         else:
             mContext[SearchCallback.M_RESULT_COUNT] = p_search_model.get_total_documents()
-
-
 
         return mContext, m_status
 
