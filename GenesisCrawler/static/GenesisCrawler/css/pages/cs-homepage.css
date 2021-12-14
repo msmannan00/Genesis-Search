@@ -125,8 +125,8 @@
     border-radius: 5px;
     padding-top: 14px;
     padding-bottom: 14px;
-	margin: 70px auto 50px;
-	width: 65%;
+	margin: 10px auto 50px;
+	width: 89%;
 }
 .home__reference_container{
 	margin-top: 40px;
@@ -249,6 +249,7 @@
 	}
 	.home__searchbox {
 		margin-top: 30px;
+		border-bottom: 3px solid #ffe0b3;
     }
 	.home__search-button-container{
 		visibility: hidden;

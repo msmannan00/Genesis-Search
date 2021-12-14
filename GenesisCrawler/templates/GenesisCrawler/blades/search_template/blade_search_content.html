@@ -78,20 +78,22 @@
             <div class="row search-engine-highlights--images-header">
                 <div class="col">
                   {% for mDoc in mSearchCallbackRelevantDocumentFiles %}
-                    <a href="{{mDoc.mSearchCallbackRelevantDocumentURL}}"> <img class="search-engine-highlights--images" src="{% static 'GenesisCrawler/images/img_download.png' %}" alt=""> </a>
+                    <a class="text-decoration-none" href="{{mDoc.mSearchCallbackRelevantDocumentURL}}"> <img class="search-engine-highlights--images" src="{% static 'GenesisCrawler/images/img_download.png' %}" alt=""> </a>
                   {% endfor %}
                 </div>
             </div>
         {% endif %}
 
-        <a href="{% if mDoc.mSearchCallbackRelevantSearchType == 'I' %}#search-content__danger-popup{% else %}{{mDoc.mSearchCallbackRelevantDocumentURL}}{% endif %}">
-            <div class="search-result__content-webpages {% if mDoc.mSearchCallbackRelevantSearchType == 'I' %}search-result__content-webpages--danger{% else %}search-result__content-webpages--normal{% endif %}">
-                <label class="search-content__webpages-header">{{mDoc.mSearchCallbackRelevantDocumentTitle}}</label><br>
-                <label class="search-content__webpages-url">{{mDoc.mSearchCallbackRelevantDocumentURL}}</label><br>
-                <hr class="search-content__webpages-divider">
-                <label class="search-content__webpages-description">{{mDoc.mSearchCallbackRelevantDocumentDescription}}</label>
-            </div>
-        </a>
+        <div class="search-result__content-webpages--container">
+            <a href="{% if mDoc.mSearchCallbackRelevantSearchType == 'I' %}#search-content__danger-popup{% else %}{{mDoc.mSearchCallbackRelevantDocumentURL}}{% endif %}">
+                <div class="search-result__content-webpages {% if mDoc.mSearchCallbackRelevantSearchType == 'I' %}search-result__content-webpages--danger{% else %}search-result__content-webpages--normal{% endif %}">
+                    <label class="search-content__webpages-header">{{mDoc.mSearchCallbackRelevantDocumentTitle}}</label><br>
+                    <label class="search-content__webpages-url">{{mDoc.mSearchCallbackRelevantDocumentURL}}</label><br>
+                    <hr class="search-content__webpages-divider">
+                    <label class="search-content__webpages-description">{{mDoc.mSearchCallbackRelevantDocumentDescription}}</label>
+                </div>
+            </a>
+        </div>
 
         <div id="search-content__danger-popup" class="overlay">
             <div class="search-content__danger-popup-container" >
@@ -133,15 +135,17 @@
                 </div>
             </div>
 
-
             <div style="float: left" class="search-file__item-container">
-                <a href="{% if mDoc.mSearchCallbackRelevantSearchType == 'a' %}#search-content__danger-popup{% else %}{{mDoc.mSearchCallbackRelevantDocumentURL}} {% endif %}" target="{% if mDoc.mSearchCallbackRelevantSearchType != 'a' %} _blank {% endif %}" ><img src="{{mDoc.mSearchCallbackRelevantDocumentURL}}" class="search-file__item" alt=""></a>
+                <a href="{% if mDoc.mSearchCallbackRelevantSearchType == 'a' %}#search-content__danger-popup{% else %}{{mDoc.mSearchCallbackRelevantDocumentURL}} {% endif %}" target="{% if mDoc.mSearchCallbackRelevantSearchType != 'a' %} _blank {% endif %}" >
+                    <img src="{% if mDoc.mSearchCallbackRelevantSearchType == 'a' %} {% static 'GenesisCrawler/images/blurredImage/blur-1.png' %} {% else %} mDoc.mSearchCallbackRelevantDocumentURL {% endif %}" class="search-file__item" alt="">
+                </a>
                 <div style="clear: left"></div>
                 <div class="search-file__info_container">
                     <label class="search-file__item-header">{{mDoc.mSearchCallbackRelevantDocumentTitle}}</label><br>
                     <label class="search-file__item-url"><i class="fas fa-globe search-file__item-url--icon"></i>{{mDoc.mSearchCallbackRelevantDocumentURL}}</label>
                 </div>
             </div>
+
         {% endfor %}
     </div>
     <div style="clear: left"></div>

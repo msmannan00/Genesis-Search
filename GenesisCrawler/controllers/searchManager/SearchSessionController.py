@@ -58,7 +58,7 @@ class SearchSessionController(RequestHandler):
                                 mRelatedNewsList.append(mRelevanceContext)
                         continue
                     elif len(m_images)>0:
-                        if len(mRelatedFilesList) < 4:
+                        if len(mRelatedFilesList) < 3:
                             m_url = mRelevanceContext[SearchCallback.M_URL]
                             mRelevanceContext[SearchCallback.M_URL] = m_images[0][SearchCallback.M_IMAGE_URL]
                             mRelatedFilesList.append(mRelevanceContext)

@@ -12,18 +12,22 @@
 .search-engine-highlights{
     box-shadow : none;
     cursor: pointer;
-    border: 0;
+    border-left: 4px solid #80bfff;
     max-width: 650px;
     border-radius: 8px !important;
     margin: 14px 13px 30px 6.8em !important;
 }
 .search-engine-highlights--images-header{
     max-width: 650px;
-    width: 100%;
-    margin-left: 5.5em !important;
     margin-bottom: 30px;
     display: block;
-
+    background: #f9f9f9;
+    border-left: 4px solid #80bfff;
+    margin-top: -20px;
+    padding: 10px 0 5px;
+    width: 95%;
+    border-radius: 8px;
+    margin-left: 15px !important;
 }
 .search-engine-highlights--images{
     box-shadow : none;
@@ -31,10 +35,17 @@
     width: 90px;
     height: 90px;
     padding: 10px 15px;
+    border: 1px solid #e6e6e6;
     margin-left: 5px;
     margin-bottom: 5px;
+    text-decoration: none !important;
     background: #f5f5f5;
     border-radius: 8px;
+}
+.search-engine-highlights--images:hover{
+    -webkit-box-shadow: 0 0 4px 3px #f0f0f0;
+    -moz-box-shadow: 0 0 4px 3px #f0f0f0;
+    box-shadow: 0 0 4px 3px #f0f0f0;
 }
 .search-engine-highlights-item{
     height: 46px;
@@ -103,6 +114,11 @@
         visibility: initial;
     }
     .search-engine-highlights--images-header{
-        margin-left: -0.7em !important;
+        border-left: 4px solid #80bfff;
+        margin-left: 5px !important;
+        -webkit-box-shadow: 0 0 4px 3px #f0f0f0;
+        -moz-box-shadow: 0 0 4px 3px #f0f0f0;
+        box-shadow: 0 0 4px 3px #f0f0f0;
+
     }
 }

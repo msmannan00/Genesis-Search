@@ -170,13 +170,17 @@
     font-style: italic;
     cursor: pointer;
 }
+.search-result__content-webpages--container{
+    width: 100%;
+    max-width: 650px;
+    margin-left: 100px;
+}
 .search-result__content-webpages{
     box-shadow : none;
     cursor: pointer;
     max-width: 650px;
     padding: 10px;
     border-radius: 6px;
-    margin: 0 9px 0 6.3em;
     border: 1px solid #ffffff;
 }
 
@@ -432,6 +436,9 @@
         border: 0;
         margin: 2px 0 0;
         width: 100%;
+    }
+    .search-result__content-webpages--container{
+        margin-left: 0;
     }
 
 }
