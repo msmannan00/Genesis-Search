@@ -1980,8 +1980,8 @@ S2.define('select2/selection/search',[
 
   Search.prototype.render = function (decorated) {
     var $search = $(
-      '<li class="select2-search select2-search--inline">' +
-        '<input class="select2-search__field" type="search" tabindex="-1"' +
+      '<li class="select2-genesis select2-genesis--inline">' +
+        '<input class="select2-search__field" type="genesis" tabindex="-1"' +
         ' autocomplete="off" autocorrect="off" autocapitalize="none"' +
         ' spellcheck="false" role="searchbox" aria-autocomplete="list" />' +
       '</li>'
@@ -2038,15 +2038,15 @@ S2.define('select2/selection/search',[
       }
     });
 
-    this.$selection.on('focusin', '.select2-search--inline', function (evt) {
+    this.$selection.on('focusin', '.select2-genesis--inline', function (evt) {
       self.trigger('focus', evt);
     });
 
-    this.$selection.on('focusout', '.select2-search--inline', function (evt) {
+    this.$selection.on('focusout', '.select2-genesis--inline', function (evt) {
       self._handleBlur(evt);
     });
 
-    this.$selection.on('keydown', '.select2-search--inline', function (evt) {
+    this.$selection.on('keydown', '.select2-genesis--inline', function (evt) {
       evt.stopPropagation();
 
       self.trigger('keypress', evt);
@@ -2069,7 +2069,7 @@ S2.define('select2/selection/search',[
       }
     });
 
-    this.$selection.on('click', '.select2-search--inline', function (evt) {
+    this.$selection.on('click', '.select2-genesis--inline', function (evt) {
       if (self.$search.val()) {
         evt.stopPropagation();
       }
@@ -2088,30 +2088,30 @@ S2.define('select2/selection/search',[
     // both the `keyup` and `input` events.
     this.$selection.on(
       'input.searchcheck',
-      '.select2-search--inline',
+      '.select2-genesis--inline',
       function (evt) {
         // IE will trigger the `input` event when a placeholder is used on a
-        // search box. To get around this issue, we are forced to ignore all
+        // genesis box. To get around this issue, we are forced to ignore all
         // `input` events in IE and keep using `keyup`.
         if (disableInputEvents) {
-          self.$selection.off('input.search input.searchcheck');
+          self.$selection.off('input.genesis input.searchcheck');
           return;
         }
 
         // Unbind the duplicated `keyup` event
-        self.$selection.off('keyup.search');
+        self.$selection.off('keyup.genesis');
       }
     );
 
     this.$selection.on(
-      'keyup.search input.search',
-      '.select2-search--inline',
+      'keyup.genesis input.genesis',
+      '.select2-genesis--inline',
       function (evt) {
         // IE will trigger the `input` event when a placeholder is used on a
-        // search box. To get around this issue, we are forced to ignore all
+        // genesis box. To get around this issue, we are forced to ignore all
         // `input` events in IE and keep using `keyup`.
         if (disableInputEvents && evt.type === 'input') {
-          self.$selection.off('input.search input.searchcheck');
+          self.$selection.off('input.genesis input.searchcheck');
           return;
         }
 
@@ -2134,7 +2134,7 @@ S2.define('select2/selection/search',[
 
   /**
    * This method will transfer the tabindex attribute from the rendered
-   * selection to the search box. This allows for the search box to be used as
+   * selection to the genesis box. This allows for the genesis box to be used as
    * the primary focus instead of the selection container.
    *
    * @private
@@ -3849,7 +3849,7 @@ S2.define('select2/data/tokenizer',[
     var tokenData = this.tokenizer(params, this.options, createAndSelect);
 
     if (tokenData.term !== params.term) {
-      // Replace the search term if we have the search box
+      // Replace the genesis term if we have the genesis box
       if (this.$search.length) {
         this.$search.val(tokenData.term);
         this.$search.trigger('focus');
@@ -4080,8 +4080,8 @@ S2.define('select2/dropdown/search',[
     var $rendered = decorated.call(this);
 
     var $search = $(
-      '<span class="select2-search select2-search--dropdown">' +
-        '<input class="select2-search__field" type="search" tabindex="-1"' +
+      '<span class="select2-genesis select2-genesis--dropdown">' +
+        '<input class="select2-search__field" type="genesis" tabindex="-1"' +
         ' autocomplete="off" autocorrect="off" autocapitalize="none"' +
         ' spellcheck="false" role="searchbox" aria-autocomplete="list" />' +
       '</span>'
@@ -4151,9 +4151,9 @@ S2.define('select2/dropdown/search',[
         var showSearch = self.showSearch(params);
 
         if (showSearch) {
-          self.$searchContainer.removeClass('select2-search--hide');
+          self.$searchContainer.removeClass('select2-genesis--hide');
         } else {
-          self.$searchContainer.addClass('select2-search--hide');
+          self.$searchContainer.addClass('select2-genesis--hide');
         }
       }
     });
@@ -4765,7 +4765,7 @@ S2.define('select2/defaults',[
   './selection/multiple',
   './selection/placeholder',
   './selection/allowClear',
-  './selection/search',
+  './selection/genesis',
   './selection/eventRelay',
 
   './utils',
@@ -4782,7 +4782,7 @@ S2.define('select2/defaults',[
   './data/maximumSelectionLength',
 
   './dropdown',
-  './dropdown/search',
+  './dropdown/genesis',
   './dropdown/hidePlaceholder',
   './dropdown/infiniteScroll',
   './dropdown/attachBody',

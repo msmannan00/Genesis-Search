@@ -1,0 +1,31 @@
+{% load static %}
+{% include 'genesis\blades\blades_shared_initialization.html' %}
+{% include 'genesis\homepage\local_imports.html' %}
+
+<!--Local Imports-->
+<html lang="en">
+    <body class="gc--clear-selection"  onload="onLoad()">
+
+        <!-- top bar -->
+        {% include 'genesis\blades\home_template\blade_home_header.html' %}
+
+        <!-- side bar -->
+        {% if mHomepageCallbackIsMobile == False %}
+            {% include 'genesis\blades\home_template\blade_home_sidebar.html' %}
+        {% else %}
+            {% include 'genesis\blades\home_template\blade_home_sidebar_mobile.html' %}
+        {% endif %}
+
+        <!-- content -->
+        <div class="gc--clear-selection" >
+            <div class="home">
+                {% include 'genesis\blades\home_template\blade_home_search.html' %}
+                {% include 'genesis\blades\home_template\blade_home_references.html' %}
+            </div>
+        </div>
+
+        <!-- footer -->
+        {% include 'genesis\blades\shared_blades\blade_footer.html' %}
+
+    </body>
+</html>

@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'GenesisCrawler.apps.GenesisSearchConfig',
+    'genesis.apps.GenesisSearchConfig',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'Settings.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'GenesisCrawler/templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'genesis/templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -119,8 +119,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_ROOT = 'GenesisCrawler'
+STATIC_ROOT = 'genesis'
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = (os.path.join('GenesisCrawler\static'), )
+STATICFILES_DIRS = (os.path.join('genesis\static'), )
