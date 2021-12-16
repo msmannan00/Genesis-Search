@@ -230,5 +230,8 @@
         width: 300px;
         margin: auto;
     }
+    .footer__catagories--sitemap{
+        border-bottom: 4px solid whitesmoke;
+    }
 
 }

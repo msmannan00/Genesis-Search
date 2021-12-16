@@ -90,6 +90,10 @@
     width: 95%;
 }
 
+.footer__catagories--policy{
+    border-bottom: 4px solid whitesmoke;
+}
+
 /*Footer-bar Style*/
 
 @media only screen and (max-width: 943px) {

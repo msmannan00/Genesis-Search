@@ -13,6 +13,7 @@
     color: #0c5460;
     text-align: left;
     margin-right: 25px;
+
 }
 @media only screen and (max-width: 943px) {
     .onion__table--container{
@@ -20,7 +21,8 @@
     }
     .onion__table-category{
         color: #0c5460;
-        text-align: right;
+        text-align: left;
         margin-right: 25px;
+        border-left: 2px solid #ffe0b3;
     }
 }

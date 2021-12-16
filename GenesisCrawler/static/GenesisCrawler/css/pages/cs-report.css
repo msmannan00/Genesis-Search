@@ -201,5 +201,8 @@
         padding-left: 15px;
         padding-right: 20px;
     }
+    .footer__catagories--report{
+        border-bottom: 4px solid whitesmoke;
+    }
 
 }

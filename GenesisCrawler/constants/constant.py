@@ -1,7 +1,7 @@
 import os
 
 
-class constants:
+class CONSTANTS:
 
     # General URL
     S_GENERAL_DEFAULT_LANGUAGE = "en"
@@ -24,9 +24,6 @@ class constants:
     S_MONGO_DATABASE_NAME = 'genesis'
     S_MONGO_DATABASE_URL = 27017
     S_MONGO_DATABASE_IP = 'localhost'
-    S_MONGO_DATABASE_REPORT_DOCUMENT_NAME = 'reported_websites'
-    S_MONGO_DATABASE_SUBMIT_DOCUMENT_NAME = 'submitted_websites'
-    S_MONGO_DATABASE_SEARCH_DOCUMENT_NAME = 'index_model'
 
     # Settings Constants
     S_SETTINGS_MAX_DOCUMENT_SHOWN_LENGTH = 15

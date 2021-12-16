@@ -25,25 +25,16 @@
     margin-bottom: 20px;
     margin-top: 10px;
 }
-
-
-
-
-
-
-
-
-
-
-
-.onion__table{
+.directory__table{
     margin-left: 3.8em;
     border-left: 1px solid #e6e6e6;
     border-right: 1px solid #e6e6e6;
     border-bottom: 1px solid #e6e6e6;
     table-layout:fixed;
 }
-
+.footer__catagories--directory{
+    border-bottom: 4px solid whitesmoke;
+}
 
 @media only screen and (max-width: 943px) {
     .directory__header{
@@ -60,18 +51,7 @@
         padding-right: 20px;
         margin-top: 30px;
     }
-
-
-
-
-
-
-
-
-
-
-
-    .onion__table{
+    .directory__table{
         margin-left: 10px;
     }
 }
