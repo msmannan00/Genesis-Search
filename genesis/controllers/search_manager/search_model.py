@@ -1,5 +1,3 @@
-from bson import ObjectId
-
 from genesis.constants.constant import CONSTANTS
 from genesis.constants.enums import MONGO_COMMANDS, TFIDF_COMMANDS
 from genesis.constants.strings import GENERAL_STRINGS, SEARCH_STRINGS

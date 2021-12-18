@@ -7,7 +7,7 @@ class CONSTANTS:
     S_GENERAL_DEFAULT_LANGUAGE = "en"
 
     # Reference URL
-    S_REFERENCE_WEBSITE_URL = os.path.abspath(os.path.join(os.path.dirname(__file__), "..")) + "\\raw\\ReferenceWebsites.json"
+    S_REFERENCE_WEBSITE_URL = os.path.abspath(os.path.join(os.path.dirname(__file__), "..")) + "\\raw\\reference_websites.json"
 
     # Template URL
     S_TEMPLATE_NOTICE_WEBSITE_REPORT = "../notice/?mNoticeParamType=report"

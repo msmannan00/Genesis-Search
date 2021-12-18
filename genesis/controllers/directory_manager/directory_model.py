@@ -1,8 +1,7 @@
 from genesis.constants.constant import CONSTANTS
 from genesis.constants.enums import MONGO_COMMANDS
 from genesis.controllers.data_manager.mongo_manager.mongo_controller import mongo_controller
-from genesis.controllers.data_manager.mongo_manager.mongo_enums import mongo_index_collection, \
-    MONGODB_CRUD_COMMANDS
+from genesis.controllers.data_manager.mongo_manager.mongo_enums import mongo_index_collection, MONGODB_CRUD_COMMANDS
 from genesis.controllers.directory_manager.directory_enums import *
 from genesis.controllers.directory_manager.directory_session_controller import directory_session_controller
 from genesis.controllers.shared_model.request_handler import request_handler
