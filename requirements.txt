@@ -17,6 +17,8 @@ numpy
 stopwords
 termcolor
 autocorrect
+flask
 
 ###### Requirements With Version Specifiers ######
 simplejson==3.8.0
+elasticsearch==7.12.0

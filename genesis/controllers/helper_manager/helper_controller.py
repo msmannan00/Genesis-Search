@@ -3,7 +3,6 @@ import re
 import random, string
 from urllib.parse import urlparse
 import locale
-
 from gensim.parsing.preprocessing import STOPWORDS
 
 
@@ -78,3 +77,9 @@ class helper_controller:
         else:
             return False
 
+    @staticmethod
+    def is_stop_word(p_word):
+        if p_word in STOPWORDS:
+            return True
+        else:
+            return False

@@ -1,5 +1,8 @@
 from genesis.constants.constant import CONSTANTS
 from genesis.constants.enums import MONGO_COMMANDS
+from genesis.controllers.data_manager.elastic_manager.elastic_controller import elastic_controller
+from genesis.controllers.data_manager.elastic_manager.elastic_enums import ELASTIC_CRUD_COMMANDS, \
+    ELASTIC_REQUEST_COMMANDS, ELASTIC_INDEX_COLLECTION
 from genesis.controllers.data_manager.mongo_manager.mongo_controller import mongo_controller
 from genesis.controllers.data_manager.mongo_manager.mongo_enums import mongo_index_collection, MONGODB_CRUD_COMMANDS
 from genesis.controllers.directory_manager.directory_enums import *
@@ -18,17 +21,23 @@ class directory_model(request_handler):
         pass
 
     def __load_onion_links(self, p_directory_class_model):
-        m_services_cursor = mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD_COMMANDS.S_READ, [MONGO_COMMANDS.M_ONION_LIST, p_directory_class_model.m_page_number])
+        m_documents = elastic_controller.get_instance().invoke_trigger(ELASTIC_CRUD_COMMANDS.S_READ, [ELASTIC_REQUEST_COMMANDS.S_ONION_LIST,[p_directory_class_model.m_page_number],[None]])
+        m_documents = m_documents['hits']['hits']
+
+        print(" -------------------------- ", flush=True)
+        print(m_documents, flush=True)
+        print(" -------------------------- ", flush=True)
         mRelevanceDocumentList = []
 
-        if m_services_cursor is None:
+        if m_documents is None:
             return []
 
         m_counter = 1
-        for m_document in m_services_cursor:
+        for m_document in m_documents:
+            m_document_item = m_document['_source']['script']
             mRelevanceContext = {
-                DIRECTORY_MODEL_CALLBACK.M_URL: m_document[mongo_index_collection.M_URL],
-                DIRECTORY_MODEL_CALLBACK.M_CONTENT_TYPE: m_document[mongo_index_collection.M_CONTENT_TYPE],
+                DIRECTORY_MODEL_CALLBACK.M_URL: m_document_item[ELASTIC_INDEX_COLLECTION.M_HOST],
+                DIRECTORY_MODEL_CALLBACK.M_CONTENT_TYPE: m_document_item[ELASTIC_INDEX_COLLECTION.M_CONTENT_TYPE],
                 DIRECTORY_MODEL_CALLBACK.M_ID: m_counter + (p_directory_class_model.m_page_number - 1) * CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE,
             }
             mRelevanceDocumentList.append(mRelevanceContext)

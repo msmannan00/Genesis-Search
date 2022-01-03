@@ -21,8 +21,10 @@
     }
     .onion__table-category{
         color: #0c5460;
-        text-align: left;
         margin-right: 25px;
-        border-left: 2px solid #ffe0b3;
+        height: 100%;
+        vertical-align: middle !important;
+        border: 1px solid #e6e6e6;
+        background: #f0f8ff;
     }
 }

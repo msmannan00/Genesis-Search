@@ -8,6 +8,7 @@ class CONSTANTS:
 
     # Reference URL
     S_REFERENCE_WEBSITE_URL = os.path.abspath(os.path.join(os.path.dirname(__file__), "..")) + "\\raw\\reference_websites.json"
+    S_DICTIONARY_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..")) + "\\raw\\dictionary"
 
     # Template URL
     S_TEMPLATE_NOTICE_WEBSITE_REPORT = "../notice/?mNoticeParamType=report"
@@ -28,5 +29,7 @@ class CONSTANTS:
     # Settings Constants
     S_SETTINGS_MAX_DOCUMENT_SHOWN_LENGTH = 15
     S_SETTINGS_SEARCHED_DOCUMENT_SIZE = 15
+    S_SETTINGS_MAX_PAGE_SIZE = 5
+    S_SETTINGS_FETCHED_DOCUMENT_SIZE = 75
     S_SETTINGS_SEARCHED_IMAGE_SIZE = 40
     S_SETTINGS_DIRECTORY_LIST_MAX_SIZE = 5000

@@ -27,7 +27,7 @@
     padding: 10px 0 5px;
     width: 95%;
     border-radius: 8px;
-    margin-left: 15px !important;
+    margin-left: 6.9em !important;
 }
 .search-engine-highlights--images{
     box-shadow : none;
@@ -47,6 +47,11 @@
     -moz-box-shadow: 0 0 4px 3px #f0f0f0;
     box-shadow: 0 0 4px 3px #f0f0f0;
 }
+.search-engine-highlights-item--glass{
+    width: 17px;
+    margin-top: -5px;
+    margin-left: -3px;
+}
 .search-engine-highlights-item{
     height: 46px;
     overflow: hidden;
@@ -56,7 +61,15 @@
     line-height: 40px;
     padding: 2px 15px 17px;
     text-decoration: none;
+    font-size: 14px;
     color: #8c8c8c;
+}
+.search-engine-highlights-header{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #8c8c8c;
+    margin-left: 5.8em !important;
 }
 .search-engine-highlights-item:hover{
     color: gray;
@@ -121,4 +134,9 @@
         box-shadow: 0 0 4px 3px #f0f0f0;
 
     }
+    .search-engine-highlights-header{
+        margin-left: 0.8em !important;
+        margin-bottom: 20px;
+    }
+
 }

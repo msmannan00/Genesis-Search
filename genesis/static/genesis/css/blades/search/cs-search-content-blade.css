@@ -27,10 +27,14 @@
 }
 .search-result__safe-search-container--border{
     margin-left: 6.8em;
-    border-radius: 7px 0 0 7px;
+    border-radius: 5px 0 0 5px;
+}
+.search-content__webpages-description--category{
+    font-weight: bold;
+    color: #264d73;
 }
 .search-result__safe-search-container--switch{
-    border-radius: 0 7px 7px 0;
+    border-radius: 0 5px 5px 0;
     margin-left: -5px;
 }
 .search-result__safe-search-container--non-interactable{

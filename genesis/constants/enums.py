@@ -11,7 +11,6 @@ class MONGO_COMMANDS(enum.Enum):
      M_FETCH_DOCUMENT_BY_ID = 7
      M_ONION_LIST = 8
 
-class TFIDF_COMMANDS(enum.Enum):
+class ELASTIC_COMMANDS(enum.Enum):
      M_INIT = 1
      M_POPULATE_SEARCH = 2
-     M_GET_NON_INDEXED_TOKENS = 3

@@ -1,3 +1,6 @@
+import math
+import re
+
 from genesis.constants.constant import CONSTANTS
 from genesis.constants.strings import SEARCH_STRINGS, GENERAL_STRINGS
 from genesis.controllers.helper_manager.helper_controller import helper_controller
@@ -29,20 +32,36 @@ class search_session_controller(request_handler):
     def __validate_parameters(self, p_context):
         pass
 
-    def __init_parameters(self, p_document_list, p_search_model):
+    def __init_parameters(self, p_document_list, p_search_model, m_tokenized_query):
+
+
         mRelevanceContextList = []
         mRelatedBusinessList = []
         mRelatedNewsList = []
         mRelatedFilesList = []
 
+        if p_search_model.m_page_number !=1:
+            p_document_list=p_document_list[0:CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE]
         m_links_counter=0
         for m_document in p_document_list:
+
             m_links_counter+=1
             if p_search_model.m_search_type != SEARCH_STRINGS.S_SEARCH_CONTENT_TYPE_IMAGE:
+
+                m_title = m_document[SEARCH_DOCUMENT_CALLBACK.M_TITLE]
+                if len(m_title)<2:
+                    m_title = m_document[SEARCH_DOCUMENT_CALLBACK.M_HOST]
+
+                m_description = m_document[SEARCH_DOCUMENT_CALLBACK.M_IMPORTANT_DESCRIPTION][0:230] + GENERAL_STRINGS.S_GENERAL_CONTENT_CONTINUE
+                for m_item in m_tokenized_query:
+                    insensitive_hippo = re.compile(re.escape(m_item), re.IGNORECASE)
+                    m_description = m_description.replace(m_item,"<b>" + m_item + "</b>")
+                    insensitive_hippo.sub("<b>" + m_item + "</b>", m_description)
+
                 mRelevanceContext = {
-                    SEARCH_CALLBACK.M_TITLE: m_document[SEARCH_DOCUMENT_CALLBACK.M_TITLE],
-                    SEARCH_CALLBACK.M_URL: m_document[SEARCH_DOCUMENT_CALLBACK.M_URL],
-                    SEARCH_CALLBACK.M_DESCRIPTION: m_document[SEARCH_DOCUMENT_CALLBACK.M_DESCRIPTION][0:230] + GENERAL_STRINGS.S_GENERAL_CONTENT_CONTINUE,
+                    SEARCH_CALLBACK.M_TITLE: m_title,
+                    SEARCH_CALLBACK.M_URL: m_document[SEARCH_DOCUMENT_CALLBACK.M_HOST] + m_document[SEARCH_DOCUMENT_CALLBACK.M_SUB_HOST],
+                    SEARCH_CALLBACK.M_DESCRIPTION: m_description,
                     SEARCH_CALLBACK.K_SEARCH_TYPE: m_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE],
                 }
 
@@ -60,13 +79,13 @@ class search_session_controller(request_handler):
                     elif len(m_images)>0:
                         if len(mRelatedFilesList) < 3:
                             m_url = mRelevanceContext[SEARCH_CALLBACK.M_URL]
-                            mRelevanceContext[SEARCH_CALLBACK.M_URL] = m_images[0][SEARCH_CALLBACK.M_IMAGE_URL]
+                            mRelevanceContext[SEARCH_CALLBACK.M_URL] = m_images[0]
                             mRelatedFilesList.append(mRelevanceContext)
                             mRelevanceContext[SEARCH_CALLBACK.M_URL] = m_url
 
                 mRelevanceContextList.append(mRelevanceContext)
 
-            elif p_search_model.get_search_type() == SEARCH_STRINGS.S_SEARCH_CONTENT_TYPE_IMAGE:
+            elif p_search_model.m_search_type == SEARCH_STRINGS.S_SEARCH_CONTENT_TYPE_IMAGE:
                 mRelevanceContext = {
                     SEARCH_CALLBACK.M_TITLE: m_document[SEARCH_DOCUMENT_CALLBACK.M_TITLE],
                     SEARCH_CALLBACK.K_SEARCH_TYPE: m_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE],
@@ -80,36 +99,37 @@ class search_session_controller(request_handler):
                     if mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a':
                         mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] = m_image_file[SEARCH_CALLBACK.M_IMAGE_TYPE]
 
-                    if p_search_model.get_safe_search_status() == 'False' or p_search_model.get_safe_search_status() == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a':
+                    if p_search_model.m_safe_search == 'False' or p_search_model.m_safe_search == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a':
                         mRelevanceContextList.append(mRelevanceContext)
 
-        if p_search_model.m_page_number<=3:
-            min_range = 1
-            max_range = 6
-        else:
-            min_range = p_search_model.m_page_number - 2
-            max_range = p_search_model.m_page_number + 3
+            elif p_search_model.m_search_type == SEARCH_STRINGS.S_SEARCH_CONTENT_TYPE_DOCUMENT:
+                mRelevanceContext = {
+                    SEARCH_CALLBACK.M_TITLE: m_document[SEARCH_DOCUMENT_CALLBACK.M_TITLE],
+                    SEARCH_CALLBACK.K_SEARCH_TYPE: m_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE],
+                }
+                m_counter=0
+                for m_document_file in m_document[SEARCH_DOCUMENT_CALLBACK.M_DOCUMENT]:
+                    m_counter+=1
+                    if m_counter>4:
+                        break
+                    mRelevanceContext[SEARCH_CALLBACK.M_URL] = m_document_file
+                    if p_search_model.m_safe_search == 'False' or p_search_model.m_safe_search == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a':
+                        mRelevanceContextList.append(mRelevanceContext)
 
+        # Pagination Calculator
         m_max_page_reached = False
-        if p_search_model.m_total_documents / CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE < max_range:
-            max_range = int(p_search_model.m_total_documents / CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE) + 1
+        m_found_pages = math.floor((p_search_model.m_total_documents / CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE)+1)
+        min_range = max(1, p_search_model.m_page_number - 2)
 
-            if p_search_model.m_page_number >= max_range-1:
-                m_max_page_reached = True
-
-        m_status = True
-        if p_search_model.m_page_number > max_range:
-            p_search_model.set_page_number(max_range)
-            m_max_page_reached = True
-            if max_range > 3:
-                min_range = max_range-2
-            else:
-                min_range = 0
-
-        if min_range != max_range:
-            m_range = range(min_range,max_range)
+        if p_search_model.m_page_number>2:
+            max_range = p_search_model.m_page_number + min(3, m_found_pages)
         else:
-            m_range = None
+            max_range = math.floor(m_found_pages)
+
+        if m_found_pages < CONSTANTS.S_SETTINGS_MAX_PAGE_SIZE/2:
+            min_range = max(1, int(p_search_model.m_page_number - (CONSTANTS.S_SETTINGS_MAX_PAGE_SIZE - m_found_pages)))
+        if p_search_model.m_total_documents<CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE:
+            m_max_page_reached = True
 
         mContext = {
             SEARCH_CALLBACK.M_QUERY: p_search_model.m_search_query,
@@ -117,7 +137,7 @@ class search_session_controller(request_handler):
             SEARCH_CALLBACK.M_CURRENT_PAGE_NUM: p_search_model.m_page_number,
             SEARCH_CALLBACK.K_SEARCH_TYPE: p_search_model.m_search_type,
             SEARCH_CALLBACK.M_DOCUMENT: mRelevanceContextList,
-            SEARCH_CALLBACK.M_PAGE_NUM: m_range,
+            SEARCH_CALLBACK.M_PAGE_NUM: range(min_range,max_range),
             SEARCH_CALLBACK.M_MAX_PAGINATION: m_max_page_reached,
             SEARCH_CALLBACK.M_RESULT_COUNT: GENERAL_STRINGS.S_GENERAL_EMPTY,
             SEARCH_CALLBACK.M_RELATED_BUSINESS_SITES: mRelatedBusinessList,
@@ -131,14 +151,14 @@ class search_session_controller(request_handler):
             mContext[SEARCH_CALLBACK.M_RESULT_COUNT] = p_search_model.m_total_documents
 
 
-        return mContext, m_status
+        return mContext, True
 
     # External Request Callbacks
     def invoke_trigger(self, p_command, p_data):
         if p_command == SEARCH_SESSION_COMMANDS.INIT_SEARCH_PARAMETER:
             return self.__init_search_parameters(p_data[0])
         if p_command == SEARCH_SESSION_COMMANDS.M_INIT:
-            return self.__init_parameters(p_data[0], p_data[1])
+            return self.__init_parameters(p_data[0], p_data[1], p_data[2])
         if p_command == SEARCH_SESSION_COMMANDS.M_VALIDATE:
             return self.__validate_parameters(p_data[0])
 

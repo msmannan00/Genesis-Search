@@ -54,10 +54,11 @@
         {% endif %}
 
         {% if forloop.counter == 6 and mSearchCallbackRelevantBusiness|length > 1 %}
+            <h6 class="search-engine-highlights-header">Related Searches</h6>
             <ul class="list-group search-engine-highlights">
               {% for mDoc in mSearchCallbackRelevantBusiness %}
                 <a class="search-engine-highlights-item" href="{{mDoc.mSearchCallbackRelevantDocumentURL}}">
-                  {{mDoc.mSearchCallbackRelevantDocumentTitle}}
+                  <img class="search-engine-highlights-item--glass disable-highlight" src="{% static 'genesis/images/search-icon-dark.png' %}" alt=""/> &nbsp;&nbsp;&nbsp;{{mDoc.mSearchCallbackRelevantDocumentTitle}} - {{mDoc.mSearchCallbackRelevantDocumentDescription}}
                 </a>
               {% endfor %}
             </ul>
@@ -67,7 +68,7 @@
             <ul class="list-group search-engine-highlights">
               {% for mDoc in mSearchCallbackRelevantNews %}
                 <a class="search-engine-highlights-item" href="{{mDoc.mSearchCallbackRelevantDocumentURL}}">
-                  {{mDoc.mSearchCallbackRelevantDocumentTitle}}
+                  {{mDoc.mSearchCallbackRelevantDocumentTitle}} - {{mDoc.mSearchCallbackRelevantDocumentDescription}}
                 </a>
               {% endfor %}
             </ul>
@@ -86,12 +87,12 @@
         {% endif %}
 
         <div class="search-result__content-webpages--container">
-            <a href="{% if mDoc.mSearchCallbackRelevantSearchType == 'I' %}#search-content__danger-popup{% else %}{{mDoc.mSearchCallbackRelevantDocumentURL}}{% endif %}">
-                <div class="search-result__content-webpages {% if mDoc.mSearchCallbackRelevantSearchType == 'I' %}search-result__content-webpages--danger{% else %}search-result__content-webpages--normal{% endif %}">
+            <a href="{% if mDoc.mSearchCallbackRelevantSearchType == 'a' %}#search-content__danger-popup{% else %}{{mDoc.mSearchCallbackRelevantDocumentURL}}{% endif %}">
+                <div class="search-result__content-webpages {% if mDoc.mSearchCallbackRelevantSearchType == 'a' %}search-result__content-webpages--danger{% else %}search-result__content-webpages--normal{% endif %}">
                     <label class="search-content__webpages-header">{{mDoc.mSearchCallbackRelevantDocumentTitle}}</label><br>
                     <label class="search-content__webpages-url">{{mDoc.mSearchCallbackRelevantDocumentURL}}</label><br>
                     <hr class="search-content__webpages-divider">
-                    <label class="search-content__webpages-description">{{mDoc.mSearchCallbackRelevantDocumentDescription}}</label>
+                    <label class="search-content__webpages-description"><span class="search-content__webpages-description--category">{% if mDoc.mSearchCallbackRelevantSearchType == 'a' %}Illegal{% elif mDoc.mSearchCallbackRelevantSearchType == 'b' %}Business{% elif mDoc.mSearchCallbackRelevantSearchType == 'n' %}News{% else %}General{% endif %}</span> | {% autoescape off %} {{mDoc.mSearchCallbackRelevantDocumentDescription}} {% endautoescape %}</label>
                 </div>
             </a>
         </div>

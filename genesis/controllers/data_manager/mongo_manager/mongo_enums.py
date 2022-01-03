@@ -2,7 +2,7 @@ import enum
 
 
 class mongo_index_collection:
-    M_URL = "m_url"
+    M_URL = "m_host"
     M_CONTENT_TYPE = "m_content_type"
 
 class MONGODB_COLLECTIONS:

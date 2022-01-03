@@ -36,13 +36,16 @@ class SEARCH_CALLBACK:
 
 class SEARCH_DOCUMENT_CALLBACK:
     M_TITLE = "m_title"
-    M_URL = "m_url"
-    M_DESCRIPTION = "m_description"
+    M_HOST = "m_host"
+    M_SUB_HOST = "m_sub_host"
+    M_IMPORTANT_DESCRIPTION = "m_important_content"
     M_CONTENT_TYPE = "m_content_type"
     M_IMAGE = "m_images"
+    M_DOCUMENT = "m_doc_url"
 
 class SEARCH_MODEL_SPELL_CHECKER(enum.Enum):
     M_CHECK_SPELLING = 1
 
 class SEARCH_MODEL_TOKENIZATION_COMMANDS(enum.Enum):
     M_TOKENIZE = 1
+    M_SPLIT_AND_TOKENIZE = 2
