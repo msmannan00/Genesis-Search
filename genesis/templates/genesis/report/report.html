@@ -16,7 +16,7 @@
         <hr class="report__line-style">
 
         <form method="POST" action="" enctype="multipart/form-data" class="report__form">
-            <input class="report-form__input {% if mReportURLCallbackError != '' %} form-control is-invalid report-form__input--warning {% else %} report-form__input--normal{% endif %}" autocomplete="off" type="text" name="pReportParamURL" value="{{mReportCallbackRedirectedURL}}" placeholder="Site URL - &nbsp;https://example.onion">
+            <input class="report-form__input {% if mReportURLCallbackError != '' %} form-control is-invalid report-form__input--warning {% else %} report-form__input--normal{% endif %}" autocomplete="off" type="text" name="pReportParamURL" value="{{mReportCallbackURL}}" placeholder="Site URL - &nbsp;https://example.onion">
             <label class="{% if mReportURLCallbackError != '' %} report-form__warning--error {% endif %} disable-highlight">{{mReportURLCallbackError}}</label><br><br>
             <input class="report-form__input {% if mReportCallbackEmail != '' %} form-control is-invalid report-form__input--warning {% else %} report-form__input--normal{% endif %}" value="{{mReportCallbackEmail}}" autocomplete="off" type="text" name="pReportParamEmail" placeholder="Email Address (Optional)">
             <label class="{% if mReportEmailCallbackError != '' %} report-form__warning--error {% endif %} disable-highlight">{{mReportEmailCallbackError}}</label><br><br>

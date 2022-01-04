@@ -34,16 +34,17 @@ class helper_controller:
 
     @staticmethod
     def get_host(p_url):
-        if len(p_url)<=0:
+        m_parsed_uri = urlparse(p_url)
+        m_host_url = '{uri.scheme}://{uri.netloc}/'.format(uri=m_parsed_uri)
+        if m_host_url.endswith("/"):
+            m_host_url = m_host_url[:-1]
+
+        if len(p_url)==0:
+            return ""
+        if  m_host_url == "://":
             return p_url
-        else:
-            parsed_uri = urlparse(p_url)
-            result = '{uri.scheme}://{uri.netloc}/'.format(uri=parsed_uri)
 
-            url = re.compile(r"https?://(www\.)?")
-            result = url.sub('', result).strip().strip('/')
-
-            return result
+        return m_host_url
 
     @staticmethod
     def has_special_character(p_string):
@@ -53,8 +54,15 @@ class helper_controller:
             return True
 
     @staticmethod
-    def has_spaced_special_character(p_string):
+    def has_comma_special_character(p_string):
         if bool(re.match('^[a-zA-Z0-9,]*$', p_string)):
+            return False
+        else:
+            return True
+
+    @staticmethod
+    def has_spaced_special_character(p_string):
+        if bool(re.match('^[a-zA-Z0-9\s]*$', p_string)):
             return False
         else:
             return True

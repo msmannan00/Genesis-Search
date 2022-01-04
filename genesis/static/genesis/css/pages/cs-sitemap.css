@@ -34,8 +34,8 @@
     padding: 15px 10px 20px 30px;
     max-width: 680px;
     margin-top: -15px;
-    margin-left: -3px;
-    border-left: 4px solid #cccccc;
+    margin-left: -20px !important;
+    border-left: 7px solid #cccccc;
     border-radius: 0 7px 7px 0;
 }
 .sitemap__form-sample-submit{
@@ -164,11 +164,12 @@
     color:#4d4d4d;
     max-width:675px;
     border-radius: 5px;
-    margin-top: 5px;
     cursor:pointer;
     padding-left:30px;
     font-size:14px;
+    background: #f9f9f9;
     border: 1px solid #e6e6e6;
+    border-top: 2px solid #ffe4b3;
 }
 .sitemap__form-warning--top{
     margin-top: 0;
