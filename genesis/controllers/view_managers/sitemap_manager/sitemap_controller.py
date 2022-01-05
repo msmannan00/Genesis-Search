@@ -1,6 +1,8 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from genesis.controllers.constants.constant import CONSTANTS
+from genesis.controllers.service_manager.block_manager.block_controller import block_controller
+from genesis.controllers.service_manager.block_manager.block_enums import BLOCK_COMMAND
 from genesis.controllers.view_managers.sitemap_manager.sitemap_enums import SITEMAP_MODEL_COMMANDS, SITEMAP_CALLBACK
 from genesis.controllers.view_managers.sitemap_manager.sitemap_model import sitemap_model
 
@@ -25,9 +27,15 @@ class sitemap_controller:
             sitemap_controller.__instance = self
             self.__m_notice_model = sitemap_model()
 
+    def __on_verify_app(self, p_data):
+        return block_controller.getInstance().invoke_trigger(BLOCK_COMMAND.S_VERIFY_REQUEST, p_data)
+
     # External Request Callbacks
     def invoke_trigger(self, p_command, p_data):
         if p_command == SITEMAP_MODEL_COMMANDS.M_INIT:
+            if self.__on_verify_app(p_data) is False:
+                return render(None, CONSTANTS.S_TEMPLATE_NOTICE_WEBSITE_PATH)
+
             m_response, m_status = self.__m_notice_model.invoke_trigger(SITEMAP_MODEL_COMMANDS.M_INIT, p_data)
             if m_status is False:
                 return render(None, CONSTANTS.S_TEMPLATE_SITEMAP_WEBSITE_PATH, m_response)

@@ -16,7 +16,7 @@ class search_session_controller(request_handler):
         m_query_model = query_model()
 
         if SEARCH_PARAM.M_QUERY in p_data.GET:
-            m_query_model.set_query(p_data.GET[SEARCH_PARAM.M_QUERY])
+            m_query_model.set_query(p_data.GET[SEARCH_PARAM.M_QUERY][0:150])
         if SEARCH_PARAM.M_TYPE in p_data.GET:
             m_query_model.m_search_type=p_data.GET[SEARCH_PARAM.M_TYPE]
         if SEARCH_PARAM.M_PAGE in p_data.GET:

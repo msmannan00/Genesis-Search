@@ -1,5 +1,9 @@
 import os
 
+class APP_STATUS:
+    S_DEVELOPER = False
+    S_FERNET_KEY = "W#ZYBHQa9G_DB_iU@yjA3Es@COu4-UzU"
+    S_APP_BLOCK_KEY = "D~S=05y68#M25oj]vprm}9HE))Tr'VX?[p|m-Wg`mrg^"
 
 class CONSTANTS:
 
@@ -21,6 +25,7 @@ class CONSTANTS:
     S_TEMPLATE_NOTICE_WEBSITE_PATH = "genesis/notice/notice.html"
     S_TEMPLATE_SITEMAP_WEBSITE_PATH = "genesis/sitemap/sitemap.html"
     S_TEMPLATE_SEARCH_WEBSITE_PATH = "genesis/search/search.html"
+    S_TEMPLATE_NOTICE_WEBSITE_PATH = "genesis/block/block.html"
 
     # MongoDB Database
     S_MONGO_DATABASE_NAME = 'genesis'

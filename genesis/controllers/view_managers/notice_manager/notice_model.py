@@ -1,3 +1,4 @@
+from genesis.controllers.view_managers.notice_manager.notice_enums import NOTICE_SESSION_CALLBACK, NOTICE_MODEL_CALLBACK
 from genesis.controllers.view_managers.notice_manager.notice_session_controller import notice_session_controller
 from genesis.controllers.request_manager.request_handler import request_handler
 

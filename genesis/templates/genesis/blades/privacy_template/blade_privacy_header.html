@@ -4,7 +4,7 @@
     <a href="../.." ><img class="privacy__status-image gs-disable-highlight" src="{% static 'genesis/images/favicon-home.png' %}" alt="Loading..."></a>
 
     <form method="GET" class="privacy-statusbar-form" action="../../search" enctype="multipart/form-data" >
-        <input class="form-control privacy__statusbar-searchbox" autocapitalize="none" autocomplete="off" type="text" name="q" placeholder="Search the web anonymously">
+        <input class="form-control privacy__statusbar-searchbox" maxlength="150" autocapitalize="none" autocomplete="off" type="text" name="q" placeholder="Search the web anonymously">
         <button class="privacy__searchbox-button disable-highlight" style="float: left" type="submit"><img class="privacy__searchbox-icon disable-highlight" src="{% static 'genesis/images/search-icon.png' %}" alt=""/></button>
         <input autocomplete="off" autocapitalize="none" type="hidden" class="form-control home__searchbox" name="mPage" value="1">
     </form>

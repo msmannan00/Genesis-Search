@@ -31,38 +31,7 @@ class elastic_controller(request_handler):
 
     def __initialization(self):
         try:
-            # self.__m_connection.indices.delete(index=ELASTIC_INDEX.S_WEB_INDEX, ignore=[400, 404])
-
-            settings = {
-                "settings": {
-                    "number_of_shards": 1,
-                    "number_of_replicas": 0
-                },
-                "mappings": {
-                    "properties": {
-                        'm_host': {
-                            "index": "not_analyzed",
-                            'type': 'keyword'
-                        },
-                        'm_subhost': {
-                            'type': 'keyword',
-                            "index": "not_analyzed"
-                        },
-                        'p_title': {'type': 'string'},
-                        'm_meta_description': {'type': 'string'},
-                        'm_meta_keywords': {'type': 'string'},
-                        'm_content': {'type': 'string'},
-                        'm_content_type': {'type': 'keyword'},
-                        'm_sub_url': {},
-                        'm_images': {},
-                        'm_video': {},
-                        'm_date': {'type': 'date'},
-                    }
-                }
-            }
-            self.__m_connection.index(index=ELASTIC_INDEX.S_WEB_INDEX, id=1, body=settings)
             pass
-
         except Exception as ex:
             log.g().e("ELASTIC 1 : " + MANAGE_ELASTIC_MESSAGES.S_INSERT_FAILURE + " : " + str(ex))
 

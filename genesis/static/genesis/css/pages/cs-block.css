@@ -1,0 +1,81 @@
+/*Privacy Policy Text*/
+.block-html {
+    margin: 0;
+    height:120%;
+}
+.block-body {
+    display: flex ;
+    justify-content: center ;
+    background: linear-gradient(#3973ac, #132639);
+    padding: 50px;
+}
+
+.block-container{
+    background-repeat: no-repeat ;
+    width: 95% ;
+    margin: 0 0 0 3%;
+    max-width: 670px ;
+    color: white;font-family: 'Helvetica', 'Arial', sans-serif;
+    padding: 0 ;
+}
+
+.block-header-container{
+    margin-top:-25px;
+    margin-left:85px;
+    color:#204060;
+}
+
+.block-header{
+    font-size:13.5pt;
+    margin-right:15px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-weight: bold;
+    color:#204060;
+}
+
+.block-linebreak{
+    width:98%;
+    background-color: #264d73 ;
+    text-align:left;
+    height: 2px;
+    border: none;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left:0;
+}
+
+.block-warning-image{
+    float:left;
+    margin-top:15px;
+    width: 20% ;
+    max-width: 72px;
+}
+
+.block-paragraph{
+    font-size: 11pt;
+    margin-right: 7%;
+    color:#ffe6e6;
+}
+
+.block-warning-button{
+    width: 98%;
+    height:50px;
+    margin-left: 0;
+    font-size: 12pt;
+    color: white;font-family: 'Helvetica', 'Arial', sans-serif;
+    background: #19334d;
+    font-weight: bold;
+    margin-top: 30px;
+    border: 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.block-warning-button:hover{
+    background: orange;
+    color: white;
+}
+@media only screen and (max-width: 943px) {
+    .block-body {
+        padding: 0;
+    }
+}
