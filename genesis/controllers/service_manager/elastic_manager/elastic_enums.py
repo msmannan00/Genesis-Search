@@ -3,6 +3,7 @@ class ELASTIC_CRUD_COMMANDS:
     S_READ = 2
     S_UPDATE = 3
     S_DELETE = 4
+    S_SUGGEST = 4
 
 class ELASTIC_INDEX:
     S_WEB_INDEX = "parsed_index"

@@ -35,8 +35,8 @@ class directory_controller(request_handler):
     # External Request Callbacks
     def invoke_trigger(self, p_command, p_data):
         if p_command == DIRECTORY_MODEL_COMMANDS.M_INIT:
-            if self.__on_verify_app(p_data) is False:
-                return render(None, CONSTANTS.S_TEMPLATE_NOTICE_WEBSITE_PATH)
+            if self.__on_verify_app(p_data) is True:
+                return render(None, CONSTANTS.S_TEMPLATE_BLOCK_WEBSITE_PATH)
 
             m_response, m_status = self.__m_directory_model.invoke_trigger(DIRECTORY_MODEL_COMMANDS.M_INIT, p_data)
             if m_status is not True:

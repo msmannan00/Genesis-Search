@@ -45,7 +45,6 @@ class elastic_controller(request_handler):
 
     def __read(self, p_data):
         try:
-            m_data = self.__m_connection.search(index=p_data[ELASTIC_KEYS.S_DOCUMENT], body=p_data[ELASTIC_KEYS.S_FILTER])
             return self.__m_connection.search(index=p_data[ELASTIC_KEYS.S_DOCUMENT], body=p_data[ELASTIC_KEYS.S_FILTER])
 
         except Exception as ex:
@@ -61,4 +60,6 @@ class elastic_controller(request_handler):
         if p_commands == ELASTIC_CRUD_COMMANDS.S_UPDATE:
             return self.__update(m_request, m_param[0])
         if p_commands == ELASTIC_CRUD_COMMANDS.S_READ:
+            return self.__read(m_request)
+        if p_commands == ELASTIC_CRUD_COMMANDS.S_SUGGEST:
             return self.__read(m_request)

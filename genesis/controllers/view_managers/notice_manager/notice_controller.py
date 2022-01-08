@@ -32,8 +32,8 @@ class notice_controller:
     # External Request Callbacks
     def invoke_trigger(self, p_command, p_data):
         if p_command == NOTICE_MODEL_CALLBACK.M_INIT:
-            if self.__on_verify_app(p_data) is False:
-                return render(None, CONSTANTS.S_TEMPLATE_NOTICE_WEBSITE_PATH)
+            if self.__on_verify_app(p_data) is True:
+                return render(None, CONSTANTS.S_TEMPLATE_BLOCK_WEBSITE_PATH)
 
             m_response, m_status = self.__m_notice_model.invoke_trigger(NOTICE_MODEL_CALLBACK.M_INIT, p_data)
             if m_status is True:

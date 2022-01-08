@@ -164,9 +164,9 @@
 }
 .search-result__query-error--container{
     margin-top: 25px;
+    margin-left: 5.8%;
 }
 .search-result__query-error--header{
-    margin-left: 5.8%;
     color: #ea4335;
     font-size: 18px;
     font-weight: 600;
@@ -355,9 +355,6 @@
         margin-left: 0;
         margin-bottom: 5px;
     }
-    .search-result__query-error--header{
-        margin-left: 14px;
-    }
     .search-result__content-webpages{
         margin: 15px 13px 0 8px !important;
         -webkit-box-shadow: 0 0 4px 3px #f0f0f0;
@@ -447,6 +444,10 @@
     }
     .search-result__content-webpages--container{
         margin-left: 0;
+    }
+    .search-result__query-error--container{
+        margin-left: 14px !important;
+        padding-right: 25px;
     }
 
 }

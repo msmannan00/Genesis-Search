@@ -27,13 +27,13 @@ class block_controller:
     def __on_verify(self, p_request):
         if BLOCK_PARAM.M_SECRET_TOKEN not in p_request.POST and APP_STATUS.S_DEVELOPER is False:
             return False
-        else:
+        elif APP_STATUS.S_DEVELOPER is False:
             m_secret_token = p_request.POST[BLOCK_PARAM.M_SECRET_TOKEN]
             if self.__m_fernet.decrypt(m_secret_token).startswith(APP_STATUS.S_APP_BLOCK_KEY) is False:
                 return False
             return True
+        return False
 
     def invoke_trigger(self, p_commands, p_data=None):
-
         if p_commands == BLOCK_COMMAND.S_VERIFY_REQUEST:
             return self.__on_verify(p_data)

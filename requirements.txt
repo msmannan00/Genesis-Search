@@ -19,6 +19,7 @@ termcolor
 autocorrect
 flask
 cryptography
+textblob
 
 ###### Requirements With Version Specifiers ######
 simplejson==3.8.0

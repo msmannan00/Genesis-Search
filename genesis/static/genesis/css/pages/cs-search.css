@@ -152,10 +152,10 @@
     font-size: 16px;
     color: black;
 	padding-left:12px;
-    padding-right: 20px;
     margin-left: 0;
     border: 1px solid #e6e6e6;
     margin-top: 5px;
+    padding-right: 45px;
 }
 
 .searchbar_detail-header__search-input:focus{

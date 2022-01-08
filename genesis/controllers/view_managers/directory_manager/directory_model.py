@@ -26,7 +26,7 @@ class directory_model(request_handler):
 
         m_counter = 1
         for m_document in m_documents:
-            m_document_item = m_document['_source']['script']
+            m_document_item = m_document['_source']
             mRelevanceContext = {
                 DIRECTORY_MODEL_CALLBACK.M_URL: m_document_item[ELASTIC_INDEX_COLLECTION.M_HOST],
                 DIRECTORY_MODEL_CALLBACK.M_CONTENT_TYPE: m_document_item[ELASTIC_INDEX_COLLECTION.M_CONTENT_TYPE],

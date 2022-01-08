@@ -9,6 +9,8 @@ from genesis.controllers.view_managers.hompage_manager.homepage_controller impor
 from genesis.controllers.view_managers.hompage_manager.homepage_enums import HOMEPAGE_MODEL_COMMANDS
 from genesis.controllers.view_managers.notice_manager.notice_controller import notice_controller
 from genesis.controllers.view_managers.notice_manager.notice_enums import NOTICE_MODEL_CALLBACK
+from genesis.controllers.view_managers.policy_manager.policy_controller import policy_controller
+from genesis.controllers.view_managers.policy_manager.policy_enums import POLICY_MODEL_CALLBACK
 from genesis.controllers.view_managers.report_manager.report_controller import report_controller
 from genesis.controllers.view_managers.report_manager.report_enums import REPORT_MODEL_COMMANDS
 from genesis.controllers.view_managers.search_manager.search_controller import search_controller
@@ -27,7 +29,8 @@ def command(request):
 
 @csrf_exempt
 def privacy(request):
-    return render(request, 'genesis/privacy/privacy.html', )
+    return policy_controller.getInstance().invoke_trigger(POLICY_MODEL_CALLBACK.M_INIT, request)
+
 
 @csrf_exempt
 def report(request):
