@@ -28,4 +28,5 @@ urlpatterns = [
     path('', views.directory, name='directory'),
     path('', views.block, name='block'),
     path('', views.search, name='search'),
+    path('', views.user_index, name='user_index'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

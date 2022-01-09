@@ -4,6 +4,9 @@ import enum
 class SEARCH_MODEL_COMMANDS(enum.Enum):
     M_INIT = 1
 
+class USER_INDEX_MODEL_COMMANDS(enum.Enum):
+    M_INIT = 1
+
 class SEARCH_SESSION_COMMANDS(enum.Enum):
     M_INIT = 1
     INIT_SEARCH_PARAMETER = 2

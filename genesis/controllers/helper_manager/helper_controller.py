@@ -1,6 +1,8 @@
 import json
+import math
 import re
 import random, string
+import secrets
 from urllib.parse import urlparse
 import locale
 from gensim.parsing.preprocessing import STOPWORDS
@@ -10,6 +12,11 @@ class helper_controller:
 
     # Private Variables
     __instance = None
+
+    @staticmethod
+    def id_generator():
+        m_id = secrets.token_urlsafe(math.floor(32 / 1.3))
+        return m_id
 
     @staticmethod
     def load_json(p_file_path):

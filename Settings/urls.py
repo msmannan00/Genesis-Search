@@ -29,5 +29,6 @@ urlpatterns = [
     path('block/', views.block),
     path('directory/', views.directory),
     path('search/', views.search),
+    path('user_index/', views.user_index),
     path('', views.index),
 ]

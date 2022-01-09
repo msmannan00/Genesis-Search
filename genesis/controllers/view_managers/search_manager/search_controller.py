@@ -21,7 +21,7 @@ class search_controller:
 
     def __init__(self):
         if search_controller.__instance is not None:
-            raise Exception(SEARCH_MODEL_COMMANDS.ErrorMessages.M_SINGLETON_EXCEPTION)
+            pass
         else:
             search_controller.__instance = self
             self.__m_search_model = search_model()

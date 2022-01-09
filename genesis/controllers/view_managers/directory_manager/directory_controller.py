@@ -24,7 +24,7 @@ class directory_controller(request_handler):
 
     def __init__(self):
         if directory_controller.__instance is not None:
-            raise Exception(DIRECTORY_MODEL_COMMANDS.ErrorMessages.M_SINGLETON_EXCEPTION)
+            pass
         else:
             directory_controller.__instance = self
             self.__m_directory_model = directory_model()

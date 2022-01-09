@@ -21,7 +21,7 @@ class notice_controller:
 
     def __init__(self):
         if notice_controller.__instance is not None:
-            raise Exception(NOTICE_MODEL_CALLBACK.ErrorMessages.M_SINGLETON_EXCEPTION)
+            pass
         else:
             notice_controller.__instance = self
             self.__m_notice_model = notice_model()

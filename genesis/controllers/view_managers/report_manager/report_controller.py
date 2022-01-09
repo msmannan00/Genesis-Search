@@ -24,7 +24,7 @@ class report_controller(request_handler):
 
     def __init__(self):
         if report_controller.__instance is not None:
-            raise Exception(REPORT_MODEL_COMMANDS.ErrorMessages.M_SINGLETON_EXCEPTION)
+            pass
         else:
             report_controller.__instance = self
             self.__m_report_model = report_model()

@@ -22,7 +22,7 @@ class homepage_controller:
 
     def __init__(self):
         if homepage_controller.__instance is not None:
-            raise Exception(HOMEPAGE_MODEL_COMMANDS.ErrorMessages.M_SINGLETON_EXCEPTION)
+            pass
         else:
             homepage_controller.__instance = self
             self.__m_homepage_model = homepage_model()

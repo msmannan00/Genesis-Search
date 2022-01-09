@@ -17,7 +17,7 @@ class block_controller:
 
     def __init__(self):
         if block_controller.__instance is not None:
-            raise Exception(BLOCK_MODEL_CALLBACK.ErrorMessages.M_SINGLETON_EXCEPTION)
+            pass
         else:
             block_controller.__instance = self
 

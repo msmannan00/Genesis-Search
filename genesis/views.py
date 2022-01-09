@@ -14,14 +14,15 @@ from genesis.controllers.view_managers.policy_manager.policy_enums import POLICY
 from genesis.controllers.view_managers.report_manager.report_controller import report_controller
 from genesis.controllers.view_managers.report_manager.report_enums import REPORT_MODEL_COMMANDS
 from genesis.controllers.view_managers.search_manager.search_controller import search_controller
-from genesis.controllers.view_managers.search_manager.search_enums import SEARCH_MODEL_COMMANDS
+from genesis.controllers.view_managers.search_manager.search_enums import SEARCH_MODEL_COMMANDS, USER_INDEX_MODEL_COMMANDS
 from genesis.controllers.view_managers.sitemap_manager.sitemap_controller import sitemap_controller
 from genesis.controllers.view_managers.sitemap_manager.sitemap_enums import SITEMAP_MODEL_COMMANDS
+from genesis.controllers.view_managers.user_index_manager.user_index_controller import user_index_controller
+from genesis.controllers.view_managers.user_index_manager.user_index_enums import USER_INDEX_MODEL_CALLBACK
 
 
 def index(request):
     return homepage_controller.getInstance().invoke_trigger(HOMEPAGE_MODEL_COMMANDS.M_INIT, request)
-
 
 @csrf_exempt
 def command(request):
@@ -30,7 +31,6 @@ def command(request):
 @csrf_exempt
 def privacy(request):
     return policy_controller.getInstance().invoke_trigger(POLICY_MODEL_CALLBACK.M_INIT, request)
-
 
 @csrf_exempt
 def report(request):
@@ -59,3 +59,7 @@ def block(request):
 @csrf_exempt
 def search(request):
     return search_controller.getInstance().invoke_trigger(SEARCH_MODEL_COMMANDS.M_INIT, request)
+
+@csrf_exempt
+def user_index(request):
+    return user_index_controller.getInstance().invoke_trigger(USER_INDEX_MODEL_CALLBACK.M_INIT, request)
