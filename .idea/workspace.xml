@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9">
-      <change afterPath="$PROJECT_DIR$/genesis/controllers/view_managers/user_index_manager/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Settings/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Settings/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis/controllers/constants/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/constants/constant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis/controllers/helper_manager/helper_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/helper_manager/helper_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/block_manager/block_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/view_managers/block_manager/block_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/directory_manager/directory_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/view_managers/directory_manager/directory_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/hompage_manager/homepage_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/view_managers/hompage_manager/homepage_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/notice_manager/notice_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/view_managers/notice_manager/notice_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/policy_manager/policy_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/view_managers/policy_manager/policy_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/report_manager/report_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/view_managers/report_manager/report_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/log_manager/log_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/log_manager/log_controller.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +246,8 @@
       <workItem from="1641417573638" duration="52000" />
       <workItem from="1641465417001" duration="24078000" />
       <workItem from="1641744342971" duration="16000" />
-      <workItem from="1641749748708" duration="2592000" />
+      <workItem from="1641749748708" duration="3308000" />
+      <workItem from="1641767191802" duration="339000" />
     </task>
     <servers />
   </component>

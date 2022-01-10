@@ -1,8 +1,9 @@
-import datetime
-
 from termcolor import colored
 
+import os
+import datetime
 
+os.system('color')
 class log:
 
     __instance = None
