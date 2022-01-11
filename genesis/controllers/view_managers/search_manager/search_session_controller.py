@@ -183,7 +183,7 @@ class search_session_controller(request_handler):
         # Init Callback
         mContext = self.init_callbacks(p_search_model, min_range, max_range, m_max_page_reached, m_relevance_context_list, m_related_business_list, m_related_news_list, m_related_files_list)
 
-        if p_search_model.m_total_documents - p_search_model.m_page_number * CONSTANTS.S_SETTINGS_MAX_DOCUMENT_SHOWN_LENGTH>CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE:
+        if p_search_model.m_total_documents >= 80:
             mContext[SEARCH_CALLBACK.M_RESULT_COUNT] = helper_controller.on_create_random_search_count(p_search_model.m_total_documents)
         else:
             mContext[SEARCH_CALLBACK.M_RESULT_COUNT] = p_search_model.m_total_documents

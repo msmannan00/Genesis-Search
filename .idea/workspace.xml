@@ -3,8 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis/controllers/log_manager/log_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/log_manager/log_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/spell_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/spell_checker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/search_template/blade_search_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/templates/genesis/blades/search_template/blade_search_content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/search_template/blade_search_pagination.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/templates/genesis/blades/search_template/blade_search_pagination.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,6 +254,7 @@
       <workItem from="1641744342971" duration="16000" />
       <workItem from="1641749748708" duration="3308000" />
       <workItem from="1641767191802" duration="339000" />
+      <workItem from="1641905919904" duration="7264000" />
     </task>
     <servers />
   </component>
@@ -272,6 +279,28 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_session_controller.py</url>
+          <line>183</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_session_controller.py</url>
+          <line>177</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_session_controller.py</url>
+          <line>173</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_session_controller.py</url>
+          <line>169</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -295,6 +324,6 @@
     <SUITE FILE_PATH="coverage/Genesis_Search_Python$HomepageController.coverage" NAME="HomepageController Coverage Results" MODIFIED="1639626889491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GenesisCrawler/controllers/hompageManager" />
     <SUITE FILE_PATH="coverage/Genesis_Search$block_controller.coverage" NAME="block_controller Coverage Results" MODIFIED="1641373126702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/genesis/controllers/service_manager/block_manager" />
     <SUITE FILE_PATH="coverage/Genesis_Crawler_Python$applicationController.coverage" NAME="applicationController Coverage Results" MODIFIED="1630410673541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerInstance/applicationController" />
-    <SUITE FILE_PATH="coverage/Genesis_Search$app.coverage" NAME="app Coverage Results" MODIFIED="1641752288429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Genesis_Search$app.coverage" NAME="app Coverage Results" MODIFIED="1641932027477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

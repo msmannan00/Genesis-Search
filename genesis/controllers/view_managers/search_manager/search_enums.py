@@ -29,6 +29,7 @@ class SEARCH_CALLBACK:
     K_SEARCH_TYPE = "mSearchCallbackRelevantSearchType"
     M_MAX_PAGINATION = "mSearchCallbackMaxPagination"
     M_QUERY_ERROR = "mSearchCallbackQueryError"
+    M_QUERY_ERROR_URL = "mSearchCallbackQueryErrorURL"
     M_PAGE_NUM = "mSearchCallbackPageNumber"
     M_SAFE_SEARCH = "mSearchCallbackSaveSearch"
     M_CURRENT_PAGE_NUM = "mSearchCallbackCurrentPageNumber"

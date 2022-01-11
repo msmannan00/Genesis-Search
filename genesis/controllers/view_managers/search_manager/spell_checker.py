@@ -74,12 +74,15 @@ class spell_checker:
 
     def generate_suggestions(self, p_query, suggestion):
         if len(suggestion) == 0:
-            return GENERAL_STRINGS.S_GENERAL_EMPTY
+            return GENERAL_STRINGS.S_GENERAL_EMPTY, GENERAL_STRINGS.S_GENERAL_EMPTY
 
+        p_query_text = p_query
         for m_suggestion in suggestion:
             if len(m_suggestion['options'])>0:
                 p_query = p_query.replace(m_suggestion['text'],"<b style=\"color:#336699\"><u>" +  m_suggestion['options'][0]['text'] + "</u></b>")
+                p_query_text = m_suggestion['options'][0]['text']
             else:
                 p_query = p_query.replace(m_suggestion['text'],"<b style=\"color:#336699\"><u>" + self.__m_speller.autocorrect_word(m_suggestion['text']) + "</u></b>")
+                p_query_text = self.__m_speller.autocorrect_word(m_suggestion['text'])
 
-        return p_query
+        return p_query_text, p_query
