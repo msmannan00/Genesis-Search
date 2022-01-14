@@ -1,3 +1,3 @@
 pip install -r requirements.txt
-python manage.py runserver --noreload
+python3 manage.py runserver --noreload
 pause

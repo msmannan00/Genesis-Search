@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9" />
+    <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run.bat" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,17 +39,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/genesis/controllers/view_managers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Workspace\Genesis-Search" />
       <recent name="C:\Workspace\Genesis-Search\genesis\controllers\view_managers" />
       <recent name="C:\Workspace\Genesis-Search\genesis\raw" />
       <recent name="C:\Workspace\Genesis-Search\genesis\controllers\service_manager" />
       <recent name="C:\Workspace\Genesis-Search\genesis\static\genesis\images\blurredImage" />
-      <recent name="C:\Workspace\Genesis-Search\genesis\static\genesis\css\pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Workspace\Genesis-Search\genesis\static\genesis\images" />
@@ -247,6 +250,7 @@
       <workItem from="1641905919904" duration="8042000" />
       <workItem from="1641970256588" duration="337000" />
       <workItem from="1642135882738" duration="1363000" />
+      <workItem from="1642142390361" duration="349000" />
     </task>
     <servers />
   </component>
