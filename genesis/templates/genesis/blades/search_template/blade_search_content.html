@@ -12,11 +12,11 @@
 
 
 <!-- safe genesis -->
-{% include 'genesis\blades\search_template\blade_search_safe_search.html' %}
+{% include 'genesis/blades/search_template/blade_search_safe_search.html' %}
 
 <!-- no genesis results -->
 {% if mSearchCallbackRelevantDocument|length == 0 %}
-    {% include 'genesis\blades\search_template\blade_search_no_suggestion.html' %}
+    {% include 'genesis/blades/search_template/blade_search_no_suggestion.html' %}
 {% endif %}
 
 <!-- genesis content -->
@@ -26,10 +26,10 @@
     {% for mDoc in mSearchCallbackRelevantDocument %}
 
         {% if forloop.counter == 3 and mSearchCallbackRelevantDocument|length > 3 %}
-            {% include 'genesis\blades\search_template\blade_search_engine_suggestion.html' %}
+            {% include 'genesis/blades/search_template/blade_search_engine_suggestion.html' %}
         {% endif %}
 
-        {% include 'genesis\blades\search_template\blade_search_content_url_based.html' %}
+        {% include 'genesis/blades/search_template/blade_search_content_url_based.html' %}
 
     {% endfor %}
 
@@ -38,7 +38,7 @@
     <!-- genesis content file based -->
     <div class="search-file__reference_container">
         {% for mDoc in mSearchCallbackRelevantDocument %}
-            {% include 'genesis\blades\search_template\blade_search_content_file_based.html' %}
+            {% include 'genesis/blades/search_template/blade_search_content_file_based.html' %}
         {% endfor %}
     </div>
     <div style="clear: left"></div>

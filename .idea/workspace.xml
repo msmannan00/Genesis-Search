@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9" />
+    <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/constants/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/constants/constant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/search_template/blade_search_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/templates/genesis/blades/search_template/blade_search_content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/block/block.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/templates/genesis/block/block.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/directory/directory.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/templates/genesis/directory/directory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/homepage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/templates/genesis/homepage/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/notice/notice.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/templates/genesis/notice/notice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/privacy/privacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/templates/genesis/privacy/privacy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/report/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/templates/genesis/report/report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/search/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/templates/genesis/search/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/sitemap/sitemap.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/templates/genesis/sitemap/sitemap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -246,6 +259,7 @@
       <workItem from="1641767191802" duration="339000" />
       <workItem from="1641905919904" duration="8042000" />
       <workItem from="1641970256588" duration="337000" />
+      <workItem from="1642135882738" duration="1243000" />
     </task>
     <servers />
   </component>
