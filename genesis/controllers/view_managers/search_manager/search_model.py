@@ -35,7 +35,7 @@ class search_model(request_handler):
             return mRelevanceListData, p_paged_documents['suggest']['suggestions']
         except Exception as ex:
             return mRelevanceListData, []
-        
+
     def __query_results(self, p_data):
         m_query_model = self.__m_session.invoke_trigger(SEARCH_SESSION_COMMANDS.INIT_SEARCH_PARAMETER, [p_data])
         if m_query_model.m_search_query == GENERAL_STRINGS.S_GENERAL_EMPTY:
