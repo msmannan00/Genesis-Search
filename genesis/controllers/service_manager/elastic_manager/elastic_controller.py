@@ -31,7 +31,61 @@ class elastic_controller(request_handler):
 
     def __initialization(self):
         try:
-            pass
+            if self.__m_connection.indices.exists(index=ELASTIC_INDEX.S_WEB_INDEX) is False:
+                m_mapping = {
+                    "settings": {
+                        "number_of_shards": 1,
+                        "number_of_replicas": 0,
+                        "max_result_window" : 1000000
+                    },
+                    "mappings": {
+                        "_source": {
+                            "enabled": True
+                        },
+                        "dynamic":"strict" ,
+                        "properties": {
+                            'm_host': { 'type': 'keyword' },
+                            'm_sub_host': { 'type': 'keyword' },
+                            "m_doc_size": { 'type': 'integer', },
+                            "m_img_size": {'type': 'integer'},
+                            'm_title': {'type': 'text'},
+                            'm_title_hidden': {'type': 'text'},
+                            'm_meta_description': {'type': 'text'},
+                            'm_important_content': {'type': 'text'},
+                            'm_important_content_hidden': {'type': 'text'},
+                            'm_meta_keywords': {'type': 'text'},
+                            'm_content': {'type': 'text'},
+                            'm_user_generated': {'type': 'boolean'},
+                            'm_content_type': {'type': 'keyword'},
+                            "m_images": { "type": "nested",
+                                    "properties": {
+                                    "m_url": {
+                                        "type": "keyword"
+                                    },
+                                    "m"
+                                    "_type": {
+                                        "type": "keyword"
+                                    }
+                                }
+                            },
+                            'm_crawled_user_images': { "type" : "text" },
+                            'm_crawled_doc_url': { "type" : "text" },
+                            'm_crawled_video': { "type" : "text" },
+                            'm_doc_url': { "type" : "text" },
+                            'm_video': { "type" : "text" },
+                            'm_daily_hits': {'type': 'integer'},
+                            'm_half_month_hits': {'type': 'integer'},
+                            'm_date': {'type': 'integer'},
+                            'm_monthly_hits': {'type': 'integer'},
+                            'm_total_hits': {'type': 'integer'}
+                        }
+                    }
+                }
+                self.__m_connection.indices.create(
+                    index=ELASTIC_INDEX.S_WEB_INDEX,
+                    body=m_mapping
+                )
+
         except Exception as ex:
             log.g().e("ELASTIC 1 : " + MANAGE_ELASTIC_MESSAGES.S_INSERT_FAILURE + " : " + str(ex))
 

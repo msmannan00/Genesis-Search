@@ -1,9 +1,15 @@
+import sys
+
 from termcolor import colored
 
 import os
 import datetime
 
-os.system('color')
+if sys.platform == "win32":
+    os.system('color')
+else:
+    pass
+
 class log:
 
     __instance = None
