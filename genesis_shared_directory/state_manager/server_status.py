@@ -1,2 +1,2 @@
 class SERVER_STATUS:
-    S_SERVER_STATE = "DEV"
+    S_SERVER_STATE = ""

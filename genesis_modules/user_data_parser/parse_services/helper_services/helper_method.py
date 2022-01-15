@@ -2,13 +2,13 @@
 import datetime
 import math
 import os
+import re
 import time
-from typing import re
-from urllib.parse import urlparse
-
 import requests
 import urllib3
+
 from gensim.parsing.preprocessing import STOPWORDS
+from urllib.parse import urlparse
 
 
 class helper_method:

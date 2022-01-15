@@ -16,7 +16,7 @@ class CONSTANTS:
     S_REFERENCE_WEBSITE_URL = os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")) + "/raw/reference_websites.json"
     S_DICTIONARY_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")) + "/raw/dictionary"
     S_STEMMED_DICTIONARY_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")) + "/raw/stemmed_dictionary"
-    S_LOCAL_FILE_PATH = str(Path(__file__).parent.parent.parent.parent.parent) + "/" + "ftp-directory"
+    S_LOCAL_FILE_PATH = str(Path(__file__).parent.parent.parent.parent) + "/genesis_shared_directory/" + "ftp-directory"
 
     # Template URL
     S_TEMPLATE_NOTICE_WEBSITE_REPORT = "../notice/?mNoticeParamType=report"

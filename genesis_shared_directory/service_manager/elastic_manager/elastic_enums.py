@@ -15,7 +15,7 @@ class ELASTIC_INDEX_COLLECTION:
 class ELASTIC_CONNECTIONS:
     S_DATABASE_NAME = 'genesis_server-elastic-search'
     S_DATABASE_PORT = 9200
-    S_DATABASE_IP = 'http://localhost'
+    S_DATABASE_IP = 'http://167.86.99.31'
 
 class ELASTIC_KEYS:
     S_ID = 'm_id'
@@ -35,6 +35,6 @@ class MANAGE_ELASTIC_MESSAGES:
     S_UPDATE_SUCCESS = "[4] Data Updated Successfully"
     S_DELETE_FAILURE = "[5] Something unexpected happened while deleting"
     S_DELETE_SUCCESS = "[6] Data Deleted Successfully"
-    S_READ_FAILURE = "[5] Something unexpected happened while reading"
-    S_READ_SUCCESS = "[6] Data Read Successfully"
-    S_COUNT_FAILURE = "[1] Something unexpected happened while counting"
+    S_READ_FAILURE   = "[5] Something unexpected happened while reading"
+    S_READ_SUCCESS   = "[6] Data Read Successfully"
+    S_COUNT_FAILURE  = "[1] Something unexpected happened while counting"

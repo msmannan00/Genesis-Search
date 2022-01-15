@@ -119,7 +119,6 @@ class elastic_request_generator(request_handler):
     def __on_index_user_query(self, p_data):
         m_host, m_sub_host = helper_method.split_host_url(p_data.m_base_url_model.m_url)
         m_data = {
-
             "script": {
                 "source": "ctx._source.m_doc_size = params.m_doc_size;"
                           "ctx._source.m_img_size = params.m_img_size;"

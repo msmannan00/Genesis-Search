@@ -1,8 +1,7 @@
 # Local Imports
 from elasticsearch import Elasticsearch
 
-from genesis_shared_directory.service_manager.elastic_manager.elastic_enums import ELASTIC_CONNECTIONS, ELASTIC_INDEX, \
-    ELASTIC_CRUD_COMMANDS, ELASTIC_KEYS, MANAGE_ELASTIC_MESSAGES
+from genesis_shared_directory.service_manager.elastic_manager.elastic_enums import ELASTIC_CONNECTIONS, ELASTIC_INDEX, ELASTIC_CRUD_COMMANDS, ELASTIC_KEYS, MANAGE_ELASTIC_MESSAGES
 from genesis_shared_directory.service_manager.elastic_manager.elastic_request_generator import elastic_request_generator
 from genesis_shared_directory.log_manager.log_controller import log
 from genesis_shared_directory.request_manager.request_handler import request_handler
@@ -31,6 +30,8 @@ class elastic_controller(request_handler):
 
     def __initialization(self):
         try:
+            #####  VERY DANGEROUS DO IT VERY CAREFULLY  ##### self.__m_connection.indices.delete(index=ELASTIC_INDEX.S_WEB_INDEX, ignore=[400, 404])
+
             if self.__m_connection.indices.exists(index=ELASTIC_INDEX.S_WEB_INDEX) is False:
                 m_mapping = {
                     "settings": {
@@ -92,9 +93,10 @@ class elastic_controller(request_handler):
 
     def __update(self, p_data, p_upsert):
         try:
-            self.__m_connection.index(body=p_data[ELASTIC_KEYS.S_VALUE], index=p_data[ELASTIC_KEYS.S_DOCUMENT])
+            self.__m_connection.update(body=p_data[ELASTIC_KEYS.S_VALUE],id=p_data[ELASTIC_KEYS.S_ID], index=p_data[ELASTIC_KEYS.S_DOCUMENT])
+            return True, None
         except Exception as ex:
-            log.g().e("ELASTIC 2 : " + MANAGE_ELASTIC_MESSAGES.S_INSERT_FAILURE + " : " + str(ex))
+            log.g().e("ELASTIC 2 : " + MANAGE_ELASTIC_MESSAGES.S_UPDATE_FAILURE + " : " + str(ex))
             return False, str(ex)
 
     def __read(self, p_data):
