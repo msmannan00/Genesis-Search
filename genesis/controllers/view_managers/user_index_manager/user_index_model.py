@@ -22,8 +22,8 @@ class user_index_model(request_handler):
         text_file.close()
 
     def __init_page(self, p_data):
-        if USER_INDEX_PARAM.M_INDEX_BLOCK in p_data.POST:
-            self.__save_html(p_data.POST[USER_INDEX_PARAM.M_INDEX_BLOCK])
+        if USER_INDEX_PARAM.M_INDEX_BLOCK_URL in p_data.POST and USER_INDEX_PARAM.M_INDEX_BLOCK_HTML in p_data.POST:
+            self.__save_html('{"m_url":"'+ p_data.POST[USER_INDEX_PARAM.M_INDEX_BLOCK_URL] +'","m_html":"'+ p_data.POST[USER_INDEX_PARAM.M_INDEX_BLOCK_HTML] +'"}')
             return USER_INDEX_CALLBACK.M_BLOCK_INDEXED_SUCCESS
         else:
             return USER_INDEX_CALLBACK.M_BLOCK_INDEXED_FAILED

@@ -14,7 +14,7 @@ from genesis.controllers.view_managers.policy_manager.policy_enums import POLICY
 from genesis.controllers.view_managers.report_manager.report_controller import report_controller
 from genesis.controllers.view_managers.report_manager.report_enums import REPORT_MODEL_COMMANDS
 from genesis.controllers.view_managers.search_manager.search_controller import search_controller
-from genesis.controllers.view_managers.search_manager.search_enums import SEARCH_MODEL_COMMANDS, USER_INDEX_MODEL_COMMANDS
+from genesis.controllers.view_managers.search_manager.search_enums import SEARCH_MODEL_COMMANDS
 from genesis.controllers.view_managers.sitemap_manager.sitemap_controller import sitemap_controller
 from genesis.controllers.view_managers.sitemap_manager.sitemap_enums import SITEMAP_MODEL_COMMANDS
 from genesis.controllers.view_managers.user_index_manager.user_index_controller import user_index_controller

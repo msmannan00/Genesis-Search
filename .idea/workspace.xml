@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/user_index_manager/user_index_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/view_managers/user_index_manager/user_index_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/user_index_manager/user_index_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/controllers/view_managers/user_index_manager/user_index_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,6 +254,9 @@
       <workItem from="1642135882738" duration="1363000" />
       <workItem from="1642142390361" duration="349000" />
       <workItem from="1642143173011" duration="2842000" />
+      <workItem from="1642185232944" duration="3440000" />
+      <workItem from="1642262207381" duration="188000" />
+      <workItem from="1642262514552" duration="859000" />
     </task>
     <servers />
   </component>
