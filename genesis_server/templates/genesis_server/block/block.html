@@ -1,0 +1,26 @@
+{% load static %}
+
+{% include 'genesis_server/blades/blades_shared_initialization.html' %}
+{% include 'genesis_server/block/local_imports.html' %}
+
+
+<html lang="en" class="block-html">
+<meta>
+
+<!--script initialization-->
+<body class="block-body">
+    <a href="http://play.google.com/store/apps/details?id=com.darkweb.genesissearchengine.production">
+        <div class="block-container">
+            <img src="{% static 'genesis_server/images/warning.png' %}" class="block-warning-image" alt="Loading"/><br><br>
+            <div class="block-header-container">
+                <h5 class="block-header"><b>Official Genesis Browser <br> <div style="margin-top:10px">Update Required !</div></b> </h5>
+            </div>
+            <hr class="block-linebreak">
+
+            <p class="block-paragraph" >We are delighted to state that we have moved our online presence to a new Google Play account. Our digital team has been working hard to create a better online experience for our customers.<br><br>Though there are no major changes in the layout and context, we have made it just a little easier for our customers and clients to find us online. We have always been a brand, and we are immensely proud to share this news with you</p>
+            <input type="button" class="block-warning-button btn" value="Update Browser">
+            <br><br><br>
+        </div>
+    </a>
+</body>
+</html>

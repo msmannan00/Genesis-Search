@@ -2,7 +2,493 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9">
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/Settings/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/Settings/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/Settings/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/Settings/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_instance/constants/constant.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_instance/constants/keys.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_instance/constants/strings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_instance/crawl_controller/crawl_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_instance/crawl_controller/crawl_enums.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_instance/i_crawl_crawler/html_parse_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_instance/i_crawl_crawler/i_crawl_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_instance/i_crawl_crawler/i_crawl_enums.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_instance/local_shared_model/index_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_instance/local_shared_model/url_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_instance/parse_controller/parse_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_instance/parse_controller/parse_enums.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_services/constants/constant.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_services/constants/keys.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_services/constants/strings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_services/helper_services/duplication_handler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_services/helper_services/helper_method.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_services/helper_services/spell_check_handler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_services/raw/classifier_output/class_vectorizer.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_services/raw/classifier_output/feature_vector.sav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_services/raw/classifier_output/training_data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_services/raw/classifier_output/web_classifier.sav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_services/raw/crawled_classifier_websites.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_services/raw/dictionary" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_services/raw/dictionary_small" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/directory/local_imports.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/homepage/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/notice/local_imports.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/notice/notice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/search/local_imports.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_shared_directory/service_manager/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_shared_directory/service_manager/block_manager/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_shared_directory/service_manager/elastic_manager/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_shared_directory/service_manager/mongo_manager/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_shared_directory/service_manager/topic_manager/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_shared_directory/service_manager/topic_manager/topic_classifier_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_shared_directory/service_manager/topic_manager/topic_classifier_enums.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_shared_directory/service_manager/topic_manager/topic_classifier_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_shared_directory/service_manager/topic_manager/topic_classifier_trainer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/genesis_shared_directory/state_manager/strings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Settings/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Settings/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Settings/static/admin/js/SelectBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/Settings/static/admin/js/SelectBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Settings/static/admin/js/SelectFilter2.js" beforeDir="false" afterPath="$PROJECT_DIR$/Settings/static/admin/js/SelectFilter2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Settings/static/admin/js/vendor/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/Settings/static/admin/js/vendor/jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Settings/static/admin/js/vendor/select2/select2.full.js" beforeDir="false" afterPath="$PROJECT_DIR$/Settings/static/admin/js/vendor/select2/select2.full.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Settings/static/admin/js/vendor/select2/select2.full.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Settings/static/admin/js/vendor/select2/select2.full.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Settings/static/admin/js/vendor/xregexp/xregexp.js" beforeDir="false" afterPath="$PROJECT_DIR$/Settings/static/admin/js/vendor/xregexp/xregexp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Settings/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Settings/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/Settings/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/css/autocomplete.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/css/autocomplete.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/css/changelists.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/css/changelists.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/css/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/css/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/css/fonts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/css/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/css/forms.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/css/nav_sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/css/nav_sidebar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/css/responsive.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/css/responsive_rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/css/responsive_rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/css/rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/css/rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/css/vendor/select2/LICENSE-SELECT2.md" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/css/vendor/select2/LICENSE-SELECT2.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/css/vendor/select2/select2.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/css/vendor/select2/select2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/css/vendor/select2/select2.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/css/vendor/select2/select2.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/css/widgets.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/css/widgets.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/fonts/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/fonts/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/fonts/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/fonts/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/fonts/Roboto-Bold-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/fonts/Roboto-Bold-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/fonts/Roboto-Light-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/fonts/Roboto-Light-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/fonts/Roboto-Regular-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/fonts/Roboto-Regular-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/calendar-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/calendar-icons.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/gis/move_vertex_off.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/gis/move_vertex_off.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/gis/move_vertex_on.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/gis/move_vertex_on.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/icon-addlink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/icon-addlink.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/icon-alert.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/icon-alert.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/icon-calendar.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/icon-calendar.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/icon-changelink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/icon-changelink.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/icon-clock.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/icon-clock.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/icon-deletelink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/icon-deletelink.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/icon-no.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/icon-no.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/icon-unknown-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/icon-unknown-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/icon-unknown.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/icon-unknown.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/icon-viewlink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/icon-viewlink.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/icon-yes.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/icon-yes.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/inline-delete.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/inline-delete.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/search.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/search.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/selector-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/selector-icons.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/sorting-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/sorting-icons.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/tooltag-add.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/tooltag-add.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/img/tooltag-arrowright.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/img/tooltag-arrowright.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/SelectBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/SelectBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/SelectFilter2.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/SelectFilter2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/actions.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/actions.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/admin/DateTimeShortcuts.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/admin/DateTimeShortcuts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/admin/RelatedObjectLookups.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/admin/RelatedObjectLookups.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/autocomplete.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/calendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/cancel.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/cancel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/change_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/change_form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/collapse.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/collapse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/collapse.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/collapse.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/inlines.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/inlines.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/inlines.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/inlines.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/jquery.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/jquery.init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/nav_sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/nav_sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/popup_response.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/popup_response.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/prepopulate.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/prepopulate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/prepopulate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/prepopulate.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/prepopulate_init.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/prepopulate_init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/urlify.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/urlify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/jquery/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/jquery/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/jquery/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/LICENSE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/af.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/af.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/ar.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/ar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/az.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/az.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/bg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/bn.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/bn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/bs.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/bs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/ca.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/ca.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/cs.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/cs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/da.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/da.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/de.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/de.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/dsb.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/dsb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/el.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/el.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/es.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/es.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/et.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/et.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/eu.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/eu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/fa.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/fa.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/fi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/fr.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/fr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/gl.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/gl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/he.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/he.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/hi.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/hi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/hr.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/hr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/hsb.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/hsb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/hu.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/hu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/hy.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/hy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/id.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/id.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/is.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/is.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/it.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/it.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/ja.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/ja.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/ka.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/ka.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/km.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/km.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/ko.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/ko.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/lt.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/lt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/lv.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/lv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/mk.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/mk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/ms.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/ms.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/nb.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/nb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/ne.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/ne.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/nl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/pl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/ps.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/ps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/pt-BR.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/pt-BR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/pt.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/pt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/ro.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/ro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/ru.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/ru.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/sk.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/sk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/sl.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/sl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/sq.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/sq.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/sr-Cyrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/sr-Cyrl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/sr.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/sr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/sv.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/sv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/th.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/th.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/tk.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/tk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/tr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/uk.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/uk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/vi.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/vi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/zh-CN.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/zh-CN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/i18n/zh-TW.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/i18n/zh-TW.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/select2.full.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/select2.full.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/select2/select2.full.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/select2/select2.full.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/xregexp/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/xregexp/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/xregexp/xregexp.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/xregexp/xregexp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/admin/js/vendor/xregexp/xregexp.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/admin/js/vendor/xregexp/xregexp.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_modules/user_data_parser/parse_instance/constants/app_status.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/constants/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/constants/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/constants/constant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/constants/enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/constants/enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/constants/keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/constants/keys.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/constants/message.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/constants/message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/constants/strings.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/constants/strings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/helper_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/helper_manager/helper_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/helper_manager/helper_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/log_manager/log_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_shared_directory/log_manager/log_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/log_manager/log_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_shared_directory/log_manager/log_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/request_manager/request_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_shared_directory/request_manager/request_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/service_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/constants/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/service_manager/block_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/helper_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/service_manager/block_manager/block_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_shared_directory/service_manager/block_manager/block_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/service_manager/block_manager/block_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_shared_directory/service_manager/block_manager/block_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/service_manager/elastic_manager/elastic_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_shared_directory/service_manager/elastic_manager/elastic_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/service_manager/elastic_manager/elastic_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_shared_directory/service_manager/elastic_manager/elastic_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/service_manager/elastic_manager/elastic_request_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_shared_directory/service_manager/elastic_manager/elastic_request_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/service_manager/mongo_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/service_manager/mongo_manager/mongo_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_shared_directory/service_manager/mongo_manager/mongo_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/service_manager/mongo_manager/mongo_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_shared_directory/service_manager/mongo_manager/mongo_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/service_manager/mongo_manager/mongo_request_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_shared_directory/service_manager/mongo_manager/mongo_request_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/shared_model/report_data_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/shared_model/report_data_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/shared_model/sitemap_data_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/shared_model/sitemap_data_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/block_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/block_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/directory_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/block_manager/block_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/block_manager/block_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/block_manager/block_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/block_manager/block_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/directory_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/directory_manager/directory_shared_model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/directory_manager/directory_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/directory_manager/directory_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/directory_manager/directory_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/directory_manager/directory_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/directory_manager/directory_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/directory_manager/directory_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/directory_manager/directory_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/directory_manager/directory_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/directory_manager/directory_shared_model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/hompage_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/directory_manager/directory_shared_model/directory_class_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/directory_manager/directory_shared_model/directory_class_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/hompage_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/notice_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/hompage_manager/homepage_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/hompage_manager/homepage_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/hompage_manager/homepage_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/hompage_manager/homepage_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/hompage_manager/homepage_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/hompage_manager/homepage_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/hompage_manager/homepage_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/hompage_manager/homepage_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/notice_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/policy_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/notice_manager/notice_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/notice_manager/notice_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/notice_manager/notice_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/notice_manager/notice_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/notice_manager/notice_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/notice_manager/notice_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/notice_manager/notice_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/notice_manager/notice_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/policy_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/report_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/policy_manager/policy_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/policy_manager/policy_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/policy_manager/policy_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/policy_manager/policy_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/report_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/search_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/report_manager/report_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/report_manager/report_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/report_manager/report_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/report_manager/report_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/report_manager/report_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/report_manager/report_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/report_manager/report_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/report_manager/report_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/search_manager/search_data_model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/search_manager/search_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_data_model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/sitemap_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_data_model/query_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/search_manager/search_data_model/query_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/search_manager/search_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/search_manager/search_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/search_manager/search_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/spell_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/search_manager/spell_checker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/tokenizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/search_manager/tokenizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/sitemap_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_index_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/sitemap_manager/sitemap_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/sitemap_manager/sitemap_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/sitemap_manager/sitemap_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/sitemap_manager/sitemap_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/sitemap_manager/sitemap_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/sitemap_manager/sitemap_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/sitemap_manager/sitemap_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/sitemap_manager/sitemap_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/user_index_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/user_index_manager/user_index_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_index_manager/user_index_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/user_index_manager/user_index_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_index_manager/user_index_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/controllers/view_managers/user_index_manager/user_index_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_index_manager/user_index_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/keys.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_shared_directory/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/raw/dictionary" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/raw/dictionary" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/raw/reference_websites.json" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/raw/reference_websites.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/raw/stemmed_dictionary" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/raw/stemmed_dictionary" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/css/autocomplete.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/css/autocomplete.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/css/changelists.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/css/changelists.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/css/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/css/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/css/fonts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/css/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/css/forms.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/css/responsive.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/css/responsive_rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/css/responsive_rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/css/rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/css/rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/css/vendor/select2/LICENSE-SELECT2.md" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/css/vendor/select2/LICENSE-SELECT2.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/css/vendor/select2/select2.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/css/vendor/select2/select2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/css/vendor/select2/select2.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/css/vendor/select2/select2.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/css/widgets.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/css/widgets.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/fonts/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/fonts/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/fonts/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/fonts/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/fonts/Roboto-Bold-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/fonts/Roboto-Bold-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/fonts/Roboto-Light-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/fonts/Roboto-Light-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/fonts/Roboto-Regular-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/fonts/Roboto-Regular-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/calendar-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/calendar-icons.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/gis/move_vertex_off.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/gis/move_vertex_off.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/gis/move_vertex_on.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/gis/move_vertex_on.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/icon-addlink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/icon-addlink.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/icon-alert.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/icon-alert.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/icon-calendar.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/icon-calendar.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/icon-changelink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/icon-changelink.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/icon-clock.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/icon-clock.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/icon-deletelink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/icon-deletelink.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/icon-no.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/icon-no.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/icon-unknown-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/icon-unknown-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/icon-unknown.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/icon-unknown.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/icon-viewlink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/icon-viewlink.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/icon-yes.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/icon-yes.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/inline-delete.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/inline-delete.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/search.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/search.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/selector-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/selector-icons.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/sorting-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/sorting-icons.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/tooltag-add.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/tooltag-add.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/img/tooltag-arrowright.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/img/tooltag-arrowright.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/SelectBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/SelectBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/SelectFilter2.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/SelectFilter2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/actions.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/actions.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/admin/DateTimeShortcuts.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/admin/DateTimeShortcuts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/admin/RelatedObjectLookups.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/admin/RelatedObjectLookups.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/autocomplete.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/calendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/cancel.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/cancel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/change_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/change_form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/collapse.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/collapse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/collapse.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/collapse.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/inlines.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/inlines.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/inlines.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/inlines.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/jquery.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/jquery.init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/popup_response.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/popup_response.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/prepopulate.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/prepopulate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/prepopulate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/prepopulate.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/prepopulate_init.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/prepopulate_init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/urlify.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/urlify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/jquery/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/jquery/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/jquery/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/LICENSE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/af.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/af.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/ar.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/ar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/az.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/az.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/bg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/bn.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/bn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/bs.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/bs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/ca.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/ca.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/cs.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/cs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/da.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/da.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/de.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/de.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/dsb.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/dsb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/el.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/el.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/es.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/es.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/et.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/et.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/eu.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/eu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/fa.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/fa.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/fi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/fr.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/fr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/gl.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/gl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/he.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/he.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/hi.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/hi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/hr.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/hr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/hsb.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/hsb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/hu.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/hu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/hy.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/hy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/id.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/id.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/is.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/is.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/it.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/it.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/ja.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/ja.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/ka.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/ka.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/km.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/km.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/ko.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/ko.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/lt.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/lt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/lv.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/lv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/mk.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/mk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/ms.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/ms.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/nb.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/nb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/ne.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/ne.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/nl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/pl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/ps.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/ps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/pt-BR.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/pt-BR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/pt.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/pt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/ro.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/ro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/ru.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/ru.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/sk.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/sk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/sl.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/sl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/sq.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/sq.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/sr-Cyrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/sr-Cyrl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/sr.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/sr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/sv.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/sv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/th.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/th.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/tk.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/tk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/tr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/uk.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/uk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/vi.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/vi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/zh-CN.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/zh-CN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/i18n/zh-TW.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/i18n/zh-TW.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/select2.full.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/select2.full.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/select2/select2.full.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/select2/select2.full.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/xregexp/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/xregexp/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/xregexp/xregexp.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/xregexp/xregexp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/admin/js/vendor/xregexp/xregexp.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/admin/js/vendor/xregexp/xregexp.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/blades/directory/cs-directory-list-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/blades/directory/cs-directory-list-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/blades/directory/cs-directory-pagination-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/blades/directory/cs-directory-pagination-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/blades/home/cs-home-header-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/blades/home/cs-home-header-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/blades/home/cs-sidebar-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/blades/home/cs-sidebar-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/blades/notice/cs-notice-report-website-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/blades/notice/cs-notice-report-website-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/blades/notice/cs-notice-upload-website-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/blades/notice/cs-notice-upload-website-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/blades/privacy/cs-privacy-header-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/blades/privacy/cs-privacy-header-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/blades/search/cs-search-content-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/blades/search/cs-search-content-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/blades/search/cs-search-engine-suggestions-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/blades/search/cs-search-engine-suggestions-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/blades/search/cs-search-no-suggestions.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/blades/search/cs-search-no-suggestions.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/blades/search/cs-search-pagination.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/blades/search/cs-search-pagination.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/blades/shared/cs-footer-blade-dynamic.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/blades/shared/cs-footer-blade-dynamic.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/blades/shared/cs-footer-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/blades/shared/cs-footer-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/blades/shared/cs-light-header-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/blades/shared/cs-light-header-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/libs/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/libs/font-awesome.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/pages/cs-block.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/pages/cs-block.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/pages/cs-directory.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/pages/cs-directory.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/pages/cs-global-properties.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/pages/cs-global-properties.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/pages/cs-homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/pages/cs-homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/pages/cs-notice.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/pages/cs-notice.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/pages/cs-privacy.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/pages/cs-privacy.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/pages/cs-report.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/pages/cs-report.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/pages/cs-search.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/pages/cs-search.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/css/pages/cs-sitemap.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/pages/cs-sitemap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/fonts/FontAwesome.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/images/blured-image.png" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/images/blured-image.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/images/blurredImage/blur-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/images/blurredImage/blur-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/images/blurredImage/blur-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/images/blurredImage/blur-2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/images/blurredImage/blur-3.png" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/images/blurredImage/blur-3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/images/blurredImage/blur-4.png" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/images/blurredImage/blur-4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/images/favicon-home.png" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/images/favicon-home.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/images/favicon-search.png" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/images/favicon-search.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/images/img_download.png" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/images/img_download.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/images/privacy.png" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/images/privacy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/images/search-icon-dark.png" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/images/search-icon-dark.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/images/search-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/images/search-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/images/warning.png" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/images/warning.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/libs/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/libs/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/libs/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/libs/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/libs/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/libs/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/static/genesis/libs/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/libs/popper.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/blades_shared_initialization.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/blades_shared_initialization.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/directory_template/blade_directory_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/directory_template/blade_directory_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/directory_template/blade_directory_pagination.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/directory_template/blade_directory_pagination.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/home_template/blade_home_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/home_template/blade_home_header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/home_template/blade_home_references.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/home_template/blade_home_references.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/home_template/blade_home_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/home_template/blade_home_search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/home_template/blade_home_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/home_template/blade_home_sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/home_template/blade_home_sidebar_mobile.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/home_template/blade_home_sidebar_mobile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/notice_template/blade_report_website_notice.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/notice_template/blade_report_website_notice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/notice_template/blade_upload_website_notice.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/notice_template/blade_upload_website_notice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/privacy_template/blade_privacy_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/privacy_template/blade_privacy_header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/search_template/blade_search_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/search_template/blade_search_content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/search_template/blade_search_content_file_based.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/search_template/blade_search_content_file_based.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/search_template/blade_search_content_url_based.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/search_template/blade_search_content_url_based.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/search_template/blade_search_engine_suggestion.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/search_template/blade_search_engine_suggestion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/search_template/blade_search_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/search_template/blade_search_header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/search_template/blade_search_no_suggestion.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/search_template/blade_search_no_suggestion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/search_template/blade_search_pagination.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/search_template/blade_search_pagination.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/search_template/blade_search_safe_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/search_template/blade_search_safe_search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/shared_blades/blade_footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/shared_blades/blade_footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/blades/shared_blades/blade_light_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/shared_blades/blade_light_header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/block/block.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/block/block.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/block/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/block/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/directory/directory.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/directory/directory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/directory/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/homepage/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/homepage/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/homepage/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/notice/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/notice/notice.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/privacy/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/privacy/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/privacy/privacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/privacy/privacy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/report/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/report/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/report/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/report/report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/search/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/search/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/search/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/secretkey/secretkey.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/secretkey/secretkey.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/sitemap/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/sitemap/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/templates/genesis/sitemap/sitemap.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/sitemap/sitemap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,24 +524,24 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/genesis_shared_directory/state_manager" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Workspace\Genesis-Search\genesis_shared_directory\state_manager" />
+      <recent name="C:\Workspace\Genesis-Search\genesis_shared_directory" />
+      <recent name="C:\Workspace\Genesis-Search\modules" />
       <recent name="C:\Workspace\Genesis-Search" />
       <recent name="C:\Workspace\Genesis-Search\genesis\controllers\view_managers" />
-      <recent name="C:\Workspace\Genesis-Search\genesis\raw" />
-      <recent name="C:\Workspace\Genesis-Search\genesis\controllers\service_manager" />
-      <recent name="C:\Workspace\Genesis-Search\genesis\static\genesis\images\blurredImage" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Workspace\Genesis-Search\genesis_shared_directory\service_manager" />
+      <recent name="C:\Workspace\Genesis-Search\genesis_shared_directory" />
       <recent name="C:\Workspace\Genesis-Search\genesis\static\genesis\images" />
       <recent name="C:\Workspace\Genesis-Search\genesis\controllers" />
       <recent name="C:\Workspace\Genesis-Search\genesis\controllers\view_managers" />
-      <recent name="C:\Workspace\Genesis-Search\genesis" />
-      <recent name="C:\Workspace\Genesis-Search\GenesisCrawler\controllers\data_manager\tfidf_manager\shared_model" />
     </key>
   </component>
   <component name="RunManager" selected="Python.app">
@@ -254,6 +740,10 @@
       <workItem from="1642185232944" duration="3440000" />
       <workItem from="1642262207381" duration="188000" />
       <workItem from="1642262514552" duration="2350000" />
+      <workItem from="1642274642613" duration="4624000" />
+      <workItem from="1642279353782" duration="77000" />
+      <workItem from="1642279448096" duration="286000" />
+      <workItem from="1642279748112" duration="14000" />
     </task>
     <servers />
   </component>
@@ -280,22 +770,22 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_session_controller.py</url>
+          <url>file://$PROJECT_DIR$/genesis_server/controllers/view_managers/search_manager/search_session_controller.py</url>
           <line>183</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_session_controller.py</url>
+          <url>file://$PROJECT_DIR$/genesis_server/controllers/view_managers/search_manager/search_session_controller.py</url>
           <line>177</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_session_controller.py</url>
+          <url>file://$PROJECT_DIR$/genesis_server/controllers/view_managers/search_manager/search_session_controller.py</url>
           <line>173</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/genesis/controllers/view_managers/search_manager/search_session_controller.py</url>
+          <url>file://$PROJECT_DIR$/genesis_server/controllers/view_managers/search_manager/search_session_controller.py</url>
           <line>169</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
@@ -323,6 +813,6 @@
     <SUITE FILE_PATH="coverage/Genesis_Search_Python$HomepageController.coverage" NAME="HomepageController Coverage Results" MODIFIED="1639626889491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GenesisCrawler/controllers/hompageManager" />
     <SUITE FILE_PATH="coverage/Genesis_Search$block_controller.coverage" NAME="block_controller Coverage Results" MODIFIED="1641373126702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/genesis/controllers/service_manager/block_manager" />
     <SUITE FILE_PATH="coverage/Genesis_Crawler_Python$applicationController.coverage" NAME="applicationController Coverage Results" MODIFIED="1630410673541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerInstance/applicationController" />
-    <SUITE FILE_PATH="coverage/Genesis_Search$app.coverage" NAME="app Coverage Results" MODIFIED="1641932027477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Genesis_Search$app.coverage" NAME="app Coverage Results" MODIFIED="1642279420300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

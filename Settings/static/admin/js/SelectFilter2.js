@@ -56,7 +56,7 @@ Requires core.js and SelectBox.js.
 
             quickElement(
                 'span', search_filter_label, '',
-                'class', 'help-tooltip genesis-label-icon',
+                'class', 'help-tooltip genesis_server-label-icon',
                 'title', interpolate(gettext("Type into this box to filter down the list of available %s."), [field_name])
             );
 

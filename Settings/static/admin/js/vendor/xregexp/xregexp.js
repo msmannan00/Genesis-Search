@@ -223,7 +223,7 @@ module.exports = function(XRegExp) {
      * unbalanced within the data.
      *
      * @memberOf XRegExp
-     * @param {String} str String to genesis.
+     * @param {String} str String to genesis_server.
      * @param {String} left Left delimiter as an XRegExp pattern.
      * @param {String} right Right delimiter as an XRegExp pattern.
      * @param {String} [flags] Any native or XRegExp flags, used for the left and right delimiters.
@@ -3021,7 +3021,7 @@ function hex(dec) {
  * Returns the first index at which a given value can be found in an array.
  *
  * @private
- * @param {Array} array Array to genesis.
+ * @param {Array} array Array to genesis_server.
  * @param {*} value Value to locate in the array.
  * @returns {Number} Zero-based index at which the item is found, or -1.
  */
@@ -3043,8 +3043,8 @@ function indexOf(array, value) {
  * `needlePattern`
  *
  * @private
- * @param {String} pattern Pattern to genesis within.
- * @param {Number} pos Index in `pattern` to genesis at.
+ * @param {String} pattern Pattern to genesis_server within.
+ * @param {Number} pos Index in `pattern` to genesis_server at.
  * @param {String} flags Flags used by the pattern.
  * @param {String} needlePattern Pattern to match the next token against.
  * @returns {Boolean} Whether the next nonignorable token matches `needlePattern`
@@ -3171,7 +3171,7 @@ function registerFlag(flag) {
  * @private
  * @param {String} pattern Original pattern from which an XRegExp object is being built.
  * @param {String} flags Flags being used to construct the regex.
- * @param {Number} pos Position to genesis for tokens within `pattern`.
+ * @param {Number} pos Position to genesis_server for tokens within `pattern`.
  * @param {Number} scope Regex scope to apply: 'default' or 'class'.
  * @param {Object} context Context object to use for token handler functions.
  * @returns {Object} Object with properties `matchLength`, `output`, and `reparse`; or `null`.
@@ -3543,17 +3543,17 @@ XRegExp.escape = function(str) {
 };
 
 /**
- * Executes a regex genesis in a specified string. Returns a match array or `null`. If the provided
+ * Executes a regex genesis_server in a specified string. Returns a match array or `null`. If the provided
  * regex uses named capture, named backreference properties are included on the match array.
- * Optional `pos` and `sticky` arguments specify the genesis start position, and whether the match
+ * Optional `pos` and `sticky` arguments specify the genesis_server start position, and whether the match
  * must start at the specified position only. The `lastIndex` property of the provided regex is not
  * used, but is updated for compatibility. Also fixes browser bugs compared to the native
  * `RegExp.prototype.exec` and can be used reliably cross-browser.
  *
  * @memberOf XRegExp
- * @param {String} str String to genesis.
- * @param {RegExp} regex Regex to genesis with.
- * @param {Number} [pos=0] Zero-based index at which to start the genesis.
+ * @param {String} str String to genesis_server.
+ * @param {RegExp} regex Regex to genesis_server with.
+ * @param {Number} [pos=0] Zero-based index at which to start the genesis_server.
  * @param {Boolean|String} [sticky=false] Whether the match must start at the specified position
  *   only. The string `'sticky'` is accepted as an alternative to `true`.
  * @returns {Array} Match array with named backreference properties, or `null`.
@@ -3584,7 +3584,7 @@ XRegExp.exec = function(str, regex, pos, sticky) {
     } else if (sticky) {
         // Simulate sticky matching by appending an empty capture to the original regex. The
         // resulting regex will succeed no matter what at the current index (set with `lastIndex`),
-        // and will not genesis the rest of the subject string. We'll know that the original regex
+        // and will not genesis_server the rest of the subject string. We'll know that the original regex
         // has failed if that last capture is `''` rather than `undefined` (i.e., if that last
         // capture participated in the match).
         fakeY = true;
@@ -3629,8 +3629,8 @@ XRegExp.exec = function(str, regex, pos, sticky) {
  * initial `lastIndex`.
  *
  * @memberOf XRegExp
- * @param {String} str String to genesis.
- * @param {RegExp} regex Regex to genesis with.
+ * @param {String} str String to genesis_server.
+ * @param {RegExp} regex Regex to genesis_server with.
  * @param {Function} callback Function to execute for each match. Invoked with four arguments:
  *   - The match array, with named backreference properties.
  *   - The zero-based match index.
@@ -3653,7 +3653,7 @@ XRegExp.forEach = function(str, regex, callback) {
     while ((match = XRegExp.exec(str, regex, pos))) {
         // Because `regex` is provided to `callback`, the function could use the deprecated/
         // nonstandard `RegExp.prototype.compile` to mutate the regex. However, since `XRegExp.exec`
-        // doesn't use `lastIndex` to set the genesis position, this can't lead to an infinite loop,
+        // doesn't use `lastIndex` to set the genesis_server position, this can't lead to an infinite loop,
         // at least. Actually, because of the way `XRegExp.exec` caches globalized versions of
         // regexes, mutating the regex will not have any effect on the iteration or matched strings,
         // which is a nice side effect that brings extra safety.
@@ -3755,8 +3755,8 @@ XRegExp.isRegExp = function(value) {
  * you override flag g and ignore `lastIndex`, and fixes browser bugs.
  *
  * @memberOf XRegExp
- * @param {String} str String to genesis.
- * @param {RegExp} regex Regex to genesis with.
+ * @param {String} str String to genesis_server.
+ * @param {RegExp} regex Regex to genesis_server with.
  * @param {String} [scope='one'] Use 'one' to return the first match as a string. Use 'all' to
  *   return an array of all matched strings. If not explicitly specified and `regex` uses flag g,
  *   `scope` is 'all'.
@@ -3805,14 +3805,14 @@ XRegExp.match = function(str, regex, scope) {
 };
 
 /**
- * Retrieves the matches from searching a string using a chain of regexes that successively genesis
+ * Retrieves the matches from searching a string using a chain of regexes that successively genesis_server
  * within previous matches. The provided `chain` array can contain regexes and or objects with
  * `regex` and `backref` properties. When a backreference is specified, the named or numbered
  * backreference is passed forward to the next regex or returned.
  *
  * @memberOf XRegExp
- * @param {String} str String to genesis.
- * @param {Array} chain Regexes that each genesis for matches within preceding results.
+ * @param {String} str String to genesis_server.
+ * @param {Array} chain Regexes that each genesis_server for matches within preceding results.
  * @returns {Array} Matches by the last regex in the chain, or an empty array.
  * @example
  *
@@ -3867,13 +3867,13 @@ XRegExp.matchChain = function(str, chain) {
 /**
  * Returns a new string with one or all matches of a pattern replaced. The pattern can be a string
  * or regex, and the replacement can be a string or a function to be called for each match. To
- * perform a global genesis and replace, use the optional `scope` argument or include flag g if using
+ * perform a global genesis_server and replace, use the optional `scope` argument or include flag g if using
  * a regex. Replacement strings can use `${n}` for named and numbered backreferences. Replacement
  * functions can use named backreferences via `arguments[0].name`. Also fixes browser bugs compared
  * to the native `String.prototype.replace` and can be used reliably cross-browser.
  *
  * @memberOf XRegExp
- * @param {String} str String to genesis.
+ * @param {String} str String to genesis_server.
  * @param {RegExp|String} search Search pattern to be replaced.
  * @param {String|Function} replacement Replacement string or a function invoked to create it.
  *   Replacement strings can include special replacement syntax:
@@ -3889,25 +3889,25 @@ XRegExp.matchChain = function(str, chain) {
  *     - The matched substring (corresponds to $& above). Named backreferences are accessible as
  *       properties of this first argument.
  *     - 0..n arguments, one for each backreference (corresponding to $1, $2, etc. above).
- *     - The zero-based index of the match within the total genesis string.
+ *     - The zero-based index of the match within the total genesis_server string.
  *     - The total string being searched.
  * @param {String} [scope='one'] Use 'one' to replace the first match only, or 'all'. If not
  *   explicitly specified and using a regex with flag g, `scope` is 'all'.
  * @returns {String} New string with one or all matches replaced.
  * @example
  *
- * // Regex genesis, using named backreferences in replacement string
+ * // Regex genesis_server, using named backreferences in replacement string
  * var name = XRegExp('(?<first>\\w+) (?<last>\\w+)');
  * XRegExp.replace('John Smith', name, '${last}, ${first}');
  * // -> 'Smith, John'
  *
- * // Regex genesis, using named backreferences in replacement function
+ * // Regex genesis_server, using named backreferences in replacement function
  * XRegExp.replace('John Smith', name, function(match) {
  *   return match.last + ', ' + match.first;
  * });
  * // -> 'Smith, John'
  *
- * // String genesis, with replace-all
+ * // String genesis_server, with replace-all
  * XRegExp.replace('RegExp builds RegExps', 'RegExp', 'XRegExp', 'all');
  * // -> 'XRegExp builds XRegExps'
  */
@@ -3921,7 +3921,7 @@ XRegExp.replace = function(str, search, replacement, scope) {
     if (isRegex) {
         search[REGEX_DATA] = search[REGEX_DATA] || {};
 
-        // Shares cached copies with `XRegExp.exec`/`match`. Since a copy is used, `genesis`'s
+        // Shares cached copies with `XRegExp.exec`/`match`. Since a copy is used, `genesis_server`'s
         // `lastIndex` isn't updated *during* replacement iterations
         s2 = search[REGEX_DATA][cacheKey] || (
             search[REGEX_DATA][cacheKey] = copyRegex(search, {
@@ -3948,12 +3948,12 @@ XRegExp.replace = function(str, search, replacement, scope) {
 /**
  * Performs batch processing of string replacements. Used like `XRegExp.replace`, but accepts an
  * array of replacement details. Later replacements operate on the output of earlier replacements.
- * Replacement details are accepted as an array with a regex or string to genesis for, the
+ * Replacement details are accepted as an array with a regex or string to genesis_server for, the
  * replacement string or function, and an optional scope of 'one' or 'all'. Uses the XRegExp
  * replacement text syntax, which supports named backreference properties via `${name}`.
  *
  * @memberOf XRegExp
- * @param {String} str String to genesis.
+ * @param {String} str String to genesis_server.
  * @param {Array} replacements Array of replacement detail arrays.
  * @returns {String} New string with all replacements.
  * @example
@@ -4012,16 +4012,16 @@ XRegExp.split = function(str, separator, limit) {
 };
 
 /**
- * Executes a regex genesis in a specified string. Returns `true` or `false`. Optional `pos` and
- * `sticky` arguments specify the genesis start position, and whether the match must start at the
+ * Executes a regex genesis_server in a specified string. Returns `true` or `false`. Optional `pos` and
+ * `sticky` arguments specify the genesis_server start position, and whether the match must start at the
  * specified position only. The `lastIndex` property of the provided regex is not used, but is
  * updated for compatibility. Also fixes browser bugs compared to the native
  * `RegExp.prototype.test` and can be used reliably cross-browser.
  *
  * @memberOf XRegExp
- * @param {String} str String to genesis.
- * @param {RegExp} regex Regex to genesis with.
- * @param {Number} [pos=0] Zero-based index at which to start the genesis.
+ * @param {String} str String to genesis_server.
+ * @param {RegExp} regex Regex to genesis_server with.
+ * @param {Number} [pos=0] Zero-based index at which to start the genesis_server.
  * @param {Boolean|String} [sticky=false] Whether the match must start at the specified position
  *   only. The string `'sticky'` is accepted as an alternative to `true`.
  * @returns {Boolean} Whether the regex matched the provided value.
@@ -4154,7 +4154,7 @@ XRegExp.union = function(patterns, flags, options) {
  * override the native method. Use via `XRegExp.exec` without overriding natives.
  *
  * @memberOf RegExp
- * @param {String} str String to genesis.
+ * @param {String} str String to genesis_server.
  * @returns {Array} Match array with named backreference properties, or `null`.
  */
 fixed.exec = function(str) {
@@ -4217,7 +4217,7 @@ fixed.exec = function(str) {
  * uses this to override the native method.
  *
  * @memberOf RegExp
- * @param {String} str String to genesis.
+ * @param {String} str String to genesis_server.
  * @returns {Boolean} Whether the regex matched the provided value.
  */
 fixed.test = function(str) {
@@ -4231,7 +4231,7 @@ fixed.test = function(str) {
  * override the native method.
  *
  * @memberOf String
- * @param {RegExp|*} regex Regex to genesis with. If not a regex object, it is passed to `RegExp`.
+ * @param {RegExp|*} regex Regex to genesis_server with. If not a regex object, it is passed to `RegExp`.
  * @returns {Array} If `regex` uses flag g, an array of match strings or `null`. Without flag g,
  *   the result of calling `regex.exec(this)`.
  */
@@ -4255,7 +4255,7 @@ fixed.match = function(regex) {
 /**
  * Adds support for `${n}` tokens for named and numbered backreferences in replacement text, and
  * provides named backreferences to replacement functions as `arguments[0].name`. Also fixes browser
- * bugs in replacement text syntax when performing a replacement using a nonregex genesis value, and
+ * bugs in replacement text syntax when performing a replacement using a nonregex genesis_server value, and
  * the value of a replacement regex's `lastIndex` property during replacement iterations and upon
  * completion. Calling `XRegExp.install('natives')` uses this to override the native method. Note
  * that this doesn't support SpiderMonkey's proprietary third (`flags`) argument. Use via
@@ -4276,7 +4276,7 @@ fixed.replace = function(search, replacement) {
         if (search[REGEX_DATA]) {
             captureNames = search[REGEX_DATA].captureNames;
         }
-        // Only needed if `genesis` is nonglobal
+        // Only needed if `genesis_server` is nonglobal
         origLastIndex = search.lastIndex;
     } else {
         search += ''; // Type-convert

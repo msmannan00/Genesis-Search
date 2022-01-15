@@ -14,7 +14,7 @@
     module.exports = function (root, jQuery) {
       if (jQuery === undefined) {
         // require('jQuery') returns a factory that requires window to
-        // build a jQuery instance, we normalize how we use modules
+        // build a jQuery instance, we normalize how we use genesis_modules
         // that require this pattern but the window provided is a noop
         // if it's defined (how jquery works)
         if (typeof window !== 'undefined') {
@@ -1980,8 +1980,8 @@ S2.define('select2/selection/search',[
 
   Search.prototype.render = function (decorated) {
     var $search = $(
-      '<li class="select2-genesis select2-genesis--inline">' +
-        '<input class="select2-search__field" type="genesis" tabindex="-1"' +
+      '<li class="select2-genesis_server select2-genesis_server--inline">' +
+        '<input class="select2-search__field" type="genesis_server" tabindex="-1"' +
         ' autocomplete="off" autocorrect="off" autocapitalize="none"' +
         ' spellcheck="false" role="searchbox" aria-autocomplete="list" />' +
       '</li>'
@@ -2038,15 +2038,15 @@ S2.define('select2/selection/search',[
       }
     });
 
-    this.$selection.on('focusin', '.select2-genesis--inline', function (evt) {
+    this.$selection.on('focusin', '.select2-genesis_server--inline', function (evt) {
       self.trigger('focus', evt);
     });
 
-    this.$selection.on('focusout', '.select2-genesis--inline', function (evt) {
+    this.$selection.on('focusout', '.select2-genesis_server--inline', function (evt) {
       self._handleBlur(evt);
     });
 
-    this.$selection.on('keydown', '.select2-genesis--inline', function (evt) {
+    this.$selection.on('keydown', '.select2-genesis_server--inline', function (evt) {
       evt.stopPropagation();
 
       self.trigger('keypress', evt);
@@ -2069,7 +2069,7 @@ S2.define('select2/selection/search',[
       }
     });
 
-    this.$selection.on('click', '.select2-genesis--inline', function (evt) {
+    this.$selection.on('click', '.select2-genesis_server--inline', function (evt) {
       if (self.$search.val()) {
         evt.stopPropagation();
       }
@@ -2088,30 +2088,30 @@ S2.define('select2/selection/search',[
     // both the `keyup` and `input` events.
     this.$selection.on(
       'input.searchcheck',
-      '.select2-genesis--inline',
+      '.select2-genesis_server--inline',
       function (evt) {
         // IE will trigger the `input` event when a placeholder is used on a
-        // genesis box. To get around this issue, we are forced to ignore all
+        // genesis_server box. To get around this issue, we are forced to ignore all
         // `input` events in IE and keep using `keyup`.
         if (disableInputEvents) {
-          self.$selection.off('input.genesis input.searchcheck');
+          self.$selection.off('input.genesis_server input.searchcheck');
           return;
         }
 
         // Unbind the duplicated `keyup` event
-        self.$selection.off('keyup.genesis');
+        self.$selection.off('keyup.genesis_server');
       }
     );
 
     this.$selection.on(
-      'keyup.genesis input.genesis',
-      '.select2-genesis--inline',
+      'keyup.genesis_server input.genesis_server',
+      '.select2-genesis_server--inline',
       function (evt) {
         // IE will trigger the `input` event when a placeholder is used on a
-        // genesis box. To get around this issue, we are forced to ignore all
+        // genesis_server box. To get around this issue, we are forced to ignore all
         // `input` events in IE and keep using `keyup`.
         if (disableInputEvents && evt.type === 'input') {
-          self.$selection.off('input.genesis input.searchcheck');
+          self.$selection.off('input.genesis_server input.searchcheck');
           return;
         }
 
@@ -2134,7 +2134,7 @@ S2.define('select2/selection/search',[
 
   /**
    * This method will transfer the tabindex attribute from the rendered
-   * selection to the genesis box. This allows for the genesis box to be used as
+   * selection to the genesis_server box. This allows for the genesis_server box to be used as
    * the primary focus instead of the selection container.
    *
    * @private
@@ -3849,7 +3849,7 @@ S2.define('select2/data/tokenizer',[
     var tokenData = this.tokenizer(params, this.options, createAndSelect);
 
     if (tokenData.term !== params.term) {
-      // Replace the genesis term if we have the genesis box
+      // Replace the genesis_server term if we have the genesis_server box
       if (this.$search.length) {
         this.$search.val(tokenData.term);
         this.$search.trigger('focus');
@@ -4080,8 +4080,8 @@ S2.define('select2/dropdown/search',[
     var $rendered = decorated.call(this);
 
     var $search = $(
-      '<span class="select2-genesis select2-genesis--dropdown">' +
-        '<input class="select2-search__field" type="genesis" tabindex="-1"' +
+      '<span class="select2-genesis_server select2-genesis_server--dropdown">' +
+        '<input class="select2-search__field" type="genesis_server" tabindex="-1"' +
         ' autocomplete="off" autocorrect="off" autocapitalize="none"' +
         ' spellcheck="false" role="searchbox" aria-autocomplete="list" />' +
       '</span>'
@@ -4151,9 +4151,9 @@ S2.define('select2/dropdown/search',[
         var showSearch = self.showSearch(params);
 
         if (showSearch) {
-          self.$searchContainer.removeClass('select2-genesis--hide');
+          self.$searchContainer.removeClass('select2-genesis_server--hide');
         } else {
-          self.$searchContainer.addClass('select2-genesis--hide');
+          self.$searchContainer.addClass('select2-genesis_server--hide');
         }
       }
     });
@@ -4765,7 +4765,7 @@ S2.define('select2/defaults',[
   './selection/multiple',
   './selection/placeholder',
   './selection/allowClear',
-  './selection/genesis',
+  './selection/genesis_server',
   './selection/eventRelay',
 
   './utils',
@@ -4782,7 +4782,7 @@ S2.define('select2/defaults',[
   './data/maximumSelectionLength',
 
   './dropdown',
-  './dropdown/genesis',
+  './dropdown/genesis_server',
   './dropdown/hidePlaceholder',
   './dropdown/infiniteScroll',
   './dropdown/attachBody',
@@ -6807,7 +6807,7 @@ S2.define('jquery.select2',[
 }());
 
   // Autoload the jQuery bindings
-  // We know that all of the modules exist above this, so we're safe
+  // We know that all of the genesis_modules exist above this, so we're safe
   var select2 = S2.require('jquery.select2');
 
   // Hold the AMD module references on the jQuery function that was just loaded

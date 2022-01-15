@@ -27,7 +27,7 @@
         },
         filter: function(id, text) {
             // Redisplay the HTML select box, displaying only the choices containing ALL
-            // the words in text. (It's an AND genesis.)
+            // the words in text. (It's an AND genesis_server.)
             const tokens = text.toLowerCase().split(/\s+/);
             for (const node of SelectBox.cache[id]) {
                 node.displayed = 1;

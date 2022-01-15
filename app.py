@@ -1,7 +1,7 @@
 '''
-from genesis.controllers.view_managers.search_manager.search_data_model.query_model import query_model
-from genesis.controllers.view_managers.search_manager.search_enums import SEARCH_MODEL_COMMANDS
-from genesis.controllers.view_managers.search_manager.search_model import search_model
+from genesis_server.controllers.view_managers.search_manager.search_data_model.query_model import query_model
+from genesis_server.controllers.view_managers.search_manager.search_enums import SEARCH_MODEL_COMMANDS
+from genesis_server.controllers.view_managers.search_manager.search_model import search_model
 
 m_query_model = query_model()
 m_query_model.m_search_query = "wes@tern unin"

@@ -1,0 +1,61 @@
+{% load static %}
+
+{% if forloop.counter == 6 and mSearchCallbackRelevantBusiness|length > 1 %}
+<h6 class="search-engine-highlights-header">Related Searches</h6>
+<ul class="list-group search-engine-highlights">
+    {% for mDoc in mSearchCallbackRelevantBusiness %}
+    <a class="search-engine-highlights-item" href="{{mDoc.mSearchCallbackRelevantDocumentURL}}">
+        <img class="search-engine-highlights-item--glass disable-highlight" src="{% static 'genesis_server/images/search-icon-dark.png' %}" alt=""/> &nbsp;&nbsp;&nbsp;{{mDoc.mSearchCallbackRelevantDocumentTitle}} - {{mDoc.mSearchCallbackRelevantDocumentDescription}}
+    </a>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if forloop.counter == 10 and mSearchCallbackRelevantNews|length > 1 %}
+<ul class="list-group search-engine-highlights">
+    {% for mDoc in mSearchCallbackRelevantNews %}
+    <a class="search-engine-highlights-item" href="{{mDoc.mSearchCallbackRelevantDocumentURL}}">
+        {{mDoc.mSearchCallbackRelevantDocumentTitle}} - {{mDoc.mSearchCallbackRelevantDocumentDescription}}
+    </a>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+{% if forloop.counter == 10 and mSearchCallbackRelevantDocumentFiles|length > 1 %}
+<hr class="search-engine-suggestion__catagory-divider">
+<div class="row search-engine-highlights--images-header">
+    <div class="col">
+        {% for mDoc in mSearchCallbackRelevantDocumentFiles %}
+        <a class="text-decoration-none" href="{{mDoc.mSearchCallbackRelevantDocumentURL}}"> <img class="search-engine-highlights--images" src="{% static 'genesis_server/images/img_download.png' %}" alt=""> </a>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<div class="search-result__content-webpages--container">
+    <a href="{% if mDoc.mSearchCallbackRelevantSearchType == 'a' %}#search-content__danger-popup{% else %}{{mDoc.mSearchCallbackRelevantDocumentURL}}{% endif %}">
+        <div class="search-result__content-webpages {% if mDoc.mSearchCallbackRelevantSearchType == 'a' %}search-result__content-webpages--danger{% else %}search-result__content-webpages--normal{% endif %}">
+            <label class="search-content__webpages-header">{{mDoc.mSearchCallbackRelevantDocumentTitle}}</label><br>
+            <label class="search-content__webpages-url">{{mDoc.mSearchCallbackRelevantDocumentURL}}</label><br>
+            <hr class="search-content__webpages-divider">
+            <label class="search-content__webpages-description"><span class="search-content__webpages-description--category">{% if mDoc.mSearchCallbackRelevantSearchType == 'a' %}Illegal{% elif mDoc.mSearchCallbackRelevantSearchType == 'b' %}Business{% elif mDoc.mSearchCallbackRelevantSearchType == 'n' %}News{% else %}General{% endif %}</span> | {% autoescape off %} {{mDoc.mSearchCallbackRelevantDocumentDescription}} {% endautoescape %}</label>
+        </div>
+    </a>
+</div>
+
+<div id="search-content__danger-popup" class="overlay">
+    <div class="search-content__danger-popup-container" >
+        <div class="content">
+            <div class="search-content__info-danger-container">
+                <p class="search-content__info-danger-header">Threat Found</p>
+                <p class="search-content__info-danger-body">Illegal content such as <b class="search-content__info-danger-porn">Porn</b> detected in requsted URL. Please be caution and select the steps below.</p>
+            </div><br><br>
+            <div class="search-content__danger-button-container">
+                <a href="{{mDoc.mSearchCallbackRelevantDocumentURL}}" style="text-decoration: none;"><button class="search-content__danger-button search-content__danger-button-auto">Open Website</button></a>
+                <a href="../report?pReportParamURL={{mDoc.mSearchCallbackRelevantDocumentURL}}" style="text-decoration: none;"><button class="search-content__danger-button search-content__danger-button-top" >Report URL</button></a>
+                <a href="#" style="text-decoration: none;"><button class="search-content__danger-button search-content__danger-button-top" >Go Back</button></a>
+            </div>
+        </div>
+    </div>
+</div>

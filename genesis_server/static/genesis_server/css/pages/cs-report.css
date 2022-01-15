@@ -1,0 +1,213 @@
+/*Top Header Override*/
+.report{
+    margin-top: 40px;
+    padding-left: 5.2%;
+    overflow: hidden;
+}
+.report__header{
+    padding-bottom:8px;
+    padding-top:8px;
+    font-weight: 600;
+    background: none;
+    width: 55%;
+    color: #336699;
+    border-left: none;
+    padding-left: 3.2em;
+    border-radius: 0 25px 25px 0;
+    font-size: 19px;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+.report__description{
+	font:14px arial,sans-serif;
+	color: #808080;
+    max-width: 650px;
+    padding-left: 4.4em;
+    margin-bottom: 20px;
+}
+.report__line-style{
+    visibility: hidden;
+    border: 0;
+    display: block;
+    width:auto;
+    height: 4px;
+    background: orange;
+    max-width: 50px;
+    margin: 0 0 20px;
+}
+.report__form {
+    padding-right: 2.5%;
+    padding-top: 0;
+    padding-left: 3.8em;
+    margin-bottom: 1.7vh;
+    max-width: 695px;
+}
+.report-form__input{
+	font:14px arial,sans-serif;
+	height:40px;
+	border-radius: 5px;
+	box-shadow: 0 1.8px 1.8px -1.8px #cccccc;
+	width:100%;
+    max-width: 675px;
+	padding-left:18px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.report-form__input:focus{
+	outline: none;
+	box-shadow: 0 2.5px 2.5px -1.5px #cccccc;
+}
+.report-form__input:hover{
+	outline: none;
+	box-shadow: 0 2.5px 2.5px -1.5px #cccccc;
+}
+
+.report-form__input--normal:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #1a1300;
+    opacity: 1;
+}
+.report-form__input--normal::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #1a1300 ;
+    opacity: 1;
+}
+
+.report-form__input--normal{
+    border: 1px solid #ededed;
+	background: #f4f4f4;
+	color: black;
+}
+
+.report-form__input:focus{
+    background-color: #f9f9f9;
+}
+.report-form__input:hover{
+    background-color: #f9f9f9;
+}
+
+.report-form__input--warning{
+    color: #ff6666;
+    background: #fff0f0;
+}
+
+.report-form__input--warning:hover{
+    background: #ffe6e6;
+}
+.report-form__input--warning:focus{
+    background: #ffe6e6;
+}
+.report-form__input--warning:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: red !important;
+    opacity: 0.3;
+}
+.report-form__input--warning::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: red !important;
+    opacity: 0.3;
+}
+.report-form__text-area{
+    border: 1px solid #ededed;
+	font:14px arial,sans-serif;
+	box-shadow: 0 1.8px 1.8px -1.8px #cccccc;
+    padding-top:10px;
+    border-radius: 5px;
+	color: black;
+	height:190px;
+	background: #f4f4f4;
+	width:100%;
+    max-width: 675px;
+	padding-left:18px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+
+}
+.report-form__text-area:hover{
+	outline: none;
+	box-shadow: 0 2.5px 2.5px -1.5px #cccccc;
+    background-color: #f9f9f9;
+}
+.report-form__text-area:focus{
+	outline: none;
+	box-shadow: 0 2.5px 2.5px -1.5px #cccccc;
+    background-color: #f9f9f9;
+    -webkit-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+}
+.report-form__warning--error{
+    color:red;
+    font-size: 13px;
+    line-height: 12px;
+    padding-left: 2px;
+    margin-bottom: 0;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.report-form__submit{
+	border-radius: 5px;
+	background-color:#2d5986;
+	height: 40px;
+	width:110%;
+	text-align:center;
+    max-width: 140px;
+    font-weight: bold;
+	border-width: 0;
+	color:white;
+	font-size: 14px;
+    cursor: pointer;
+}
+
+.report-form__submit:hover{
+	background-color:#004d99;
+}
+
+.footer__catagories--report{
+    border-bottom: 4px solid whitesmoke;
+}
+
+@media only screen and (max-width: 943px) {
+    .report {
+        padding: 0 4% 4%;
+        margin-top: 20px;
+    }
+    .report__line-style{
+        display: block;
+        height: 10px;
+        max-width: 120%;
+    	box-shadow: 0 1px 1px -1.5px #cccccc;
+        background: linear-gradient(#e6e6e6, #f0f0f0,#f0f0f0 ,#e6e6e6);
+        width: 1000px;
+        margin-left: -50px;
+        visibility: visible;
+    }
+    .report__form {
+        padding-left: 15px;
+        padding-right: 4.5%;
+        margin-bottom: 12vh;
+    }
+   .report-form__warning--error{
+        color:red;
+        font-size: 13px;
+        line-height: 12px;
+        margin-bottom: 10px;
+    }
+    .report__header{
+        border-left: 5px solid #2d5986;
+        background: #6699cc;
+        max-width: 190px;
+        font-size: 16px;
+        color: #ffffff;
+        margin-bottom: 15px;
+        padding-left: 10px;
+    }
+    .report__description{
+        padding-left: 15px;
+        padding-right: 20px;
+    }
+    .footer__catagories--report{
+        border-bottom: 4px solid whitesmoke;
+    }
+
+}
