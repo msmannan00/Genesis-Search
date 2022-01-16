@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis_server/controllers/constants/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/constants/constant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_views/directory_manager/directory_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_views/directory_manager/directory_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_views/notice_manager/notice_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_views/notice_manager/notice_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_views/policy_manager/policy_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_views/policy_manager/policy_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_views/report_manager/report_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_views/report_manager/report_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_views/search_manager/search_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_views/search_manager/search_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_views/sitemap_manager/sitemap_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_views/sitemap_manager/sitemap_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis_shared_directory/state_manager/server_vars.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_shared_directory/state_manager/server_vars.py" afterDir="false" />
-    </list>
+    <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -266,6 +256,7 @@
       <workItem from="1642279353782" duration="77000" />
       <workItem from="1642279448096" duration="286000" />
       <workItem from="1642279748112" duration="32521000" />
+      <workItem from="1642337208113" duration="20000" />
     </task>
     <servers />
   </component>
