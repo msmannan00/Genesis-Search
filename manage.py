@@ -23,8 +23,7 @@ def __init_server_state():
         exit(0)
 
 def __init_user_data_parser():
-    if SERVER_VARS.S_SERVER_TYPE == SERVER_STATUS_TYPE.S_SERVER_STATE_DEV or SERVER_VARS.S_SERVER_TYPE == SERVER_STATUS_TYPE.S_SERVER_STATE_PRODUCTION_2:
-        parse_controller.get_instance().invoke_trigger(PARSE_COMMANDS.S_START_PARSER)
+    parse_controller.get_instance().invoke_trigger(PARSE_COMMANDS.S_START_PARSER)
 
 def main():
     __init_server_state()
