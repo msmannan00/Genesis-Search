@@ -6,6 +6,7 @@ class APP_STATUS:
     S_DEVELOPER = True
     S_FERNET_KEY = "W#ZYBHQa9G_DB_iU@yjA3Es@COu4-UzU"
     S_APP_BLOCK_KEY = "D~S=05y68#M25oj]vprm}9HE))Tr'VX?[p|m-Wg`mrg^"
+    S_MAINTAINANCE = False
 
 class CONSTANTS:
 

@@ -1,7 +1,7 @@
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from genesis_server.controllers.constants.constant import CONSTANTS
+from genesis_server.controllers.constants.constant import CONSTANTS, APP_STATUS
 from genesis_server.controllers.view_managers.user_views.report_manager.report_enums import REPORT_MODEL_COMMANDS
 from genesis_server.controllers.view_managers.user_views.report_manager.report_model import report_model
 from genesis_shared_directory.request_manager.request_handler import request_handler
@@ -38,7 +38,7 @@ class report_controller(request_handler):
         if p_command == REPORT_MODEL_COMMANDS.M_INIT:
             if self.__on_verify_app(p_data) is True:
                 return render(None, CONSTANTS.S_TEMPLATE_BLOCK_WEBSITE_PATH)
-            elif SERVER_VARS.S_MAINTAINANCE is True:
+            elif APP_STATUS.S_MAINTAINANCE is True:
                 return render(None, CONSTANTS.S_TEMPLATE_MAINTENANCE_WEBSITE_PATH)
             else:
                 m_response, m_status = self.__m_report_model.invoke_trigger(REPORT_MODEL_COMMANDS.M_INIT, p_data)
