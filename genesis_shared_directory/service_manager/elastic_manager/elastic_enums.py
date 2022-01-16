@@ -15,7 +15,7 @@ class ELASTIC_INDEX_COLLECTION:
 class ELASTIC_CONNECTIONS:
     S_DATABASE_NAME = 'genesis_server-elastic-search'
     S_DATABASE_PORT = 9200
-    S_DATABASE_IP = 'http://167.86.99.31'
+    S_DATABASE_IP = 'http://localhost'
 
 class ELASTIC_KEYS:
     S_ID = 'm_id'

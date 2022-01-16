@@ -25,10 +25,10 @@ urlpatterns = [
     path('report/', views.report),
     path('notice/', views.notice),
     path('sitemap/', views.sitemap),
-    path('secretkey/', views.secretkey),
-    path('block/', views.block),
-    path('directory/', views.directory),
     path('search/', views.search),
+    path('secretkey/', views.secretkey),
+    path('directory/', views.directory),
+    path('maintenance/', views.maintenance),
     path('user_index/', views.user_index),
     path('', views.index),
 ]

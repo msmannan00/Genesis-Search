@@ -27,6 +27,8 @@ class CONSTANTS:
     S_TEMPLATE_DIRECTORY_WEBSITE_PATH = "genesis_server/directory/directory.html"
     S_TEMPLATE_NOTICE_WEBSITE_PATH = "genesis_server/notice/notice.html"
     S_TEMPLATE_POLICY_WEBSITE_PATH = "genesis_server/privacy/privacy.html"
+    S_TEMPLATE_SECRET_KEY_WEBSITE_PATH = "genesis_server/secretkey/secretkey.html"
+    S_TEMPLATE_MAINTENANCE_WEBSITE_PATH = "genesis_server/maintenance/maintenance.html"
     S_TEMPLATE_SITEMAP_WEBSITE_PATH = "genesis_server/sitemap/sitemap.html"
     S_TEMPLATE_SEARCH_WEBSITE_PATH = "genesis_server/search/search.html"
     S_TEMPLATE_BLOCK_WEBSITE_PATH = "genesis_server/block/block.html"

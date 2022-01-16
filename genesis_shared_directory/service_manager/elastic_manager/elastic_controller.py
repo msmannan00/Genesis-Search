@@ -1,10 +1,11 @@
 # Local Imports
 from elasticsearch import Elasticsearch
 
-from genesis_shared_directory.service_manager.elastic_manager.elastic_enums import ELASTIC_CONNECTIONS, ELASTIC_INDEX, ELASTIC_CRUD_COMMANDS, ELASTIC_KEYS, MANAGE_ELASTIC_MESSAGES
-from genesis_shared_directory.service_manager.elastic_manager.elastic_request_generator import elastic_request_generator
 from genesis_shared_directory.log_manager.log_controller import log
 from genesis_shared_directory.request_manager.request_handler import request_handler
+from genesis_shared_directory.service_manager.elastic_manager.elastic_enums import ELASTIC_CONNECTIONS, ELASTIC_INDEX, \
+    ELASTIC_KEYS, MANAGE_ELASTIC_MESSAGES, ELASTIC_CRUD_COMMANDS
+from genesis_shared_directory.service_manager.elastic_manager.elastic_request_generator import elastic_request_generator
 
 
 class elastic_controller(request_handler):
