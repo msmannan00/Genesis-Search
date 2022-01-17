@@ -37,6 +37,7 @@ class SEARCH_CALLBACK:
     M_RELATED_BUSINESS_SITES = "mSearchCallbackRelevantBusiness"
     M_RELATED_NEWS_SITES = "mSearchCallbackRelevantDocumentNews"
     M_RELATED_FILES = "mSearchCallbackRelevantDocumentFiles"
+    M_SECURE_SERVICE_NOTICE = "mUseSecureServiceNotice"
 
 class SEARCH_DOCUMENT_CALLBACK:
     M_TITLE = "m_title"

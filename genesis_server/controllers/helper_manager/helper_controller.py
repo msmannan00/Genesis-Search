@@ -3,6 +3,7 @@ import math
 import re
 import random, string
 import secrets
+import time
 from urllib.parse import urlparse
 import locale
 from gensim.parsing.preprocessing import STOPWORDS
@@ -98,3 +99,29 @@ class helper_controller:
             return True
         else:
             return False
+
+    @staticmethod
+    def validate_json(jsonData):
+        try:
+            json.loads(jsonData)
+        except ValueError as err:
+            return False
+        return True
+
+    @staticmethod
+    def get_seconds_since_epoch():
+        return int(time.time())
+
+    @staticmethod
+    def normalize_slashes(p_url):
+        p_url = str(p_url)
+        segments = p_url.split('/')
+        correct_segments = []
+        for segment in segments:
+            if segment != '':
+                correct_segments.append(segment)
+        normalized_url = '/'.join(correct_segments)
+        normalized_url = normalized_url.replace("http:/","http://")
+        normalized_url = normalized_url.replace("https:/","https://")
+        normalized_url = normalized_url.replace("ftp:/","ftp://")
+        return normalized_url

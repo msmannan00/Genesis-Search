@@ -9,6 +9,12 @@
     <body class="body">
 
         <div class="search">
+
+            <!-- non onion url -->
+            {% if mUseSecureServiceNotice == 'True' %}
+                  <p class="search__non-onion"><b>Onion URL</b> - use secure service <a href="http://trcip42ymcgvv5hsa7nxpwdnott46ebomnn5pm5lovg5hpszyo4n35yd.onion" class="search__non-onion--href"><span class="search__non-onion--button">Live</span></a></p>
+            {% endif %}
+
             <!-- top bar -->
             {% include 'genesis_server/blades/search_template/blade_search_header.html' %}
 

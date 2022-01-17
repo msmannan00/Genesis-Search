@@ -334,6 +334,7 @@
 	transition: border-bottom-color 0.25s ease-in-out;
 	border-bottom: 6px solid #548ec4;
 }
+
 @keyframes search-file__reference-animate-hover {
   10% {
 	  background-color: #f0f4fa;
@@ -449,5 +450,4 @@
         margin-left: 14px !important;
         padding-right: 25px;
     }
-
 }

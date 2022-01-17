@@ -1,6 +1,8 @@
 import math
 import re
 
+from django.http import request
+
 from genesis_server.controllers.constants.constant import CONSTANTS
 from genesis_server.controllers.constants.strings import SEARCH_STRINGS, GENERAL_STRINGS
 from genesis_server.controllers.helper_manager.helper_controller import helper_controller
@@ -45,7 +47,7 @@ class search_session_controller(request_handler):
             m_max_page_reached = True
         return min_range, max_range, m_max_page_reached
 
-    def init_callbacks(self, p_search_model, p_min_range, p_max_range, p_max_page_reached, p_relevance_context_list, p_related_business_list, p_related_news_list, p_related_files_list):
+    def init_callbacks(self, p_search_model, p_min_range, p_max_range, p_max_page_reached, p_relevance_context_list, p_related_business_list, p_related_news_list, p_related_files_list, p_secure_notice):
         m_context = {
             SEARCH_CALLBACK.M_QUERY: p_search_model.m_search_query,
             SEARCH_CALLBACK.M_SAFE_SEARCH: p_search_model.m_safe_search,
@@ -57,7 +59,8 @@ class search_session_controller(request_handler):
             SEARCH_CALLBACK.M_RESULT_COUNT: GENERAL_STRINGS.S_GENERAL_EMPTY,
             SEARCH_CALLBACK.M_RELATED_BUSINESS_SITES: p_related_business_list,
             SEARCH_CALLBACK.M_RELATED_NEWS_SITES: p_related_news_list,
-            SEARCH_CALLBACK.M_RELATED_FILES: p_related_files_list
+            SEARCH_CALLBACK.M_RELATED_FILES: p_related_files_list,
+            SEARCH_CALLBACK.M_SECURE_SERVICE_NOTICE: p_secure_notice
         }
         return m_context
 
@@ -141,7 +144,7 @@ class search_session_controller(request_handler):
                 m_relevance_context_list.append(mRelevanceContext)
         return m_relevance_context_list
 
-    def __init_parameters(self, p_document_list, p_search_model, p_tokenized_query):
+    def __init_parameters(self, p_document_list, p_search_model, p_tokenized_query, p_port):
         m_relevance_context_list = []
         m_related_business_list = []
         m_related_news_list = []
@@ -180,8 +183,13 @@ class search_session_controller(request_handler):
         # Pagination Calculator
         min_range, max_range, m_max_page_reached = self.__get_page_number(p_search_model)
 
+        if p_port == 8001:
+            m_secure_notice = "True"
+        else:
+            m_secure_notice = "False"
+
         # Init Callback
-        mContext = self.init_callbacks(p_search_model, min_range, max_range, m_max_page_reached, m_relevance_context_list, m_related_business_list, m_related_news_list, m_related_files_list)
+        mContext = self.init_callbacks(p_search_model, min_range, max_range, m_max_page_reached, m_relevance_context_list, m_related_business_list, m_related_news_list, m_related_files_list, m_secure_notice)
 
         if p_search_model.m_total_documents >= 80:
             mContext[SEARCH_CALLBACK.M_RESULT_COUNT] = helper_controller.on_create_random_search_count(p_search_model.m_total_documents)
@@ -195,5 +203,5 @@ class search_session_controller(request_handler):
         if p_command == SEARCH_SESSION_COMMANDS.INIT_SEARCH_PARAMETER:
             return self.__init_search_parameters(p_data[0])
         if p_command == SEARCH_SESSION_COMMANDS.M_INIT:
-            return self.__init_parameters(p_data[0], p_data[1], p_data[2])
+            return self.__init_parameters(p_data[0], p_data[1], p_data[2], p_data[3])
 
