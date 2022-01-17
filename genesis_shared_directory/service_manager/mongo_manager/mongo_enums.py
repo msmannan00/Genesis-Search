@@ -9,6 +9,11 @@ class MONGODB_COLLECTIONS:
     S_REPORT = 'reported_websites'
     S_SUBMIT = 'submitted_websites'
 
+class MONGO_CONNECTIONS:
+    S_MONGO_DATABASE_NAME = 'genesis_server'
+    S_MONGO_DATABASE_URL = 27017
+    S_MONGO_DATABASE_IP = 'localhost'
+
 class MONGODB_KEYS:
     S_DOCUMENT = 'm_document'
     S_FILTER = 'm_filter'

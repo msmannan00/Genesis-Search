@@ -2,7 +2,8 @@
 import pymongo
 
 from genesis_server.controllers.constants.constant import CONSTANTS
-from genesis_shared_directory.service_manager.mongo_manager.mongo_enums import MONGODB_KEYS, MONGODB_CRUD, MANAGE_MONGO_MESSAGES
+from genesis_shared_directory.service_manager.mongo_manager.mongo_enums import MONGODB_KEYS, MONGODB_CRUD, \
+    MANAGE_MONGO_MESSAGES, MONGO_CONNECTIONS
 from genesis_shared_directory.service_manager.mongo_manager.mongo_request_generator import mongo_request_generator
 from genesis_shared_directory.log_manager.log_controller import log
 
@@ -26,7 +27,7 @@ class mongo_controller:
         self.__link_connection()
 
     def __link_connection(self):
-        self.__m_connection = pymongo.MongoClient(CONSTANTS.S_MONGO_DATABASE_IP, CONSTANTS.S_MONGO_DATABASE_URL)[CONSTANTS.S_MONGO_DATABASE_NAME]
+        self.__m_connection = pymongo.MongoClient(MONGO_CONNECTIONS.S_MONGO_DATABASE_IP, MONGO_CONNECTIONS.S_MONGO_DATABASE_URL)[MONGO_CONNECTIONS.S_MONGO_DATABASE_NAME]
 
     def __create(self, p_data):
         try:

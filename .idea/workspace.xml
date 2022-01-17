@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9">
-      <change afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/server_views/user_index_manager/user_index_cache_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis_server/controllers/helper_manager/helper_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/helper_manager/helper_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis_server/controllers/view_managers/server_views/user_index_manager/user_index_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/server_views/user_index_manager/user_index_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_views/search_manager/search_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_views/search_manager/search_enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_views/search_manager/search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_views/search_manager/search_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_views/search_manager/search_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/controllers/view_managers/user_views/search_manager/search_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/blades/search/cs-search-content-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/blades/search/cs-search-content-blade.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/pages/cs-search.css" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/static/genesis_server/css/pages/cs-search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/search_template/blade_search_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/blades/search_template/blade_search_header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genesis_server/templates/genesis_server/search/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_server/templates/genesis_server/search/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis_shared_directory/service_manager/mongo_manager/mongo_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_shared_directory/service_manager/mongo_manager/mongo_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/genesis_shared_directory/service_manager/mongo_manager/mongo_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/genesis_shared_directory/service_manager/mongo_manager/mongo_enums.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +262,8 @@
       <workItem from="1642279748112" duration="32521000" />
       <workItem from="1642337208113" duration="20000" />
       <workItem from="1642339440245" duration="2251000" />
-      <workItem from="1642355469658" duration="10863000" />
+      <workItem from="1642355469658" duration="11247000" />
+      <workItem from="1642409085700" duration="79000" />
     </task>
     <servers />
   </component>
