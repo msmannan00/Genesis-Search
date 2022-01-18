@@ -1,49 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9">
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/Settings/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/Settings/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/Settings/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/Settings/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/Settings/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/constants/app_status.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/constants/constant.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/constants/keys.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/constants/strings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/crawl_controller/crawl_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/crawl_controller/crawl_enums.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/i_crawl_crawler/html_parse_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/i_crawl_crawler/i_crawl_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/i_crawl_crawler/i_crawl_enums.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/i_crawl_crawler/static_parse_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/local_shared_model/index_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/local_shared_model/url_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/parse_controller/parse_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/parse_controller/parse_enums.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_services/constants/constant.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_services/constants/keys.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_services/constants/strings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_services/helper_services/duplication_handler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_services/helper_services/helper_method.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_services/helper_services/spell_check_handler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_services/raw/classifier_output/class_vectorizer.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_services/raw/classifier_output/feature_vector.sav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_services/raw/classifier_output/training_data.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_services/raw/classifier_output/web_classifier.sav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_services/raw/crawled_classifier_websites.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_services/raw/dictionary" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_services/raw/dictionary_small" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run_.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/controllers/constants/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/constants/constant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -315,7 +273,7 @@
       <workItem from="1642409085700" duration="676000" />
       <workItem from="1642416359001" duration="238000" />
       <workItem from="1642416617214" duration="8280000" />
-      <workItem from="1642507235785" duration="9262000" />
+      <workItem from="1642507235785" duration="9318000" />
     </task>
     <servers />
   </component>
