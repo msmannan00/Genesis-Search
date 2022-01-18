@@ -4,7 +4,6 @@ bs4
 gensim
 pandas
 eventlet
-pymongo
 sklearn
 pyprobables
 requests[socks]

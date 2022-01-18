@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from shared_directory.state_manager.constant import APP_STATUS
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -24,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ir+r3)d@v53u&tj-73o&)&z%ay6+u7rt+0gw)9@u%zpjadip!3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = APP_STATUS.S_DEVELOPER
 
 ALLOWED_HOSTS = ['*']
 
