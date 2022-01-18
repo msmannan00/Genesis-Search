@@ -93,6 +93,8 @@
     color: white;
     text-decoration: none;
     border-bottom: 4px solid white;
+	animation-name: footer__catagories--border-animate;
+	transition: border-bottom 0.25s ease-in-out;
 }
 
 .footer__catagories--main:focus {

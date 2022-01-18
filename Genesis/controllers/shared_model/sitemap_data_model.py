@@ -8,6 +8,7 @@ class sitemap_data_model:
         self.m_name = None
         self.m_keyword = None
         self.m_secret_key = None
+        self.p_site = GENERAL_STRINGS.S_GENERAL_HTTP
         self.m_submission_rule = SITEMAP_STRINGS.S_SITEMAP_SUBMISSION_RULE_1
         self.m_agreement = []
 

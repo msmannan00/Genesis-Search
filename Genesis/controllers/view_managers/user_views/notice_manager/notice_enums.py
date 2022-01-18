@@ -11,7 +11,9 @@ class NOTICE_SESSION_CALLBACK(enum.Enum):
 class NOTICE_PARAM:
     M_HEADER = "mNoticeParamType"
     M_DATA = "mNoticeParamData"
+    M_SECURE_SERVICE = "pSite"
 
 class NOTICE_CALLBACK:
     M_TYPE = "mNoticeCallbackType"
     M_DATA = "mNoticeCallbackData"
+    M_SECURE_SERVICE_NOTICE = "mUseSecureServiceNotice"

@@ -21,11 +21,18 @@ class directory_session_controller(request_handler):
             m_num-=1
 
         m_directory_model = directory_class_model(m_num, None)
+
+        if DIRECTORY_PARAMS.M_SECURE_SERVICE in p_data.GET:
+            m_directory_model.m_site = p_data.GET[DIRECTORY_PARAMS.M_SECURE_SERVICE]
+
+
+
         return m_directory_model, True
 
     def __init_parameters(self, p_links):
         m_context = {
             DIRECTORY_CALLBACK.M_PAGE_NUMBER: p_links.m_page_number,
+            DIRECTORY_CALLBACK.M_SECURE_SERVICE_NOTICE: p_links.m_site,
         }
 
         if len(p_links.m_row_model_list) <= CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE:

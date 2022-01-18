@@ -12,6 +12,7 @@ class REPORT_PARAM:
     M_URL = "pReportParamURL"
     M_EMAIL = "pReportParamEmail"
     M_MESSAGE = "pReportParamMessage"
+    M_SECURE_SERVICE = "pSite"
 
 
 class REPORT_CALLBACK:
@@ -20,4 +21,5 @@ class REPORT_CALLBACK:
     M_MESSAGE = "mReportCallbackMessage"
     M_URL_ERROR = "mReportURLCallbackError"
     M_EMAIL_ERROR = "mReportEmailCallbackError"
+    M_SECURE_SERVICE_NOTICE = "mUseSecureServiceNotice"
 

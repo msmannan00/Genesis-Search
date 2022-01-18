@@ -24,6 +24,8 @@ class search_session_controller(request_handler):
             m_query_model.m_search_type=p_data.GET[SEARCH_PARAM.M_TYPE]
         if SEARCH_PARAM.M_PAGE in p_data.GET:
             m_query_model.set_page_number(p_data.GET[SEARCH_PARAM.M_PAGE])
+        if SEARCH_PARAM.M_SECURE_SERVICE in p_data.GET:
+            m_query_model.m_site = p_data.GET[SEARCH_PARAM.M_SECURE_SERVICE]
         if SEARCH_PARAM.M_SAFE_SEARCH in p_data.GET:
             if p_data.GET[SEARCH_PARAM.M_SAFE_SEARCH] == "True":
                 m_query_model.m_safe_search = "True"
@@ -61,7 +63,7 @@ class search_session_controller(request_handler):
             SEARCH_CALLBACK.M_RELATED_BUSINESS_SITES: p_related_business_list,
             SEARCH_CALLBACK.M_RELATED_NEWS_SITES: p_related_news_list,
             SEARCH_CALLBACK.M_RELATED_FILES: p_related_files_list,
-            SEARCH_CALLBACK.M_SECURE_SERVICE_NOTICE: p_secure_notice
+            SEARCH_CALLBACK.M_SECURE_SERVICE_NOTICE: p_search_model.m_site
         }
         return m_context
 

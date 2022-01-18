@@ -16,6 +16,7 @@ class SITEMAP_PARAM(str, enum.Enum):
     M_EMAIL = "pSitemapParamEmail"
     M_SUBMISSION_RULES = "pSitemapParamSubmissionRule"
     M_AGREEMENT = "pSitemapParamAgreement_"
+    M_SECURE_SERVICE = "pSite"
 
 class SITEMAP_CALLBACK(str, enum.Enum):
     M_SECRETKEY = "mSitemapSecretKeyCallbackValue"
@@ -32,3 +33,4 @@ class SITEMAP_CALLBACK(str, enum.Enum):
     M_RULES_ERROR = "mSitemapCallbackSubmissionError"
     M_EMAIL_ERROR = "mSitemapCallbackEmailError"
     M_SUBMISSION_RULES_ERROR = "mSitemapCallbackSubmissionRulesError"
+    M_SECURE_SERVICE_NOTICE = "mUseSecureServiceNotice"

@@ -89,14 +89,14 @@ class helper_controller:
 
     @staticmethod
     def is_stop_word(p_word):
-        if p_word in stopwords.get_stopwords():
+        if p_word in stopwords.get_stopwords("english"):
             return True
         else:
             return False
 
     @staticmethod
     def is_stop_word(p_word):
-        if p_word in stopwords.get_stopwords():
+        if p_word in stopwords.get_stopwords("english"):
             return True
         else:
             return False

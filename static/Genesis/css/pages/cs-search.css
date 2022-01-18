@@ -308,39 +308,6 @@
 .search-content__danger-button-auto{
     margin: 0 auto;
 }
-.search__non-onion{
-    width:100%;
-    background-color:#ffb84d;
-    color:white;
-    padding: 11px 0 16px 15px;
-    margin-bottom: 2px;
-    border-bottom: 1px solid #ffa31a;
-}
-
-.search__non-onion--href{
-    text-decoration:none;
-    color:white;
-}
-
-.search__non-onion--button{
-    cursor:pointer;
-    margin-right:10px;
-    padding-top:3px;
-    margin-top:-3px;
-    font-weight:bold;
-    height:35px;
-    padding-bottom:5px;
-    float:right;
-    background-color:#e68a00;
-    border-radius:4px;
-    width:70px;
-    text-align:center;
-}
-
-.search__non-onion--button:hover{
-    background-color:#cc7a00;
-    color:white;
-}
 @media only screen and (max-width: 943px) {
     .searchbar__search-categories{
         margin-left: 10px;
@@ -366,8 +333,6 @@
       border-radius: 10px;
       position: relative;
       width: auto;
-    }
-    .search__non-onion{
     }
 }
 

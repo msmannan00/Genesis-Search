@@ -14,11 +14,13 @@ class DIRECTORY_PARAMS:
     M_PAGE_NUMBER_NEXT = "mDirectoryParamPageNumberNext"
     M_PAGE_NUMBER_PREV = "mDirectoryParamPageNumberPrev"
     M_PAGE_MAX_REACHED = "mDirectoryParamPageNumberMaxReached"
+    M_SECURE_SERVICE = "pSite"
 
 class DIRECTORY_CALLBACK:
     M_PAGE_NUMBER = "mDirectoryCallbackPageNumber"
     M_ONION_LINKS = "mDirectoryCallbackLinks"
     M_MAX_PAGE_REACHED = "mDirectoryCallbackPageNumberMaxReached"
+    M_SECURE_SERVICE_NOTICE = "mUseSecureServiceNotice"
 
 class DIRECTORY_MODEL_CALLBACK:
     M_ID = "mID"

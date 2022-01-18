@@ -14,13 +14,12 @@ class report_session_controller(request_handler):
         m_report_data_model = report_data_model()
         if REPORT_PARAM.M_URL in p_data.POST:
             m_report_data_model.m_url = p_data.POST[REPORT_PARAM.M_URL]
-            print("1------------------", flush=True)
         if REPORT_PARAM.M_EMAIL in p_data.POST:
             m_report_data_model.m_email = p_data.POST[REPORT_PARAM.M_EMAIL]
-            print("2------------------", flush=True)
         if REPORT_PARAM.M_MESSAGE in p_data.POST:
             m_report_data_model.m_message = p_data.POST[REPORT_PARAM.M_MESSAGE]
-            print("3------------------",flush=True)
+        if REPORT_PARAM.M_SECURE_SERVICE in p_data.GET:
+            m_report_data_model.m_site = p_data.GET[REPORT_PARAM.M_SECURE_SERVICE]
 
         return m_report_data_model
 
@@ -31,6 +30,7 @@ class report_session_controller(request_handler):
             REPORT_CALLBACK.M_MESSAGE: p_report_model.m_message,
             REPORT_CALLBACK.M_URL_ERROR: GENERAL_STRINGS.S_GENERAL_EMPTY,
             REPORT_CALLBACK.M_EMAIL_ERROR: GENERAL_STRINGS.S_GENERAL_EMPTY,
+            REPORT_CALLBACK.M_SECURE_SERVICE_NOTICE: p_report_model.m_site,
         }
 
         return m_context_response

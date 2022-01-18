@@ -37,6 +37,8 @@ class sitemap_session_controller(request_handler):
             m_sitemap_data_model.m_submission_rule = p_data.POST[SITEMAP_PARAM.M_SUBMISSION_RULES]
         if SITEMAP_PARAM.M_EMAIL in p_data.POST:
             m_sitemap_data_model.m_email = p_data.POST[SITEMAP_PARAM.M_EMAIL]
+        if SITEMAP_PARAM.M_SECURE_SERVICE in p_data.GET:
+            m_sitemap_data_model.p_site = p_data.GET[SITEMAP_PARAM.M_SECURE_SERVICE]
 
         if len(p_data.POST) == 0:
             m_sitemap_data_model.m_secret_key = helper_controller.on_create_secret_key()
@@ -58,6 +60,7 @@ class sitemap_session_controller(request_handler):
         m_context_response[SITEMAP_CALLBACK.M_RULES_ERROR] = GENERAL_STRINGS.S_GENERAL_EMPTY
         m_context_response[SITEMAP_CALLBACK.M_EMAIL_ERROR] = GENERAL_STRINGS.S_GENERAL_EMPTY
         m_context_response[SITEMAP_CALLBACK.M_SUBMISSION_RULES_ERROR] = GENERAL_STRINGS.S_GENERAL_EMPTY
+        m_context_response[SITEMAP_CALLBACK.M_SECURE_SERVICE_NOTICE] = p_sitemap_data_model.p_site
 
 
         for m_count in range(0, 5):

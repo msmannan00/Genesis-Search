@@ -7,6 +7,7 @@ class query_model:
     m_page_number = 1
     m_safe_search = True
     m_total_documents = 1
+    m_site = GENERAL_STRINGS.S_GENERAL_HTTP
 
     def set_query(self, p_search_query):
         self.m_search_query = p_search_query

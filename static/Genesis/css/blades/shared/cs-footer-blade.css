@@ -62,9 +62,10 @@
 }
 
 .footer__catagories--general:hover{
-    color: white;
     text-decoration: none;
-    border-bottom: 4px solid whitesmoke;
+    border-bottom: 4px solid white;
+	animation-name: footer__catagories--border-animate;
+    color: white;
 }
 
 .footer__catagories--general:focus {
