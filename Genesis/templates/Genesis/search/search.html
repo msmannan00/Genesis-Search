@@ -1,0 +1,38 @@
+{% load static %}
+
+<!-- local imports -->
+{% include 'Genesis/search/local_imports.html' %}
+{% include 'Genesis/blades/blades_shared_initialization.html' %}
+
+<html lang="en">
+
+    <body class="body">
+
+        <div class="search">
+
+            <!-- non onion url -->
+            {% if mUseSecureServiceNotice == 'True' %}
+                  <p class="search__non-onion"><b>Onion URL</b> - use secure service <a href="http://trcip42ymcgvv5hsa7nxpwdnott46ebomnn5pm5lovg5hpszyo4n35yd.onion" class="search__non-onion--href"><span class="search__non-onion--button">Live</span></a></p>
+            {% endif %}
+
+            <!-- top bar -->
+            {% include 'Genesis/blades/search_template/blade_search_header.html' %}
+
+            <!-- content bar -->
+            {% include 'Genesis/blades/search_template/blade_search_content.html' %}
+        </div>
+
+        <!-- pagination -->
+        {% include 'Genesis/blades/search_template/blade_search_pagination.html' %}
+
+        <!-- footer -->
+        {% include 'Genesis/blades/shared_blades/blade_footer.html' %}
+
+        <!-- content warning -->
+        <div class="search-footer__report">
+            <div class="search__content-warning"><span><b>Notice</b> </span><span class="search__description"> We don't own any of the content. We are just showing their links so if you found something disturbing<a href="/report" class="search-footer__report-link"><b> - Report Us</b></a></span></div>
+        </div>
+
+    </body>
+
+</html>

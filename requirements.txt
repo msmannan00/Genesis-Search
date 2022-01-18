@@ -6,10 +6,8 @@ pandas
 eventlet
 pymongo
 sklearn
-nltk
 pyprobables
 requests[socks]
-numpy
 stopwords
 termcolor
 autocorrect
@@ -24,6 +22,7 @@ Pillow
 thefuzz
 python-Levenshtein-wheels
 lxml
+django-bootstrap-v5
 
 ###### Requirements With Version Specifiers ######
 simplejson==3.8.0
@@ -31,3 +30,4 @@ scikit-learn==0.24.2
 elasticsearch==7.12.0
 django==3.2.11
 pymongo==3.12.1
+numpy==1.19.3

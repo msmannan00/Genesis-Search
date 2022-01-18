@@ -1,0 +1,21 @@
+{% load static %}
+{% include 'Genesis/blades/blades_shared_initialization.html' %}
+{% include 'Genesis/notice/local_imports.html' %}
+
+
+<!--script initialization-->
+<html lang="en">
+    <body >
+        <!--footer-->
+        {% include 'Genesis/blades/shared_blades/blade_light_header.html' %}
+
+        {% if mNoticeCallbackType == 'report' %}
+            {% include 'Genesis/blades/notice_template/blade_report_website_notice.html' %}
+        {% elif mNoticeCallbackType == 'upload' %}
+            {% include 'Genesis/blades/notice_template/blade_upload_website_notice.html' %}
+        {% endif %}
+
+        <!--footer-->
+        {% include 'Genesis/blades/shared_blades/blade_footer.html' %}
+    </body>
+</html>
