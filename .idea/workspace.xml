@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/error/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/error/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/error/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/error/local_imports.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +279,7 @@
       <workItem from="1642416617214" duration="8280000" />
       <workItem from="1642507235785" duration="18340000" />
       <workItem from="1642596676500" duration="618000" />
-      <workItem from="1642601650885" duration="1830000" />
+      <workItem from="1642601650885" duration="1928000" />
     </task>
     <servers />
   </component>
