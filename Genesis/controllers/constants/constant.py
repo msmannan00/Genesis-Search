@@ -23,6 +23,7 @@ class CONSTANTS:
     S_TEMPLATE_POLICY_WEBSITE_PATH = "Genesis/privacy/privacy.html"
     S_TEMPLATE_SECRET_KEY_WEBSITE_PATH = "Genesis/secretkey/secretkey.html"
     S_TEMPLATE_MAINTENANCE_WEBSITE_PATH = "Genesis/maintenance/maintenance.html"
+    S_TEMPLATE_ERROR_WEBSITE_PATH = "Genesis/error/error.html"
     S_TEMPLATE_SITEMAP_WEBSITE_PATH = "Genesis/sitemap/sitemap.html"
     S_TEMPLATE_SEARCH_WEBSITE_PATH = "Genesis/search/search.html"
     S_TEMPLATE_BLOCK_WEBSITE_PATH = "Genesis/block/block.html"

@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
 from Genesis import views
 
 urlpatterns = [
@@ -31,3 +30,8 @@ urlpatterns = [
     path('maintenance/', views.maintenance, name='maintenance'),
     path('user_index/', views.user_index, name='user_index'),
 ]
+
+handler400 = views.error_page_400
+handler403 = views.error_page_403
+handler404 = views.error_page_404
+handler500 = views.error_page_500

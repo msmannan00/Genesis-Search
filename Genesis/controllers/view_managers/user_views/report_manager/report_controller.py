@@ -2,12 +2,13 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
-from Genesis.controllers.constants.constant import CONSTANTS, APP_STATUS
+from Genesis.controllers.constants.constant import CONSTANTS
 from Genesis.controllers.view_managers.user_views.report_manager.report_enums import REPORT_MODEL_COMMANDS
 from Genesis.controllers.view_managers.user_views.report_manager.report_model import report_model
 from shared_directory.request_manager.request_handler import request_handler
 from shared_directory.service_manager.block_manager.block_controller import block_controller
 from shared_directory.service_manager.block_manager.block_enums import BLOCK_COMMAND
+from shared_directory.state_manager.constant import APP_STATUS
 
 
 class report_controller(request_handler):

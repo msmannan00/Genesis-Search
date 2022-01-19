@@ -3,6 +3,8 @@ from django.views.decorators.csrf import csrf_exempt
 
 from Genesis.controllers.view_managers.server_views.block_manager.block_controller import block_controller
 from Genesis.controllers.view_managers.server_views.block_manager.block_enums import BLOCK_MODEL_CALLBACK
+from Genesis.controllers.view_managers.server_views.error.error_controller import error_controller
+from Genesis.controllers.view_managers.server_views.error.error_enums import ERROR_MODEL_CALLBACK
 from Genesis.controllers.view_managers.server_views.maintenance.maintenance_controller import maintenance_controller
 from Genesis.controllers.view_managers.server_views.maintenance.maintenance_enums import MAINTENANCE_MODEL_CALLBACK
 from Genesis.controllers.view_managers.server_views.secret_key.secret_key_controller import secret_key_controller
@@ -71,3 +73,12 @@ def maintenance(request):
 @csrf_exempt
 def block(request):
     return block_controller.getInstance().invoke_trigger(BLOCK_MODEL_CALLBACK.M_INIT, request)
+
+def error_page_400(request, exception=None):
+    return error_controller.getInstance().invoke_trigger(ERROR_MODEL_CALLBACK.M_INIT, [request,400])
+def error_page_403(request, exception=None):
+    return error_controller.getInstance().invoke_trigger(ERROR_MODEL_CALLBACK.M_INIT, [request,403])
+def error_page_404(request, exception, template_name='Genesis/error/error.html'):
+    return error_controller.getInstance().invoke_trigger(ERROR_MODEL_CALLBACK.M_INIT, [request,404])
+def error_page_500(request, exception=None):
+    return error_controller.getInstance().invoke_trigger(ERROR_MODEL_CALLBACK.M_INIT, [request,500])

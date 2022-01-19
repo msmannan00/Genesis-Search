@@ -2,9 +2,8 @@
 import base64
 
 from cryptography.fernet import Fernet
-
-from Genesis.controllers.constants.constant import APP_STATUS
 from shared_directory.service_manager.block_manager.block_enums import BLOCK_PARAM, BLOCK_COMMAND
+from shared_directory.state_manager.constant import APP_STATUS
 
 
 class block_controller:

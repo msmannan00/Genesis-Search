@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9" />
+    <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9">
+      <change afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/server_views/error/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/error/local_imports.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Genesis/css/pages/cs-error.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/constants/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/constants/constant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user_views/directory_manager/directory_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user_views/directory_manager/directory_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user_views/notice_manager/notice_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user_views/notice_manager/notice_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user_views/policy_manager/policy_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user_views/policy_manager/policy_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user_views/report_manager/report_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user_views/report_manager/report_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user_views/search_manager/search_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user_views/search_manager/search_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user_views/sitemap_manager/sitemap_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user_views/sitemap_manager/sitemap_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/homepage/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/homepage/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/block_manager/block_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/block_manager/block_controller.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +29,7 @@
       <list>
         <option value="CSS File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -44,20 +62,21 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/shared_directory/state_manager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Genesis/controllers/view_managers/server_views" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Workspace\Genesis\Genesis\controllers\view_managers\server_views" />
+      <recent name="C:\Workspace\Genesis\static\Genesis\css\pages" />
+      <recent name="C:\Workspace\Genesis\Genesis\templates\Genesis" />
       <recent name="C:\Workspace\Genesis\shared_directory\state_manager" />
       <recent name="C:\Workspace\Genesis" />
-      <recent name="C:\Workspace\Genesis\Genesis\controllers\view_managers\server_views\maintenance" />
-      <recent name="C:\Workspace\Genesis\Genesis\templates\Genesis\blades\shared_blades" />
-      <recent name="C:\Workspace\Genesis-Search\genesis_server\controllers\view_managers\server_views\user_index_manager" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Workspace\Genesis\Genesis\controllers\view_managers\server_views" />
@@ -273,7 +292,7 @@
       <workItem from="1642409085700" duration="676000" />
       <workItem from="1642416359001" duration="238000" />
       <workItem from="1642416617214" duration="8280000" />
-      <workItem from="1642507235785" duration="9318000" />
+      <workItem from="1642507235785" duration="18340000" />
     </task>
     <servers />
   </component>
