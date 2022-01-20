@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9">
-      <change afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/.well-known/pki-validation/7376EE2DE04DC0C4FAE994EFACFB240B.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/controllers/constants/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/constants/constant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/blades/blades_shared_initialization.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/blades/blades_shared_initialization.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -286,6 +279,7 @@
       <workItem from="1642596676500" duration="618000" />
       <workItem from="1642601650885" duration="2077000" />
       <workItem from="1642662166995" duration="1948000" />
+      <workItem from="1642684963942" duration="8000" />
     </task>
     <servers />
   </component>
