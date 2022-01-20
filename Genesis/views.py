@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
+from Genesis.controllers.constants.constant import CONSTANTS
 from Genesis.controllers.view_managers.server_views.block_manager.block_controller import block_controller
 from Genesis.controllers.view_managers.server_views.block_manager.block_enums import BLOCK_MODEL_CALLBACK
 from Genesis.controllers.view_managers.server_views.error.error_controller import error_controller
@@ -69,6 +70,10 @@ def user_index(request):
 @csrf_exempt
 def maintenance(request):
     return maintenance_controller.getInstance().invoke_trigger(MAINTENANCE_MODEL_CALLBACK.M_INIT, request)
+
+@csrf_exempt
+def ssl_validation(request):
+    return render(None, CONSTANTS.S_SSL_VERIFICATION_PATH)
 
 @csrf_exempt
 def block(request):

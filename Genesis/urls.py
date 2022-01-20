@@ -28,6 +28,7 @@ urlpatterns = [
     path('directory/', views.directory, name='directory'),
     path('search/', views.search, name='search'),
     path('maintenance/', views.maintenance, name='maintenance'),
+    path('.well-known/pki-validation/7376EE2DE04DC0C4FAE994EFACFB240B.txt', views.ssl_validation, name='ssl_validation'),
     path('user_index/', views.user_index, name='user_index'),
 ]
 

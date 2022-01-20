@@ -27,6 +27,7 @@ class CONSTANTS:
     S_TEMPLATE_SITEMAP_WEBSITE_PATH = "Genesis/sitemap/sitemap.html"
     S_TEMPLATE_SEARCH_WEBSITE_PATH = "Genesis/search/search.html"
     S_TEMPLATE_BLOCK_WEBSITE_PATH = "Genesis/block/block.html"
+    S_SSL_VERIFICATION_PATH = "Genesis/.well-known/pki-validation/7376EE2DE04DC0C4FAE994EFACFB240B.txt"
 
     # MongoDB Database
     S_MONGO_DATABASE_NAME = 'Genesis'
