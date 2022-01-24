@@ -1,14 +1,11 @@
 from Genesis.controllers.constants.strings import GENERAL_STRINGS
-from Genesis.controllers.view_managers.user_views.search_manager.search_enums import SEARCH_SESSION_COMMANDS, \
-    SEARCH_MODEL_TOKENIZATION_COMMANDS, SEARCH_CALLBACK, SEARCH_MODEL_COMMANDS
-from Genesis.controllers.view_managers.user_views.search_manager.search_session_controller import \
-    search_session_controller
+from Genesis.controllers.view_managers.user_views.search_manager.search_enums import SEARCH_SESSION_COMMANDS, SEARCH_MODEL_TOKENIZATION_COMMANDS, SEARCH_CALLBACK, SEARCH_MODEL_COMMANDS
+from Genesis.controllers.view_managers.user_views.search_manager.search_session_controller import search_session_controller
 from Genesis.controllers.view_managers.user_views.search_manager.spell_checker import spell_checker
 from Genesis.controllers.view_managers.user_views.search_manager.tokenizer import tokenizer
 from shared_directory.request_manager.request_handler import request_handler
 from shared_directory.service_manager.elastic_manager.elastic_controller import elastic_controller
-from shared_directory.service_manager.elastic_manager.elastic_enums import ELASTIC_CRUD_COMMANDS, \
-    ELASTIC_REQUEST_COMMANDS
+from shared_directory.service_manager.elastic_manager.elastic_enums import ELASTIC_CRUD_COMMANDS, ELASTIC_REQUEST_COMMANDS
 
 
 class search_model(request_handler):
@@ -42,7 +39,8 @@ class search_model(request_handler):
     def __query_results(self, p_data):
         m_query_model = self.__m_session.invoke_trigger(SEARCH_SESSION_COMMANDS.INIT_SEARCH_PARAMETER, [p_data])
         if m_query_model.m_search_query == GENERAL_STRINGS.S_GENERAL_EMPTY:
-            return False, None
+           return False, None
+
         # m_query_model = p_data
 
         m_suggested_query = self.__m_spell_checker.fetch_invalid_words(m_query_model.m_search_query)
@@ -51,8 +49,7 @@ class search_model(request_handler):
         m_parsed_documents, m_suggestions = self.__parse_filtered_documents(m_documents)
         m_query_model.set_total_documents(len(m_parsed_documents))
 
-        port_number = int(p_data.META['SERVER_PORT'])
-        m_context, m_status = self.__m_session.invoke_trigger(SEARCH_SESSION_COMMANDS.M_INIT, [m_parsed_documents, m_query_model, m_tokenized_query, port_number])
+        m_context, m_status = self.__m_session.invoke_trigger(SEARCH_SESSION_COMMANDS.M_INIT, [m_parsed_documents, m_query_model, m_tokenized_query])
         m_context[SEARCH_CALLBACK.M_QUERY_ERROR_URL], m_context[SEARCH_CALLBACK.M_QUERY_ERROR] = self.__m_spell_checker.generate_suggestions(m_query_model.m_search_query, m_suggestions)
         return m_status, m_context
 

@@ -5,6 +5,8 @@ import json
 from Genesis.controllers.constants.constant import CONSTANTS
 from Genesis.controllers.view_managers.user_views.search_manager.search_enums import SEARCH_MODEL_TOKENIZATION_COMMANDS
 from Genesis.controllers.view_managers.user_views.search_manager.tokenizer import tokenizer
+from modules.user_data_parser.parse_instance.local_shared_model.index_model import UrlObjectEncoder
+from modules.user_data_parser.parse_services.helper_services.helper_method import helper_method
 from shared_directory.request_manager.request_handler import request_handler
 from shared_directory.service_manager.elastic_manager.elastic_enums import ELASTIC_KEYS, ELASTIC_REQUEST_COMMANDS, \
     ELASTIC_INDEX
@@ -49,6 +51,7 @@ class elastic_request_generator(request_handler):
         m_query_statement = {
             "from": (m_page_number-1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
             "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE+5,
+            "min_score": 3.01,
             "query": {
                   "bool": {
                   "must_not": [m_safe_filter],
@@ -75,7 +78,7 @@ class elastic_request_generator(request_handler):
                       "match": {
                         "m_important_content": {
                             "query": m_user_query,
-                            "boost": 1
+                            "boost": 1.5
                         }
                       }
                     },
@@ -83,7 +86,7 @@ class elastic_request_generator(request_handler):
                       "match": {
                         "m_content": {
                             "query": m_tokenized_query,
-                            "boost": 0
+                            "boost": 1
                         }
                       }
                     }
