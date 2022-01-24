@@ -8,7 +8,7 @@ from Genesis.controllers.constants.constant import CONSTANTS
 from Genesis.controllers.constants.strings import GENERAL_STRINGS
 from Genesis.controllers.helper_manager.helper_controller import helper_controller
 
-
+nltk.download('punkt')
 class spell_checker:
 
     # Private Variables

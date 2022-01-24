@@ -2,3 +2,4 @@ CrawlerInstance/applicationController/predictions.csv
 GenesisSearchServices/raw/classifier_output/training_data.csv
 **/*.dll
 **/*.pyc
+**/__pycache__/
