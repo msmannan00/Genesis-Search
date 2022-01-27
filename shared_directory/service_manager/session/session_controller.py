@@ -21,7 +21,7 @@ class session_controller(request_handler):
         p_data.session[SESSION_KEYS.S_PASSWORD] = p_user_model.m_password
 
     def __exists(self, p_data):
-        if p_data.session.get(SESSION_KEYS.S_USERNAME) is None or p_data.session.get(SESSION_KEYS.S_PASSWORD) is None or p_data.session.get(SESSION_KEYS.S_ROLE) is None:
+        if p_data.session.get(SESSION_KEYS.S_USERNAME) is None:
             return False
         else:
             return True

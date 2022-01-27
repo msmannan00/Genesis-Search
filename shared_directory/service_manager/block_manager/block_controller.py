@@ -3,6 +3,8 @@ import base64
 
 from cryptography.fernet import Fernet
 from shared_directory.service_manager.block_manager.block_enums import BLOCK_PARAM, BLOCK_COMMAND
+from shared_directory.service_manager.session.session_controller import session_controller
+from shared_directory.service_manager.session.session_enums import SESSION_COMMANDS
 from shared_directory.state_manager.constant import APP_STATUS
 
 
@@ -25,7 +27,11 @@ class block_controller:
 
 
     def __on_verify(self, p_request):
-        if BLOCK_PARAM.M_SECRET_TOKEN not in p_request.POST and APP_STATUS.S_DEVELOPER is False and :
+        m_status = session_controller.get_instance().invoke_trigger(SESSION_COMMANDS.S_EXISTS, [p_request])
+        if m_status is True:
+            return True
+
+        if BLOCK_PARAM.M_SECRET_TOKEN not in p_request.POST and APP_STATUS.S_DEVELOPER is False:
             return True
         elif APP_STATUS.S_DEVELOPER is False:
             m_secret_token = p_request.POST[BLOCK_PARAM.M_SECRET_TOKEN]
