@@ -13,21 +13,29 @@ class CONSTANTS:
     S_LOCAL_FILE_PATH = str(Path(__file__).parent.parent.parent.parent) + "/genesis_shared_directory/" + "ftp-directory"
 
     # Template URL
+    S_TEMPLATE_INDEX_PATH = "Genesis/user/interactive/homepage/index.html"
+    S_TEMPLATE_REPORT_WEBSITE_PATH = "Genesis/user/interactive/report/report.html"
+    S_TEMPLATE_DIRECTORY_WEBSITE_PATH = "Genesis/user/interactive/directory/directory.html"
+    S_TEMPLATE_NOTICE_WEBSITE_PATH = "Genesis/user/interactive/notice/notice.html"
+    S_TEMPLATE_POLICY_WEBSITE_PATH = "Genesis/user/interactive/privacy/privacy.html"
+    S_TEMPLATE_SECRET_KEY_WEBSITE_PATH = "Genesis/user/server/secretkey/secretkey.html"
+    S_TEMPLATE_MAINTENANCE_WEBSITE_PATH = "Genesis/user/server/maintenance/maintenance.html"
+    S_TEMPLATE_LOGIN_WEBSITE_PATH = "Genesis/cms/login/login.html"
+    S_TEMPLATE_DASHBOARD_WEBSITE_PATH = "Genesis/cms/dashboard/dashboard.html"
+    S_TEMPLATE_MANAGE_SEARCH_WEBSITE_PATH = "Genesis/cms/manage_search/manage_search.html"
+    S_TEMPLATE_MANAGE_STATUS_WEBSITE_PATH = "Genesis/cms/manage_status/manage_status.html"
+    S_TEMPLATE_ERROR_WEBSITE_PATH = "Genesis/user/server/error/error.html"
+    S_TEMPLATE_SITEMAP_WEBSITE_PATH = "Genesis/user/interactive/sitemap/sitemap.html"
+    S_TEMPLATE_SEARCH_WEBSITE_PATH = "Genesis/user/interactive/search/search.html"
+    S_TEMPLATE_BLOCK_WEBSITE_PATH = "Genesis/user/server/block/block.html"
+    S_SSL_VERIFICATION_PATH = "Genesis/.well-known/pki-validation/7376EE2DE04DC0C4FAE994EFACFB240B.txt"
+
+    # Direct Links
+    S_TEMPLATE_LOGIN_SHORT = "/cms/login"
+    S_TEMPLATE_DASHBOARD_WEBSITE_SHORT = "/cms/dashboard"
+    S_TEMPLATE_PARENT = "../"
     S_TEMPLATE_NOTICE_WEBSITE_REPORT = "../notice/?mNoticeParamType=report"
     S_TEMPLATE_NOTICE_WEBSITE_UPLOAD = "../notice/?mNoticeParamType=upload"
-    S_TEMPLATE_INDEX_PATH = "Genesis/homepage/index.html"
-    S_TEMPLATE_PARENT = "../"
-    S_TEMPLATE_REPORT_WEBSITE_PATH = "Genesis/report/report.html"
-    S_TEMPLATE_DIRECTORY_WEBSITE_PATH = "Genesis/directory/directory.html"
-    S_TEMPLATE_NOTICE_WEBSITE_PATH = "Genesis/notice/notice.html"
-    S_TEMPLATE_POLICY_WEBSITE_PATH = "Genesis/privacy/privacy.html"
-    S_TEMPLATE_SECRET_KEY_WEBSITE_PATH = "Genesis/secretkey/secretkey.html"
-    S_TEMPLATE_MAINTENANCE_WEBSITE_PATH = "Genesis/maintenance/maintenance.html"
-    S_TEMPLATE_ERROR_WEBSITE_PATH = "Genesis/error/error.html"
-    S_TEMPLATE_SITEMAP_WEBSITE_PATH = "Genesis/sitemap/sitemap.html"
-    S_TEMPLATE_SEARCH_WEBSITE_PATH = "Genesis/search/search.html"
-    S_TEMPLATE_BLOCK_WEBSITE_PATH = "Genesis/block/block.html"
-    S_SSL_VERIFICATION_PATH = "Genesis/.well-known/pki-validation/7376EE2DE04DC0C4FAE994EFACFB240B.txt"
 
     # MongoDB Database
     S_MONGO_DATABASE_NAME = 'Genesis'

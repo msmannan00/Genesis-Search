@@ -25,7 +25,7 @@ class block_controller:
 
 
     def __on_verify(self, p_request):
-        if BLOCK_PARAM.M_SECRET_TOKEN not in p_request.POST and APP_STATUS.S_DEVELOPER is False:
+        if BLOCK_PARAM.M_SECRET_TOKEN not in p_request.POST and APP_STATUS.S_DEVELOPER is False and :
             return True
         elif APP_STATUS.S_DEVELOPER is False:
             m_secret_token = p_request.POST[BLOCK_PARAM.M_SECRET_TOKEN]

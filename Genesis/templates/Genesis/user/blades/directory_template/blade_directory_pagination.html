@@ -1,0 +1,22 @@
+{% load static %}
+
+<form class="disable-highlight" action="" method="POST">
+    <div class="onion__pagination-container">
+        <!-- left arrow -->
+        {% if mDirectoryCallbackPageNumber == 1 %}
+            <input type="submit" name="mDirectoryParamPageNumberPrev" class="onion__pagination onion__pagination--border-right onion__pagination--border-right--extended onion__pagination--block" value="&lsaquo;">
+        {% else %}
+            <input type="submit" name="mDirectoryParamPageNumberPrev" class="onion__pagination onion__pagination--border-right" value="&lsaquo;">
+        {% endif %}
+
+        <input type="hidden" name="mDirectoryParamPageNumber" value="{{mDirectoryCallbackPageNumber}}">
+        <a input type="submit" class="onion__navigation onion__navigation--normal" style="float: left">{{mDirectoryCallbackPageNumber}}</a>
+
+        <!-- right arrow -->
+        {% if mDirectoryCallbackPageNumberMaxReached == True %}
+            <input type="submit" name="mDirectoryParamPageNumberNext" class="onion__pagination onion__pagination--border-right onion__pagination--border-left onion__pagination--block" value="&rsaquo;">
+        {% else %}
+            <input type="submit" name="mDirectoryParamPageNumberNext" class="onion__pagination onion__pagination--border-right onion__pagination--border-left" value="&rsaquo;">
+        {% endif %}
+    </div>
+</form>

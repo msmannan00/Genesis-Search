@@ -1,13 +1,19 @@
 import enum
 
 
-class mongo_index_collection:
+class MONGO_INDEX_COLLECTION:
     M_URL = "m_host"
     M_CONTENT_TYPE = "m_content_type"
 
+class MONGO_USER_COLLECTION:
+    S_DATABASE_DEFAULT_ENTRY_USER = {'m_username': 'admin', 'm_password': 'Imammehdi@00'}
+    S_DATABASE_DEFAULT_ENTRY_STATUS = {'m_cronjob': 0, 'm_crawler': 0}
+
 class MONGODB_COLLECTIONS:
-    S_REPORT = 'reported_websites'
-    S_SUBMIT = 'submitted_websites'
+    S_REPORT = 'm_reported_websites'
+    S_SUBMIT = 'm_submitted_websites'
+    S_USER_MODEL = 'm_users'
+    S_STATUS = 'm_status'
 
 class MONGO_CONNECTIONS:
     S_MONGO_DATABASE_NAME = 'Genesis'

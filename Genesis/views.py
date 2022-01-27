@@ -2,30 +2,48 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
 from Genesis.controllers.constants.constant import CONSTANTS
-from Genesis.controllers.view_managers.server_views.block_manager.block_controller import block_controller
-from Genesis.controllers.view_managers.server_views.block_manager.block_enums import BLOCK_MODEL_CALLBACK
-from Genesis.controllers.view_managers.server_views.error.error_controller import error_controller
-from Genesis.controllers.view_managers.server_views.error.error_enums import ERROR_MODEL_CALLBACK
-from Genesis.controllers.view_managers.server_views.maintenance.maintenance_controller import maintenance_controller
-from Genesis.controllers.view_managers.server_views.maintenance.maintenance_enums import MAINTENANCE_MODEL_CALLBACK
-from Genesis.controllers.view_managers.server_views.secret_key.secret_key_controller import secret_key_controller
-from Genesis.controllers.view_managers.server_views.secret_key.secret_key_enums import SECRET_KEY_MODEL_CALLBACK
-from Genesis.controllers.view_managers.server_views.user_index_manager.user_index_controller import user_index_controller
-from Genesis.controllers.view_managers.server_views.user_index_manager.user_index_enums import USER_INDEX_MODEL_CALLBACK
-from Genesis.controllers.view_managers.user_views.directory_manager.directory_controller import directory_controller
-from Genesis.controllers.view_managers.user_views.directory_manager.directory_enums import DIRECTORY_MODEL_COMMANDS
-from Genesis.controllers.view_managers.user_views.hompage_manager.homepage_controller import homepage_controller
-from Genesis.controllers.view_managers.user_views.hompage_manager.homepage_enums import HOMEPAGE_MODEL_COMMANDS
-from Genesis.controllers.view_managers.user_views.notice_manager.notice_controller import notice_controller
-from Genesis.controllers.view_managers.user_views.notice_manager.notice_enums import NOTICE_MODEL_CALLBACK
-from Genesis.controllers.view_managers.user_views.policy_manager.policy_controller import policy_controller
-from Genesis.controllers.view_managers.user_views.policy_manager.policy_enums import POLICY_MODEL_CALLBACK
-from Genesis.controllers.view_managers.user_views.report_manager.report_controller import report_controller
-from Genesis.controllers.view_managers.user_views.report_manager.report_enums import REPORT_MODEL_COMMANDS
-from Genesis.controllers.view_managers.user_views.search_manager.search_controller import search_controller
-from Genesis.controllers.view_managers.user_views.search_manager.search_enums import SEARCH_MODEL_COMMANDS
-from Genesis.controllers.view_managers.user_views.sitemap_manager.sitemap_controller import sitemap_controller
-from Genesis.controllers.view_managers.user_views.sitemap_manager.sitemap_enums import SITEMAP_MODEL_COMMANDS
+from Genesis.controllers.server_manager.external_request_manager.external_request_controller import \
+    external_request_controller
+from Genesis.controllers.server_manager.external_request_manager.external_request_enums import EXTERNAL_REQUEST_COMMANDS
+from Genesis.controllers.server_manager.user_auth_manager.user_auth_controller import \
+    user_auth_controller
+from Genesis.controllers.server_manager.user_auth_manager.user_auth_enums import \
+    USER_AUTH_COMMANDS
+from Genesis.controllers.view_managers.cms.dashboard.dashboard_controller import dashboard_controller
+from Genesis.controllers.view_managers.cms.dashboard.dashboard_enums import DASHBOARD_MODEL_CALLBACK
+from Genesis.controllers.view_managers.cms.login.login_controller import login_controller
+from Genesis.controllers.view_managers.cms.login.login_enums import LOGIN_MODEL_CALLBACK
+from Genesis.controllers.view_managers.cms.manage_search.manage_search_controller import manage_search_controller
+from Genesis.controllers.view_managers.cms.manage_search.manage_search_enums import MANAGE_SEARCH_MODEL_CALLBACK
+from Genesis.controllers.view_managers.cms.manage_status.manage_status_controller import manage_status_controller
+from Genesis.controllers.view_managers.cms.manage_status.manage_status_enums import MANAGE_STATUS_MODEL_CALLBACK
+from Genesis.controllers.view_managers.user.server.block_manager.block_enums import BLOCK_MODEL_CALLBACK
+from Genesis.controllers.view_managers.user.server.error.error_controller import error_controller
+from Genesis.controllers.view_managers.user.server.error.error_enums import ERROR_MODEL_CALLBACK
+from Genesis.controllers.view_managers.user.server.maintenance.maintenance_controller import \
+    maintenance_controller
+from Genesis.controllers.view_managers.user.server.maintenance.maintenance_enums import MAINTENANCE_MODEL_CALLBACK
+from Genesis.controllers.view_managers.user.server.secret_key.secret_key_controller import secret_key_controller
+from Genesis.controllers.view_managers.user.server.secret_key.secret_key_enums import SECRET_KEY_MODEL_CALLBACK
+from Genesis.controllers.view_managers.user.server.user_index_manager.user_index_controller import \
+    user_index_controller
+from Genesis.controllers.view_managers.user.server.user_index_manager.user_index_enums import USER_INDEX_MODEL_CALLBACK
+from Genesis.controllers.view_managers.user.interactive.directory_manager.directory_controller import \
+    directory_controller
+from Genesis.controllers.view_managers.user.interactive.directory_manager.directory_enums import DIRECTORY_MODEL_COMMANDS
+from Genesis.controllers.view_managers.user.interactive.hompage_manager.homepage_controller import homepage_controller
+from Genesis.controllers.view_managers.user.interactive.hompage_manager.homepage_enums import HOMEPAGE_MODEL_COMMANDS
+from Genesis.controllers.view_managers.user.interactive.notice_manager.notice_controller import notice_controller
+from Genesis.controllers.view_managers.user.interactive.notice_manager.notice_enums import NOTICE_MODEL_CALLBACK
+from Genesis.controllers.view_managers.user.interactive.policy_manager.policy_controller import policy_controller
+from Genesis.controllers.view_managers.user.interactive.policy_manager.policy_enums import POLICY_MODEL_CALLBACK
+from Genesis.controllers.view_managers.user.interactive.report_manager.report_controller import report_controller
+from Genesis.controllers.view_managers.user.interactive.report_manager.report_enums import REPORT_MODEL_COMMANDS
+from Genesis.controllers.view_managers.user.interactive.search_manager.search_controller import search_controller
+from Genesis.controllers.view_managers.user.interactive.search_manager.search_enums import SEARCH_MODEL_COMMANDS
+from Genesis.controllers.view_managers.user.interactive.sitemap_manager.sitemap_controller import sitemap_controller
+from Genesis.controllers.view_managers.user.interactive.sitemap_manager.sitemap_enums import SITEMAP_MODEL_COMMANDS
+from shared_directory.service_manager.block_manager.block_controller import block_controller
 
 
 def index(request):
@@ -78,6 +96,38 @@ def ssl_validation(request):
 @csrf_exempt
 def block(request):
     return block_controller.getInstance().invoke_trigger(BLOCK_MODEL_CALLBACK.M_INIT, request)
+
+@csrf_exempt
+def cms_login(request):
+    return login_controller.getInstance().invoke_trigger(LOGIN_MODEL_CALLBACK.M_INIT, request)
+
+@csrf_exempt
+def manage_status(request):
+    return manage_status_controller.getInstance().invoke_trigger(MANAGE_STATUS_MODEL_CALLBACK.M_INIT, request)
+
+@csrf_exempt
+def manage_search(request):
+    return manage_search_controller.getInstance().invoke_trigger(MANAGE_SEARCH_MODEL_CALLBACK.M_INIT, request)
+
+@csrf_exempt
+def manage_authentication(request):
+    return user_auth_controller.getInstance().invoke_trigger(USER_AUTH_COMMANDS.M_AUTHENTICATE, request)
+
+@csrf_exempt
+def update_status(request):
+    return external_request_controller.getInstance().invoke_trigger(EXTERNAL_REQUEST_COMMANDS.M_UPDATE_MODULE_STATUS, request)
+
+@csrf_exempt
+def manage_logout(request):
+    return user_auth_controller.getInstance().invoke_trigger(USER_AUTH_COMMANDS.M_LOGOUT, request)
+
+@csrf_exempt
+def cms_dashboard(request):
+    return dashboard_controller.getInstance().invoke_trigger(DASHBOARD_MODEL_CALLBACK.M_INIT, request)
+
+@csrf_exempt
+def cms_dashboard(request):
+    return dashboard_controller.getInstance().invoke_trigger(DASHBOARD_MODEL_CALLBACK.M_INIT, request)
 
 def error_page_400(request, exception=None):
     return error_controller.getInstance().invoke_trigger(ERROR_MODEL_CALLBACK.M_INIT, [request,400])

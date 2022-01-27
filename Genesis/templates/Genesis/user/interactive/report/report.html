@@ -1,0 +1,34 @@
+{% load static %}
+
+{% include 'Genesis/user/blades/blades_shared_initialization.html' %}
+{% include 'Genesis/user/interactive/report/local_imports.html' %}
+
+
+<!--script initialization-->
+<html lang="en">
+    <body>
+
+        <!-- non onion url -->
+        {% include 'Genesis/user/blades/shared_blades/blade_onion_warning.html' %}
+
+        <!--footer-->
+        {% include 'Genesis/user/blades/shared_blades/blade_light_header.html' %}
+
+        <p class="report__header"> Report onion service </p>
+        <p class="report__description">We here at Genesis believe that customer satisfaction is an utmost priority. Hence we try to make hidden web a secure place where people can connect to internet without being tracked. <br><br>To maintain our goal we have zero tolerance against abusive content. So, if you find illegal or abusive content, please report so that we can maintain the friendly environment.</p>
+        <hr class="report__line-style">
+
+        <form method="POST" action="" enctype="multipart/form-data" class="report__form">
+            <input class="report-form__input {% if mReportURLCallbackError != '' %} form-control is-invalid report-form__input--warning {% else %} report-form__input--normal{% endif %}" autocomplete="off" type="text" name="pReportParamURL" value="{{mReportCallbackURL}}" placeholder="Site URL - &nbsp;https://example.onion">
+            <label class="{% if mReportURLCallbackError != '' %} report-form__warning--error {% endif %} disable-highlight">{{mReportURLCallbackError}}</label><br><br>
+            <input class="report-form__input {% if mReportCallbackEmail != '' %} form-control is-invalid report-form__input--warning {% else %} report-form__input--normal{% endif %}" value="{{mReportCallbackEmail}}" autocomplete="off" type="text" name="pReportParamEmail" placeholder="Email Address (Optional)">
+            <label class="{% if mReportEmailCallbackError != '' %} report-form__warning--error {% endif %} disable-highlight">{{mReportEmailCallbackError}}</label><br><br>
+            <textarea rows="6" class="report-form__text-area" autocomplete="off" type="text" name="pReportParamMessage" placeholder="Message ... ">{{mReportCallbackMessage}}</textarea>
+            <input type="hidden" value="true" name="pReportParamSubmission">
+            <br><input type="submit" class="report-form__submit" value="Submit"><br><br>
+        </form>
+
+        <!--footer-->
+        {% include 'Genesis/user/blades/shared_blades/blade_footer.html' %}
+    </body>
+</html>

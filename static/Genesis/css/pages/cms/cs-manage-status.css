@@ -1,0 +1,38 @@
+.manage_status-header{
+    margin-left: 2.3%;
+    margin-top: 30px;
+}
+.manage_status-block{
+    border-radius: 8px;
+    border: 1px solid #e6e6e6;
+    width: 87%;
+    max-width: 500px;
+    margin-left: 2%;
+    padding: 10px 10px 12px 16px;
+    border-bottom: 4px solid lightgray;
+}
+.manage_status-update{
+    border-left: 4px solid orange ;
+    padding-left: 15px;
+    padding-bottom: 30px;
+    margin-left: 30px;
+}
+.manage_status-badge{
+    margin-top: 25px;
+    padding: 5px;
+}
+.manage_status-header--color{
+    color: #336699;
+}
+.manage_status-header--info-color{
+    color: #4d4d4d;
+}
+@media only screen and (max-width: 943px) {
+   .manage_status-header{
+        margin-left: 5.3%;
+    }
+    .manage_status-block{
+        margin-left: 5%;
+    }
+
+}

@@ -2,8 +2,7 @@
 import pymongo
 
 from shared_directory.log_manager.log_controller import log
-from shared_directory.service_manager.mongo_manager.mongo_enums import MONGO_CONNECTIONS, MONGODB_KEYS, \
-    MANAGE_MONGO_MESSAGES, MONGODB_CRUD
+from shared_directory.service_manager.mongo_manager.mongo_enums import MONGO_CONNECTIONS, MONGODB_COLLECTIONS, MONGODB_KEYS, MANAGE_MONGO_MESSAGES, MONGODB_CRUD, MONGO_USER_COLLECTION
 from shared_directory.service_manager.mongo_manager.mongo_request_generator import mongo_request_generator
 
 
@@ -28,6 +27,21 @@ class mongo_controller:
 
     def __link_connection(self):
         self.__m_connection = pymongo.MongoClient(MONGO_CONNECTIONS.S_MONGO_DATABASE_IP, MONGO_CONNECTIONS.S_MONGO_DATABASE_URL)[MONGO_CONNECTIONS.S_MONGO_DATABASE_NAME]
+        self.__initialize_database()
+
+    def __initialize_database(self):
+        try:
+            if MONGODB_COLLECTIONS.S_USER_MODEL not in self.__m_connection.list_collection_names():
+                m_user = self.__m_connection.create_collection(name = MONGODB_COLLECTIONS.S_USER_MODEL)
+                m_user.insert(MONGO_USER_COLLECTION.S_DATABASE_DEFAULT_ENTRY_USER)
+
+            if MONGODB_COLLECTIONS.S_STATUS not in self.__m_connection.list_collection_names():
+                m_status = self.__m_connection.create_collection(name=MONGODB_COLLECTIONS.S_STATUS)
+                m_status.insert(MONGO_USER_COLLECTION.S_DATABASE_DEFAULT_ENTRY_STATUS)
+
+        except Exception as ex:
+            print(ex,flush=True)
+            pass
 
     def __create(self, p_data):
         try:
@@ -57,9 +71,9 @@ class mongo_controller:
             log.g().e("MONGO E4 : " + MANAGE_MONGO_MESSAGES.S_REPLACE_FAILURE + " : " + str(ex))
             return False, str(ex)
 
-    def __update(self, p_data, p_upsert):
+    def __update(self, p_data):
         try:
-            self.__m_connection[p_data[MONGODB_KEYS.S_DOCUMENT]].update_many(p_data[MONGODB_KEYS.S_FILTER],p_data[MONGODB_KEYS.S_VALUE], upsert=p_upsert)
+            self.__m_connection[p_data[MONGODB_KEYS.S_DOCUMENT]].update_one(p_data[MONGODB_KEYS.S_FILTER],p_data[MONGODB_KEYS.S_VALUE],upsert=False)
             return True, MANAGE_MONGO_MESSAGES.S_UPDATE_SUCCESS
 
         except Exception as ex:
@@ -87,7 +101,7 @@ class mongo_controller:
         elif p_commands == MONGODB_CRUD.S_READ:
             return self.__read(m_request, m_param[0])
         elif p_commands == MONGODB_CRUD.S_UPDATE:
-            return self.__update(m_request, m_param[0])
+            return self.__update(m_request)
         elif p_commands == MONGODB_CRUD.S_REPLACE:
             return self.__replace(m_request, m_param[0])
         elif p_commands == MONGODB_CRUD.S_DELETE:

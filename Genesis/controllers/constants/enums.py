@@ -10,6 +10,8 @@ class MONGO_COMMANDS(enum.Enum):
      M_TOTAL_DOCUMENTS = 6
      M_FETCH_DOCUMENT_BY_ID = 7
      M_ONION_LIST = 8
+     M_VERIFY_CREDENTIAL = 9
+     M_UPDATE_STATUS = 10
 
 class ELASTIC_COMMANDS(enum.Enum):
      M_INIT = 1
