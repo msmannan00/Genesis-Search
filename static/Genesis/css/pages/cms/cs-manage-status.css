@@ -1,6 +1,7 @@
 .manage_status-header{
     margin-left: 2.3%;
     margin-top: 30px;
+    padding-right: 2%;
 }
 .manage_status-block{
     border-radius: 8px;
@@ -14,12 +15,12 @@
 .manage_status-update{
     border-left: 4px solid orange ;
     padding-left: 15px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     margin-left: 30px;
 }
 .manage_status-badge{
     margin-top: 25px;
-    padding: 5px;
+    padding: 5px 8px 8px;
 }
 .manage_status-header--color{
     color: #336699;

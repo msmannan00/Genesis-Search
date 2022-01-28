@@ -1,0 +1,16 @@
+.manage_search-header{
+    margin-left: 2.3%;
+    margin-top: 30px;
+    padding-right: 2%;
+}
+.manage_search-header--color{
+    color: #336699;
+}
+.manage_search-header--info-color{
+    color: #4d4d4d;
+}
+@media only screen and (max-width: 943px) {
+   .manage_search-header{
+        margin-left: 5.3%;
+    }
+}

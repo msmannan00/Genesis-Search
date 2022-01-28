@@ -31,6 +31,8 @@ class mongo_request_generator(request_handler):
     def __on_update_status(self, m_name):
         return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_STATUS, MONGODB_KEYS.S_FILTER:{},MONGODB_KEYS.S_VALUE:{"$set": {m_name:(math.ceil(time.time()/60))}}}
 
+    def __on_fetch_status(self):
+        return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_STATUS, MONGODB_KEYS.S_FILTER:{}}
 
     def invoke_trigger(self, p_commands, p_data=None):
         if p_commands == MONGO_COMMANDS.M_VERIFY_CREDENTIAL:
@@ -43,6 +45,8 @@ class mongo_request_generator(request_handler):
             return self.__on_fetch_service_by_url(p_data)
         if p_commands == MONGO_COMMANDS.M_FIND_SECRET_KEY:
             return self.__on_fetch_secret_key(p_data[0])
+        if p_commands == MONGO_COMMANDS.M_FETCH_STATUS:
+            return self.__on_fetch_status()
         if p_commands == MONGO_COMMANDS.M_UPDATE_STATUS:
             return self.__on_update_status(p_data[0])
 

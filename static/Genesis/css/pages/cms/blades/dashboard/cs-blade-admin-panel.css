@@ -18,15 +18,10 @@
 .admin-ref{
     text-decoration: none !important;
 }
+.admin-header{
+    margin-left: 7px;
+}
 .admin-panel--info{
     color: #4d4d4d;
     font-size: 15px;
-}
-.admin-panel{
-    height: 70%;
-}
-@media only screen and (max-width: 943px) {
-    .admin-panel{
-        height: 90%;
-    }
 }

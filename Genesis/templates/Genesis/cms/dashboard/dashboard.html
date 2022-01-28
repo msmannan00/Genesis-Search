@@ -7,9 +7,14 @@
 
 <body>
 
-    {% include 'Genesis/cms/blades/shared/blade-dashboard-navbar.html' %}
-    {% include 'Genesis/cms/blades/dashboard/blade-welcome.html' %}
-    {% include 'Genesis/cms/blades/dashboard/blade-admin-panel.html' %}
+    <div style="height: 73em;">
+        {% include 'Genesis/cms/blades/shared_blades/blade-dashboard-navbar.html' %}
+        {% include 'Genesis/cms/blades/dashboard/blade-welcome.html' %}
+        {% include 'Genesis/cms/blades/dashboard/blade-admin-panel.html' %}
+    </div>
+
+    <!-- footer -->
+    {% include 'Genesis/cms/blades/shared_blades/blade_footer.html' %}
 
 </body>
 </html>

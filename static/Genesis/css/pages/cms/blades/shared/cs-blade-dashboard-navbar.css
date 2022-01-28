@@ -44,7 +44,7 @@
     margin-top: -43px;
     text-align: center;
     padding: 25px;
-    background: #142639;
+    background: #122130;
     border-left: 1px solid #0d1926;
 }
 .dashboard__header--logout:hover{
@@ -53,10 +53,6 @@
 .dashboard__header--container{
     width: 400px;
 }
-@media only screen and (max-width: 943px) {
-.dashboard__header--logout{
-    background: #122130;
-}
-}
+
 
 

@@ -12,4 +12,7 @@ class MANAGE_STATUS_PARAM:
     pass
 
 class MANAGE_STATUS_CALLBACK:
-    M_SECURE_SERVICE_NOTICE = "mUseSecureServiceNotice"
+    M_CRONJOB_NOTICE = "mCronjobNotice"
+    M_CRONJOB_TIME = "mCronjobTime"
+    M_CRAWLER_NOTICE = "mCrawlerNotice"
+    M_CRAWLER_TIME = "mCrawlerTime"
