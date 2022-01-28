@@ -5,7 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/block_manager/block_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/block_manager/block_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/session/session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/session/session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,7 +295,7 @@
       <workItem from="1643206804248" duration="2160000" />
       <workItem from="1643209032566" duration="415000" />
       <workItem from="1643213274260" duration="5372000" />
-      <workItem from="1643224756635" duration="20725000" />
+      <workItem from="1643224756635" duration="20995000" />
     </task>
     <servers />
   </component>

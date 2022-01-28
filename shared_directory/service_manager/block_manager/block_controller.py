@@ -27,9 +27,9 @@ class block_controller:
 
 
     def __on_verify(self, p_request):
-        m_status = session_controller.get_instance().invoke_trigger(SESSION_COMMANDS.S_EXISTS, [p_request])
+        m_status = session_controller.get_instance().invoke_trigger(SESSION_COMMANDS.S_EXISTS, p_request)
         if m_status is True:
-            return True
+            return False
 
         if BLOCK_PARAM.M_SECRET_TOKEN not in p_request.POST and APP_STATUS.S_DEVELOPER is False:
             return True
