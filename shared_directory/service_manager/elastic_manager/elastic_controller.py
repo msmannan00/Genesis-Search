@@ -102,11 +102,11 @@ class elastic_controller(request_handler):
 
     def __read(self, p_data):
         try:
-            return self.__m_connection.search(index=p_data[ELASTIC_KEYS.S_DOCUMENT], body=p_data[ELASTIC_KEYS.S_FILTER])
+            return self.__m_connection.search(index=p_data[ELASTIC_KEYS.S_DOCUMENT], body=p_data[ELASTIC_KEYS.S_FILTER]), True
 
         except Exception as ex:
-            log.g().e("ELASTIC 3 : " + MANAGE_ELASTIC_MESSAGES.S_INSERT_FAILURE + " : " + str(ex))
-            return False, str(ex)
+            log.g().e("ELASTIC 3 : " + MANAGE_ELASTIC_MESSAGES.S_READ_FAILURE + " : " + str(ex))
+            return str(ex), False
 
     def invoke_trigger(self, p_commands, p_data=None):
         m_request = p_data[0]
@@ -117,6 +117,4 @@ class elastic_controller(request_handler):
         if p_commands == ELASTIC_CRUD_COMMANDS.S_UPDATE:
             return self.__update(m_request, m_param[0])
         if p_commands == ELASTIC_CRUD_COMMANDS.S_READ:
-            return self.__read(m_request)
-        if p_commands == ELASTIC_CRUD_COMMANDS.S_SUGGEST:
             return self.__read(m_request)

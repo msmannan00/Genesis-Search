@@ -9,25 +9,27 @@
 <div style="clear: left"></div>
     <body>
 
-        <div style="height: 55em;">
-            <div class="manage_status-header">
-              <h3 class="manage_status-header--color"><b>Genesis Status</b></h3>
-              <p class="manage_status-header--info-color">The following menu shows status of multiple Genesis Platform modules. Time tag shows most recent update request made by module</p>
-            </div>
+        <div class="manage_status">
+            <div class="manage_status-container">
+                <div class="manage_status-header">
+                  <h4 class="manage_status-header--color"><b>Genesis Status</b></h4>
+                  <p class="manage_status-header--info-color">The following menu shows status of multiple Genesis Platform modules. Time tag shows most recent update request made by module</p>
+                </div>
 
-            <br><div class="manage_status-block">
-              <b>G-search status</b> &nbsp; <span class="manage_status-update"> active</span>
-              <br><a href="#" class="badge badge-success manage_status-badge">running</a>
-            </div>
+                <br><div class="manage_status-block">
+                  <b>G-search status</b> &nbsp; <span class="manage_status-update"> active</span>
+                  <br><a href="#" class="badge badge-success manage_status-badge">running</a>
+                </div>
 
-            <br><br><div class="manage_status-block">
-              <b>G-cronjob status</b> <span class="manage_status-update"> {{mCronjobTime}}</span>
-              <br><a href="#" class="badge {% if mCronjobNotice == 'un-responsive' %}badge-warning{% elif mCronjobNotice == 'running' %}badge-success{% else %}badge-danger{% endif %} manage_status-badge" >{{mCronjobNotice}}</a>
-            </div>
+                <br><br><div class="manage_status-block">
+                  <b>G-cronjob status</b> <span class="manage_status-update"> {{mCronjobTime}}</span>
+                  <br><a href="#" class="badge {% if mCronjobNotice == 'un-responsive' %}badge-warning{% elif mCronjobNotice == 'running' %}badge-success{% else %}badge-danger{% endif %} manage_status-badge" >{{mCronjobNotice}}</a>
+                </div>
 
-            <br><br><div class="manage_status-block">
-              <b>G-crawler status</b> <span class="manage_status-update"> {{mCrawlerTime}}</span>
-              <br><a href="#" class="badge {% if mCrawlerNotice == 'un-responsive' %}badge-warning{% elif mCrawlerNotice == 'running' %}badge-success{% else %}badge-danger{% endif %} manage_status-badge" >{{mCrawlerNotice}}</a>
+                <br><br><div class="manage_status-block">
+                  <b>G-crawler status</b> <span class="manage_status-update"> {{mCrawlerTime}}</span>
+                  <br><a href="#" class="badge {% if mCrawlerNotice == 'un-responsive' %}badge-warning{% elif mCrawlerNotice == 'running' %}badge-success{% else %}badge-danger{% endif %} manage_status-badge" >{{mCrawlerNotice}}</a>
+                </div>
             </div>
         </div>
 

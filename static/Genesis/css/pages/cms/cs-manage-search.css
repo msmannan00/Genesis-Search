@@ -1,6 +1,7 @@
+.manage_search{
+    min-height: 55em;
+}
 .manage_search-header{
-    margin-left: 2.3%;
-    margin-top: 30px;
     padding-right: 2%;
 }
 .manage_search-header--color{
@@ -9,8 +10,70 @@
 .manage_search-header--info-color{
     color: #4d4d4d;
 }
+.manage_search-container{
+    padding: 2%;
+    background: #f7f7f7;
+    margin: 3%;
+    border-radius: 7px;
+}
+.manage_search-query{
+    margin-top: 15px;
+    width: 99.5%;
+    max-width: 509px;
+    height: 45px;
+}
+.manage_search-json{
+    overflow: hidden;
+    padding: 25px 15px 15px 0;
+    border-top: 7px solid #538cc6;
+    border-radius: 7px;
+    background: #e6e6e6;
+}
+.manage_search-dropdown{
+    padding: 7px;
+    margin-top: 15px;
+    width: 99.5%;
+    max-width: 509px;
+    height: 45px;
+}
+.manage_search-range{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    width: 47%;
+    max-width: 245px;
+}
+.manage_search__button-raw{
+    margin-left: 15px;
+}
+.manage_search-range--min{
+    float:left;
+}
+.manage_search-range--max{
+    margin-left: 20px;
+}
+.manage-json-container{
+    margin-bottom: 9px;
+    border-left: 5px solid orange;
+    padding: 9px;
+}
+.manage-json{
+    margin-left: -12px
+}
+.manage-json-container--info{
+    margin-bottom: 9px;
+    border-left: 5px solid orange;
+    padding: 9px;
+}
+.manage-json-container--info-arow{
+    font-size: 15px;
+}
+.manage-json{
+    width: 100%;
+}
 @media only screen and (max-width: 943px) {
-   .manage_search-header{
-        margin-left: 5.3%;
+    .manage_search-container{
+        padding: 5%;
+        max-width: 800px;
     }
 }

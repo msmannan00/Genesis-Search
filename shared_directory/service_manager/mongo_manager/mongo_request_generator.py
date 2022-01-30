@@ -1,7 +1,9 @@
+import json
 import math
 import time
 
 from Genesis.controllers.constants.enums import MONGO_COMMANDS
+from Genesis.controllers.view_managers.cms.manage_search.class_model.manage_search_model import manage_search_data_model
 from Genesis.controllers.view_managers.user.interactive.report_manager.class_model.report_data_model import report_data_model
 from Genesis.controllers.view_managers.user.interactive.sitemap_manager.class_model.sitemap_data_model import sitemap_data_model
 from shared_directory.request_manager.request_handler import request_handler
@@ -31,6 +33,11 @@ class mongo_request_generator(request_handler):
     def __on_update_status(self, m_name):
         return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_STATUS, MONGODB_KEYS.S_FILTER:{},MONGODB_KEYS.S_VALUE:{"$set": {m_name:(math.ceil(time.time()/60))}}}
 
+    def __on_fetch_raw(self,p_data:manage_search_data_model):
+        if len(p_data.m_query)<3:
+            p_data.m_query="{}"
+        return {MONGODB_KEYS.S_DOCUMENT: p_data.m_query_collection, MONGODB_KEYS.S_FILTER:json.loads(p_data.m_query)}
+
     def __on_fetch_status(self):
         return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_STATUS, MONGODB_KEYS.S_FILTER:{}}
 
@@ -49,4 +56,6 @@ class mongo_request_generator(request_handler):
             return self.__on_fetch_status()
         if p_commands == MONGO_COMMANDS.M_UPDATE_STATUS:
             return self.__on_update_status(p_data[0])
+        if p_commands == MONGO_COMMANDS.M_READ_RAW:
+            return self.__on_fetch_raw(p_data[0])
 

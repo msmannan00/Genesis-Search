@@ -43,7 +43,7 @@ class user_auth_controller(request_handler):
             if m_user_model.m_username is None or m_user_model.m_password is None:
                 return HttpResponseRedirect(CONSTANTS.S_TEMPLATE_LOGIN_SHORT)
             else:
-                m_response = mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_READ, [MONGO_COMMANDS.M_VERIFY_CREDENTIAL, [m_user_model.m_username, m_user_model.m_password], [None]])
+                m_response, m_status = mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_READ, [MONGO_COMMANDS.M_VERIFY_CREDENTIAL, [m_user_model.m_username, m_user_model.m_password], [None,None]])
                 m_result = next(m_response, None)
 
                 if m_result:

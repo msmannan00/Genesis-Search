@@ -19,7 +19,7 @@ class directory_model(request_handler):
         pass
 
     def __load_onion_links(self, p_directory_class_model):
-        m_documents = elastic_controller.get_instance().invoke_trigger(ELASTIC_CRUD_COMMANDS.S_READ, [ELASTIC_REQUEST_COMMANDS.S_ONION_LIST,[p_directory_class_model.m_page_number],[None]])
+        m_documents, m_status = elastic_controller.get_instance().invoke_trigger(ELASTIC_CRUD_COMMANDS.S_READ, [ELASTIC_REQUEST_COMMANDS.S_ONION_LIST,[p_directory_class_model.m_page_number],[None]])
 
         m_documents = m_documents['hits']['hits']
 

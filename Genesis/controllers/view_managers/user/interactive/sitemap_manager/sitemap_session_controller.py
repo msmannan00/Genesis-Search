@@ -77,7 +77,7 @@ class sitemap_session_controller(request_handler):
         m_context_response = self.init_callbacks(p_sitemap_data_model)
         m_validity_status = True
 
-        m_url_model = mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_READ, [MONGO_COMMANDS.M_FIND_URL, [p_sitemap_data_model.m_url], [1]])
+        m_url_model, m_status = mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_READ, [MONGO_COMMANDS.M_FIND_URL, [p_sitemap_data_model.m_url], [0,1]])
         if len(list(m_url_model))==0:
             m_url_model = None
 
@@ -154,7 +154,7 @@ class sitemap_session_controller(request_handler):
                 m_context_response[SITEMAP_CALLBACK.M_URL_ERROR] = SITEMAP_MESSAGES.S_SITEMAP_URL_ALREADY_EXISTS
                 m_validity_status = False
 
-            mSecretKeyModel = mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_READ, [MONGO_COMMANDS.M_FIND_SECRET_KEY, [p_sitemap_data_model.m_secret_key],[None]])
+            mSecretKeyModel, m_status = mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_READ, [MONGO_COMMANDS.M_FIND_SECRET_KEY, [p_sitemap_data_model.m_secret_key],[None,None]])
             if len(list(mSecretKeyModel)) !=0 and p_sitemap_data_model.m_submission_rule == SITEMAP_STRINGS.S_SITEMAP_SUBMISSION_RULE_1:
                 m_context_response[SITEMAP_CALLBACK.M_SECRETKEY_ERROR] = SITEMAP_MESSAGES.S_SITEMAP_KEY_ALREADY_EXISTS
                 m_validity_status = False

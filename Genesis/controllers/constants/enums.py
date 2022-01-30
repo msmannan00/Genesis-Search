@@ -13,6 +13,7 @@ class MONGO_COMMANDS(enum.Enum):
      M_VERIFY_CREDENTIAL = 9
      M_UPDATE_STATUS = 10
      M_FETCH_STATUS = 11
+     M_READ_RAW = 12
 
 class ELASTIC_COMMANDS(enum.Enum):
      M_INIT = 1

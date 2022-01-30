@@ -6,12 +6,62 @@
 {% include 'Genesis/cms/manage_search/local_imports.html' %}
 
 {% include 'Genesis/cms/blades/shared_blades/blade-dashboard-navbar.html' %}
-<div style="clear: left"></div>
+<div style="clear: left" ></div>
 <body>
-        <div style="height: 55em;">
-            <div class="manage_search-header">
-              <h3 class="manage_search-header--color"><b>Quick Query System</b></h3>
-              <p class="manage_search-header--info-color">The following menu is a quick query system. You can either query mongo-DB database or elastic search. Only read commands are acceptable</p>
+        <div class="manage_search">
+            <div class="manage_search-container">
+                <div class="manage_search-header">
+                  <h4 class="manage_search-header--color"><b>Quick Query System</b></h4>
+                  <p class="manage_search-header--info-color">The following menu is a quick query system. You can either query mongo-DB database or elastic search. Only read commands are acceptable</p>
+                </div>
+
+                <br>
+
+                <form action="/cms/manage_search" method="POST" style="max-width: 800px">
+                  <input type="number" class="manage_search-range manage_search-range--min" id="email" placeholder="min results" value="{{mMinRange}}" name="pMinRange" min="0">
+                  <input type="number" class="manage_search-range manage_search-range--max" id="pwd" placeholder="max results" value="{{mMaxRange}}" name="pMaxRange" min="0">
+
+                  <select name="pSearchType" value="elastic search" class="manage_search-dropdown">
+                        {% if mSearchType == 'mongo-DB' %}
+                             <option value="mongo-DB" selected>mongo-DB</option>
+                             <option value="elastic-search">elastic-search</option>
+                        {% elif mSearchType == 'elastic-search' %}
+                             <option value="elastic-search" selected>elastic-search</option>
+                             <option value="mongo-DB">mongo-DB</option>
+                        {% else %}
+                             <option value="mongo-DB" selected>mongo-DB</option>
+                             <option value="elastic-search">elastic-search</option>
+                        {% endif %}
+
+                  </select>
+
+                  <div style="clear: left"></div>
+                  <input type="text"  class="form-control manage_search-query" value="{{mQueryCollection}}" name="pQueryCollection" placeholder="Enter Collection">
+                  <input type="text"  class="form-control manage_search-query" value="{{mQuery}}" name="pQuery" placeholder="Enter Query">
+                  <br><button class="btn btn-primary" type="submit">Submit</button>
+
+                  <br><br><br>
+                  {% if mQueryError|length != 0 %}
+                      <div class="alert alert-danger" role="alert">
+                          {{mQueryError}}
+                      </div>
+                  {% endif %}
+                </form>
+
+                {% if mQuerySuccess|length != 0 %}
+
+                    <div class="alert alert-danger" id="p_java_error" role="alert">
+                         Javascript is not enabled
+                    </div>
+
+                    <input type="hidden" id="m_result_success" value="{{mQuerySuccess}}"/>
+
+                    <div class="manage_search-json" role="alert">
+                        <div id="m_result_success_display"></div>
+                        <br><button class="btn btn-info manage_search__button-raw" type="submit" ONCLICK="onTriggerScript('m_raw_json_command')">Raw JSON</button>
+                    </div>
+                {% endif %}
+
             </div>
         </div>
 

@@ -2,24 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9">
-      <change afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/blades/shared_blades/blade_footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/shared/cs-footer-blade.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/class_model/manage_search_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/shared/helper_javascript/js-admin_controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/shared/helper_javascript/js-admin_enum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/shared/helper_javascript/js-admin_helper-method.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Genesis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Genesis.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Genesis/controllers/constants/enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/constants/enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_status/manage_status_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_status/manage_status_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/server_manager/user_auth_manager/user_auth_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/server_manager/user_auth_manager/user_auth_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/manage_search_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/manage_search_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/manage_search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/manage_search_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/manage_search_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/manage_search_session_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_status/manage_status_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_status/manage_status_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_status/manage_status_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_status/manage_status_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/blades/blades_shared_initialization.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/blades/blades_shared_initialization.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/blades/dashboard/blade-admin-panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/blades/dashboard/blade-admin-panel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/blades/shared/blade-dashboard-navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/blades/shared_blades/blade-dashboard-navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/dashboard/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/directory_manager/directory_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/directory_manager/directory_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/search_manager/search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/search_manager/search_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/sitemap_manager/sitemap_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/sitemap_manager/sitemap_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_search/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_search/local_imports.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_search/manage_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_search/manage_search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_status/manage_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_status/manage_status.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_request_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_request_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/dashboard/cs-blade-admin-panel.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/dashboard/cs-blade-admin-panel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/shared/cs-blade-dashboard-navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/shared/cs-blade-dashboard-navbar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/cms/cs-manage-search.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Genesis/css/pages/cms/cs-manage-search.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/cms/cs-manage-status.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Genesis/css/pages/cms/cs-manage-status.css" afterDir="false" />
     </list>
@@ -32,8 +41,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="Python Script" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -69,25 +79,26 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/shared" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/shared/helper_javascript" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Workspace\Genesis\static\Genesis\css\pages\cms\blades\shared\helper_javascript" />
       <recent name="C:\Workspace\Genesis\static\Genesis\css\pages\cms\blades\shared" />
       <recent name="C:\Workspace\Genesis\Genesis\templates\Genesis\cms\blades\shared" />
       <recent name="C:\Workspace\Genesis\Genesis\controllers\server_manager\external_request_manager" />
       <recent name="C:\Workspace\Genesis\Genesis\controllers\view_managers\user\interactive\sitemap_manager" />
-      <recent name="C:\Workspace\Genesis\Genesis\controllers\server_manager\manage_user_authentication" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Workspace\Genesis\static\Genesis\css\pages\cms\blades\shared\helper_javascript" />
       <recent name="C:\Workspace\Genesis\Genesis\controllers\view_managers\user\interactive\sitemap_manager\class_model" />
       <recent name="C:\Workspace\Genesis\Genesis\controllers\view_managers\user\interactive\report_manager\class_model" />
       <recent name="C:\Workspace\Genesis\Genesis\controllers\server_manager\manage_user_authentication" />
       <recent name="C:\Workspace\Genesis\static\Genesis\css\pages\cms\blades\shared" />
-      <recent name="C:\Workspace\Genesis\Genesis\templates\Genesis\cms\blades\shared" />
     </key>
   </component>
   <component name="RunManager" selected="Python.app">
@@ -313,6 +324,8 @@
       <workItem from="1643213274260" duration="5372000" />
       <workItem from="1643224756635" duration="20995000" />
       <workItem from="1643339222604" duration="11058000" />
+      <workItem from="1643429445985" duration="8812000" />
+      <workItem from="1643460712475" duration="32702000" />
     </task>
     <servers />
   </component>

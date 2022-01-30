@@ -51,16 +51,16 @@ class mongo_controller:
             log.g().e("MONGO E2 : " + MANAGE_MONGO_MESSAGES.S_INSERT_FAILURE + " : " + str(ex))
             return False, str(ex)
 
-    def __read(self, p_data, p_limit):
+    def __read(self, p_data, p_skip,p_limit):
         try:
             if p_limit is not None:
-                documents = self.__m_connection[p_data[MONGODB_KEYS.S_DOCUMENT]].find(p_data[MONGODB_KEYS.S_FILTER]).limit(p_limit)
+                documents = self.__m_connection[p_data[MONGODB_KEYS.S_DOCUMENT]].find(p_data[MONGODB_KEYS.S_FILTER]).skip(p_skip).limit(p_limit)
             else:
                 documents = self.__m_connection[p_data[MONGODB_KEYS.S_DOCUMENT]].find(p_data[MONGODB_KEYS.S_FILTER])
-            return documents
+            return documents, True
         except Exception as ex:
             log.g().e("MONGO E3 : " + MANAGE_MONGO_MESSAGES.S_READ_FAILURE + " : " + str(ex))
-            return str(ex)
+            return str(ex), False
 
     def __replace(self, p_data, p_upsert):
         try:
@@ -99,7 +99,7 @@ class mongo_controller:
         if p_commands == MONGODB_CRUD.S_CREATE:
             return self.__create(m_request)
         elif p_commands == MONGODB_CRUD.S_READ:
-            return self.__read(m_request, m_param[0])
+            return self.__read(m_request, m_param[0], m_param[1])
         elif p_commands == MONGODB_CRUD.S_UPDATE:
             return self.__update(m_request)
         elif p_commands == MONGODB_CRUD.S_REPLACE:

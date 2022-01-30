@@ -1,6 +1,8 @@
+.manage_status{
+    height: 55em;
+}
 .manage_status-header{
     margin-left: 2.3%;
-    margin-top: 30px;
     padding-right: 2%;
 }
 .manage_status-block{
@@ -28,12 +30,23 @@
 .manage_status-header--info-color{
     color: #4d4d4d;
 }
+.manage_status-container{
+    padding: 2% 2% 2% 1.5%;
+    background: #f7f7f7;
+    max-width: 800px;
+    margin: 3%;
+    border-radius: 7px;
+}
 @media only screen and (max-width: 943px) {
    .manage_status-header{
         margin-left: 5.3%;
     }
     .manage_status-block{
         margin-left: 5%;
+    }
+    .manage_status-container{
+        padding: 5% 5% 5% 1%;
+        max-width: 800px;
     }
 
 }

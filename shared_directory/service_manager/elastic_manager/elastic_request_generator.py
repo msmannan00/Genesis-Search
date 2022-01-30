@@ -3,6 +3,7 @@ import base64
 import json
 
 from Genesis.controllers.constants.constant import CONSTANTS
+from Genesis.controllers.view_managers.cms.manage_search.class_model.manage_search_model import manage_search_data_model
 from Genesis.controllers.view_managers.user.interactive.search_manager.search_enums import SEARCH_MODEL_TOKENIZATION_COMMANDS
 from Genesis.controllers.view_managers.user.interactive.search_manager.tokenizer import tokenizer
 from modules.user_data_parser.parse_instance.local_shared_model.index_model import UrlObjectEncoder
@@ -194,6 +195,19 @@ class elastic_request_generator(request_handler):
 
         return {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_WEB_INDEX, ELASTIC_KEYS.S_ID : base64.b64encode((m_host+m_sub_host).encode('ascii')), ELASTIC_KEYS.S_VALUE:m_data, ELASTIC_KEYS.S_FILTER:(m_host + m_sub_host)}
 
+    def __query_raw(self, p_data:manage_search_data_model):
+        m_query = {
+            "from": p_data.m_min_range,
+            "size": 5001,
+            "query": {
+                "match": {
+                    "m_sub_host": 'na'
+                }
+            },"_source": ["m_host", "m_content_type"]
+        }
+
+        return {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_WEB_INDEX, ELASTIC_KEYS.S_FILTER:m_query}
+
     def invoke_trigger(self, p_commands, p_data=None):
         if p_commands == ELASTIC_REQUEST_COMMANDS.S_SEARCH:
             return self.__on_search(p_data[0], p_data[1])
@@ -201,3 +215,5 @@ class elastic_request_generator(request_handler):
             return self.__onion_list(p_data[0])
         if p_commands == ELASTIC_REQUEST_COMMANDS.S_INDEX_USER_QUERY:
             return self.__on_index_user_query(p_data[0])
+        if p_commands == ELASTIC_REQUEST_COMMANDS.S_QUERY_RAW:
+            return self.__query_raw(p_data[0])

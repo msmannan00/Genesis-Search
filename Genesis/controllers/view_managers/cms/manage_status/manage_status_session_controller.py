@@ -3,7 +3,6 @@ import math
 import time
 
 from Genesis.controllers.view_managers.cms.manage_status.manage_status_enums import MANAGE_STATUS_SESSION_COMMANDS, MANAGE_STATUS_CALLBACK
-from modules.user_data_parser.parse_services.helper_services.helper_method import helper_method
 from shared_directory.request_manager.request_handler import request_handler
 from shared_directory.service_manager.session.session_enums import SESSION_KEYS
 
@@ -35,13 +34,6 @@ class manage_status_session_controller(request_handler):
             m_cronjob_notice = "un-responsive"
         else:
             m_cronjob_notice = "running"
-
-        print("-----------------", flush=True)
-        print(m_current_time, flush=True)
-        print(m_cronjob_time, flush=True)
-        print((m_current_time - int(m_cronjob_time)), flush=True)
-        print(m_cronjob_notice, flush=True)
-        print("-----------------", flush=True)
 
         m_cronjob_time = datetime.datetime.fromtimestamp(m_cronjob_time*60).strftime('%Y-%m-%d %H:%M')
         m_crawler_time = datetime.datetime.fromtimestamp(m_crawler_time*60).strftime('%Y-%m-%d %H:%M')
