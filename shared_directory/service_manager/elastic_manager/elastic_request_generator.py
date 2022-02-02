@@ -1,8 +1,8 @@
 # Local Imports
 import base64
 import json
+from collections import namedtuple
 
-from bunch import bunchify
 from Genesis.controllers.constants.constant import CONSTANTS
 from Genesis.controllers.view_managers.cms.manage_search.class_model.manage_search_model import manage_search_data_model
 from Genesis.controllers.view_managers.user.interactive.search_manager.search_enums import SEARCH_MODEL_TOKENIZATION_COMMANDS
@@ -210,30 +210,28 @@ class elastic_request_generator(request_handler):
         return {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_WEB_INDEX, ELASTIC_KEYS.S_FILTER:m_query}
 
     def __on_index(self, p_data):
-        p_data = bunchify(p_data)
-
-        m_host, m_sub_host = helper_method.split_host_url(p_data.m_base_url_model.m_url)
+        m_host, m_sub_host = helper_method.split_host_url(p_data['m_base_url_model']['m_url'])
         m_data = {
-            "m_doc_size": len(p_data.m_document),
-            "m_img_size": len(p_data.m_images),
+            "m_doc_size": len(p_data['m_document']),
+            "m_img_size": len(p_data['m_images']),
             "m_host": m_host,
             "m_sub_host": m_sub_host,
-            "m_title": p_data.m_title,
-            "m_meta_description": p_data.m_meta_description,
-            "m_title_hidden": p_data.m_title_hidden,
-            "m_important_content": p_data.m_important_content,
-            "m_important_content_hidden": p_data.m_important_content_hidden,
+            "m_title": p_data['m_title'],
+            "m_meta_description": p_data['m_meta_description'],
+            "m_title_hidden": p_data['m_title_hidden'],
+            "m_important_content": p_data['m_important_content'],
+            "m_important_content_hidden": p_data['m_important_content_hidden'],
             "m_total_hits": 0,
             "m_half_month_hits": 0,
             "m_monthly_hits": 0,
-            "m_user_generated": p_data.m_user_crawled,
+            "m_user_generated": p_data['m_user_crawled'],
             "m_date": helper_method.get_time(),
-            "m_meta_keywords": p_data.m_meta_keywords,
-            "m_content": p_data.m_content,
-            "m_content_type": p_data.m_content_type,
-            "m_doc_url": p_data.m_document,
-            "m_video": p_data.m_video,
-            "m_images": json.loads(UrlObjectEncoder().encode(p_data.m_images)),
+            "m_meta_keywords": p_data['m_meta_keywords'],
+            "m_content": p_data['m_content'],
+            "m_content_type": p_data['m_content_type'],
+            "m_doc_url": p_data['m_document'],
+            "m_video": p_data['m_video'],
+            "m_images": json.loads(UrlObjectEncoder().encode(p_data['m_images'])),
             "m_crawled_doc_url": [],
             "m_crawled_video": [],
             "m_crawled_user_images": []
