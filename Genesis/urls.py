@@ -37,6 +37,7 @@ urlpatterns = [
     path('cms/dashboard/', views.cms_dashboard, name='dashboard'),
     path('.well-known/pki-validation/7376EE2DE04DC0C4FAE994EFACFB240B.txt', views.ssl_validation, name='ssl_validation'),
     path('user_index/', views.user_index, name='user_index'),
+    path('crawl_index/', views.crawl_index, name='crawl_index'),
 
     # hotlinks
     path('cms/manage_authentication', views.manage_authentication, name='manage_search'),

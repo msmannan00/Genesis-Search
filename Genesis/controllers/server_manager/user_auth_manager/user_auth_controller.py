@@ -34,7 +34,6 @@ class user_auth_controller(request_handler):
 
     def __authenticate(self, p_data):
 
-        self.__m_session.invoke_trigger(USER_AUTH_COMMANDS.M_INIT, p_data)
         m_user_model = self.__m_session.invoke_trigger(USER_AUTH_COMMANDS.M_INIT, p_data)
 
         if SESSION_KEYS.S_USERNAME in p_data.session :

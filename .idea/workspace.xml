@@ -2,35 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/class_model/manage_search_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/shared/helper_javascript/js-admin_controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/shared/helper_javascript/js-admin_enum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/shared/helper_javascript/js-admin_helper-method.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Genesis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Genesis.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Genesis/controllers/server_manager/crawl_manager/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Genesis/controllers/server_manager/crawl_manager/class_model/crawl_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Genesis/controllers/server_manager/crawl_manager/crawl_session_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/controllers/constants/enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/constants/enums.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Genesis/controllers/server_manager/user_auth_manager/user_auth_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/server_manager/user_auth_manager/user_auth_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/manage_search_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/manage_search_enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/manage_search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/manage_search_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/manage_search_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/manage_search_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_status/manage_status_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_status/manage_status_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_status/manage_status_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_status/manage_status_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/directory_manager/directory_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/directory_manager/directory_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/search_manager/search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/search_manager/search_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/sitemap_manager/sitemap_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/sitemap_manager/sitemap_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_search/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_search/local_imports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_search/manage_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_search/manage_search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_status/manage_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_status/manage_status.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Genesis/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_request_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_request_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/cms/cs-manage-search.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Genesis/css/pages/cms/cs-manage-search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/cms/cs-manage-status.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Genesis/css/pages/cms/cs-manage-status.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +23,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Python Script" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -81,17 +63,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/shared/helper_javascript" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Genesis/controllers/server_manager/crawl_manager" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Workspace\Genesis\Genesis\controllers\server_manager\crawl_manager" />
+      <recent name="C:\Workspace\Genesis\Genesis\controllers\server_manager" />
       <recent name="C:\Workspace\Genesis\static\Genesis\css\pages\cms\blades\shared\helper_javascript" />
       <recent name="C:\Workspace\Genesis\static\Genesis\css\pages\cms\blades\shared" />
       <recent name="C:\Workspace\Genesis\Genesis\templates\Genesis\cms\blades\shared" />
-      <recent name="C:\Workspace\Genesis\Genesis\controllers\server_manager\external_request_manager" />
-      <recent name="C:\Workspace\Genesis\Genesis\controllers\view_managers\user\interactive\sitemap_manager" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Workspace\Genesis\static\Genesis\css\pages\cms\blades\shared\helper_javascript" />
@@ -326,6 +308,7 @@
       <workItem from="1643339222604" duration="11058000" />
       <workItem from="1643429445985" duration="8812000" />
       <workItem from="1643460712475" duration="32702000" />
+      <workItem from="1643745575899" duration="14085000" />
     </task>
     <servers />
   </component>
@@ -399,7 +382,7 @@
     <SUITE FILE_PATH="coverage/Genesis_Search_Python$HomepageController.coverage" NAME="HomepageController Coverage Results" MODIFIED="1639626889491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GenesisCrawler/controllers/hompageManager" />
     <SUITE FILE_PATH="coverage/Genesis_Search$block_controller.coverage" NAME="block_controller Coverage Results" MODIFIED="1641373126702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/genesis/controllers/service_manager/block_manager" />
     <SUITE FILE_PATH="coverage/Genesis_Crawler_Python$applicationController.coverage" NAME="applicationController Coverage Results" MODIFIED="1630410673541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerInstance/applicationController" />
-    <SUITE FILE_PATH="coverage/Genesis$app.coverage" NAME="app Coverage Results" MODIFIED="1643342095453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Genesis$app.coverage" NAME="app Coverage Results" MODIFIED="1643797355502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Genesis_Search$app.coverage" NAME="app Coverage Results" MODIFIED="1642279420300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

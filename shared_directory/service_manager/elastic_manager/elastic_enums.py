@@ -5,6 +5,7 @@ class ELASTIC_CRUD_COMMANDS:
     S_DELETE = 4
     S_SUGGEST = 5
     S_READ_RAW = 6
+    S_INDEX = 7
 
 class ELASTIC_INDEX:
     S_WEB_INDEX = "parsed_index"
@@ -27,8 +28,11 @@ class ELASTIC_KEYS:
 class ELASTIC_REQUEST_COMMANDS:
     S_SEARCH = 1
     S_ONION_LIST = 2
-    S_INDEX_USER_QUERY = 5
-    S_QUERY_RAW = 6
+    S_INDEX_USER_QUERY = 3
+    S_QUERY_RAW = 4
+    S_INDEX = 5
+    S_UNIQUE_HOST = 6
+    S_DUPLICATE = 7
 
 class MANAGE_ELASTIC_MESSAGES:
     S_INSERT_FAILURE = "[1] Something unexpected happened while inserting"

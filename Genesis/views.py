@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
 from Genesis.controllers.constants.constant import CONSTANTS
+from Genesis.controllers.server_manager.crawl_manager.crawl_controller import crawl_controller
+from Genesis.controllers.server_manager.crawl_manager.crawl_enums import CRAWL_COMMANDS
 from Genesis.controllers.server_manager.external_request_manager.external_request_controller import \
     external_request_controller
 from Genesis.controllers.server_manager.external_request_manager.external_request_enums import EXTERNAL_REQUEST_COMMANDS
@@ -84,6 +86,10 @@ def search(request):
 @csrf_exempt
 def user_index(request):
     return user_index_controller.getInstance().invoke_trigger(USER_INDEX_MODEL_CALLBACK.M_INIT, request)
+
+@csrf_exempt
+def crawl_index(request):
+    return crawl_controller.getInstance().invoke_trigger(CRAWL_COMMANDS.M_INIT, request)
 
 @csrf_exempt
 def maintenance(request):

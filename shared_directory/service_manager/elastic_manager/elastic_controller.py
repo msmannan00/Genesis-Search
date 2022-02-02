@@ -32,7 +32,6 @@ class elastic_controller(request_handler):
     def __initialization(self):
         try:
             #####  VERY DANGEROUS DO IT VERY CAREFULLY  ##### self.__m_connection.indices.delete(index=ELASTIC_INDEX.S_WEB_INDEX, ignore=[400, 404])
-
             if self.__m_connection.indices.exists(index=ELASTIC_INDEX.S_WEB_INDEX) is False:
                 m_mapping = {
                     "settings": {
@@ -102,13 +101,22 @@ class elastic_controller(request_handler):
 
     def __read(self, p_data):
         try:
-            return self.__m_connection.search(index=p_data[ELASTIC_KEYS.S_DOCUMENT], body=p_data[ELASTIC_KEYS.S_FILTER]), True
+            return True, self.__m_connection.search(index=p_data[ELASTIC_KEYS.S_DOCUMENT], body=p_data[ELASTIC_KEYS.S_FILTER])
 
         except Exception as ex:
             log.g().e("ELASTIC 3 : " + MANAGE_ELASTIC_MESSAGES.S_READ_FAILURE + " : " + str(ex))
-            return str(ex), False
+            return False, str(ex)
+
+    def __index(self, p_data):
+        try:
+            self.__m_connection.index(body=p_data[ELASTIC_KEYS.S_VALUE],id=p_data[ELASTIC_KEYS.S_ID], index=p_data[ELASTIC_KEYS.S_DOCUMENT])
+            return True, None
+        except Exception as ex:
+            log.g().e(MANAGE_ELASTIC_MESSAGES.S_INSERT_FAILURE + " : " + str(ex))
+            return False, str(ex)
 
     def invoke_trigger(self, p_commands, p_data=None):
+
         m_request = p_data[0]
         m_data = p_data[1]
         m_param = p_data[2]
@@ -118,3 +126,5 @@ class elastic_controller(request_handler):
             return self.__update(m_request, m_param[0])
         if p_commands == ELASTIC_CRUD_COMMANDS.S_READ:
             return self.__read(m_request)
+        if p_commands == ELASTIC_CRUD_COMMANDS.S_INDEX:
+            return self.__index(m_request)
