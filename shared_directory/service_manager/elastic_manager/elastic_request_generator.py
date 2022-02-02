@@ -3,7 +3,6 @@ import base64
 import json
 
 from bunch import bunchify
-
 from Genesis.controllers.constants.constant import CONSTANTS
 from Genesis.controllers.view_managers.cms.manage_search.class_model.manage_search_model import manage_search_data_model
 from Genesis.controllers.view_managers.user.interactive.search_manager.search_enums import SEARCH_MODEL_TOKENIZATION_COMMANDS
@@ -211,7 +210,7 @@ class elastic_request_generator(request_handler):
         return {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_WEB_INDEX, ELASTIC_KEYS.S_FILTER:m_query}
 
     def __on_index(self, p_data):
-        p_data = json.loads(p_data)
+        p_data = bunchify(p_data)
 
         m_host, m_sub_host = helper_method.split_host_url(p_data.m_base_url_model.m_url)
         m_data = {
