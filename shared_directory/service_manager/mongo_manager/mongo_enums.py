@@ -16,7 +16,7 @@ class MONGODB_COLLECTIONS:
     S_STATUS = 'm_status'
 
 class MONGO_CONNECTIONS:
-    S_MONGO_DATABASE_NAME = 'Genesis'
+    S_MONGO_DATABASE_NAME = 'genesis'
     S_MONGO_DATABASE_URL = 27017
     S_MONGO_DATABASE_IP = 'localhost'
 
