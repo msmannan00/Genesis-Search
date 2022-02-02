@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9">
-      <change afterPath="$PROJECT_DIR$/Genesis/controllers/server_manager/crawl_manager/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Genesis/controllers/server_manager/crawl_manager/class_model/crawl_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Genesis/controllers/server_manager/crawl_manager/crawl_session_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/controllers/server_manager/user_auth_manager/user_auth_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/server_manager/user_auth_manager/user_auth_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,7 +298,7 @@
       <workItem from="1643339222604" duration="11058000" />
       <workItem from="1643429445985" duration="8812000" />
       <workItem from="1643460712475" duration="32702000" />
-      <workItem from="1643745575899" duration="14085000" />
+      <workItem from="1643745575899" duration="14689000" />
     </task>
     <servers />
   </component>
