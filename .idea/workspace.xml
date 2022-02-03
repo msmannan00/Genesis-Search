@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9">
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -301,7 +301,8 @@
       <workItem from="1643745575899" duration="14689000" />
       <workItem from="1643805134309" duration="6950000" />
       <workItem from="1643817694519" duration="6000" />
-      <workItem from="1643819205471" duration="1111000" />
+      <workItem from="1643819205471" duration="1499000" />
+      <workItem from="1643878942252" duration="112000" />
     </task>
     <servers />
   </component>
