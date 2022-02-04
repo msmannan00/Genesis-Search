@@ -92,8 +92,7 @@ class search_session_controller(request_handler):
         if len(m_title) < 2:
             m_title = p_document[SEARCH_DOCUMENT_CALLBACK.M_HOST]
 
-        m_description = p_document[SEARCH_DOCUMENT_CALLBACK.M_IMPORTANT_DESCRIPTION][
-                        0:230] + GENERAL_STRINGS.S_GENERAL_CONTENT_CONTINUE
+        m_description = p_document[SEARCH_DOCUMENT_CALLBACK.M_IMPORTANT_DESCRIPTION][0:230] + GENERAL_STRINGS.S_GENERAL_CONTENT_CONTINUE
         for m_item in p_tokenized_query:
             insensitive_hippo = re.compile(re.escape(m_item), re.IGNORECASE)
             m_description = m_description.replace(m_item, "<b>" + m_item + "</b>")

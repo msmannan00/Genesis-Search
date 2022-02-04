@@ -190,6 +190,7 @@
     padding: 10px;
     border-radius: 6px;
     border: 1px solid #ffffff;
+    overflow-wrap: break-word;
 }
 
 .search-result__content-webpages:hover{
@@ -230,9 +231,12 @@
     line-height: 20px;
     cursor: pointer;
     margin-top: -5px;
+    word-wrap: break-word;
     font-family: arial,sans-serif;
     font-size: 13.5px;
     color:#666666;
+    overflow-wrap: break-word;
+    width: 100%;
 }
 .search-file__reference_container{
     margin-left: 5.5em;
