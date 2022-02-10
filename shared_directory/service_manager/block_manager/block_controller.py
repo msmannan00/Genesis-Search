@@ -36,7 +36,7 @@ class block_controller:
                 return True
             elif APP_STATUS.S_DEVELOPER is False:
                 m_secret_token = p_request.GET[BLOCK_PARAM.M_SECRET_TOKEN]
-                if self.__m_fernet.decrypt(m_secret_token).startswith(APP_STATUS.S_APP_BLOCK_KEY) is False:
+                if self.__m_fernet.decrypt(m_secret_token.decode("utf-8")).startswith(APP_STATUS.S_APP_BLOCK_KEY) is False:
                     return False
                 return True
             return False
