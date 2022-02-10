@@ -28,15 +28,15 @@ class block_controller:
 
     def __on_verify(self, p_request):
         m_status = session_controller.get_instance().invoke_trigger(SESSION_COMMANDS.S_EXISTS, p_request)
-        if m_status is True:
-            return False
-
+        if m_status is False:
+            return True
         try:
             if BLOCK_PARAM.M_SECRET_TOKEN not in p_request.GET and APP_STATUS.S_DEVELOPER is False:
                 return True
             elif APP_STATUS.S_DEVELOPER is False:
                 m_secret_token = p_request.GET[BLOCK_PARAM.M_SECRET_TOKEN]
-                if self.__m_fernet.decrypt(m_secret_token.decode("utf-8")).startswith(APP_STATUS.S_APP_BLOCK_KEY) is False:
+                m_decoded_str = self.__m_fernet.decrypt(m_secret_token.encode()).decode("utf-8")
+                if m_decoded_str.startswith(APP_STATUS.S_APP_BLOCK_KEY) is True:
                     return False
                 return True
             return False
