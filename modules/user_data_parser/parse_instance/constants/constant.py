@@ -4,7 +4,7 @@ from pathlib import Path
 class RAW_PATH_CONSTANTS:
 
     S_PROJECT_PATH = str(Path(__file__).parent.parent.parent.parent.parent)
-    S_LOCAL_FILE_PATH = S_PROJECT_PATH + "/genesis_shared_directory/" + "ftp-directory"
+    S_LOCAL_FILE_PATH = S_PROJECT_PATH + "/shared_directory/" + "user_crawler_directory"
     S_RAW_PATH = S_PROJECT_PATH + "/"
     S_DATASET_PATH = "/parse_services/raw/crawled_classifier_websites.csv"
 

@@ -44,7 +44,7 @@ class block_controller:
                 m_secret_time = int(m_decoded_str[1])
                 if m_secret_key.startswith(APP_STATUS.S_APP_BLOCK_KEY) is True:
                     m_time = m_secret_time
-                    if abs(time.time()-m_time)>86400:
+                    if abs(time.time()-m_time)>129600:
                         return True
                     else:
                         return False
