@@ -20,6 +20,7 @@ from shared_directory.service_manager.topic_manager.topic_classifier_controller 
 from shared_directory.service_manager.topic_manager.topic_classifier_enums import TOPIC_CLASSFIER_COMMANDS
 
 
+
 class html_parse_manager(HTMLParser, ABC):
 
     def __init__(self, m_base_url, m_html):
@@ -29,6 +30,7 @@ class html_parse_manager(HTMLParser, ABC):
 
         self.m_title = STRINGS.S_EMPTY
         self.m_meta_description = STRINGS.S_EMPTY
+        self.m_meta_content = STRINGS.S_EMPTY
         self.m_important_content = STRINGS.S_EMPTY
         self.m_important_content_raw = []
         self.m_content = STRINGS.S_EMPTY
@@ -119,6 +121,9 @@ class html_parse_manager(HTMLParser, ABC):
 
         elif p_tag == 'meta':
             try:
+                if p_attrs[0][0] == 'content':
+                    if p_attrs[0][1] is not None and len(p_attrs[0][1]) > 50 and p_attrs[0][1].count(" ")>4 and p_attrs[0][1] not in self.m_meta_content:
+                        self.m_meta_content += p_attrs[0][1]
                 if p_attrs[0][1] == 'description':
                     if len(p_attrs) > 1 and len(p_attrs[1]) > 0 and p_attrs[1][0] == 'content' and p_attrs[1][1] is not None:
                         self.m_meta_description += p_attrs[1][1]
@@ -158,7 +163,9 @@ class html_parse_manager(HTMLParser, ABC):
 
     # creating keyword request_manager1 for webpage representation
     def __add_important_description(self, p_data):
-        if p_data.count(' ')>2 and p_data not in self.m_important_content:
+        p_data = " ".join(p_data.split())
+
+        if (p_data.count(' ')>2 or (self.m_paragraph_count>0 and len(p_data)>0 and p_data!=" ")) and p_data not in self.m_important_content:
             if self.m_parsed_paragraph_count<8:
                 self.m_important_content_raw.append(p_data)
                 self.m_parsed_paragraph_count += 1
@@ -276,4 +283,10 @@ class html_parse_manager(HTMLParser, ABC):
         m_content_type = self.__get_content_type()
         m_validity_score = self.__get_validity_score(m_important_content)
 
-        return m_title, m_meta_description, m_title_hidden, m_important_content, m_important_content_hidden,m_meta_keywords, m_content, m_content_type, m_sub_url, m_images, m_document, m_video, m_validity_score
+        print("------------",flush=True)
+        print(m_meta_description,flush=True)
+        print(m_title_hidden,flush=True)
+        print(m_important_content,flush=True)
+        print(m_important_content_hidden,flush=True)
+        print("------------",flush=True)
+        return m_title, self.m_meta_content + m_meta_description, m_title_hidden, m_important_content, m_important_content_hidden,m_meta_keywords, m_content, m_content_type, m_sub_url, m_images, m_document, m_video, m_validity_score
