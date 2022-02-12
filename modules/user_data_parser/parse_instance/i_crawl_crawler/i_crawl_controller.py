@@ -53,7 +53,7 @@ class i_crawl_controller(request_handler, ABC):
 
     def __find_recent_file(self):
         m_doc_list = sorted([RAW_PATH_CONSTANTS.S_LOCAL_FILE_PATH + "/" + f for f in os.listdir(RAW_PATH_CONSTANTS.S_LOCAL_FILE_PATH)], key=os.path.getctime)
-        if len(m_doc_list)>0:
+        if len(m_doc_list)>1:
             m_file = m_doc_list[0]
             m_json = open(m_file, "rb").read()
             os.remove(m_file)
