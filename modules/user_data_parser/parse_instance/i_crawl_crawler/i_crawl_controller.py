@@ -52,6 +52,11 @@ class i_crawl_controller(request_handler, ABC):
         return None
 
     def __find_recent_file(self):
+        try:
+            os.makedirs(RAW_PATH_CONSTANTS.S_LOCAL_FILE_PATH)
+        except OSError:
+            pass
+
         m_doc_list = sorted([RAW_PATH_CONSTANTS.S_LOCAL_FILE_PATH + "/" + f for f in os.listdir(RAW_PATH_CONSTANTS.S_LOCAL_FILE_PATH)], key=os.path.getctime)
         if len(m_doc_list)>1:
             m_file = m_doc_list[0]
