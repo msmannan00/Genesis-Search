@@ -31,7 +31,8 @@ class elastic_controller(request_handler):
 
     def __initialization(self):
         try:
-            #####  VERY DANGEROUS DO IT VERY CAREFULLY  ##### self.__m_connection.indices.delete(index=ELASTIC_INDEX.S_WEB_INDEX, ignore=[400, 404])
+            #####  VERY DANGEROUS DO IT VERY CAREFULLY  #####
+            self.__m_connection.indices.delete(index=ELASTIC_INDEX.S_WEB_INDEX, ignore=[400, 404])
             if self.__m_connection.indices.exists(index=ELASTIC_INDEX.S_WEB_INDEX) is False:
                 m_mapping = {
                     "settings": {
