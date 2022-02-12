@@ -19,12 +19,9 @@ class user_index_model(request_handler):
         self.__m_session = notice_session_controller()
 
     def __save_html(self, p_data):
-        try:
-            text_file = open(CONSTANTS.S_LOCAL_FILE_PATH + "/" + helper_controller.id_generator() + ".txt", "w")
-            text_file.write(p_data)
-            text_file.close()
-        except Exception as ex:
-            print("ROROOROOROROROROOR : " + str(ex), flush=True)
+        text_file = open(CONSTANTS.S_LOCAL_FILE_PATH + "/" + helper_controller.id_generator() + ".txt", "w")
+        text_file.write(p_data)
+        text_file.close()
 
     def __service_validator(self, p_data):
         print("------1",flush=True)
