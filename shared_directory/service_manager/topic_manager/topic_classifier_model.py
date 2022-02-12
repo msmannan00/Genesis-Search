@@ -2,7 +2,12 @@ import os
 import pickle
 import pandas as pd
 
+from modules.user_data_parser.parse_instance.constants.constant import CRAWL_SETTINGS_CONSTANTS
+from modules.user_data_parser.parse_services.constants.constant import shared_constants, classifier_constants
+from modules.user_data_parser.parse_services.constants.strings import GENERIC_STRINGS
 from shared_directory.request_manager.request_handler import request_handler
+from shared_directory.service_manager.topic_manager.topic_classifier_enums import TOPIC_CLASSFIER_MESSAGES, \
+    TOPIC_CLASSFIER_MODEL
 
 
 class topic_classifier_model(request_handler):
