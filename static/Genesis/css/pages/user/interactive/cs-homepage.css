@@ -161,6 +161,7 @@
 	animation-duration: 4s;
 	transition: border-bottom-color 0.25s ease-in-out;
 	border-bottom: 6px solid #548ec4;
+   	animation-fill-mode: forwards;
 }
 @keyframes home__reference-animate-hover {
   10% {

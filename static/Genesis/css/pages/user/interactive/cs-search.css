@@ -77,7 +77,7 @@
     min-height: 85vh;
 }
 
-.search-footer__report{
+.search-footer__search{
     color:#ff9999;
     padding-right: 18px;
     font-size: 15.5px;
@@ -193,7 +193,10 @@
 .searchbar__search-items--left{
     margin-left: 15px;
 }
-
+.searchbar__search-items--intelligence{
+    margin-left: 15px;
+    width: 100px !important;
+}
 .searchbar_detail-header__catagories--margin-right{
 }
 
@@ -318,7 +321,7 @@
         padding-right: 1.5em;
     }
     .search{
-        min-height: 83vh;
+        min-height: 80vh;
     }
     .searchbar_detail-header__search-input{
         margin-left: 10px;
