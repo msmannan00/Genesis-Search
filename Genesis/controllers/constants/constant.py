@@ -28,6 +28,7 @@ class CONSTANTS:
     S_TEMPLATE_SITEMAP_WEBSITE_PATH = "Genesis/user/interactive/sitemap/sitemap.html"
     S_TEMPLATE_SEARCH_WEBSITE_PATH = "Genesis/user/interactive/search/search.html"
     S_TEMPLATE_BLOCK_WEBSITE_PATH = "Genesis/user/server/block/block.html"
+    S_TEMPLATE_INTELLIGENCE_WEBSITE_PATH = "Genesis/user/interactive/intelligence/intelligence.html"
     S_SSL_VERIFICATION_PATH = "Genesis/.well-known/pki-validation/7376EE2DE04DC0C4FAE994EFACFB240B.txt"
 
     # Direct Links

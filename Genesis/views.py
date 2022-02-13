@@ -19,6 +19,10 @@ from Genesis.controllers.view_managers.cms.manage_search.manage_search_controlle
 from Genesis.controllers.view_managers.cms.manage_search.manage_search_enums import MANAGE_SEARCH_MODEL_CALLBACK
 from Genesis.controllers.view_managers.cms.manage_status.manage_status_controller import manage_status_controller
 from Genesis.controllers.view_managers.cms.manage_status.manage_status_enums import MANAGE_STATUS_MODEL_CALLBACK
+from Genesis.controllers.view_managers.user.interactive.intelligence_manager.intelligence_controller import \
+    intelligence_controller
+from Genesis.controllers.view_managers.user.interactive.intelligence_manager.intelligence_enums import \
+    INTELLIGENCE_MODEL_COMMANDS
 from Genesis.controllers.view_managers.user.server.block_manager.block_enums import BLOCK_MODEL_CALLBACK
 from Genesis.controllers.view_managers.user.server.error.error_controller import error_controller
 from Genesis.controllers.view_managers.user.server.error.error_enums import ERROR_MODEL_CALLBACK
@@ -90,6 +94,10 @@ def user_index(request):
 @csrf_exempt
 def crawl_index(request):
     return crawl_controller.getInstance().invoke_trigger(CRAWL_COMMANDS.M_INIT, request)
+
+@csrf_exempt
+def intelligence(request):
+    return intelligence_controller.getInstance().invoke_trigger(INTELLIGENCE_MODEL_COMMANDS.M_INIT, request)
 
 @csrf_exempt
 def maintenance(request):
