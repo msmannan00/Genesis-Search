@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0828ed1c-7ded-4bbf-a092-fe5d761ffcc2" name="Default Changelist" comment="j624\&#10;;1&#10;1';41\kko'1&#10;j.l4;7]/j8i.olL]huo/][.ju/\o[jno&#10;][o&#10;h;u.i&#10;\[olujiok\&#10;p\/**9">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/i_crawl_crawler/html_parse_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/i_crawl_crawler/html_parse_manager.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -316,7 +314,7 @@
       <workItem from="1644658656578" duration="11163000" />
       <workItem from="1644694855098" duration="22902000" />
       <workItem from="1644834801857" duration="148000" />
-      <workItem from="1644835214804" duration="7191000" />
+      <workItem from="1644835214804" duration="8078000" />
     </task>
     <servers />
   </component>
@@ -371,6 +369,7 @@
         <watch expression="len(self.m_sub_url) &gt;= 3) * 10 + (len(self.m_sub_url) &gt; 0" language="Python" />
         <watch expression="len(self.m_sub_url) &gt;= 3) * 10" language="Python" />
         <watch expression="len(self.m_sub_url)" language="Python" />
+        <watch expression="(((len(p_important_content) + len(self.m_title)) &gt; 150) and len(self.m_sub_url) &gt;= 3) * 10 + (len(self.m_sub_url) &gt; 0 or self.all_url_count&gt;5) * 5" language="Python" />
       </configuration>
     </watches-manager>
   </component>
@@ -381,7 +380,7 @@
     <SUITE FILE_PATH="coverage/Genesis_Search_Python$HomepageController.coverage" NAME="HomepageController Coverage Results" MODIFIED="1639626889491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GenesisCrawler/controllers/hompageManager" />
     <SUITE FILE_PATH="coverage/Genesis_Search$block_controller.coverage" NAME="block_controller Coverage Results" MODIFIED="1641373126702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/genesis/controllers/service_manager/block_manager" />
     <SUITE FILE_PATH="coverage/Genesis_Crawler_Python$applicationController.coverage" NAME="applicationController Coverage Results" MODIFIED="1630410673541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerInstance/applicationController" />
-    <SUITE FILE_PATH="coverage/Genesis$app.coverage" NAME="app Coverage Results" MODIFIED="1644870883821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Genesis$app.coverage" NAME="app Coverage Results" MODIFIED="1644872316872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Genesis_Search$app.coverage" NAME="app Coverage Results" MODIFIED="1642279420300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
