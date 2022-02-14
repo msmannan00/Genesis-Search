@@ -8,23 +8,25 @@
 
     <body class="body">
 
-        <div class="search">
+        <div class="search_container">
+            <div class="search">
 
-            <!-- non onion url -->
-            {% include 'Genesis/user/blades/shared_blades/blade_onion_warning.html' %}
+                <!-- non onion url -->
+                {% include 'Genesis/user/blades/shared_blades/blade_onion_warning.html' %}
 
-            <!-- top bar -->
-            {% include 'Genesis/user/blades/search_template/blade_search_header.html' %}
+                <!-- top bar -->
+                {% include 'Genesis/user/blades/search_template/blade_search_header.html' %}
 
-            <!-- content bar -->
-            {% include 'Genesis/user/blades/search_template/blade_search_content.html' %}
+                <!-- content bar -->
+                {% include 'Genesis/user/blades/search_template/blade_search_content.html' %}
+            </div>
+
+            <!-- pagination -->
+            {% include 'Genesis/user/blades/search_template/blade_search_pagination.html' %}
         </div>
 
-        <!-- pagination -->
-        {% include 'Genesis/user/blades/search_template/blade_search_pagination.html' %}
-
         <!-- footer -->
-        <br><br><br>{% include 'Genesis/user/blades/shared_blades/blade_footer.html' %}
+        {% include 'Genesis/user/blades/shared_blades/blade_footer.html' %}
 
         <!-- content warning -->
         <div class="search-footer__search">
