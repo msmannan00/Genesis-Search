@@ -20,7 +20,6 @@ from shared_directory.service_manager.topic_manager.topic_classifier_controller 
 from shared_directory.service_manager.topic_manager.topic_classifier_enums import TOPIC_CLASSFIER_COMMANDS
 
 
-
 class html_parse_manager(HTMLParser, ABC):
 
     def __init__(self, m_base_url, m_html):
@@ -248,11 +247,10 @@ class html_parse_manager(HTMLParser, ABC):
         if len(m_content)<50 and len(self.m_sub_url)>=3:
             m_content = "- No description found but contains some urls. This website is most probably a search engine or only contain references of other websites - " + self.m_title.lower()
 
-
         return helper_method.strip_special_character(m_content)[0:300]
 
     def __get_validity_score(self, p_important_content):
-        m_rank = (((len(p_important_content) + len(self.m_title)) > 150) or len(self.m_sub_url) >= 3) * 10 + (len(self.m_sub_url) > 0 or self.all_url_count>5) * 5
+        m_rank = (((len(p_important_content) + len(self.m_title)) > 150) and len(self.m_sub_url) >= 3) * 10 + (len(self.m_sub_url) > 0 or self.all_url_count>5) * 5
         return m_rank
 
     def __get_content_type(self):
