@@ -8,7 +8,7 @@
     padding-top:8px;
     font-weight: 600;
     background: none;
-    width: 55%;
+    width: 60%;
     color: #336699;
     border-left: none;
     padding-left: 3.2em;
@@ -75,7 +75,8 @@
     .intelligence__header{
         border-left: 5px solid #b36b00;
         background: #ff9900;
-        max-width: 290px;
+        padding-top: 11px;
+        max-width: 3300px;
         font-size: 16px;
         color: #ffffff;
         margin-bottom: 15px;
