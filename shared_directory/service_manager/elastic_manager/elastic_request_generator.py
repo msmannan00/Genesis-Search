@@ -127,7 +127,7 @@ class elastic_request_generator(request_handler):
             "size": 5001,
             "query": {
                 "match": {
-                    "m_sub_host": 'na'
+                    "m_sub_host": ''
                 }
             },"_source": ["m_host", "m_content_type"]
         }

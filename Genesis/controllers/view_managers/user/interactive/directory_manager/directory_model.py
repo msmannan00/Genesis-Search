@@ -1,7 +1,6 @@
 from Genesis.controllers.constants.constant import CONSTANTS
 from Genesis.controllers.view_managers.user.interactive.directory_manager.directory_enums import DIRECTORY_MODEL_CALLBACK, DIRECTORY_SESSION_COMMANDS, DIRECTORY_MODEL_COMMANDS
-from Genesis.controllers.view_managers.user.interactive.directory_manager.directory_session_controller import \
-    directory_session_controller
+from Genesis.controllers.view_managers.user.interactive.directory_manager.directory_session_controller import directory_session_controller
 from shared_directory.request_manager.request_handler import request_handler
 from shared_directory.service_manager.elastic_manager.elastic_controller import elastic_controller
 from shared_directory.service_manager.elastic_manager.elastic_enums import ELASTIC_CRUD_COMMANDS, ELASTIC_REQUEST_COMMANDS, ELASTIC_INDEX_COLLECTION
@@ -21,6 +20,7 @@ class directory_model(request_handler):
     def __load_onion_links(self, p_directory_class_model):
         m_status, m_documents = elastic_controller.get_instance().invoke_trigger(ELASTIC_CRUD_COMMANDS.S_READ, [ELASTIC_REQUEST_COMMANDS.S_ONION_LIST,[p_directory_class_model.m_page_number],[None]])
 
+        print(m_documents,flush=True)
         m_documents = m_documents['hits']['hits']
 
         mRelevanceDocumentList = []
