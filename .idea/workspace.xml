@@ -3,14 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/dashboard/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/login/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_search/manage_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_search/manage_search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_status/manage_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_status/manage_status.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/report/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/report/report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/home_template/blade_home_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/home_template/blade_home_sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/home_template/blade_home_sidebar_mobile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/home_template/blade_home_sidebar_mobile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-report.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-report.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +35,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1645046152029</updated>
-      <workItem from="1645046154071" duration="576000" />
+      <workItem from="1645046154071" duration="1556000" />
     </task>
     <servers />
   </component>
