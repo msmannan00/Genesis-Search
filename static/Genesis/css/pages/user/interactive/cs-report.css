@@ -1,6 +1,5 @@
 /*Top Header Override*/
 .report{
-    overflow-x: hidden;
 }
 .report__header{
     padding-bottom:8px;
@@ -169,11 +168,12 @@
     .report__line-style{
         display: block;
         height: 10px;
-        max-width: 120%;
+        max-width: 100%;
     	box-shadow: 0 1px 1px -1.5px #cccccc;
         background: linear-gradient(#e6e6e6, #f0f0f0,#f0f0f0 ,#e6e6e6);
         width: 1000px;
-        margin-left: -50px;
+        margin-left: 0;
+        margin-right: 0;
         visibility: visible;
     }
     .report__form {
