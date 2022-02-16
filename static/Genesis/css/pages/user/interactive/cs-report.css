@@ -1,8 +1,6 @@
 /*Top Header Override*/
 .report{
-    margin-top: 40px;
-    padding-left: 5.2%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 .report__header{
     padding-bottom:8px;
@@ -168,10 +166,6 @@
 }
 
 @media only screen and (max-width: 943px) {
-    .report {
-        padding: 0 4% 4%;
-        margin-top: 20px;
-    }
     .report__line-style{
         display: block;
         height: 10px;
