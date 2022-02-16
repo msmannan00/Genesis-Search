@@ -112,9 +112,6 @@ class elastic_request_generator(request_handler):
               "suggest" : {
                 "suggestions" : {
                   "text" : p_suggested_query,
-                  "fuzzy": {
-                        "fuzziness": 1
-                  },
                   "term" : {
                     "field" : "m_content"
                   }
