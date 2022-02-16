@@ -1,8 +1,6 @@
 # Local Imports
 import base64
 import json
-from collections import namedtuple
-
 from Genesis.controllers.constants.constant import CONSTANTS
 from Genesis.controllers.view_managers.cms.manage_search.class_model.manage_search_model import manage_search_data_model
 from Genesis.controllers.view_managers.user.interactive.search_manager.search_enums import SEARCH_MODEL_TOKENIZATION_COMMANDS
@@ -58,6 +56,23 @@ class elastic_request_generator(request_handler):
                   "must_not": [m_safe_filter],
                   "must": [m_type_filter],
                   "should": [
+                    {
+                       "range": {
+                            "date": {
+                                "gte": helper_method.get_time() - 1,
+                                "boost": 3
+                            }
+                        }
+                    },
+                    {
+                       "range": {
+                            "date": {
+                            "gte": helper_method.get_time() - 2,
+                            "boost": 2
+                          }
+                       }
+                    },
+
                     m_doc_length_filter,m_image_length_filter,
                     {
                       "match": {
