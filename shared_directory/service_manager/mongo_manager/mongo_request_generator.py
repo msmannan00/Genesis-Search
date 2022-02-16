@@ -22,7 +22,7 @@ class mongo_request_generator(request_handler):
         return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_REPORT, MONGODB_KEYS.S_VALUE:{"m_url": p_report_data_model.m_url,"m_email": p_report_data_model.m_email,"m_message": p_report_data_model.m_message}}
 
     def __on_upload_url(self, p_sitemap_data_model:sitemap_data_model):
-        return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_SUBMIT, MONGODB_KEYS.S_FILTER:{"m_url": { "$eq": p_sitemap_data_model.m_url }},MONGODB_KEYS.S_VALUE:{"m_email":p_sitemap_data_model.m_email, "m_name": p_sitemap_data_model.m_name, "m_keyword":p_sitemap_data_model.m_keyword, "m_secret_key":p_sitemap_data_model.m_secret_key, "m_submission_rule":p_sitemap_data_model.m_submission_rule}}
+        return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_SUBMIT, MONGODB_KEYS.S_FILTER:{"m_url": { "$eq": p_sitemap_data_model.m_url }},MONGODB_KEYS.S_VALUE:{"m_email":p_sitemap_data_model.m_email, "m_name": p_sitemap_data_model.m_name, "m_keyword":p_sitemap_data_model.m_keyword, "m_secret_key":p_sitemap_data_model.m_secret_key, "m_submission_rule":p_sitemap_data_model.m_submission_rule, "m_site":p_sitemap_data_model.p_site}}
 
     def __on_fetch_service_by_url(self, p_url):
         return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_SUBMIT, MONGODB_KEYS.S_FILTER:{"m_url": p_url}}
