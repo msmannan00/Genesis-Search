@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/report_manager/class_model/report_data_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/report_manager/class_model/report_data_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/report_manager/report_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/report_manager/report_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1645046152029</updated>
       <workItem from="1645046154071" duration="13030000" />
-      <workItem from="1645132427932" duration="130000" />
+      <workItem from="1645132427932" duration="1045000" />
     </task>
     <servers />
   </component>

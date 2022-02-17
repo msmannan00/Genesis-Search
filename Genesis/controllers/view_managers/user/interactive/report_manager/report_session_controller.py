@@ -37,7 +37,7 @@ class report_session_controller(request_handler):
         return m_context_response
     def __validate_parameters(self, p_report_data_model:report_data_model):
         m_validity_status = True
-        if p_report_data_model.m_url is None or p_report_data_model.m_message is None:
+        if p_report_data_model.m_url is None:
             p_report_data_model.set_defaults()
             m_context_response = self.init_callbacks(p_report_data_model)
             return p_report_data_model, m_context_response, False
