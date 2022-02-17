@@ -13,6 +13,8 @@ class report_session_controller(request_handler):
         m_report_data_model = report_data_model()
         if REPORT_PARAM.M_URL in p_data.POST:
             m_report_data_model.m_url = p_data.POST[REPORT_PARAM.M_URL]
+        elif REPORT_PARAM.M_URL in p_data.GET:
+            m_report_data_model.m_url = p_data.GET[REPORT_PARAM.M_URL]
         if REPORT_PARAM.M_EMAIL in p_data.POST:
             m_report_data_model.m_email = p_data.POST[REPORT_PARAM.M_EMAIL]
         if REPORT_PARAM.M_MESSAGE in p_data.POST:
