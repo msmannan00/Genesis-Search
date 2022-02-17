@@ -1,5 +1,3 @@
-from django.shortcuts import render
-from Genesis.controllers.constants.constant import CONSTANTS
 from Genesis.controllers.view_managers.cms.manage_search.manage_search_enums import MANAGE_SEARCH_MODEL_CALLBACK
 from Genesis.controllers.view_managers.cms.manage_search.manage_search_model import manage_search_model
 

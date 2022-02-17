@@ -19,9 +19,10 @@
 
                 <form action="/cms/manage_search" method="POST" style="max-width: 800px">
                   <input type="number" class="manage_search-range manage_search-range--min" id="email" placeholder="min results" value="{{mMinRange}}" name="pMinRange" min="0">
-                  <input type="number" class="manage_search-range manage_search-range--max" id="pwd" placeholder="max results" value="{{mMaxRange}}" name="pMaxRange" min="0">
+                  <input type="number" class="manage_search-range manage_search-range--max manage_search-range--float" id="pwd" placeholder="max results" value="{{mMaxRange}}" name="pMaxRange" min="0">
 
-                  <select name="pSearchType" value="elastic search" class="manage_search-dropdown">
+                  <br><br><br>
+                  <select  name="pSearchType" value="elastic search" class="manage-search__custom-select manage-search__dropdown">
                         {% if mSearchType == 'mongo-DB' %}
                              <option value="mongo-DB" selected>mongo-DB</option>
                              <option value="elastic-search">elastic-search</option>

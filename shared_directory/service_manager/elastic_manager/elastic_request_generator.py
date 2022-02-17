@@ -214,15 +214,11 @@ class elastic_request_generator(request_handler):
     def __query_raw(self, p_data:manage_search_data_model):
         m_query = {
             "from": p_data.m_min_range,
-            "size": 5001,
-            "query": {
-                "match": {
-                    "m_sub_host": 'na'
-                }
-            },"_source": ["m_host", "m_content_type"]
+            "size": p_data.m_max_range,
+            "query": json.loads(json.dumps(json.loads(p_data.m_query)))
+            ,"_source": ["m_host", "m_content_type"]
         }
-
-        return {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_WEB_INDEX, ELASTIC_KEYS.S_FILTER:m_query}
+        return {ELASTIC_KEYS.S_DOCUMENT: p_data.m_query_collection, ELASTIC_KEYS.S_FILTER:m_query}
 
     def __on_index(self, p_data):
         m_host, m_sub_host = helper_method.split_host_url(p_data['m_base_url_model']['m_url'])

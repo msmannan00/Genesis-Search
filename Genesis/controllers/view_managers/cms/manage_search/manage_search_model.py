@@ -36,12 +36,18 @@ class manage_search_model(request_handler):
                 m_response = [doc for doc in m_response]
                 p_manage_search_model.m_query_success = json.dumps(m_response, sort_keys=True, indent=4, default=json_util.default)
 
+        print("--------------------------- 1",flush=True)
+        print(p_manage_search_model.m_query,flush=True)
+        print("--------------------------- 1",flush=True)
+
         if p_manage_search_model.m_query_type == "elastic-search":
+
             m_status, m_response = elastic_controller.elastic_controller.get_instance().invoke_trigger(ELASTIC_CRUD_COMMANDS.S_READ,[ELASTIC_REQUEST_COMMANDS.S_QUERY_RAW,[p_manage_search_model], [p_manage_search_model.m_min_range, p_manage_search_model.m_max_range]])
-            m_response = m_response['hits']['hits']
+            #print(m_response, flush=True)
             if m_status is False:
                 p_manage_search_model.m_query_error = m_response
             else:
+                m_response = m_response['hits']['hits']
                 p_manage_search_model.m_query_success = json.dumps(m_response, sort_keys=True, indent=4, default=json_util.default)
 
         return p_manage_search_model

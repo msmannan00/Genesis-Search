@@ -13,7 +13,10 @@
     border-bottom-width: 1px;
     padding-top: 5px;
 }
-
+.login-input{
+    border-radius: 2px !important;
+    padding-left: 10px !important;
+}
 .login__header--image{
     height: auto;
     display: block;
@@ -40,6 +43,7 @@
     color: orange;
 }
 .login__header--container{
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
 }
 

@@ -1,6 +1,3 @@
-from django.shortcuts import render
-from Genesis.controllers.constants.constant import CONSTANTS
-from Genesis.controllers.view_managers.cms.dashboard.dashboard_enums import DASHBOARD_MODEL_CALLBACK
 from Genesis.controllers.view_managers.cms.manage_status.manage_status_enums import MANAGE_STATUS_MODEL_CALLBACK
 from Genesis.controllers.view_managers.cms.manage_status.manage_status_model import manage_status_model
 
