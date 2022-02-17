@@ -35,7 +35,7 @@ class report_session_controller(request_handler):
         }
 
         return m_context_response
-    def __validate_parameters(self, p_report_data_model:report_data_model):
+    def __validate_parameters(self, p_report_data_model:report_data_model, p_data):
         m_validity_status = True
         if p_report_data_model.m_url is None:
             p_report_data_model.set_defaults()
@@ -56,6 +56,8 @@ class report_session_controller(request_handler):
         if p_report_data_model.m_email != GENERAL_STRINGS.S_GENERAL_EMPTY and helper_controller.is_mail_valid(p_report_data_model.m_email) is False:
             m_context_response[REPORT_CALLBACK.M_EMAIL_ERROR] = REPORT_MESSAGES.S_REPORT_URL_INVALID_EMAIL
             m_validity_status = False
+        if REPORT_PARAM.M_URL not in p_data.POST:
+            m_validity_status = False
 
         return p_report_data_model,m_context_response, m_validity_status
 
@@ -64,5 +66,5 @@ class report_session_controller(request_handler):
         if p_command == REPORT_SESSION_COMMANDS.M_INIT:
             return self.__init_parameters(p_data[0])
         if p_command == REPORT_SESSION_COMMANDS.M_VALIDATE:
-            return self.__validate_parameters(p_data[0])
+            return self.__validate_parameters(p_data[0], p_data[1])
 

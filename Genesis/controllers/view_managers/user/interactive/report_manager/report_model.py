@@ -25,7 +25,7 @@ class report_model(request_handler):
     def __init_page(self, p_data):
 
         m_report_data_model = self.__m_session.invoke_trigger(REPORT_SESSION_COMMANDS.M_INIT, [p_data])
-        m_report_data_model, m_context, m_status = self.__m_session.invoke_trigger(REPORT_SESSION_COMMANDS.M_VALIDATE, [m_report_data_model])
+        m_report_data_model, m_context, m_status = self.__m_session.invoke_trigger(REPORT_SESSION_COMMANDS.M_VALIDATE, [m_report_data_model, p_data])
         if m_status is True and GENERAL_STRINGS.S_GENERAL_ONION_DOMAIN in helper_controller.get_host(m_context[REPORT_CALLBACK.M_URL]):
             self.__report_website(m_report_data_model)
             m_context = {}
