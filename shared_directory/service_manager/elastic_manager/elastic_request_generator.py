@@ -72,7 +72,6 @@ class elastic_request_generator(request_handler):
                           }
                        }
                     },
-
                     m_doc_length_filter,m_image_length_filter,
                     {
                       "match": {
@@ -113,7 +112,7 @@ class elastic_request_generator(request_handler):
                 "suggestions" : {
                   "text" : p_suggested_query,
                   "term" : {
-                    "field" : "m_content"
+                  "field" : ["m_content","m_title","m_meta_description"]
                   }
                }
             }
