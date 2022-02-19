@@ -18,10 +18,10 @@ class elastic_request_generator(request_handler):
     def __init__(self):
         self.__m_tokenizer = tokenizer()
 
-    def __on_search(self, p_query_model, p_suggested_query):
+    def __on_search(self, p_query_model):
         m_user_query, m_search_type, m_safe_search, m_page_number = p_query_model.m_search_query, p_query_model.m_search_type, p_query_model.m_safe_search, p_query_model.m_page_number
         m_user_query = m_user_query.lower()
-        m_tokenized_query = self.__m_tokenizer.invoke_trigger(SEARCH_MODEL_TOKENIZATION_COMMANDS.M_NORMALIZE, [m_user_query])
+        m_tokenized_query = self.__m_tokenizer.invoke_trigger(SEARCH_MODEL_TOKENIZATION_COMMANDS.M_NORMALIZE, [m_user_query]).lower()
         m_type = m_search_type
 
         if m_type == "finance":
@@ -355,7 +355,7 @@ class elastic_request_generator(request_handler):
 
     def invoke_trigger(self, p_commands, p_data=None):
         if p_commands == ELASTIC_REQUEST_COMMANDS.S_SEARCH:
-            return self.__on_search(p_data[0], p_data[1])
+            return self.__on_search(p_data[0])
         if p_commands == ELASTIC_REQUEST_COMMANDS.S_ONION_LIST:
             return self.__onion_list(p_data[0])
         if p_commands == ELASTIC_REQUEST_COMMANDS.S_INDEX_USER_QUERY:

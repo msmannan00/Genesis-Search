@@ -1,4 +1,3 @@
-import math
 import re
 import nltk
 from autocorrect import Speller
@@ -73,26 +72,27 @@ class spell_checker:
         return m_invalid_words
 
     def generate_suggestions(self, p_query, p_suggestion_content):
+
+        p_query = p_query.lower()
         if len(p_suggestion_content) == 0:
             return GENERAL_STRINGS.S_GENERAL_EMPTY, GENERAL_STRINGS.S_GENERAL_EMPTY
 
-        m_query = GENERAL_STRINGS.S_GENERAL_EMPTY
+        m_query = p_query
         m_content = {}
         for m_suggestion in p_suggestion_content:
             if len(m_suggestion['options'])>0:
-                m_item = {}
-                m_item['text'] = m_suggestion['options'][0]['text']
-                m_item['score'] = m_suggestion['options'][0]['score']
-                m_content[m_suggestion['text']] = m_item
+                m_content[m_suggestion['text']] = m_suggestion['options'][0]['text']
 
         m_query_text = GENERAL_STRINGS.S_GENERAL_EMPTY
-        m_keys = list(dict.fromkeys(m_content.keys()))
-
-        for m_key in m_keys:
-            m_query += m_content[m_key]['text'] + " "
+        for m_key in m_content.keys():
             if len(m_query_text)>0:
-                m_query_text = p_query.replace(m_key, "<b style=\"color:#336699\"><u>" + m_content[m_key]['text'] + "</u></b>&nbsp;&nbsp;")
+                m_query_text = m_query_text.replace(m_key, "<span style=\"color:#336699;font-weight:bold;font-size:17\">" + m_content[m_key] + "</span>")
             else:
-                m_query_text = p_query.replace(m_key, "<b style=\"color:#336699\"><u>" + m_content[m_key]['text'] + "</u></b>")
+                m_query_text = p_query.replace(m_key, "<span style=\"color:#336699\">" + m_content[m_key] + "</span>")
+            m_query = m_query.replace(m_key, m_content[m_key])
+
+        print("--------------", flush=True)
+        print(m_query, flush=True)
+        print("--------------", flush=True)
 
         return m_query, m_query_text
