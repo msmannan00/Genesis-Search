@@ -20,7 +20,7 @@ class elastic_request_generator(request_handler):
 
     def __on_search(self, p_query_model, p_suggested_query):
         m_user_query, m_search_type, m_safe_search, m_page_number = p_query_model.m_search_query, p_query_model.m_search_type, p_query_model.m_safe_search, p_query_model.m_page_number
-
+        m_user_query = m_user_query.lower()
         m_tokenized_query = self.__m_tokenizer.invoke_trigger(SEARCH_MODEL_TOKENIZATION_COMMANDS.M_NORMALIZE, [m_user_query])
         m_type = m_search_type
 
@@ -48,75 +48,76 @@ class elastic_request_generator(request_handler):
                 m_safe_filter = {"term": {"m_content_type": 'a'}}
 
         m_query_statement = {
-            "from": (m_page_number-1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
-            "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE+5,
-            "min_score": 3.01,
-            "query": {
-                  "bool": {
-                  "must_not": [m_safe_filter],
-                  "must": [m_type_filter],
-                  "should": [
-                    {
-                       "range": {
-                            "date": {
-                                "gte": helper_method.get_time() - 1,
-                                "boost": 3
+                "from": (m_page_number - 1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
+                "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE + 5,
+                "min_score": 3.01,
+                "query": {
+                    "bool": {
+                        "must_not": [m_safe_filter],
+                        "must": [m_type_filter],
+                        "should": [
+                            {
+                                "range": {
+                                    "date": {
+                                        "gte": helper_method.get_time() - 1,
+                                        "boost": 3
+                                    }
+                                }
+                            },
+                            {
+                                "range": {
+                                    "date": {
+                                        "gte": helper_method.get_time() - 2,
+                                        "boost": 2
+                                    }
+                                }
+                            },
+                            m_doc_length_filter,
+                            m_image_length_filter,
+                            {
+                                "query_string": {
+                                    "default_field": "m_title",
+                                    "query": m_user_query,
+                                    "boost": 4
+                                }
+                            },
+                            {
+                                "query_string": {
+                                    "default_field": "m_meta_description",
+                                    "query": m_user_query,
+                                    "boost": 2
+                                }
+                            },
+                            {
+                                "query_string": {
+                                    "default_field": "m_important_content",
+                                    "query": m_user_query,
+                                    "boost": 1.5
+                                }
+                            },
+                            {
+                                "query_string": {
+                                    "default_field": "m_content",
+                                    "query": m_tokenized_query,
+                                    "boost": 1
+                                }
                             }
-                        }
-                    },
-                    {
-                       "range": {
-                            "date": {
-                            "gte": helper_method.get_time() - 2,
-                            "boost": 2
-                          }
-                       }
-                    },
-                    m_doc_length_filter,m_image_length_filter,
-                    {
-                      "match": {
-                        "m_title": {
-                            "query": m_user_query,
-                            "boost": 4
-                        }
-                      }
-                    },
-                    {
-                      "match": {
-                        "m_meta_description": {
-                            "query": m_user_query,
-                            "boost": 2
-                        }
-                      }
-                    },
-                    {
-                      "match": {
-                        "m_important_content": {
-                            "query": m_user_query,
-                            "boost": 1.5
-                        }
-                      }
-                    },
-                    {
-                      "match": {
-                        "m_content": {
-                            "query": m_tokenized_query,
-                            "boost": 1
-                        }
-                      }
+                        ]
                     }
-                  ]
-                }
-            },
-              "suggest" : {
-                "suggestions" : {
-                  "text" : p_suggested_query,
-                  "term" : {
-                  "field" : ["m_content","m_title","m_meta_description"]
-                  }
-               }
+                },
+                "suggest": {
+                    "content_suggestion": {
+                        "text": m_user_query,
+                        "term": {
+                            "field": "m_content",
+                            "min_word_length": 4,
+                            "max_term_freq": 0.01,
+                            "string_distance": "internal"
+                        }
+                    }
+                },
             }
-         }
+
 
         return {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_WEB_INDEX, ELASTIC_KEYS.S_FILTER:m_query_statement}
 

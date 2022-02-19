@@ -1,4 +1,7 @@
+import math
 import re
+
+import mpmath.libmp
 import nltk
 
 from autocorrect import Speller
@@ -72,17 +75,27 @@ class spell_checker:
 
         return m_invalid_words
 
-    def generate_suggestions(self, p_query, suggestion):
-        if len(suggestion) == 0:
+    def generate_suggestions(self, p_query, p_suggestion_content):
+        if len(p_suggestion_content) == 0:
             return GENERAL_STRINGS.S_GENERAL_EMPTY, GENERAL_STRINGS.S_GENERAL_EMPTY
 
-        p_query_text = p_query
-        for m_suggestion in suggestion:
+        m_query = GENERAL_STRINGS.S_GENERAL_EMPTY
+        m_content = {}
+        for m_suggestion in p_suggestion_content:
             if len(m_suggestion['options'])>0:
-                p_query = p_query.replace(m_suggestion['text'],"<b style=\"color:#336699\"><u>" +  m_suggestion['options'][0]['text'] + "</u></b>")
-                p_query_text = m_suggestion['options'][0]['text']
-            else:
-                p_query = p_query.replace(m_suggestion['text'],"<b style=\"color:#336699\"><u>" + self.__m_speller.autocorrect_word(m_suggestion['text']) + "</u></b>")
-                p_query_text = self.__m_speller.autocorrect_word(m_suggestion['text'])
+                m_item = {}
+                m_item['text'] = m_suggestion['options'][0]['text']
+                m_item['score'] = m_suggestion['options'][0]['score']
+                m_content[m_suggestion['text']] = m_item
 
-        return p_query_text, p_query
+        m_query_text = GENERAL_STRINGS.S_GENERAL_EMPTY
+        m_keys = list(dict.fromkeys(m_content.keys()))
+
+        for m_key in m_keys:
+            m_query += m_content[m_key]['text'] + " "
+            if len(m_query_text)>0:
+                m_query_text = p_query.replace(m_key, "<b style=\"color:#336699\"><u>" + m_content[m_key]['text'] + "</u></b>&nbsp;&nbsp;")
+            else:
+                m_query_text = p_query.replace(m_key, "<b style=\"color:#336699\"><u>" + m_content[m_key]['text'] + "</u></b>")
+
+        return m_query, m_query_text

@@ -44,6 +44,7 @@ class elastic_controller(request_handler):
                         "_source": {
                             "enabled": True
                         },
+
                         "dynamic":"strict" ,
                         "properties": {
                             'm_host': { 'type': 'keyword' },

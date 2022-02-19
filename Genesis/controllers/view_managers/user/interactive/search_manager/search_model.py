@@ -32,7 +32,8 @@ class search_model(request_handler):
                 if m_service['m_sub_host'] == "na":
                     m_service['m_sub_host'] = "/"
                 mRelevanceListData.append(m_document['_source'])
-            return mRelevanceListData, p_paged_documents['suggest']['suggestions']
+
+            return mRelevanceListData, p_paged_documents['suggest']['content_suggestion']
         except Exception as ex:
             return mRelevanceListData, []
 
@@ -46,11 +47,11 @@ class search_model(request_handler):
         m_suggested_query = self.__m_spell_checker.fetch_invalid_words(m_query_model.m_search_query)
         m_tokenized_query = self.__m_tokenizer.invoke_trigger(SEARCH_MODEL_TOKENIZATION_COMMANDS.M_SPLIT_AND_NORMALIZE, [m_query_model.m_search_query])
         m_status, m_documents = elastic_controller.get_instance().invoke_trigger(ELASTIC_CRUD_COMMANDS.S_READ, [ELASTIC_REQUEST_COMMANDS.S_SEARCH,[m_query_model, m_suggested_query],[None]])
-        m_parsed_documents, m_suggestions = self.__parse_filtered_documents(m_documents)
+        m_parsed_documents, m_suggestions_content = self.__parse_filtered_documents(m_documents)
         m_query_model.set_total_documents(len(m_parsed_documents))
 
         m_context, m_status = self.__m_session.invoke_trigger(SEARCH_SESSION_COMMANDS.M_INIT, [m_parsed_documents, m_query_model, m_tokenized_query])
-        m_context[SEARCH_CALLBACK.M_QUERY_ERROR_URL], m_context[SEARCH_CALLBACK.M_QUERY_ERROR] = self.__m_spell_checker.generate_suggestions(m_query_model.m_search_query, m_suggestions)
+        m_context[SEARCH_CALLBACK.M_QUERY_ERROR_URL], m_context[SEARCH_CALLBACK.M_QUERY_ERROR] = self.__m_spell_checker.generate_suggestions(m_query_model.m_search_query, m_suggestions_content)
         return m_status, m_context
 
     def __init_page(self, p_data):
