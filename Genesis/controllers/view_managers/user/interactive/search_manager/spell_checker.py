@@ -91,8 +91,4 @@ class spell_checker:
                 m_query_text = p_query.replace(m_key, "<span style=\"color:#336699\">" + m_content[m_key] + "</span>")
             m_query = m_query.replace(m_key, m_content[m_key])
 
-        print("--------------", flush=True)
-        print(m_query, flush=True)
-        print("--------------", flush=True)
-
         return m_query, m_query_text

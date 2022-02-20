@@ -87,16 +87,44 @@ class search_session_controller(request_handler):
 
         return p_related_business_list, p_related_news_list, p_relevance_context, m_continue
 
+    def ireplace(self, old, repl, text):
+        return re.sub('(?i)' + re.escape(old), lambda m: repl, text)
+
     def __generate_url_context(self, p_document, p_tokenized_query):
         m_title = p_document[SEARCH_DOCUMENT_CALLBACK.M_TITLE]
         if len(m_title) < 2:
             m_title = p_document[SEARCH_DOCUMENT_CALLBACK.M_HOST]
 
-        m_description = p_document[SEARCH_DOCUMENT_CALLBACK.M_IMPORTANT_DESCRIPTION][0:230] + GENERAL_STRINGS.S_GENERAL_CONTENT_CONTINUE
+        m_description = p_document[SEARCH_DOCUMENT_CALLBACK.M_IMPORTANT_DESCRIPTION] + GENERAL_STRINGS.S_GENERAL_CONTENT_CONTINUE
+        m_index = 10000
         for m_item in p_tokenized_query:
-            insensitive_hippo = re.compile(re.escape(m_item), re.IGNORECASE)
-            m_description = m_description.replace(m_item, "<b>" + m_item + "</b>")
-            insensitive_hippo.sub("<b>" + m_item + "</b>", m_description)
+            if m_item in m_description.lower():
+                m_item_index = m_description.lower().index(m_item)
+                if m_item_index < m_index:
+                    m_index = m_item_index
+
+        m_diff = len(m_description) - (m_index + 230)
+        if m_diff<0:
+            m_index = m_index + m_diff
+        if m_index<0:
+            m_index = 0
+
+        m_index_r = -1
+        if " - " in m_description[:m_index]:
+            m_index_r = m_description[:m_index].rindex(" - ")
+            if abs(m_index_r-m_index)<=50:
+                m_index = m_index_r
+
+        print("--------",flush=True)
+        print(m_description,flush=True)
+        print(p_tokenized_query,flush=True)
+        print(m_index,flush=True)
+        print(m_index_r,flush=True)
+        print("--------",flush=True)
+
+        m_description = m_description[m_index:m_index + 230]
+        for m_item in p_tokenized_query:
+            m_description = self.ireplace(m_item,"<b>" + m_item + "</b>", m_description)
 
         mRelevanceContext = {
             SEARCH_CALLBACK.M_TITLE: m_title,
@@ -148,6 +176,8 @@ class search_session_controller(request_handler):
         m_related_business_list = []
         m_related_news_list = []
         m_related_files_list = []
+
+        p_tokenized_query = p_search_model.m_search_query.lower().split(" ")
 
         if p_search_model.m_page_number !=1:
             p_document_list=p_document_list[0:CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE]
