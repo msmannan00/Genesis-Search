@@ -41,7 +41,7 @@ class i_crawl_controller(request_handler, ABC):
         m_html_parser = static_parse_controller()
         m_status, m_parsed_model = m_html_parser.on_parse_html(p_html, p_request_model)
 
-        if 1==1 or m_status is False and m_parsed_model.m_validity_score >= 15 and (len(m_parsed_model.m_content) > 0):
+        if m_status is False and m_parsed_model.m_validity_score >= 15 and (len(m_parsed_model.m_content) > 0):
             m_parsed_model = self.__clean_sub_url(m_parsed_model)
             m_parsed_model.m_user_crawled = True
             elastic_controller.get_instance().invoke_trigger(ELASTIC_CRUD_COMMANDS.S_UPDATE, [ELASTIC_REQUEST_COMMANDS.S_INDEX_USER_QUERY, [m_parsed_model], [True]])

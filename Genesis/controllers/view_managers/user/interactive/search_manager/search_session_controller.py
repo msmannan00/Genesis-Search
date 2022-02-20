@@ -97,34 +97,33 @@ class search_session_controller(request_handler):
 
         m_description = p_document[SEARCH_DOCUMENT_CALLBACK.M_IMPORTANT_DESCRIPTION] + GENERAL_STRINGS.S_GENERAL_CONTENT_CONTINUE
         m_index = 10000
-        for m_item in p_tokenized_query:
-            if m_item in m_description.lower():
-                m_item_index = m_description.lower().index(m_item)
-                if m_item_index < m_index:
-                    m_index = m_item_index
 
-        m_diff = len(m_description) - (m_index + 230)
-        if m_diff<0:
-            m_index = m_index + m_diff
-        if m_index<0:
-            m_index = 0
+        m_query = ' '.join(p_tokenized_query)
+        if m_query in m_description:
+            m_description = self.ireplace(m_query,"<b>" + m_query + "</b>", m_description)
+        else:
+            for m_item in p_tokenized_query:
+                if m_item in m_description.lower():
+                    m_item_index = m_description.lower().index(m_item)
+                    if m_item_index < m_index:
+                        m_index = m_item_index
 
-        m_index_r = -1
-        if " - " in m_description[:m_index]:
-            m_index_r = m_description[:m_index].rindex(" - ")
-            if abs(m_index_r-m_index)<=50:
-                m_index = m_index_r
+            m_diff = len(m_description) - (m_index + 230)
+            if m_diff<0:
+                m_index = m_index + m_diff
+            if m_index<0:
+                m_index = 0
 
-        print("--------",flush=True)
-        print(m_description,flush=True)
-        print(p_tokenized_query,flush=True)
-        print(m_index,flush=True)
-        print(m_index_r,flush=True)
-        print("--------",flush=True)
+            if " - " in m_description[:m_index]:
+                m_index_r = m_description[:m_index].rindex(" - ")
+                if abs(m_index_r-m_index)<=50:
+                    m_index = m_index_r
 
-        m_description = m_description[m_index:m_index + 230]
-        for m_item in p_tokenized_query:
-            m_description = self.ireplace(m_item,"<b>" + m_item + "</b>", m_description)
+            m_description = m_description[m_index:m_index + 230]
+            for m_item in p_tokenized_query:
+                if helper_controller.is_stop_word(m_item.lower()) is True:
+                    continue
+                m_description = self.ireplace(m_item,"<b>" + m_item + "</b>", m_description)
 
         mRelevanceContext = {
             SEARCH_CALLBACK.M_TITLE: m_title,
