@@ -250,9 +250,9 @@
 .search-file__item-container{
     margin-left: 15px;
     border-radius: 6px;
-    margin-top: 13px;
+    margin-top: 3vh;
     width: 25vw;
-    max-width: 400px;
+    max-width: 300px;
     box-shadow: #f0f0f0 0 3px 3px 0;
 }
 .search-file__item-container:hover{
@@ -271,7 +271,6 @@
 }
 .search-file__info_container{
     width: 100%;
-    position: relative;
     height: 30%;
     min-height: 50px;
     max-height: 70px;
@@ -284,7 +283,6 @@
     width: 100%;
     border-radius: 4px 4px 0 0;
     object-fit: scale-down;
-    position: relative;
     height: 20%;
     background-image: linear-gradient(#f7f7f7, #e6e6e6);
 }
