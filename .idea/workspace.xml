@@ -4,8 +4,15 @@
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/i_crawl_crawler/i_crawl_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/i_crawl_crawler/i_crawl_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/search_template/blade_search_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/search_template/blade_search_content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/search_template/blade_search_content_file_based.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/search_template/blade_search_content_file_based.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/search_template/blade_search_content_url_based.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/search_template/blade_search_content_url_based.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/search_template/blade_search_pagination.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/search_template/blade_search_pagination.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/search_template/blade_search_safe_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/search_template/blade_search_safe_search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/search/cs-search-content-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/search/cs-search-content-blade.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +75,8 @@
       <workItem from="1645132427932" duration="1765000" />
       <workItem from="1645213099595" duration="24029000" />
       <workItem from="1645274376439" duration="6949000" />
-      <workItem from="1645376611684" duration="2953000" />
+      <workItem from="1645376611684" duration="3627000" />
+      <workItem from="1645430405347" duration="13002000" />
     </task>
     <servers />
   </component>
@@ -85,7 +93,7 @@
     <SUITE FILE_PATH="coverage/Genesis_Search_Python$HomepageController.coverage" NAME="HomepageController Coverage Results" MODIFIED="1639626889491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GenesisCrawler/controllers/hompageManager" />
     <SUITE FILE_PATH="coverage/Genesis_Search$block_controller.coverage" NAME="block_controller Coverage Results" MODIFIED="1641373126702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/genesis/controllers/service_manager/block_manager" />
     <SUITE FILE_PATH="coverage/Genesis_Crawler_Python$applicationController.coverage" NAME="applicationController Coverage Results" MODIFIED="1630410673541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerInstance/applicationController" />
-    <SUITE FILE_PATH="coverage/Genesis$app.coverage" NAME="app Coverage Results" MODIFIED="1645214525618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Genesis$app.coverage" NAME="app Coverage Results" MODIFIED="1645435957342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Genesis_Search$app.coverage" NAME="app Coverage Results" MODIFIED="1642279420300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

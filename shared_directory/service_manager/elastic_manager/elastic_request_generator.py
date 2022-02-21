@@ -35,7 +35,12 @@ class elastic_request_generator(request_handler):
         m_image_length_filter = {"range": {"m_img_size": { "gte": 0 }}}
         if m_type == "images":
             m_type = "all"
-            m_doc_length_filter = {"range": {"m_img_size": { "gt": 0 }}}
+            m_image_length_filter = {"range": {"m_img_size": { "gt": 0 }}}
+
+        print("---------1", flush=True)
+        print(m_image_length_filter, flush=True)
+        print("---------1", flush=True)
+
 
         m_safe_filter = { "match_none": {}}
         if m_type != "all":
@@ -54,7 +59,7 @@ class elastic_request_generator(request_handler):
                 "query": {
                     "bool": {
                         "must_not": [m_safe_filter],
-                        "must": [m_type_filter],
+                        "must": [m_type_filter,m_image_length_filter],
                         "should": [
                             {
                                 "range": {
@@ -73,7 +78,6 @@ class elastic_request_generator(request_handler):
                                 }
                             },
                             m_doc_length_filter,
-                            m_image_length_filter,
                             {
                                 "query_string": {
                                     "default_field": "m_title",

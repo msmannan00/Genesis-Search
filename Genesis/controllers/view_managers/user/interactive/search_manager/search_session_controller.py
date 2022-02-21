@@ -62,6 +62,7 @@ class search_session_controller(request_handler):
             SEARCH_CALLBACK.M_RELATED_FILES: p_related_files_list,
             SEARCH_CALLBACK.M_SECURE_SERVICE_NOTICE: p_search_model.m_site
         }
+
         return m_context
 
     def __generate_extra_context(self, p_document, p_relevance_context, p_related_files_list, m_links_counter):
@@ -70,12 +71,17 @@ class search_session_controller(request_handler):
         p_related_news_list = []
         m_continue = False
 
+
         if m_links_counter > CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE:
             if p_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE] == 'b':
                 if len(p_related_business_list) < 4:
+                    if len(p_relevance_context['mSearchCallbackRelevantDocumentTitle'])>15:
+                        p_relevance_context['mSearchCallbackRelevantDocumentTitle'] = p_relevance_context['mSearchCallbackRelevantDocumentTitle'][0:15]+".."
                     p_related_business_list.append(p_relevance_context)
             elif p_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE] == 'n':
                 if len(p_related_news_list) < 4:
+                    if len(p_relevance_context['mSearchCallbackRelevantDocumentTitle'])>15:
+                        p_relevance_context['mSearchCallbackRelevantDocumentTitle'] = p_relevance_context['mSearchCallbackRelevantDocumentTitle'][0:15]+".."
                     p_related_news_list.append(p_relevance_context)
             m_continue = True
         elif len(m_images) > 0:
@@ -88,7 +94,17 @@ class search_session_controller(request_handler):
         return p_related_business_list, p_related_news_list, p_relevance_context, m_continue
 
     def ireplace(self, old, repl, text):
-        return re.sub('(?i)' + re.escape(old), lambda m: repl, text)
+        m_tokenize_description = text.split(" ")
+        m_description = GENERAL_STRINGS.S_GENERAL_EMPTY
+
+        for m_token in m_tokenize_description:
+            if old == m_token:
+                m_description += repl + " "
+            elif old in m_token:
+                m_description += "<span style=\"color:#264d73;font-weight:600\">" + m_token + "</span>" + " "
+            else:
+                m_description += m_token + " "
+        return m_description
 
     def __generate_url_context(self, p_document, p_tokenized_query):
         m_title = p_document[SEARCH_DOCUMENT_CALLBACK.M_TITLE]
@@ -100,7 +116,7 @@ class search_session_controller(request_handler):
 
         m_query = ' '.join(p_tokenized_query)
         if m_query in m_description:
-            m_description = self.ireplace(m_query,"<b>" + m_query + "</b>", m_description)
+            m_description = self.ireplace(m_query,"<span style=\"color:#264d73;font-weight:600\">" + m_query + "</span>", m_description)
         else:
             for m_item in p_tokenized_query:
                 if m_item in m_description.lower():
@@ -119,12 +135,13 @@ class search_session_controller(request_handler):
                 if abs(m_index_r-m_index)<=50:
                     m_index = m_index_r
 
-            m_description = m_description[m_index:m_index + 230]
+            m_description = m_description[m_index:(m_index+230)]
             for m_item in p_tokenized_query:
                 if helper_controller.is_stop_word(m_item.lower()) is True:
                     continue
-                m_description = self.ireplace(m_item,"<b>" + m_item + "</b>", m_description)
+                m_description = self.ireplace(m_item,"<span style=\"color:#264d73;font-weight:600\">" + m_item + "</span>", m_description)
 
+        m_description = m_description.lstrip(" -")
         mRelevanceContext = {
             SEARCH_CALLBACK.M_TITLE: m_title,
             SEARCH_CALLBACK.M_URL: p_document[SEARCH_DOCUMENT_CALLBACK.M_HOST] + p_document[SEARCH_DOCUMENT_CALLBACK.M_SUB_HOST],
@@ -151,6 +168,7 @@ class search_session_controller(request_handler):
             if p_search_model.m_safe_search == 'False' or p_search_model.m_safe_search == 'True' and mRelevanceContext[
                 SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a':
                 m_relevance_context_list.append(mRelevanceContext)
+
         return m_relevance_context_list
 
     def __generate_document_content(self, p_document, p_search_model):
@@ -193,8 +211,11 @@ class search_session_controller(request_handler):
                 # Generate Extra Context
                 if p_search_model.m_page_number == 1:
                     m_related_business_list_re, m_related_news_list_re, m_relevance_context, m_continue = self.__generate_extra_context(m_document, m_relevance_context, m_related_files_list, m_links_counter)
-                    m_related_business_list_re.__add__(m_related_business_list)
-                    m_related_news_list.__add__(m_related_news_list_re)
+                    if len(m_related_business_list)<5 and len(m_related_business_list_re)>0:
+                        m_related_business_list.extend(m_related_business_list_re)
+                    if len(m_related_news_list)<5 and len(m_related_news_list_re)>0:
+                        m_related_news_list.extend(m_related_news_list_re)
+
                     if m_continue is True:
                         continue
 
@@ -202,11 +223,13 @@ class search_session_controller(request_handler):
 
             # Generate Image Context
             elif p_search_model.m_search_type == SEARCH_STRINGS.S_SEARCH_CONTENT_TYPE_IMAGE:
-                m_relevance_context_list.__add__(self.__generate_image_content(m_document, p_search_model))
+                m_list = self.__generate_image_content(m_document, p_search_model)
+                if len(m_list)>0:
+                    m_relevance_context_list.extend(m_list)
 
             # Generate Document Context
             elif p_search_model.m_search_type == SEARCH_STRINGS.S_SEARCH_CONTENT_TYPE_DOCUMENT:
-                m_relevance_context_list.__add__(self.__generate_document_content(m_document, p_search_model))
+                m_relevance_context_list.extend(self.__generate_document_content(m_document, p_search_model))
 
         # Pagination Calculator
         min_range, max_range, m_max_page_reached = self.__get_page_number(p_search_model)
@@ -219,7 +242,10 @@ class search_session_controller(request_handler):
         else:
             mContext[SEARCH_CALLBACK.M_RESULT_COUNT] = p_search_model.m_total_documents
 
-        return mContext, True
+        if len(m_relevance_context_list)==0 and p_search_model.m_page_number!=0:
+            return mContext, False
+        else:
+            return mContext, True
 
     # External Request Callbacks
     def invoke_trigger(self, p_command, p_data):

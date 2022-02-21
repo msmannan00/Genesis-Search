@@ -31,7 +31,9 @@
 }
 .search-content__webpages-description--category{
     font-weight: bold;
-    color: #264d73;
+    color: #668cff;
+    border-right: 2px solid #e6e6e6;
+    padding-right: 8px;
 }
 .search-result__safe-search-container--switch{
     border-radius: 0 5px 5px 0;
@@ -239,17 +241,18 @@
     width: 100%;
 }
 .search-file__reference_container{
-    margin-left: 5.5em;
+    margin-left: 2.35em;
     height: auto;
+    width: 96vw;
     padding-left: 10px;
-    width: 100%;
     padding-right: 10%;
 }
 .search-file__item-container{
     margin-left: 15px;
     border-radius: 6px;
     margin-top: 13px;
-    width: 15%;
+    width: 25vw;
+    max-width: 400px;
     box-shadow: #f0f0f0 0 3px 3px 0;
 }
 .search-file__item-container:hover{
@@ -267,9 +270,11 @@
     width: 100%;
 }
 .search-file__info_container{
-    background: #ffffff;
     width: 100%;
-    height: 50px;
+    position: relative;
+    height: 30%;
+    min-height: 50px;
+    max-height: 70px;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     border: 1px solid #ebebeb;
@@ -279,7 +284,8 @@
     width: 100%;
     border-radius: 4px 4px 0 0;
     object-fit: scale-down;
-    min-height: 80px;
+    position: relative;
+    height: 20%;
     background-image: linear-gradient(#f7f7f7, #e6e6e6);
 }
 .search-file__item-header{
@@ -309,6 +315,7 @@
     text-overflow: ellipsis  !important;
     line-height: 16px;
     cursor: pointer;
+    padding-right: 20px;
 }
 .search-file__item-url--icon{
     color: #b3b3b3;
@@ -401,7 +408,6 @@
         color:#666666;
     }
     .search-file__reference_container{
-		width: 100%;
         padding-left: 0;
         margin-left: 0;
 	}
@@ -417,12 +423,14 @@
         width: 100%;
         min-width: 100%;
         max-width: 100%;
+        height: 70%;
     }
     .search-file__item-header{
         margin-left: 0 !important;
     }
     .search-file__item-url{
         margin-left: 0 !important;
+        padding-right: 10px;
      }
     .search-file__reference_container{
         padding-right: 0;
@@ -431,14 +439,14 @@
         background: #ffffff;
         width: 100%;
         max-width: 100%;
-        height: 50px;
         margin-left: 0;
         padding-left: 10px;
     }
     .search-file__item-container{
-        margin-left: 3%;
-        width: auto;
-        max-width: 45.5%;
+        max-width: 45%;
+        width: 50vh;
+        height: 35vw;
+        max-height: 230px;
     }
     .search-file__item-divider{
         height: 2px;
