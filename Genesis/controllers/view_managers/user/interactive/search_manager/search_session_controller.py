@@ -242,7 +242,7 @@ class search_session_controller(request_handler):
         else:
             mContext[SEARCH_CALLBACK.M_RESULT_COUNT] = p_search_model.m_total_documents
 
-        if len(m_relevance_context_list)==0 and p_search_model.m_page_number!=0:
+        if len(m_relevance_context_list)==0 and p_search_model.m_page_number!=1:
             return mContext, False
         else:
             return mContext, True

@@ -1,7 +1,7 @@
 {% load static %}
 
 {% if forloop.counter == 8 and mSearchCallbackRelevantBusiness|length > 1 %}
-<h6 class="search-engine-highlights-header">Related Searches</h6>
+<h6 class="search-engine-highlights-header">Related Search Business</h6>
 <ul class="list-group search-engine-highlights">
     {% for mDoc in mSearchCallbackRelevantBusiness %}
     <a class="search-engine-highlights-item" href="{{mDoc.mSearchCallbackRelevantDocumentURL}}">
@@ -12,6 +12,7 @@
 {% endif %}
 
 {% if forloop.counter == 5 and mSearchCallbackRelevantDocumentNews|length > 1 %}
+<h6 class="search-engine-highlights-header">Related Search News</h6>
 <ul class="list-group search-engine-highlights">
     {% for mDoc in mSearchCallbackRelevantDocumentNews %}
     <a class="search-engine-highlights-item" href="{{mDoc.mSearchCallbackRelevantDocumentURL}}">
