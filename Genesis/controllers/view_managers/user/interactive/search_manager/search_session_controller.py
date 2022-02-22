@@ -34,13 +34,23 @@ class search_session_controller(request_handler):
     def __get_page_number(self, p_search_model):
 
         min_range = 1
-
-        if CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE > p_search_model.m_total_documents:
-            m_max_page_reached = True
-            max_range = p_search_model.m_page_number
+        if p_search_model.m_page_number==1:
+            if CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE > p_search_model.m_total_documents:
+                m_max_page_reached = True
+                max_range = p_search_model.m_page_number
+            else:
+                m_max_page_reached = False
+                max_range = p_search_model.m_page_number + 2
         else:
-            m_max_page_reached = False
-            max_range = p_search_model.m_page_number + 2
+            if p_search_model.m_total_documents>0:
+                m_max_page_reached = False
+                max_range = p_search_model.m_page_number + 2
+            else:
+                m_max_page_reached = False
+                max_range = p_search_model.m_page_number+1
+
+        if p_search_model.m_total_documents == 0:
+            m_max_page_reached = True
 
         if p_search_model.m_page_number>2:
             min_range = p_search_model.m_page_number - 1
@@ -242,10 +252,7 @@ class search_session_controller(request_handler):
         else:
             mContext[SEARCH_CALLBACK.M_RESULT_COUNT] = p_search_model.m_total_documents
 
-        if len(m_relevance_context_list)==0 and p_search_model.m_page_number!=1:
-            return mContext, False
-        else:
-            return mContext, True
+        return mContext, True
 
     # External Request Callbacks
     def invoke_trigger(self, p_command, p_data):
