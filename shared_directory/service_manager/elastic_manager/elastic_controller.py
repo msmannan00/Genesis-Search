@@ -51,7 +51,7 @@ class elastic_controller(request_handler):
                             'm_sub_host': { 'type': 'keyword' },
                             "m_doc_size": { 'type': 'integer', },
                             "m_img_size": {'type': 'integer'},
-                            'm_title': {'type': 'text'},
+                            'm_title': {'type': 'keyword'},
                             'm_title_hidden': {'type': 'text'},
                             'm_meta_description': {'type': 'text'},
                             'm_important_content': {'type': 'text'},

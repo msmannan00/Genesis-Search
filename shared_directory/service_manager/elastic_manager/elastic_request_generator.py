@@ -39,11 +39,6 @@ class elastic_request_generator(request_handler):
             m_type = "all"
             m_image_length_filter = {"range": {"m_img_size": { "gt": 0 }}}
 
-        print("---------1", flush=True)
-        print(m_image_length_filter, flush=True)
-        print("---------1", flush=True)
-
-
         m_safe_filter = { "match_none": {}}
         if m_type != "all":
             m_type_filter = {"term": {"m_content_type": m_type[0]}}
@@ -56,7 +51,7 @@ class elastic_request_generator(request_handler):
 
         m_query_statement = {
                 "from": (m_page_number - 1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
-                "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE + 5,
+                "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE + 35,
                 "min_score": 3.01,
                 "query": {
                     "bool": {
@@ -122,6 +117,13 @@ class elastic_request_generator(request_handler):
                         }
                     }
                 },
+                "collapse": {
+                    "field": "m_title",
+                    "inner_hits": {
+                        "name": "most_recent",
+                        "size": 2,
+                    }
+                }
             }
 
 

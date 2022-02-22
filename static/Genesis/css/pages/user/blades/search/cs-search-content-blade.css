@@ -182,7 +182,7 @@
 }
 .search-result__content-webpages--container{
     width: 100%;
-    max-width: 650px;
+    max-width: 690px;
     margin-left: 100px;
 }
 .search-result__content-webpages{
@@ -213,6 +213,7 @@
     color: #1a0dab;
     font: 13px/1.2em 'Segoe UI',Arial,Helvetica,Sans-Serif;
     font-size: 18px;
+    height: 25px;
 }
 .search-content__webpages-url{
     font-size: 13.5px;
@@ -386,6 +387,7 @@
     .search-content__webpages-header{
         font-weight: 500;
         cursor: pointer;
+        height: 20px;
         font-size: 15.5px;
         font-family: arial,sans-serif;
     }
