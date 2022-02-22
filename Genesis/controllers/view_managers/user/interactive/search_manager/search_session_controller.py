@@ -32,19 +32,19 @@ class search_session_controller(request_handler):
         return m_query_model
 
     def __get_page_number(self, p_search_model):
-        m_max_page_reached = False
-        m_found_pages = math.floor((p_search_model.m_total_documents / CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE) + 1)
-        min_range = max(1, p_search_model.m_page_number - 2)
 
-        if p_search_model.m_page_number > 2:
-            max_range = p_search_model.m_page_number + min(3, m_found_pages)
-        else:
-            max_range = math.floor(m_found_pages)
+        min_range = 1
 
-        if m_found_pages < CONSTANTS.S_SETTINGS_MAX_PAGE_SIZE / 2:
-            min_range = max(1, int(p_search_model.m_page_number - (CONSTANTS.S_SETTINGS_MAX_PAGE_SIZE - m_found_pages)))
-        if p_search_model.m_total_documents < CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE:
+        if CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE > p_search_model.m_total_documents:
             m_max_page_reached = True
+            max_range = p_search_model.m_page_number
+        else:
+            m_max_page_reached = False
+            max_range = p_search_model.m_page_number + 2
+
+        if p_search_model.m_page_number>2:
+            min_range = p_search_model.m_page_number - 1
+
         return min_range, max_range, m_max_page_reached
 
     def init_callbacks(self, p_search_model, p_min_range, p_max_range, p_max_page_reached, p_relevance_context_list, p_related_business_list, p_related_news_list, p_related_files_list):
@@ -116,7 +116,7 @@ class search_session_controller(request_handler):
 
         m_query = ' '.join(p_tokenized_query)
         if m_query in m_description:
-            m_description = self.ireplace(m_query,"<span style=\"color:#264d73;font-weight:600\">" + m_query + "</span>", m_description)
+            m_description = m_description.replace(m_query, "<span style=\"color:#264d73;font-weight:600\">" + m_query + "</span>")
         else:
             for m_item in p_tokenized_query:
                 if m_item in m_description.lower():

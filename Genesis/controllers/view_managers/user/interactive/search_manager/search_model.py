@@ -1,3 +1,5 @@
+import json
+
 from Genesis.controllers.constants.strings import GENERAL_STRINGS
 from Genesis.controllers.view_managers.user.interactive.search_manager.search_enums import SEARCH_CALLBACK, SEARCH_MODEL_TOKENIZATION_COMMANDS, SEARCH_SESSION_COMMANDS, SEARCH_MODEL_COMMANDS
 from Genesis.controllers.view_managers.user.interactive.search_manager.search_session_controller import search_session_controller
@@ -44,6 +46,11 @@ class search_model(request_handler):
 
         m_tokenized_query = self.__m_tokenizer.invoke_trigger(SEARCH_MODEL_TOKENIZATION_COMMANDS.M_SPLIT_AND_NORMALIZE, [m_query_model.m_search_query])
         m_status, m_documents = elastic_controller.get_instance().invoke_trigger(ELASTIC_CRUD_COMMANDS.S_READ, [ELASTIC_REQUEST_COMMANDS.S_SEARCH,[m_query_model],[None]])
+
+        print("--------",flush=True)
+        print(json.dumps(m_documents),flush=True)
+        print("--------",flush=True)
+
         m_parsed_documents, m_suggestions_content = self.__parse_filtered_documents(m_documents)
         m_query_model.set_total_documents(len(m_parsed_documents))
 

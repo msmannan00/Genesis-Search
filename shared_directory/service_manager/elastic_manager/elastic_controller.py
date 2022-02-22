@@ -32,13 +32,31 @@ class elastic_controller(request_handler):
     def __initialization(self):
         try:
             #####  VERY DANGEROUS DO IT VERY CAREFULLY  #####
-            # self.__m_connection.indices.delete(index=ELASTIC_INDEX.S_WEB_INDEX, ignore=[400, 404])
+            #self.__m_connection.indices.delete(index=ELASTIC_INDEX.S_WEB_INDEX, ignore=[400, 404])
             if self.__m_connection.indices.exists(index=ELASTIC_INDEX.S_WEB_INDEX) is False:
                 m_mapping = {
                     "settings": {
                         "number_of_shards": 1,
                         "number_of_replicas": 0,
-                        "max_result_window" : 1000000
+                        "max_result_window" : 1000000,
+                        "analysis":{
+                            "analyzer":{
+                               "tags_analyzer":{
+                                  "type": "custom",
+                                  "tokenizer":"standard",
+                                  "filter":[
+                                      "lowercase",
+                                      "stemmer"
+                                  ]
+                               },
+                            },
+                            "filter": {
+                                "stemmer": {
+                                    "type": "stemmer",
+                                    "language": "english"
+                                }
+                            }
+                        }
                     },
                     "mappings": {
                         "_source": {
@@ -59,7 +77,10 @@ class elastic_controller(request_handler):
                             'm_meta_keywords': {'type': 'text'},
                             'm_content': {'type': 'text'},
                             'm_user_generated': {'type': 'boolean'},
-                            'm_content_type': {'type': 'keyword'},
+                            'm_content_type': {
+                                'type': 'text',
+                                'analyzer': 'tags_analyzer'
+                            },
                             "m_images": { "type": "nested",
                                     "properties": {
                                     "m_url": {
