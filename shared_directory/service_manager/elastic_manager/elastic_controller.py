@@ -32,7 +32,7 @@ class elastic_controller(request_handler):
     def __initialization(self):
         try:
             #####  VERY DANGEROUS DO IT VERY CAREFULLY  #####
-            #self.__m_connection.indices.delete(index=ELASTIC_INDEX.S_WEB_INDEX, ignore=[400, 404])
+            # self.__m_connection.indices.delete(index=ELASTIC_INDEX.S_WEB_INDEX, ignore=[400, 404])
             if self.__m_connection.indices.exists(index=ELASTIC_INDEX.S_WEB_INDEX) is False:
                 m_mapping = {
                     "settings": {
@@ -42,13 +42,12 @@ class elastic_controller(request_handler):
                         "analysis":{
                             "analyzer":{
                                "tags_analyzer":{
-                                  "type": "custom",
-                                  "tokenizer":"standard",
-                                  "filter":[
-                                      "lowercase",
-                                      "stemmer"
-                                  ]
-                               },
+                                   "tokenizer": "standard",
+                                   "filter": [
+                                       "lowercase",
+                                       "stemmer"
+                                   ]
+                               }
                             },
                             "filter": {
                                 "stemmer": {
@@ -75,11 +74,13 @@ class elastic_controller(request_handler):
                             'm_important_content': {'type': 'text'},
                             'm_important_content_hidden': {'type': 'text'},
                             'm_meta_keywords': {'type': 'text'},
-                            'm_content': {'type': 'text'},
-                            'm_user_generated': {'type': 'boolean'},
-                            'm_content_type': {
+                            'm_content': {
                                 'type': 'text',
                                 'analyzer': 'tags_analyzer'
+                            },
+                            'm_user_generated': {'type': 'boolean'},
+                            'm_content_type': {
+                                'type': 'text'
                             },
                             "m_images": { "type": "nested",
                                     "properties": {

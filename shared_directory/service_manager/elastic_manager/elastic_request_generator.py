@@ -52,7 +52,7 @@ class elastic_request_generator(request_handler):
         m_query_statement = {
                 "from": (m_page_number - 1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
                 "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE + 15,
-                "min_score": 0,
+                "min_score": 4.0,
                 "query": {
                     "bool": {
                         "must_not": [m_safe_filter],
@@ -99,7 +99,7 @@ class elastic_request_generator(request_handler):
                             {
                                 "query_string": {
                                     "default_field": "m_content",
-                                    "query": m_tokenized_query,
+                                    "query": m_user_query,
                                     "boost": 1
                                 }
                             }
