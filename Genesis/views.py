@@ -4,13 +4,10 @@ from django.views.decorators.csrf import csrf_exempt
 from Genesis.controllers.constants.constant import CONSTANTS
 from Genesis.controllers.server_manager.crawl_manager.crawl_controller import crawl_controller
 from Genesis.controllers.server_manager.crawl_manager.crawl_enums import CRAWL_COMMANDS
-from Genesis.controllers.server_manager.external_request_manager.external_request_controller import \
-    external_request_controller
+from Genesis.controllers.server_manager.external_request_manager.external_request_controller import external_request_controller
 from Genesis.controllers.server_manager.external_request_manager.external_request_enums import EXTERNAL_REQUEST_COMMANDS
-from Genesis.controllers.server_manager.user_auth_manager.user_auth_controller import \
-    user_auth_controller
-from Genesis.controllers.server_manager.user_auth_manager.user_auth_enums import \
-    USER_AUTH_COMMANDS
+from Genesis.controllers.server_manager.user_auth_manager.user_auth_controller import user_auth_controller
+from Genesis.controllers.server_manager.user_auth_manager.user_auth_enums import USER_AUTH_COMMANDS
 from Genesis.controllers.view_managers.cms.dashboard.dashboard_controller import dashboard_controller
 from Genesis.controllers.view_managers.cms.dashboard.dashboard_enums import DASHBOARD_MODEL_CALLBACK
 from Genesis.controllers.view_managers.cms.login.login_controller import login_controller
@@ -19,23 +16,18 @@ from Genesis.controllers.view_managers.cms.manage_search.manage_search_controlle
 from Genesis.controllers.view_managers.cms.manage_search.manage_search_enums import MANAGE_SEARCH_MODEL_CALLBACK
 from Genesis.controllers.view_managers.cms.manage_status.manage_status_controller import manage_status_controller
 from Genesis.controllers.view_managers.cms.manage_status.manage_status_enums import MANAGE_STATUS_MODEL_CALLBACK
-from Genesis.controllers.view_managers.user.interactive.intelligence_manager.intelligence_controller import \
-    intelligence_controller
-from Genesis.controllers.view_managers.user.interactive.intelligence_manager.intelligence_enums import \
-    INTELLIGENCE_MODEL_COMMANDS
+from Genesis.controllers.view_managers.user.interactive.intelligence_manager.intelligence_controller import intelligence_controller
+from Genesis.controllers.view_managers.user.interactive.intelligence_manager.intelligence_enums import INTELLIGENCE_MODEL_COMMANDS
 from Genesis.controllers.view_managers.user.server.block_manager.block_enums import BLOCK_MODEL_CALLBACK
 from Genesis.controllers.view_managers.user.server.error.error_controller import error_controller
 from Genesis.controllers.view_managers.user.server.error.error_enums import ERROR_MODEL_CALLBACK
-from Genesis.controllers.view_managers.user.server.maintenance.maintenance_controller import \
-    maintenance_controller
+from Genesis.controllers.view_managers.user.server.maintenance.maintenance_controller import maintenance_controller
 from Genesis.controllers.view_managers.user.server.maintenance.maintenance_enums import MAINTENANCE_MODEL_CALLBACK
 from Genesis.controllers.view_managers.user.server.secret_key.secret_key_controller import secret_key_controller
 from Genesis.controllers.view_managers.user.server.secret_key.secret_key_enums import SECRET_KEY_MODEL_CALLBACK
-from Genesis.controllers.view_managers.user.server.user_index_manager.user_index_controller import \
-    user_index_controller
+from Genesis.controllers.view_managers.user.server.user_index_manager.user_index_controller import user_index_controller
 from Genesis.controllers.view_managers.user.server.user_index_manager.user_index_enums import USER_INDEX_MODEL_CALLBACK
-from Genesis.controllers.view_managers.user.interactive.directory_manager.directory_controller import \
-    directory_controller
+from Genesis.controllers.view_managers.user.interactive.directory_manager.directory_controller import directory_controller
 from Genesis.controllers.view_managers.user.interactive.directory_manager.directory_enums import DIRECTORY_MODEL_COMMANDS
 from Genesis.controllers.view_managers.user.interactive.hompage_manager.homepage_controller import homepage_controller
 from Genesis.controllers.view_managers.user.interactive.hompage_manager.homepage_enums import HOMEPAGE_MODEL_COMMANDS
