@@ -45,6 +45,7 @@ urlpatterns = [
     path('cms/manage_authentication', views.manage_authentication, name='manage_search'),
     path('cms/logout', views.manage_logout, name='cms_logout'),
     path('update_status/', views.update_status, name='manage_search'),
+    path('app-ads.txt/', views.app_ads, name='manage_search'),
 ]
 
 handler400 = views.error_page_400

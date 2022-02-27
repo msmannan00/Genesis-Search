@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
@@ -134,6 +135,10 @@ def cms_dashboard(request):
 @csrf_exempt
 def cms_dashboard(request):
     return dashboard_controller.getInstance().invoke_trigger(DASHBOARD_MODEL_CALLBACK.M_INIT, request)
+
+@csrf_exempt
+def app_ads(request):
+    return render(None, CONSTANTS.S_APP_ADS_PATH, None)
 
 def error_page_400(request, exception=None):
     return error_controller.getInstance().invoke_trigger(ERROR_MODEL_CALLBACK.M_INIT, [request,400])

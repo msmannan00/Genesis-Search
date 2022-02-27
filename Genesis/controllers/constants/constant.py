@@ -30,6 +30,7 @@ class CONSTANTS:
     S_TEMPLATE_BLOCK_WEBSITE_PATH = "Genesis/user/server/block/block.html"
     S_TEMPLATE_INTELLIGENCE_WEBSITE_PATH = "Genesis/user/interactive/intelligence/intelligence.html"
     S_SSL_VERIFICATION_PATH = "Genesis/.well-known/pki-validation/7376EE2DE04DC0C4FAE994EFACFB240B.txt"
+    S_APP_ADS_PATH = "Genesis/.well-known/app-ads.txt"
 
     # Direct Links
     S_TEMPLATE_LOGIN_SHORT = "/cms/login"
