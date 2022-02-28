@@ -158,7 +158,8 @@ class search_session_controller(request_handler):
             SEARCH_CALLBACK.M_DESCRIPTION: m_description,
             SEARCH_CALLBACK.K_SEARCH_TYPE: p_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE],
         }
-        if p_search_model.m_safe_search == 'False' or (p_search_model.m_safe_search == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult'):
+
+        if p_search_model.m_safe_search == 'False' or (str(p_search_model.m_safe_search) == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult'):
             return mRelevanceContext
         else:
             return None
@@ -178,7 +179,7 @@ class search_session_controller(request_handler):
             if mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult':
                 mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] = m_image_file[SEARCH_CALLBACK.M_IMAGE_TYPE]
 
-            if p_search_model.m_safe_search == 'False' or (p_search_model.m_safe_search == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult'):
+            if p_search_model.m_safe_search == 'False' or (str(p_search_model.m_safe_search) == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult'):
                 m_relevance_context_list.append(mRelevanceContext)
 
         return m_relevance_context_list
@@ -196,7 +197,7 @@ class search_session_controller(request_handler):
                 break
             mRelevanceContext[SEARCH_CALLBACK.M_URL] = m_document_file
 
-            if p_search_model.m_safe_search == 'False' or (p_search_model.m_safe_search == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult'):
+            if p_search_model.m_safe_search == 'False' or (str(p_search_model.m_safe_search) == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult'):
                 m_relevance_context_list.append(mRelevanceContext)
         return m_relevance_context_list
 
