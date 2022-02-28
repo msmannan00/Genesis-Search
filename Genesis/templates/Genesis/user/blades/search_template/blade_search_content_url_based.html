@@ -35,8 +35,8 @@
 {% endif %}
 
 <div class="search-result__content-webpages--container">
-    <a href="{% if mDoc.mSearchCallbackRelevantSearchType == 'a' %}#search-content__danger-popup{% else %}{{mDoc.mSearchCallbackRelevantDocumentURL}}{% endif %}">
-        <div class="search-result__content-webpages {% if mDoc.mSearchCallbackRelevantSearchType == 'a' %}search-result__content-webpages--danger{% else %}search-result__content-webpages--normal{% endif %}">
+    <a href="{% if mDoc.mSearchCallbackRelevantSearchType == 'adult' or mDoc.mSearchCallbackRelevantSearchType == 'a' %}#search-content__danger-popup_{{mDoc.mSearchCallbackRelevantDocumentURL}}{% else %}{{mDoc.mSearchCallbackRelevantDocumentURL}}{% endif %}">
+        <div class="search-result__content-webpages {% if mDoc.mSearchCallbackRelevantSearchType == 'a' or mDoc.mSearchCallbackRelevantSearchType == 'adult' %}search-result__content-webpages--danger{% else %}search-result__content-webpages--normal{% endif %}">
             <label class="search-content__webpages-header">{{mDoc.mSearchCallbackRelevantDocumentTitle}}</label><br>
             <label class="search-content__webpages-url">{{mDoc.mSearchCallbackRelevantDocumentURL}}</label><br>
             <hr class="search-content__webpages-divider">
@@ -45,7 +45,7 @@
     </a>
 </div>
 
-<div id="search-content__danger-popup" class="overlay">
+<div id="search-content__danger-popup_{{mDoc.mSearchCallbackRelevantDocumentURL}}" class="overlay">
     <div class="search-content__danger-popup-container" >
         <div class="content">
             <div class="search-content__info-danger-container">
@@ -55,7 +55,7 @@
             <div class="search-content__danger-button-container">
                 <a href="{{mDoc.mSearchCallbackRelevantDocumentURL}}" style="text-decoration: none;"><button class="search-content__danger-button search-content__danger-button-auto">Open Website</button></a>
                 <a href="../report?pReportParamURL={{mDoc.mSearchCallbackRelevantDocumentURL}}" style="text-decoration: none;"><button class="search-content__danger-button search-content__danger-button-top" >Report URL</button></a>
-                <a href="#" style="text-decoration: none;"><button class="search-content__danger-button search-content__danger-button-top" >Go Back</button></a>
+                <a href="#search-content__danger-popup" style="text-decoration: none;"><button class="search-content__danger-button search-content__danger-button-top" >Go Back</button></a>
             </div>
         </div>
     </div>

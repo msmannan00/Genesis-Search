@@ -116,7 +116,7 @@ class search_session_controller(request_handler):
                 m_description += m_token + " "
         return m_description
 
-    def __generate_url_context(self, p_document, p_tokenized_query):
+    def __generate_url_context(self, p_document, p_tokenized_query, p_search_model):
         m_title = p_document[SEARCH_DOCUMENT_CALLBACK.M_TITLE]
         if len(m_title) < 2:
             m_title = p_document[SEARCH_DOCUMENT_CALLBACK.M_HOST]
@@ -158,7 +158,10 @@ class search_session_controller(request_handler):
             SEARCH_CALLBACK.M_DESCRIPTION: m_description,
             SEARCH_CALLBACK.K_SEARCH_TYPE: p_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE],
         }
-        return mRelevanceContext
+        if p_search_model.m_safe_search == 'False' or (p_search_model.m_safe_search == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult'):
+            return mRelevanceContext
+        else:
+            return None
 
     def __generate_image_content(self, p_document, p_search_model):
         m_relevance_context_list = []
@@ -172,11 +175,10 @@ class search_session_controller(request_handler):
             if m_counter > 4:
                 break
             mRelevanceContext[SEARCH_CALLBACK.M_URL] = m_image_file[SEARCH_CALLBACK.M_IMAGE_URL]
-            if mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a':
+            if mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult':
                 mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] = m_image_file[SEARCH_CALLBACK.M_IMAGE_TYPE]
 
-            if p_search_model.m_safe_search == 'False' or p_search_model.m_safe_search == 'True' and mRelevanceContext[
-                SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a':
+            if p_search_model.m_safe_search == 'False' or (p_search_model.m_safe_search == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult'):
                 m_relevance_context_list.append(mRelevanceContext)
 
         return m_relevance_context_list
@@ -193,8 +195,8 @@ class search_session_controller(request_handler):
             if m_counter > 4:
                 break
             mRelevanceContext[SEARCH_CALLBACK.M_URL] = m_document_file
-            if p_search_model.m_safe_search == 'False' or p_search_model.m_safe_search == 'True' and mRelevanceContext[
-                SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a':
+
+            if p_search_model.m_safe_search == 'False' or (p_search_model.m_safe_search == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult'):
                 m_relevance_context_list.append(mRelevanceContext)
         return m_relevance_context_list
 
@@ -216,10 +218,10 @@ class search_session_controller(request_handler):
             if p_search_model.m_search_type != SEARCH_STRINGS.S_SEARCH_CONTENT_TYPE_IMAGE:
 
                 # Generate URL Context
-                m_relevance_context = self.__generate_url_context(m_document, p_tokenized_query)
+                m_relevance_context = self.__generate_url_context(m_document, p_tokenized_query, p_search_model)
 
                 # Generate Extra Context
-                if p_search_model.m_page_number == 1:
+                if p_search_model.m_page_number == 1 and m_relevance_context is not None:
                     m_related_business_list_re, m_related_news_list_re, m_relevance_context, m_continue = self.__generate_extra_context(m_document, m_relevance_context, m_related_files_list, m_links_counter)
                     if len(m_related_business_list)<5 and len(m_related_business_list_re)>0:
                         m_related_business_list.extend(m_related_business_list_re)
@@ -229,7 +231,8 @@ class search_session_controller(request_handler):
                     if m_continue is True:
                         continue
 
-                m_relevance_context_list.append(m_relevance_context)
+                if m_relevance_context is not None:
+                    m_relevance_context_list.append(m_relevance_context)
 
             # Generate Image Context
             elif p_search_model.m_search_type == SEARCH_STRINGS.S_SEARCH_CONTENT_TYPE_IMAGE:

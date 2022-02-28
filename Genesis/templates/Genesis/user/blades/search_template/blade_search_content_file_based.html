@@ -1,7 +1,7 @@
 {% load static %}
 <div class="search-file__reference_container">
     {% for mDoc in mSearchCallbackRelevantDocument %}
-    <div id="search-content__danger-popup" class="overlay">
+    <div id="search-content__danger-popup_{{mDoc.mSearchCallbackRelevantDocumentURL}}" class="overlay">
         <div class="search-content__danger-popup-container" >
             <div class="content">
                 <div class="search-content__info-danger-container">
@@ -11,7 +11,7 @@
                 <div class="search-content__danger-button-container">
                     <a href="{{mDoc.mSearchCallbackRelevantDocumentURL}}" target="_blank" style="text-decoration: none;"><button class="search-content__danger-button search-content__danger-button-auto">Open Image</button></a>
                     <a href="../report?pReportParamURL={{mDoc.mSearchCallbackRelevantDocumentURL}}" style="text-decoration: none;"><button class="search-content__danger-button search-content__danger-button-top" >Report URL</button></a>
-                    <a href="#" style="text-decoration: none;"><button class="search-content__danger-button search-content__danger-button-top" >Go Back</button></a>
+                    <a href="#search-content__danger-popup" style="text-decoration: none;"><button class="search-content__danger-button search-content__danger-button-top" >Go Back</button></a>
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
 
     <div style="float: left" class="search-file__item-container">
 
-        <a href="{% if mDoc.mSearchCallbackRelevantSearchType == 'a' %}#search-content__danger-popup{% else %} {{mDoc.mSearchCallbackRelevantDocumentURL}} {% endif %}">
+        <a href="{% if mDoc.mSearchCallbackRelevantSearchType == 'a' %}#search-content__danger-popup_{{mDoc.mSearchCallbackRelevantDocumentURL}}{% else %} {{mDoc.mSearchCallbackRelevantDocumentURL}} {% endif %}">
             <img src="{% if mDoc.mSearchCallbackRelevantSearchType == 'a' %} {% static 'Genesis/images/blurredImage/blur-1.png' %} {% else %} {{mDoc.mSearchCallbackRelevantDocumentURL}} {% endif %}" class="search-file__item" alt="">
         </a>
         <div style="clear: left"></div>
@@ -32,4 +32,3 @@
     {% endfor %}
 </div>
 <div style="clear: left"></div>
-
