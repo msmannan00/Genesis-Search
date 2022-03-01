@@ -5,7 +5,7 @@
 <ul class="list-group search-engine-highlights">
     {% for mDoc in mSearchCallbackRelevantBusiness %}
     <a class="search-engine-highlights-item" href="{{mDoc.mSearchCallbackRelevantDocumentURL}}">
-        <img class="search-engine-highlights-item--glass disable-highlight" src="{% static 'Genesis/images/search-icon-dark.png' %}" alt=""/> &nbsp;&nbsp;&nbsp; {{mDoc.mSearchCallbackRelevantDocumentDescription}}
+        <img class="search-engine-highlights-item--glass disable-highlight" src="{% static 'Genesis/images/search-icon-dark.png' %}" alt=""/> &nbsp;&nbsp;&nbsp; {{mDoc.mSearchCallbackRelevantDocumentDescription}} &nbsp; {{mDoc.mSearchCallbackRelevantDocumentTitle}}
     </a>
     {% endfor %}
 </ul>
@@ -16,7 +16,7 @@
 <ul class="list-group search-engine-highlights">
     {% for mDoc in mSearchCallbackRelevantDocumentNews %}
     <a class="search-engine-highlights-item" href="{{mDoc.mSearchCallbackRelevantDocumentURL}}">
-        <span style="font-weight: 650">{{mDoc.mSearchCallbackRelevantDocumentTitle}}</span> - {{mDoc.mSearchCallbackRelevantDocumentDescription}}
+        <span>{{mDoc.mSearchCallbackRelevantDocumentDescription}} &nbsp; {{mDoc.mSearchCallbackRelevantDocumentTitle}}</span>
     </a>
     {% endfor %}
 </ul>

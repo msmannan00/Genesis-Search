@@ -1,5 +1,3 @@
-import re
-
 from Genesis.controllers.constants.constant import CONSTANTS
 from Genesis.controllers.constants.strings import GENERAL_STRINGS, SEARCH_STRINGS
 from Genesis.controllers.helper_manager.helper_controller import helper_controller
@@ -110,7 +108,7 @@ class search_session_controller(request_handler):
             if old == m_token:
                 m_description += repl + " "
             elif old in m_token:
-                if ">" in m_token or "<" in m_token:
+                if ">" in m_description or "<" in m_description:
                     m_description += repl + " "
                 else:
                     m_description += "<span style='color:#264d73;font-weight:600'>" + m_token + "</span>" + " "
@@ -134,6 +132,7 @@ class search_session_controller(request_handler):
             else:
                 m_space_index = m_index
             m_description = m_description[m_space_index:m_space_index+250]
+            m_description_original = m_description[m_space_index:m_space_index+250]
             m_description = m_description.replace(m_query, "<span style=\"color:#264d73;font-weight:600\">" + m_query + "</span>")
         else:
             for m_item in p_tokenized_query:
@@ -153,7 +152,8 @@ class search_session_controller(request_handler):
                 if abs(m_index_r-m_index)<=50:
                     m_index = m_index_r
 
-            m_description = m_description[m_index:(m_index + 230)]
+            #m_description = m_description[m_index:(m_index + 230)]
+            m_description_original = m_description
             for m_item in p_tokenized_query:
                 if helper_controller.is_stop_word(m_item.lower()) is True:
                     continue
@@ -166,11 +166,17 @@ class search_session_controller(request_handler):
             SEARCH_CALLBACK.M_DESCRIPTION: m_description,
             SEARCH_CALLBACK.K_SEARCH_TYPE: p_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE],
         }
+        mRelevanceContextOriginal = {
+            SEARCH_CALLBACK.M_TITLE: m_title,
+            SEARCH_CALLBACK.M_URL: p_document[SEARCH_DOCUMENT_CALLBACK.M_HOST] + p_document[SEARCH_DOCUMENT_CALLBACK.M_SUB_HOST],
+            SEARCH_CALLBACK.M_DESCRIPTION: m_description_original,
+            SEARCH_CALLBACK.K_SEARCH_TYPE: p_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE],
+        }
 
         if p_search_model.m_safe_search == 'False' or (str(p_search_model.m_safe_search) == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult'):
-            return mRelevanceContext
+            return mRelevanceContext, mRelevanceContextOriginal
         else:
-            return None
+            return None, None
 
     def __generate_image_content(self, p_document, p_search_model):
         m_relevance_context_list = []
@@ -227,11 +233,11 @@ class search_session_controller(request_handler):
             if p_search_model.m_search_type != SEARCH_STRINGS.S_SEARCH_CONTENT_TYPE_IMAGE:
 
                 # Generate URL Context
-                m_relevance_context = self.__generate_url_context(m_document, p_tokenized_query, p_search_model)
+                m_relevance_context, m_relevance_context_original = self.__generate_url_context(m_document, p_tokenized_query, p_search_model)
 
                 # Generate Extra Context
-                if p_search_model.m_page_number == 1 and m_relevance_context is not None:
-                    m_related_business_list_re, m_related_news_list_re, m_relevance_context, m_continue = self.__generate_extra_context(m_document, m_relevance_context, m_related_files_list, m_links_counter)
+                if p_search_model.m_page_number == 1 and m_relevance_context_original is not None and m_relevance_context_original is not None:
+                    m_related_business_list_re, m_related_news_list_re, m_relevance_context_original, m_continue = self.__generate_extra_context(m_document, m_relevance_context_original, m_related_files_list, m_links_counter)
                     if len(m_related_business_list)<5 and len(m_related_business_list_re)>0:
                         m_related_business_list.extend(m_related_business_list_re)
                     if len(m_related_news_list)<5 and len(m_related_news_list_re)>0:
