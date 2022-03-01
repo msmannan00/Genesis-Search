@@ -1,4 +1,3 @@
-import math
 import re
 
 from Genesis.controllers.constants.constant import CONSTANTS
@@ -111,7 +110,10 @@ class search_session_controller(request_handler):
             if old == m_token:
                 m_description += repl + " "
             elif old in m_token:
-                m_description += "<span style=\"color:#264d73;font-weight:600\">" + m_token + "</span>" + " "
+                if ">" in m_token or "<" in m_token:
+                    m_description += repl + " "
+                else:
+                    m_description += "<span style='color:#264d73;font-weight:600'>" + m_token + "</span>" + " "
             else:
                 m_description += m_token + " "
         return m_description
@@ -125,7 +127,13 @@ class search_session_controller(request_handler):
         m_index = 10000
 
         m_query = ' '.join(p_tokenized_query)
-        if m_query in m_description:
+        if m_query in m_description and m_query.count(" ")>2:
+            m_index = m_description.index(m_query)
+            if m_description[m_index-20:m_index].__contains__(" "):
+                m_space_index = m_description.index(" ", m_index-20,m_index)
+            else:
+                m_space_index = m_index
+            m_description = m_description[m_space_index:m_space_index+250]
             m_description = m_description.replace(m_query, "<span style=\"color:#264d73;font-weight:600\">" + m_query + "</span>")
         else:
             for m_item in p_tokenized_query:
@@ -145,7 +153,7 @@ class search_session_controller(request_handler):
                 if abs(m_index_r-m_index)<=50:
                     m_index = m_index_r
 
-            m_description = m_description[m_index:(m_index+230)]
+            m_description = m_description[m_index:(m_index + 230)]
             for m_item in p_tokenized_query:
                 if helper_controller.is_stop_word(m_item.lower()) is True:
                     continue
