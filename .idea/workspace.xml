@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/policy_manager/policy_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/policy_manager/policy_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/intelligence_manager/intelligence_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/intelligence_manager/intelligence_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/privacy_template/blade_privacy_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/privacy_template/blade_privacy_header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +74,8 @@
       <workItem from="1645562652442" duration="4860000" />
       <workItem from="1646043304606" duration="4529000" />
       <workItem from="1646131539207" duration="9714000" />
-      <workItem from="1646224874807" duration="616000" />
+      <workItem from="1646224874807" duration="1087000" />
+      <workItem from="1646486549828" duration="296000" />
     </task>
     <servers />
   </component>
