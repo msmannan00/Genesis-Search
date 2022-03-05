@@ -111,7 +111,7 @@ class search_session_controller(request_handler):
                 if ">" in m_description or "<" in m_description:
                     m_description += repl + " "
                 else:
-                    m_description += "<span style='color:#264d73;font-weight:600'>" + m_token + "</span>" + " "
+                    m_description += "<span style='color:#4d4d4d;font-weight:600'>" + m_token + "</span>" + " "
             else:
                 m_description += m_token + " "
         return m_description
@@ -133,7 +133,7 @@ class search_session_controller(request_handler):
                 m_space_index = m_index
             m_description = m_description[m_space_index:m_space_index+250]
             m_description_original = m_description[m_space_index:m_space_index+250]
-            m_description = m_description.replace(m_query, "<span style=\"color:#264d73;font-weight:600\">" + m_query + "</span>")
+            m_description = m_description.replace(m_query, "<span style=\"color:#4d4d4d;font-weight:600\">" + m_query + "</span>")
         else:
             for m_item in p_tokenized_query:
                 if m_item in m_description.lower():
@@ -157,7 +157,7 @@ class search_session_controller(request_handler):
             for m_item in p_tokenized_query:
                 if helper_controller.is_stop_word(m_item.lower()) is True:
                     continue
-                m_description = self.ireplace(m_item,"<span style=\"color:#264d73;font-weight:600\">" + m_item + "</span>", m_description)
+                m_description = self.ireplace(m_item,"<span style=\"color:#4d4d4d;font-weight:600\">" + m_item + "</span>", m_description)
 
         m_description = m_description.lstrip(" -")
         mRelevanceContext = {
