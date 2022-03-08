@@ -1,5 +1,7 @@
 /*Top Header Override*/
-
+html {
+    scroll-behavior: smooth;
+}
 .directory{
     min-height: 77vh
 }
@@ -25,6 +27,25 @@
     margin-bottom: 20px;
     margin-top: 10px;
 }
+.directory__scroller{
+    text-decoration: none !important;
+    background: orange !important;
+    color: white !important;
+    text-align: center !important;
+    padding-bottom: 30px !important;
+    position: relative;
+    bottom: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+}
+.directory__scroller--bottom{
+    left: 70px;
+}
+.directory__scroller:hover{
+    cursor: pointer;
+    background: darkorange !important;
+}
 .directory__table{
     margin-left: 3.8em;
     border-left: 1px solid #e6e6e6;
@@ -35,7 +56,28 @@
 .footer__catagories--directory{
     border-bottom: 4px solid whitesmoke;
 }
-
+#top{
+}
+#middle {
+     margin-top:500px;
+}
+#btn {
+     position: fixed;
+     bottom: 10px;
+     right: 10px;
+     z-index: 99;
+     font-size: 15px;
+     border: none;
+     outline: none;
+     background-color: gray;
+     color: darkgray;
+     cursor: pointer;
+     padding: 15px;
+     border-radius: 4px;
+}
+#btn:hover {
+     background-color: white;
+}
 @media only screen and (max-width: 943px) {
     .directory__header{
         border-left: 5px solid #2d5986;

@@ -13,7 +13,7 @@
 
         <!--footer-->
         {% include 'Genesis/user/blades/shared_blades/blade_light_header.html' %}
-
+        <span id="top"></span>
         <div class="directory">
 
             <p class="directory__header"> Live Onion Services </p>
@@ -21,10 +21,14 @@
 
             {% include 'Genesis/user/blades/directory_template/blade_directory_pagination.html' %}
             {% include 'Genesis/user/blades/directory_template/blade_directory_list.html' %}
-
+            <a href="#top" class="directory__scroller" id="btn">🡹</a>
+            <a href="#bottom" id="btn" class="directory__scroller directory__scroller--bottom">🡻</a>
         </div>
+        <span id="bottom"></span>
 
         <!--footer-->
-        {% include 'Genesis/user/blades/shared_blades/blade_footer.html' %}
+        <span style="z-index: 10111; position: relative">
+            {% include 'Genesis/user/blades/shared_blades/blade_footer.html' %}
+        </span>
     </body>
 </html>

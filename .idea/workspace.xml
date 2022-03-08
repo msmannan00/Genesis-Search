@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/directory_template/blade_directory_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/directory_template/blade_directory_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/directory/directory.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/directory/directory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/directory/cs-directory-list-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/directory/cs-directory-list-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/search/cs-search-content-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/search/cs-search-content-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-directory.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-directory.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +79,10 @@
       <workItem from="1646043304606" duration="4529000" />
       <workItem from="1646131539207" duration="9714000" />
       <workItem from="1646224874807" duration="1087000" />
-      <workItem from="1646486549828" duration="927000" />
+      <workItem from="1646486549828" duration="3320000" />
+      <workItem from="1646689808642" duration="374000" />
+      <workItem from="1646690213185" duration="6000" />
+      <workItem from="1646767610089" duration="3507000" />
     </task>
     <servers />
   </component>
