@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/manage_search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/manage_search_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/directory_manager/directory_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/directory_manager/directory_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/directory/directory.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/directory/directory.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/directory/cs-directory-list-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/directory/cs-directory-list-blade.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-directory.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-directory.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-report.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-report.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-sitemap.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-sitemap.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +78,7 @@
       <workItem from="1646690213185" duration="6000" />
       <workItem from="1646767610089" duration="5997000" />
       <workItem from="1646834924325" duration="27000" />
-      <workItem from="1646835040887" duration="5757000" />
+      <workItem from="1646835040887" duration="6079000" />
     </task>
     <servers />
   </component>

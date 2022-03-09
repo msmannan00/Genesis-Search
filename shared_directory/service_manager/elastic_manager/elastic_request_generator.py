@@ -1,6 +1,8 @@
 # Local Imports
 import base64
 import json
+
+from Genesis.controllers.constants.constant import CONSTANTS
 from Genesis.controllers.view_managers.cms.manage_search.class_model.manage_search_model import manage_search_data_model
 from Genesis.controllers.view_managers.user.interactive.search_manager.tokenizer import tokenizer
 from modules.user_data_parser.parse_instance.local_shared_model.index_model import UrlObjectEncoder
@@ -46,8 +48,8 @@ class elastic_request_generator(request_handler):
                 m_safe_filter = {"term": {"m_content_type": 'a'}}
 
         m_query_statement = {
-                "from": 1,
-                "size": 2,
+                "from": (m_page_number - 1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
+                "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE + 15,
                 "min_score": 3.5,
                 "query": {
                     "bool": {
