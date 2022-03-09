@@ -39,7 +39,6 @@ class manage_search_model(request_handler):
         if p_manage_search_model.m_query_type == "elastic-search":
 
             m_status, m_response = elastic_controller.elastic_controller.get_instance().invoke_trigger(ELASTIC_CRUD_COMMANDS.S_READ,[ELASTIC_REQUEST_COMMANDS.S_QUERY_RAW,[p_manage_search_model], [p_manage_search_model.m_min_range, p_manage_search_model.m_max_range]])
-            #print(m_response, flush=True)
             if m_status is False:
                 p_manage_search_model.m_query_error = m_response
             else:

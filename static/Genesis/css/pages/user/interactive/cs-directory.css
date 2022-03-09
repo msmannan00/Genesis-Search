@@ -35,13 +35,29 @@ html {
     padding-bottom: 30px !important;
     position: fixed;
     font-size: 20px !important;
-    bottom: 10px;
-    left: 10px;
+    bottom: 25px !important;
     width: 50px;
     height: 50px;
+    opacity: 0.85;
+    left: 3.5em;
 }
 .directory__scroller--bottom{
-    left: 70px;
+    left: 6.4em;
+}
+.directory__scroller_container{
+    left: 3.1em;
+    background: #b36b00;
+    width: 123px;
+    border-radius: 6px;
+    opacity: 0.8;
+    text-decoration: none !important;
+    color: white !important;
+    text-align: center !important;
+    padding-bottom: 30px !important;
+    position: fixed;
+    font-size: 20px !important;
+    bottom: 17.5px;
+    height: 65px;
 }
 .directory__scroller:hover{
     cursor: pointer;
@@ -80,12 +96,22 @@ html {
      background-color: white;
 }
 @media only screen and (max-width: 943px) {
+    .directory__scroller_container{
+        margin-left: -40px;
+    }
+    .directory__scroller-left{
+        left: 30px;
+    }
+    .directory__scroller--bottom{
+        left: 88px;
+    }
     .directory__header{
         border-left: 5px solid #2d5986;
         background: #6699cc;
         max-width: 190px;
         font-size: 16px;
         color: #ffffff;
+        box-shadow: rgba(50, 50, 93, 0.25) 0 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0 18px 36px -18px inset;
         margin-bottom: 15px;
         padding-left: 10px;
     }

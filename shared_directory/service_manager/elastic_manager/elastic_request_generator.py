@@ -1,13 +1,10 @@
 # Local Imports
 import base64
 import json
-from Genesis.controllers.constants.constant import CONSTANTS
 from Genesis.controllers.view_managers.cms.manage_search.class_model.manage_search_model import manage_search_data_model
-from Genesis.controllers.view_managers.user.interactive.search_manager.search_enums import SEARCH_MODEL_TOKENIZATION_COMMANDS
 from Genesis.controllers.view_managers.user.interactive.search_manager.tokenizer import tokenizer
 from modules.user_data_parser.parse_instance.local_shared_model.index_model import UrlObjectEncoder
 from modules.user_data_parser.parse_services.helper_services.helper_method import helper_method
-from modules.user_data_parser.parse_services.helper_services.spell_check_handler import spell_checker_handler
 from shared_directory.request_manager.request_handler import request_handler
 from shared_directory.service_manager.elastic_manager.elastic_enums import ELASTIC_KEYS, ELASTIC_REQUEST_COMMANDS, ELASTIC_INDEX
 
@@ -22,8 +19,6 @@ class elastic_request_generator(request_handler):
     def __on_search(self, p_query_model):
         m_user_query, m_search_type, m_safe_search, m_page_number = p_query_model.m_search_query, p_query_model.m_search_type, p_query_model.m_safe_search, p_query_model.m_page_number
         m_user_query = m_user_query.lower()
-        m_tokenized_query = self.__m_tokenizer.invoke_trigger(SEARCH_MODEL_TOKENIZATION_COMMANDS.M_NORMALIZE, [m_user_query]).lower()
-        m_tokenized_query = spell_checker_handler.get_instance().stem_word(m_tokenized_query)
         m_type = m_search_type
 
         if m_type == "finance":
@@ -40,6 +35,7 @@ class elastic_request_generator(request_handler):
             m_image_length_filter = {"range": {"m_img_size": { "gt": 0 }}}
 
         m_safe_filter = { "match_none": {}}
+        m_date_filter = {"range": {"date": { "gte": helper_method.get_time() - 3 }}}
         if m_type != "all":
             m_type_filter = {"term": {"m_content_type": m_type[0]}}
         else:
@@ -50,13 +46,13 @@ class elastic_request_generator(request_handler):
                 m_safe_filter = {"term": {"m_content_type": 'a'}}
 
         m_query_statement = {
-                "from": (m_page_number - 1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
-                "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE + 15,
+                "from": 1,
+                "size": 2,
                 "min_score": 3.5,
                 "query": {
                     "bool": {
                         "must_not": [m_safe_filter],
-                        "must": [m_type_filter,m_image_length_filter],
+                        "must": [m_type_filter,m_image_length_filter, m_date_filter],
                         "should": [
                             {
                                 "range": {
@@ -125,6 +121,7 @@ class elastic_request_generator(request_handler):
                     }
                 }
             }
+
 
 
         return {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_WEB_INDEX, ELASTIC_KEYS.S_FILTER:m_query_statement}

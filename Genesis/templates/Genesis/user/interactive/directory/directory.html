@@ -13,6 +13,7 @@
 
         <!--footer-->
         {% include 'Genesis/user/blades/shared_blades/blade_light_header.html' %}
+        <div class="directory__scroller_container"> &nbsp; </div>
         <span id="top"></span>
         <div class="directory">
 
@@ -22,8 +23,8 @@
             {% include 'Genesis/user/blades/directory_template/blade_directory_pagination.html' %}
             {% include 'Genesis/user/blades/directory_template/blade_directory_list.html' %}
             <span id="bottom"></span>
-            <a href="#top" class="directory__scroller" id="btn"><i class="fas fa-angle-up"></i></a>
-            <a href="#bottom" id="btn" class="directory__scroller directory__scroller--bottom"><i class="fas fa-angle-down"></i></a>
+            <a href="#top" class="directory__scroller directory__scroller-left" id="btn"><i class="fas fa-angle-up"></i></a>
+            <a href="#bottom" id="btn" class="directory__scroller directory__scroller--bottom directory__scroller-left"><i class="fas fa-angle-down"></i></a>
         </div>
 
         <!--footer-->

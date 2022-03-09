@@ -20,7 +20,6 @@ class directory_model(request_handler):
     def __load_onion_links(self, p_directory_class_model):
         m_status, m_documents = elastic_controller.get_instance().invoke_trigger(ELASTIC_CRUD_COMMANDS.S_READ, [ELASTIC_REQUEST_COMMANDS.S_ONION_LIST,[p_directory_class_model.m_page_number],[None]])
 
-        print(m_documents,flush=True)
         m_documents = m_documents['hits']['hits']
 
         mRelevanceDocumentList = []
