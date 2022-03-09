@@ -37,7 +37,7 @@ class elastic_request_generator(request_handler):
             m_image_length_filter = {"range": {"m_img_size": { "gt": 0 }}}
 
         m_safe_filter = { "match_none": {}}
-        m_date_filter = {"range": {"date": { "gte": helper_method.get_time() - 3 }}}
+        m_date_filter = {"range": {"m_date": { "gte": helper_method.get_time() - 3 }}}
         if m_type != "all":
             m_type_filter = {"term": {"m_content_type": m_type[0]}}
         else:
