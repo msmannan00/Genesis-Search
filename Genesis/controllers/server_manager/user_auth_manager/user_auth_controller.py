@@ -36,7 +36,7 @@ class user_auth_controller(request_handler):
 
         m_user_model = self.__m_session.invoke_trigger(USER_AUTH_COMMANDS.M_INIT, p_data)
 
-        if SESSION_KEYS.S_USERNAME in p_data.session :
+        if SESSION_KEYS.S_USERNAME in p_data.session:
             return HttpResponseRedirect(CONSTANTS.S_TEMPLATE_DASHBOARD_WEBSITE_SHORT)
         else:
             if m_user_model.m_username is None or m_user_model.m_password is None:
@@ -52,7 +52,7 @@ class user_auth_controller(request_handler):
                     return HttpResponseRedirect(CONSTANTS.S_TEMPLATE_LOGIN_SHORT+"?pError=true")
 
     def __logout(self, p_data):
-        if SESSION_KEYS.S_USERNAME in p_data.session :
+        if SESSION_KEYS.S_USERNAME in p_data.session:
             del p_data.session[SESSION_KEYS.S_USERNAME]
             return HttpResponseRedirect(CONSTANTS.S_TEMPLATE_LOGIN_SHORT)
 
@@ -62,4 +62,3 @@ class user_auth_controller(request_handler):
             return self.__authenticate(p_data)
         if p_command == USER_AUTH_COMMANDS.M_LOGOUT:
             return self.__logout(p_data)
-
