@@ -29,20 +29,24 @@ html {
 }
 .directory__scroller{
     text-decoration: none !important;
-    background: orange !important;
+    background: #28282B  !important;
     color: white !important;
     text-align: center !important;
     padding-bottom: 30px !important;
     position: fixed;
     font-size: 20px !important;
-    bottom: 25px !important;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 30px;
     opacity: 0.85;
-    left: 3.5em;
+    left: 3em;
+    bottom: 56% !important;
+}
+.directory__scroller--left{
+    left: 3em;
 }
 .directory__scroller--bottom{
-    left: 6.4em;
+    left: 3em;
+    bottom: 50% !important;
 }
 .directory__scroller_container{
     left: 3.1em;
@@ -61,7 +65,7 @@ html {
 }
 .directory__scroller:hover{
     cursor: pointer;
-    background: darkorange !important;
+    background: #000000 !important;
 }
 .directory__table{
     margin-left: 3.8em;
@@ -100,10 +104,12 @@ html {
         margin-left: -40px;
     }
     .directory__scroller-left{
-        left: 30px;
+        left: 10px;
+        bottom:250px !important;
     }
     .directory__scroller--bottom{
-        left: 88px;
+        left: 10px;
+        bottom:190px !important;
     }
     .directory__header{
         border-left: 5px solid #2d5986;
