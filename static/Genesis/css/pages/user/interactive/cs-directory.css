@@ -33,23 +33,13 @@ html {
     color: white !important;
     text-align: center !important;
     padding-bottom: 30px !important;
-    position: fixed;
     font-size: 20px !important;
     width: 50px;
     height: 50px;
     opacity: 0.85;
-    left: 3em;
-    bottom: 56% !important;
-}
-.directory__scroller--left{
-    left: 3em;
-}
-.directory__scroller--bottom{
-    left: 3em;
-    bottom: 50% !important;
+    display: none;
 }
 .directory__scroller_container{
-    left: 3.1em;
     background: #b36b00;
     width: 123px;
     border-radius: 6px;
@@ -58,11 +48,10 @@ html {
     color: white !important;
     text-align: center !important;
     padding-bottom: 30px !important;
-    position: fixed;
     font-size: 20px !important;
-    bottom: 17.5px;
     height: 65px;
 }
+
 .directory__scroller:hover{
     cursor: pointer;
     background: #000000 !important;
@@ -96,20 +85,29 @@ html {
      padding: 15px;
      border-radius: 4px;
 }
+.directory__scroller-top{
+    position: fixed;
+    top: 44% !important;
+}
+.directory__scroller-bottom{
+    position: fixed;
+    top: 51% !important;
+}
 #btn:hover {
      background-color: white;
 }
 @media only screen and (max-width: 943px) {
+    .directory__scroller-top{
+        right:50
+    }
+    .directory__scroller-bottom{
+        right:50
+    }
+    .directory__scroller{
+        display:block;
+    }
     .directory__scroller_container{
         margin-left: -40px;
-    }
-    .directory__scroller-left{
-        left: 15px;
-        bottom:250px !important;
-    }
-    .directory__scroller--bottom{
-        left: 15px;
-        bottom:190px !important;
     }
     .directory__header{
         border-left: 5px solid #2d5986;
