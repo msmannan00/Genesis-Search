@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Genesis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Genesis.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/directory_manager/directory_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/directory_manager/directory_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/home_template/blade_home_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/home_template/blade_home_sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/home_template/blade_home_sidebar_mobile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/home_template/blade_home_sidebar_mobile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/shared_blades/blade_footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/shared_blades/blade_footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/directory/directory.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/directory/directory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/privacy/privacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/privacy/privacy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-directory.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-directory.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
