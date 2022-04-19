@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/directory/directory.html" beforeDir="false" afterPath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/directory/directory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-directory.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-directory.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
