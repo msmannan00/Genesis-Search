@@ -45,11 +45,11 @@
 .onion__pagination--block{
     opacity: 0.5;
     pointer-events: none;
-    border-left: 4px solid #ffa500;
 }
 .onion__pagination--block-left{
     opacity: 1;
     pointer-events: none;
+    border-left: 4px solid #ffa500;
 }
 .onion__pagination--block-right{
     opacity: 1;
