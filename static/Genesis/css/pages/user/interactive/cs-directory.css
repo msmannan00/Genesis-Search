@@ -87,11 +87,13 @@ html {
 }
 .directory__scroller-top{
     position: fixed;
-    top: 53% !important;
+    top: 21em !important;
+    right: 20px !important;
 }
 .directory__scroller-bottom{
     position: fixed;
-    top: 60% !important;
+    top: 24em !important;
+    right: 20px !important;
 }
 #btn:hover {
      background-color: white;
