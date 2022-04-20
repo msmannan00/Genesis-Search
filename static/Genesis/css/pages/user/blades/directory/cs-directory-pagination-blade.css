@@ -38,8 +38,23 @@
     margin-left: 18px;
 }
 .onion__pagination--block{
-    opacity: 0;
+    opacity: 0.5;
     pointer-events: none;
+
+}
+.onion__pagination--block{
+    opacity: 0.5;
+    pointer-events: none;
+    border-left: 4px solid #ffa500;
+}
+.onion__pagination--block-left{
+    opacity: 1;
+    pointer-events: none;
+}
+.onion__pagination--block-right{
+    opacity: 1;
+    pointer-events: none;
+    border-right: 4px solid #ffa500;
 }
 .onion__navigation{
     width:39px;

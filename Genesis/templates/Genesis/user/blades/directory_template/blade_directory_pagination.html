@@ -6,7 +6,7 @@
         {% if mDirectoryCallbackPageNumber == 1 %}
             <input type="submit" name="mDirectoryParamPageNumberPrev" class="onion__pagination onion__pagination--border-right onion__pagination--border-right--extended onion__pagination--block" value="&lsaquo;">
         {% else %}
-            <input type="submit" name="mDirectoryParamPageNumberPrev" class="onion__pagination onion__pagination--border-right onion__pagination--border-right--extended" value="&lsaquo;">
+            <input type="submit" name="mDirectoryParamPageNumberPrev" class="onion__pagination onion__pagination--border-right onion__pagination--border-right--extended onion__pagination--block-left" value="&lsaquo;">
         {% endif %}
 
         <input type="hidden" name="mDirectoryParamPageNumber" value="{{mDirectoryCallbackPageNumber}}">
@@ -16,7 +16,7 @@
         {% if mDirectoryCallbackPageNumberMaxReached == True %}
             <input type="submit" name="mDirectoryParamPageNumberNext" class="onion__pagination onion__pagination--border-right onion__pagination--border-left onion__pagination--block" value="&rsaquo;">
         {% else %}
-            <input type="submit" name="mDirectoryParamPageNumberNext" class="onion__pagination onion__pagination--border-right onion__pagination--border-left" value="&rsaquo;">
+            <input type="submit" name="mDirectoryParamPageNumberNext" class="onion__pagination onion__pagination--border-right onion__pagination--border-left onion__pagination--block-right" value="&rsaquo;">
         {% endif %}
     </div>
 </form>
