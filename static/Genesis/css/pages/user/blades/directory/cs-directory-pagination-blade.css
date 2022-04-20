@@ -38,7 +38,7 @@
     margin-left: 18px;
 }
 .onion__pagination--block{
-    opacity: 0.6;
+    opacity: 0;
     pointer-events: none;
 }
 .onion__navigation{

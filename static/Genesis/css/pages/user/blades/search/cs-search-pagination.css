@@ -50,7 +50,7 @@
     float:left;
 }
 .search__pagination--block{
-    opacity: 0.6;
+    opacity: 0;
     pointer-events: none;
 }
 .search__pagination-icon--border-left{

@@ -394,7 +394,7 @@
     .search-content__webpages-divider{
         margin-top: 1px;
         background: #f9f9f9;
-        opacity: 0.6;
+        opacity: 0;
         margin-bottom: 5px;
         width: 40%;
         display: initial;
