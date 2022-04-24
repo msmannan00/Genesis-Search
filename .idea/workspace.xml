@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/orion/images/favicon-home.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/images/favicon-home.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/orion/images/favicon-search.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/images/favicon-search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/.well-known/pki-validation/1FFEC711A38351AC6EE49D4CB55EA7D7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/.well-known/pki-validation/7376EE2DE04DC0C4FAE994EFACFB240B.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,14 +22,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/workspace/Orion-Search&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/workspace/Orion-Search/orion/templates/orion/.well-known/pki-validation",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Genesis" />
