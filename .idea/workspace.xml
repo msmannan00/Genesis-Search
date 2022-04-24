@@ -4,9 +4,8 @@
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/login/blade_cms_navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/login/blade_cms_navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/intelligence/intelligence.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/interactive/intelligence/intelligence.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/privacy/privacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/interactive/privacy/privacy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/favicon-home.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/images/favicon-home.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/favicon-search.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/images/favicon-search.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
