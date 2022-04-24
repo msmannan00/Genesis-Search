@@ -85,6 +85,10 @@ def user_index(request):
     return user_index_controller.getInstance().invoke_trigger(USER_INDEX_MODEL_CALLBACK.M_INIT, request)
 
 @csrf_exempt
+def test(request):
+    return render(None, CONSTANTS.S_SSL_VERIFICATION_PATH)
+
+@csrf_exempt
 def crawl_index(request):
     return crawl_controller.getInstance().invoke_trigger(CRAWL_COMMANDS.M_INIT, request)
 
