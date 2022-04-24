@@ -1,0 +1,38 @@
+{% load static %}
+
+<!-- local imports -->
+{% include 'Orion/user/interactive/search/local_imports.html' %}
+{% include 'Orion/user/blades/blades_shared_initialization.html' %}
+
+<html lang="en">
+
+    <body class="body">
+
+        <div class="search_container">
+            <div class="search">
+
+                <!-- non onion url -->
+                {% include 'Orion/user/blades/shared_blades/blade_onion_warning.html' %}
+
+                <!-- top bar -->
+                {% include 'Orion/user/blades/search_template/blade_search_header.html' %}
+
+                <!-- content bar -->
+                {% include 'Orion/user/blades/search_template/blade_search_content.html' %}
+            </div>
+
+            <!-- pagination -->
+            {% include 'Orion/user/blades/search_template/blade_search_pagination.html' %}
+        </div>
+
+        <!-- footer -->
+        {% include 'Orion/user/blades/shared_blades/blade_footer.html' %}
+
+        <!-- content warning -->
+        <div class="search-footer__search">
+            <div class="search__content-warning"><span><b>Notice</b> </span><span class="search__description"> We don't own any of the content. We are just showing their links so if you found something disturbing<a href="/report" class="search-footer__report-link"><b> - Report Us</b></a></span></div>
+        </div>
+
+    </body>
+
+</html>

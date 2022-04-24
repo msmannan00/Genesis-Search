@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'GenesisCrawler.apps.GenesiscrawlerConfig',
+    'OrionCrawler.apps.OrioncrawlerConfig',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'Settings.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'GenesisCrawler/templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'OrionCrawler/templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {

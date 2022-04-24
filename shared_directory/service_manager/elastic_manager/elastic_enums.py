@@ -15,7 +15,7 @@ class ELASTIC_INDEX_COLLECTION:
     M_CONTENT_TYPE = "m_content_type"
 
 class ELASTIC_CONNECTIONS:
-    S_DATABASE_NAME = 'Genesis-elastic-search'
+    S_DATABASE_NAME = 'orion-elastic-search'
     S_DATABASE_PORT = 9200
     S_DATABASE_IP = 'http://elastic:Imammehdi@00@167.86.99.31'
 

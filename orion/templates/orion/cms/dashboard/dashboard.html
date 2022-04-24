@@ -1,0 +1,20 @@
+{% load static %}
+
+<html lang="en">
+
+{% include 'Orion/cms/dashboard/local_imports.html' %}
+{% include 'Orion/cms/blades/blades_shared_initialization.html' %}
+
+<body>
+
+    <div style="height: 73em;">
+        {% include 'Orion/cms/blades/shared_blades/blade-dashboard-navbar.html' %}
+        {% include 'Orion/cms/blades/dashboard/blade-welcome.html' %}
+        {% include 'Orion/cms/blades/dashboard/blade-admin-panel.html' %}
+    </div>
+
+    <!-- footer -->
+    {% include 'Orion/cms/blades/shared_blades/blade_footer.html' %}
+
+</body>
+</html>

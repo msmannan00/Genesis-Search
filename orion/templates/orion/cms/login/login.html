@@ -1,0 +1,50 @@
+{% load static %}
+
+<html lang="en">
+
+{% include 'Orion/cms/blades/blades_shared_initialization.html' %}
+{% include 'Orion/cms/login/local_imports.html' %}
+
+{% include 'Orion/cms/blades/login/blade-login-navbar.html' %}
+<div style="clear: left"></div>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-2"></div>
+            <div class="col-lg-6 col-md-8 login-box">
+                <div class="col-lg-12 login-key">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                </div>
+                <div class="col-lg-12 login-title">
+                    Login
+                </div>
+
+                <div class="col-lg-12 login-form">
+                    <div class="col-lg-12 login-form">
+                        <form action="/cms/manage_authentication" method="POST">
+                            <div class="form-group">
+                                <label class="form-control-label">USERNAME</label>
+                                <input id="pUsername" type="text" class="form-control login-input" name="pUsername">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">PASSWORD</label>
+                                <input id="pPassword" type="password" class="form-control login-input" name="pPassword">
+                            </div>
+
+                            <div class="col-lg-12 loginbttm">
+                                <div class="col-lg-6 login-btm login-text">
+                                    <span id="pError" class="login--error">{{mError}}</span>
+                                </div>
+                                <div class="col-lg-6 login-btm login-button">
+                                    <button type="submit" class="btn btn-outline-primary">LOGIN</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-2"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

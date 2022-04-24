@@ -2,8 +2,272 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Genesis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Genesis.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-directory.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-directory.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/constants/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/constants/constant.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/constants/enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/constants/keys.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/constants/message.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/constants/strings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/helper_manager/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/helper_manager/helper_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/server_manager/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/server_manager/crawl_manager/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/server_manager/crawl_manager/class_model/crawl_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/server_manager/crawl_manager/crawl_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/server_manager/crawl_manager/crawl_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/server_manager/crawl_manager/crawl_session_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/server_manager/external_request_manager/external_request_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/server_manager/external_request_manager/external_request_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/server_manager/user_auth_manager/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/server_manager/user_auth_manager/class_model/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/server_manager/user_auth_manager/class_model/user_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/server_manager/user_auth_manager/user_auth_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/server_manager/user_auth_manager/user_auth_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/server_manager/user_auth_manager/user_auth_session_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/dashboard/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/dashboard/dashboard_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/dashboard/dashboard_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/dashboard/dashboard_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/dashboard/dashboard_session_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/login/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/login/class_model/login_data_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/login/login_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/login/login_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/login/login_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/login/login_session_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/class_model/manage_search_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/manage_search_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/manage_search_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/manage_search_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_search/manage_search_session_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_status/manage_status_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_status/manage_status_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_status/manage_status_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/cms/manage_status/manage_status_session_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/directory_manager/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/directory_manager/directory_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/directory_manager/directory_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/directory_manager/directory_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/directory_manager/directory_session_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/directory_manager/directory_shared_model/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/directory_manager/directory_shared_model/directory_class_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/hompage_manager/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/hompage_manager/homepage_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/hompage_manager/homepage_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/hompage_manager/homepage_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/hompage_manager/homepage_session_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/intelligence_manager/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/intelligence_manager/intelligence_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/intelligence_manager/intelligence_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/notice_manager/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/notice_manager/notice_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/notice_manager/notice_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/notice_manager/notice_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/notice_manager/notice_session_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/policy_manager/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/policy_manager/policy_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/policy_manager/policy_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/report_manager/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/report_manager/class_model/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/report_manager/class_model/report_data_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/report_manager/report_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/report_manager/report_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/report_manager/report_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/report_manager/report_session_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/search_manager/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/search_manager/search_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/search_manager/search_data_model/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/search_manager/search_data_model/query_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/search_manager/search_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/search_manager/search_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/search_manager/spell_checker.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/search_manager/tokenizer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/sitemap_manager/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/sitemap_manager/class_model/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/sitemap_manager/class_model/sitemap_data_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/sitemap_manager/sitemap_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/sitemap_manager/sitemap_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/sitemap_manager/sitemap_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/interactive/sitemap_manager/sitemap_session_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/block_manager/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/block_manager/block_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/block_manager/block_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/error/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/error/error_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/error/error_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/error/error_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/error/error_session_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/maintenance/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/maintenance/maintenance_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/maintenance/maintenance_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/maintenance/maintenance_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/maintenance/maintenance_session_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/secret_key/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/secret_key/secret_key_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/secret_key/secret_key_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/user_index_manager/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/user_index_manager/user_index_cache_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/user_index_manager/user_index_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/user_index_manager/user_index_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/controllers/view_managers/user/server/user_index_manager/user_index_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/raw/dictionary" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/raw/reference_websites.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/raw/stemmed_dictionary" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/.well-known/app-ads.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/.well-known/pki-validation/7376EE2DE04DC0C4FAE994EFACFB240B.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/blades/blades_shared_initialization.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/blades/dashboard/blade-admin-panel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/blades/dashboard/blade-welcome.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/blades/login/blade-login-navbar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/blades/shared_blades/blade-dashboard-navbar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/blades/shared_blades/blade_footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/dashboard/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/dashboard/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/login/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/login/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_search/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_search/manage_search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_status/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/cms/manage_status/manage_status.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/blades_shared_initialization.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/directory_template/blade_directory_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/directory_template/blade_directory_pagination.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/home_template/blade_home_header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/home_template/blade_home_references.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/home_template/blade_home_search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/home_template/blade_home_sidebar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/home_template/blade_home_sidebar_mobile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/login/blade_cms_navbar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/notice_template/blade_report_website_notice.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/notice_template/blade_upload_website_notice.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/privacy_template/blade_privacy_header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/search_template/blade_search_content.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/search_template/blade_search_content_file_based.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/search_template/blade_search_content_url_based.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/search_template/blade_search_engine_suggestion.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/search_template/blade_search_header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/search_template/blade_search_no_suggestion.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/search_template/blade_search_pagination.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/search_template/blade_search_safe_search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/shared_blades/blade_footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/shared_blades/blade_light_header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/blades/shared_blades/blade_onion_warning.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/directory/directory.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/directory/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/homepage/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/homepage/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/intelligence/intelligence.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/intelligence/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/notice/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/notice/notice.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/privacy/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/privacy/privacy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/report/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/report/report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/search/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/search/search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/sitemap/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/interactive/sitemap/sitemap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/server/block/block.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/server/block/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/server/error/error.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/server/error/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/server/maintenance/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/server/maintenance/maintenance.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/templates/Genesis/user/server/secretkey/secretkey.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genesis/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/Settings/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/user_data_parser/Settings/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/Settings/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/user_data_parser/Settings/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_services/raw/crawled_classifier_websites.csv" beforeDir="false" afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_services/raw/crawled_classifier_websites.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_request_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_request_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/session/session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/session/session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/libs/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/dashboard/cs-blade-admin-panel.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/dashboard/cs-blade-welcome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/login/cs-blade-login-navbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/shared/cs-blade-dashboard-navbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/shared/cs-footer-blade.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/shared/helper_javascript/js-admin_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/shared/helper_javascript/js-admin_enum.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/cms/blades/shared/helper_javascript/js-admin_helper-method.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/cms/cs-dashboard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/cms/cs-login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/cms/cs-manage-search.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/cms/cs-manage-status.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/cs-global-properties.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/directory/cs-directory-list-blade.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/directory/cs-directory-pagination-blade.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/home/cs-home-header-blade.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/home/cs-sidebar-blade.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/notice/cs-notice-report-website-blade.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/notice/cs-notice-upload-website-blade.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/privacy/cs-privacy-header-blade.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/search/cs-search-content-blade.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/search/cs-search-engine-suggestions-blade.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/search/cs-search-no-suggestions.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/search/cs-search-pagination.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/shared/cs-footer-blade-dynamic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/shared/cs-footer-blade.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/shared/cs-light-header-blade.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/blades/shared/cs-onion-warning-blade.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-directory.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-homepage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-intelligence.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-notice.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-privacy.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-report.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-search.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/interactive/cs-sitemap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/server/cs-block.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/server/cs-error.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/css/pages/user/server/cs-maintenance.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/images/blured-image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/images/blurredImage/blur-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/images/blurredImage/blur-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/images/blurredImage/blur-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/images/blurredImage/blur-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/images/favicon-home.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/images/favicon-search.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/images/img_download.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/images/privacy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/images/search-icon-dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/images/search-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/images/warning.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/libs/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/libs/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/libs/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Genesis/libs/popper.min.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +288,9 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/workspace/Orion-Search&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
@@ -87,5 +354,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

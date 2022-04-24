@@ -4,6 +4,7 @@ class APP_STATUS:
     S_APP_BLOCK_KEY = "D~S=05y68#M25oj]vprm}9HE))Tr'VX?[p|m-Wg`mrg^"
     S_MAINTAINANCE = False
 
+
 class SERVER_STATUS_TYPE:
     S_SERVER_STATE_DEV_KEY = "S_SERVER_STATE"
     S_SERVER_STATE_DEV = "dev"

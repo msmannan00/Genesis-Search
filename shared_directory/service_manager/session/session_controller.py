@@ -1,4 +1,4 @@
-from Genesis.controllers.server_manager.user_auth_manager.class_model.user_model import user_model
+from orion.controllers.server_manager.user_auth_manager.class_model.user_model import user_model
 from shared_directory.request_manager.request_handler import request_handler
 from shared_directory.service_manager.session.session_enums import SESSION_KEYS, SESSION_COMMANDS
 

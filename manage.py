@@ -12,7 +12,7 @@ def __init_user_data_parser():
 
 def main():
     threading.Thread(target=__init_user_data_parser).start()
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Genesis.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'orion.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

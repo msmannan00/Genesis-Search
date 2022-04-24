@@ -1,10 +1,8 @@
 # Local Imports
 from elasticsearch import Elasticsearch
-
 from shared_directory.log_manager.log_controller import log
 from shared_directory.request_manager.request_handler import request_handler
-from shared_directory.service_manager.elastic_manager.elastic_enums import ELASTIC_CONNECTIONS, ELASTIC_INDEX, \
-    MANAGE_ELASTIC_MESSAGES, ELASTIC_KEYS, ELASTIC_CRUD_COMMANDS
+from shared_directory.service_manager.elastic_manager.elastic_enums import ELASTIC_CONNECTIONS, ELASTIC_INDEX, MANAGE_ELASTIC_MESSAGES, ELASTIC_KEYS, ELASTIC_CRUD_COMMANDS
 from shared_directory.service_manager.elastic_manager.elastic_request_generator import elastic_request_generator
 
 
