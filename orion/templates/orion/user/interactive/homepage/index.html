@@ -1,34 +1,34 @@
 {% load static %}
-{% include 'Orion/user/blades/blades_shared_initialization.html' %}
-{% include 'Orion/user/interactive/homepage/local_imports.html' %}
+{% include 'orion/user/blades/blades_shared_initialization.html' %}
+{% include 'orion/user/interactive/homepage/local_imports.html' %}
 
 <!--Local Imports-->
 <html lang="en">
     <body class="gc--clear-selection"  onload="onLoad()">
 
         <!-- non onion url -->
-        {% include 'Orion/user/blades/shared_blades/blade_onion_warning.html' %}
+        {% include 'orion/user/blades/shared_blades/blade_onion_warning.html' %}
 
         <!-- top bar -->
-        {% include 'Orion/user/blades/home_template/blade_home_header.html' %}
+        {% include 'orion/user/blades/home_template/blade_home_header.html' %}
 
         <!-- side bar -->
         {% if mHomepageCallbackIsMobile == False %}
-            {% include 'Orion/user/blades/home_template/blade_home_sidebar.html' %}
+            {% include 'orion/user/blades/home_template/blade_home_sidebar.html' %}
         {% else %}
-            {% include 'Orion/user/blades/home_template/blade_home_sidebar_mobile.html' %}
+            {% include 'orion/user/blades/home_template/blade_home_sidebar_mobile.html' %}
         {% endif %}
 
         <!-- content -->
         <div class="gc--clear-selection" >
             <div class="home">
-                {% include 'Orion/user/blades/home_template/blade_home_search.html' %}
-                {% include 'Orion/user/blades/home_template/blade_home_references.html' %}
+                {% include 'orion/user/blades/home_template/blade_home_search.html' %}
+                {% include 'orion/user/blades/home_template/blade_home_references.html' %}
             </div>
         </div>
 
         <!-- footer -->
-        {% include 'Orion/user/blades/shared_blades/blade_footer.html' %}
+        {% include 'orion/user/blades/shared_blades/blade_footer.html' %}
 
     </body>
 </html>

@@ -1,8 +1,8 @@
 {% load static %}
 
 <!-- local imports -->
-{% include 'Orion/user/interactive/search/local_imports.html' %}
-{% include 'Orion/user/blades/blades_shared_initialization.html' %}
+{% include 'orion/user/interactive/search/local_imports.html' %}
+{% include 'orion/user/blades/blades_shared_initialization.html' %}
 
 <html lang="en">
 
@@ -12,21 +12,21 @@
             <div class="search">
 
                 <!-- non onion url -->
-                {% include 'Orion/user/blades/shared_blades/blade_onion_warning.html' %}
+                {% include 'orion/user/blades/shared_blades/blade_onion_warning.html' %}
 
                 <!-- top bar -->
-                {% include 'Orion/user/blades/search_template/blade_search_header.html' %}
+                {% include 'orion/user/blades/search_template/blade_search_header.html' %}
 
                 <!-- content bar -->
-                {% include 'Orion/user/blades/search_template/blade_search_content.html' %}
+                {% include 'orion/user/blades/search_template/blade_search_content.html' %}
             </div>
 
             <!-- pagination -->
-            {% include 'Orion/user/blades/search_template/blade_search_pagination.html' %}
+            {% include 'orion/user/blades/search_template/blade_search_pagination.html' %}
         </div>
 
         <!-- footer -->
-        {% include 'Orion/user/blades/shared_blades/blade_footer.html' %}
+        {% include 'orion/user/blades/shared_blades/blade_footer.html' %}
 
         <!-- content warning -->
         <div class="search-footer__search">

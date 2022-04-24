@@ -1,6 +1,6 @@
 {% load static %}
-{% include 'Orion/user/blades/blades_shared_initialization.html' %}
-{% include 'Orion/user/interactive/privacy/local_imports.html' %}
+{% include 'orion/user/blades/blades_shared_initialization.html' %}
+{% include 'orion/user/interactive/privacy/local_imports.html' %}
 
 
 <!--script initialization-->
@@ -8,14 +8,14 @@
     <body class="privacy">
 
             <!-- non onion url -->
-            {% include 'Orion/user/blades/shared_blades/blade_onion_warning.html' %}
+            {% include 'orion/user/blades/shared_blades/blade_onion_warning.html' %}
 
             <!-- header -->
-            {% include 'Orion/user/blades/privacy_template/blade_privacy_header.html' %}
+            {% include 'orion/user/blades/privacy_template/blade_privacy_header.html' %}
 
             <div class="privacy__welcome gs-disable-highlight">
                 <br>
-                <img class="privacy__icon gs-disable-highlight" src="{% static 'Orion/images/privacy.png' %}" alt="Loading...">
+                <img class="privacy__icon gs-disable-highlight" src="{% static 'orion/images/privacy.png' %}" alt="Loading...">
                 <p class="privacy__welcome-header gs-disable-highlight">We don't collect or share</p>
                 <p class="privacy__welcome-header privacy__welcome-header--bottom gs-disable-highlight">personal information.</p>
 
@@ -90,7 +90,7 @@
             </div>
 
         <!--footer-->
-        {% include 'Orion/user/blades/shared_blades/blade_footer.html' %}
+        {% include 'orion/user/blades/shared_blades/blade_footer.html' %}
 
     </body>
 </html>

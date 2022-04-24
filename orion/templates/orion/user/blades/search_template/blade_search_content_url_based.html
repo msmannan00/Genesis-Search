@@ -5,7 +5,7 @@
 <ul class="list-group search-engine-highlights">
     {% for mDoc in mSearchCallbackRelevantBusiness %}
     <a class="search-engine-highlights-item" href="{{mDoc.mSearchCallbackRelevantDocumentURL}}">
-        <img class="search-engine-highlights-item--glass disable-highlight" src="{% static 'Orion/images/search-icon-dark.png' %}" alt=""/> &nbsp;&nbsp;&nbsp; {{mDoc.mSearchCallbackRelevantDocumentDescription}} &nbsp; {{mDoc.mSearchCallbackRelevantDocumentTitle}}
+        <img class="search-engine-highlights-item--glass disable-highlight" src="{% static 'orion/images/search-icon-dark.png' %}" alt=""/> &nbsp;&nbsp;&nbsp; {{mDoc.mSearchCallbackRelevantDocumentDescription}} &nbsp; {{mDoc.mSearchCallbackRelevantDocumentTitle}}
     </a>
     {% endfor %}
 </ul>
@@ -28,7 +28,7 @@
 <div class="row search-engine-highlights--images-header">
     <div class="col">
         {% for mDoc in mSearchCallbackRelevantDocumentFiles %}
-        <a class="text-decoration-none" href="{{mDoc.mSearchCallbackRelevantDocumentURL}}"> <img class="search-engine-highlights--images" src="{% static 'Orion/images/img_download.png' %}" alt=""> </a>
+        <a class="text-decoration-none" href="{{mDoc.mSearchCallbackRelevantDocumentURL}}"> <img class="search-engine-highlights--images" src="{% static 'orion/images/img_download.png' %}" alt=""> </a>
         {% endfor %}
     </div>
 </div>

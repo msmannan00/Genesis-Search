@@ -1,7 +1,7 @@
 {% load static %}
 <form class="searchbar" style="overflow: hidden;" method="GET" action="" enctype="multipart/form-data">
 
-    <a href="../../.." class="searchbar__logo"> <img class="searchbar__logo--image" src="{% static 'Orion/images/favicon-search.png' %}" alt="Loading"> </a>
+    <a href="../../.." class="searchbar__logo"> <img class="searchbar__logo--image" src="{% static 'orion/images/favicon-search.png' %}" alt="Loading"> </a>
 
     <!--orion box-->
     <div class="searchbar__searchbox" >
@@ -9,7 +9,7 @@
         <input autocomplete="off" autocapitalize="none" type="hidden" class="form-control" name="mSearchParamPage" value="1">
         <input autocomplete="off" autocapitalize="none" type="hidden" class="form-control" name="mSearchParamSafeSearch" value="{{mSearchCallbackSaveSearch}}">
         <input autocomplete="off" autocapitalize="none" type="hidden" class="form-control" name="pSearchParamType" value="{{mSearchCallbackRelevantSearchType}}">
-        <button class="searchbar__searchbox-button disable-highlight" type="submit"><img class="searchbar__searchbox-icon disable-highlight" src="{% static 'Orion/images/search-icon.png' %}" alt=""/></button>
+        <button class="searchbar__searchbox-button disable-highlight" type="submit"><img class="searchbar__searchbox-icon disable-highlight" src="{% static 'orion/images/search-icon.png' %}" alt=""/></button>
     </div>
 
     <!--change orion type like image video audio-->
