@@ -50,7 +50,7 @@ class elastic_request_generator(request_handler):
         m_query_statement = {
                 "from": (m_page_number - 1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
                 "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE + 15,
-                "min_score": 3.5,
+                "min_score": 4,
                 "query": {
                     "bool": {
                         "must_not": [m_safe_filter],
@@ -108,10 +108,11 @@ class elastic_request_generator(request_handler):
                     "content_suggestion": {
                         "text": m_user_query,
                         "term": {
-                            "field": "m_content",
+                            "field": "m_important_content",
                             "min_word_length": 4,
                             "max_term_freq": 0.01,
-                            "string_distance": "internal"
+                            "sort": "score",
+                            "string_distance": "internal",
                         }
                     }
                 },
@@ -123,8 +124,6 @@ class elastic_request_generator(request_handler):
                     }
                 }
             }
-
-
 
         return {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_WEB_INDEX, ELASTIC_KEYS.S_FILTER:m_query_statement}
 
