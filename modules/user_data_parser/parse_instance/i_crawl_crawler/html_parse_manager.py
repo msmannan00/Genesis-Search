@@ -50,13 +50,14 @@ class html_parse_manager(HTMLParser, ABC):
     # find url type and populate the list respectively
 
     def __insert_external_url(self, p_url):
-        self.all_url_count+=1
+        self.all_url_count += 1
         if p_url is not None and not str(p_url).__contains__("#"):
             mime = mimetypes.MimeTypes().guess_type(p_url)[0]
             if 5 < len(p_url) <= CRAWL_SETTINGS_CONSTANTS.S_MAX_URL_SIZE:
 
                 # Joining Relative URL
-                if not p_url.startswith("https://") and not p_url.startswith("http://") and not p_url.startswith("ftp://"):
+                if not p_url.startswith("https://") and not p_url.startswith("http://") and not p_url.startswith(
+                        "ftp://"):
                     m_temp_base_url = self.m_base_url
                     p_url = requests.compat.urljoin(m_temp_base_url.m_url, p_url)
                     p_url = p_url.replace(" ", "%20")
@@ -65,6 +66,7 @@ class html_parse_manager(HTMLParser, ABC):
                 if validators.url(p_url):
                     suffix = ''.join(pathlib.Path(p_url).suffixes)
                     m_host_url = helper_method.get_host_url(p_url)
+                    m_parent_url = helper_method.get_host_url(self.m_base_url.m_url)
                     if mime is None:
                         mime = mimetypes.MimeTypes().guess_type(p_url)[0]
                     if mime is not None and mime != "text/html":
@@ -72,12 +74,11 @@ class html_parse_manager(HTMLParser, ABC):
                             self.m_doc_url.append(p_url)
                         elif str(mime).startswith("video") and len(self.m_video_url) < 10:
                             self.m_video_url.append(p_url)
-                    elif m_host_url.__contains__(".onion"):
+                    elif m_host_url.__contains__(".onion") and m_host_url.__eq__(m_parent_url):
                         if m_host_url.__contains__("?"):
-                            self.m_query_url_count+=1
+                            self.m_query_url_count += 1
                         if self.m_query_url_count < 5:
-                            self.m_sub_url.append(p_url)
-
+                            self.m_sub_url.append(helper_method.normalize_slashes(p_url))
 
     def handle_starttag(self, p_tag, p_attrs):
         if p_tag == "a":
@@ -87,7 +88,7 @@ class html_parse_manager(HTMLParser, ABC):
 
         if p_tag == 'img':
             for value in p_attrs:
-                if value[0] == 'src' and not helper_method.is_url_base_64(value[1]) and len(self.m_image_url)<35:
+                if value[0] == 'src' and not helper_method.is_url_base_64(value[1]) and len(self.m_image_url) < 35:
                     # Joining Relative URL
                     m_temp_base_url = self.m_base_url
                     if not m_temp_base_url.m_url.endswith("/"):
@@ -102,7 +103,7 @@ class html_parse_manager(HTMLParser, ABC):
         elif p_tag == 'h1' or p_tag == 'h2' or p_tag == 'h3' or p_tag == 'h4':
             self.rec = PARSE_TAGS.S_HEADER
 
-        elif p_tag == 'span' and self.m_paragraph_count==0:
+        elif p_tag == 'span' and self.m_paragraph_count == 0:
             self.rec = PARSE_TAGS.S_SPAN
 
         elif p_tag == 'div':
@@ -116,18 +117,21 @@ class html_parse_manager(HTMLParser, ABC):
 
         elif p_tag == 'p':
             self.rec = PARSE_TAGS.S_PARAGRAPH
-            self.m_paragraph_count+=1
+            self.m_paragraph_count += 1
 
         elif p_tag == 'meta':
             try:
                 if p_attrs[0][0] == 'content':
-                    if p_attrs[0][1] is not None and len(p_attrs[0][1]) > 50 and p_attrs[0][1].count(" ")>4 and p_attrs[0][1] not in self.m_meta_content:
+                    if p_attrs[0][1] is not None and len(p_attrs[0][1]) > 50 and p_attrs[0][1].count(" ") > 4 and \
+                            p_attrs[0][1] not in self.m_meta_content:
                         self.m_meta_content += p_attrs[0][1]
                 if p_attrs[0][1] == 'description':
-                    if len(p_attrs) > 1 and len(p_attrs[1]) > 0 and p_attrs[1][0] == 'content' and p_attrs[1][1] is not None:
+                    if len(p_attrs) > 1 and len(p_attrs[1]) > 0 and p_attrs[1][0] == 'content' and p_attrs[1][
+                        1] is not None:
                         self.m_meta_description += p_attrs[1][1]
                 elif p_attrs[0][1] == 'keywords':
-                    if len(p_attrs) > 1 and len(p_attrs[1]) > 0 and p_attrs[1][0] == 'content' and p_attrs[1][1] is not None:
+                    if len(p_attrs) > 1 and len(p_attrs[1]) > 0 and p_attrs[1][0] == 'content' and p_attrs[1][
+                        1] is not None:
                         self.m_meta_keyword = p_attrs[1][1].replace(",", " ")
             except Exception:
                 pass
@@ -149,10 +153,10 @@ class html_parse_manager(HTMLParser, ABC):
             self.m_title = p_data
         elif self.rec == PARSE_TAGS.S_PARAGRAPH or self.rec == PARSE_TAGS.S_BR:
             self.__add_important_description(p_data)
-        elif self.rec == PARSE_TAGS.S_SPAN and p_data.count(' ')>5:
+        elif self.rec == PARSE_TAGS.S_SPAN and p_data.count(' ') > 5:
             self.__add_important_description(p_data)
         elif self.rec == PARSE_TAGS.S_DIV:
-            if p_data.count(' ')>5 and p_data not in self.m_non_important_text:
+            if p_data.count(' ') > 5 and p_data not in self.m_non_important_text:
                 self.m_non_important_text += p_data
         elif self.rec == PARSE_TAGS.S_NONE:
             if self.m_paragraph_count > 0:
@@ -164,8 +168,9 @@ class html_parse_manager(HTMLParser, ABC):
     def __add_important_description(self, p_data):
         p_data = " ".join(p_data.split())
 
-        if (p_data.count(' ')>2 or (self.m_paragraph_count>0 and len(p_data)>0 and p_data!=" ")) and p_data not in self.m_important_content:
-            if self.m_parsed_paragraph_count<8:
+        if (p_data.count(' ') > 2 or (self.m_paragraph_count > 0 and len(
+                p_data) > 0 and p_data != " ")) and p_data not in self.m_important_content:
+            if self.m_parsed_paragraph_count < 8:
                 self.m_important_content_raw.append(p_data)
                 self.m_parsed_paragraph_count += 1
 
@@ -173,17 +178,18 @@ class html_parse_manager(HTMLParser, ABC):
                 p_data = re.sub(' +', ' ', p_data)
                 p_data = re.sub(r'^\W*', '', p_data)
 
-
                 if p_data.lower() in self.m_important_content.lower():
                     return
-                if len(self.m_important_content)>2:
-                    self.m_important_content = self.m_important_content + spell_checker_handler.get_instance().validate_sentence(p_data.lower())
+                if len(self.m_important_content) > 2:
+                    self.m_important_content = self.m_important_content + spell_checker_handler.get_instance().validate_sentence(
+                        p_data.lower())
                 else:
-                    self.m_important_content = self.m_important_content + spell_checker_handler.get_instance().validate_sentence(p_data.capitalize())
-                if len(self.m_important_content)>250:
-                    self.m_parsed_paragraph_count=9
+                    self.m_important_content = self.m_important_content + spell_checker_handler.get_instance().validate_sentence(
+                        p_data.capitalize())
+                if len(self.m_important_content) > 250:
+                    self.m_parsed_paragraph_count = 9
 
-                if len(self.m_important_content)>550:
+                if len(self.m_important_content) > 550:
                     self.m_important_content = self.m_important_content[0:550]
 
     def __clean_text(self, p_text):
@@ -218,7 +224,6 @@ class html_parse_manager(HTMLParser, ABC):
         m_content = ' '.join(m_content.split())
         return m_content
 
-
     def __generate_html(self):
         m_soup = BeautifulSoup(self.m_html, "html.parser")
         self.m_content = self.__clean_text(m_soup.get_text())
@@ -247,10 +252,11 @@ class html_parse_manager(HTMLParser, ABC):
         if len(m_content)<50 and len(self.m_sub_url)>=3:
             m_content = "- No description found but contains some urls. This website is most probably a search engine or only contain references of other websites - " + self.m_title.lower()
 
+
         return helper_method.strip_special_character(m_content)[0:300]
 
     def __get_validity_score(self, p_important_content):
-        m_rank = (((len(p_important_content) + len(self.m_title)) > 150) and len(self.m_sub_url) >= 3) * 10 + (len(self.m_sub_url) > 0 or self.all_url_count>5) * 5
+        m_rank = (((len(p_important_content) + len(self.m_title)) > 150) or len(self.m_sub_url) >= 3) * 10 + (len(self.m_sub_url) > 0 or self.all_url_count>5) * 5
         return m_rank
 
     def __get_content_type(self):
