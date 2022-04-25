@@ -42,14 +42,6 @@ class i_crawl_controller(request_handler, ABC):
         m_status, m_parsed_model = m_html_parser.on_parse_html(p_html, p_request_model)
 
 
-
-        print(":::------")
-        print(m_status)
-        print(":::------")
-        print(m_parsed_model.m_validity_score)
-        print(":::------")
-        print(len(m_parsed_model.m_content))
-        print(":::------")
         if m_status is True and m_parsed_model.m_validity_score >= 15 and (len(m_parsed_model.m_content) > 0):
             log.g().s(MESSAGE_STRINGS.S_LOCAL_URL_PARSED + STRINGS.S_SEPERATOR + m_parsed_model.m_base_url_model.m_url + " : " + str( threading.get_native_id()))
             m_parsed_model = self.__clean_sub_url(m_parsed_model)
