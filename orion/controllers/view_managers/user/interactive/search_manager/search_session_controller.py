@@ -161,13 +161,13 @@ class search_session_controller(request_handler):
 
         m_description = m_description.lstrip(" -")
         mRelevanceContext = {
-            SEARCH_CALLBACK.M_TITLE: m_title,
+            SEARCH_CALLBACK.M_TITLE: self.__normalize_text(m_title),
             SEARCH_CALLBACK.M_URL: p_document[SEARCH_DOCUMENT_CALLBACK.M_HOST] + p_document[SEARCH_DOCUMENT_CALLBACK.M_SUB_HOST],
             SEARCH_CALLBACK.M_DESCRIPTION: m_description,
             SEARCH_CALLBACK.K_SEARCH_TYPE: p_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE],
         }
         mRelevanceContextOriginal = {
-            SEARCH_CALLBACK.M_TITLE: m_title,
+            SEARCH_CALLBACK.M_TITLE: self.__normalize_text(m_title),
             SEARCH_CALLBACK.M_URL: p_document[SEARCH_DOCUMENT_CALLBACK.M_HOST] + p_document[SEARCH_DOCUMENT_CALLBACK.M_SUB_HOST],
             SEARCH_CALLBACK.M_DESCRIPTION: m_description_original,
             SEARCH_CALLBACK.K_SEARCH_TYPE: p_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE],
@@ -181,7 +181,7 @@ class search_session_controller(request_handler):
     def __generate_image_content(self, p_document, p_search_model):
         m_relevance_context_list = []
         mRelevanceContext = {
-            SEARCH_CALLBACK.M_TITLE: p_document[SEARCH_DOCUMENT_CALLBACK.M_TITLE],
+            SEARCH_CALLBACK.M_TITLE: self.__normalize_text(p_document[SEARCH_DOCUMENT_CALLBACK.M_TITLE]),
             SEARCH_CALLBACK.K_SEARCH_TYPE: p_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE],
         }
         m_counter = 0
@@ -201,7 +201,7 @@ class search_session_controller(request_handler):
     def __generate_document_content(self, p_document, p_search_model):
         m_relevance_context_list = []
         mRelevanceContext = {
-            SEARCH_CALLBACK.M_TITLE: p_document[SEARCH_DOCUMENT_CALLBACK.M_TITLE],
+            SEARCH_CALLBACK.M_TITLE: self.__normalize_text(p_document[SEARCH_DOCUMENT_CALLBACK.M_TITLE]),
             SEARCH_CALLBACK.K_SEARCH_TYPE: p_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE],
         }
         m_counter = 0
@@ -214,6 +214,9 @@ class search_session_controller(request_handler):
             if p_search_model.m_safe_search == 'False' or (str(p_search_model.m_safe_search) == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult'):
                 m_relevance_context_list.append(mRelevanceContext)
         return m_relevance_context_list
+
+    def __normalize_text(self, p_text):
+        return p_text.encode("ascii", "ignore").decode()
 
     def __init_parameters(self, p_document_list, p_search_model, p_tokenized_query):
         m_relevance_context_list = []
