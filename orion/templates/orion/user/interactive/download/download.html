@@ -30,7 +30,7 @@
                 <div class="menu-area">
                     <div class="col-md-3 col-sm-6 col-xs-6">
                         <div class="logo">
-                            <a href="index.html"><img src="{% static 'orion/images/download/icon/logo.png' %}" alt="Orion - App Landing Template"></a>
+                            <a href="."><img src="{% static 'orion/images/download/icon/logo.png' %}" class="name_small" alt="Orion - App Landing Template"></a>
                         </div>
                     </div>
                     <div class="col-md-9 hidden-xs hidden-sm">
@@ -187,13 +187,13 @@
                 <p>Lets learn about Orion Browser</p>
             </div>
             <div class="row">
-                <div class="screen-slider owl-carousel owl-loaded owl-drag">
-                    <img src="{% static 'orion/images/download/mobile/screen-slider/screen1.png' %}" style="padding:35px" alt=" mobile screen">
-                    <img src="{% static 'orion/images/download/mobile/screen-slider/screen2.png' %}" style="padding:35px"  alt=" mobile screen">
-                    <img src="{% static 'orion/images/download/mobile/screen-slider/screen3.png' %}" style="padding:35px"  alt=" mobile screen">
-                    <img src="{% static 'orion/images/download/mobile/screen-slider/screen4.png' %}" style="padding:35px"  alt=" mobile screen">
-                    <img src="{% static 'orion/images/download/mobile/screen-slider/screen5.png' %}" style="padding:35px"  alt=" mobile screen">
-                    <img src="{% static 'orion/images/download/mobile/screen-slider/screen6.png' %}" style="padding:35px"  alt=" mobile screen">
+                <div class="screen-slider owl-carousel owl-loaded owl-drag" id="carousel_1">
+                    <img src="{% static 'orion/images/download/mobile/screen-slider/screen1.png' %}" style="" alt=" mobile screen">
+                    <img src="{% static 'orion/images/download/mobile/screen-slider/screen2.png' %}" style=""  alt=" mobile screen">
+                    <img src="{% static 'orion/images/download/mobile/screen-slider/screen3.png' %}" style=""  alt=" mobile screen">
+                    <img src="{% static 'orion/images/download/mobile/screen-slider/screen4.png' %}" style=""  alt=" mobile screen">
+                    <img src="{% static 'orion/images/download/mobile/screen-slider/screen5.png' %}" style=""  alt=" mobile screen">
+                    <img src="{% static 'orion/images/download/mobile/screen-slider/screen6.png' %}" style=""  alt=" mobile screen">
                 </div>
             </div>
         </div>
@@ -207,10 +207,10 @@
                 <p>Please choose the download according to your mobile processor</p>
             </div>
             <div class="download-btns btn-area text-center">
-                <a href="http://localhost:8000/static/orion/mobile/download/app-orion-arm64-v8a-release.apk"><i class="fa fa-android"></i>aarch64.apk</a>
-                <a href="http://localhost:8000/static/orion/mobile/download/app-orion-armeabi-v7a-release.apk"><i class="fa fa-android"></i>arm.apk</a>
-                <a href="http://localhost:8000/static/orion/mobile/download/app-orion-x86_64-release.apk"><i class="fa fa-android"></i>x86_64.apk</a>
-                <a href="http://localhost:8000/static/orion/mobile/download/app-orion-x86-release.apk"><i class="fa fa-android"></i>x86.apk</a>
+                <a href="../static/orion/mobile/download/app-orion-arm64-v8a-release.apk"><i class="fa fa-android"></i>aarch64.apk</a>
+                <a href="../static/orion/mobile/download/app-orion-armeabi-v7a-release.apk"><i class="fa fa-android"></i>arm.apk</a>
+                <a href="../static/orion/mobile/download/app-orion-x86_64-release.apk"><i class="fa fa-android"></i>x86_64.apk</a>
+                <a href="../static/orion/mobile/download/app-orion-x86-release.apk"><i class="fa fa-android"></i>x86.apk</a>
             </div>
         </div>
     </section>
@@ -434,7 +434,7 @@
                 <p>Let us see what some of our happy users have to say</p>
             </div>
             <div class="row">
-                <div class="testimonial-list owl-carousel">
+                <div class="testimonial-list owl-carousel" id="carousel_2">
                     <!-- single item start -->
                     <div class="testimonial-item">
                         <div class="tauthor-meta">
@@ -827,17 +827,72 @@ Copyright &copy; &nbsp;<script>document.write(new Date().getFullYear());</script
             ]
         });
       }
+      function init_position(){
+               if ($(window).width() < 960) {
+                  $("#carousel_1").owlCarousel({
+                        items: 2,
+                        loop: true,
+                        margin: 0,
+                        dots: true,
+                        autoplay: true,
+                        lazyLoad: true,
+                        smartSpeed: 800,
+                        margin: 20,
+                        height : 50,
+                        autoplayTimeout: 4000,
+                        dotsEach: true
+                    });
+                    $("#carousel_2").owlCarousel({
+                        items: 1,
+                        loop: true,
+                        margin: 0,
+                        dots: true,
+                        autoplay: true,
+                        lazyLoad: true,
+                        smartSpeed: 800,
+                        margin: 20,
+                        height : 50,
+                        autoplayTimeout: 4000,
+                        dotsEach: true
+                    });
+               }
+               else {
+                  $("#carousel_1").owlCarousel({
+                        items: 4,
+                        loop: true,
+                        margin: 0,
+                        dots: true,
+                        autoplay: true,
+                        lazyLoad: true,
+                        smartSpeed: 800,
+                        margin: 20,
+                        height : 50,
+                        autoplayTimeout: 4000,
+                        dotsEach: true
+                    });
+                    $("#carousel_2").owlCarousel({
+                        items: 2,
+                        loop: true,
+                        margin: 0,
+                        dots: true,
+                        autoplay: true,
+                        lazyLoad: true,
+                        smartSpeed: 800,
+                        margin: 20,
+                        height : 50,
+                        autoplayTimeout: 4000,
+                        dotsEach: true
+                    });
+               }
+      }
+
         $(document).ready(function(){
-          $(".owl-carousel").owlCarousel({
-                items: 3,
-                loop: true,
-                margin: 0,
-                dots: true,
-                autoplay: true,
-                lazyLoad: true,
-                smartSpeed: 800,
-                autoplayTimeout: 4000,
-                dotsEach: true
+            init_position();
+            $( window ).resize(function() {
+                $('#carousel_1').owlCarousel('destroy');
+                $('#carousel_2').owlCarousel('destroy');
+
+                init_position();
             });
         });
 

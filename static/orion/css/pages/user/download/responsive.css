@@ -167,6 +167,10 @@
 	.slicknav_nav a:hover {
 		background: #444;
 	}
+	.name_small{
+	    width:200px !important;
+	    min-width:200px !important;
+	}
 
 }
 
