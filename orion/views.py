@@ -97,6 +97,10 @@ def intelligence(request):
     return intelligence_controller.getInstance().invoke_trigger(INTELLIGENCE_MODEL_COMMANDS.M_INIT, request)
 
 @csrf_exempt
+def download(request):
+    return render(None, CONSTANTS.S_TEMPLATE_DOWNLOAD_WEBSITE_PATH)
+
+@csrf_exempt
 def maintenance(request):
     return maintenance_controller.getInstance().invoke_trigger(MAINTENANCE_MODEL_CALLBACK.M_INIT, request)
 

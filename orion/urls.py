@@ -40,6 +40,7 @@ urlpatterns = [
     path('.well-known/pki-validation/D16CA9D0C6D8EB91CF2B6FA9CC2F3715.txt', views.ssl_validation, name='ssl_validation'),
     path('crawl_index/', views.crawl_index, name='crawl_index'),
     path('intelligence/', views.intelligence, name='intelligence'),
+    path('download/', views.download, name='download'),
 
     # hotlinks
     path('cms/manage_authentication', views.manage_authentication, name='manage_search'),
