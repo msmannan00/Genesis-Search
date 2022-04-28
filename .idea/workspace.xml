@@ -2,63 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/orion/templates/orion/user/interactive/download/download.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orion/templates/orion/user/interactive/download/local_imports.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/css/pages/user/download/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/css/pages/user/download/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/css/pages/user/download/jquery-ui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/css/pages/user/download/jquery.mb.YTPlayer.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/css/pages/user/download/owl.carousel.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/css/pages/user/download/responsive.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/css/pages/user/download/slicknav.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/css/pages/user/download/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/css/pages/user/download/typography.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/author/author1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/author/author2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/author/author3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/bg/crumbs-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/bg/img-background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/bg/slider-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/blog/blog-thumb1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/blog/blog-thumb2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/blog/blog-thumb3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/icon/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/icon/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/mobile/about-m-screen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/mobile/feature-screen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/mobile/screen-slider/screen1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/mobile/screen-slider/screen2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/mobile/screen-slider/screen3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/mobile/screen-slider/screen4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/mobile/screen-slider/screen5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/mobile/screen-slider/screen6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/mobile/slider-screen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/sidebar/sidebar-thumb1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/sidebar/sidebar-thumb2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/sidebar/sidebar-thumb3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/sidebar/sidebar-thumb4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/sidebar/sidebar-thumb5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/sidebar/sidebar-thumb6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/team/img1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/team/img2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/team/img3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/team/img4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/js/pages/user/download/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/js/pages/user/download/jquery-3.2.0.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/js/pages/user/download/jquery-ui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/js/pages/user/download/jquery.counterup.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/js/pages/user/download/jquery.mb.YTPlayer.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/js/pages/user/download/jquery.slicknav.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/js/pages/user/download/jquery.waypoints.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/js/pages/user/download/owl.carousel.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/js/pages/user/download/raindrops.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/js/pages/user/download/theme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/mobile/download/app-orion-arm64-v8a-release.apk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/mobile/download/app-orion-armeabi-v7a-release.apk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/mobile/download/app-orion-x86-release.apk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/mobile/download/app-orion-x86_64-release.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/controllers/constants/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/constants/constant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/cms/blades/blades_shared_initialization.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/cms/blades/blades_shared_initialization.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/blades_shared_initialization.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/blades_shared_initialization.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/privacy/privacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/interactive/privacy/privacy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/download/download.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/interactive/download/download.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" afterDir="false" />
     </list>
@@ -83,17 +32,17 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/workspace/Orion-Search/orion/templates/orion/user/interactive/download",
+    "last_opened_file_path": "C:/workspace/Orion-Search/static/orion",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\workspace\Orion-Search\static\orion" />
+      <recent name="C:\workspace\Orion-Search\orion" />
+      <recent name="C:\workspace\Orion-Search\orion\templates\orion\.well-known\mobile\download" />
       <recent name="C:\workspace\Orion-Search\orion\templates\orion\user\interactive\download" />
       <recent name="C:\workspace\Orion-Search\static\orion\js" />
-      <recent name="C:\workspace\Orion-Search\static\orion\images\download" />
-      <recent name="C:\workspace\Orion-Search\static\orion\css\pages\user\download" />
-      <recent name="C:\workspace\Orion-Search" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\workspace\Orion-Search\static\orion\js\pages\user\download" />
