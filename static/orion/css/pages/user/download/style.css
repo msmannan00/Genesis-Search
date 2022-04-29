@@ -1131,6 +1131,7 @@ h4.contact-title {
     flex-basis: calc(100% * (8/12) - 30px);
     padding-left: 70px;
     padding-right: 70px;
+
 }
 
 .contact-form form {}
