@@ -28,7 +28,7 @@ class advert_model(request_handler):
 
     def __fetch_advert(self):
         dir_path = os.path.dirname(os.path.realpath(__file__))
-        image_data = open(dir_path+"\\sample_advert\\" + str(random.randint(1, 5)) + ".png", "rb").read()
+        image_data = open(dir_path+"/sample_advert/" + str(random.randint(1, 5)) + ".png", "rb").read()
         return HttpResponse(image_data, content_type="image/jpeg")
 
     # External Request Callbacks

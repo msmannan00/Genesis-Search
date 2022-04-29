@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/orion/controllers/view_managers/advert/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orion/controllers/view_managers/advert/advert_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orion/controllers/view_managers/advert/advert_enums.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orion/controllers/view_managers/advert/advert_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orion/controllers/view_managers/advert/sample_advert/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orion/controllers/view_managers/advert/sample_advert/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orion/controllers/view_managers/advert/sample_advert/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orion/controllers/view_managers/advert/sample_advert/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orion/controllers/view_managers/advert/sample_advert/5.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/advert/advert_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/advert/advert_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
