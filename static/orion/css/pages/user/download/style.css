@@ -1796,6 +1796,13 @@ END Blog Standard
     margin-top:12px !important;
     margin-bottom:15px;
 }
+.true_freedom_text{
+    font-size: 38px;
+    margin-top:-50px  !important;
+}
+.true_freedom_header{
+    font-size: 43px  !important;
+}
 
 @media only screen and (max-width: 943px) {
     .menu_mobile_style{
@@ -1803,6 +1810,13 @@ END Blog Standard
         font-size:16px !important;
         padding:10px !important;
         margin-top:5px !important;
+    }
+    .true_freedom_header{
+        font-size: 25px  !important;
+    }
+    .true_freedom_text{
+        font-size: 18px;
+        margin-top:-30px  !important;
     }
 }
 
