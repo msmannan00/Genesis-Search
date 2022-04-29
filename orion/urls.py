@@ -48,6 +48,10 @@ urlpatterns = [
     path('cms/logout', views.manage_logout, name='cms_logout'),
     path('update_status/', views.update_status, name='manage_search'),
     path('app-ads.txt/', views.app_ads, name='manage_search'),
+
+    # adverts
+    path('fetch_advert/', views.fetch_anonymous_advert, name='fetch_advert'),
+
 ]
 
 handler400 = views.error_page_400

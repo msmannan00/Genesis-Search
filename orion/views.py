@@ -1,9 +1,5 @@
-import mimetypes
-
-from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-
 from orion.controllers.constants.constant import CONSTANTS
 from orion.controllers.server_manager.crawl_manager.crawl_controller import crawl_controller
 from orion.controllers.server_manager.crawl_manager.crawl_enums import CRAWL_COMMANDS
@@ -12,6 +8,8 @@ from orion.controllers.server_manager.external_request_manager.external_request_
 from orion.controllers.server_manager.external_request_manager.external_request_enums import EXTERNAL_REQUEST_COMMANDS
 from orion.controllers.server_manager.user_auth_manager.user_auth_controller import user_auth_controller
 from orion.controllers.server_manager.user_auth_manager.user_auth_enums import USER_AUTH_COMMANDS
+from orion.controllers.view_managers.advert.advert_controller import advert_controller
+from orion.controllers.view_managers.advert.advert_enums import ADVERT_MODEL_COMMANDS
 from orion.controllers.view_managers.cms.dashboard.dashboard_controller import dashboard_controller
 from orion.controllers.view_managers.cms.dashboard.dashboard_enums import DASHBOARD_MODEL_CALLBACK
 from orion.controllers.view_managers.cms.login.login_controller import login_controller
@@ -128,6 +126,7 @@ def maintenance(request):
 def ssl_validation(request):
     return render(None, CONSTANTS.S_SSL_VERIFICATION_PATH)
 
+
 @csrf_exempt
 def block(request):
     return block_controller.getInstance().invoke_trigger(BLOCK_MODEL_CALLBACK.M_INIT, request)
@@ -177,6 +176,11 @@ def cms_dashboard(request):
 @csrf_exempt
 def app_ads(request):
     return render(None, CONSTANTS.S_APP_ADS_PATH, None)
+
+
+@csrf_exempt
+def fetch_anonymous_advert(request):
+    return advert_controller.getInstance().invoke_trigger(ADVERT_MODEL_COMMANDS.M_FETCH_ADVERT, request)
 
 
 def error_page_400(request, exception=None):
