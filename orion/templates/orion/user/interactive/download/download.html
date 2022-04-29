@@ -37,20 +37,20 @@
                         <div class="main-menu">
                             <nav class="nav-menu">
                                 <ul>
-                                    <li class="active"><a href="#home">Home</a></li>
-                                    <li><a href="#about">About</a></li>
-                                    <li><a href="#features">Features</a></li>
-                                    <li><a href="#screenshot">Screenshot</a></li>
-                                    <li><a href="#download">download</a></li>
-                                    <li><a href="#pricing">Pricing</a></li>
-                                    <li><a href="#review">Review</a></li>
-                                    <li><a href="#contact">Contact</a></li>
+                                    <li class="active"><a href="#home" class="menu_mobile_style">Home</a></li>
+                                    <li><a href="#about" class="menu_mobile_style">About</a></li>
+                                    <li><a href="#features" class="menu_mobile_style">Features</a></li>
+                                    <li><a href="#screenshot" class="menu_mobile_style">Screenshot</a></li>
+                                    <li><a href="#download" class="menu_mobile_style">download</a></li>
+                                    <li><a href="#pricing" class="menu_mobile_style">Pricing</a></li>
+                                    <li><a href="#review" class="menu_mobile_style">Review</a></li>
+                                    <li><a href="#contact" class="menu_mobile_style">Contact</a></li><br>
                                 </ul>
                             </nav>
                         </div>
                     </div>
                     <div class="col-sm-12 col-xs-12 visible-sm visible-xs">
-                        <div class="mobile_menu"></div>
+                        <div class="mobile_menu" style="margin-top:-7px"></div>
                     </div>
                 </div>
             </div>
@@ -180,7 +180,7 @@
     </section>
     <!-- feature area end -->
     <!-- screen slider area start -->
-    <section class="screen-slider-area ptb--120" id="screenshot">
+    <section class="screen-slider-area ptb--120" id="screenshot" style="padding-left:20px;padding-right:20px">
         <div class="container">
             <div class="section-title text-black">
                 <h2>Screenshots</h2>
@@ -896,7 +896,132 @@ Copyright &copy; &nbsp;<script>document.write(new Date().getFullYear());</script
             });
         });
 
+        (function($) {
+            "use strict";
 
+
+
+            /*---------------------
+            preloader
+            --------------------- */
+
+            $(window).on('load', function() {
+                $('#preloader').delay(1000).fadeOut('slow', function() { $(this).remove(); });
+            });
+
+            /*------------------------------
+                 counter
+            ------------------------------ */
+            // $('.counter-up').counterUp();
+
+
+
+            /*---------------------
+            Sticky Header
+            --------------------- */
+            $(window).on('scroll', function() {
+                var Wscroll = $(window).scrollTop();
+                var header_area = $('.header-area');
+                var navbar_fixed_top = 'header_fix';
+
+                if (Wscroll > 100) {
+                    header_area.addClass(navbar_fixed_top);
+                } else {
+                    header_area.removeClass(navbar_fixed_top);
+                }
+
+            })
+
+            //=========================
+            //  Active current menu while scrolling
+            //=========================
+
+            //ACTIVE CURRENT MENU WHILE SCROLLING
+
+            $(window).on("scroll", function() {
+
+                activeMenuItem($(".nav-menu"));
+
+            });
+
+            // function for active menuitem
+            function activeMenuItem($links) {
+                var top = $(window).scrollTop(),
+                    windowHeight = $(window).height(),
+                    documentHeight = $(document).height(),
+                    cur_pos = top + 2,
+                    sections = $("section"),
+                    nav = $links,
+                    nav_height = nav.outerHeight(),
+                    home = nav.find(" > ul > li:first");
+
+
+                sections.each(function() {
+                    var top = $(this).offset().top - nav_height - 40,
+                        bottom = top + $(this).outerHeight();
+
+                    if (cur_pos >= top && cur_pos <= bottom) {
+                        nav.find("> ul > li > a").parent().removeClass("active");
+                        nav.find("a[href='#" + $(this).attr('id') + "']").parent().addClass("active");
+                    } else if (cur_pos === 2) {
+                        nav.find("> ul > li > a").parent().removeClass("active");
+                        home.addClass("active");
+                    } else if ($(window).scrollTop() + windowHeight > documentHeight - 400) {
+                        nav.find("> ul > li > a").parent().removeClass("active");
+                    }
+                });
+            }
+
+            //=========================
+            // 8. Smoth Scroll
+            //=========================
+
+            function smoothScrolling($links, $topGap) {
+                var links = $links;
+                var topGap = $topGap;
+
+                links.on("click", function() {
+                    if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+                        var target = $(this.hash);
+                        target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
+                        if (target.length) {
+                            $("html, body").animate({
+                                scrollTop: target.offset().top - topGap
+                            }, 1000, "easeInOutExpo");
+                            return false;
+                        }
+                    }
+                    return false;
+                });
+            }
+
+            $(window).on("load", function() {
+                smoothScrolling($(".main-menu > nav > ul > li > a[href^='#']"), 70);
+            });
+
+            //=========================
+            // 8. Slick Nav Activation
+            //=========================
+            $('.nav-menu > ul').slicknav({
+                'prependTo': '.mobile_menu'
+            });
+
+            //=========================
+            // 8. YTP activation
+            //=========================
+            $(".background-video").YTPlayer();
+
+
+            //=========================
+            // 8. Rain Drops Canvas
+            //=========================
+            $('.raindrops-canvas').raindrops({
+                color:'#fff',
+                canvasHeight:200
+            });
+
+
+        }(jQuery));
     </script>
 
     <!-- google map activation end -->
