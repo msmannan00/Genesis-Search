@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/directory_manager/directory_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/directory_manager/directory_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/directory_manager/directory_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/directory_manager/directory_session_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/directory_template/blade_directory_pagination.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/directory_template/blade_directory_pagination.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/directory/cs-directory-pagination-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/css/pages/user/blades/directory/cs-directory-pagination-blade.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
