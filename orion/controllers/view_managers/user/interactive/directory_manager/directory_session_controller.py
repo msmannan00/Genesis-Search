@@ -15,16 +15,14 @@ class directory_session_controller(request_handler):
             m_num = 1
 
         if DIRECTORY_PARAMS.M_PAGE_NUMBER_NEXT in p_data.POST:
-            m_num+=1
+            m_num += 1
         elif DIRECTORY_PARAMS.M_PAGE_NUMBER_PREV in p_data.POST:
-            m_num-=1
+            m_num -= 1
 
         m_directory_model = directory_class_model(m_num, None)
 
         if DIRECTORY_PARAMS.M_SECURE_SERVICE in p_data.GET:
             m_directory_model.m_site = p_data.GET[DIRECTORY_PARAMS.M_SECURE_SERVICE]
-
-
 
         return m_directory_model, True
 

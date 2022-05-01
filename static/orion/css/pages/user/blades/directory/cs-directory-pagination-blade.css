@@ -48,12 +48,12 @@
 }
 .onion__pagination--block-left{
     opacity: 1;
-    pointer-events: none;
+    pointer-events: auto;
     border-left: 4px solid #ffa500;
 }
 .onion__pagination--block-right{
     opacity: 1;
-    pointer-events: none;
+    pointer-events: auto;
     border-right: 4px solid #ffa500;
 }
 .onion__navigation{
