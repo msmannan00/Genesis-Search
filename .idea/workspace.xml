@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar_mobile.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar_mobile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/homepage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/interactive/homepage/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/.well-known/app-ads.txt" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/.well-known/app-ads.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/server/block/block.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/server/block/block.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
