@@ -35,9 +35,10 @@
 .block-header-small{
     font-size:12.5pt;
     margin-right:15px;
+    padding-left:3px;
     font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
     font-weight: 700;
-    color:#234a70;
+    color:#22476d;
 }
 .block-linebreak{
     width:98%;
@@ -79,7 +80,7 @@
     border-radius: 5px;
 }
 .block-warning-button:hover{
-    background: orange;
+    background: #12263a;
     color: white;
 }
 @media only screen and (max-width: 943px) {
