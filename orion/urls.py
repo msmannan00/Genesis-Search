@@ -41,6 +41,7 @@ urlpatterns = [
     path('crawl_index/', views.crawl_index, name='crawl_index'),
     path('intelligence/', views.intelligence, name='intelligence'),
     path('download/', views.download, name='download'),
+    path('block/', views.block_static, name='block'),
     path('downloads/', views.download, name='download'),
 
     # hotlinks

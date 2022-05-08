@@ -133,6 +133,11 @@ def block(request):
 
 
 @csrf_exempt
+def block_static(request):
+    return render(None, CONSTANTS.S_TEMPLATE_BLOCK_WEBSITE_PATH)
+
+
+@csrf_exempt
 def cms_login(request):
     return login_controller.getInstance().invoke_trigger(LOGIN_MODEL_CALLBACK.M_INIT, request)
 
