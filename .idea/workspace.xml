@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/server/block/block.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/server/block/block.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/server/cs-block.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/css/pages/user/server/cs-block.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
