@@ -1797,11 +1797,11 @@ END Blog Standard
     margin-bottom:15px;
 }
 .true_freedom_text{
-    font-size: 38px;
-    margin-top:-50px  !important;
+    font-size: 30px;
 }
 .true_freedom_header{
-    font-size: 43px  !important;
+    font-size: 43px !important;
+    font-weight:bold;
 }
 
 @media only screen and (max-width: 943px) {
@@ -1813,10 +1813,14 @@ END Blog Standard
     }
     .true_freedom_header{
         font-size: 25px  !important;
+        font-weight:bold;
     }
     .true_freedom_text{
         font-size: 18px;
         margin-top:-30px  !important;
+    }
+    .header_container{
+        margin-top:-150px;
     }
 }
 
