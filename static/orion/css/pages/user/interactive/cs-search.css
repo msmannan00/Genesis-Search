@@ -10,18 +10,26 @@
     transition: opacity 0.3s;
     width: 100%;
 }
-
+.sidebar_icon_search{
+    position:absolute;
+    top:25px;
+    right:30px;
+    display:none;
+}
 .searchbar__logo--image{
     height:55px;
     margin-top:7px;
     margin-bottom:2px;
-    float: left;
+    padding:0px;
+    padding-top:2px;
+    padding-bottom:2px;
+    margin-left:5px !important;
 }
 
 @media only screen and (max-width: 943px) {
     .searchbar__logo--image {
         font-size:13.5px;
-        margin-left:5px;
+        margin-left:15px !important;
     }
 }
 
@@ -340,5 +348,9 @@
       position: relative;
       width: auto;
     }
+    .sidebar_icon_search{
+        display:block;
+    }
+
 }
 
