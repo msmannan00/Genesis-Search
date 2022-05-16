@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.decorators.clickjacking import xframe_options_sameorigin, xframe_options_exempt
+from django.views.decorators.clickjacking import xframe_options_exempt
 from django.views.decorators.csrf import csrf_exempt
 from orion.controllers.constants.constant import CONSTANTS
 from orion.controllers.server_manager.crawl_manager.crawl_controller import crawl_controller
@@ -51,9 +51,7 @@ from shared_directory.service_manager.block_manager.block_controller import bloc
 
 @xframe_options_exempt
 def index(request):
-    response = homepage_controller.getInstance().invoke_trigger(HOMEPAGE_MODEL_COMMANDS.M_INIT, request)
-    response["Content-Security-Policy"] = "default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';"
-    return response
+    return homepage_controller.getInstance().invoke_trigger(HOMEPAGE_MODEL_COMMANDS.M_INIT, request)
 
 
 @csrf_exempt
@@ -92,7 +90,6 @@ def directory(request):
 
 
 @csrf_exempt
-@xframe_options_exempt
 def search(request):
     return search_controller.getInstance().invoke_trigger(SEARCH_MODEL_COMMANDS.M_INIT, request)
 

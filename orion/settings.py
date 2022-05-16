@@ -74,18 +74,6 @@ TEMPLATES = [
     },
 ]
 
-
-class Header(object):
-
-    def process_response(self, request, response):
-        """Append an X-Frame-Options output header to responses."""
-        options = getattr(settings, 'X_FRAME_OPTIONS', 'ALLOW')
-        response['X-FRAME-OPTIONS'] = options.upper()
-        return response
-
-
-
-
 X_FRAME_OPTIONS = 'ALLOW-FROM *'
 
 WSGI_APPLICATION = 'orion.wsgi.application'
