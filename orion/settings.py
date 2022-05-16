@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from django.conf import settings
+
 from shared_directory.state_manager.constant import APP_STATUS
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -71,6 +73,16 @@ TEMPLATES = [
         },
     },
 ]
+
+
+class Header(object):
+
+    def process_response(self, request, response):
+        """Append an X-Frame-Options output header to responses."""
+        options = getattr(settings, 'X_FRAME_OPTIONS', 'ALLOW')
+        response['X-FRAME-OPTIONS'] = options.upper()
+        return response
+
 
 WSGI_APPLICATION = 'orion.wsgi.application'
 

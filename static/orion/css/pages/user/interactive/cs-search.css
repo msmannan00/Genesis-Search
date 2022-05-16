@@ -12,13 +12,13 @@
 }
 .sidebar_icon_search{
     position:absolute;
-    top:25px;
+    top:24px;
     right:30px;
     display:none;
 }
 .searchbar__logo--image{
     height:55px;
-    margin-top:7px;
+    margin-top:11px;
     margin-bottom:2px;
     padding:0px;
     padding-top:2px;

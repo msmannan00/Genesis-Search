@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.decorators.clickjacking import xframe_options_sameorigin, xframe_options_exempt
 from django.views.decorators.csrf import csrf_exempt
 from orion.controllers.constants.constant import CONSTANTS
 from orion.controllers.server_manager.crawl_manager.crawl_controller import crawl_controller
@@ -48,6 +49,7 @@ from orion.controllers.view_managers.user.interactive.sitemap_manager.sitemap_en
 from shared_directory.service_manager.block_manager.block_controller import block_controller
 
 
+@xframe_options_exempt
 def index(request):
     return homepage_controller.getInstance().invoke_trigger(HOMEPAGE_MODEL_COMMANDS.M_INIT, request)
 
@@ -88,6 +90,7 @@ def directory(request):
 
 
 @csrf_exempt
+@xframe_options_exempt
 def search(request):
     return search_controller.getInstance().invoke_trigger(SEARCH_MODEL_COMMANDS.M_INIT, request)
 
