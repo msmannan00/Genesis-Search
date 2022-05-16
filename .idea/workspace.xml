@@ -4,12 +4,7 @@
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orion/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/privacy_template/blade_privacy_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/privacy_template/blade_privacy_header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/interactive/cs-search.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/css/pages/user/interactive/cs-search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/orion/images/favicon-home.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/images/favicon-home.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

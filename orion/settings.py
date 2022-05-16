@@ -84,6 +84,10 @@ class Header(object):
         return response
 
 
+
+
+X_FRAME_OPTIONS = 'ALLOW-FROM *'
+
 WSGI_APPLICATION = 'orion.wsgi.application'
 
 
