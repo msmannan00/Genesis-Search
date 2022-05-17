@@ -49,7 +49,6 @@ from orion.controllers.view_managers.user.interactive.sitemap_manager.sitemap_en
 from shared_directory.service_manager.block_manager.block_controller import block_controller
 
 
-@xframe_options_exempt
 def index(request):
     return homepage_controller.getInstance().invoke_trigger(HOMEPAGE_MODEL_COMMANDS.M_INIT, request)
 

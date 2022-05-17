@@ -24,7 +24,7 @@
 .dashboard__header--info{
     float: left;
     margin-left: 20px;
-    margin-top: 4px;
+    margin-top: 5px;
     color: #ffffff;
 }
 .dashboard__header--description{
@@ -41,7 +41,7 @@
     font-weight: bold;
     color: orange;
     cursor: pointer;
-    margin-top: -43px;
+    margin-top: -44px;
     text-align: center;
     padding: 25px;
     background: #122130;
@@ -53,6 +53,7 @@
 .dashboard__header--container{
     max-width: 400px;
     width: 100%;
+    margin-top:-12px;
 }
 
 
