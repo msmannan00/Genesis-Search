@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/static/orion/images/favicon-home-cms.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/favicon-home-cmsss.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/cms/blades/dashboard/blade-welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/cms/blades/dashboard/blade-welcome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/cms/blades/login/blade-login-navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/cms/blades/login/blade-login-navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/cms/blades/shared_blades/blade-dashboard-navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/cms/blades/shared_blades/blade-dashboard-navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/cms/blades/shared_blades/blade_footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/cms/blades/shared_blades/blade_footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/shared_blades/blade_footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/shared_blades/blade_footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/download/download.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/interactive/download/download.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/cms/blades/shared/cs-blade-dashboard-navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/css/pages/cms/blades/shared/cs-blade-dashboard-navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/orion/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar_mobile.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar_mobile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/home/cs-sidebar-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/css/pages/user/blades/home/cs-sidebar-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/interactive/cs-homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/css/pages/user/interactive/cs-homepage.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

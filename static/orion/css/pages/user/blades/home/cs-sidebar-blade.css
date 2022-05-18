@@ -133,15 +133,15 @@
     width: 10px;
     height: 10px;
     position: relative;
-    top:-52px;
+    top:-32px;
     left:92%;
 }
 .sidebar__list-logo{
-    max-width: 190px;
+    max-width: 220px;
     width: 100%;
-    cursor: pointer;
-    margin-bottom: 40px;
-    margin-top: 50px;
+    cursor: pointer !important;
+    margin-bottom: 20px;
+    margin-top: 20px;
     margin-left: 10px;
     pointer-events: none;
 }
