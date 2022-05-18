@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar_mobile.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar_mobile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/home/cs-sidebar-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/css/pages/user/blades/home/cs-sidebar-blade.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/interactive/cs-homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/css/pages/user/interactive/cs-homepage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/images/android-chrome-192x192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/images/android-chrome-512x512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/images/apple-touch-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/images/favicon-16x16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/images/favicon-32x32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/images/favicon.ico" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
