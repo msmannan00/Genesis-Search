@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/static/orion/images/android-chrome-192x192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/android-chrome-512x512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/apple-touch-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/favicon-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/favicon-32x32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/orion/images/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/images/favicon.ico" afterDir="false" />
-    </list>
+    <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
