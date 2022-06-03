@@ -1,17 +1,6 @@
 {% load static %}
-{% if mSearchCallbackSaveSearch == 'True' %}
-    <br><br>
-    <a class="search-result__safe-search-container search-result__safe-search-container--border search-result__safe-search-container--non-interactable" style="text-decoration: none" href="?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=False&pSearchParamType={{mSearchCallbackRelevantSearchType}}">
-        <label class="search-result__safe-search search-result__safe-search--info">
-            <label class="search-result__safe-search--label"> Safe Search </label>
-        </label>
-    </a>
-    <a class="search-result__safe-search-container search-result__safe-search-container--switch search-result__safe-search-container--normal" style="text-decoration: none" href="?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=False&pSearchParamType={{mSearchCallbackRelevantSearchType}}">
-        <label class="search-result__safe-search search-result__safe-search--switch">
-            <label class="search-result__safe-search--label"> Enabled </label>
-        </label>
-    </a>
-{% else %}
+
+{% if mSearchCallbackSaveSearch == False or mSearchCallbackSaveSearch == 'False' %}
     <br><br>
     <a class="search-result__safe-search-container search-result__safe-search-container--border search-result__safe-search-container--non-interactable" style="text-decoration: none" href="?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=True&pSearchParamType={{mSearchCallbackRelevantSearchType}}">
         <label class="search-result__safe-search search-result__safe-search--info">
@@ -21,6 +10,18 @@
     <a class="search-result__safe-search-container search-result__safe-search-container--switch search-result__safe-search-container--danger" style="text-decoration: none" href="?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=True&pSearchParamType={{mSearchCallbackRelevantSearchType}}">
         <label class="search-result__safe-search search-result__safe-search--switch">
             <label class="search-result__safe-search--label"> Disabled </label>
+        </label>
+    </a>
+{% else %}
+    <br><br>
+    <a class="search-result__safe-search-container search-result__safe-search-container--border search-result__safe-search-container--non-interactable" style="text-decoration: none" href="?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=False&pSearchParamType={{mSearchCallbackRelevantSearchType}}">
+        <label class="search-result__safe-search search-result__safe-search--info">
+            <label class="search-result__safe-search--label"> Safe Search </label>
+        </label>
+    </a>
+    <a class="search-result__safe-search-container search-result__safe-search-container--switch search-result__safe-search-container--normal" style="text-decoration: none" href="?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=False&pSearchParamType={{mSearchCallbackRelevantSearchType}}">
+        <label class="search-result__safe-search search-result__safe-search--switch">
+            <label class="search-result__safe-search--label"> Enabled </label>
         </label>
     </a>
 {% endif %}
