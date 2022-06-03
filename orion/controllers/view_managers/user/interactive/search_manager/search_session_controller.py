@@ -22,9 +22,9 @@ class search_session_controller(request_handler):
             m_query_model.m_site = p_data.GET[SEARCH_PARAM.M_SECURE_SERVICE]
         if SEARCH_PARAM.M_SAFE_SEARCH in p_data.GET:
             if p_data.GET[SEARCH_PARAM.M_SAFE_SEARCH] == "True":
-                m_query_model.m_safe_search = "True"
-            else:
                 m_query_model.m_safe_search = "False"
+            else:
+                m_query_model.m_safe_search = "True"
 
         return m_query_model
 
