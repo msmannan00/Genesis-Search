@@ -2,7 +2,76 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/blades_shared_initialization.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/directory_template/blade_directory_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/directory_template/blade_directory_pagination.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/home_template/blade_home_header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/home_template/blade_home_references.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/home_template/blade_home_search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/home_template/blade_home_sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/home_template/blade_home_sidebar_mobile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/login/blade_cms_navbar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/notice_template/blade_report_website_notice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/notice_template/blade_upload_website_notice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/privacy_template/blade_privacy_header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/search_template/blade_search_content.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/search_template/blade_search_content_file_based.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/search_template/blade_search_content_url_based.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/search_template/blade_search_engine_suggestion.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/search_template/blade_search_header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/search_template/blade_search_no_suggestion.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/search_template/blade_search_pagination.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/search_template/blade_search_safe_search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/shared_blades/blade_footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/shared_blades/blade_light_header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/blades/shared_blades/blade_onion_warning.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/directory/directory.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/directory/local_imports.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/download/download.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/download/local_imports.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/homepage/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/homepage/local_imports.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/intelligence/intelligence.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/intelligence/local_imports.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/notice/local_imports.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/notice/notice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/privacy/local_imports.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/privacy/privacy.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/report/local_imports.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/report/report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/search/local_imports.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/search/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/sitemap/local_imports.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/sitemap/sitemap.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/server/block/block.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/server/block/local_imports.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/server/error/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/server/error/local_imports.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/server/maintenance/local_imports.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/server/maintenance/maintenance.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/360user/server/secretkey/secretkey.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/images/360wise_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/images/cropped-360wiselogo-32x32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/images/favicon-360.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/constants/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/constants/constant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/directory_manager/directory_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/directory_manager/directory_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/directory_manager/directory_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/directory_manager/directory_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/directory_manager/directory_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/directory_manager/directory_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/directory_manager/directory_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/directory_manager/directory_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/intelligence_manager/intelligence_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/intelligence_manager/intelligence_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/notice_manager/notice_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/notice_manager/notice_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/notice_manager/notice_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/notice_manager/notice_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/notice_manager/notice_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/notice_manager/notice_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/notice_manager/notice_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/notice_manager/notice_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/policy_manager/policy_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/policy_manager/policy_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/report_manager/report_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/report_manager/report_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_data_model/query_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_data_model/query_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/sitemap_manager/sitemap_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/sitemap_manager/sitemap_controller.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,24 +100,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/workspace/Orion-Search/static/orion/images&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/workspace/Orion-Search/orion/templates/orion",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\workspace\Orion-Search\orion\templates\orion" />
       <recent name="C:\workspace\Orion-Search\static\orion\images" />
       <recent name="C:\workspace\Orion-Search\orion\controllers\view_managers\advert\sample_advert" />
       <recent name="C:\workspace\Orion-Search\orion\controllers\view_managers\advert" />
       <recent name="C:\workspace\Orion-Search\static\orion" />
-      <recent name="C:\workspace\Orion-Search\orion" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\workspace\Orion-Search\static\orion\js\pages\user\download" />

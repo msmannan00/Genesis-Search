@@ -25,6 +25,12 @@ class search_session_controller(request_handler):
                 m_query_model.m_safe_search = "True"
             else:
                 m_query_model.m_safe_search = "False"
+        if SEARCH_PARAM.M_SAFE_BROWSER in p_data.GET:
+            if p_data.GET[SEARCH_PARAM.M_SAFE_BROWSER] == "360wise":
+                m_query_model.m_360_browser = "360wise"
+                m_query_model.m_safe_search = "True"
+            else:
+                m_query_model.m_360_browser = ""
 
         return m_query_model
 
@@ -54,10 +60,11 @@ class search_session_controller(request_handler):
 
         return min_range, max_range, m_max_page_reached
 
-    def init_callbacks(self, p_search_model, p_min_range, p_max_range, p_max_page_reached, p_relevance_context_list, p_related_business_list, p_related_news_list, p_related_files_list):
+    def init_callbacks(self, p_search_model:query_model, p_min_range, p_max_range, p_max_page_reached, p_relevance_context_list, p_related_business_list, p_related_news_list, p_related_files_list):
         m_context = {
             SEARCH_CALLBACK.M_QUERY: p_search_model.m_search_query,
             SEARCH_CALLBACK.M_SAFE_SEARCH: p_search_model.m_safe_search,
+            SEARCH_CALLBACK.M_SAFE_BROWSER: p_search_model.m_360_browser,
             SEARCH_CALLBACK.M_CURRENT_PAGE_NUM: p_search_model.m_page_number,
             SEARCH_CALLBACK.K_SEARCH_TYPE: p_search_model.m_search_type,
             SEARCH_CALLBACK.M_DOCUMENT: p_relevance_context_list,
@@ -67,7 +74,8 @@ class search_session_controller(request_handler):
             SEARCH_CALLBACK.M_RELATED_BUSINESS_SITES: p_related_business_list,
             SEARCH_CALLBACK.M_RELATED_NEWS_SITES: p_related_news_list,
             SEARCH_CALLBACK.M_RELATED_FILES: p_related_files_list,
-            SEARCH_CALLBACK.M_SECURE_SERVICE_NOTICE: p_search_model.m_site
+            SEARCH_CALLBACK.M_SECURE_SERVICE_NOTICE: p_search_model.m_site,
+            SEARCH_CALLBACK.M_HATE_QUERY: p_search_model.m_hate_query
         }
 
         return m_context

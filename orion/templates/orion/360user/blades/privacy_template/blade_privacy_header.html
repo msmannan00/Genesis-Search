@@ -1,0 +1,17 @@
+{% load static %}
+
+<div class="privacy__status-bar" >
+    <a href="../../.." ><img class="privacy__status-image gs-disable-highlight" src="{% static 'orion/images/360wise_logo.png' %}" alt="Loading..."></a>
+
+    <form method="GET" class="privacy-statusbar-form" action="../../search" enctype="multipart/form-data" >
+        <input class="form-control privacy__statusbar-searchbox" maxlength="150" autocapitalize="none" autocomplete="off" type="text" name="q" placeholder="Search the web anonymously">
+        <button class="privacy__searchbox-button disable-highlight" style="float: left" type="submit"><img class="privacy__searchbox-icon disable-highlight" src="{% static 'orion/images/search-icon.png' %}" alt=""/></button>
+        <input autocomplete="off" autocapitalize="none" type="hidden" class="form-control home__searchbox" name="mPage" value="1">
+    </form>
+
+    <div class="privacy-header--menu gs-disable-highlight">
+        <span ><a href="https://www.bitfinex.com/" class="privacy__statusbar-category" id="mobid">Bitcoin Market</a></span>
+        <span ><a href="http://protonirockerxow.onion" class="privacy__statusbar-category">Proton Mail</a></span>
+        <span ><a href="/?q=random&p_num=1&s_type=image" class="privacy__statusbar-category privacy__statusbar-category--right">Images</a></span>
+    </div>
+</div>

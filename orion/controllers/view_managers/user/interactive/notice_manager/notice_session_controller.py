@@ -9,6 +9,7 @@ class notice_session_controller(request_handler):
     def __init_parameters(self, p_data):
         # Local Variables
         m_status = False
+        m_browser = False
 
         # Default Initialization
         m_context = {
@@ -22,10 +23,13 @@ class notice_session_controller(request_handler):
             m_status = True
 
         # Notice Data Param
+        if NOTICE_PARAM.M_BROWSER in p_data.GET and p_data.GET[NOTICE_PARAM.M_BROWSER] == "360wise":
+            m_browser = True
+
         if NOTICE_PARAM.M_DATA in p_data.GET:
             m_context[NOTICE_CALLBACK.M_DATA] = p_data.GET[NOTICE_PARAM.M_DATA]
 
-        return m_context, m_status
+        return m_context, m_status, m_browser
 
     # External Request Callbacks
     def invoke_trigger(self, p_command, p_data):

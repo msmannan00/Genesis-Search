@@ -43,7 +43,10 @@ class search_controller(request_handler):
             else:
                 m_status, m_response = self.__m_search_model.invoke_trigger(SEARCH_MODEL_COMMANDS.M_INIT, p_data)
                 if m_status is True:
-                    return render(None, CONSTANTS.S_TEMPLATE_SEARCH_WEBSITE_PATH, m_response)
+                    if "browser" in p_data.GET and p_data.GET["browser"] == "360wise":
+                        return render(None, CONSTANTS.S_360_TEMPLATE_SEARCH_WEBSITE_PATH, m_response)
+                    else:
+                        return render(None, CONSTANTS.S_TEMPLATE_SEARCH_WEBSITE_PATH, m_response)
                 else:
                     return HttpResponseRedirect(redirect_to=CONSTANTS.S_TEMPLATE_PARENT)
         else:

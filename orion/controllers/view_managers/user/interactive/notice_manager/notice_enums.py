@@ -11,6 +11,7 @@ class NOTICE_SESSION_CALLBACK(enum.Enum):
 class NOTICE_PARAM:
     M_HEADER = "mNoticeParamType"
     M_DATA = "mNoticeParamData"
+    M_BROWSER = "browser"
     M_SECURE_SERVICE = "pSite"
 
 class NOTICE_CALLBACK:

@@ -44,7 +44,10 @@ class sitemap_controller(request_handler):
             else:
                 m_response, m_status = self.__m_notice_model.invoke_trigger(SITEMAP_MODEL_COMMANDS.M_INIT, p_data)
                 if m_status is False:
-                    return render(None, CONSTANTS.S_TEMPLATE_SITEMAP_WEBSITE_PATH, m_response)
+                    if "browser" in p_data.GET and p_data.GET["browser"] == "360wise":
+                        return render(None, CONSTANTS.S_360_TEMPLATE_SITEMAP_WEBSITE_PATH, m_response)
+                    else:
+                        return render(None, CONSTANTS.S_TEMPLATE_SITEMAP_WEBSITE_PATH, m_response)
                 else:
                     return HttpResponseRedirect(redirect_to=CONSTANTS.S_TEMPLATE_NOTICE_WEBSITE_UPLOAD + "&mNoticeParamData=" + m_response[SITEMAP_CALLBACK.M_SECRETKEY])
 

@@ -1,0 +1,78 @@
+{% load static %}
+{% include 'orion/360user/blades/blades_shared_initialization.html' %}
+{% include 'orion/360user/interactive/sitemap/local_imports.html' %}
+
+
+<!--script initialization-->
+<html lang="en">
+    <body>
+        <!--footer-->
+
+        <!-- non onion url -->
+        {% include 'orion/360user/blades/shared_blades/blade_onion_warning.html' %}
+
+        {% include 'orion/360user/blades/shared_blades/blade_light_header.html' %}
+        <div>
+            <p class="sitemap__form-header"> Submit your website </p>
+            <form method="POST" action="" enctype="multipart/form-data" class="sitemap__form">
+                <p class="sitemap__form-description sitemap__form-description--top">Welcome to the process of website submission. It is to be noted that if you want to provide any onion service, you have to make sure that the service exists at the time of crawling. <br><br><br>Important Notice <b>(Secret Key)</b>
+                <ul class="sitemap__form-ul">
+                    <li>Secret key is mandatory in website submission</li>
+                    <li>Secret key must be added as first line of your website</li>
+                    <li>Its format is <b style="color:#336699">"&lt;!-- key:your_secret_key --&gt;"</b></li>
+                    <li>Same secret key should be used to update website</li>
+                    <a href="/secretkey"> <input type="button" class="sitemap__form-sample-submit" value="Sample"/></a>
+                </ul>
+                <hr class="sitemap__line-style">
+                <div class="sitemap__form-title">Secret Key</div>
+                <input class="sitemap__form-input {% if mSitemapCallbackSecretKeyError != '' %} form-control is-invalid sitemap__input-warning {% else %} sitemap-form__input--normal {% endif %}" autocomplete="off" type="text" name="pSitemapParamSecretKey" value="{{mSitemapSecretKeyCallbackValue}}" placeholder="Secret key to update later">
+                <label class="{% if mSitemapCallbackSecretKeyError != '' %} sitemap__form-warning--error {% endif %}">{{mSitemapCallbackSecretKeyError}}</label>
+                <div class="sitemap__form-title">Site Title</div>
+                <input class="sitemap__form-input {% if mSitemapCallbackNameError != '' %} form-control is-invalid sitemap__input-warning {% else %} sitemap-form__input--normal {% endif %}" autocomplete="off" type="text" name="pSitemapParamName" value="{{mSitemapCallbackNameValue}}" placeholder="Site Title">
+                <label class="{% if mSitemapCallbackNameError != '' %} sitemap__form-warning--error {% endif %}">{{mSitemapCallbackNameError}}</label>
+                <div class="sitemap__form-title">Site URL</div>
+                <input class="sitemap__form-input {% if mSitemapCallbackURLError != '' %} form-control is-invalid sitemap__input-warning {% else %} sitemap-form__input--normal {% endif %}" autocomplete="off" type="text" name="pSitemapParamURL" value="{{mSitemapCallbackURLValue}}" placeholder="Site URL">
+                <label class="{% if mSitemapCallbackURLError != '' %} sitemap__form-warning--error {% endif %}">{{mSitemapCallbackURLError}}</label>
+                <div class="sitemap__form-title">Site Keyword</div>
+                <input class="sitemap__form-input {% if mSitemapCallbackKeywordError != '' %} form-control is-invalid sitemap__input-warning {% else %} sitemap-form__input--normal {% endif %}" autocomplete="off" type="text" name="pSitemapParamKeyword" value="{{mSitemapCallbackKeywordValue}}" placeholder="Site keyword Comma Seperated">
+                <label class="{% if mSitemapCallbackKeywordError != '' %} sitemap__form-warning--error {% endif %}">{{mSitemapCallbackKeywordError}}</label>
+                <div class="sitemap__form-title">Submission Rule</div>
+                <select class="sitemap__select-rules minimal" name="pSitemapParamSubmissionRule">
+                    <option selected hidden>{{mSitemapCallbackSubmissionRule}}</option>
+                    <option value="New Onion Service">New Onion Service</option>
+                    <option value="Update Onion Service">Update Onion Service</option>
+                </select>
+                <label class="{% if mSitemapCallbackSubmissionRulesError != '' %} sitemap__form-warning--error {% else %} report-form__input--normal {% endif %}">{{mSitemapCallbackSubmissionRulesError}}</label>
+
+                <hr class="sitemap__line-style">
+                <div class="sitemap__form-title">Agreement</div>
+                <div class="list-group">
+                    <label class="sitemap__aggrement-point list-group-item list-group-item-action">
+                        <input class="form-check-input me-1" type="checkbox" name="pSitemapParamAgreement_1" {% if mSitemapCallbackAgreement_1 != '' %} checked {% endif %}> &nbsp;&nbsp;This site does not link to illegal content
+                    </label><br>
+                    <label class="sitemap__aggrement-point list-group-item list-group-item-action">
+                        <input class="form-check-input me-1" type="checkbox" name="pSitemapParamAgreement_2" {% if mSitemapCallbackAgreement_2 != '' %} checked {% endif %}> &nbsp;&nbsp;This site does not link to sexually explicit content
+                    </label><br>
+                    <label class="sitemap__aggrement-point list-group-item list-group-item-action">
+                        <input class="form-check-input me-1" type="checkbox" name="pSitemapParamAgreement_3" {% if mSitemapCallbackAgreement_3 != '' %} checked {% endif %}>&nbsp;&nbsp;This site would be useful
+                    </label><br>
+                    <label class="sitemap__aggrement-point list-group-item list-group-item-action">
+                        <input class="form-check-input me-1" type="checkbox" name="pSitemapParamAgreement_4" {% if mSitemapCallbackAgreement_4 != '' %} checked {% endif %}>&nbsp;&nbsp;This site will remain alive consistently and constantly
+                    </label><br>
+                    <label class="sitemap__aggrement-point list-group-item list-group-item-action">
+                        <input class="form-check-input me-1" type="checkbox" name="pSitemapParamAgreement_5" {% if mSitemapCallbackAgreement_5 != '' %} checked {% endif %}>&nbsp;&nbsp;This site doesn't go against the terms of use
+                    </label>
+                </div>
+
+                <label class="sitemap_form-warning sitemap__form-warning--top disable-highlight {% if mSitemapCallbackSubmissionError != '' %} sitemap__form-warning--error {% endif %}">{{mSitemapCallbackSubmissionError}}</label>
+
+                <br><br><div class="sitemap__form-title sitemap__form-title--width">Your email (optional)</div>
+                <input class="sitemap__form-input {% if mSitemapCallbackEmailError != '' %} form-control is-invalid sitemap__input-warning {% else %} sitemap-form__input--normal {% endif %}" autocomplete="off" type="text" name="pSitemapParamEmail" value="{{mSitemapCallbackEmailValue}}" placeholder="Email Address (Optional)">
+                <label class="{% if mSitemapCallbackEmailError != '' %} sitemap__form-warning--error {% else %} sitemap-form__input--normal {% endif %}">{{mSitemapCallbackEmailError}}</label><br>
+                <input type="submit" class="sitemap__form-submit" value="Submit">
+
+            </form>
+        </div>
+        {% include 'orion/360user/blades/shared_blades/blade_footer.html' %}
+    </body>
+</html>

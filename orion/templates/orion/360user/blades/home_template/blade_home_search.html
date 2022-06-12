@@ -1,0 +1,16 @@
+{% load static %}
+
+<!--orion bar-->
+<form method="GET" action="search" enctype="multipart/form-data">
+    <div class="home_logo_container">
+        <img class="home__logo" alt="loading...">
+    </div>
+    <div class="home__search-container">
+        <input autocomplete="off" autocapitalize="none" type="text" maxlength="150" class="form-control home__searchbox" name="q">
+    </div>
+
+    <div class="home__search-button-container disable-highlight">
+        <input type="submit" class="home__search-button home__search-button--left-spacing">
+        <input type="submit" class="home__search-button home__search-button--right-spacing home__search-button--lucky-visibility" value="Feeling Lucky">
+    </div>
+</form>

@@ -6,11 +6,16 @@ class query_model:
     m_search_type = SEARCH_STRINGS.S_SEARCH_TYPE_PARAM
     m_page_number = 1
     m_safe_search = "False"
+    m_360_browser = ""
     m_total_documents = 1
     m_site = GENERAL_STRINGS.S_GENERAL_HTTP
+    m_hate_query = "False"
 
     def set_query(self, p_search_query):
         self.m_search_query = p_search_query
+
+    def set_hate_query(self, p_hate_query):
+        self.m_hate_query = p_hate_query
 
     def set_search_type(self, p_search_type):
         if p_search_type != "all" and p_search_type != "images" and p_search_type != "doc" and p_search_type != "finance" and p_search_type != "news":

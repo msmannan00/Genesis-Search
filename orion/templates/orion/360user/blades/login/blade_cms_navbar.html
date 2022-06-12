@@ -1,0 +1,28 @@
+{% load static %}
+
+<nav class="navbar-inverse navbar-static-top blade-navbar">
+  <div class="container-fluid">
+    <div class="navbar-header" >
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/" >Tel-Threat</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><a href="mailto:360WiseSearch@gmail.com">Contact Us</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><a href="tel:+4733378901">Call Admin</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <!--<li><a href="{{ url_for('logout') }}"><span class="glyphicon glyphicon-log-out"></span> &nbsp;&nbsp; Logout {{ m_data['m_username'] }} &nbsp;</a></li>-->
+      </ul>
+    </div>
+  </div>
+</nav>

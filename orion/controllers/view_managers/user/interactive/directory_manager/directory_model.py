@@ -40,11 +40,11 @@ class directory_model(request_handler):
         return mRelevanceDocumentList
 
     def __init_page(self, p_data):
-        m_directory_class_model, m_status = self.__m_session.invoke_trigger(DIRECTORY_SESSION_COMMANDS.M_PRE_INIT, [p_data])
+        m_directory_class_model, m_status, m_360 = self.__m_session.invoke_trigger(DIRECTORY_SESSION_COMMANDS.M_PRE_INIT, [p_data])
         m_directory_class_model.m_row_model_list  = self.__load_onion_links(m_directory_class_model)
         m_context, m_status = self.__m_session.invoke_trigger(DIRECTORY_SESSION_COMMANDS.M_INIT, [m_directory_class_model])
 
-        return m_context, m_status
+        return m_context, m_status, m_360
 
     # External Request Callbacks
     def invoke_trigger(self, p_command, p_data):

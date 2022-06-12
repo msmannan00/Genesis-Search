@@ -1,0 +1,25 @@
+{% load static %}
+{% include 'orion/360user/blades/blades_shared_initialization.html' %}
+{% include 'orion/360user/interactive/notice/local_imports.html' %}
+
+
+<!--script initialization-->
+<html lang="en">
+    <body >
+
+        <!-- non onion url -->
+        {% include 'orion/360user/blades/shared_blades/blade_onion_warning.html' %}
+
+        <!--footer-->
+        {% include 'orion/360user/blades/shared_blades/blade_light_header.html' %}
+
+        {% if mNoticeCallbackType == 'report' %}
+            {% include 'orion/360user/blades/notice_template/blade_report_website_notice.html' %}
+        {% elif mNoticeCallbackType == 'upload' %}
+            {% include 'orion/360user/blades/notice_template/blade_upload_website_notice.html' %}
+        {% endif %}
+
+        <!--footer-->
+        {% include 'orion/360user/blades/shared_blades/blade_footer.html' %}
+    </body>
+</html>

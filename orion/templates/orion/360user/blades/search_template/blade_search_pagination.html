@@ -1,0 +1,38 @@
+{% load static %}
+
+<!--pagination-->
+
+{% if mSearchCallbackPageNumber|length > 0 and mSearchCallbackPageNumber != None %}
+    <form class="search__pagination disable-highlight">
+
+        <div class="search__pagination-container">
+
+            <!-- left arrow -->
+            {% if mSearchCallbackCurrentPageNumber == 1%}
+                <a href="#" class="search__page-navigation search__pagination--border-start-right search__pagination--block"> &lsaquo;</a>
+            {% else %}
+                <a href="?q={{mSearchCallbackQuery}}&mSearchParamSafeSearch={{mSearchCallbackSaveSearch}}&pSearchParamType={{mSearchCallbackRelevantSearchType}}&mSearchParamPage={% if mSearchCallbackCurrentPageNumber != '1'%}{{mSearchCallbackCurrentPageNumber|add:-1}}{% endif %}" class="search__page-navigation search__pagination--border-right" style="float:left;margin-right: 19px;text-decoration: none"> &lsaquo;</a>
+            {% endif %}
+
+            <!-- page numbers -->
+            {% for mNumber in mSearchCallbackPageNumber %}
+
+                {% if mNumber  == mSearchCallbackCurrentPageNumber %}
+                   <a href="?q={{mSearchCallbackQuery}}&mSearchParamSafeSearch={{mSearchCallbackSaveSearch}}&pSearchParamType={{mSearchCallbackRelevantSearchType}}&mSearchParamPage={{mNumber}}" class="search__navigation search__navigation--focus" style="float:left">{{mNumber}}</a>
+                {% else %}
+                   <a href="?q={{mSearchCallbackQuery}}&mSearchParamSafeSearch={{mSearchCallbackSaveSearch}}&pSearchParamType={{mSearchCallbackRelevantSearchType}}&mSearchParamPage={{mNumber}}" class="search__navigation search__navigation--normal" style="float:left">{{mNumber}}</a>
+                {% endif %}
+           {% endfor %}
+
+           <!-- right arrow -->
+           {% if mSearchCallbackMaxPagination == True %}
+                <a href="#" class="search__page-navigation search__pagination--border-right search__pagination-icon--border-left search__pagination--block"> &rsaquo;</a>
+           {% else %}
+                <a href="?q={{mSearchCallbackQuery}}&mSearchParamSafeSearch={{mSearchCallbackSaveSearch}}&pSearchParamType={{mSearchCallbackRelevantSearchType}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber|add:1}}" class="search__page-navigation search__pagination--border-right search__pagination--border-left" style="text-decoration: none"> &rsaquo;</a>
+
+
+           {% endif %}
+        </div>
+
+    </form>
+{% endif %}

@@ -37,5 +37,8 @@ class policy_controller(request_handler):
             if APP_STATUS.S_MAINTAINANCE is True:
                 return render(None, CONSTANTS.S_TEMPLATE_MAINTENANCE_WEBSITE_PATH)
             else:
-                return render(None, CONSTANTS.S_TEMPLATE_POLICY_WEBSITE_PATH)
+                if "browser" in p_data.GET and p_data.GET["browser"] == "360wise":
+                    return render(None, CONSTANTS.S_360_TEMPLATE_POLICY_WEBSITE_PATH)
+                else:
+                    return render(None, CONSTANTS.S_TEMPLATE_POLICY_WEBSITE_PATH)
 

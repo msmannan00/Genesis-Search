@@ -37,7 +37,10 @@ class intelligence_controller(request_handler):
             if APP_STATUS.S_MAINTAINANCE is True:
                 return render(None, CONSTANTS.S_TEMPLATE_MAINTENANCE_WEBSITE_PATH)
             else:
-                return render(None, CONSTANTS.S_TEMPLATE_INTELLIGENCE_WEBSITE_PATH)
+                if "browser" in p_data.GET and p_data.GET["browser"] == "360wise":
+                    return render(None, CONSTANTS.S_360_TEMPLATE_INTELLIGENCE_WEBSITE_PATH)
+                else:
+                    return render(None, CONSTANTS.S_TEMPLATE_INTELLIGENCE_WEBSITE_PATH)
         else:
             m_response = None
         return m_response

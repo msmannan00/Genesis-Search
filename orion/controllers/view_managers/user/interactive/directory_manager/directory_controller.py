@@ -41,11 +41,14 @@ class directory_controller(request_handler):
             elif APP_STATUS.S_MAINTAINANCE is True:
                 return render(None, CONSTANTS.S_TEMPLATE_MAINTENANCE_WEBSITE_PATH)
             else:
-                m_response, m_status = self.__m_directory_model.invoke_trigger(DIRECTORY_MODEL_COMMANDS.M_INIT, p_data)
+                m_response, m_status, m_360 = self.__m_directory_model.invoke_trigger(DIRECTORY_MODEL_COMMANDS.M_INIT, p_data)
                 if m_status is not True:
                     return render(None, CONSTANTS.S_TEMPLATE_INDEX_PATH, m_response)
                 else:
-                    return render(None, CONSTANTS.S_TEMPLATE_DIRECTORY_WEBSITE_PATH, m_response)
+                    if m_360:
+                        return render(None, CONSTANTS.S_360_TEMPLATE_DIRECTORY_WEBSITE_PATH, m_response)
+                    else:
+                        return render(None, CONSTANTS.S_TEMPLATE_DIRECTORY_WEBSITE_PATH, m_response)
         else:
             m_response = None
         return m_response

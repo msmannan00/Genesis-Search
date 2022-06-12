@@ -14,9 +14,9 @@ class notice_model(request_handler):
         self.__m_session = notice_session_controller()
 
     def __init_page(self, p_data):
-        m_context, m_status = self.__m_session.invoke_trigger(NOTICE_SESSION_CALLBACK.M_INIT, [p_data])
+        m_context, m_status, m_browser = self.__m_session.invoke_trigger(NOTICE_SESSION_CALLBACK.M_INIT, [p_data])
 
-        return m_context, m_status
+        return m_context, m_status, m_browser
 
     # External Request Handler
     def invoke_trigger(self, p_command, p_data):

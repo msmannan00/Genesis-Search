@@ -44,9 +44,15 @@ class report_controller(request_handler):
             else:
                 m_response, m_status = self.__m_report_model.invoke_trigger(REPORT_MODEL_COMMANDS.M_INIT, p_data)
                 if m_status is not True:
-                    return render(None, CONSTANTS.S_TEMPLATE_REPORT_WEBSITE_PATH, m_response)
+                    if "browser" in p_data.GET and p_data.GET["browser"] == "360wise":
+                        return render(None, CONSTANTS.S_360_TEMPLATE_REPORT_WEBSITE_PATH, m_response)
+                    else:
+                        return render(None, CONSTANTS.S_TEMPLATE_REPORT_WEBSITE_PATH, m_response)
                 else:
-                    return HttpResponseRedirect(redirect_to=CONSTANTS.S_TEMPLATE_NOTICE_WEBSITE_REPORT)
+                    if "browser" in p_data.GET and p_data.GET["browser"] == "360wise":
+                        return HttpResponseRedirect(redirect_to=CONSTANTS.S_360_TEMPLATE_NOTICE_WEBSITE_REPORT)
+                    else:
+                        return HttpResponseRedirect(redirect_to=CONSTANTS.S_TEMPLATE_NOTICE_WEBSITE_REPORT)
         else:
             m_response = None
         return m_response

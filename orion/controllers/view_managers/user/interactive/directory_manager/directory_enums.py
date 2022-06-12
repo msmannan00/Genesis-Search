@@ -15,6 +15,7 @@ class DIRECTORY_PARAMS:
     M_PAGE_NUMBER_PREV = "mDirectoryParamPageNumberPrev"
     M_PAGE_MAX_REACHED = "mDirectoryParamPageNumberMaxReached"
     M_SECURE_SERVICE = "pSite"
+    M_SAFE_BROWSER = "browser"
 
 class DIRECTORY_CALLBACK:
     M_PAGE_NUMBER = "mDirectoryCallbackPageNumber"

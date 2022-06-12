@@ -17,6 +17,7 @@ class SEARCH_PARAM:
     M_TYPE = "pSearchParamType"
     M_PAGE = "mSearchParamPage"
     M_SAFE_SEARCH = "mSearchParamSafeSearch"
+    M_SAFE_BROWSER = "browser"
     M_SECURE_SERVICE = "pSite"
 
 class SEARCH_CALLBACK:
@@ -33,12 +34,15 @@ class SEARCH_CALLBACK:
     M_QUERY_ERROR_URL = "mSearchCallbackQueryErrorURL"
     M_PAGE_NUM = "mSearchCallbackPageNumber"
     M_SAFE_SEARCH = "mSearchCallbackSaveSearch"
+    M_SAFE_BROWSER = "mBrowser"
     M_CURRENT_PAGE_NUM = "mSearchCallbackCurrentPageNumber"
     M_RESULT_COUNT = "mSearchCallbackResultCount"
     M_RELATED_BUSINESS_SITES = "mSearchCallbackRelevantBusiness"
     M_RELATED_NEWS_SITES = "mSearchCallbackRelevantDocumentNews"
     M_RELATED_FILES = "mSearchCallbackRelevantDocumentFiles"
     M_SECURE_SERVICE_NOTICE = "mUseSecureServiceNotice"
+    M_HATE_QUERY = "mSearchCallHateQuery"
+
 
 class SEARCH_DOCUMENT_CALLBACK:
     M_TITLE = "m_title"

@@ -1,0 +1,33 @@
+{% load static %}
+
+<div class="onion__table--container">
+    <table class="table table-striped directory__table">
+        <thead>
+            <tr>
+                <th scope="row" style="width:15%">ID</th>
+                <th scope="col" style="width:75%;">Onion Service</th>
+                <th scope="col" style="width:90px">Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for mDoc in mDirectoryCallbackLinks %}
+                <tr>
+                    <td class="onion__table-id">{{mDoc.mID}}</td>
+                    <td><a href="{{mDoc.mURL}}" class="onion__table-url">{{mDoc.mURL}}</a></td>
+                    {% if mDoc.mContentType == 'g' %}
+                    <td class="onion__table-category"><b>General</b></td>
+                    {% elif mDoc.mContentType == 'b' %}
+                    <td class="onion__table-category"><b>Business</b></td>
+                    {% elif mDoc.mContentType == 'n' %}
+                    <td class="onion__table-category"><b>News</b></td>
+                    {% elif mDoc.mContentType == 'i' %}
+                    <td class="onion__table-category"><b>Illegal</b></td>
+                    {% else %}
+                    <td class="onion__table-category"><b>Unknown</b></td>
+                    {% endif %}
+                </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
