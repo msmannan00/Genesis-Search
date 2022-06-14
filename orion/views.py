@@ -115,7 +115,10 @@ def intelligence(request):
 
 @csrf_exempt
 def download(request):
-    return render(None, CONSTANTS.S_TEMPLATE_DOWNLOAD_WEBSITE_PATH)
+    if "browser" in request.GET and request.GET["browser"] == "360wise":
+        return render(None, CONSTANTS.S_360_TEMPLATE_DOWNLOAD_WEBSITE_PATH)
+    else:
+        return render(None, CONSTANTS.S_TEMPLATE_DOWNLOAD_WEBSITE_PATH)
 
 
 @csrf_exempt

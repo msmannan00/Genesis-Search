@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_data_model/query_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_data_model/query_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/images/download/icon/logo-360.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/images/download/mobile/feature-screen-360.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/images/download/mobile/slider-screen-360.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/download/download.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/download/download.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/icon/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/images/download/icon/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/mobile/feature-screen.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/images/download/mobile/feature-screen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/mobile/slider-screen.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/images/download/mobile/slider-screen.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,17 +39,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/workspace/Orion-Search/orion/templates/orion",
-    "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/workspace/Orion-Search/orion/templates/orion&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\workspace\Orion-Search\orion\templates\orion" />
