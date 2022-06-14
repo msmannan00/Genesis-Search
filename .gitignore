@@ -4,6 +4,3 @@ OrionSearchServices/raw/classifier_output/training_data.csv
 **/*.pyc
 **/__pycache__/
 .idea/workspace.xml
-.idea/workspace.xml
-*.apk
-.idea/workspace.xml
