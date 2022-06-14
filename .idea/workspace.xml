@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/icon/logo-360.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/mobile/feature-screen-360.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/orion/images/download/mobile/slider-screen-360.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/download/download.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/download/download.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/orion/images/download/icon/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/images/download/icon/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/orion/images/download/mobile/feature-screen.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/images/download/mobile/feature-screen.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/orion/images/download/mobile/slider-screen.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/images/download/mobile/slider-screen.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
