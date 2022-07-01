@@ -50,7 +50,7 @@ class elastic_request_generator(request_handler):
         m_query_statement = {
                 "from": (m_page_number - 1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
                 "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE + 15,
-                "min_score": 4,
+                "min_score": 5,
                 "query": {
                     "bool": {
                         "must_not": [m_safe_filter],
@@ -227,7 +227,9 @@ class elastic_request_generator(request_handler):
         return {ELASTIC_KEYS.S_DOCUMENT: p_data.m_query_collection, ELASTIC_KEYS.S_FILTER:m_query}
 
     def __on_index(self, p_data):
-        m_host, m_sub_host = helper_method.split_host_url(p_data['m_base_url_model']['m_url'])
+        p_data = json.loads(p_data)
+
+        m_host, m_sub_host = helper_method.split_host_url(p_data['m_base_model']['m_url'])
         m_data = {
             "m_doc_size": len(p_data['m_document']),
             "m_img_size": len(p_data['m_images']),

@@ -186,27 +186,36 @@ class search_session_controller(request_handler):
         else:
             return None, None
 
-    def __generate_image_content(self, p_document, p_search_model):
+    def __generate_image_content(self, p_document, p_search_model, m_direct_url_list):
+
         m_relevance_context_list = []
+
         mRelevanceContext = {
             SEARCH_CALLBACK.M_TITLE: self.__normalize_text(p_document[SEARCH_DOCUMENT_CALLBACK.M_TITLE]),
             SEARCH_CALLBACK.K_SEARCH_TYPE: p_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE],
         }
         m_counter = 0
+        ss = []
         for m_image_file in p_document[SEARCH_DOCUMENT_CALLBACK.M_IMAGE]:
-            m_counter += 1
+            if m_image_file[SEARCH_CALLBACK.M_IMAGE_URL] not in m_direct_url_list:
+                m_direct_url_list.append(m_image_file[SEARCH_CALLBACK.M_IMAGE_URL])
+            else:
+                continue
+
             if m_counter > 4:
                 break
+
             mRelevanceContext[SEARCH_CALLBACK.M_URL] = m_image_file[SEARCH_CALLBACK.M_IMAGE_URL]
-            if mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult':
+            if mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult' and mRelevanceContext not in m_relevance_context_list:
                 mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] = m_image_file[SEARCH_CALLBACK.M_IMAGE_TYPE]
 
             if p_search_model.m_safe_search == 'False' or (str(p_search_model.m_safe_search) == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult'):
-                m_relevance_context_list.append(mRelevanceContext)
+                m_counter += 1
+                m_relevance_context_list.append({"mSearchCallbackRelevantDocumentURL": m_image_file[SEARCH_CALLBACK.M_IMAGE_URL], "mSearchCallbackRelevantSearchType": mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE]})
 
-        return m_relevance_context_list
+        return m_relevance_context_list, m_direct_url_list
 
-    def __generate_document_content(self, p_document, p_search_model):
+    def __generate_document_content(self, p_document, p_search_model, m_direct_url_list):
         m_relevance_context_list = []
         mRelevanceContext = {
             SEARCH_CALLBACK.M_TITLE: self.__normalize_text(p_document[SEARCH_DOCUMENT_CALLBACK.M_TITLE]),
@@ -214,13 +223,18 @@ class search_session_controller(request_handler):
         }
         m_counter = 0
         for m_document_file in p_document[SEARCH_DOCUMENT_CALLBACK.M_DOCUMENT]:
-            m_counter += 1
+            if m_document_file not in m_direct_url_list:
+                m_direct_url_list.append(m_document_file)
+            else:
+                continue
+
             if m_counter > 4:
                 break
             mRelevanceContext[SEARCH_CALLBACK.M_URL] = m_document_file
 
             if p_search_model.m_safe_search == 'False' or (str(p_search_model.m_safe_search) == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult'):
-                m_relevance_context_list.append(mRelevanceContext)
+                m_counter += 1
+                m_relevance_context_list.append({"mSearchCallbackRelevantDocumentURL": m_document_file, "mSearchCallbackRelevantSearchType": mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE]})
         return m_relevance_context_list
 
     def __normalize_text(self, p_text):
@@ -231,6 +245,7 @@ class search_session_controller(request_handler):
         m_related_business_list = []
         m_related_news_list = []
         m_related_files_list = []
+        m_direct_url_list = []
 
         p_tokenized_query = p_search_model.m_search_query.lower().split(" ")
 
@@ -262,13 +277,14 @@ class search_session_controller(request_handler):
 
             # Generate Image Context
             elif p_search_model.m_search_type == SEARCH_STRINGS.S_SEARCH_CONTENT_TYPE_IMAGE:
-                m_list = self.__generate_image_content(m_document, p_search_model)
-                if len(m_list)>0:
+                m_list, m_direct_url_list = self.__generate_image_content(m_document, p_search_model, m_direct_url_list)
+                if len(m_list) > 0:
                     m_relevance_context_list.extend(m_list)
 
             # Generate Document Context
             elif p_search_model.m_search_type == SEARCH_STRINGS.S_SEARCH_CONTENT_TYPE_DOCUMENT:
-                m_relevance_context_list.extend(self.__generate_document_content(m_document, p_search_model))
+                m_list, m_direct_url_list = self.__generate_document_content(m_document, p_search_model, m_direct_url_list)
+                m_relevance_context_list.extend(m_list)
 
         # Pagination Calculator
         min_range, max_range, m_max_page_reached = self.__get_page_number(p_search_model)
