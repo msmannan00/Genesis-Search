@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/user/interactive/download/download_iframe.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/constants/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/constants/constant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/download/download.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/interactive/download/download.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/download/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/interactive/download/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/download/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/css/pages/user/download/responsive.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/download/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/css/pages/user/download/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,24 +40,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/workspace/Genesis-Crawler&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Workspace/Genesis-Search/orion/templates/orion/user/interactive/download",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Workspace\Genesis-Search\orion\templates\orion\user\interactive\download" />
       <recent name="C:\workspace\Orion-Search\orion\templates\orion" />
       <recent name="C:\workspace\Orion-Search\static\orion\images" />
       <recent name="C:\workspace\Orion-Search\orion\controllers\view_managers\advert\sample_advert" />
       <recent name="C:\workspace\Orion-Search\orion\controllers\view_managers\advert" />
-      <recent name="C:\workspace\Orion-Search\static\orion" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\workspace\Orion-Search\static\orion\js\pages\user\download" />

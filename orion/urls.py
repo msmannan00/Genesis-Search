@@ -40,9 +40,10 @@ urlpatterns = [
     path('.well-known/pki-validation/77AAE902727F6C8FB4BBD397462BFDBF.txt', views.ssl_validation, name='ssl_validation'),
     path('crawl_index/', views.crawl_index, name='crawl_index'),
     path('intelligence/', views.intelligence, name='intelligence'),
-    path('download/', views.download, name='download'),
     path('block/', views.block_static, name='block'),
+    path('download/', views.download, name='download'),
     path('downloads/', views.download, name='download'),
+    path('download_iframe/', views.download_iframe, name='download_iframe'),
 
     # hotlinks
     path('cms/manage_authentication', views.manage_authentication, name='manage_search'),

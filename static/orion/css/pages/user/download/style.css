@@ -253,7 +253,7 @@ font-family: 'Open Sans', sans-serif;
     width: 100%;
     display: flex;
     align-items: center;
-    background: rgba(0, 0, 0, 0) linear-gradient(130deg, #ff8443, #fe5e17) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(130deg, #1C2347, #1242d5b) repeat scroll 0 0;
 }
 
 .slider-content {
@@ -353,7 +353,7 @@ font-family: 'Open Sans', sans-serif;
     width: 100%;
     z-index: 1;
     opacity: 0.8;
-    background: rgba(0, 0, 0, 0) linear-gradient(90deg, #fb6d74, #ff6818) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(90deg, #1c2347, #242d5b) repeat scroll 0 0;
 }
 
 /*===========================
@@ -1057,7 +1057,9 @@ END Map Area
 2.14 Contact Area
 ===========================*/
 
-.contact-area {}
+.contact-area {
+    padding-bottom:100px !important;
+}
 
 .contact-inner {
     background: #fff;

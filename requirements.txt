@@ -24,7 +24,6 @@ nltk
 django-bootstrap-v5
 bunch
 validators
-BeautifulSoup
 fuzz
 
 ###### Requirements With Version Specifiers ######

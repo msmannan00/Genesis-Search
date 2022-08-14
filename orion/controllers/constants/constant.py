@@ -32,6 +32,7 @@ class CONSTANTS:
     S_SSL_VERIFICATION_PATH = "orion/.well-known/pki-validation/D16CA9D0C6D8EB91CF2B6FA9CC2F3715.txt"
     S_APP_ADS_PATH = "orion/.well-known/app-ads.txt"
     S_TEMPLATE_DOWNLOAD_WEBSITE_PATH = "orion/user/interactive/download/download.html"
+    S_TEMPLATE_DOWNLOAD_IFRAME_WEBSITE_PATH = "orion/user/interactive/download/download_iframe.html"
 
     # Template URL 360
     S_360_TEMPLATE_INDEX_PATH = "orion/360user/interactive/homepage/index.html"
