@@ -25,6 +25,7 @@ class search_session_controller(request_handler):
                 m_query_model.m_safe_search = "True"
             else:
                 m_query_model.m_safe_search = "False"
+
         if SEARCH_PARAM.M_SAFE_BROWSER in p_data.GET:
             if p_data.GET[SEARCH_PARAM.M_SAFE_BROWSER] == "360wise":
                 m_query_model.m_360_browser = "360wise"
