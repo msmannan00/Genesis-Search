@@ -42,7 +42,7 @@
             <hr class="search-content__webpages-divider">
             <label class="search-content__webpages-description"><span class="search-content__webpages-description--category">{% if mDoc.mSearchCallbackRelevantSearchType == 'a' %}Illegal{% elif mDoc.mSearchCallbackRelevantSearchType == 'b' %}Business{% elif mDoc.mSearchCallbackRelevantSearchType == 'n' %}News{% else %}General{% endif %}</span> {% autoescape off %} {{mDoc.mSearchCallbackRelevantDocumentDescription}} {% endautoescape %}</label>
         </div>
-    </a>
+    </a> 
 </div>
 
 <div id="search-content__danger-popup_{{mDoc.mSearchCallbackRelevantDocumentURL}}" class="overlay">

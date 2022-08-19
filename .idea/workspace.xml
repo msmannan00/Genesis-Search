@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_data_model/query_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_data_model/query_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_content_url_based.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_content_url_based.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
