@@ -3,7 +3,55 @@
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/blades_shared_initialization.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/directory_template/blade_directory_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/directory_template/blade_directory_pagination.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/home_template/blade_home_header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/home_template/blade_home_references.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/home_template/blade_home_search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/home_template/blade_home_sidebar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/home_template/blade_home_sidebar_mobile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/login/blade_cms_navbar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/notice_template/blade_report_website_notice.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/notice_template/blade_upload_website_notice.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/privacy_template/blade_privacy_header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/search_template/blade_search_content.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/search_template/blade_search_content_file_based.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/search_template/blade_search_content_url_based.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/search_template/blade_search_engine_suggestion.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/search_template/blade_search_header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/search_template/blade_search_no_suggestion.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/search_template/blade_search_pagination.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/search_template/blade_search_safe_search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/shared_blades/blade_footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/shared_blades/blade_light_header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/blades/shared_blades/blade_onion_warning.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/directory/directory.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/directory/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/download/download.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/download/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/homepage/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/homepage/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/intelligence/intelligence.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/intelligence/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/notice/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/notice/notice.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/privacy/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/privacy/privacy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/report/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/report/report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/search/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/search/search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/sitemap/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/interactive/sitemap/sitemap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/server/block/block.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/server/block/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/server/error/error.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/server/error/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/server/maintenance/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/server/maintenance/maintenance.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/360user/server/secretkey/secretkey.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/server/block/block.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/server/block/block.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
