@@ -4,9 +4,9 @@
 	min-height: auto;
 }
 .home__logo{
-	max-width: 400px;
-	width: 70%;
+	width: auto;
 	height: auto;
+	max-width:400px;
 	display: block;
 	margin: 5% auto 10px;
 	margin-top: 7%;
@@ -287,8 +287,9 @@
 		margin-top: -20px;
 		height:auto;
 	}.home__logo{
-    	margin: 15% auto 10px;
     	margin-top:6%;
+    	margin-left:9vh;
+    	max-width:350px;
 	}.home_logo_container{
     	margin-left:-7%;
     	width:100%;

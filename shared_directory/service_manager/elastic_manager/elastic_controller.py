@@ -2,7 +2,8 @@
 from elasticsearch import Elasticsearch
 from shared_directory.log_manager.log_controller import log
 from shared_directory.request_manager.request_handler import request_handler
-from shared_directory.service_manager.elastic_manager.elastic_enums import ELASTIC_CONNECTIONS, ELASTIC_INDEX, MANAGE_ELASTIC_MESSAGES, ELASTIC_KEYS, ELASTIC_CRUD_COMMANDS
+from shared_directory.service_manager.elastic_manager.elastic_enums import ELASTIC_CONNECTIONS, ELASTIC_INDEX, \
+    MANAGE_ELASTIC_MESSAGES, ELASTIC_KEYS, ELASTIC_CRUD_COMMANDS
 from shared_directory.service_manager.elastic_manager.elastic_request_generator import elastic_request_generator
 
 
@@ -24,7 +25,8 @@ class elastic_controller(request_handler):
         self.__link_connection()
 
     def __link_connection(self):
-        self.__m_connection = Elasticsearch(ELASTIC_CONNECTIONS.S_DATABASE_IP + ":" + str(ELASTIC_CONNECTIONS.S_DATABASE_PORT))
+        self.__m_connection = Elasticsearch(
+            ELASTIC_CONNECTIONS.S_DATABASE_IP + ":" + str(ELASTIC_CONNECTIONS.S_DATABASE_PORT))
         self.__initialization()
 
     def __initialization(self):
@@ -36,16 +38,27 @@ class elastic_controller(request_handler):
                     "settings": {
                         "number_of_shards": 1,
                         "number_of_replicas": 0,
-                        "max_result_window" : 1000000,
-                        "analysis":{
-                            "analyzer":{
-                               "tags_analyzer":{
-                                   "tokenizer": "standard",
-                                   "filter": [
-                                       "lowercase",
-                                       "stemmer"
-                                   ]
-                               }
+                        "max_result_window": 1000000,
+                        "index": {
+                            "similarity": {
+                                "my_similarity": {
+                                    "type": "DFR",
+                                    "basic_model": "g",
+                                    "after_effect": "l",
+                                    "normalization": "h2",
+                                    "normalization.h2.c": "3.0"
+                                }
+                            }
+                        },
+                        "analysis": {
+                            "analyzer": {
+                                "tags_analyzer": {
+                                    "tokenizer": "standard",
+                                    "filter": [
+                                        "lowercase",
+                                        "stemmer"
+                                    ]
+                                }
                             },
                             "filter": {
                                 "stemmer": {
@@ -60,11 +73,11 @@ class elastic_controller(request_handler):
                             "enabled": True
                         },
 
-                        "dynamic":"strict" ,
+                        "dynamic": "strict",
                         "properties": {
-                            'm_host': { 'type': 'keyword' },
-                            'm_sub_host': { 'type': 'keyword' },
-                            "m_doc_size": { 'type': 'integer', },
+                            'm_host': {'type': 'text', 'similarity': 'my_similarity'},
+                            'm_sub_host': {'type': 'keyword'},
+                            "m_doc_size": {'type': 'integer', },
                             "m_img_size": {'type': 'integer'},
                             'm_title': {'type': 'keyword'},
                             'm_title_hidden': {'type': 'text'},
@@ -80,22 +93,22 @@ class elastic_controller(request_handler):
                             'm_content_type': {
                                 'type': 'text'
                             },
-                            "m_images": { "type": "nested",
-                                    "properties": {
-                                    "m_url": {
-                                        "type": "keyword"
-                                    },
-                                    "m"
-                                    "_type": {
-                                        "type": "keyword"
-                                    }
-                                }
-                            },
-                            'm_crawled_user_images': { "type" : "text" },
-                            'm_crawled_doc_url': { "type" : "text" },
-                            'm_crawled_video': { "type" : "text" },
-                            'm_doc_url': { "type" : "text" },
-                            'm_video': { "type" : "text" },
+                            "m_images": {"type": "nested",
+                                         "properties": {
+                                             "m_url": {
+                                                 "type": "keyword"
+                                             },
+                                             "m"
+                                             "_type": {
+                                                 "type": "keyword"
+                                             }
+                                         }
+                                         },
+                            'm_crawled_user_images': {"type": "text"},
+                            'm_crawled_doc_url': {"type": "text"},
+                            'm_crawled_video': {"type": "text"},
+                            'm_doc_url': {"type": "text"},
+                            'm_video': {"type": "text"},
                             'm_daily_hits': {'type': 'integer'},
                             'm_half_month_hits': {'type': 'integer'},
                             'm_date': {'type': 'integer'},
@@ -112,10 +125,10 @@ class elastic_controller(request_handler):
         except Exception as ex:
             log.g().e("ELASTIC 1 : " + MANAGE_ELASTIC_MESSAGES.S_INSERT_FAILURE + " : " + str(ex))
 
-
     def __update(self, p_data, p_upsert):
         try:
-            self.__m_connection.update(body=p_data[ELASTIC_KEYS.S_VALUE],id=p_data[ELASTIC_KEYS.S_ID], index=p_data[ELASTIC_KEYS.S_DOCUMENT])
+            self.__m_connection.update(body=p_data[ELASTIC_KEYS.S_VALUE], id=p_data[ELASTIC_KEYS.S_ID],
+                                       index=p_data[ELASTIC_KEYS.S_DOCUMENT])
             return True, None
         except Exception as ex:
             log.g().e("ELASTIC 2 : " + MANAGE_ELASTIC_MESSAGES.S_UPDATE_FAILURE + " : " + str(ex))
@@ -123,7 +136,8 @@ class elastic_controller(request_handler):
 
     def __read(self, p_data):
         try:
-            return True, self.__m_connection.search(index=p_data[ELASTIC_KEYS.S_DOCUMENT], body=p_data[ELASTIC_KEYS.S_FILTER])
+            return True, self.__m_connection.search(index=p_data[ELASTIC_KEYS.S_DOCUMENT],
+                                                    body=p_data[ELASTIC_KEYS.S_FILTER])
 
         except Exception as ex:
             log.g().e("ELASTIC 3 : " + MANAGE_ELASTIC_MESSAGES.S_READ_FAILURE + " : " + str(ex))
@@ -131,7 +145,8 @@ class elastic_controller(request_handler):
 
     def __index(self, p_data):
         try:
-            self.__m_connection.index(body=p_data[ELASTIC_KEYS.S_VALUE],id=p_data[ELASTIC_KEYS.S_ID], index=p_data[ELASTIC_KEYS.S_DOCUMENT])
+            self.__m_connection.index(body=p_data[ELASTIC_KEYS.S_VALUE], id=p_data[ELASTIC_KEYS.S_ID],
+                                      index=p_data[ELASTIC_KEYS.S_DOCUMENT])
             return True, None
         except Exception as ex:
             log.g().e(MANAGE_ELASTIC_MESSAGES.S_INSERT_FAILURE + " : " + str(ex))
