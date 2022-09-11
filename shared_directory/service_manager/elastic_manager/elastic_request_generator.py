@@ -119,7 +119,7 @@ class elastic_request_generator(request_handler):
                 "aggs": {
                     "dedup": {
                         "terms": {
-                            "field": "m_host",
+                            "field": "m_title",
                             "size": 100
                         },
 
@@ -128,14 +128,14 @@ class elastic_request_generator(request_handler):
                                 "terms": {
 
                                     "field": "m_host",
-                                    "size":30
+                                    "size":1
 
                                 }
                             },
 
                                 "aggs": {
                                     "top_hits": {
-                                        "size": 1
+                                        "size": 5
                                     }
                                 }
                         }
