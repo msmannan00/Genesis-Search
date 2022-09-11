@@ -39,17 +39,6 @@ class elastic_controller(request_handler):
                         "number_of_shards": 1,
                         "number_of_replicas": 0,
                         "max_result_window": 1000000,
-                        "index": {
-                            "similarity": {
-                                "my_similarity": {
-                                    "type": "DFR",
-                                    "basic_model": "g",
-                                    "after_effect": "l",
-                                    "normalization": "h2",
-                                    "normalization.h2.c": "3.0"
-                                }
-                            }
-                        },
                         "analysis": {
                             "analyzer": {
                                 "tags_analyzer": {
@@ -75,7 +64,7 @@ class elastic_controller(request_handler):
 
                         "dynamic": "strict",
                         "properties": {
-                            'm_host': {'type': 'text', 'similarity': 'my_similarity'},
+                            'm_host': {'type': 'keyword'},
                             'm_sub_host': {'type': 'keyword'},
                             "m_doc_size": {'type': 'integer', },
                             "m_img_size": {'type': 'integer'},

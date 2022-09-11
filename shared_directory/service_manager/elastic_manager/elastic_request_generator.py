@@ -116,11 +116,14 @@ class elastic_request_generator(request_handler):
                         }
                     }
                 },
-                #"aggs": {
-                #    "categories": {
-                #        "terms": [{"field": "m_title"}, {"field": "m_host"}]
-                #    }
-                #},
+                "aggs": {
+                    "duplicateCount": {
+                        "terms": {
+                            "field": "m_title",
+                            "min_doc_count": 2
+                        }
+                    }
+                },
                 "collapse": {
                     "field": "m_host",
                     "inner_hits": {
