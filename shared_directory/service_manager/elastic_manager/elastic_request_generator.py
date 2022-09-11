@@ -122,12 +122,6 @@ class elastic_request_generator(request_handler):
                         "name": "most_recent",
                         "size": 2,
                     }
-                }, {
-                    "field": "m_title",
-                    "inner_hits": {
-                        "name": "most_recent",
-                        "size": 2,
-                    }
                 }]
             }
 
