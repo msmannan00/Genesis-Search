@@ -117,25 +117,28 @@ class elastic_request_generator(request_handler):
                     }
                 },
                 "aggs": {
-                    "by_district": {
+                    "dedup": {
                         "terms": {
-                            "field": "m_title",
-                            "size": 2
+                            "field": "m_host",
+                            "size": 100
                         },
+
                         "aggs": {
-                            "tops": {
-                                "top_hits": {
-                                    "size": 2
+                            "dedup_1": {
+                                "terms": {
+
+                                    "field": "m_host",
+                                    "size":30
+
                                 }
-                            }
+                            },
+
+                                "aggs": {
+                                    "top_hits": {
+                                        "size": 1
+                                    }
+                                }
                         }
-                    }
-                },
-                "collapse": {
-                    "field": "m_host",
-                    "inner_hits": {
-                        "name": "most_recent",
-                        "size": 2,
                     }
                 }
             }
