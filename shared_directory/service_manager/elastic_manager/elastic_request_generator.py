@@ -116,11 +116,9 @@ class elastic_request_generator(request_handler):
                         }
                     }
                 },
-                "collapse": {
-                    "field": "m_host",
-                    "inner_hits": {
-                        "name": "most_recent",
-                        "size": 2,
+                "aggs": {
+                    "categories": {
+                        "terms": [{"field": "m_title"}, {"field": "m_host"}]
                     }
                 }
             }
