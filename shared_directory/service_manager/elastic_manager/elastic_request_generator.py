@@ -116,13 +116,19 @@ class elastic_request_generator(request_handler):
                         }
                     }
                 },
-                "collapse": {
+                "collapse": [{
                     "field": "m_host",
                     "inner_hits": {
                         "name": "most_recent",
                         "size": 2,
                     }
-                }
+                }, {
+                    "field": "m_title",
+                    "inner_hits": {
+                        "name": "most_recent",
+                        "size": 2,
+                    }
+                }]
             }
 
         return {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_WEB_INDEX, ELASTIC_KEYS.S_FILTER:m_query_statement}
