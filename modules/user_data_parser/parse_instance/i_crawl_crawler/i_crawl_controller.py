@@ -62,8 +62,8 @@ class i_crawl_controller(request_handler, ABC):
         m_doc_list = sorted([RAW_PATH_CONSTANTS.S_LOCAL_FILE_PATH + "/" + f for f in os.listdir(RAW_PATH_CONSTANTS.S_LOCAL_FILE_PATH)], key=os.path.getctime)
         if len(m_doc_list)>0:
             m_file = m_doc_list[0]
-            m_json = open(m_file, 'r', encoding='unicode_escape').read()
-            os.remove(m_file)
+            m_json = open(m_file.replace("\\", "\\\\")).read()
+            os.remove(m_file.replace("\\", "\\\\"))
             try:
                 m_json = self.unescape(m_json)
                 m_data = json.loads(m_json, strict=False)
@@ -103,7 +103,8 @@ class i_crawl_controller(request_handler, ABC):
                else:
                    self.__trigger_url_request(m_url_model, m_html)
             except Exception as ex:
-                log.g().e("ICRAWL LOCAL ERROR E1 : " + str(ex))
+                pass
+                #log.g().e("ICRAWL LOCAL ERROR E1 : " + str(ex))
 
 
     def invoke_trigger(self, p_command, p_data=None):
