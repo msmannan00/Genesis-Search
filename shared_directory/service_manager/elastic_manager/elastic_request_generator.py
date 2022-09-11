@@ -116,18 +116,12 @@ class elastic_request_generator(request_handler):
                         }
                     }
                 },
+
                 "aggs": {
-                    "by_district": {
+                    "duplicateCount": {
                         "terms": {
-                            "field": "m_title",
-                            "size": 0
-                        },
-                        "aggs": {
-                            "tops": {
-                                "top_hits": {
-                                    "size": 1
-                                }
-                            }
+                            "field": "m_title.keyword",
+                            "min_doc_count": 2
                         }
                     }
                 },
