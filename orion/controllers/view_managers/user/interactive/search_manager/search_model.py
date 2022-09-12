@@ -42,10 +42,10 @@ class search_model(request_handler):
                         mRepeatedURL[m_service["m_host"]] += 1
                 else:
                     mRepeatedURL[m_service["m_host"]] = 1
-                if m_service["m_important_content"][0:100] in mDescription:
+                if m_service["m_content"][0:500] in mDescription:
                     continue
                 else:
-                    mDescription.add(m_service["m_important_content"][0:100])
+                    mDescription.add(m_service["m_content"][0:500])
                 mRelevanceListData.append(m_document['_source'])
 
             return mRelevanceListData, p_paged_documents['suggest']['content_suggestion']
