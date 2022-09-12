@@ -26,22 +26,27 @@ class search_model(request_handler):
 
     def __parse_filtered_documents(self, p_paged_documents):
         mRelevanceListData = []
+        mDescription = set([])
+        mRepeatedURL = {}
         try:
-            m_result_final = p_paged_documents["aggregations"]["dedup"]["buckets"]
+            m_result_final = p_paged_documents['hits']['hits']
+
             for m_document in m_result_final:
-                print("0:::::::::::::::::::::::::::::", flush=True)
-                print(m_document["aggs"].keys(), flush=True)
-                print("0:::::::::::::::::::::::::::::", flush=True)
-                doc = m_document["aggs"]["hits"]["hits"][0]
-                print("0:::::::::::::::::::::::::::::", flush=True)
-                m_service = doc["_source"]
+                m_service = m_document['_source']
                 if m_service['m_sub_host'] == "na":
                     m_service['m_sub_host'] = "/"
-                print("2:::::::::::::::::::::::::::::", flush=True)
-                mRelevanceListData.append(doc['_source'])
-                print("3:::::::::::::::::::::::::::::", flush=True)
-                print(doc['_source'], flush=True)
-                print("4::::::::::::::::::::::::::::", flush=True)
+                if m_service["m_host"] in mRepeatedURL:
+                    if mRepeatedURL[m_service["m_host"]] > 1:
+                        continue
+                    else:
+                        mRepeatedURL[m_service["m_host"]] += 1
+                else:
+                    mRepeatedURL[m_service["m_host"]] = 1
+                if m_service["m_important_content"][0:100] in mDescription:
+                    continue
+                else:
+                    mDescription.add(m_service["m_important_content"][0:100])
+                mRelevanceListData.append(m_document['_source'])
 
             return mRelevanceListData, p_paged_documents['suggest']['content_suggestion']
         except Exception as ex:
@@ -62,6 +67,10 @@ class search_model(request_handler):
 
         m_tokenized_query = self.__m_tokenizer.invoke_trigger(SEARCH_MODEL_TOKENIZATION_COMMANDS.M_SPLIT_AND_NORMALIZE, [m_query_model.m_search_query])
         m_status, m_documents = elastic_controller.get_instance().invoke_trigger(ELASTIC_CRUD_COMMANDS.S_READ, [ELASTIC_REQUEST_COMMANDS.S_SEARCH,[m_query_model],[None]])
+
+        print(":::::::::::::::::::::::::", flush=True)
+        print(m_documents, flush=True)
+        print(":::::::::::::::::::::::::", flush=True)
 
 
         m_parsed_documents, m_suggestions_content = self.__parse_filtered_documents(m_documents)

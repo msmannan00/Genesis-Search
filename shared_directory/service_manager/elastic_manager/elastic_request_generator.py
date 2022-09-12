@@ -116,32 +116,14 @@ class elastic_request_generator(request_handler):
                         }
                     }
                 },
-                "aggs": {
-                    "dedup": {
-                        "terms": {
-                            "field": "m_title",
-                            "size": 100
-                        },
-
-                        "aggs": {
-                            "dedup_1": {
-                                "terms": {
-
-                                    "field": "m_host",
-                                    "size":1
-
-                                }
-                            },
-
-                                "aggs": {
-                                    "top_hits": {
-                                        "size": 5
-                                    }
-                                }
-                        }
+                "collapse": {
+                    "field": "m_host",
+                    "inner_hits": {
+                        "name": "most_recent",
+                        "size": 2,
                     }
                 }
-            }
+        }
 
         return {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_WEB_INDEX, ELASTIC_KEYS.S_FILTER:m_query_statement}
 
