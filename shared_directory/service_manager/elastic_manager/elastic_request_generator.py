@@ -49,7 +49,7 @@ class elastic_request_generator(request_handler):
 
         m_query_statement = {
                 "from": (m_page_number - 1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
-                "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE + 15,
+                "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE + 55,
                 "min_score": 5,
                 "query": {
                     "bool": {
