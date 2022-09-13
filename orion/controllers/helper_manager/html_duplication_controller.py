@@ -1,5 +1,4 @@
 # Local Imports
-from html_similarity.style_similarity import jaccard_similarity
 from jaccard_index.jaccard import jaccard_index
 
 
