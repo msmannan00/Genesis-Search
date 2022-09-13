@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/controllers/helper_manager/html_duplication_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/helper_manager/html_duplication_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/helper_manager/html_duplication_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

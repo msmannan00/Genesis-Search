@@ -25,7 +25,6 @@ django-bootstrap-v5
 bunch
 validators
 fuzz
-jaccard-index
 
 ###### Requirements With Version Specifiers ######
 simplejson==3.8.0
