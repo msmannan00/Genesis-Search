@@ -1,6 +1,7 @@
 import json
 
 from orion.controllers.constants.strings import GENERAL_STRINGS
+from orion.controllers.helper_manager.html_duplication_controller import html_duplication_controller
 from orion.controllers.view_managers.user.interactive.search_manager.search_enums import SEARCH_CALLBACK, SEARCH_MODEL_TOKENIZATION_COMMANDS, SEARCH_SESSION_COMMANDS, SEARCH_MODEL_COMMANDS
 from orion.controllers.view_managers.user.interactive.search_manager.search_session_controller import search_session_controller
 from orion.controllers.view_managers.user.interactive.search_manager.spell_checker import spell_checker
@@ -25,14 +26,23 @@ class search_model(request_handler):
         self.__m_spell_checker = spell_checker()
 
     def __parse_filtered_documents(self, p_paged_documents):
+        self.__html_duplication_handler = html_duplication_controller()
         mRelevanceListData = []
         mDescription = set([])
         mRepeatedURL = {}
+
         try:
             m_result_final = p_paged_documents['hits']['hits']
 
             for m_document in m_result_final:
                 m_service = m_document['_source']
+                score = self.__html_duplication_handler.verify_content_duplication(m_service["m_content"])
+
+                if score < 0.6:
+                    self.__html_duplication_handler.on_insert_content(m_service["m_content"])
+                else:
+                    continue
+
                 if m_service['m_sub_host'] == "na":
                     m_service['m_sub_host'] = "/"
                 if m_service["m_host"] in mRepeatedURL:
@@ -67,11 +77,6 @@ class search_model(request_handler):
 
         m_tokenized_query = self.__m_tokenizer.invoke_trigger(SEARCH_MODEL_TOKENIZATION_COMMANDS.M_SPLIT_AND_NORMALIZE, [m_query_model.m_search_query])
         m_status, m_documents = elastic_controller.get_instance().invoke_trigger(ELASTIC_CRUD_COMMANDS.S_READ, [ELASTIC_REQUEST_COMMANDS.S_SEARCH,[m_query_model],[None]])
-
-        print(":::::::::::::::::::::::::", flush=True)
-        print(m_documents, flush=True)
-        print(":::::::::::::::::::::::::", flush=True)
-
 
         m_parsed_documents, m_suggestions_content = self.__parse_filtered_documents(m_documents)
         m_query_model.set_total_documents(len(m_parsed_documents))
