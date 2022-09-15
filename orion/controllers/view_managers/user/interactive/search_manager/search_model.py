@@ -36,7 +36,7 @@ class search_model(request_handler):
                 if m_service['m_sub_host'] == "na":
                     m_service['m_sub_host'] = "/"
                 if m_service["m_host"] in mRepeatedURL:
-                    if mRepeatedURL[m_service["m_host"]] > 1:
+                    if mRepeatedURL[m_service["m_host"]] > 4:
                         continue
                     else:
                         mRepeatedURL[m_service["m_host"]] += 1
