@@ -150,13 +150,13 @@ class search_session_controller(request_handler):
                     if m_item_index < m_index:
                         m_index = m_item_index
 
+            m_description = m_description[0:100]
             for m_item in p_tokenized_query:
                 if helper_controller.is_stop_word(m_item.lower()) is True:
                     continue
                 m_description = self.ireplace(m_item,"<span style=\"color:#4d4d4d;font-weight:600\">" + m_item + "</span>", m_description)
 
-            m_description = "yyy" + m_description[1:100]
-
+            m_description = "yyy" + m_description
         m_description = m_description.lstrip(" -")
         mRelevanceContext = {
             SEARCH_CALLBACK.M_TITLE: self.__normalize_text(m_title),
