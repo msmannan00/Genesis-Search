@@ -134,14 +134,14 @@ class search_session_controller(request_handler):
         m_index = 10000
 
         m_query = ' '.join(p_tokenized_query)
-        if m_query in m_description and m_query.count(" ")>2:
+        if m_query in m_description and m_query.count(" ") > 2:
             m_index = m_description.index(m_query)
             if m_description[m_index-20:m_index].__contains__(" "):
-                m_space_index = m_description.index(" ", m_index-20,m_index)
+                m_space_index = m_description.index(" ", m_index-20, m_index)
             else:
                 m_space_index = m_index
-            m_description = m_description[m_space_index:m_space_index+250]
-            m_description_original = m_description[m_space_index:m_space_index+250]
+            m_description = m_description[m_space_index:m_space_index+150]
+            m_description_original = m_description[m_space_index:m_space_index+150]
             m_description = m_description.replace(m_query, "<span style=\"color:#4d4d4d;font-weight:600\">" + m_query + "</span>")
         else:
             for m_item in p_tokenized_query:
@@ -150,7 +150,7 @@ class search_session_controller(request_handler):
                     if m_item_index < m_index:
                         m_index = m_item_index
 
-            m_diff = len(m_description) - (m_index + 230)
+            m_diff = len(m_description) - (m_index + 130)
             if m_diff<0:
                 m_index = m_index + m_diff
             if m_index<0:
