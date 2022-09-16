@@ -150,7 +150,7 @@ class search_session_controller(request_handler):
                     if m_item_index < m_index:
                         m_index = m_item_index
 
-            m_description = m_description[0:200]
+            m_description = m_description[0:250]
             for m_item in p_tokenized_query:
                 if helper_controller.is_stop_word(m_item.lower()) is True:
                     continue
