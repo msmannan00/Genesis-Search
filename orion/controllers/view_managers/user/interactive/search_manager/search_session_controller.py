@@ -134,15 +134,15 @@ class search_session_controller(request_handler):
         m_index = 10000
 
         m_query = ' '.join(p_tokenized_query)
-        if m_query in m_description and m_query.count(" ") > 2:
+        if m_query in m_description and m_query.count(" ")>2:
             m_index = m_description.index(m_query)
             if m_description[m_index-20:m_index].__contains__(" "):
-                m_space_index = m_description.index(" ", m_index-20, m_index)
+                m_space_index = m_description.index(" ", m_index-20,m_index)
             else:
                 m_space_index = m_index
-            m_description = m_description[m_space_index:m_space_index+150]
+            m_description = m_description[m_space_index:m_space_index+250]
+            m_description_original = m_description[m_space_index:m_space_index+250]
             m_description = m_description.replace(m_query, "<span style=\"color:#4d4d4d;font-weight:600\">" + m_query + "</span>")
-            m_description = "xxx"+m_description
         else:
             for m_item in p_tokenized_query:
                 if m_item in m_description.lower():
@@ -150,13 +150,24 @@ class search_session_controller(request_handler):
                     if m_item_index < m_index:
                         m_index = m_item_index
 
+            m_diff = len(m_description) - (m_index + 230)
+            if m_diff<0:
+                m_index = m_index + m_diff
+            if m_index<0:
+                m_index = 0
+
+            if " - " in m_description[:m_index]:
+                m_index_r = m_description[:m_index].rindex(" - ")
+                if abs(m_index_r-m_index)<=50:
+                    m_index = m_index_r
+
             m_description = m_description[0:250]
+            m_description_original = m_description
             for m_item in p_tokenized_query:
                 if helper_controller.is_stop_word(m_item.lower()) is True:
                     continue
                 m_description = self.ireplace(m_item,"<span style=\"color:#4d4d4d;font-weight:600\">" + m_item + "</span>", m_description)
 
-            m_description = "yyy" + m_description
         m_description = m_description.lstrip(" -")
         mRelevanceContext = {
             SEARCH_CALLBACK.M_TITLE: self.__normalize_text(m_title),
@@ -167,7 +178,7 @@ class search_session_controller(request_handler):
         mRelevanceContextOriginal = {
             SEARCH_CALLBACK.M_TITLE: self.__normalize_text(m_title),
             SEARCH_CALLBACK.M_URL: p_document[SEARCH_DOCUMENT_CALLBACK.M_HOST] + p_document[SEARCH_DOCUMENT_CALLBACK.M_SUB_HOST],
-            SEARCH_CALLBACK.M_DESCRIPTION: m_description,
+            SEARCH_CALLBACK.M_DESCRIPTION: m_description_original,
             SEARCH_CALLBACK.K_SEARCH_TYPE: p_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE],
         }
 
