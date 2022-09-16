@@ -155,7 +155,8 @@ class search_session_controller(request_handler):
                     continue
                 m_description = self.ireplace(m_item,"<span style=\"color:#4d4d4d;font-weight:600\">" + m_item + "</span>", m_description)
 
-            m_description = "yyy" + m_description
+            m_description = "yyy" + m_description[1:100]
+
         m_description = m_description.lstrip(" -")
         mRelevanceContext = {
             SEARCH_CALLBACK.M_TITLE: self.__normalize_text(m_title),
