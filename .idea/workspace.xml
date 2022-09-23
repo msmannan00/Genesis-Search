@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="" />
+    <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/orion/templates/orion/.well-known/url.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/constants/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/constants/constant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,18 +44,18 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Workspace/Genesis-Search/orion/controllers/helper_manager&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Workspace/Genesis-Search/orion/templates/orion/.well-known&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Workspace\Genesis-Search\orion\templates\orion\.well-known" />
       <recent name="C:\Workspace\Genesis-Search\orion\controllers\helper_manager" />
       <recent name="C:\Workspace\Genesis-Search\orion\templates\orion\user\interactive\download" />
       <recent name="C:\workspace\Orion-Search\orion\templates\orion" />
       <recent name="C:\workspace\Orion-Search\static\orion\images" />
-      <recent name="C:\workspace\Orion-Search\orion\controllers\view_managers\advert\sample_advert" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\workspace\Orion-Search\static\orion\js\pages\user\download" />

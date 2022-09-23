@@ -125,6 +125,10 @@ def download(request):
 def download_iframe(request):
     return render(None, CONSTANTS.S_TEMPLATE_DOWNLOAD_IFRAME_WEBSITE_PATH)
 
+@csrf_exempt
+@xframe_options_exempt
+def crawl_url(request):
+    return render(None, CONSTANTS.S_TEMPLATE_DOWNLOAD_IFRAME_WEBSITE_PATH)
 
 @csrf_exempt
 def maintenance(request):
