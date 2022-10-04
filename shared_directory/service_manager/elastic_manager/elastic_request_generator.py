@@ -48,8 +48,6 @@ class elastic_request_generator(request_handler):
                 m_safe_filter = {"term": {"m_content_type": 'a'}}
 
         m_query_statement = {
-                "from": (m_page_number - 1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
-                "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE + 15,
                 "min_score": 5,
                 "query": {
                     "bool": {
@@ -117,12 +115,14 @@ class elastic_request_generator(request_handler):
                     }
                 },
                 "collapse": {
-                    "field": "m_title",
+                    "field": "m_host",
                     "inner_hits": {
                         "name": "most_recent",
                         "size": 2,
                     }
-                }
+                },
+                "from": (m_page_number - 1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
+                "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE,
         }
 
         return {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_WEB_INDEX, ELASTIC_KEYS.S_FILTER:m_query_statement}
