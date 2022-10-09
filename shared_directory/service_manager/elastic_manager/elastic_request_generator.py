@@ -118,7 +118,7 @@ class elastic_request_generator(request_handler):
                     "field": "m_host",
                     "inner_hits": {
                         "name": "most_recent",
-                        "size": 2,
+                        "size": 12,
                     }
                 },
                 "from": (m_page_number - 1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
