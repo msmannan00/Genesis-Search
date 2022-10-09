@@ -115,7 +115,7 @@ class elastic_request_generator(request_handler):
                     }
                 },
                 "collapse": {
-                    "field": "m_host",
+                    "field": "m_title",
                     "inner_hits": {
                         "name": "most_recent",
                         "size": 12,
