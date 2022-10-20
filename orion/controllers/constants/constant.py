@@ -33,6 +33,7 @@ class CONSTANTS:
     S_APP_ADS_PATH = "orion/.well-known/app-ads.txt"
     S_TEMPLATE_DOWNLOAD_WEBSITE_PATH = "orion/user/interactive/download/download.html"
     S_TEMPLATE_DOWNLOAD_IFRAME_WEBSITE_PATH = "orion/.well-known/url.txt"
+    S_TEMPLATE_CRAWL_URL_COMPLETE_WEBSITE_PATH = "orion/.well-known/url_complete.txt"
 
     # Template URL 360
     S_360_TEMPLATE_INDEX_PATH = "orion/360user/interactive/homepage/index.html"
