@@ -45,6 +45,7 @@ urlpatterns = [
     path('downloads/', views.download, name='download'),
     path('download_iframe/', views.download_iframe, name='download_iframe'),
     path('crawl_url/', views.crawl_url, name='crawl_url'),
+    path('crawl_url_complete/', views.crawl_url_complete, name='crawl_url_complete'),
 
     # hotlinks
     path('cms/manage_authentication', views.manage_authentication, name='manage_search'),
