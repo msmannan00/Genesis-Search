@@ -1,7 +1,7 @@
 {% load static %}
 
 <!-- result counts -->
-{% if mSearchCallbackRelevantDocument|length != 0 %}
+{% if mSearchCallbackRelevantDocument|length > 14 %}
     <div class="search-result__status disable-highlight" >About {{mSearchCallbackResultCount}} results found</div>
 {% endif %}
 
