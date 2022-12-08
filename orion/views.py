@@ -137,7 +137,7 @@ def crawl_url_complete(request):
 
 @csrf_exempt
 def bridges(request):
-    return render(None, CONSTANTS.BRIDGE_PATH)
+    return render(None, CONSTANTS.S_BRIDGE_PATH)
 
 @csrf_exempt
 def maintenance(request):
