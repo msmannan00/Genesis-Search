@@ -36,7 +36,7 @@ class search_controller(request_handler):
     # External Request Callbacks
     def invoke_trigger(self, p_command, p_data):
         if p_command == SEARCH_MODEL_COMMANDS.M_INIT:
-            if self.__on_verify_app(p_data) is True:
+            if self.__on_verify_app(p_data) is True and p_data.GET[SEARCH_PARAM.M_TYPE] != "images":
                 return render(None, CONSTANTS.S_TEMPLATE_BLOCK_WEBSITE_PATH)
             elif APP_STATUS.S_MAINTAINANCE is True:
                 return render(None, CONSTANTS.S_TEMPLATE_MAINTENANCE_WEBSITE_PATH)
