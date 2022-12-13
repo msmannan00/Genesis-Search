@@ -8,6 +8,7 @@ from shared_directory.request_manager.request_handler import request_handler
 from shared_directory.service_manager.block_manager.block_controller import block_controller
 from shared_directory.service_manager.block_manager.block_enums import BLOCK_COMMAND
 from shared_directory.state_manager.constant import APP_STATUS
+from orion.controllers.view_managers.user.interactive.search_manager.search_enums import SEARCH_PARAM, SEARCH_CALLBACK, SEARCH_DOCUMENT_CALLBACK, SEARCH_SESSION_COMMANDS
 
 
 class search_controller(request_handler):
