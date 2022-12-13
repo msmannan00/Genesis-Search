@@ -33,6 +33,11 @@
 
     {% endfor %}
 
+
+    {% if mSearchCallbackRelevantDocument|length >= 8 %}
+        {% include 'orion/user/blades/search_template/blade_search_engine_suggestion.html' %}
+    {% endif %}
+
 {% else %}
 
     <!-- orion content file based -->
