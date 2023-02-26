@@ -39,7 +39,7 @@ class sitemap_controller(request_handler):
         if p_command == SITEMAP_MODEL_COMMANDS.M_INIT:
             if self.__on_verify_app(p_data) is True:
                 return render(None, CONSTANTS.S_TEMPLATE_BLOCK_WEBSITE_PATH)
-            if APP_STATUS.S_MAINTAINANCE is True:
+            elif APP_STATUS.S_MAINTAINANCE is True:
                 return render(None, CONSTANTS.S_TEMPLATE_MAINTENANCE_WEBSITE_PATH)
             else:
                 m_response, m_status = self.__m_notice_model.invoke_trigger(SITEMAP_MODEL_COMMANDS.M_INIT, p_data)
