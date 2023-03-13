@@ -59,7 +59,7 @@ class user_index_model(request_handler):
     def __init_page(self, p_data):
         m_status, m_data = self.__service_validator(p_data)
         if m_status:
-            self.__save_html(m_data)
+            # self.__save_html(m_data)
             return USER_INDEX_CALLBACK.M_BLOCK_INDEXED_SUCCESS
         else:
             return USER_INDEX_CALLBACK.M_BLOCK_INDEXED_FAILED

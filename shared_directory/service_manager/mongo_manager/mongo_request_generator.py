@@ -41,6 +41,15 @@ class mongo_request_generator(request_handler):
     def __on_fetch_status(self):
         return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_STATUS, MONGODB_KEYS.S_FILTER:{}}
 
+    def __on_upload_unique_url(self, p_url):
+        return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_UNIQUE_URL, MONGODB_KEYS.S_VALUE:{"m_url":p_url}}
+
+    def __on_upload_unique_url_clear(self):
+        return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_UNIQUE_URL, MONGODB_KEYS.S_FILTER:{},MONGODB_KEYS.S_VALUE:{}}
+
+    def __on_upload_unique_url_read(self):
+        return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_UNIQUE_URL, MONGODB_KEYS.S_FILTER:{},MONGODB_KEYS.S_VALUE:{}}
+
     def invoke_trigger(self, p_commands, p_data=None):
         if p_commands == MONGO_COMMANDS.M_VERIFY_CREDENTIAL:
             return self.__on_verify_credentials(p_data[0], p_data[1])
@@ -58,4 +67,10 @@ class mongo_request_generator(request_handler):
             return self.__on_update_status(p_data[0])
         if p_commands == MONGO_COMMANDS.M_READ_RAW:
             return self.__on_fetch_raw(p_data[0])
+        if p_commands == MONGO_COMMANDS.M_UNIQUE_URL_ADD:
+            return self.__on_upload_unique_url(p_data[0])
+        if p_commands == MONGO_COMMANDS.M_UNIQUE_URL_CLEAR:
+            return self.__on_upload_unique_url_clear()
+        if p_commands == MONGO_COMMANDS.M_UNIQUE_URL_READ:
+            return self.__on_upload_unique_url_read()
 

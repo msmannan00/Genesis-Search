@@ -1,7 +1,7 @@
 {% load static %}
 
 {% if mSearchCallbackSaveSearch == False or mSearchCallbackSaveSearch == 'False' %}
-    <br><br>
+ <!--   <br><br>
     <a class="search-result__safe-search-container search-result__safe-search-container--border search-result__safe-search-container--non-interactable" style="text-decoration: none" href="?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=True&pSearchParamType={{mSearchCallbackRelevantSearchType}}">
         <label class="search-result__safe-search search-result__safe-search--info">
             <label class="search-result__safe-search--label"> Safe Search </label>
@@ -11,9 +11,9 @@
         <label class="search-result__safe-search search-result__safe-search--switch">
             <label class="search-result__safe-search--label"> Disabled </label>
         </label>
-    </a>
+    </a>-->
 {% else %}
-    <br><br>
+ <!--   <br><br>
     <a class="search-result__safe-search-container search-result__safe-search-container--border search-result__safe-search-container--non-interactable" style="text-decoration: none" href="?q={{mSearchCallbackQuery}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber}}&mSearchParamSafeSearch=False&pSearchParamType={{mSearchCallbackRelevantSearchType}}">
         <label class="search-result__safe-search search-result__safe-search--info">
             <label class="search-result__safe-search--label"> Safe Search </label>
@@ -23,5 +23,5 @@
         <label class="search-result__safe-search search-result__safe-search--switch">
             <label class="search-result__safe-search--label"> Enabled </label>
         </label>
-    </a>
+    </a>-->
 {% endif %}

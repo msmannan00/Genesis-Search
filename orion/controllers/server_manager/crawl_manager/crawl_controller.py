@@ -30,6 +30,7 @@ class crawl_controller(request_handler):
             self.__m_session = crawl_session_controller()
 
     def __handle_request(self, p_data):
+
         m_status, m_crawl_model = self.__m_session.invoke_trigger(CRAWL_COMMANDS.M_INIT, p_data)
         if m_status is False:
             m_context = [False,CRAWL_ERROR_CALLBACK.M_INVALID_PARAM]

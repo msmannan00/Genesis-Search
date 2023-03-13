@@ -89,6 +89,7 @@ class mongo_controller:
             return False, str(ex)
 
     def invoke_trigger(self, p_commands, p_data=None):
+        pass
 
         m_request = p_data[0]
         m_data = p_data[1]

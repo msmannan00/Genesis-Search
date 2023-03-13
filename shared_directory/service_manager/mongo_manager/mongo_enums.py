@@ -10,6 +10,7 @@ class MONGO_USER_COLLECTION:
     S_DATABASE_DEFAULT_ENTRY_STATUS = {'m_cronjob': 0, 'm_crawler': 0}
 
 class MONGODB_COLLECTIONS:
+    S_UNIQUE_URL = 'm_unique_url'
     S_REPORT = 'm_reported_websites'
     S_SUBMIT = 'm_submitted_websites'
     S_USER_MODEL = 'm_users'

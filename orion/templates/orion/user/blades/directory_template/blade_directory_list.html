@@ -20,10 +20,14 @@
                     <td class="onion__table-category"><b>Business</b></td>
                     {% elif mDoc.mContentType == 'n' %}
                     <td class="onion__table-category"><b>News</b></td>
+                    {% elif mDoc.mContentType == 'news' %}
+                    <td class="onion__table-category"><b>News</b></td>
                     {% elif mDoc.mContentType == 'i' %}
                     <td class="onion__table-category"><b>Illegal</b></td>
+                    {% elif mDoc.mContentType == 'a' %}
+                    <td class="onion__table-category"><b>Illegal</b></td>
                     {% else %}
-                    <td class="onion__table-category"><b>Unknown</b></td>
+                    <td class="onion__table-category"><b>{{mDoc.mContentType}}</b></td>
                     {% endif %}
                 </tr>
 

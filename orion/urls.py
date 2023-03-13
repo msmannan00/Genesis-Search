@@ -37,6 +37,7 @@ urlpatterns = [
     path('cms/manage_search', views.manage_search, name='manage_search'),
     path('cms/dashboard/', views.cms_dashboard, name='dashboard'),
     path('user_index/', views.user_index, name='user_index'),
+    path('update_crawl_url/', views.update_crawl_url, name='update_crawl_url'),
     path('.well-known/pki-validation/3841DB2F1945B5BFB45731D4350D205C.txt', views.ssl_validation, name='ssl_validation'),
     path('.well-known/bridges.txt', views.bridges, name='bridges'),
     path('crawl_index/', views.crawl_index, name='crawl_index'),

@@ -30,6 +30,7 @@ class CONSTANTS:
     S_TEMPLATE_BLOCK_WEBSITE_PATH = "orion/user/server/block/block.html"
     S_TEMPLATE_INTELLIGENCE_WEBSITE_PATH = "orion/user/interactive/intelligence/intelligence.html"
     S_SSL_VERIFICATION_PATH = "orion/.well-known/pki-validation/D16CA9D0C6D8EB91CF2B6FA9CC2F3715.txt"
+    S_DUPLICATE_CRAWL_URL_PATH = "orion/.well-known/pki-validation/D16CA9D0C6D8EB91CF2B6FA9CC2F3715.txt"
     S_BRIDGE_PATH = "orion/.well-known/bridges.txt"
     S_APP_ADS_PATH = "orion/.well-known/app-ads.txt"
     S_TEMPLATE_DOWNLOAD_WEBSITE_PATH = "orion/user/interactive/download/download.html"

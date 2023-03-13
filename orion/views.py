@@ -1,9 +1,12 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.clickjacking import xframe_options_exempt
 from django.views.decorators.csrf import csrf_exempt
+import json
 from orion.controllers.constants.constant import CONSTANTS
 from orion.controllers.server_manager.crawl_manager.crawl_controller import crawl_controller
 from orion.controllers.server_manager.crawl_manager.crawl_enums import CRAWL_COMMANDS
+from orion.controllers.constants.enums import MONGO_COMMANDS
 from orion.controllers.server_manager.external_request_manager.external_request_controller import \
     external_request_controller
 from orion.controllers.server_manager.external_request_manager.external_request_enums import EXTERNAL_REQUEST_COMMANDS
@@ -23,6 +26,8 @@ from orion.controllers.view_managers.user.interactive.intelligence_manager.intel
     intelligence_controller
 from orion.controllers.view_managers.user.interactive.intelligence_manager.intelligence_enums import \
     INTELLIGENCE_MODEL_COMMANDS
+from shared_directory.service_manager.mongo_manager.mongo_controller import mongo_controller
+from shared_directory.service_manager.mongo_manager.mongo_enums import MONGODB_CRUD
 from orion.controllers.view_managers.user.server.block_manager.block_enums import BLOCK_MODEL_CALLBACK
 from orion.controllers.view_managers.user.server.error.error_controller import error_controller
 from orion.controllers.view_managers.user.server.error.error_enums import ERROR_MODEL_CALLBACK
@@ -97,6 +102,20 @@ def search(request):
 def user_index(request):
     return user_index_controller.getInstance().invoke_trigger(USER_INDEX_MODEL_CALLBACK.M_INIT, request)
 
+import os
+@csrf_exempt
+def update_crawl_url(request):
+    try:
+        if request.GET["type"] == "clean":
+            mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_DELETE, [MONGO_COMMANDS.M_UNIQUE_URL_CLEAR, [None], [True]])
+            return HttpResponse("url cleaned")
+        else:
+            mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_CREATE, [MONGO_COMMANDS.M_UNIQUE_URL_ADD, [request.GET["url"]], [True]])
+            return HttpResponse("url added")
+    except Exception as ex:
+        return HttpResponse(ex)
+
+    #return crawl_controller.getInstance().invoke_trigger(CRAWL_COMMANDS.M_INIT, request)
 
 @csrf_exempt
 def test(request):
@@ -128,7 +147,12 @@ def download_iframe(request):
 @csrf_exempt
 @xframe_options_exempt
 def crawl_url(request):
-    return render(None, CONSTANTS.S_TEMPLATE_DOWNLOAD_IFRAME_WEBSITE_PATH)
+    m_response, m_status = mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_READ, [MONGO_COMMANDS.M_UNIQUE_URL_READ, [], [None, None]])
+    m_response_filtered = ""
+    for item in m_response:
+        m_response_filtered = m_response_filtered + item.get("m_url") + "<br>"
+
+    return HttpResponse(m_response_filtered)
 
 @csrf_exempt
 @xframe_options_exempt
