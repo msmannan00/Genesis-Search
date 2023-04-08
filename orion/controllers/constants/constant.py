@@ -27,7 +27,7 @@ class CONSTANTS:
     S_TEMPLATE_ERROR_WEBSITE_PATH = "orion/user/server/error/error.html"
     S_TEMPLATE_SITEMAP_WEBSITE_PATH = "orion/user/interactive/sitemap/sitemap.html"
     S_TEMPLATE_SEARCH_WEBSITE_PATH = "orion/user/interactive/search/search.html"
-    S_TEMPLATE_BLOCK_WEBSITE_PATH = "orion/user/server/block/block.html"
+    S_TEMPLATE_RESTRICTED_WEBSITE_PATH = "orion/user/server/block/restricted.html"
     S_TEMPLATE_INTELLIGENCE_WEBSITE_PATH = "orion/user/interactive/intelligence/intelligence.html"
     S_SSL_VERIFICATION_PATH = "orion/.well-known/pki-validation/D16CA9D0C6D8EB91CF2B6FA9CC2F3715.txt"
     S_DUPLICATE_CRAWL_URL_PATH = "orion/.well-known/pki-validation/D16CA9D0C6D8EB91CF2B6FA9CC2F3715.txt"

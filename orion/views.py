@@ -182,6 +182,9 @@ def block(request):
 def block_static(request):
     return render(None, CONSTANTS.S_TEMPLATE_BLOCK_WEBSITE_PATH)
 
+@csrf_exempt
+def restricted_static(request):
+    return render(None, CONSTANTS.S_TEMPLATE_RESTRICTED_WEBSITE_PATH)
 
 @csrf_exempt
 def cms_login(request):

@@ -13,7 +13,17 @@
             {% for mDoc in mDirectoryCallbackLinks %}
                 <tr>
                     <td class="onion__table-id">{{mDoc.mID}}</td>
+
+                    {% if mDoc.mContentType == 'i' %}
+                    <td><a href="/restricted" class="onion__table-url">{{mDoc.mURL|slice:"0:20"}}</a>...</td>
+                    {% elif mDoc.mContentType == 'a' %}
+                    <td><a href="/restricted" class="onion__table-url">{{mDoc.mURL|slice:"0:20"}}</a>...</td>
+                    {% elif mDoc.mContentType == 'adult' %}
+                    <td><a href="/restricted" class="onion__table-url">{{mDoc.mURL|slice:"0:20"}}</a>...</td>
+                    {% else %}
                     <td><a href="{{mDoc.mURL}}" class="onion__table-url">{{mDoc.mURL}}</a></td>
+                    {% endif %}
+
                     {% if mDoc.mContentType == 'g' %}
                     <td class="onion__table-category"><b>General</b></td>
                     {% elif mDoc.mContentType == 'b' %}
@@ -23,9 +33,11 @@
                     {% elif mDoc.mContentType == 'news' %}
                     <td class="onion__table-category"><b>News</b></td>
                     {% elif mDoc.mContentType == 'i' %}
-                    <td class="onion__table-category"><b>Illegal</b></td>
+                    <td class="onion__table-category"><b>Restricted</b></td>
                     {% elif mDoc.mContentType == 'a' %}
-                    <td class="onion__table-category"><b>Illegal</b></td>
+                    <td class="onion__table-category"><b>Restricted</b></td>
+                    {% elif mDoc.mContentType == 'adult' %}
+                    <td class="onion__table-category"><b>Restricted</b></td>
                     {% else %}
                     <td class="onion__table-category"><b>{{mDoc.mContentType}}</b></td>
                     {% endif %}

@@ -43,6 +43,7 @@ urlpatterns = [
     path('crawl_index/', views.crawl_index, name='crawl_index'),
     path('intelligence/', views.intelligence, name='intelligence'),
     path('block/', views.block_static, name='block'),
+    path('restricted/', views.restricted_static, name='restricted'),
     path('download/', views.download, name='download'),
     path('downloads/', views.download, name='download'),
     path('download_iframe/', views.download_iframe, name='download_iframe'),
