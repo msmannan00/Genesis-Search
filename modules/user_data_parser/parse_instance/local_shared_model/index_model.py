@@ -9,7 +9,6 @@ class index_model:
         self.m_base_url_model = p_base_url_model
         self.m_title = p_title
         self.m_meta_description = p_meta_description
-        self.m_title_hidden = p_title_hidden
         self.m_important_content = p_important_content
         self.m_important_content_hidden = p_important_content_hidden
         self.m_meta_keywords = p_meta_keywords

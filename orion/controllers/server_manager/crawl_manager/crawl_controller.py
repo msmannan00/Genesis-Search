@@ -3,6 +3,7 @@ import json
 from django.http import HttpResponse
 
 from orion.controllers.server_manager.crawl_manager.crawl_enums import CRAWL_COMMANDS, CRAWL_ERROR_CALLBACK
+from orion.controllers.server_manager.crawl_manager.crawl_session_controller import crawl_session_controller
 from shared_directory.request_manager.request_handler import request_handler
 from shared_directory.service_manager.elastic_manager.elastic_controller import elastic_controller
 
@@ -26,6 +27,7 @@ class crawl_controller(request_handler):
             pass
         else:
             crawl_controller.__instance = self
+            self.__m_session = crawl_session_controller()
 
     def __handle_request(self, p_data):
 

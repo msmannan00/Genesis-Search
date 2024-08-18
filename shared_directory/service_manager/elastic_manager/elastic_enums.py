@@ -16,7 +16,7 @@ class ELASTIC_INDEX_COLLECTION:
 
 class ELASTIC_CONNECTIONS:
     S_DATABASE_NAME = 'orion-elastic-search'
-    S_DATABASE_PORT = 9200
+    S_DATABASE_PORT = 9400
     S_DATABASE_IP = 'http://elastic:Imammehdi@00@elasticsearch'
 
 class ELASTIC_KEYS:

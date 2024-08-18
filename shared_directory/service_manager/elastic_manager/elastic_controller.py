@@ -69,7 +69,6 @@ class elastic_controller(request_handler):
                             "m_doc_size": {'type': 'integer', },
                             "m_img_size": {'type': 'integer'},
                             'm_title': {'type': 'keyword'},
-                            'm_title_hidden': {'type': 'text'},
                             'm_meta_description': {'type': 'text'},
                             'm_important_content': {'type': 'text'},
                             'm_important_content_hidden': {'type': 'text'},
@@ -125,8 +124,10 @@ class elastic_controller(request_handler):
 
     def __read(self, p_data):
         try:
-            return True, self.__m_connection.search(index=p_data[ELASTIC_KEYS.S_DOCUMENT],
-                                                    body=p_data[ELASTIC_KEYS.S_FILTER])
+            result = self.__m_connection.search(index=p_data[ELASTIC_KEYS.S_DOCUMENT],
+                                                body=p_data[ELASTIC_KEYS.S_FILTER])
+            print("Search result:", result)  # Print the entire result
+            return True, result
 
         except Exception as ex:
             log.g().e("ELASTIC 3 : " + MANAGE_ELASTIC_MESSAGES.S_READ_FAILURE + " : " + str(ex))

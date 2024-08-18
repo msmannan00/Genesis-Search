@@ -8,7 +8,7 @@ services:
       - elasticsearch
       - mongodb
     environment:
-      - ELASTICSEARCH_URL=http://elasticsearch:9200
+      - ELASTICSEARCH_URL=http://elasticsearch:9400
       - MONGO_URI=mongodb://mongodb:27017/genesisdb
 
   elasticsearch:
@@ -16,19 +16,27 @@ services:
     environment:
       - discovery.type=single-node
       - network.host=0.0.0.0
-      - http.port=9200
+      - http.port=9400
       - ELASTIC_PASSWORD=Imammehdi@00
     ports:
-      - "9200:9200"
+      - "9400:9400"
     volumes:
       - esdata:/usr/share/elasticsearch/data
+    deploy:
+      resources:
+        limits:
+          memory: 5G
 
   mongodb:
     image: mongo:5.0
     ports:
-      - "27017:27017"
+      - "27020:27017"
     volumes:
       - mongodata:/data/db
+    deploy:
+      resources:
+        limits:
+          memory: 1G
 
 volumes:
   esdata:

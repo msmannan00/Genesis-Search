@@ -48,81 +48,77 @@ class elastic_request_generator(request_handler):
                 m_safe_filter = {"term": {"m_content_type": 'a'}}
 
         m_query_statement = {
-                "min_score": 5,
-                "query": {
-                    "bool": {
-                        "must_not": [m_safe_filter],
-                        "must": [m_type_filter,m_image_length_filter, m_date_filter],
-                        "should": [
-                            {
-                                "range": {
-                                    "date": {
-                                        "gte": helper_method.get_time() - 2,
-                                        "boost": 3
-                                    }
+            "min_score": 1,
+            "query": {
+                "bool": {
+                    "must": [m_image_length_filter, m_date_filter],
+                    "should": [
+                        {
+                            "range": {
+                                "date": {
+                                    "gte": helper_method.get_time() - 2,
+                                    "boost": 3
                                 }
-                            },
-                            {
-                                "range": {
-                                    "date": {
-                                        "gte": helper_method.get_time() - 4,
-                                        "boost": 2
-                                    }
+                            }
+                        },
+                        {
+                            "range": {
+                                "date": {
+                                    "gte": helper_method.get_time() - 4,
+                                    "boost": 2
                                 }
-                            },
-                            m_doc_length_filter,
-                            {
-                                "query_string": {
-                                    "default_field": "m_title",
-                                    "query": m_user_query,
-                                    "boost": 4
-                                }
-                            },
-                            {
-                                "query_string": {
-                                    "default_field": "m_meta_description",
+                            }
+                        },
+                        m_doc_length_filter,
+                        {
+                            "match": {
+                                "m_title": {
                                     "query": m_user_query,
                                     "boost": 2
                                 }
-                            },
-                            {
-                                "query_string": {
-                                    "default_field": "m_important_content",
+                            }
+                        },
+                        {
+                            "match": {
+                                "m_meta_description": {
                                     "query": m_user_query,
                                     "boost": 1.5
                                 }
-                            },
-                            {
-                                "query_string": {
-                                    "default_field": "m_content",
+                            }
+                        },
+                        {
+                            "match": {
+                                "m_important_content": {
+                                    "query": m_user_query,
+                                    "boost": 1.2
+                                }
+                            }
+                        },
+                        {
+                            "match": {
+                                "m_content": {
                                     "query": m_user_query,
                                     "boost": 1
                                 }
                             }
-                        ]
-                    }
-                },
-                "suggest": {
-                    "content_suggestion": {
-                        "text": m_user_query,
-                        "term": {
-                            "field": "m_important_content",
-                            "min_word_length": 4,
-                            "max_term_freq": 0.01,
-                            "sort": "score",
-                            "string_distance": "internal",
                         }
+                    ]
+                }
+            },
+            "suggest": {
+                "content_suggestion": {
+                    "text": m_user_query,
+                    "term": {
+                        "field": "m_important_content",
+                        "min_word_length": 4,
+                        "max_term_freq": 0.01,
+                        "sort": "score",
+                        "string_distance": "internal",
                     }
-                },
-                "collapse": {
-                    "field": "m_title",
-                    "inner_hits": {
-                        "name": "most_recent",
-                        "size": 12,
-                    }
-                },
-                "from": (m_page_number - 1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
-                "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE,
+                }
+            },
+            "from": (m_page_number - 1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
+            "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE,
         }
 
         return {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_WEB_INDEX, ELASTIC_KEYS.S_FILTER:m_query_statement}
@@ -150,7 +146,6 @@ class elastic_request_generator(request_handler):
                           "ctx._source.m_sub_host = params.m_sub_host;"
                           "ctx._source.m_title = params.m_title;"
                           "ctx._source.m_meta_description = params.m_meta_description;"
-                          "ctx._source.m_title_hidden = params.m_title_hidden;"
                           "ctx._source.m_important_content = params.m_important_content;"
                           "ctx._source.m_important_content_hidden = params.m_important_content_hidden;"
                           "ctx._source.m_total_hits  += params.m_total_hits;"
@@ -172,7 +167,6 @@ class elastic_request_generator(request_handler):
                     "m_sub_host": m_sub_host,
                     "m_title": p_data.m_title,
                     "m_meta_description": p_data.m_meta_description,
-                    "m_title_hidden": p_data.m_title_hidden,
                     "m_important_content": p_data.m_important_content,
                     "m_important_content_hidden": p_data.m_important_content_hidden,
                     "m_total_hits": 1,
@@ -195,7 +189,6 @@ class elastic_request_generator(request_handler):
                 "m_sub_host": m_sub_host,
                 "m_title": p_data.m_title,
                 "m_meta_description": p_data.m_meta_description,
-                "m_title_hidden": p_data.m_title_hidden,
                 "m_important_content": p_data.m_important_content,
                 "m_important_content_hidden": p_data.m_important_content_hidden,
                 "m_total_hits": 0,
@@ -237,7 +230,6 @@ class elastic_request_generator(request_handler):
             "m_sub_host": m_sub_host,
             "m_title": p_data['m_title'],
             "m_meta_description": p_data['m_meta_description'],
-            "m_title_hidden": p_data['m_title_hidden'],
             "m_important_content": p_data['m_important_content'],
             "m_important_content_hidden": p_data['m_important_content_hidden'],
             "m_total_hits": 0,
@@ -270,7 +262,6 @@ class elastic_request_generator(request_handler):
                           "ctx._source.m_sub_host = params.m_sub_host;"
                           "ctx._source.m_title = params.m_title;"
                           "ctx._source.m_meta_description = params.m_meta_description;"
-                          "ctx._source.m_title_hidden = params.m_title_hidden;"
                           "ctx._source.m_important_content = params.m_important_content;"
                           "ctx._source.m_important_content_hidden = params.m_important_content_hidden;"
                           "ctx._source.m_total_hits  += params.m_total_hits;"
@@ -292,7 +283,6 @@ class elastic_request_generator(request_handler):
                     "m_sub_host": m_sub_host,
                     "m_title": p_data.m_title,
                     "m_meta_description": p_data.m_meta_description,
-                    "m_title_hidden": p_data.m_title_hidden,
                     "m_important_content": p_data.m_important_content,
                     "m_important_content_hidden": p_data.m_important_content_hidden,
                     "m_total_hits": 1,
@@ -315,7 +305,6 @@ class elastic_request_generator(request_handler):
                 "m_sub_host": m_sub_host,
                 "m_title": p_data.m_title,
                 "m_meta_description": p_data.m_meta_description,
-                "m_title_hidden": p_data.m_title_hidden,
                 "m_important_content": p_data.m_important_content,
                 "m_important_content_hidden": p_data.m_important_content_hidden,
                 "m_total_hits": 0,

@@ -89,17 +89,7 @@ class search_session_controller(request_handler):
 
 
         if m_links_counter > CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE:
-            if p_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE] == 'b':
-                if len(p_related_business_list) < 4:
-                    if len(p_relevance_context['mSearchCallbackRelevantDocumentTitle'])>15:
-                        p_relevance_context['mSearchCallbackRelevantDocumentTitle'] = p_relevance_context['mSearchCallbackRelevantDocumentTitle'][0:15]+".."
-                    p_related_business_list.append(p_relevance_context)
-            elif p_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE] == 'n':
-                if len(p_related_news_list) < 4:
-                    if len(p_relevance_context['mSearchCallbackRelevantDocumentTitle'])>15:
-                        p_relevance_context['mSearchCallbackRelevantDocumentTitle'] = p_relevance_context['mSearchCallbackRelevantDocumentTitle'][0:15]+".."
-                    p_related_news_list.append(p_relevance_context)
-            m_continue = True
+            pass
         elif len(m_images) > 0:
             if len(p_related_files_list) < 3:
                 m_url = p_relevance_context[SEARCH_CALLBACK.M_URL]
@@ -162,13 +152,11 @@ class search_session_controller(request_handler):
             SEARCH_CALLBACK.M_TITLE: self.__normalize_text(m_title),
             SEARCH_CALLBACK.M_URL: p_document[SEARCH_DOCUMENT_CALLBACK.M_HOST] + p_document[SEARCH_DOCUMENT_CALLBACK.M_SUB_HOST],
             SEARCH_CALLBACK.M_DESCRIPTION: m_description,
-            SEARCH_CALLBACK.K_SEARCH_TYPE: p_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE],
         }
         mRelevanceContextOriginal = {
             SEARCH_CALLBACK.M_TITLE: self.__normalize_text(m_title),
             SEARCH_CALLBACK.M_URL: p_document[SEARCH_DOCUMENT_CALLBACK.M_HOST] + p_document[SEARCH_DOCUMENT_CALLBACK.M_SUB_HOST],
             SEARCH_CALLBACK.M_DESCRIPTION: m_description_original,
-            SEARCH_CALLBACK.K_SEARCH_TYPE: p_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE],
         }
 
         if p_search_model.m_safe_search == 'False' or (str(p_search_model.m_safe_search) == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult'):
@@ -201,7 +189,7 @@ class search_session_controller(request_handler):
 
             if p_search_model.m_safe_search == 'False' or (str(p_search_model.m_safe_search) == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult'):
                 m_counter += 1
-                m_relevance_context_list.append({"mSearchCallbackRelevantDocumentURL": m_image_file[SEARCH_CALLBACK.M_IMAGE_URL], "mSearchCallbackRelevantSearchType": mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE]})
+                m_relevance_context_list.append({"mSearchCallbackRelevantDocumentURL": m_image_file[SEARCH_CALLBACK.M_IMAGE_URL]})
 
         return m_relevance_context_list, m_direct_url_list
 
@@ -224,7 +212,7 @@ class search_session_controller(request_handler):
 
             if p_search_model.m_safe_search == 'False' or (str(p_search_model.m_safe_search) == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult'):
                 m_counter += 1
-                m_relevance_context_list.append({"mSearchCallbackRelevantDocumentURL": m_document_file, "mSearchCallbackRelevantSearchType": mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE]})
+                m_relevance_context_list.append({"mSearchCallbackRelevantDocumentURL": m_document_file})
         return m_relevance_context_list
 
     def __normalize_text(self, p_text):
