@@ -1,5 +1,6 @@
 import re
 import nltk
+nltk.data.path.append('/root/nltk_data')
 from autocorrect import Speller
 from nltk import PorterStemmer
 from orion.controllers.constants.constant import CONSTANTS

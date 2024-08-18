@@ -5,15 +5,121 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/orion/templates/orion/user/server/block/restricted.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/adj.exc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/adv.exc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/citation.bib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/cntlist.rev" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/data.adj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/data.adv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/data.noun" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/data.verb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/index.adj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/index.adv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/index.noun" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/index.sense" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/index.verb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/lexnames" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/noun.exc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/verb.exc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/czech.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/danish.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/dutch.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/english.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/estonian.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/finnish.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/french.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/german.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/greek.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/italian.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/malayalam.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/norwegian.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/polish.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/portuguese.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/russian.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/slovene.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/spanish.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/swedish.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/PY3/turkish.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/czech.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/danish.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/dutch.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/english.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/estonian.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/finnish.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/french.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/german.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/greek.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/italian.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/malayalam.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/norwegian.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/polish.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/portuguese.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/russian.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/slovene.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/spanish.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/swedish.pickle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/turkish.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Genesis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Genesis.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/controllers/constants/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/constants/constant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/directory_template/blade_directory_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/directory_template/blade_directory_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_no_suggestion.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_no_suggestion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_safe_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_safe_search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/Settings/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/Settings/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/Settings/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/Settings/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/Settings/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/constants/app_status.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/constants/constant.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/constants/keys.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/constants/strings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/crawl_controller/crawl_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/crawl_controller/crawl_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/i_crawl_crawler/html_parse_manager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/i_crawl_crawler/i_crawl_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/i_crawl_crawler/i_crawl_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/i_crawl_crawler/static_parse_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/local_shared_model/url_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/parse_controller/parse_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/parse_controller/parse_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_services/constants/constant.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_services/constants/keys.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_services/constants/strings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_services/helper_services/duplication_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_services/helper_services/duplication_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_services/helper_services/spell_check_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_services/helper_services/spell_check_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_services/raw/classifier_output/class_vectorizer.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_services/raw/classifier_output/feature_vector.sav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_services/raw/classifier_output/training_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_services/raw/classifier_output/web_classifier.sav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_services/raw/crawled_classifier_websites.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_services/raw/dictionary" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_services/raw/dictionary_small" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/server_manager/crawl_manager/class_model/crawl_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/server_manager/crawl_manager/class_model/crawl_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/server_manager/crawl_manager/crawl_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/server_manager/crawl_manager/crawl_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/server_manager/crawl_manager/crawl_session_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/advert/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/advert/advert_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/advert/advert_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/advert/advert_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/advert/sample_advert/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/advert/sample_advert/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/advert/sample_advert/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/advert/sample_advert/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/advert/sample_advert/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/spell_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/spell_checker.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orion/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/topic_manager/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/topic_manager/topic_classifier_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/topic_manager/topic_classifier_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/topic_manager/topic_classifier_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/topic_manager/topic_classifier_trainer.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +141,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="25D03FjYoZus9FImN8FDMlyC5Rs" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -43,32 +152,64 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/admin/workspace/orion/orion/templates/orion/user/server/block",
-    "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.setup_nltk.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/morgan-freeman/Workspace/Genesis-Search/static/orion/libs&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/orion/libs" />
       <recent name="$PROJECT_DIR$/orion/templates/orion/user/server/block" />
       <recent name="$PROJECT_DIR$/orion/templates/orion/.well-known" />
       <recent name="C:\Workspace\Genesis-Search\orion\templates\orion\.well-known" />
       <recent name="C:\Workspace\Genesis-Search\orion\controllers\helper_manager" />
-      <recent name="C:\Workspace\Genesis-Search\orion\templates\orion\user\interactive\download" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\workspace\Orion-Search\static\orion\js\pages\user\download" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.__init__">
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Genesis" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/modules/user_data_parser" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/modules/user_data_parser/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Genesis" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -89,11 +230,44 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="setup_nltk" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Genesis" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/setup_nltk.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.__init__" />
+        <item itemvalue="Python.setup_nltk" />
         <item itemvalue="Python.app" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-PY-242.20224.347" />
+        <option value="bundled-python-sdk-c2d6afa66fbe-39cff9de6eef-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.20224.347" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -121,6 +295,10 @@
       <workItem from="1646767610089" duration="5997000" />
       <workItem from="1646834924325" duration="27000" />
       <workItem from="1646835040887" duration="6492000" />
+      <workItem from="1723988604668" duration="3375000" />
+      <workItem from="1723993550330" duration="4038000" />
+      <workItem from="1724000003528" duration="20000" />
+      <workItem from="1724000322953" duration="1158000" />
     </task>
     <servers />
   </component>
@@ -140,5 +318,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Genesis$setup_nltk.coverage" NAME="setup_nltk Coverage Results" MODIFIED="1723992917236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

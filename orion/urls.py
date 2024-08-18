@@ -1,18 +1,3 @@
-"""myproject URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path
 from orion import views
@@ -42,7 +27,6 @@ urlpatterns = [
     path('.well-known/bridges.txt', views.bridges, name='bridges'),
     path('crawl_index/', views.crawl_index, name='crawl_index'),
     path('intelligence/', views.intelligence, name='intelligence'),
-    path('block/', views.block_static, name='block'),
     path('restricted/', views.restricted_static, name='restricted'),
     path('download/', views.download, name='download'),
     path('downloads/', views.download, name='download'),
@@ -55,9 +39,6 @@ urlpatterns = [
     path('cms/logout', views.manage_logout, name='cms_logout'),
     path('update_status/', views.update_status, name='manage_search'),
     path('app-ads.txt/', views.app_ads, name='manage_search'),
-
-    # adverts
-    path('fetch_advert/', views.fetch_anonymous_advert, name='fetch_advert'),
 
 ]
 
