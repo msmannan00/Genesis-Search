@@ -19,7 +19,7 @@ class MONGODB_COLLECTIONS:
 class MONGO_CONNECTIONS:
     S_MONGO_DATABASE_NAME = 'orion'
     S_MONGO_DATABASE_URL = 27017
-    S_MONGO_DATABASE_IP = 'localhost'
+    S_MONGO_DATABASE_IP = 'mongo'
 
 class MONGODB_KEYS:
     S_DOCUMENT = 'm_document'
