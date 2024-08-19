@@ -26,7 +26,6 @@ urlpatterns = [
     path('.well-known/pki-validation/3841DB2F1945B5BFB45731D4350D205C.txt', views.ssl_validation, name='ssl_validation'),
     path('.well-known/bridges.txt', views.bridges, name='bridges'),
     path('crawl_index/', views.crawl_index, name='crawl_index'),
-    path('intelligence/', views.intelligence, name='intelligence'),
     path('restricted/', views.restricted_static, name='restricted'),
     path('download/', views.download, name='download'),
     path('downloads/', views.download, name='download'),
@@ -38,7 +37,6 @@ urlpatterns = [
     path('cms/manage_authentication', views.manage_authentication, name='manage_search'),
     path('cms/logout', views.manage_logout, name='cms_logout'),
     path('update_status/', views.update_status, name='manage_search'),
-    path('app-ads.txt/', views.app_ads, name='manage_search'),
 
 ]
 

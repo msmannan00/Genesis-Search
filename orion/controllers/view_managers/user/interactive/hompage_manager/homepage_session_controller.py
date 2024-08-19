@@ -11,7 +11,6 @@ class homepage_session_controller(request_handler):
     def __init_parameters(self, p_data):
         m_context = {
             HOMEPAGE_CALLBACK.M_REFERENCE: helper_controller.load_json(CONSTANTS.S_REFERENCE_WEBSITE_URL),
-            HOMEPAGE_CALLBACK.M_IS_MOBILE: True,
             HOMEPAGE_CALLBACK.M_SECURE_SERVICE_NOTICE: GENERAL_STRINGS.S_GENERAL_HTTP
         }
 

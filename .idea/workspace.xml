@@ -5,22 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/orion/controllers/server_manager/crawl_manager/crawl_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Genesis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Genesis.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/local_shared_model/index_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/local_shared_model/index_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/controllers/server_manager/crawl_manager/class_model/crawl_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/server_manager/crawl_manager/class_model/crawl_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/controllers/server_manager/crawl_manager/crawl_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/server_manager/crawl_manager/crawl_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_data_model/query_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_data_model/query_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/167.86.99.31.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3841DB2F1945B5BFB45731D4350D205C.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/hompage_manager/homepage_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/hompage_manager/homepage_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/hompage_manager/homepage_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/hompage_manager/homepage_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/intelligence_manager/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/intelligence_manager/intelligence_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/intelligence_manager/intelligence_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/policy_manager/policy_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/policy_manager/policy_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/.well-known/app-ads.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/.well-known/pki-validation/3841DB2F1945B5BFB45731D4350D205C.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/.well-known/pki-validation/77AAE902727F6C8FB4BBD397462BFDBF.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/.well-known/pki-validation/D16CA9D0C6D8EB91CF2B6FA9CC2F3715.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/.well-known/pki-validation/DEF6695C8914AAB21782704F88D08752.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar_mobile.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar_mobile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/shared_blades/blade_footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/shared_blades/blade_footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/homepage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/interactive/homepage/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/homepage/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/interactive/homepage/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/intelligence/intelligence.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/intelligence/local_imports.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/home/cs-sidebar-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/css/pages/user/blades/home/cs-sidebar-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/interactive/cs-homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/css/pages/user/interactive/cs-homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yd3fwwVsdm-B-19kg-FzSdbVyRNCKEQL.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -47,26 +68,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Python.__init__.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.setup_nltk.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;trusted__internet&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/morgan-freeman/Workspace/Genesis-Search/static/orion/libs/nltk_data/tokenizers&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.__init__.executor": "Debug",
+    "Python.setup_nltk.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "trusted__internet",
+    "last_opened_file_path": "/home/morgan-freeman/Workspace/Genesis-Search/orion/settings.py",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "com.intellij.python.django.customization.DjangoModulesConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static/orion/libs" />
@@ -149,13 +171,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.__init__" />
-        <item itemvalue="Python.setup_nltk" />
-        <item itemvalue="Python.app" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -199,7 +214,11 @@
       <workItem from="1724002648046" duration="661000" />
       <workItem from="1724003691246" duration="731000" />
       <workItem from="1724008512346" duration="6564000" />
-      <workItem from="1724015931948" duration="8227000" />
+      <workItem from="1724015931948" duration="8461000" />
+      <workItem from="1724063514391" duration="1400000" />
+      <workItem from="1724067843542" duration="589000" />
+      <workItem from="1724068551056" duration="16000" />
+      <workItem from="1724068642393" duration="3588000" />
     </task>
     <servers />
   </component>
