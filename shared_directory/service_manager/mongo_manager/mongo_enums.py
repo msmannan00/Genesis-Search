@@ -17,7 +17,7 @@ class MONGODB_COLLECTIONS:
     S_STATUS = 'm_status'
 
 class MONGO_CONNECTIONS:
-    S_MONGO_DATABASE_NAME = 'orion'
+    S_MONGO_DATABASE_NAME = 'trustly'
     S_MONGO_DATABASE_URL = 27017
     S_MONGO_DATABASE_IP = 'mongo'
 

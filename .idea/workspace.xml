@@ -5,35 +5,427 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Genesis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Genesis.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/167.86.99.31.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3841DB2F1945B5BFB45731D4350D205C.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/hompage_manager/homepage_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/hompage_manager/homepage_enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/hompage_manager/homepage_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/hompage_manager/homepage_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/intelligence_manager/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/intelligence_manager/intelligence_controller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/intelligence_manager/intelligence_enums.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/policy_manager/policy_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/policy_manager/policy_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/.well-known/app-ads.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/.well-known/pki-validation/3841DB2F1945B5BFB45731D4350D205C.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/.well-known/pki-validation/77AAE902727F6C8FB4BBD397462BFDBF.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/.well-known/pki-validation/D16CA9D0C6D8EB91CF2B6FA9CC2F3715.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/.well-known/pki-validation/DEF6695C8914AAB21782704F88D08752.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar_mobile.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar_mobile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/shared_blades/blade_footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/blades/shared_blades/blade_footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/homepage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/interactive/homepage/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/homepage/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/orion/templates/orion/user/interactive/homepage/local_imports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/intelligence/intelligence.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/intelligence/local_imports.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orion/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/home/cs-sidebar-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/css/pages/user/blades/home/cs-sidebar-blade.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/interactive/cs-homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/orion/css/pages/user/interactive/cs-homepage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yd3fwwVsdm-B-19kg-FzSdbVyRNCKEQL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/mobile/download/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/constants/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/constants/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/constants/constant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/constants/enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/constants/enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/constants/keys.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/constants/keys.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/constants/message.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/constants/message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/constants/strings.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/constants/strings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/helper_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/constants/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/helper_manager/helper_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/helper_manager/helper_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/server_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/helper_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/server_manager/crawl_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/server_manager/crawl_manager/class_model/crawl_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_manager/class_model/crawl_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/server_manager/crawl_manager/crawl_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_manager/crawl_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/server_manager/crawl_manager/crawl_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_manager/crawl_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/server_manager/crawl_manager/crawl_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_manager/crawl_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/server_manager/external_request_manager/external_request_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/external_request_manager/external_request_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/server_manager/external_request_manager/external_request_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/external_request_manager/external_request_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/server_manager/user_auth_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/server_manager/user_auth_manager/class_model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/user_auth_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/server_manager/user_auth_manager/class_model/user_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/user_auth_manager/class_model/user_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/server_manager/user_auth_manager/user_auth_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/user_auth_manager/user_auth_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/server_manager/user_auth_manager/user_auth_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/user_auth_manager/user_auth_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/server_manager/user_auth_manager/user_auth_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/user_auth_manager/user_auth_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/user_auth_manager/class_model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/dashboard/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/dashboard/dashboard_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/dashboard/dashboard_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/dashboard/dashboard_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/dashboard/dashboard_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/dashboard/dashboard_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/dashboard/dashboard_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/dashboard/dashboard_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/dashboard/dashboard_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/login/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/dashboard/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/login/class_model/login_data_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/login/class_model/login_data_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/login/login_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/login/login_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/login/login_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/login/login_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/login/login_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/login/login_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/login/login_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/login/login_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/manage_search/class_model/manage_search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_search/class_model/manage_search_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/manage_search/manage_search_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_search/manage_search_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/manage_search/manage_search_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_search/manage_search_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/manage_search/manage_search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_search/manage_search_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/manage_search/manage_search_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_search/manage_search_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/manage_status/manage_status_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_status/manage_status_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/manage_status/manage_status_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_status/manage_status_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/manage_status/manage_status_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_status/manage_status_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/cms/manage_status/manage_status_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_status/manage_status_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/login/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/directory_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/directory_manager/directory_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/directory_manager/directory_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/directory_manager/directory_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/directory_manager/directory_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/directory_manager/directory_shared_model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/directory_manager/directory_shared_model/directory_class_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_shared_model/directory_class_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/hompage_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_shared_model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/hompage_manager/homepage_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/hompage_manager/homepage_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/hompage_manager/homepage_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/hompage_manager/homepage_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/hompage_manager/homepage_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/hompage_manager/homepage_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/hompage_manager/homepage_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/hompage_manager/homepage_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/notice_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/hompage_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/notice_manager/notice_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/notice_manager/notice_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/notice_manager/notice_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/notice_manager/notice_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/notice_manager/notice_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/notice_manager/notice_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/notice_manager/notice_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/notice_manager/notice_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/policy_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/notice_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/policy_manager/policy_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/policy_manager/policy_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/policy_manager/policy_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/policy_manager/policy_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/report_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/policy_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/report_manager/class_model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/report_manager/class_model/report_data_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/class_model/report_data_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/report_manager/report_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/report_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/report_manager/report_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/report_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/report_manager/report_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/report_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/report_manager/report_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/report_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/class_model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_data_model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_data_model/query_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_data_model/query_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/spell_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/spell_checker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/search_manager/tokenizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/tokenizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/sitemap_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_data_model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/sitemap_manager/class_model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/sitemap_manager/class_model/sitemap_data_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/class_model/sitemap_data_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/sitemap_manager/sitemap_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/sitemap_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/sitemap_manager/sitemap_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/sitemap_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/sitemap_manager/sitemap_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/sitemap_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/interactive/sitemap_manager/sitemap_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/sitemap_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/class_model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/block_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/block_manager/block_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/block_manager/block_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/block_manager/block_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/block_manager/block_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/error/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/block_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/error/error_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/error/error_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/error/error_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/error/error_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/error/error_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/error/error_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/error/error_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/error/error_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/maintenance/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/error/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/maintenance/maintenance_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/maintenance/maintenance_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/maintenance/maintenance_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/maintenance/maintenance_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/maintenance/maintenance_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/maintenance/maintenance_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/maintenance/maintenance_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/maintenance/maintenance_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/secret_key/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/maintenance/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/secret_key/secret_key_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/secret_key/secret_key_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/secret_key/secret_key_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/secret_key/secret_key_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/user_index_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/secret_key/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/user_index_manager/user_index_cache_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/user_index_manager/user_index_cache_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/user_index_manager/user_index_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/user_index_manager/user_index_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/user_index_manager/user_index_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/user_index_manager/user_index_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/controllers/view_managers/user/server/user_index_manager/user_index_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/user_index_manager/user_index_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/raw/dictionary" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/raw/dictionary" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/raw/reference_websites.json" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/raw/reference_websites.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/raw/stemmed_dictionary" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/raw/stemmed_dictionary" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/.well-known/bridges.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/.well-known/bridges.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/.well-known/url.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/.well-known/url.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/.well-known/url_complete.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/.well-known/url_complete.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/.well-known/urls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/.well-known/urls.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/cms/blades/blades_shared_initialization.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/blades_shared_initialization.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/cms/blades/dashboard/blade-admin-panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/dashboard/blade-admin-panel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/cms/blades/dashboard/blade-welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/dashboard/blade-welcome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/cms/blades/login/blade-login-navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/login/blade-login-navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/cms/blades/shared_blades/blade-dashboard-navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/shared_blades/blade-dashboard-navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/cms/blades/shared_blades/blade_footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/shared_blades/blade_footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/cms/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/dashboard/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/cms/dashboard/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/dashboard/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/cms/login/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/login/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/cms/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/login/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/cms/manage_search/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_search/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/cms/manage_search/manage_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_search/manage_search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/cms/manage_status/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_status/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/cms/manage_status/manage_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_status/manage_status.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/blades_shared_initialization.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/blades_shared_initialization.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/directory_template/blade_directory_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/directory_template/blade_directory_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/directory_template/blade_directory_pagination.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/directory_template/blade_directory_pagination.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/home_template/blade_home_header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_references.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/home_template/blade_home_references.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/home_template/blade_home_search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/home_template/blade_home_sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/home_template/blade_home_sidebar_mobile.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/home_template/blade_home_sidebar_mobile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/login/blade_cms_navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/login/blade_cms_navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/notice_template/blade_report_website_notice.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/notice_template/blade_report_website_notice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/notice_template/blade_upload_website_notice.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/notice_template/blade_upload_website_notice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/privacy_template/blade_privacy_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/privacy_template/blade_privacy_header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_content_file_based.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_content_file_based.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_content_url_based.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_content_url_based.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_engine_suggestion.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_engine_suggestion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_no_suggestion.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_no_suggestion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_pagination.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_pagination.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/search_template/blade_search_safe_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_safe_search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/shared_blades/blade_footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/shared_blades/blade_footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/shared_blades/blade_light_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/shared_blades/blade_light_header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/blades/shared_blades/blade_onion_warning.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/shared_blades/blade_onion_warning.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/directory/directory.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/directory/directory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/directory/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/directory/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/download/download.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/download/download.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/download/download_iframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/download/download_iframe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/download/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/download/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/homepage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/homepage/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/homepage/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/homepage/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/notice/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/notice/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/notice/notice.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/notice/notice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/privacy/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/privacy/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/privacy/privacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/privacy/privacy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/report/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/report/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/report/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/report/report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/search/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/search/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/search/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/search/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/sitemap/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/sitemap/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/interactive/sitemap/sitemap.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/sitemap/sitemap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/server/block/block.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/server/block/block.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/server/block/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/server/block/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/server/block/restricted.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/server/block/restricted.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/server/error/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/server/error/error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/server/error/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/server/error/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/server/maintenance/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/server/maintenance/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/server/maintenance/maintenance.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/server/maintenance/maintenance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/templates/orion/user/server/secretkey/secretkey.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/server/secretkey/secretkey.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orion/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_request_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_request_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/session/session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/session/session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/libs/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/libs/font-awesome.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/cms/blades/dashboard/cs-blade-admin-panel.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/blades/dashboard/cs-blade-admin-panel.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/cms/blades/dashboard/cs-blade-welcome.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/blades/dashboard/cs-blade-welcome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/cms/blades/login/cs-blade-login-navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/blades/login/cs-blade-login-navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/cms/blades/shared/cs-blade-dashboard-navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/blades/shared/cs-blade-dashboard-navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/cms/blades/shared/cs-footer-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/blades/shared/cs-footer-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/cms/blades/shared/helper_javascript/js-admin_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/blades/shared/helper_javascript/js-admin_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/cms/blades/shared/helper_javascript/js-admin_enum.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/blades/shared/helper_javascript/js-admin_enum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/cms/blades/shared/helper_javascript/js-admin_helper-method.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/blades/shared/helper_javascript/js-admin_helper-method.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/cms/cs-dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/cs-dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/cms/cs-login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/cs-login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/cms/cs-manage-search.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/cs-manage-search.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/cms/cs-manage-status.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/cs-manage-status.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/cs-global-properties.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cs-global-properties.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/directory/cs-directory-list-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/blades/directory/cs-directory-list-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/directory/cs-directory-pagination-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/blades/directory/cs-directory-pagination-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/home/cs-home-header-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/blades/home/cs-home-header-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/home/cs-sidebar-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/blades/home/cs-sidebar-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/notice/cs-notice-report-website-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/blades/notice/cs-notice-report-website-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/notice/cs-notice-upload-website-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/blades/notice/cs-notice-upload-website-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/privacy/cs-privacy-header-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/blades/privacy/cs-privacy-header-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/search/cs-search-content-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/blades/search/cs-search-content-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/search/cs-search-engine-suggestions-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/blades/search/cs-search-engine-suggestions-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/search/cs-search-no-suggestions.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/blades/search/cs-search-no-suggestions.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/search/cs-search-pagination.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/blades/search/cs-search-pagination.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/shared/cs-footer-blade-dynamic.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/blades/shared/cs-footer-blade-dynamic.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/shared/cs-footer-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/blades/shared/cs-footer-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/shared/cs-light-header-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/blades/shared/cs-light-header-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/blades/shared/cs-onion-warning-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/blades/shared/cs-onion-warning-blade.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/download/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/download/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/download/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/download/font-awesome.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/download/jquery-ui.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/download/jquery-ui.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/download/jquery.mb.YTPlayer.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/download/jquery.mb.YTPlayer.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/download/owl.carousel.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/download/owl.carousel.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/download/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/download/responsive.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/download/slicknav.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/download/slicknav.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/download/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/download/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/download/typography.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/download/typography.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/interactive/cs-directory.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/interactive/cs-directory.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/interactive/cs-homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/interactive/cs-homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/interactive/cs-intelligence.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/interactive/cs-intelligence.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/interactive/cs-notice.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/interactive/cs-notice.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/interactive/cs-privacy.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/interactive/cs-privacy.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/interactive/cs-report.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/interactive/cs-report.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/interactive/cs-search.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/interactive/cs-search.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/interactive/cs-sitemap.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/interactive/cs-sitemap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/server/cs-block.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/server/cs-block.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/server/cs-error.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/server/cs-error.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/css/pages/user/server/cs-maintenance.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/server/cs-maintenance.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/fonts/FontAwesome.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/360wise_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/360wise_logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/ahmia.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/ahmia.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/android-chrome-192x192.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/android-chrome-192x192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/android-chrome-512x512.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/android-chrome-512x512.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/apple-touch-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/apple-touch-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/blured-image.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/blured-image.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/blurredImage/blur-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/blurredImage/blur-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/blurredImage/blur-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/blurredImage/blur-2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/blurredImage/blur-3.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/blurredImage/blur-3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/blurredImage/blur-4.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/blurredImage/blur-4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/cropped-360wiselogo-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/cropped-360wiselogo-32x32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/author/author1.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/author/author1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/author/author2.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/author/author2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/author/author3.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/author/author3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/bg/crumbs-bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/bg/crumbs-bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/bg/img-background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/bg/img-background.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/bg/slider-bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/bg/slider-bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/blog/blog-thumb1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/blog/blog-thumb1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/blog/blog-thumb2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/blog/blog-thumb2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/blog/blog-thumb3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/blog/blog-thumb3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/icon/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/icon/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/icon/logo-360.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/icon/logo-360.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/icon/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/icon/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/mobile/about-m-screen.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/mobile/about-m-screen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/mobile/feature-screen-360.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/mobile/feature-screen-360.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/mobile/feature-screen.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/mobile/feature-screen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/mobile/screen-slider/screen1.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/mobile/screen-slider/screen1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/mobile/screen-slider/screen2.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/mobile/screen-slider/screen2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/mobile/screen-slider/screen3.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/mobile/screen-slider/screen3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/mobile/screen-slider/screen4.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/mobile/screen-slider/screen4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/mobile/screen-slider/screen5.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/mobile/screen-slider/screen5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/mobile/screen-slider/screen6.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/mobile/screen-slider/screen6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/mobile/slider-screen-360.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/mobile/slider-screen-360.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/mobile/slider-screen.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/mobile/slider-screen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/sidebar/sidebar-thumb1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/sidebar/sidebar-thumb1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/sidebar/sidebar-thumb2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/sidebar/sidebar-thumb2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/sidebar/sidebar-thumb3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/sidebar/sidebar-thumb3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/sidebar/sidebar-thumb4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/sidebar/sidebar-thumb4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/sidebar/sidebar-thumb5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/sidebar/sidebar-thumb5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/sidebar/sidebar-thumb6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/sidebar/sidebar-thumb6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/team/img1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/team/img1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/team/img2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/team/img2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/team/img3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/team/img3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/download/team/img4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/download/team/img4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/duckduckgo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/duckduckgo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon-16x16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/favicon-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon-32x32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/favicon-360.ico" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon-360.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/favicon-home-cms.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon-home-cms.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/favicon-home-cmsss.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon-home-cmsss.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/favicon-home.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon-home.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/favicon-home_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon-home_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/favicon-search.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon-search.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/img_download.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/img_download.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/privacy.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/privacy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/search-icon-dark.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/search-icon-dark.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/search-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/search-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/images/warning.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/warning.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/js/pages/user/download/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/js/pages/user/download/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/js/pages/user/download/jquery-3.2.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/js/pages/user/download/jquery-3.2.0.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/js/pages/user/download/jquery-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/js/pages/user/download/jquery-ui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/js/pages/user/download/jquery.counterup.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/js/pages/user/download/jquery.counterup.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/js/pages/user/download/jquery.mb.YTPlayer.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/js/pages/user/download/jquery.mb.YTPlayer.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/js/pages/user/download/jquery.slicknav.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/js/pages/user/download/jquery.slicknav.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/js/pages/user/download/jquery.waypoints.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/js/pages/user/download/jquery.waypoints.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/js/pages/user/download/owl.carousel.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/js/pages/user/download/owl.carousel.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/js/pages/user/download/raindrops.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/js/pages/user/download/raindrops.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/js/pages/user/download/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/js/pages/user/download/theme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/corpora/wordnet/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/README" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/corpora/wordnet/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/adj.exc" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/corpora/wordnet/adj.exc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/adv.exc" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/corpora/wordnet/adv.exc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/citation.bib" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/corpora/wordnet/citation.bib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/cntlist.rev" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/corpora/wordnet/cntlist.rev" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/data.adj" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/corpora/wordnet/data.adj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/data.adv" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/corpora/wordnet/data.adv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/data.noun" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/corpora/wordnet/data.noun" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/data.verb" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/corpora/wordnet/data.verb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/index.adj" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/corpora/wordnet/index.adj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/index.adv" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/corpora/wordnet/index.adv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/index.noun" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/corpora/wordnet/index.noun" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/index.sense" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/corpora/wordnet/index.sense" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/index.verb" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/corpora/wordnet/index.verb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/lexnames" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/corpora/wordnet/lexnames" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/noun.exc" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/corpora/wordnet/noun.exc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/corpora/wordnet/verb.exc" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/corpora/wordnet/verb.exc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/README" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/czech/abbrev_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/czech/abbrev_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/czech/collocations.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/czech/collocations.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/czech/ortho_context.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/czech/ortho_context.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/czech/sent_starters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/czech/sent_starters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/danish/abbrev_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/danish/abbrev_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/danish/collocations.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/danish/collocations.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/danish/ortho_context.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/danish/ortho_context.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/danish/sent_starters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/danish/sent_starters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/dutch/abbrev_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/dutch/abbrev_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/dutch/collocations.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/dutch/collocations.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/dutch/ortho_context.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/dutch/ortho_context.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/dutch/sent_starters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/dutch/sent_starters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/english/abbrev_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/english/abbrev_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/english/collocations.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/english/collocations.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/english/ortho_context.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/english/ortho_context.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/english/sent_starters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/english/sent_starters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/estonian/abbrev_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/estonian/abbrev_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/estonian/collocations.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/estonian/collocations.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/estonian/ortho_context.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/estonian/ortho_context.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/estonian/sent_starters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/estonian/sent_starters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/finnish/abbrev_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/finnish/abbrev_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/finnish/collocations.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/finnish/collocations.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/finnish/ortho_context.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/finnish/ortho_context.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/finnish/sent_starters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/finnish/sent_starters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/french/abbrev_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/french/abbrev_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/french/collocations.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/french/collocations.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/french/ortho_context.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/french/ortho_context.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/french/sent_starters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/french/sent_starters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/german/abbrev_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/german/abbrev_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/german/collocations.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/german/collocations.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/german/ortho_context.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/german/ortho_context.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/german/sent_starters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/german/sent_starters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/greek/abbrev_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/greek/abbrev_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/greek/collocations.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/greek/collocations.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/greek/ortho_context.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/greek/ortho_context.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/greek/sent_starters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/greek/sent_starters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/italian/abbrev_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/italian/abbrev_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/italian/collocations.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/italian/collocations.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/italian/ortho_context.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/italian/ortho_context.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/italian/sent_starters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/italian/sent_starters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/norwegian/abbrev_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/norwegian/abbrev_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/norwegian/collocations.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/norwegian/collocations.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/norwegian/ortho_context.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/norwegian/ortho_context.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/norwegian/sent_starters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/norwegian/sent_starters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/polish/abbrev_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/polish/abbrev_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/polish/collocations.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/polish/collocations.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/polish/ortho_context.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/polish/ortho_context.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/polish/sent_starters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/polish/sent_starters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/portuguese/abbrev_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/portuguese/abbrev_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/portuguese/collocations.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/portuguese/collocations.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/portuguese/ortho_context.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/portuguese/ortho_context.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/portuguese/sent_starters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/portuguese/sent_starters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/russian/abbrev_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/russian/abbrev_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/russian/collocations.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/russian/collocations.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/russian/ortho_context.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/russian/ortho_context.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/russian/sent_starters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/russian/sent_starters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/slovene/abbrev_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/slovene/abbrev_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/slovene/collocations.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/slovene/collocations.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/slovene/ortho_context.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/slovene/ortho_context.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/slovene/sent_starters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/slovene/sent_starters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/spanish/abbrev_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/spanish/abbrev_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/spanish/collocations.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/spanish/collocations.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/spanish/ortho_context.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/spanish/ortho_context.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/spanish/sent_starters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/spanish/sent_starters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/swedish/abbrev_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/swedish/abbrev_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/swedish/collocations.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/swedish/collocations.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/swedish/ortho_context.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/swedish/ortho_context.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/swedish/sent_starters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/swedish/sent_starters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/turkish/abbrev_types.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/turkish/abbrev_types.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/turkish/collocations.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/turkish/collocations.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/turkish/ortho_context.tab" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/turkish/ortho_context.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/nltk_data/tokenizers/punkt_tab/turkish/sent_starters.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/nltk_data/tokenizers/punkt_tab/turkish/sent_starters.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/libs/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/libs/popper.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/mobile/download/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/user_index_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/mobile/download/app-360wise-arm64-v8a-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/mobile/download/app-360wise-arm64-v8a-release.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/mobile/download/app-360wise-armeabi-v7a-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/mobile/download/app-360wise-armeabi-v7a-release.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/mobile/download/app-360wise-x86-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/mobile/download/app-360wise-x86-release.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/orion/mobile/download/app-360wise-x86_64-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/mobile/download/app-360wise-x86_64-release.apk" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +470,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "trusted__internet",
-    "last_opened_file_path": "/home/morgan-freeman/Workspace/Genesis-Search/orion/settings.py",
+    "last_opened_file_path": "/home/morgan-freeman/Workspace/Genesis-Search/trustly/settings.py",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -91,86 +483,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/trustly" />
+      <recent name="$PROJECT_DIR$/trustly/templates/trustly" />
       <recent name="$PROJECT_DIR$/static/orion/libs" />
       <recent name="$PROJECT_DIR$/orion/templates/orion/user/server/block" />
       <recent name="$PROJECT_DIR$/orion/templates/orion/.well-known" />
-      <recent name="C:\Workspace\Genesis-Search\orion\templates\orion\.well-known" />
-      <recent name="C:\Workspace\Genesis-Search\orion\controllers\helper_manager" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\workspace\Orion-Search\static\orion\js\pages\user\download" />
     </key>
-  </component>
-  <component name="RunManager" selected="Python.__init__">
-    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Genesis" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/modules/user_data_parser" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/modules/user_data_parser/__init__.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Genesis" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="setup_nltk" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Genesis" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/setup_nltk.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -219,6 +540,7 @@
       <workItem from="1724067843542" duration="589000" />
       <workItem from="1724068551056" duration="16000" />
       <workItem from="1724068642393" duration="3588000" />
+      <workItem from="1724100621297" duration="157000" />
     </task>
     <servers />
   </component>

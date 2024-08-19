@@ -2,9 +2,9 @@
 import base64
 import json
 
-from orion.controllers.constants.constant import CONSTANTS
-from orion.controllers.view_managers.cms.manage_search.class_model.manage_search_model import manage_search_data_model
-from orion.controllers.view_managers.user.interactive.search_manager.tokenizer import tokenizer
+from trustly.controllers.constants.constant import CONSTANTS
+from trustly.controllers.view_managers.cms.manage_search.class_model.manage_search_model import manage_search_data_model
+from trustly.controllers.view_managers.user.interactive.search_manager.tokenizer import tokenizer
 from modules.user_data_parser.parse_instance.local_shared_model.index_model import UrlObjectEncoder
 from modules.user_data_parser.parse_services.helper_services.helper_method import helper_method
 from shared_directory.request_manager.request_handler import request_handler

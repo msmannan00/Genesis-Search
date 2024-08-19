@@ -13,7 +13,7 @@ EXPOSE 8070
 ENV DJANGO_SETTINGS_MODULE=orion.settings
 ENV PYTHONUNBUFFERED=1
 
-COPY static/orion/libs/nltk_data /root/nltk_data
+COPY static/trustly/libs/nltk_data /root/nltk_data
 
 RUN python manage.py collectstatic --noinput
 
