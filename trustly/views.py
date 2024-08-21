@@ -119,13 +119,6 @@ def crawl_index(request):
     return crawl_controller.getInstance().invoke_trigger(CRAWL_COMMANDS.M_INIT, request)
 
 @csrf_exempt
-def download(request):
-    if "browser" in request.GET and request.GET["browser"] == "360wise":
-        return render(None, CONSTANTS.S_360_TEMPLATE_DOWNLOAD_WEBSITE_PATH)
-    else:
-        return render(None, CONSTANTS.S_TEMPLATE_DOWNLOAD_WEBSITE_PATH)
-
-@csrf_exempt
 @xframe_options_exempt
 def download_iframe(request):
     return render(None, CONSTANTS.S_TEMPLATE_DOWNLOAD_IFRAME_WEBSITE_PATH)

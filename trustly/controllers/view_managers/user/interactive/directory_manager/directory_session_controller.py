@@ -20,10 +20,6 @@ class directory_session_controller(request_handler):
         elif DIRECTORY_PARAMS.M_PAGE_NUMBER_PREV in p_data.POST:
             m_num -= 1
 
-        if DIRECTORY_PARAMS.M_SAFE_BROWSER in p_data.GET:
-            if p_data.GET[DIRECTORY_PARAMS.M_SAFE_BROWSER] == "360wise":
-                m_browser = True
-
         m_directory_model = directory_class_model(m_num, None)
 
         if DIRECTORY_PARAMS.M_SECURE_SERVICE in p_data.GET:

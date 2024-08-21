@@ -245,7 +245,10 @@
 	{
 		min-height: 100%;
 	}
-    .home__search-container {
+    .light-header{
+		visibility: collapse;
+	}
+	.home__search-container {
 		padding: 0 20px 10px;
 	}
 	.home__searchbox {

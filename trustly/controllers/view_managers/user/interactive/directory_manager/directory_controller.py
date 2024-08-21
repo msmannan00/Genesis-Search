@@ -36,8 +36,6 @@ class directory_controller(request_handler):
     # External Request Callbacks
     def invoke_trigger(self, p_command, p_data):
         if p_command == DIRECTORY_MODEL_COMMANDS.M_INIT:
-            #if self.__on_verify_app(p_data) is True:
-            #    return render(None, CONSTANTS.S_TEMPLATE_BLOCK_WEBSITE_PATH)
             if APP_STATUS.S_MAINTAINANCE is True:
                 return render(None, CONSTANTS.S_TEMPLATE_MAINTENANCE_WEBSITE_PATH)
             else:
@@ -45,10 +43,7 @@ class directory_controller(request_handler):
                 if m_status is not True:
                     return render(None, CONSTANTS.S_TEMPLATE_INDEX_PATH, m_response)
                 else:
-                    if m_360:
-                        return render(None, CONSTANTS.S_360_TEMPLATE_DIRECTORY_WEBSITE_PATH, m_response)
-                    else:
-                        return render(None, CONSTANTS.S_TEMPLATE_DIRECTORY_WEBSITE_PATH, m_response)
+                    return render(None, CONSTANTS.S_TEMPLATE_DIRECTORY_WEBSITE_PATH, m_response)
         else:
             m_response = None
         return m_response

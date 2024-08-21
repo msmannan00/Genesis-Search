@@ -22,6 +22,7 @@ lxml
 django-bootstrap-v5
 validators
 fuzz
+python-dotenv
 
 ###### Requirements With Version Specifiers ######
 simplejson==3.8.0

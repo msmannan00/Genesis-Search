@@ -1,0 +1,26 @@
+Metadata-Version: 2.0
+Name: fuzz
+Version: 0.1.1
+Summary: Contains tools for modelling values with associated uncertainty.
+Home-page: https://fuzz.samireland.com
+Author: Sam Ireland
+Author-email: mail@samireland.com
+License: MIT
+Keywords: statistics measurements unertainty propagation
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.0
+Classifier: Programming Language :: Python :: 3.1
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+
+UNKNOWN
+
+

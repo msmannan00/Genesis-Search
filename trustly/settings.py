@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-from django.conf import settings
+from  django.conf import settings
 
 from shared_directory.state_manager.constant import APP_STATUS
 

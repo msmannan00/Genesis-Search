@@ -21,6 +21,7 @@ class CONSTANTS:
     S_TEMPLATE_SECRET_KEY_WEBSITE_PATH = "trustly/user/server/secretkey/secretkey.html"
     S_TEMPLATE_MAINTENANCE_WEBSITE_PATH = "trustly/user/server/maintenance/maintenance.html"
     S_TEMPLATE_LOGIN_WEBSITE_PATH = "trustly/cms/login/login.html"
+    S_TEMPLATE_BLOCK_WEBSITE_PATH = "trustly/user/server/block/restricted.html"
     S_TEMPLATE_DASHBOARD_WEBSITE_PATH = "trustly/cms/dashboard/dashboard.html"
     S_TEMPLATE_MANAGE_SEARCH_WEBSITE_PATH = "trustly/cms/manage_search/manage_search.html"
     S_TEMPLATE_MANAGE_STATUS_WEBSITE_PATH = "trustly/cms/manage_status/manage_status.html"
@@ -36,21 +37,6 @@ class CONSTANTS:
     S_TEMPLATE_DOWNLOAD_WEBSITE_PATH = "trustly/user/interactive/download/download.html"
     S_TEMPLATE_DOWNLOAD_IFRAME_WEBSITE_PATH = "trustly/.well-known/url.txt"
     S_TEMPLATE_CRAWL_URL_COMPLETE_WEBSITE_PATH = "trustly/.well-known/url_complete.txt"
-
-    # Template URL 360
-    S_360_TEMPLATE_INDEX_PATH = "trustly/360user/interactive/homepage/index.html"
-    S_360_TEMPLATE_REPORT_WEBSITE_PATH = "trustly/360user/interactive/report/report.html"
-    S_360_TEMPLATE_DIRECTORY_WEBSITE_PATH = "trustly/360user/interactive/directory/directory.html"
-    S_360_TEMPLATE_NOTICE_WEBSITE_PATH = "trustly/360user/interactive/notice/notice.html"
-    S_360_TEMPLATE_POLICY_WEBSITE_PATH = "trustly/360user/interactive/privacy/privacy.html"
-    S_360_TEMPLATE_SECRET_KEY_WEBSITE_PATH = "trustly/360user/server/secretkey/secretkey.html"
-    S_360_TEMPLATE_MAINTENANCE_WEBSITE_PATH = "trustly/360user/server/maintenance/maintenance.html"
-    S_360_TEMPLATE_ERROR_WEBSITE_PATH = "trustly/360user/server/error/error.html"
-    S_360_TEMPLATE_SITEMAP_WEBSITE_PATH = "trustly/360user/interactive/sitemap/sitemap.html"
-    S_360_TEMPLATE_SEARCH_WEBSITE_PATH = "trustly/360user/interactive/search/search.html"
-    S_360_TEMPLATE_BLOCK_WEBSITE_PATH = "trustly/360user/server/block/block.html"
-    S_360_TEMPLATE_INTELLIGENCE_WEBSITE_PATH = "trustly/360user/interactive/intelligence/intelligence.html"
-    S_360_TEMPLATE_DOWNLOAD_WEBSITE_PATH = "trustly/360user/interactive/download/download.html"
 
     # Direct Links
     S_TEMPLATE_LOGIN_SHORT = "/cms/login"

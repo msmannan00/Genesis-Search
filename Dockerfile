@@ -10,7 +10,7 @@ COPY . .
 
 EXPOSE 8070
 
-ENV DJANGO_SETTINGS_MODULE=orion.settings
+ENV DJANGO_SETTINGS_MODULE=trustly.settings
 ENV PYTHONUNBUFFERED=1
 
 COPY static/trustly/libs/nltk_data /root/nltk_data

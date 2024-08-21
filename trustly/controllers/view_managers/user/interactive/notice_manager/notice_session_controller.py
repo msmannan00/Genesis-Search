@@ -22,10 +22,6 @@ class notice_session_controller(request_handler):
             m_context[NOTICE_CALLBACK.M_TYPE] = p_data.GET[NOTICE_PARAM.M_HEADER]
             m_status = True
 
-        # Notice Data Param
-        if NOTICE_PARAM.M_BROWSER in p_data.GET and p_data.GET[NOTICE_PARAM.M_BROWSER] == "360wise":
-            m_browser = True
-
         if NOTICE_PARAM.M_DATA in p_data.GET:
             m_context[NOTICE_CALLBACK.M_DATA] = p_data.GET[NOTICE_PARAM.M_DATA]
 

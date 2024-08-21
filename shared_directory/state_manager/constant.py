@@ -1,7 +1,12 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 class APP_STATUS:
     S_DEVELOPER = True
-    S_FERNET_KEY = "W#ZYBHQa9G_DB_iU@yjA3Es@COu4-UzU"
-    S_APP_BLOCK_KEY = "D~S=05y68#M77oj]vprm}9HE))Xp'VX?[p|m-Wg`mrg^"
+    S_FERNET_KEY = os.getenv('S_FERNET_KEY')
+    S_APP_BLOCK_KEY = os.getenv('S_APP_BLOCK_KEY')
     S_MAINTAINANCE = False
 
 

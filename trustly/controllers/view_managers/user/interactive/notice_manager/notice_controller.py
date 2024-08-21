@@ -43,10 +43,7 @@ class notice_controller(request_handler):
             else:
                 m_response, m_status, m_browser = self.__m_notice_model.invoke_trigger(NOTICE_MODEL_CALLBACK.M_INIT, p_data)
                 if m_status is True:
-                    if m_browser:
-                        return render(None, CONSTANTS.S_360_TEMPLATE_NOTICE_WEBSITE_PATH, m_response)
-                    else:
-                        return render(None, CONSTANTS.S_TEMPLATE_NOTICE_WEBSITE_PATH, m_response)
+                    return render(None, CONSTANTS.S_TEMPLATE_NOTICE_WEBSITE_PATH, m_response)
                 else:
                     return HttpResponseRedirect(redirect_to="../")
 

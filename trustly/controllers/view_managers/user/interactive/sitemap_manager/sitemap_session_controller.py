@@ -45,22 +45,20 @@ class sitemap_session_controller(request_handler):
         return m_sitemap_data_model
 
     def init_callbacks(self, p_sitemap_data_model:sitemap_data_model):
-        m_context_response = {}
-        m_context_response[SITEMAP_CALLBACK.M_SECRETKEY] = p_sitemap_data_model.m_secret_key
-        m_context_response[SITEMAP_CALLBACK.M_NAME] = p_sitemap_data_model.m_name
-        m_context_response[SITEMAP_CALLBACK.M_URL] = p_sitemap_data_model.m_url
-        m_context_response[SITEMAP_CALLBACK.M_KEYWORD] = p_sitemap_data_model.m_keyword
-        m_context_response[SITEMAP_CALLBACK.M_SUBMISSION_RULES] = p_sitemap_data_model.m_submission_rule
-        m_context_response[SITEMAP_CALLBACK.M_EMAIL] = p_sitemap_data_model.m_email
-        m_context_response[SITEMAP_CALLBACK.M_SECRETKEY_ERROR] = GENERAL_STRINGS.S_GENERAL_EMPTY
-        m_context_response[SITEMAP_CALLBACK.M_NAME_ERROR] = GENERAL_STRINGS.S_GENERAL_EMPTY
-        m_context_response[SITEMAP_CALLBACK.M_URL_ERROR] = GENERAL_STRINGS.S_GENERAL_EMPTY
-        m_context_response[SITEMAP_CALLBACK.M_KEYWORD_ERROR] = GENERAL_STRINGS.S_GENERAL_EMPTY
-        m_context_response[SITEMAP_CALLBACK.M_RULES_ERROR] = GENERAL_STRINGS.S_GENERAL_EMPTY
-        m_context_response[SITEMAP_CALLBACK.M_EMAIL_ERROR] = GENERAL_STRINGS.S_GENERAL_EMPTY
-        m_context_response[SITEMAP_CALLBACK.M_SUBMISSION_RULES_ERROR] = GENERAL_STRINGS.S_GENERAL_EMPTY
-        m_context_response[SITEMAP_CALLBACK.M_SECURE_SERVICE_NOTICE] = p_sitemap_data_model.p_site
-
+        m_context_response = {SITEMAP_CALLBACK.M_SECRETKEY: p_sitemap_data_model.m_secret_key,
+                              SITEMAP_CALLBACK.M_NAME: p_sitemap_data_model.m_name,
+                              SITEMAP_CALLBACK.M_URL: p_sitemap_data_model.m_url,
+                              SITEMAP_CALLBACK.M_KEYWORD: p_sitemap_data_model.m_keyword,
+                              SITEMAP_CALLBACK.M_SUBMISSION_RULES: p_sitemap_data_model.m_submission_rule,
+                              SITEMAP_CALLBACK.M_EMAIL: p_sitemap_data_model.m_email,
+                              SITEMAP_CALLBACK.M_SECRETKEY_ERROR: GENERAL_STRINGS.S_GENERAL_EMPTY,
+                              SITEMAP_CALLBACK.M_NAME_ERROR: GENERAL_STRINGS.S_GENERAL_EMPTY,
+                              SITEMAP_CALLBACK.M_URL_ERROR: GENERAL_STRINGS.S_GENERAL_EMPTY,
+                              SITEMAP_CALLBACK.M_KEYWORD_ERROR: GENERAL_STRINGS.S_GENERAL_EMPTY,
+                              SITEMAP_CALLBACK.M_RULES_ERROR: GENERAL_STRINGS.S_GENERAL_EMPTY,
+                              SITEMAP_CALLBACK.M_EMAIL_ERROR: GENERAL_STRINGS.S_GENERAL_EMPTY,
+                              SITEMAP_CALLBACK.M_SUBMISSION_RULES_ERROR: GENERAL_STRINGS.S_GENERAL_EMPTY,
+                              SITEMAP_CALLBACK.M_SECURE_SERVICE_NOTICE: p_sitemap_data_model.p_site}
 
         for m_count in range(0, 5):
             if p_sitemap_data_model.m_agreement[m_count] != SITEMAP_STRINGS.S_SITEMAP_RULE_DEFAULT_STATE:

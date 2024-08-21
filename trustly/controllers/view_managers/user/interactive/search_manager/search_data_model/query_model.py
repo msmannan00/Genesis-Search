@@ -6,7 +6,6 @@ class query_model:
     m_search_type = SEARCH_STRINGS.S_SEARCH_TYPE_PARAM
     m_page_number = 1
     m_safe_search = "False"
-    m_360_browser = ""
     m_total_documents = 1
     m_site = GENERAL_STRINGS.S_GENERAL_HTTP
     m_hate_query = "False"

@@ -11,18 +11,18 @@
 {% endif %}
 
 
-<!-- safe orion -->
+<!-- safe Trustly -->
 {% include 'trustly/user/blades/search_template/blade_search_safe_search.html' %}
 
-<!-- no orion results -->
+<!-- no Trustly results -->
 {% if mSearchCallbackRelevantDocument|length == 0 %}
     {% include 'trustly/user/blades/search_template/blade_search_no_suggestion.html' %}
 {% endif %}
 
-<!-- orion content -->
+<!-- trustly content -->
 {% if mSearchCallbackRelevantSearchType == 'all' or mSearchCallbackRelevantSearchType == 'news' or mSearchCallbackRelevantSearchType == 'finance' %}
 
-    <!-- orion content url based -->
+    <!-- trustly content url based -->
     {% for mDoc in mSearchCallbackRelevantDocument %}
 
         {% if forloop.counter == 3 and mSearchCallbackRelevantDocument|length > 3 %}
@@ -42,7 +42,7 @@
 
 {% else %}
 
-    <!-- orion content file based -->
+    <!-- trustly content file based -->
     <div class="search-file__reference_container">
         {% include 'trustly/user/blades/search_template/blade_search_content_file_based.html' %}
     </div>

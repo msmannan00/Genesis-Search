@@ -7,7 +7,7 @@
         <option name="settingsModule" value="trustly/settings.py" />
         <option name="manageScript" value="manage.py" />
         <option name="environment" value="&lt;map/&gt;" />
-        <option name="doNotUseTestRunner" value="false" />
+        <option name="doNotUseTestRunner" value="true" />
         <option name="trackFilePattern" value="" />
       </configuration>
     </facet>
@@ -17,12 +17,17 @@
       <excludeFolder url="file://$MODULE_DIR$/venv" />
       <excludeFolder url="file://$MODULE_DIR$/env" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.12 (Genesis-Crawler)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.12 (Genesis-Search)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jstree" level="application" />
     <orderEntry type="library" name="jquery-ui" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/trustly/templates" />
+      </list>
+    </option>
   </component>
 </module>

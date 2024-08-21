@@ -28,11 +28,7 @@ class ELASTIC_KEYS:
 class ELASTIC_REQUEST_COMMANDS:
     S_SEARCH = 1
     S_ONION_LIST = 2
-    S_INDEX_USER_QUERY = 3
-    S_QUERY_RAW = 4
-    S_INDEX = 5
-    S_UNIQUE_HOST = 6
-    S_DUPLICATE = 7
+    S_QUERY_RAW = 3
 
 class MANAGE_ELASTIC_MESSAGES:
     S_INSERT_FAILURE = "[1] Something unexpected happened while inserting"

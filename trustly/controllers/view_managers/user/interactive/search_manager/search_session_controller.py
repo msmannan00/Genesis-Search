@@ -26,13 +26,6 @@ class search_session_controller(request_handler):
             else:
                 m_query_model.m_safe_search = "False"
 
-        if SEARCH_PARAM.M_SAFE_BROWSER in p_data.GET:
-            if p_data.GET[SEARCH_PARAM.M_SAFE_BROWSER] == "360wise":
-                m_query_model.m_360_browser = "360wise"
-                m_query_model.m_safe_search = "True"
-            else:
-                m_query_model.m_360_browser = ""
-
         return m_query_model
 
     def __get_page_number(self, p_search_model):
@@ -65,7 +58,6 @@ class search_session_controller(request_handler):
         m_context = {
             SEARCH_CALLBACK.M_QUERY: p_search_model.m_search_query,
             SEARCH_CALLBACK.M_SAFE_SEARCH: p_search_model.m_safe_search,
-            SEARCH_CALLBACK.M_SAFE_BROWSER: p_search_model.m_360_browser,
             SEARCH_CALLBACK.M_CURRENT_PAGE_NUM: p_search_model.m_page_number,
             SEARCH_CALLBACK.K_SEARCH_TYPE: p_search_model.m_search_type,
             SEARCH_CALLBACK.M_DOCUMENT: p_relevance_context_list,

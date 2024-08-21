@@ -1,3 +1,5 @@
+from http.cookiejar import debug
+
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.view_managers.user.interactive.directory_manager.directory_enums import DIRECTORY_MODEL_CALLBACK, DIRECTORY_SESSION_COMMANDS, DIRECTORY_MODEL_COMMANDS
 from trustly.controllers.view_managers.user.interactive.directory_manager.directory_session_controller import directory_session_controller
@@ -19,25 +21,27 @@ class directory_model(request_handler):
 
     def __load_onion_links(self, p_directory_class_model):
         m_status, m_documents = elastic_controller.get_instance().invoke_trigger(ELASTIC_CRUD_COMMANDS.S_READ, [ELASTIC_REQUEST_COMMANDS.S_ONION_LIST, [p_directory_class_model.m_page_number], [None]])
+        if m_status:
+            m_documents = m_documents['hits']['hits']
 
-        m_documents = m_documents['hits']['hits']
+            mRelevanceDocumentList = []
+            if m_documents is None or m_status:
+                return []
 
-        mRelevanceDocumentList = []
-        if m_documents is None:
+            m_counter = 1
+            for m_document in m_documents:
+                m_document_item = m_document['_source']
+                mRelevanceContext = {
+                    DIRECTORY_MODEL_CALLBACK.M_URL: m_document_item[ELASTIC_INDEX_COLLECTION.M_HOST],
+                    DIRECTORY_MODEL_CALLBACK.M_CONTENT_TYPE: m_document_item[ELASTIC_INDEX_COLLECTION.M_CONTENT_TYPE],
+                    DIRECTORY_MODEL_CALLBACK.M_ID: m_counter + (p_directory_class_model.m_page_number - 1) * CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE,
+                }
+                mRelevanceDocumentList.append(mRelevanceContext)
+                m_counter+=1
+
+            return mRelevanceDocumentList
+        else:
             return []
-
-        m_counter = 1
-        for m_document in m_documents:
-            m_document_item = m_document['_source']
-            mRelevanceContext = {
-                DIRECTORY_MODEL_CALLBACK.M_URL: m_document_item[ELASTIC_INDEX_COLLECTION.M_HOST],
-                DIRECTORY_MODEL_CALLBACK.M_CONTENT_TYPE: m_document_item[ELASTIC_INDEX_COLLECTION.M_CONTENT_TYPE],
-                DIRECTORY_MODEL_CALLBACK.M_ID: m_counter + (p_directory_class_model.m_page_number - 1) * CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE,
-            }
-            mRelevanceDocumentList.append(mRelevanceContext)
-            m_counter+=1
-
-        return mRelevanceDocumentList
 
     def __init_page(self, p_data):
         m_directory_class_model, m_status, m_360 = self.__m_session.invoke_trigger(DIRECTORY_SESSION_COMMANDS.M_PRE_INIT, [p_data])
