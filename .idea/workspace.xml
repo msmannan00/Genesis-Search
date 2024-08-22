@@ -5,145 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app_manager/block_manager/block_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app_manager/block_manager/block_enums.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app_manager/elastic_manager/elastic_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app_manager/elastic_manager/elastic_enums.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app_manager/elastic_manager/elastic_request_generator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app_manager/mongo_manager/mongo_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app_manager/mongo_manager/mongo_enums.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app_manager/mongo_manager/mongo_request_generator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app_manager/session_manager/session_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app_manager/session_manager/session_enums.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage-dev.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/trustly/images/trustly-cms.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trustly/middleware/RestrictAccessMiddleware.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Genesis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Genesis.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/local_shared_model/index_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/models/index_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_services/helper_services/duplication_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_services/helper_services/helper_method.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_services/helper_services/spell_check_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/middleware/SessionSecurityMiddleware.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/log_manager/log_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/log_manager/log_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/log_manager/log_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/log_manager/log_enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/request_manager/request_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/request_manager/request_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/block_manager/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/block_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/elastic_manager/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/block_manager/block_controller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/block_manager/block_enums.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/mongo_manager/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_controller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/service_manager/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_controller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_enums.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_request_generator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/session/session_controller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/session/session_enums.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/state_manager/states.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/state_manager/enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/state_manager/enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/state_manager/server_vars.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/state_manager/server_vars.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/state_manager/strings.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/state_manager/strings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/css/pages/cms/blades/dashboard/cs-blade-welcome.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/blades/dashboard/cs-blade-welcome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/css/pages/cms/blades/shared/cs-blade-dashboard-navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/blades/shared/cs-blade-dashboard-navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/css/pages/cms/cs-dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/cs-dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/css/pages/cms/cs-login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/cs-login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/css/pages/cms/cs-manage-status.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/cs-manage-status.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/favicon-home-cmsss.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon-cms.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/mobile/download/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/session_manager/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/mobile/download/app-360wise-arm64-v8a-release.apk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/mobile/download/app-360wise-armeabi-v7a-release.apk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/mobile/download/app-360wise-x86-release.apk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/mobile/download/app-360wise-x86_64-release.apk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/constants/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/constants/constant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/helper_manager/helper_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/helper_manager/helper_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/user_auth_manager/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_manager/class_model/crawl_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/class_model/crawl_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_manager/crawl_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/crawl_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_manager/crawl_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/crawl_enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_manager/crawl_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/crawl_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/external_request_manager/external_request_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/external_request_manager/external_request_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/user_auth_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/user_auth_manager/class_model/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/user_auth_manager/class_model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/user_auth_manager/class_model/user_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/user_auth_manager/class_model/user_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/user_auth_manager/user_auth_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/user_auth_manager/user_auth_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/user_auth_manager/user_auth_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/user_auth_manager/user_auth_enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/user_auth_manager/user_auth_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/user_auth_manager/user_auth_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/dashboard/dashboard_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/dashboard/dashboard_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/dashboard/dashboard_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/dashboard/dashboard_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/login/login_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/login/login_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/login/login_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/login/login_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/login/login_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/login/login_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_search/manage_search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_search/manage_search_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_search/manage_search_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_search/manage_search_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_status/manage_status_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_status/manage_status_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_status/manage_status_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_status/manage_status_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/hompage_manager/homepage_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/hompage_manager/homepage_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/hompage_manager/homepage_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/hompage_manager/homepage_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/hompage_manager/homepage_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/hompage_manager/homepage_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/notice_manager/notice_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/notice_manager/notice_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/notice_manager/notice_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/notice_manager/notice_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/notice_manager/notice_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/notice_manager/notice_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/policy_manager/policy_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/policy_manager/policy_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/report_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/report_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/report_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/report_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/report_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/report_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/tokenizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/tokenizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/sitemap_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/sitemap_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/sitemap_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/sitemap_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/sitemap_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/sitemap_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/block_manager/block_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/block_manager/block_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/error/error_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/error/error_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/error/error_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/error/error_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/error/error_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/error/error_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/maintenance/maintenance_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/maintenance/maintenance_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/maintenance/maintenance_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/maintenance/maintenance_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/maintenance/maintenance_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/maintenance/maintenance_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/secret_key/secret_key_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/secret_key/secret_key_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/user_index_manager/user_index_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/user_index_manager/user_index_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/user_index_manager/user_index_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/user_index_manager/user_index_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/.well-known/bridges.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/.well-known/url.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/.well-known/url_complete.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/.well-known/urls.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/dashboard/blade-welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/dashboard/blade-welcome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/login/blade-login-navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/login/blade-login-navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/shared_blades/blade-dashboard-navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/shared_blades/blade-dashboard-navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/dashboard/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/dashboard/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/dashboard/local_imports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/login/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/login/local_imports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/login/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_search/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_search/local_imports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_search/manage_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_search/manage_search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_status/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_status/local_imports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_status/manage_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_status/manage_status.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/trustly/css/pages/user/interactive/cs-sitemap.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/interactive/cs-sitemap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/trustly/images/favicon-home_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon-home_white.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/directory_template/blade_directory_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/directory_template/blade_directory_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/directory_template/blade_directory_pagination.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/directory_template/blade_directory_pagination.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/home_template/blade_home_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/home_template/blade_home_header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/home_template/blade_home_references.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/home_template/blade_home_references.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_engine_suggestion.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_engine_suggestion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/search/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/search/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/wsgi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +176,7 @@
       <workItem from="1724195103260" duration="1177000" />
       <workItem from="1724239904352" duration="4504000" />
       <workItem from="1724261883631" duration="16867000" />
-      <workItem from="1724316275544" duration="19297000" />
+      <workItem from="1724316275544" duration="20828000" />
     </task>
     <servers />
   </component>
