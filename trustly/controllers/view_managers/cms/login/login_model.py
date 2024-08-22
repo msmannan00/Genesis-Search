@@ -4,8 +4,8 @@ from django.shortcuts import render
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.view_managers.cms.login.login_enums import LOGIN_SESSION_COMMANDS, LOGIN_MODEL_CALLBACK
 from trustly.controllers.view_managers.cms.login.login_session_controller import login_session_controller
-from shared_directory.request_manager.request_handler import request_handler
-from shared_directory.service_manager.session.session_enums import SESSION_KEYS
+from app_manager.request_manager.request_handler import request_handler
+from app_manager.session_manager.session_enums import SESSION_KEYS
 
 
 class login_model(request_handler):

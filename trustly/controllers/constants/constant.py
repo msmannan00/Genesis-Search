@@ -35,7 +35,6 @@ class CONSTANTS:
     S_BRIDGE_PATH = "trustly/.well-known/bridges.txt"
     S_APP_ADS_PATH = "trustly/.well-known/app-ads.txt"
     S_TEMPLATE_DOWNLOAD_WEBSITE_PATH = "trustly/user/interactive/download/download.html"
-    S_TEMPLATE_DOWNLOAD_IFRAME_WEBSITE_PATH = "trustly/.well-known/url.txt"
     S_TEMPLATE_CRAWL_URL_COMPLETE_WEBSITE_PATH = "trustly/.well-known/url_complete.txt"
 
     # Direct Links

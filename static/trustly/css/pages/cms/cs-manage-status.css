@@ -1,52 +1,48 @@
 .manage_status{
     height: 55em;
 }
-.manage_status-header{
-    margin-left: 2.3%;
-    padding-right: 2%;
-}
-.manage_status-block{
-    border-radius: 8px;
-    border: 1px solid #e6e6e6;
-    width: 95%;
-    max-width: 500px;
-    margin-left: 2%;
-    padding: 10px 10px 12px 16px;
-    border-bottom: 4px solid lightgray;
-}
-.manage_status-update{
-    border-left: 4px solid orange ;
-    padding-left: 15px;
-    padding-bottom: 20px;
-    margin-left: 30px;
-}
-.manage_status-badge{
-    margin-top: 25px;
-    padding: 5px 8px 8px;
-}
-.manage_status-header--color{
-    color: #336699;
-}
-.manage_status-header--info-color{
-    color: #4d4d4d;
-}
-.manage_status-container{
+
+.manage_status-container {
     padding: 2% 2% 2% 1.5%;
-    background: #f7f7f7;
+    background: #fff;
     max-width: 800px;
     margin: 3%;
     border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-@media only screen and (max-width: 943px) {
-   .manage_status-header{
-        margin-left: 5.3%;
-    }
-    .manage_status-block{
-        margin-left: 5%;
-    }
-    .manage_status-container{
-        padding: 5% 5% 5% 1%;
-        max-width: 800px;
-    }
 
+.table {
+    margin-top: 30px;
+    width: 100%;
+    margin-left: 0.5%;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 7px;
+}
+
+.table .thead-dark th{
+    border-color: #fff;
+}
+
+.badge {
+    padding: 5px 8px;
+}
+
+.manage_status-header--color {
+    color: #336699;
+}
+
+.manage_status-header--info-color {
+    color: #4d4d4d;
+}
+
+.manage_status_table{
+    background-color: #f8f8f8;
+}
+
+@media only screen and (max-width: 943px) {
+    .manage_status-container,
+    .table {
+        padding: 5% 5% 5% 5%;
+    }
 }

@@ -2,7 +2,7 @@ from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.constants.strings import GENERAL_STRINGS
 from trustly.controllers.helper_manager.helper_controller import helper_controller
 from trustly.controllers.view_managers.user.interactive.hompage_manager.homepage_enums import HOMEPAGE_CALLBACK, HOMEPAGE_PARAM, HOMEPAGE_SESSION_COMMANDS
-from shared_directory.request_manager.request_handler import request_handler
+from app_manager.request_manager.request_handler import request_handler
 
 
 class homepage_session_controller(request_handler):

@@ -1,6 +1,7 @@
+from app_manager.session_manager.session_controller import session_controller
 from trustly.controllers.view_managers.cms.dashboard.dashboard_enums import DASHBOARD_SESSION_COMMANDS
-from shared_directory.request_manager.request_handler import request_handler
-from shared_directory.service_manager.session.session_enums import SESSION_KEYS
+from app_manager.request_manager.request_handler import request_handler
+from app_manager.session_manager.session_enums import SESSION_KEYS, SESSION_COMMANDS
 
 
 class dashboard_session_controller(request_handler):
@@ -8,10 +9,11 @@ class dashboard_session_controller(request_handler):
     # Helper Methods
 
     def __init_parameters(self, p_data):
+        m_status = session_controller.get_instance().invoke_trigger(SESSION_COMMANDS.S_EXISTS, p_data)
         if SESSION_KEYS.S_USERNAME in p_data.session :
-            return {}, True
+            return {}, m_status
         else :
-            return {}, False
+            return {}, m_status
 
     # External Request Callbacks
     def invoke_trigger(self, p_command, p_data):

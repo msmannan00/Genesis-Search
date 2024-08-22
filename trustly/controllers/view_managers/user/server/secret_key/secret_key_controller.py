@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.view_managers.user.server.secret_key.secret_key_enums import SECRET_KEY_MODEL_CALLBACK
-from shared_directory.request_manager.request_handler import request_handler
+from app_manager.request_manager.request_handler import request_handler
 
 
 class secret_key_controller(request_handler):

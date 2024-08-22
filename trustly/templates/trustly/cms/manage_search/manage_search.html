@@ -6,7 +6,7 @@
 {% include 'trustly/cms/manage_search/local_imports.html' %}
 
 {% include 'trustly/cms/blades/shared_blades/blade-dashboard-navbar.html' %}
-<div style="clear: left" ></div>
+<div ></div>
     <body>
         <div class="manage_search">
             <div class="manage_search-container">
@@ -17,7 +17,7 @@
 
                 <br>
 
-                <form action="/cms/manage_search" method="POST" style="max-width: 800px">
+                <form action="/cms/manage_search/" method="POST">
                   <input type="number" class="manage_search-range manage_search-range--min" id="email" placeholder="min results" value="{{mMinRange}}" name="pMinRange" min="0">
                   <input type="number" class="manage_search-range manage_search-range--max manage_search-range--float" id="pwd" placeholder="max results" value="{{mMaxRange}}" name="pMaxRange" min="0">
 
@@ -36,7 +36,7 @@
 
                   </select>
 
-                  <div style="clear: left"></div>
+                  <div ></div>
                   <input type="text"  class="form-control manage_search-query" value="{{mQueryCollection}}" name="pQueryCollection" placeholder="Enter Collection">
                   <input type="text"  class="form-control manage_search-query" value="{{mQuery}}" name="pQuery" placeholder="Enter Query">
                   <br><button class="btn btn-primary" type="submit">Submit</button>

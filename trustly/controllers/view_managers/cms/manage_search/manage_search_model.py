@@ -3,16 +3,16 @@ import json
 from bson import json_util
 from django.shortcuts import render
 
+from app_manager.elastic_manager.elastic_enums import ELASTIC_CRUD_COMMANDS, ELASTIC_REQUEST_COMMANDS
+from app_manager.mongo_manager.mongo_controller import mongo_controller
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.constants.enums import MONGO_COMMANDS
 from trustly.controllers.view_managers.cms.manage_search.class_model.manage_search_model import manage_search_data_model
 from trustly.controllers.view_managers.cms.manage_search.manage_search_enums import MANAGE_SEARCH_SESSION_COMMANDS, MANAGE_SEARCH_MODEL_CALLBACK
 from trustly.controllers.view_managers.cms.manage_search.manage_search_session_controller import manage_search_session_controller
-from shared_directory.request_manager.request_handler import request_handler
-from shared_directory.service_manager.elastic_manager import elastic_controller
-from shared_directory.service_manager.elastic_manager.elastic_enums import ELASTIC_CRUD_COMMANDS, ELASTIC_REQUEST_COMMANDS
-from shared_directory.service_manager.mongo_manager.mongo_controller import mongo_controller
-from shared_directory.service_manager.mongo_manager.mongo_enums import MONGODB_CRUD
+from app_manager.request_manager.request_handler import request_handler
+from app_manager.elastic_manager import elastic_controller
+from app_manager.mongo_manager.mongo_enums import MONGODB_CRUD
 
 
 class manage_search_model(request_handler):
@@ -38,7 +38,7 @@ class manage_search_model(request_handler):
 
         if p_manage_search_model.m_query_type == "elastic-search":
 
-            m_status, m_response = elastic_controller.elastic_controller.get_instance().invoke_trigger(ELASTIC_CRUD_COMMANDS.S_READ,[ELASTIC_REQUEST_COMMANDS.S_QUERY_RAW,[p_manage_search_model], [p_manage_search_model.m_min_range, p_manage_search_model.m_max_range]])
+            m_status, m_response = elastic_controller.elastic_controller.get_instance().invoke_trigger(ELASTIC_CRUD_COMMANDS.S_READ, [ELASTIC_REQUEST_COMMANDS.S_QUERY_RAW, [p_manage_search_model], [p_manage_search_model.m_min_range, p_manage_search_model.m_max_range]])
             if m_status is False:
                 p_manage_search_model.m_query_error = m_response
             else:

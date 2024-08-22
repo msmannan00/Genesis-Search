@@ -5,12 +5,15 @@ body {
 
 .login-box {
     margin-top: 75px;
-    height: auto;
+    padding-top: 30px;
+    width: 33em;
+    height: 37em;
+    border-radius: 5px;
     text-align: center;
     background: #1A2226;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .login-key {
@@ -37,7 +40,7 @@ body {
     text-align: left;
 }
 
-input[type=text] {
+input[type="text"], input[type="password"] {
     background-color: #1A2226;
     border: none;
     border-bottom: 2px solid #0DB8DE;
@@ -47,19 +50,6 @@ input[type=text] {
     outline: 0;
     margin-bottom: 20px;
     padding-left: 0;
-    color: #ECF0F5;
-}
-
-input[type=password] {
-    background-color: #1A2226;
-    border: none;
-    border-bottom: 2px solid #0DB8DE;
-    border-top: 0;
-    border-radius: 0;
-    font-weight: bold;
-    outline: 0;
-    padding-left: 0;
-    margin-bottom: 20px;
     color: #ECF0F5;
 }
 
@@ -68,7 +58,7 @@ input[type=password] {
     outline: 0;
 }
 
-.form-control:focus {
+.form-control:focus, input:focus {
     border-color: inherit;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -78,16 +68,8 @@ input[type=password] {
     color: #ECF0F5;
 }
 
-input:focus {
-    outline: none;
-    box-shadow: 0 0 0;
-}
-
-label {
+label, .form-control-label {
     margin-bottom: 0;
-}
-
-.form-control-label {
     font-size: 10px;
     color: #6C6C6C;
     font-weight: bold;
@@ -108,26 +90,39 @@ label {
     right: 0;
 }
 
-.login-btm {
+.login-btm, .login-button, .login-text {
     float: left;
-}
-
-.login-button {
     padding-right: 0;
-    text-align: right;
-    margin-bottom: 25px;
-}
-
-.login-text {
     text-align: left;
-    padding-left: 0;
+    margin-bottom: 25px;
     color: #A2A4A4;
 }
 
-.loginbttm {
-    padding: 0;
-}
-.login--error{
+.login--error {
     color: #b30000;
     font-weight: bold;
+}
+
+@media (max-width: 768px) {
+@media (max-width: 768px) {
+    .login-box {
+        width: 90% !important;
+    }
+}
+    .col-lg-3, .col-md-2 {
+        display: none;
+    }
+
+    .col-lg-6, .col-md-8 {
+        width: 100%;
+    }
+
+    .login-form, .login-button, .login-text {
+        text-align: center;
+    }
+    .login-button--item{
+        margin-top: 20px;
+        height: 45px;
+        width: 100%;
+    }
 }

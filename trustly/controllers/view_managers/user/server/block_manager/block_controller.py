@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.view_managers.user.server.block_manager.block_enums import BLOCK_MODEL_CALLBACK
-from shared_directory.request_manager.request_handler import request_handler
+from app_manager.request_manager.request_handler import request_handler
 
 
 class block_controller(request_handler):

@@ -1,11 +1,9 @@
-from http.cookiejar import debug
-
+from app_manager.elastic_manager.elastic_controller import elastic_controller
+from app_manager.elastic_manager.elastic_enums import ELASTIC_CRUD_COMMANDS, ELASTIC_REQUEST_COMMANDS, ELASTIC_INDEX_COLLECTION
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.view_managers.user.interactive.directory_manager.directory_enums import DIRECTORY_MODEL_CALLBACK, DIRECTORY_SESSION_COMMANDS, DIRECTORY_MODEL_COMMANDS
 from trustly.controllers.view_managers.user.interactive.directory_manager.directory_session_controller import directory_session_controller
-from shared_directory.request_manager.request_handler import request_handler
-from shared_directory.service_manager.elastic_manager.elastic_controller import elastic_controller
-from shared_directory.service_manager.elastic_manager.elastic_enums import ELASTIC_CRUD_COMMANDS, ELASTIC_REQUEST_COMMANDS, ELASTIC_INDEX_COLLECTION
+from app_manager.request_manager.request_handler import request_handler
 
 
 class directory_model(request_handler):

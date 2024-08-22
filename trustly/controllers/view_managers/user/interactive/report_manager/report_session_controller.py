@@ -3,7 +3,7 @@ from trustly.controllers.constants.strings import GENERAL_STRINGS
 from trustly.controllers.helper_manager.helper_controller import helper_controller
 from trustly.controllers.view_managers.user.interactive.report_manager.class_model.report_data_model import report_data_model
 from trustly.controllers.view_managers.user.interactive.report_manager.report_enums import REPORT_CALLBACK, REPORT_PARAM, REPORT_SESSION_COMMANDS
-from shared_directory.request_manager.request_handler import request_handler
+from app_manager.request_manager.request_handler import request_handler
 
 
 class report_session_controller(request_handler):

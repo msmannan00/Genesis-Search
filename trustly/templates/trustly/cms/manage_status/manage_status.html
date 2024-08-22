@@ -1,39 +1,59 @@
 {% load static %}
 
 <html lang="en">
-
 {% include 'trustly/cms/blades/blades_shared_initialization.html' %}
 {% include 'trustly/cms/manage_status/local_imports.html' %}
 {% include 'trustly/cms/blades/shared_blades/blade-dashboard-navbar.html' %}
 
-<div style="clear: left"></div>
-    <body>
-        <div class="manage_status">
-            <div class="manage_status-container">
-                <div class="manage_status-header">
-                  <h4 class="manage_status-header--color"><b>Trustly Status</b></h4>
-                  <p class="manage_status-header--info-color">The following menu shows status of multiple Trustly Platform modules. Time tag shows most recent update request made by module</p>
-                </div>
-
-                <br><div class="manage_status-block">
-                  <b>G-search status</b> &nbsp; <span class="manage_status-update"> active</span>
-                  <br><a href="#" class="badge badge-success manage_status-badge">running</a>
-                </div>
-
-                <br><br><div class="manage_status-block">
-                  <b>G-cronjob status</b> <span class="manage_status-update"> {{mCronjobTime}}</span>
-                  <br><a href="#" class="badge {% if mCronjobNotice == 'un-responsive' %}badge-warning{% elif mCronjobNotice == 'running' %}badge-success{% else %}badge-danger{% endif %} manage_status-badge" >{{mCronjobNotice}}</a>
-                </div>
-
-                <br><br><div class="manage_status-block">
-                  <b>G-crawler status</b> <span class="manage_status-update"> {{mCrawlerTime}}</span>
-                  <br><a href="#" class="badge {% if mCrawlerNotice == 'un-responsive' %}badge-warning{% elif mCrawlerNotice == 'running' %}badge-success{% else %}badge-danger{% endif %} manage_status-badge" >{{mCrawlerNotice}}</a>
-                </div>
-            </div>
+<div></div>
+<body>
+<div class="manage_status">
+    <div class="manage_status-container">
+        <div class="manage_status-header">
+            <h4 class="manage_status-header--color"><b>Trustly Status</b></h4>
+            <p class="manage_status-header--info-color">The following table shows the status of multiple Trustly
+                Platform modules. Time tag shows the most recent update request made by module</p>
         </div>
 
-        <!-- footer -->
-        {% include 'trustly/cms/blades/shared_blades/blade_footer.html' %}
+        <table class="table table-hover manage_status_table">
+            <thead class="thead-dark">
+            <tr>
+                <th>Module Name</th>
+                <th>Status</th>
+                <th>Last Update</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>G-search status</td>
+                <td><span class="badge badge-success">running</span></td>
+                <td>active</td>
+            </tr>
+            <tr>
+                <td>G-cronjob status</td>
+                <td>
+                <span class="badge {% if mCronjobNotice == 'un-responsive' %}badge-warning{% elif mCronjobNotice == 'running' %}badge-success{% else %}badge-danger{% endif %}">
+                    {{ mCronjobNotice }}
+                </span>
+                </td>
+                <td>{{ mCronjobTime }}</td>
+            </tr>
+            <tr>
+                <td>G-crawler status</td>
+                <td>
+                <span class="badge {% if mCrawlerNotice == 'un-responsive' %}badge-warning{% elif mCrawlerNotice == 'running' %}badge-success{% else %}badge-danger{% endif %}">
+                    {{ mCrawlerNotice }}
+                </span>
+                </td>
+                <td>{{ mCrawlerTime }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-    </body>
+<!-- footer -->
+{% include 'trustly/cms/blades/shared_blades/blade_footer.html' %}
+
+</body>
 </html>

@@ -1,11 +1,11 @@
 from django.shortcuts import render
 
+from app_manager.block_manager.block_controller import block_controller
+from app_manager.block_manager.block_enums import BLOCK_COMMAND
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.view_managers.user.interactive.hompage_manager.homepage_enums import HOMEPAGE_MODEL_COMMANDS
 from trustly.controllers.view_managers.user.interactive.hompage_manager.homepage_model import homepage_model
-from shared_directory.request_manager.request_handler import request_handler
-from shared_directory.service_manager.block_manager.block_controller import block_controller
-from shared_directory.service_manager.block_manager.block_enums import BLOCK_COMMAND
+from app_manager.request_manager.request_handler import request_handler
 
 
 class homepage_controller(request_handler):

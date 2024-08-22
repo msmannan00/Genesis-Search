@@ -3,7 +3,7 @@ from trustly.controllers.helper_manager.helper_controller import helper_controll
 from trustly.controllers.view_managers.user.server.user_index_manager.user_index_cache_model import user_index_cache_model
 from trustly.controllers.view_managers.user.server.user_index_manager.user_index_enums import USER_INDEX_PARAM, USER_INDEX_CALLBACK, USER_INDEX_MODEL_CALLBACK
 from trustly.controllers.view_managers.user.interactive.notice_manager.notice_session_controller import notice_session_controller
-from shared_directory.request_manager.request_handler import request_handler
+from app_manager.request_manager.request_handler import request_handler
 
 
 class user_index_model(request_handler):

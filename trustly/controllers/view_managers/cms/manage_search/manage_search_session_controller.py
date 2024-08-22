@@ -1,7 +1,8 @@
+from app_manager.session_manager.session_controller import session_controller
 from trustly.controllers.view_managers.cms.manage_search.class_model.manage_search_model import manage_search_data_model
 from trustly.controllers.view_managers.cms.manage_search.manage_search_enums import MANAGE_SEARCH_SESSION_COMMANDS, MANAGE_SEARCH_PARAM, MANAGE_SEARCH_CALLBACK
-from shared_directory.request_manager.request_handler import request_handler
-from shared_directory.service_manager.session.session_enums import SESSION_KEYS
+from app_manager.request_manager.request_handler import request_handler
+from app_manager.session_manager.session_enums import SESSION_KEYS, SESSION_COMMANDS
 
 
 class manage_search_session_controller(request_handler):
@@ -21,7 +22,8 @@ class manage_search_session_controller(request_handler):
             if MANAGE_SEARCH_PARAM.M_QUERY_COLLECTION in p_data.POST:
                 m_manage_search_model.m_query_collection = p_data.POST[MANAGE_SEARCH_PARAM.M_QUERY_COLLECTION]
 
-            return {},m_manage_search_model, True
+            m_status = session_controller.get_instance().invoke_trigger(SESSION_COMMANDS.S_EXISTS, p_data)
+            return {},m_manage_search_model, m_status
         else :
             return {},None, False
 

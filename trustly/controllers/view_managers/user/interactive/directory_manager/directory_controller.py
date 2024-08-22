@@ -1,13 +1,13 @@
 
 from django.shortcuts import render
 
+from app_manager.block_manager.block_controller import block_controller
+from app_manager.block_manager.block_enums import BLOCK_COMMAND
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.view_managers.user.interactive.directory_manager.directory_enums import DIRECTORY_MODEL_COMMANDS
 from trustly.controllers.view_managers.user.interactive.directory_manager.directory_model import directory_model
-from shared_directory.request_manager.request_handler import request_handler
-from shared_directory.service_manager.block_manager.block_controller import block_controller
-from shared_directory.service_manager.block_manager.block_enums import BLOCK_COMMAND
-from shared_directory.state_manager.constant import APP_STATUS
+from app_manager.request_manager.request_handler import request_handler
+from app_manager.state_manager.states import APP_STATUS
 
 
 class directory_controller(request_handler):

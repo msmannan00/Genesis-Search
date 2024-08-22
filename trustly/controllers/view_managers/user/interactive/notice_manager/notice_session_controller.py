@@ -1,6 +1,6 @@
 from trustly.controllers.constants.strings import GENERAL_STRINGS
 from trustly.controllers.view_managers.user.interactive.notice_manager.notice_enums import NOTICE_CALLBACK, NOTICE_PARAM, NOTICE_SESSION_CALLBACK
-from shared_directory.request_manager.request_handler import request_handler
+from app_manager.request_manager.request_handler import request_handler
 
 
 class notice_session_controller(request_handler):

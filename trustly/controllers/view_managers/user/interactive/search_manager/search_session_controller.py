@@ -3,7 +3,7 @@ from trustly.controllers.constants.strings import GENERAL_STRINGS, SEARCH_STRING
 from trustly.controllers.helper_manager.helper_controller import helper_controller
 from trustly.controllers.view_managers.user.interactive.search_manager.search_data_model.query_model import query_model
 from trustly.controllers.view_managers.user.interactive.search_manager.search_enums import SEARCH_PARAM, SEARCH_CALLBACK, SEARCH_DOCUMENT_CALLBACK, SEARCH_SESSION_COMMANDS
-from shared_directory.request_manager.request_handler import request_handler
+from app_manager.request_manager.request_handler import request_handler
 
 
 class search_session_controller(request_handler):
@@ -165,7 +165,6 @@ class search_session_controller(request_handler):
             SEARCH_CALLBACK.K_SEARCH_TYPE: p_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT_TYPE],
         }
         m_counter = 0
-        ss = []
         for m_image_file in p_document[SEARCH_DOCUMENT_CALLBACK.M_IMAGE]:
             if m_image_file[SEARCH_CALLBACK.M_IMAGE_URL] not in m_direct_url_list:
                 m_direct_url_list.append(m_image_file[SEARCH_CALLBACK.M_IMAGE_URL])
@@ -210,7 +209,7 @@ class search_session_controller(request_handler):
     def __normalize_text(self, p_text):
         return p_text.encode("ascii", "ignore").decode()
 
-    def __init_parameters(self, p_document_list, p_search_model, p_tokenized_query):
+    def __init_parameters(self, p_document_list, p_search_model):
         m_relevance_context_list = []
         m_related_business_list = []
         m_related_news_list = []
@@ -274,5 +273,5 @@ class search_session_controller(request_handler):
         if p_command == SEARCH_SESSION_COMMANDS.INIT_SEARCH_PARAMETER:
             return self.__init_search_parameters(p_data[0])
         if p_command == SEARCH_SESSION_COMMANDS.M_INIT:
-            return self.__init_parameters(p_data[0], p_data[1], p_data[2])
+            return self.__init_parameters(p_data[0], p_data[1])
 

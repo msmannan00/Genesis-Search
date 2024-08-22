@@ -1,11 +1,12 @@
 from django.shortcuts import render
+
+from app_manager.mongo_manager.mongo_controller import mongo_controller
+from app_manager.mongo_manager.mongo_enums import MONGODB_CRUD
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.constants.enums import MONGO_COMMANDS
 from trustly.controllers.view_managers.cms.manage_status.manage_status_enums import MANAGE_STATUS_MODEL_CALLBACK, MANAGE_STATUS_SESSION_COMMANDS
 from trustly.controllers.view_managers.cms.manage_status.manage_status_session_controller import manage_status_session_controller
-from shared_directory.request_manager.request_handler import request_handler
-from shared_directory.service_manager.mongo_manager.mongo_controller import mongo_controller
-from shared_directory.service_manager.mongo_manager.mongo_enums import MONGODB_CRUD
+from app_manager.request_manager.request_handler import request_handler
 
 
 class manage_status_model(request_handler):

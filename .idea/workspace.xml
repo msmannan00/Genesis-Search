@@ -5,223 +5,145 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/decouple-0.0.7.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/decouple-0.0.7.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/decouple-0.0.7.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/decouple-0.0.7.dist-info/REQUESTED" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/decouple-0.0.7.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/decouple-0.0.7.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/decouple/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/decouple/event.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/decouple/mediator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/decouple/module.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/decouple/publisher.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/decouple/registry.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker-7.1.0.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker-7.1.0.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker-7.1.0.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker-7.1.0.dist-info/REQUESTED" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker-7.1.0.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker-7.1.0.dist-info/licenses/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/_version.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/api/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/api/build.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/api/client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/api/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/api/container.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/api/daemon.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/api/exec_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/api/image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/api/network.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/api/plugin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/api/secret.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/api/service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/api/swarm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/api/volume.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/context/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/context/api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/context/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/context/context.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/credentials/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/credentials/constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/credentials/errors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/credentials/store.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/credentials/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/errors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/models/configs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/models/containers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/models/images.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/models/networks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/models/nodes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/models/plugins.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/models/resource.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/models/secrets.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/models/services.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/models/swarm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/models/volumes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/tls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/transport/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/transport/basehttpadapter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/transport/npipeconn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/transport/npipesocket.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/transport/sshconn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/transport/unixconn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/types/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/types/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/types/containers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/types/daemon.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/types/healthcheck.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/types/networks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/types/services.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/types/swarm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/utils/build.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/utils/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/utils/decorators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/utils/fnmatch.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/utils/json_stream.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/utils/ports.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/utils/proxy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/utils/socket.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/utils/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/docker/version.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/dotenv/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/dotenv/__main__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/dotenv/cli.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/dotenv/ipython.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/dotenv/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/dotenv/parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/dotenv/py.typed" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/dotenv/variables.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/dotenv/version.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/python_dotenv-1.0.1.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/python_dotenv-1.0.1.dist-info/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/python_dotenv-1.0.1.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/python_dotenv-1.0.1.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/python_dotenv-1.0.1.dist-info/REQUESTED" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/python_dotenv-1.0.1.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/python_dotenv-1.0.1.dist-info/entry_points.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/python_dotenv-1.0.1.dist-info/top_level.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app_manager/block_manager/block_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app_manager/block_manager/block_enums.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app_manager/elastic_manager/elastic_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app_manager/elastic_manager/elastic_enums.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app_manager/elastic_manager/elastic_request_generator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app_manager/mongo_manager/mongo_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app_manager/mongo_manager/mongo_enums.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app_manager/mongo_manager/mongo_request_generator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app_manager/session_manager/session_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app_manager/session_manager/session_enums.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage-dev.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/trustly/images/trustly-cms.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trustly/middleware/RestrictAccessMiddleware.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Genesis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Genesis.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_instance/local_shared_model/index_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/models/index_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_services/helper_services/duplication_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_services/helper_services/helper_method.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/user_data_parser/parse_services/helper_services/spell_check_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/middleware/SessionSecurityMiddleware.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/css/pages/user/blades/directory/cs-directory-list-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/blades/directory/cs-directory-list-blade.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/css/pages/user/interactive/cs-homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/interactive/cs-homepage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/css/pages/user/interactive/cs-search.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/interactive/cs-search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/360wise_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/android-chrome-192x192.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/android-chrome-192x192.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/android-chrome-512x512.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/android-chrome-512x512.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/apple-touch-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/apple-touch-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/cropped-360wiselogo-32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/author/author1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/author/author2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/author/author3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/bg/crumbs-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/bg/img-background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/bg/slider-bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/blog/blog-thumb1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/blog/blog-thumb2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/blog/blog-thumb3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/icon/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/icon/logo-360.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/icon/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/mobile/about-m-screen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/mobile/feature-screen-360.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/mobile/feature-screen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/mobile/screen-slider/screen1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/mobile/screen-slider/screen2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/mobile/screen-slider/screen3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/mobile/screen-slider/screen4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/mobile/screen-slider/screen5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/mobile/screen-slider/screen6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/mobile/slider-screen-360.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/mobile/slider-screen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/sidebar/sidebar-thumb1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/sidebar/sidebar-thumb2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/sidebar/sidebar-thumb3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/sidebar/sidebar-thumb4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/sidebar/sidebar-thumb5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/sidebar/sidebar-thumb6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/team/img1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/team/img2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/team/img3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/download/team/img4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon-16x16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/favicon-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon-32x32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/favicon-360.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/favicon-home-cms.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/favicon-home-cmsss.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon-home-cmsss.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/favicon-home.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon-home.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/favicon-home_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon-home_white.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/favicon-search.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon-search.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/log_manager/log_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/log_manager/log_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/log_manager/log_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/log_manager/log_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/request_manager/request_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/request_manager/request_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/block_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/block_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/elastic_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/block_manager/block_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/block_manager/block_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/mongo_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/elastic_manager/elastic_request_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/service_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/mongo_manager/mongo_request_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/session/session_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/service_manager/session/session_enums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/state_manager/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/state_manager/states.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/state_manager/enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/state_manager/enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/state_manager/server_vars.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/state_manager/server_vars.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared_directory/state_manager/strings.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/state_manager/strings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/trustly/css/pages/cms/blades/dashboard/cs-blade-welcome.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/blades/dashboard/cs-blade-welcome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/trustly/css/pages/cms/blades/shared/cs-blade-dashboard-navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/blades/shared/cs-blade-dashboard-navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/trustly/css/pages/cms/cs-dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/cs-dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/trustly/css/pages/cms/cs-login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/cs-login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/trustly/css/pages/cms/cs-manage-status.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/cms/cs-manage-status.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/trustly/images/favicon-home-cmsss.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon-cms.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/trustly/mobile/download/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/session_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/trustly/mobile/download/app-360wise-arm64-v8a-release.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/trustly/mobile/download/app-360wise-armeabi-v7a-release.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/trustly/mobile/download/app-360wise-x86-release.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/trustly/mobile/download/app-360wise-x86_64-release.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/asgi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/controllers/constants/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/constants/constant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/helper_manager/helper_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/helper_manager/helper_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/user_auth_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_manager/class_model/crawl_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/class_model/crawl_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_manager/crawl_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/crawl_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_manager/crawl_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/crawl_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_manager/crawl_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/crawl_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/external_request_manager/external_request_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/external_request_manager/external_request_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/user_auth_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/user_auth_manager/class_model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/user_auth_manager/class_model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/user_auth_manager/class_model/user_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/user_auth_manager/class_model/user_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/user_auth_manager/user_auth_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/user_auth_manager/user_auth_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/user_auth_manager/user_auth_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/user_auth_manager/user_auth_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/user_auth_manager/user_auth_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/user_auth_manager/user_auth_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/dashboard/dashboard_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/dashboard/dashboard_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/dashboard/dashboard_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/dashboard/dashboard_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/login/login_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/login/login_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/login/login_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/login/login_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/login/login_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/login/login_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_search/manage_search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_search/manage_search_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_search/manage_search_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_search/manage_search_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_status/manage_status_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_status/manage_status_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_status/manage_status_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_status/manage_status_session_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/hompage_manager/homepage_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/hompage_manager/homepage_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/hompage_manager/homepage_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/hompage_manager/homepage_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/hompage_manager/homepage_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/hompage_manager/homepage_session_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/notice_manager/notice_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/notice_manager/notice_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/notice_manager/notice_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/notice_manager/notice_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/notice_manager/notice_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/notice_manager/notice_session_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/policy_manager/policy_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/policy_manager/policy_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/report_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/report_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/report_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/report_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/report_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/report_session_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_data_model/query_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_data_model/query_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/tokenizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/tokenizer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/sitemap_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/sitemap_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/sitemap_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/sitemap_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/sitemap_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/sitemap_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/block_manager/block_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/block_manager/block_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/error/error_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/error/error_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/error/error_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/error/error_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/error/error_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/error/error_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/maintenance/maintenance_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/maintenance/maintenance_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/maintenance/maintenance_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/maintenance/maintenance_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/maintenance/maintenance_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/maintenance/maintenance_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/secret_key/secret_key_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/secret_key/secret_key_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/user_index_manager/user_index_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/user_index_manager/user_index_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/user_index_manager/user_index_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/user_index_manager/user_index_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/blades_shared_initialization.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/blades_shared_initialization.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/dashboard/blade-admin-panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/dashboard/blade-admin-panel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/.well-known/bridges.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/.well-known/url.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/.well-known/url_complete.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/.well-known/urls.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/dashboard/blade-welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/dashboard/blade-welcome.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/login/blade-login-navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/login/blade-login-navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/shared_blades/blade-dashboard-navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/shared_blades/blade-dashboard-navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/shared_blades/blade_footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/shared_blades/blade_footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/dashboard/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/dashboard/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/dashboard/local_imports.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/login/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/login/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/login/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_search/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_search/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_search/manage_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_search/manage_search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_status/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_status/local_imports.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_status/manage_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/manage_status/manage_status.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/blades_shared_initialization.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/blades_shared_initialization.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/directory_template/blade_directory_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/directory_template/blade_directory_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/directory_template/blade_directory_pagination.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/directory_template/blade_directory_pagination.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/home_template/blade_home_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/home_template/blade_home_header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/home_template/blade_home_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/home_template/blade_home_search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/login/blade_cms_navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/login/blade_cms_navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/shared_blades/blade_footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/shared_blades/blade_footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/directory/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/directory/local_imports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/download/download.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/download/download_iframe.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/download/local_imports.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/homepage/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/homepage/local_imports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/notice/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/notice/local_imports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/privacy/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/privacy/local_imports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/privacy/privacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/privacy/privacy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/report/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/report/local_imports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/report/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/report/report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/search/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/search/local_imports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/sitemap/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/sitemap/local_imports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/server/block/block.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/server/block/block.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/server/block/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/server/block/local_imports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/server/block/restricted.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/server/block/restricted.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/server/error/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/server/error/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/server/error/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/server/error/local_imports.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/server/maintenance/local_imports.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/server/maintenance/local_imports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/home_template/blade_home_references.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/home_template/blade_home_references.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_engine_suggestion.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_engine_suggestion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/search/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/interactive/search/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/wsgi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,67 +183,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python.__init__.executor": "Debug",
-    "Python.setup_nltk.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "data.sources.detected.do.not.suggest.again": "true",
-    "django.template.preview.state": "SHOW_EDITOR",
-    "git-widget-placeholder": "trusted__internet",
-    "last_opened_file_path": "/home/morgan-freeman/Workspace/Genesis-Search/static/trustly/css/pages/user/server",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.setup_nltk.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;data.sources.detected.do.not.suggest.again&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;trusted__internet&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/morgan-freeman/Workspace/Genesis-Search/static/trustly/css/pages/cms&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Python&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/trustly/css/pages/cms" />
+      <recent name="$PROJECT_DIR$/static/trustly/images" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/static/trustly/css/pages/user/server" />
       <recent name="$PROJECT_DIR$/static/trustly" />
-      <recent name="$PROJECT_DIR$/trustly/templates/trustly" />
-      <recent name="$PROJECT_DIR$/static/orion/libs" />
-      <recent name="$PROJECT_DIR$/orion/templates/orion/user/server/block" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app_manager" />
+      <recent name="$PROJECT_DIR$/trustly/controllers/models" />
+      <recent name="$PROJECT_DIR$/trustly/app/xx" />
+      <recent name="$PROJECT_DIR$/trustly/app" />
       <recent name="C:\workspace\Orion-Search\static\orion\js\pages\user\download" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Python.DjangoServer" factoryName="Django server" nameIsGenerated="true">
-      <module name="Genesis" />
-      <option name="ENV_FILES" value="$PROJECT_DIR$/env" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="localhost" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
       <module name="Genesis" />
       <option name="ENV_FILES" value="" />
@@ -351,8 +252,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-PY-242.20224.347" />
-        <option value="bundled-python-sdk-c2d6afa66fbe-39cff9de6eef-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.20224.347" />
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-WS-242.20224.426" />
       </set>
     </attachedChunks>
   </component>
@@ -406,6 +306,8 @@
       <workItem from="1724191623946" duration="2981000" />
       <workItem from="1724195103260" duration="1177000" />
       <workItem from="1724239904352" duration="4504000" />
+      <workItem from="1724261883631" duration="16867000" />
+      <workItem from="1724316275544" duration="19297000" />
     </task>
     <servers />
   </component>

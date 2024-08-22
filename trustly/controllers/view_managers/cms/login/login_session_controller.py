@@ -1,7 +1,6 @@
 from trustly.controllers.view_managers.cms.login.class_model.login_data_model import login_data_model
-from trustly.controllers.view_managers.cms.login.login_enums import LOGIN_PARAM, LOGIN_SESSION_COMMANDS, LOGIN_CALLBACK, \
-    LOGIN_CALLBACK_MESSAGES
-from shared_directory.request_manager.request_handler import request_handler
+from trustly.controllers.view_managers.cms.login.login_enums import LOGIN_PARAM, LOGIN_SESSION_COMMANDS, LOGIN_CALLBACK, LOGIN_CALLBACK_MESSAGES
+from app_manager.request_manager.request_handler import request_handler
 
 
 class login_session_controller(request_handler):

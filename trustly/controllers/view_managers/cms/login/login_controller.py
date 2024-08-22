@@ -1,5 +1,3 @@
-from django.shortcuts import render
-from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.view_managers.cms.login.login_enums import LOGIN_MODEL_CALLBACK
 from trustly.controllers.view_managers.cms.login.login_model import login_model
 

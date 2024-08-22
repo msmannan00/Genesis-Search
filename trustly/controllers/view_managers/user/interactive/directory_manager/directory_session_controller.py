@@ -2,7 +2,7 @@ from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.view_managers.user.interactive.directory_manager.directory_enums import DIRECTORY_CALLBACK, DIRECTORY_PARAMS, DIRECTORY_SESSION_COMMANDS
 from trustly.controllers.view_managers.user.interactive.directory_manager.directory_shared_model.directory_class_model import \
     directory_class_model
-from shared_directory.request_manager.request_handler import request_handler
+from app_manager.request_manager.request_handler import request_handler
 
 
 class directory_session_controller(request_handler):

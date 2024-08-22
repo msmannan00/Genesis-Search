@@ -95,19 +95,16 @@ class helper_controller:
             return False
 
     @staticmethod
-    def is_stop_word(p_word):
-        if p_word in stopwords.get_stopwords("english"):
-            return True
-        else:
-            return False
-
-    @staticmethod
     def validate_json(jsonData):
         try:
             json.loads(jsonData)
-        except ValueError as err:
+        except ValueError:
             return False
         return True
+
+    @staticmethod
+    def get_time():
+        return math.ceil(time.time()/(60*60*24))
 
     @staticmethod
     def get_seconds_since_epoch():

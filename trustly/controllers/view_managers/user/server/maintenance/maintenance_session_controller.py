@@ -1,6 +1,6 @@
 from trustly.controllers.view_managers.user.server.maintenance.maintenance_enums import MAINTENANCE_SESSION_COMMANDS, \
     MAINTENANCE_PARAM, MAINTENANCE_CALLBACK
-from shared_directory.request_manager.request_handler import request_handler
+from app_manager.request_manager.request_handler import request_handler
 
 
 class maintenance_session_controller(request_handler):

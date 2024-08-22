@@ -1,7 +1,7 @@
 from trustly.controllers.constants.strings import GENERAL_STRINGS
 from trustly.controllers.view_managers.user.server.error.error_enums import ERROR_CALLBACK, ERROR_SESSION_COMMANDS, \
     ERROR_PARAM, ERROR_MESSAGE_CALLBACK
-from shared_directory.request_manager.request_handler import request_handler
+from app_manager.request_manager.request_handler import request_handler
 
 
 class error_session_controller(request_handler):
