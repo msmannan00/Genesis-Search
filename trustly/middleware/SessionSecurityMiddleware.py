@@ -14,6 +14,8 @@ class SessionSecurityMiddleware(MiddlewareMixin):
             request.session['session_token'] = session_token
 
         if not browser_token or session_token != browser_token:
+            print(":::::::::::::::::::::::::::::::::::::::::::")
+            print(":::::::::::::::::::::::::::::::::::::::::::")
             request.session.flush()
             request.session['session_token'] = session_token
 
@@ -21,5 +23,5 @@ class SessionSecurityMiddleware(MiddlewareMixin):
 
     def process_response(self, request, response):
         session_token = request.session.get('session_token')
-        response.set_cookie('browser_session_token', session_token, max_age=900)
+        response.set_cookie('browser_session_token', session_token, max_age=600)
         return response

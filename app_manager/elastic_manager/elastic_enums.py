@@ -24,7 +24,7 @@ class ELASTIC_CONNECTIONS:
   S_DATABASE_NAME = 'trustly-elastic-search'
   S_DATABASE_PORT = 9400
   S_DATABASE_IP = 'http://elasticsearch'
-  S_ELASTIC_USERNAME = 'admin'
+  S_ELASTIC_USERNAME = os.getenv('ELASTIC_ROOT_USERNAME')
   S_ELASTIC_PASSWORD = os.getenv('ELASTIC_ROOT_PASSWORD')
 
 class ELASTIC_KEYS:

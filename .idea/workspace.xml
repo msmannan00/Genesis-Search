@@ -7,12 +7,18 @@
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_manager/elastic_manager/elastic_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/elastic_manager/elastic_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_manager/mongo_manager/mongo_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/mongo_manager/mongo_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_manager/mongo_manager/mongo_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/mongo_manager/mongo_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_manager/state_manager/enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/state_manager/enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_manager/state_manager/states.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/state_manager/states.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/css/pages/user/interactive/cs-sitemap.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/interactive/cs-sitemap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/images/favicon-home_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/images/favicon-home_white.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/directory_template/blade_directory_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/directory_template/blade_directory_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/directory_template/blade_directory_pagination.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/directory_template/blade_directory_pagination.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/home_template/blade_home_references.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/home_template/blade_home_references.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/middleware/SessionSecurityMiddleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/middleware/SessionSecurityMiddleware.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/login/blade-login-navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/cms/blades/login/blade-login-navbar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +182,7 @@
       <workItem from="1724195103260" duration="1177000" />
       <workItem from="1724239904352" duration="4504000" />
       <workItem from="1724261883631" duration="16867000" />
-      <workItem from="1724316275544" duration="20828000" />
+      <workItem from="1724316275544" duration="29006000" />
     </task>
     <servers />
   </component>

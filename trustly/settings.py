@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
 from django.conf import settings
+from django.contrib import staticfiles
+
 from app_manager.state_manager.states import APP_STATUS
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,11 +35,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'trustly.urls'
 
-SESSION_COOKIE_AGE = 100
+SESSION_COOKIE_AGE = 600
 SESSION_SAVE_EVERY_REQUEST = True
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_HTTPONLY = True
 CSRF_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SAMESITE = 'Lax'
@@ -93,10 +95,10 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_ROOT = 'trustly'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATIC_URL = 'static/'
-
+# During development, you can use this
 STATICFILES_DIRS = [
-  os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'static'),
 ]

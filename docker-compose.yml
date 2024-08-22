@@ -7,11 +7,13 @@ services:
     depends_on:
       - elasticsearch
       - mongodb
-    environment:
-      - ELASTICSEARCH_URL=http://elasticsearch:9400
-      - MONGO_URI=mongodb://mongodb:27017/genesisdb
-      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
-      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+    env_file:
+      - .env
+
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py createsuperuser --no-input || true &&
+             python manage.py runserver 0.0.0.0:8070"
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.17.5
@@ -19,7 +21,8 @@ services:
       - discovery.type=single-node
       - network.host=0.0.0.0
       - http.port=9400
-      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+      - ELASTIC_USERNAME=${ELASTIC_ROOT_USERNAME}
+      - ELASTIC_PASSWORD=${ELASTIC_ROOT_PASSWORD}
     ports:
       - "9400:9400"
     volumes:
@@ -30,12 +33,12 @@ services:
           memory: 5G
 
   mongodb:
-    image: mongocamp/mongodb:5.0.9
+    image: mongo:5.0
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
     ports:
       - "27020:27017"
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
-      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
     volumes:
       - mongodata:/data/db
     deploy:
