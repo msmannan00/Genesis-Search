@@ -24,7 +24,6 @@ class weg7sdx54bevnvulapqu6bpzwztryeflq3s23tegbmnhkbpqz637f2yd(leak_extractor_in
         return "http://weg7sdx54bevnvulapqu6bpzwztryeflq3s23tegbmnhkbpqz637f2yd.onion"
 
     def parse_leak_data(self, html_content: str, p_data_url: str) -> Tuple[leak_data_model, Set[str]]:
-        # Parse and extract data
         try:
             self.soup = BeautifulSoup(html_content, 'html.parser')
             cards_data = self.extract_cards()
@@ -35,10 +34,15 @@ class weg7sdx54bevnvulapqu6bpzwztryeflq3s23tegbmnhkbpqz637f2yd(leak_extractor_in
             cards_data = []
             sub_links = set()
 
+        false_positive_count = False
+        if (p_data_url == self.base_url or '/?page=' in p_data_url) and len(cards_data) == 0:
+            false_positive_count = True
+
         data_model = leak_data_model(
             cards_data=cards_data,
             contact_link=self.contact_page(),
-            base_url=p_data_url
+            base_url=p_data_url,
+            false_positive_count=false_positive_count
         )
 
         return data_model, sub_links

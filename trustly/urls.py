@@ -47,7 +47,7 @@ urlpatterns = [
   path('feeder/', views.feeder, name='feeder'),
 ]
 
-handler400 = views.error_page_400
-handler403 = views.error_page_403
-handler404 = views.error_page_404
-handler500 = views.error_page_500
+# handler400 = views.error_page_400
+# handler403 = views.error_page_403
+# handler404 = views.error_page_404
+# handler500 = views.error_page_500

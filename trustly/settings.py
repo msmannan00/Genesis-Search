@@ -29,6 +29,10 @@ MIDDLEWARE = [
   'django.middleware.csrf.CsrfViewMiddleware',
   'django.contrib.auth.middleware.AuthenticationMiddleware',
   'django.contrib.messages.middleware.MessageMiddleware',
+  'trustly.middleware.maintenance_mode_middleware.maintenance_mode_middleware',
+  'trustly.middleware.notification_routes_direct_access.notification_routes_direct_access',
+  'trustly.middleware.cms_session_security.cms_session_security',
+  #'trustly.middleware.encrypted_access_filter.EncryptedAccessFilter',
 ]
 
 ROOT_URLCONF = 'trustly.urls'

@@ -29,9 +29,6 @@ class block_controller:
     self.__m_fernet = Fernet(base64.urlsafe_b64encode(str.encode(os.getenv('S_FERNET_KEY'))))
 
   def __on_verify(self, p_request):
-    m_status = session_controller.get_instance().invoke_trigger(SESSION_COMMANDS.S_EXISTS, p_request)
-    if m_status is True:
-      return False
     try:
       if BLOCK_PARAM.M_SECRET_TOKEN not in p_request.GET and APP_STATUS.S_DEVELOPER is False:
         return True

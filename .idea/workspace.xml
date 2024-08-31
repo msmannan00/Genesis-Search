@@ -5,98 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env.prod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nginx/nginx.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/trustly/.well-known/feeder/crawl_data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/trustly/.well-known/parser/weg7sdx54bevnvulapqu6bpzwztryeflq3s23tegbmnhkbpqz637f2yd.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trustly/middleware/encrypted_access_filter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trustly/middleware/maintenance_mode_middleware.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn-23.0.0.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn-23.0.0.dist-info/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn-23.0.0.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn-23.0.0.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn-23.0.0.dist-info/REQUESTED" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn-23.0.0.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn-23.0.0.dist-info/entry_points.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn-23.0.0.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/__main__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/app/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/app/pasterapp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/arbiter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/debug.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/errors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/glogging.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/http/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/http/body.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/http/errors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/http/message.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/http/parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/http/unreader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/http/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/instrument/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/instrument/statsd.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/pidfile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/reloader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/sock.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/systemd.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/workers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/workers/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/workers/base_async.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/workers/geventlet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/workers/ggevent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/workers/gthread.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/workers/gtornado.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/workers/sync.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/gunicorn/workers/workertmp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging-24.1.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging-24.1.dist-info/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging-24.1.dist-info/LICENSE.APACHE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging-24.1.dist-info/LICENSE.BSD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging-24.1.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging-24.1.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging-24.1.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging/_elffile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging/_manylinux.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging/_musllinux.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging/_parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging/_structures.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging/_tokenizer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging/markers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging/metadata.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging/py.typed" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging/requirements.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging/specifiers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging/tags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/packaging/version.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/trustly/.well-known/feeder/crawl_data_v1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_manager/state_manager/states.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/state_manager/states.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_manager/block_manager/block_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/block_manager/block_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/trustly/.well-known/feeder/crawl_data.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/trustly/.well-known/parser/weg7sdx54bevnvulapqu6bpzwztryeflq3s23tegbmnhkbpqz637f2yd.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/.well-known/parser/weg7sdx54bevnvulapqu6bpzwztryeflq3s23tegbmnhkbpqz637f2yd.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/crawl_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/crawl_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/crawl_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/crawl_enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/hompage_manager/homepage_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/hompage_manager/homepage_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/notice_manager/notice_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/notice_manager/notice_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/policy_manager/policy_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/policy_manager/policy_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/report_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/report_manager/report_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/sitemap_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/sitemap_manager/sitemap_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/user_index_manager/user_index_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/server/user_index_manager/user_index_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/middleware/RestrictAccessMiddleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/middleware/notification_routes_direct_access.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/middleware/SessionSecurityMiddleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/middleware/cms_session_security.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/middleware/cms_session_security.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/middleware/cms_session_security.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/middleware/encrypted_access_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/middleware/encrypted_access_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/middleware/maintenance_mode_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/middleware/maintenance_mode_middleware.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/server/error/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/server/error/error.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trustly/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,6 +61,9 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "DefaultHtmlFileTemplate": "HTML File",
     "Python.__init__.executor": "Debug",
+    "Python.block_controller.executor": "Debug",
+    "Python.crawl_controller.executor": "Debug",
+    "Python.settings.executor": "Debug",
     "Python.setup_nltk.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -270,6 +193,9 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="nginx.conf" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -286,6 +212,9 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Genesis$setup_nltk.coverage" NAME="setup_nltk Coverage Results" MODIFIED="1723992917236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/blade_dashboard_navbar_html$block_controller.coverage" NAME="block_controller Coverage Results" MODIFIED="1725132352825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app_manager/block_manager" />
+    <SUITE FILE_PATH="coverage/blade_dashboard_navbar_html$crawl_controller.coverage" NAME="crawl_controller Coverage Results" MODIFIED="1725137500898" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager" />
     <SUITE FILE_PATH="coverage/Genesis$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1724009636279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/modules/user_data_parser" />
+    <SUITE FILE_PATH="coverage/blade_dashboard_navbar_html$settings.coverage" NAME="settings Coverage Results" MODIFIED="1725130050070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/trustly" />
   </component>
 </project>

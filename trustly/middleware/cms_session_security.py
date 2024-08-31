@@ -1,5 +1,3 @@
-# middleware/session_security.py
-
 import uuid
 from django.utils.deprecation import MiddlewareMixin
 
