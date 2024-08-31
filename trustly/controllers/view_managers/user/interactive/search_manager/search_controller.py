@@ -31,22 +31,14 @@ class search_controller(request_handler):
             search_controller.__instance = self
             self.__m_search_model = search_model()
 
-    def __on_verify_app(self, p_data):
-        return block_controller.getInstance().invoke_trigger(BLOCK_COMMAND.S_VERIFY_REQUEST, p_data)
-
     # External Request Callbacks
     def invoke_trigger(self, p_command, p_data):
         if p_command == SEARCH_MODEL_COMMANDS.M_INIT:
-            if self.__on_verify_app(p_data) is True and (SEARCH_PARAM.M_TYPE not in p_data.GET or p_data.GET[SEARCH_PARAM.M_TYPE] != "images"):
-                return render(None, CONSTANTS.S_TEMPLATE_BLOCK_WEBSITE_PATH)
-            elif APP_STATUS.S_MAINTAINANCE is True:
-                return render(None, CONSTANTS.S_TEMPLATE_MAINTENANCE_WEBSITE_PATH)
+            m_status, m_response = self.__m_search_model.invoke_trigger(SEARCH_MODEL_COMMANDS.M_INIT, p_data)
+            if m_status is True:
+                return render(None, CONSTANTS.S_TEMPLATE_SEARCH_WEBSITE_PATH, m_response)
             else:
-                m_status, m_response = self.__m_search_model.invoke_trigger(SEARCH_MODEL_COMMANDS.M_INIT, p_data)
-                if m_status is True:
-                    return render(None, CONSTANTS.S_TEMPLATE_SEARCH_WEBSITE_PATH, m_response)
-                else:
-                    return HttpResponseRedirect(redirect_to=CONSTANTS.S_TEMPLATE_PARENT)
+                return HttpResponseRedirect(redirect_to=CONSTANTS.S_TEMPLATE_PARENT)
         else:
             m_response = None
 

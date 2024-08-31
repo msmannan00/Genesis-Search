@@ -29,16 +29,10 @@ class user_index_controller(request_handler):
             user_index_controller.__instance = self
             self.__m_user_index_model = user_index_model()
 
-    def __on_verify_app(self, p_data):
-        return block_controller.getInstance().invoke_trigger(BLOCK_COMMAND.S_VERIFY_REQUEST, p_data)
-
     # External Request Callbacks
     def invoke_trigger(self, p_command, p_data):
         if p_command == USER_INDEX_MODEL_CALLBACK.M_INIT:
-            if self.__on_verify_app(p_data) is True:
-                return render(None, CONSTANTS.S_TEMPLATE_BLOCK_WEBSITE_PATH)
-            else:
-                return HttpResponse(self.__m_user_index_model.invoke_trigger(USER_INDEX_MODEL_CALLBACK.M_INIT, p_data))
+            return HttpResponse(self.__m_user_index_model.invoke_trigger(USER_INDEX_MODEL_CALLBACK.M_INIT, p_data))
 
 
 

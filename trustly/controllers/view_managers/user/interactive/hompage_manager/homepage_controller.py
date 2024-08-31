@@ -28,9 +28,6 @@ class homepage_controller(request_handler):
             homepage_controller.__instance = self
             self.__m_homepage_model = homepage_model()
 
-    def __on_verify_app(self, p_data):
-        return block_controller.getInstance().invoke_trigger(BLOCK_COMMAND.S_VERIFY_REQUEST, p_data)
-
     # External Request Callbacks
     def invoke_trigger(self, p_command, p_data):
         if p_command == HOMEPAGE_MODEL_COMMANDS.M_INIT:

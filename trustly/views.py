@@ -100,6 +100,13 @@ def test(request):
 def crawl_index(request):
   return crawl_controller.getInstance().invoke_trigger(CRAWL_COMMANDS.M_INIT, request)
 
+@csrf_exempt
+def parser(request):
+  return crawl_controller.getInstance().invoke_trigger(CRAWL_COMMANDS.M_FETCH_PARSER, request)
+
+@csrf_exempt
+def feeder(request):
+  return crawl_controller.getInstance().invoke_trigger(CRAWL_COMMANDS.M_FETCH_FEEDER, request)
 
 @csrf_exempt
 def maintenance(request):

@@ -3,7 +3,7 @@
 import uuid
 from django.utils.deprecation import MiddlewareMixin
 
-class SessionSecurityMiddleware(MiddlewareMixin):
+class cms_session_security(MiddlewareMixin):
 
     def process_request(self, request):
         session_token = request.session.get('session_token')
@@ -14,8 +14,6 @@ class SessionSecurityMiddleware(MiddlewareMixin):
             request.session['session_token'] = session_token
 
         if not browser_token or session_token != browser_token:
-            print(":::::::::::::::::::::::::::::::::::::::::::")
-            print(":::::::::::::::::::::::::::::::::::::::::::")
             request.session.flush()
             request.session['session_token'] = session_token
 

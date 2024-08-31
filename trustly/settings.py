@@ -29,8 +29,6 @@ MIDDLEWARE = [
   'django.middleware.csrf.CsrfViewMiddleware',
   'django.contrib.auth.middleware.AuthenticationMiddleware',
   'django.contrib.messages.middleware.MessageMiddleware',
-  'trustly.middleware.RestrictAccessMiddleware.RestrictAccessMiddleware',
-  'trustly.middleware.SessionSecurityMiddleware.SessionSecurityMiddleware'
 ]
 
 ROOT_URLCONF = 'trustly.urls'
