@@ -199,18 +199,10 @@ class elastic_request_generator(request_handler):
     index_entries = []
     current_timestamp = datetime.utcnow().isoformat()
     if isinstance(p_index_data, list):
-      for data in p_index_data:
-        data_hash = self.generate_data_hash(data)
-        data['m_update_date'] = current_timestamp
-        data['m_hash'] = data_hash
-        index_entries.append({
-          ELASTIC_KEYS.S_DOCUMENT: p_index_name,
-          ELASTIC_KEYS.S_VALUE: data
-        })
+      pass
     else:
       p_index_data['m_update_date'] = current_timestamp
-      data_hash = self.generate_data_hash(p_index_data)
-      p_index_data['m_hash'] = data_hash
+      p_index_data['m_hash'] = p_index_data['m_url']
       index_entries.append({
         ELASTIC_KEYS.S_DOCUMENT: p_index_name,
         ELASTIC_KEYS.S_VALUE: p_index_data

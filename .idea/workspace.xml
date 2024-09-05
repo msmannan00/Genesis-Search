@@ -5,111 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/trustly/management/commands/cronjob_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trustly/management/commands/scheduler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/APScheduler-3.10.4.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/APScheduler-3.10.4.dist-info/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/APScheduler-3.10.4.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/APScheduler-3.10.4.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/APScheduler-3.10.4.dist-info/REQUESTED" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/APScheduler-3.10.4.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/APScheduler-3.10.4.dist-info/entry_points.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/APScheduler-3.10.4.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/events.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/executors/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/executors/asyncio.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/executors/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/executors/base_py3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/executors/debug.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/executors/gevent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/executors/pool.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/executors/tornado.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/executors/twisted.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/job.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/jobstores/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/jobstores/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/jobstores/memory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/jobstores/mongodb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/jobstores/redis.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/jobstores/rethinkdb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/jobstores/sqlalchemy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/jobstores/zookeeper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/schedulers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/schedulers/asyncio.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/schedulers/background.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/schedulers/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/schedulers/blocking.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/schedulers/gevent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/schedulers/qt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/schedulers/tornado.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/schedulers/twisted.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/triggers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/triggers/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/triggers/combining.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/triggers/cron/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/triggers/cron/expressions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/triggers/cron/fields.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/triggers/date.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/triggers/interval.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/apscheduler/util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/schedule-1.2.2.dist-info/AUTHORS.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/schedule-1.2.2.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/schedule-1.2.2.dist-info/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/schedule-1.2.2.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/schedule-1.2.2.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/schedule-1.2.2.dist-info/REQUESTED" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/schedule-1.2.2.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/schedule-1.2.2.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/schedule/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/schedule/py.typed" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/tzlocal-5.2.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/tzlocal-5.2.dist-info/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/tzlocal-5.2.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/tzlocal-5.2.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/tzlocal-5.2.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/tzlocal-5.2.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/tzlocal/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/tzlocal/py.typed" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/tzlocal/unix.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/tzlocal/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/tzlocal/win32.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/tzlocal/windows_tz.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_manager/block_manager/block_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/block_manager/block_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_manager/elastic_manager/elastic_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/elastic_manager/elastic_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_manager/elastic_manager/elastic_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/elastic_manager/elastic_enums.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app_manager/elastic_manager/elastic_request_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/elastic_manager/elastic_request_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_manager/mongo_manager/mongo_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/mongo_manager/mongo_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_manager/mongo_manager/mongo_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/mongo_manager/mongo_enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_manager/mongo_manager/mongo_request_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/mongo_manager/mongo_request_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/.well-known/parser/weg7sdx54bevnvulapqu6bpzwztryeflq3s23tegbmnhkbpqz637f2yd.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/.well-known/parser/weg7sdx54bevnvulapqu6bpzwztryeflq3s23tegbmnhkbpqz637f2yd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/trustly/css/pages/user/blades/search/cs-search-content-blade.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/css/pages/user/blades/search/cs-search-content-blade.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/constants/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/constants/constant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/constants/enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/constants/enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/crawl_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/crawl_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/crawl_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/crawl_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_status/manage_status_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_status/manage_status_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_status/manage_status_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/cms/manage_status/manage_status_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/directory_manager/directory_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/middleware/encrypted_access_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/middleware/encrypted_access_filter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/directory_template/blade_directory_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/directory_template/blade_directory_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_content_url_based.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_content_url_based.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_engine_suggestion.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_engine_suggestion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_pagination.html" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/templates/trustly/user/blades/search_template/blade_search_pagination.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -315,7 +212,7 @@
       <workItem from="1725279475625" duration="33000" />
       <workItem from="1725432623928" duration="16357000" />
       <workItem from="1725450038813" duration="46318000" />
-      <workItem from="1725531788123" duration="2405000" />
+      <workItem from="1725531788123" duration="2802000" />
     </task>
     <servers />
   </component>
