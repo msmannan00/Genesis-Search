@@ -34,7 +34,7 @@ class elastic_request_generator(request_handler):
     # Modify query for search type "monitor"
     if m_search_type == "monitor":
       m_query_statement = {
-        "min_score": 0.0001,
+        "min_score": 0,
         "query": {
           "function_score": {
             "query": {
@@ -91,16 +91,21 @@ class elastic_request_generator(request_handler):
             }
           }
         },
-        "from": (m_page_number) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
+        "from": (m_page_number-1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
         "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE,
         "track_total_hits": True
       }
       return {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX, ELASTIC_KEYS.S_FILTER: m_query_statement}
 
+
+
+
+
+
     else:
       # Default query statement
       m_query_statement = {
-        "min_score": 0.1,
+        "min_score": 0,
         "query": {
           "function_score": {
             "query": {
@@ -155,7 +160,7 @@ class elastic_request_generator(request_handler):
             }
           }
         },
-        "from": (m_page_number) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
+        "from": (m_page_number-1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
         "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE,
         "track_total_hits": True
       }

@@ -23,10 +23,13 @@ class search_model(request_handler):
         self.__m_tokenizer = tokenizer()
         self.__m_spell_checker = spell_checker()
 
-    def __parse_filtered_documents(self, p_paged_documents, documents_per_page=15):
+    def __parse_filtered_documents(self, p_paged_documents):
         mRelevanceListData = []
         mDescription = set()
         total_pages = 0
+        print("::::::::::::::::::::::::::::::::::::::::::")
+        print(p_paged_documents)
+        print("::::::::::::::::::::::::::::::::::::::::::")
 
         try:
             # Extract the total number of hits from the response
