@@ -219,21 +219,19 @@ class search_session_controller(request_handler):
         }
         m_counter = 0
         for m_image_file in p_document[SEARCH_DOCUMENT_CALLBACK.M_IMAGE]:
-            if m_image_file[SEARCH_CALLBACK.M_IMAGE_URL] not in m_direct_url_list:
-                m_direct_url_list.append(m_image_file[SEARCH_CALLBACK.M_IMAGE_URL])
+            if m_image_file not in m_direct_url_list:
+                m_direct_url_list.append(m_image_file)
             else:
                 continue
 
             if m_counter > 4:
                 break
 
-            mRelevanceContext[SEARCH_CALLBACK.M_URL] = m_image_file[SEARCH_CALLBACK.M_IMAGE_URL]
-            if mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult' and mRelevanceContext not in m_relevance_context_list:
-                mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] = m_image_file[SEARCH_CALLBACK.M_IMAGE_TYPE]
+            mRelevanceContext[SEARCH_CALLBACK.M_URL] = m_image_file
 
             if p_search_model.m_safe_search == 'False' or (str(p_search_model.m_safe_search) == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult'):
                 m_counter += 1
-                m_relevance_context_list.append({"mSearchCallbackRelevantDocumentURL": m_image_file[SEARCH_CALLBACK.M_IMAGE_URL]})
+                m_relevance_context_list.append({"mSearchCallbackRelevantDocumentURL": m_image_file})
 
         return m_relevance_context_list, m_direct_url_list
 

@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_manager/elastic_manager/elastic_request_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/elastic_manager/elastic_request_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +213,7 @@
       <workItem from="1725279475625" duration="33000" />
       <workItem from="1725432623928" duration="16357000" />
       <workItem from="1725450038813" duration="46318000" />
-      <workItem from="1725531788123" duration="3871000" />
+      <workItem from="1725531788123" duration="4287000" />
     </task>
     <servers />
   </component>
