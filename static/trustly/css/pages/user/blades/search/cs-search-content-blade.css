@@ -184,6 +184,7 @@
     width: 100%;
     max-width: 690px;
     margin-left: 100px;
+    padding: 30px;
 }
 .search-result__content-webpages{
     box-shadow : none;
@@ -191,7 +192,8 @@
     max-width: 650px;
     padding: 10px;
     border-radius: 6px;
-    border: 1px solid #ffffff;
+    border: 1px solid #f0f0f0;
+    background: #f0f0f0;
     overflow-wrap: break-word;
 }
 
@@ -457,6 +459,8 @@
     }
     .search-result__content-webpages--container{
         margin-left: 0;
+        padding: 10px;
+        background-color: #f0f0f0;
     }
     .search-result__query-error--container{
         margin-left: 14px !important;

@@ -42,12 +42,18 @@ class SEARCH_CALLBACK:
     M_RELATED_FILES = "mSearchCallbackRelevantDocumentFiles"
     M_SECURE_SERVICE_NOTICE = "mUseSecureServiceNotice"
     M_HATE_QUERY = "mSearchCallHateQuery"
-
+    M_UPDATE_DATA = "mUpdateDate"
+    M_WEBLINK = "mWebLink"
+    M_DUMPLINK = "mDumpLink"
+    M_CONTACT_LINK = "mContactLink"
+    M_EXPIRY = "mExpiry"
+    M_MORE_ID = "mMoreID"
+    M_FULL_CONTENT = "mContent"
 
 class SEARCH_DOCUMENT_CALLBACK:
     M_TITLE = "m_title"
-    M_HOST = "m_host"
-    M_SUB_HOST = "m_sub_host"
+    M_HOST = "m_base_url"
+    M_SUB_HOST = "m_url"
     M_IMPORTANT_DESCRIPTION = "m_important_content"
     M_CONTENT_TYPE = "m_content_type"
     M_IMAGE = "m_images"

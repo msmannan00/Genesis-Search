@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 from django.conf import settings
 from django.contrib import staticfiles
-
+from app_manager.elastic_manager.elastic_controller import elastic_controller
 from app_manager.state_manager.states import APP_STATUS
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,6 +20,7 @@ INSTALLED_APPS = [
   'django.contrib.sessions',
   'django.contrib.messages',
   'django.contrib.staticfiles',
+  'trustly'
 ]
 
 MIDDLEWARE = [
@@ -32,7 +33,7 @@ MIDDLEWARE = [
   'trustly.middleware.maintenance_mode_middleware.maintenance_mode_middleware',
   'trustly.middleware.notification_routes_direct_access.notification_routes_direct_access',
   'trustly.middleware.cms_session_security.cms_session_security',
-  #'trustly.middleware.encrypted_access_filter.EncryptedAccessFilter',
+  # 'trustly.middleware.encrypted_access_filter.EncryptedAccessFilter',
 ]
 
 ROOT_URLCONF = 'trustly.urls'

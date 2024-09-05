@@ -34,15 +34,77 @@
 </div>
 {% endif %}-->
 
-<div class="search-result__content-webpages--container">
-    <a href="{{mDoc.mSearchCallbackRelevantDocumentURL}}">
+<div class="search-result__content-webpages--container p-2 position-relative">
+    <div class="rounded-circle position-absolute {% if mDoc.mExpiry == 0 %}bg-success{% elif mDoc.mExpiry == 1 %}bg-warning{% elif mDoc.mExpiry == 2 %}bg-danger{% endif %}" style="width: 12px; height: 12px; top: 24px; left: 20px;"></div>
+    <a href="{{ mDoc.mSearchCallbackRelevantDocumentURL }}">
         <div class="search-result__content-webpages {% if mDoc.mSearchCallbackRelevantSearchType == 'a' or mDoc.mSearchCallbackRelevantSearchType == 'adult' %}search-result__content-webpages--danger{% else %}search-result__content-webpages--normal{% endif %}">
-            <label class="search-content__webpages-header">{{mDoc.mSearchCallbackRelevantDocumentTitle}}</label><br>
-            <label class="search-content__webpages-url">{{mDoc.mSearchCallbackRelevantDocumentURL}}</label><br>
+            <label class="search-content__webpages-header ml-4">{{ mDoc.mSearchCallbackRelevantDocumentTitle }}</label><br>
+            <label class="search-content__webpages-url">{{ mDoc.mSearchCallbackRelevantDocumentURL }}</label><br>
+            <label class="search-content__webpages-url"><span><b>Indexed Date</b>〡<span>{{ mDoc.mUpdateDate|slice:":10" }}</span></label><br>
             <hr class="search-content__webpages-divider">
-            <label class="search-content__webpages-description"><span class="search-content__webpages-description--category">{% if mDoc.mSearchCallbackRelevantSearchType == 'a' %}Illegal{% elif mDoc.mSearchCallbackRelevantSearchType == 'b' %}Business{% elif mDoc.mSearchCallbackRelevantSearchType == 'n' %}News{% else %}General{% endif %}</span> {% autoescape off %} {{mDoc.mSearchCallbackRelevantDocumentDescription}} {% endautoescape %}</label>
+            <label class="search-content__webpages-description">
+                <span class="search-content__webpages-description--category">
+                    {% if mDoc.mSearchCallbackRelevantSearchType == 'a' %}Illegal{% elif mDoc.mSearchCallbackRelevantSearchType == 'b' %}Business{% elif mDoc.mSearchCallbackRelevantSearchType == 'n' %}News{% else %}General{% endif %}
+                </span>
+                &nbsp;&nbsp;{% autoescape off %}{{ mDoc.mSearchCallbackRelevantDocumentDescription }}{% endautoescape %}
+            </label>
         </div>
     </a>
+    {% if mDoc.mMoreID %}
+    <div class="ml-2">
+        <span class="text-info" style="margin-top: -20px; cursor: pointer;" data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}" aria-expanded="false" aria-controls="{{ mDoc.mMoreID }}">
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            &nbsp; show more
+        </span>
+
+        <span class="text-info ml-3" style="margin-top: -20px; cursor: pointer;" data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}_2" aria-expanded="false" aria-controls="{{ mDoc.mMoreID }}_2">
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            &nbsp; show complete content
+        </span>
+
+        <div class="collapse mt-2" id="{{ mDoc.mMoreID }}">
+            <div class="card w-100">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center" style="font-size: 14px; margin-left: 1px; cursor: pointer;" onclick="window.open('{{ mDoc.mContactLink }}', '_blank')">
+                        <div>
+                            <b><span class="text-primary">Contact Link</span></b><br>
+                            <a href="{{ mDoc.mContactLink }}" target="_blank" class="text-secondary">{{ mDoc.mContactLink }}</a>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center" style="font-size: 14px; margin-left: 1px; cursor: pointer;" onclick="window.open('{{ mDoc.mDumpLink|first }}', '_blank')">
+                        <div>
+                            <b><span class="text-primary">Data Dump Links</span></b><br>
+                            {% for link in mDoc.mDumpLink %}
+                                <a href="{{ link }}" target="_blank" class="text-secondary">{{ link }}</a><br>
+                            {% endfor %}
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center" style="font-size: 14px; margin-left: 1px; cursor: pointer;" onclick="window.open('{{ mDoc.mWebLink|first }}', '_blank')">
+                        <div>
+                            <b><span class="text-primary">Extra Links</span></b><br>
+                            {% for link in mDoc.mWebLink %}
+                                <a href="{{ link }}" target="_blank" class="text-secondary">{{ link }}</a><br>
+                            {% endfor %}
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="collapse mt-2" id="{{ mDoc.mMoreID }}_2">
+            <div class="card w-100">
+                <div class="card-body" style="font-size: 14px">
+                    <b><span class="text-primary">Detailed Content</span></b><br><br>
+                    <p>{{ mDoc.mContent }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
 </div>
 
 <div id="search-content__danger-popup_{{mDoc.mSearchCallbackRelevantDocumentURL}}" class="overlay">

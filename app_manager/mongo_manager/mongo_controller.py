@@ -72,7 +72,7 @@ class mongo_controller:
 
   def __update(self, p_data):
     try:
-      self.__m_connection[p_data[MONGODB_KEYS.S_DOCUMENT]].update_one(p_data[MONGODB_KEYS.S_FILTER], p_data[MONGODB_KEYS.S_VALUE], upsert=False)
+      self.__m_connection[p_data[MONGODB_KEYS.S_DOCUMENT]].update_one(p_data[MONGODB_KEYS.S_FILTER], p_data[MONGODB_KEYS.S_VALUE], upsert=True)
       return True, MANAGE_MONGO_MESSAGES.S_UPDATE_SUCCESS
 
     except Exception as ex:

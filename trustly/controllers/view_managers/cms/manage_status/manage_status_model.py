@@ -23,7 +23,7 @@ class manage_status_model(request_handler):
     def __init_page(self, p_data):
         m_context, m_status = self.__m_session.invoke_trigger(MANAGE_STATUS_SESSION_COMMANDS.M_INIT, p_data)
         if m_status is True:
-            m_response, m_status = mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_READ,[MONGO_COMMANDS.M_FETCH_STATUS, [], [None,None]])
+            m_response, m_status = mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_READ,[MONGO_COMMANDS.M_FETCH_STATUS, ["crawl_heartbeat"], [None,None]])
             m_result = next(m_response, None)
             m_context = self.__m_session.invoke_trigger(MANAGE_STATUS_SESSION_COMMANDS.M_VALIDATE, m_result)
 

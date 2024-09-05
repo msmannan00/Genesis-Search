@@ -1,9 +1,9 @@
 # Local Imports
+from apscheduler.schedulers.background import BackgroundScheduler
 from elasticsearch import Elasticsearch
 from app_manager.log_manager.log_controller import log
 from app_manager.request_manager.request_handler import request_handler
-from app_manager.elastic_manager.elastic_enums import ELASTIC_CONNECTIONS, ELASTIC_INDEX, \
-  MANAGE_ELASTIC_MESSAGES, ELASTIC_KEYS, ELASTIC_CRUD_COMMANDS
+from app_manager.elastic_manager.elastic_enums import ELASTIC_CONNECTIONS, MANAGE_ELASTIC_MESSAGES, ELASTIC_KEYS, ELASTIC_CRUD_COMMANDS, ELASTIC_INDEX, ELASTIC_REQUEST_COMMANDS
 from app_manager.elastic_manager.elastic_request_generator import elastic_request_generator
 
 
@@ -24,93 +24,157 @@ class elastic_controller(request_handler):
     self.__m_elastic_request_generator = elastic_request_generator()
     self.__link_connection()
 
+  def purge_old_records(self):
+    print("purging expired records")
+    m_request = self.__m_elastic_request_generator.invoke_trigger(ELASTIC_REQUEST_COMMANDS.S_CLEAR_EXPIRE_INDEX, None)
+
+    try:
+      self.__m_connection.delete_by_query(index=ELASTIC_INDEX.S_LEAK_INDEX, body=m_request,ignore=[404])
+      self.__m_connection.delete_by_query(index=ELASTIC_INDEX.S_GENERIC_INDEX, body=m_request, ignore=[404])
+    except Exception as ex:
+      log.g().e("Failed to delete old records: " + str(ex))
+
   def __link_connection(self):
     self.__m_connection = Elasticsearch(ELASTIC_CONNECTIONS.S_DATABASE_IP + ":" + str(ELASTIC_CONNECTIONS.S_DATABASE_PORT), http_auth=(ELASTIC_CONNECTIONS.S_ELASTIC_USERNAME, ELASTIC_CONNECTIONS.S_ELASTIC_PASSWORD))
     self.__initialization()
 
   def __initialization(self):
     try:
-      #####  VERY DANGEROUS DO IT VERY CAREFULLY  #####
-      # self.__m_connection.indices.delete(index=ELASTIC_INDEX.S_WEB_INDEX, ignore=[400, 404])
-      if self.__m_connection.indices.exists(index=ELASTIC_INDEX.S_WEB_INDEX) is False:
-        m_mapping = {
-          "settings": {
-            "number_of_shards": 1,
-            "number_of_replicas": 0,
-            "max_result_window": 1000000,
-            "analysis": {
-              "analyzer": {
-                "tags_analyzer": {
-                  "tokenizer": "standard",
-                  "filter": [
-                    "lowercase",
-                    "stemmer"
-                  ]
-                }
-              },
-              "filter": {
-                "stemmer": {
-                  "type": "stemmer",
-                  "language": "english"
-                }
+      # Check if the indices exist and delete them if they do
+      # if self.__m_connection.indices.exists(index=ELASTIC_INDEX.S_LEAK_INDEX):
+      #   self.__m_connection.indices.delete(index=ELASTIC_INDEX.S_LEAK_INDEX, ignore=[400, 404])
+      #   log.g().i(f"Deleted existing index: {ELASTIC_INDEX.S_LEAK_INDEX}")
+      #
+      # if self.__m_connection.indices.exists(index=ELASTIC_INDEX.S_GENERIC_INDEX):
+      #   self.__m_connection.indices.delete(index=ELASTIC_INDEX.S_GENERIC_INDEX, ignore=[400, 404])
+      #   log.g().i(f"Deleted existing index: {ELASTIC_INDEX.S_GENERIC_INDEX}")
+
+      mapping_leakdatamodel = {
+        "settings": {
+          "number_of_shards": 1,
+          "number_of_replicas": 0,
+          "max_result_window": 1000000,
+          "analysis": {
+            "analyzer": {
+              "custom_text_analyzer": {
+                "tokenizer": "standard",
+                "filter": ["lowercase", "stemmer"]
+              }
+            },
+            "filter": {
+              "stemmer": {
+                "type": "stemmer",
+                "language": "english"
               }
             }
-          },
-          "mappings": {
-            "_source": {
-              "enabled": True
+          }
+        },
+        "mappings": {
+          "dynamic": "strict",
+          "properties": {
+            "m_title": {
+              "type": "text"
             },
-
-            "dynamic": "strict",
-            "properties": {
-              'm_host': {'type': 'keyword'},
-              'm_sub_host': {'type': 'keyword'},
-              "m_doc_size": {'type': 'integer', },
-              "m_img_size": {'type': 'integer'},
-              'm_title': {'type': 'keyword'},
-              'm_meta_description': {'type': 'text'},
-              'm_important_content': {'type': 'text'},
-              'm_important_content_hidden': {'type': 'text'},
-              'm_meta_keywords': {'type': 'text'},
-              'm_content': {
-                'type': 'text',
-                'analyzer': 'tags_analyzer'
-              },
-              'm_user_generated': {'type': 'boolean'},
-              'm_content_type': {
-                'type': 'text'
-              },
-              "m_images": {"type": "nested",
-                           "properties": {
-                             "m_url": {
-                               "type": "keyword"
-                             },
-                             "m"
-                             "_type": {
-                               "type": "keyword"
-                             }
-                           }
-                           },
-              'm_crawled_user_images': {"type": "text"},
-              'm_crawled_doc_url': {"type": "text"},
-              'm_crawled_video': {"type": "text"},
-              'm_doc_url': {"type": "text"},
-              'm_video': {"type": "text"},
-              'm_daily_hits': {'type': 'integer'},
-              'm_half_month_hits': {'type': 'integer'},
-              'm_date': {'type': 'integer'},
-              'm_monthly_hits': {'type': 'integer'},
-              'm_total_hits': {'type': 'integer'}
+            "m_hash": {
+              "type": "text"
+            },
+            "m_url": {
+              "type": "keyword"
+            },
+            "m_base_url": {
+              "type": "keyword"
+            },
+            "m_content": {
+              "type": "text",
+              "analyzer": "custom_text_analyzer"
+            },
+            "m_important_content": {
+              "type": "text",
+              "analyzer": "custom_text_analyzer"
+            },
+            "m_weblink": {
+              "type": "keyword"
+            },
+            "m_dumplink": {
+              "type": "keyword"
+            },
+            "m_extra_tags": {
+              "type": "keyword"
+            },
+            "m_contact_link": {
+              "type": "keyword"
+            },
+            "m_update_date": {
+              "type": "date"
             }
           }
         }
+      }
+
+      mapping_generic_model = {
+        "settings": {
+          "number_of_shards": 1,
+          "number_of_replicas": 0,
+          "max_result_window": 1000000,
+          "analysis": {
+            "analyzer": {
+              "custom_text_analyzer": {
+                "tokenizer": "standard",
+                "filter": ["lowercase", "stemmer"]
+              }
+            },
+            "filter": {
+              "stemmer": {
+                "type": "stemmer",
+                "language": "english"
+              }
+            }
+          }
+        },
+        "mappings": {
+          "dynamic": "strict",
+          "properties": {
+            "m_hash": {"type": "text"},
+            "m_base_url": {"type": "keyword"},
+            "m_url": {"type": "keyword"},
+            "m_title": {"type": "text"},
+            "m_meta_description": {"type": "text"},
+            "m_meta_keywords": {"type": "keyword"},
+            "m_content": {"type": "text", "analyzer": "custom_text_analyzer"},
+            "m_important_content": {"type": "text", "analyzer": "custom_text_analyzer"},
+            "m_content_tokens": {"type": "keyword"},
+            "m_keywords": {"type": "keyword"},
+            "m_images": {"type": "keyword"},
+            "m_document": {"type": "keyword"},
+            "m_video": {"type": "keyword"},
+            "m_validity_score": {"type": "integer"},
+            "m_content_summary": {"type": "text", "analyzer": "custom_text_analyzer"},
+            "false_positive_count": {"type": "boolean"},
+            "m_update_date": {"type": "date"}
+          }
+        }
+      }
+
+      if not self.__m_connection.indices.exists(index=ELASTIC_INDEX.S_LEAK_INDEX):
         self.__m_connection.indices.create(
-          index=ELASTIC_INDEX.S_WEB_INDEX,
-          body=m_mapping
+          index=ELASTIC_INDEX.S_LEAK_INDEX,
+          body=mapping_leakdatamodel
         )
+        log.g().i(f"Created index: {ELASTIC_INDEX.S_LEAK_INDEX} with mapping")
+      else:
+        log.g().i(f"Index {ELASTIC_INDEX.S_LEAK_INDEX} already exists, skipping creation.")
+
+      if not self.__m_connection.indices.exists(index=ELASTIC_INDEX.S_GENERIC_INDEX):
+        self.__m_connection.indices.create(
+          index=ELASTIC_INDEX.S_GENERIC_INDEX,
+          body=mapping_generic_model
+        )
+        log.g().i(f"Created index: {ELASTIC_INDEX.S_GENERIC_INDEX} with mapping")
+      else:
+        log.g().i(f"Index {ELASTIC_INDEX.S_GENERIC_INDEX} already exists, skipping creation.")
 
     except Exception as ex:
-      log.g().e("ELASTIC 1 : " + MANAGE_ELASTIC_MESSAGES.S_INSERT_FAILURE + " : " + str(ex))
+      log.g().e("ELASTIC 1 : Initialization failed: " + str(ex))
 
   def __update(self, p_data):
     try:
@@ -125,18 +189,34 @@ class elastic_controller(request_handler):
     try:
       result = self.__m_connection.search(index=p_data[ELASTIC_KEYS.S_DOCUMENT],
                                           body=p_data[ELASTIC_KEYS.S_FILTER])
+
       return True, result
 
     except Exception as ex:
+      print(ex)
       log.g().e("ELASTIC 3 : " + MANAGE_ELASTIC_MESSAGES.S_READ_FAILURE + " : " + str(ex))
       return False, str(ex)
 
   def __index(self, p_data):
     try:
-      self.__m_connection.index(body=p_data[ELASTIC_KEYS.S_VALUE], id=p_data[ELASTIC_KEYS.S_ID],
-                                index=p_data[ELASTIC_KEYS.S_DOCUMENT])
+      if isinstance(p_data, list):
+        for entry in p_data:
+          self.__m_connection.index(
+            id=entry[ELASTIC_KEYS.S_VALUE]["m_hash"],
+            body=entry[ELASTIC_KEYS.S_VALUE],
+            index=entry[ELASTIC_KEYS.S_DOCUMENT]
+          )
+      else:
+        self.__m_connection.index(
+          id=p_data[ELASTIC_KEYS.S_VALUE]["m_hash"],
+          body=p_data[ELASTIC_KEYS.S_VALUE],
+          index=p_data[ELASTIC_KEYS.S_DOCUMENT]
+        )
+
       return True, None
+
     except Exception as ex:
+      print(ex)
       log.g().e(MANAGE_ELASTIC_MESSAGES.S_INSERT_FAILURE + " : " + str(ex))
       return False, str(ex)
 

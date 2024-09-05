@@ -1,5 +1,6 @@
 from app_manager.elastic_manager.elastic_controller import elastic_controller
 from app_manager.elastic_manager.elastic_enums import ELASTIC_CRUD_COMMANDS, ELASTIC_REQUEST_COMMANDS
+from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.constants.strings import GENERAL_STRINGS
 from trustly.controllers.view_managers.user.interactive.search_manager.search_enums import SEARCH_CALLBACK, SEARCH_MODEL_TOKENIZATION_COMMANDS, SEARCH_SESSION_COMMANDS, SEARCH_MODEL_COMMANDS
 from trustly.controllers.view_managers.user.interactive.search_manager.search_session_controller import search_session_controller
@@ -22,35 +23,48 @@ class search_model(request_handler):
         self.__m_tokenizer = tokenizer()
         self.__m_spell_checker = spell_checker()
 
-    def __parse_filtered_documents(self, p_paged_documents):
+    def __parse_filtered_documents(self, p_paged_documents, documents_per_page=15):
         mRelevanceListData = []
-        mDescription = set([])
-        mRepeatedURL = {}
+        mDescription = set()
+        total_pages = 0
 
         try:
-            m_result_final = p_paged_documents['hits']['hits']
+            # Extract the total number of hits from the response
+            total_hits = p_paged_documents.get('hits', {}).get('total', {}).get('value', 0)
+
+            # Calculate total pages
+            if total_hits > 0:
+                total_pages = total_hits / CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE
+
+            m_result_final = p_paged_documents.get('hits', {}).get('hits', [])
 
             for m_document in m_result_final:
-                m_service = m_document['_source']
+                m_service = m_document.get('_source', None)
+                if not m_service:
+                    continue
 
-                if m_service['m_sub_host'] == "na":
-                    m_service['m_sub_host'] = "/"
-                if m_service["m_host"] in mRepeatedURL:
-                    if mRepeatedURL[m_service["m_host"]] > 2:
-                        continue
-                    else:
-                        mRepeatedURL[m_service["m_host"]] += 1
-                else:
-                    mRepeatedURL[m_service["m_host"]] = 1
-                if m_service["m_content"][0:500] in mDescription:
+                m_service['m_sub_host'] = m_service.get('m_sub_host', '/')
+                m_service['m_host'] = m_service.get('m_host', '')
+
+                m_content_preview = m_service.get("m_content", "")[:500]
+                if type(m_content_preview) is not list and m_content_preview in mDescription:
                     continue
                 else:
-                    mDescription.add(m_service["m_content"][0:500])
-                mRelevanceListData.append(m_document['_source'])
+                    if type(m_content_preview) is not list:
+                        mDescription.add(m_content_preview)
+                    else:
+                        for item in m_content_preview:
+                            mDescription.add(item)
 
-            return mRelevanceListData, p_paged_documents['suggest']['content_suggestion']
-        except Exception:
-            return mRelevanceListData, []
+                mRelevanceListData.append(m_service)
+
+            content_suggestions = p_paged_documents.get('suggest', {}).get('content_suggestion', [])
+
+            return mRelevanceListData, content_suggestions, total_pages
+
+        except Exception as e:
+            print("Error parsing filtered documents:", e)
+            return mRelevanceListData, [], total_pages
 
     def __check_hate_query(self, p_query):
         p_query = p_query.lower()
@@ -65,14 +79,13 @@ class search_model(request_handler):
         if m_query_model.m_search_query == GENERAL_STRINGS.S_GENERAL_EMPTY:
            return False, None
 
-        m_tokenized_query = self.__m_tokenizer.invoke_trigger(SEARCH_MODEL_TOKENIZATION_COMMANDS.M_SPLIT_AND_NORMALIZE, [m_query_model.m_search_query])
         m_status, m_documents = elastic_controller.get_instance().invoke_trigger(ELASTIC_CRUD_COMMANDS.S_READ, [ELASTIC_REQUEST_COMMANDS.S_SEARCH,[m_query_model],[None]])
+        m_parsed_documents, m_suggestions_content, total_pages = self.__parse_filtered_documents(m_documents)
 
-        m_parsed_documents, m_suggestions_content = self.__parse_filtered_documents(m_documents)
         m_query_model.set_total_documents(len(m_parsed_documents))
 
         m_query_model.set_hate_query(self.__check_hate_query(m_query_model.m_search_query))
-        m_context, m_status = self.__m_session.invoke_trigger(SEARCH_SESSION_COMMANDS.M_INIT, [m_parsed_documents, m_query_model, m_tokenized_query])
+        m_context, m_status = self.__m_session.invoke_trigger(SEARCH_SESSION_COMMANDS.M_INIT, [m_parsed_documents, m_query_model, total_pages])
         m_context[SEARCH_CALLBACK.M_QUERY_ERROR_URL], m_context[SEARCH_CALLBACK.M_QUERY_ERROR] = self.__m_spell_checker.generate_suggestions(m_query_model.m_search_query, m_suggestions_content)
 
         return m_status, m_context

@@ -1,7 +1,7 @@
 {% load static %}
 
 <!--pagination-->
-{% if mSearchCallbackResultCount != 0 %}
+{% if mSearchCallbackMaxPagination > 1 %}
        <form class="search__pagination disable-highlight">
 
         <div class="search__pagination-container">
@@ -14,9 +14,13 @@
                 <a href="?q={{mSearchCallbackQuery}}&mSearchParamSafeSearch={{mSearchCallbackSaveSearch}}&pSearchParamType={{mSearchCallbackRelevantSearchType}}&mSearchParamPage={% if mSearchCallbackCurrentPageNumber != '1'%}{{mSearchCallbackCurrentPageNumber|add:-1}}{% endif %}" class="search__page-navigation search__pagination--border-right" style="float:left;margin-right: 19px;text-decoration: none"> &lsaquo;</a>
             {% endif %}
 
-            <!-- page numbers -->
-            <a href="?q={{mSearchCallbackQuery}}&mSearchParamSafeSearch={{mSearchCallbackSaveSearch}}&pSearchParamType={{mSearchCallbackRelevantSearchType}}&mSearchParamPage={{mNumber}}" class="search__navigation search__navigation--focus" style="float:left;color:#a6a6a6">{{mSearchCallbackCurrentPageNumber}}</a>
-            <a href="?q={{mSearchCallbackQuery}}&mSearchParamSafeSearch={{mSearchCallbackSaveSearch}}&pSearchParamType={{mSearchCallbackRelevantSearchType}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber|add:1}}" class="search__navigation" style="float:left;color:#a6a6a6">{{mSearchCallbackCurrentPageNumber|add:"1"}}</a>
+            {% for page in mSearchCallbackPageNumber %}
+                <a href="?q={{mSearchCallbackQuery}}&mSearchParamSafeSearch={{mSearchCallbackSaveSearch}}&pSearchParamType={{mSearchCallbackRelevantSearchType}}&mSearchParamPage={{page}}"
+                   class="search__navigation {% if page == mSearchCallbackCurrentPageNumber %}search__navigation--focus{% endif %}"
+                   style="float:left;color:#a6a6a6">
+                   {{page}}
+                </a>
+            {% endfor %}
 
             <!-- right arrow -->
             <a href="?q={{mSearchCallbackQuery}}&mSearchParamSafeSearch={{mSearchCallbackSaveSearch}}&pSearchParamType={{mSearchCallbackRelevantSearchType}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber|add:1}}" class="search__page-navigation search__pagination--border-right search__pagination--border-left" style="text-decoration: none"> &rsaquo;</a>

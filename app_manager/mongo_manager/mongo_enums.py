@@ -18,6 +18,7 @@ class MONGODB_COLLECTIONS:
   S_SUBMIT = 'm_submitted_websites'
   S_USER_MODEL = 'm_users'
   S_STATUS = 'm_status'
+  S_URL_STATUS = 'm_url_status'
 
 class MONGO_CONNECTIONS:
   S_MONGO_DATABASE_NAME = 'trustly'

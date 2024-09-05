@@ -5,44 +5,48 @@
         <thead>
             <tr>
                 <th scope="row" class="w-15">ID</th>
-                <th scope="col" class="w-75">Onion Service</th>
+                <th scope="col" class="w-50">Onion Service</th>
                 <th scope="col" class="w-10">Category</th>
+                <th scope="col" class="w-10">Leak Status</th>
+                <th scope="col" class="w-10">URL Status</th>
             </tr>
         </thead>
         <tbody>
             {% for mDoc in mDirectoryCallbackLinks %}
                 <tr>
-                    <td class="onion__table-id">{{mDoc.mID}}</td>
-
-                    {% if mDoc.mContentType == 'i' %}
-                    <td><a href="/restricted" class="onion__table-url">{{mDoc.mURL|slice:"0:20"}}</a>...</td>
-                    {% elif mDoc.mContentType == 'a' %}
-                    <td><a href="/restricted" class="onion__table-url">{{mDoc.mURL|slice:"0:20"}}</a>...</td>
-                    {% elif mDoc.mContentType == 'adult' %}
-                    <td><a href="/restricted" class="onion__table-url">{{mDoc.mURL|slice:"0:20"}}</a>...</td>
+                    <td>{{ forloop.counter }}</td>
+                
+                    {% if mDoc.mContentType in 'i a adult' %}
+                    <td><a href="/restricted" class="onion__table-url">{{ mDoc.url|slice:"0:20" }}</a>...</td>
                     {% else %}
-                    <td><a href="{{mDoc.mURL}}" class="onion__table-url">{{mDoc.mURL}}</a></td>
+                    <td><a href="{{ mDoc.mURL }}" class="onion__table-url">{{ mDoc.url }}</a></td>
                     {% endif %}
 
                     {% if mDoc.mContentType == 'g' %}
                     <td class="onion__table-category"><b>General</b></td>
                     {% elif mDoc.mContentType == 'b' %}
                     <td class="onion__table-category"><b>Business</b></td>
-                    {% elif mDoc.mContentType == 'n' %}
+                    {% elif mDoc.mContentType in 'n news' %}
                     <td class="onion__table-category"><b>News</b></td>
-                    {% elif mDoc.mContentType == 'news' %}
-                    <td class="onion__table-category"><b>News</b></td>
-                    {% elif mDoc.mContentType == 'i' %}
-                    <td class="onion__table-category"><b>Restricted</b></td>
-                    {% elif mDoc.mContentType == 'a' %}
-                    <td class="onion__table-category"><b>Restricted</b></td>
-                    {% elif mDoc.mContentType == 'adult' %}
+                    {% elif mDoc.mContentType in 'i a adult' %}
                     <td class="onion__table-category"><b>Restricted</b></td>
                     {% else %}
-                    <td class="onion__table-category"><b>{{mDoc.mContentType}}</b></td>
+                    <td class="onion__table-category"><b>Leak Data</b></td>
                     {% endif %}
-                </tr>
 
+                     {% if mDoc.leak_status_date == 1 %}
+                        <td class="onion__table-leak-status"><b style="color: green;">Active</b></td>
+                    {% else %}
+                        <td class="onion__table-leak-status"><b style="color: red;">Inactive</b></td>
+                    {% endif %}
+
+                    {% if mDoc.url_status_date == 1 %}
+                        <td class="onion__table-url-status"><b style="color: green;">Active</b></td>
+                    {% else %}
+                        <td class="onion__table-url-status"><b style="color: red;">Inactive</b></td>
+                    {% endif %}
+
+                </tr>
             {% endfor %}
         </tbody>
     </table>

@@ -22,6 +22,7 @@ class manage_status_session_controller(request_handler):
         m_current_time = math.ceil(time.time()/60)
         m_cronjob_time = p_data['m_cronjob']
         m_crawler_time = p_data['m_crawler']
+        m_cronjob_notice = "running"
 
         if (m_current_time - int(m_crawler_time))>10:
             m_crawler_notice = "not running"
@@ -29,13 +30,6 @@ class manage_status_session_controller(request_handler):
             m_crawler_notice = "un-responsive"
         else:
             m_crawler_notice = "running"
-
-        if (m_current_time - int(m_cronjob_time))>10:
-            m_cronjob_notice = "not running"
-        elif (m_current_time - int(m_cronjob_time))>5:
-            m_cronjob_notice = "un-responsive"
-        else:
-            m_cronjob_notice = "running"
 
         m_cronjob_time = datetime.datetime.fromtimestamp(m_cronjob_time*60).strftime('%Y-%m-%d %H:%M')
         m_crawler_time = datetime.datetime.fromtimestamp(m_crawler_time*60).strftime('%Y-%m-%d %H:%M')

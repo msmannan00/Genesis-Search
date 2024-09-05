@@ -1,3 +1,4 @@
+import datetime
 import json
 import math
 import time
@@ -50,6 +51,28 @@ class mongo_request_generator(request_handler):
   def __on_upload_unique_url_read(self):
     return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_UNIQUE_URL, MONGODB_KEYS.S_FILTER: {}, MONGODB_KEYS.S_VALUE: {}}
 
+  def __on_update_url_status(self, url, url_status=None, leak_status=None):
+    update_values = {"url": url}
+    current_date = datetime.datetime.utcnow()
+
+    if url_status is not None:
+      update_values["url_status_date"] = current_date
+
+    if leak_status is not None:
+      update_values["leak_status_date"] = current_date
+
+    return {
+      MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_URL_STATUS,
+      MONGODB_KEYS.S_FILTER: {"url": url},
+      MONGODB_KEYS.S_VALUE: {"$set": update_values}
+    }
+
+  def __on_fetch_url_status(self):
+    return {
+      MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_URL_STATUS,
+      MONGODB_KEYS.S_FILTER: {},
+    }
+
   def invoke_trigger(self, p_commands, p_data=None):
     if p_commands == MONGO_COMMANDS.M_VERIFY_CREDENTIAL:
       return self.__on_verify_credentials(p_data[0], p_data[1])
@@ -73,3 +96,11 @@ class mongo_request_generator(request_handler):
       return self.__on_upload_unique_url_clear()
     if p_commands == MONGO_COMMANDS.M_UNIQUE_URL_READ:
       return self.__on_upload_unique_url_read()
+    if p_commands == MONGO_COMMANDS.M_CRAWL_HEARTBEAT:
+      return self.__on_update_status(p_data[0])
+    if p_commands == MONGO_COMMANDS.M_CRONHEARTBEAT:
+      return self.__on_update_status(p_data[0])
+    if p_commands == MONGO_COMMANDS.M_UPDATE_URL_STATUS:
+      return self.__on_update_url_status(p_data[0], p_data[1], p_data[2])
+    if p_commands == MONGO_COMMANDS.M_GET_URL_STATUS:
+      return self.__on_fetch_url_status()

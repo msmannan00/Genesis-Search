@@ -1,7 +1,7 @@
 {% load static %}
 
 <!-- result counts -->
-{% if mSearchCallbackRelevantDocument|length > 14 %}
+{% if mSearchCallbackRelevantDocument|length > 10 %}
     <div class="search-result__status disable-highlight" >About {{mSearchCallbackResultCount}} results found</div>
 {% endif %}
 
@@ -20,7 +20,7 @@
 {% endif %}
 
 <!-- trustly content -->
-{% if mSearchCallbackRelevantSearchType == 'all' or mSearchCallbackRelevantSearchType == 'news' or mSearchCallbackRelevantSearchType == 'finance' %}
+{% if mSearchCallbackRelevantSearchType == 'all' or mSearchCallbackRelevantSearchType == 'monitor' or mSearchCallbackRelevantSearchType == 'news' or mSearchCallbackRelevantSearchType == 'finance' %}
 
     <!-- trustly content url based -->
     {% for mDoc in mSearchCallbackRelevantDocument %}
@@ -30,7 +30,6 @@
         {% elif forloop.counter == 1  and mSearchCallbackRelevantDocument|length < 3 %}
             {% include 'trustly/user/blades/search_template/blade_search_engine_suggestion.html' %}
         {% endif %}
-
         {% include 'trustly/user/blades/search_template/blade_search_content_url_based.html' %}
 
     {% endfor %}

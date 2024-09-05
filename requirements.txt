@@ -23,9 +23,10 @@ django-bootstrap-v5
 validators
 fuzz
 python-dotenv
-gunicorn>=20.0.4
+apscheduler
 
 ###### Requirements With Version Specifiers ######
+gunicorn>=20.0.4
 simplejson==3.8.0
 scikit-learn==1.5.1
 elasticsearch==8.15.0
