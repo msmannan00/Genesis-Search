@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/middleware/encrypted_access_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/middleware/encrypted_access_filter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/raw/reference_websites.json" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/raw/reference_websites.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
