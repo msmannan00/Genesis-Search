@@ -27,9 +27,6 @@ class search_model(request_handler):
         mRelevanceListData = []
         mDescription = set()
         total_pages = 0
-        print("::::::::::::::::::::::::::::::::::::::::::")
-        print(p_paged_documents)
-        print("::::::::::::::::::::::::::::::::::::::::::")
 
         try:
             # Extract the total number of hits from the response

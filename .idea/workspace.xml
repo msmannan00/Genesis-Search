@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/view_managers/user/interactive/search_manager/search_session_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,38 +43,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Python.__init__.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.block_controller.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.crawl_controller.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.crawl_session_controller.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.elastic_controller.executor&quot;: &quot;Run&quot;,
-    &quot;Python.elastic_request_generator.executor&quot;: &quot;Run&quot;,
-    &quot;Python.settings.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.setup_nltk.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
-    &quot;data.sources.detected.do.not.suggest.again&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;trusted__internet&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/morgan-freeman/Workspace/Globaleaks-Canary&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Python&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.__init__.executor": "Debug",
+    "Python.block_controller.executor": "Debug",
+    "Python.crawl_controller.executor": "Debug",
+    "Python.crawl_session_controller.executor": "Debug",
+    "Python.elastic_controller.executor": "Run",
+    "Python.elastic_request_generator.executor": "Run",
+    "Python.settings.executor": "Debug",
+    "Python.setup_nltk.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "data.sources.detected.do.not.suggest.again": "true",
+    "django.template.preview.state": "SHOW_EDITOR",
+    "git-widget-placeholder": "trusted__search__main",
+    "last_opened_file_path": "/home/morgan-freeman/Workspace/Genesis-Search",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Python",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static/trustly/.well-known/parser" />
@@ -214,6 +210,7 @@
       <workItem from="1725432623928" duration="16357000" />
       <workItem from="1725450038813" duration="46318000" />
       <workItem from="1725531788123" duration="4287000" />
+      <workItem from="1726311764588" duration="130000" />
     </task>
     <servers />
   </component>
