@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-ir+r3)d@v53u&qw-gfo&)&z%vda+scaq+0gw)9@u%zpjadip!3'
 
-DEBUG = True
+DEBUG = APP_STATUS.S_DEVELOPER
 
 ALLOWED_HOSTS = ['*']
 
@@ -33,7 +33,7 @@ MIDDLEWARE = [
   'trustly.middleware.maintenance_mode_middleware.maintenance_mode_middleware',
   'trustly.middleware.notification_routes_direct_access.notification_routes_direct_access',
   'trustly.middleware.cms_session_security.cms_session_security',
-  # 'trustly.middleware.encrypted_access_filter.EncryptedAccessFilter',
+  'trustly.middleware.encrypted_access_filter.EncryptedAccessFilter',
 ]
 
 ROOT_URLCONF = 'trustly.urls'

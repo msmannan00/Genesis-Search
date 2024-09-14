@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="" />
+    <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/middleware/encrypted_access_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/middleware/encrypted_access_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/settings.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +65,7 @@
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
     "data.sources.detected.do.not.suggest.again": "true",
     "django.template.preview.state": "SHOW_EDITOR",
-    "git-widget-placeholder": "trusted__search__main",
+    "git-widget-placeholder": "trusted__main",
     "last_opened_file_path": "/home/morgan-freeman/Workspace/Genesis-Search",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
