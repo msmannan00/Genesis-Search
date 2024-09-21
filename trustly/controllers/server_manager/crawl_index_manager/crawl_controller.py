@@ -60,8 +60,11 @@ class crawl_controller(request_handler):
         if p_command == CRAWL_COMMANDS.M_INIT:
             return self.__handle_request(p_data)
         if p_command == CRAWL_COMMANDS.M_FETCH_FEEDER:
-            file_path = os.path.join(settings.BASE_DIR, 'static', 'trustly', '.well-known', 'feeder', "crawl_data_v1.txt")
+            file_path = os.path.join(settings.BASE_DIR, 'static', 'trustly', '.well-known', 'feeder', "crawl_data.txt")
             return FileResponse(open(file_path, 'rb'), as_attachment=True, filename="crawl_data.txt")
+        if p_command == CRAWL_COMMANDS.M_FETCH_FEEDER_UNIQUE:
+            file_path = os.path.join(settings.BASE_DIR, 'static', 'trustly', '.well-known', 'feeder', "crawl_data_unique.txt")
+            return FileResponse(open(file_path, 'rb'), as_attachment=True, filename="crawl_data_unique.txt")
         if p_command == CRAWL_COMMANDS.M_FETCH_PARSER:
             parser_folder = os.path.join(settings.BASE_DIR, 'static', 'trustly', '.well-known', 'parser')
             zip_buffer = io.BytesIO()

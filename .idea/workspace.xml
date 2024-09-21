@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f9de0cd-5e1f-4d58-b5ee-9b6b3451f294" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/static/trustly/.well-known/feeder/crawl_data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trustly/raw/reference_websites.json" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/raw/reference_websites.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_manager/state_manager/states.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_manager/state_manager/states.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/trustly/.well-known/feeder/crawl_data_v1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/trustly/.well-known/feeder/crawl_data_unique.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/crawl_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/crawl_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/crawl_enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager/crawl_enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/middleware/encrypted_access_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/middleware/encrypted_access_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trustly/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/trustly/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +73,7 @@
     "data.sources.detected.do.not.suggest.again": "true",
     "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "trusted__main",
-    "last_opened_file_path": "/home/morgan-freeman/Workspace/Genesis-Search",
+    "last_opened_file_path": "/home/morgan-freeman/Workspace/Genesis-Search/static/trustly/.well-known/feeder",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
@@ -80,11 +88,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/trustly/.well-known/feeder" />
       <recent name="$PROJECT_DIR$/static/trustly/.well-known/parser" />
       <recent name="$PROJECT_DIR$/trustly/middleware" />
       <recent name="$PROJECT_DIR$/nginx" />
       <recent name="$PROJECT_DIR$/static/trustly" />
-      <recent name="$PROJECT_DIR$/static/trustly/css/pages/cms" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static/trustly/.well-known/feeder" />
@@ -149,8 +157,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PY-242.21829.153" />
-        <option value="bundled-python-sdk-464836ebc622-b74155a9e76b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.21829.153" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.22855.92" />
+        <option value="bundled-python-sdk-b068d85d1acf-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.22855.92" />
       </set>
     </attachedChunks>
   </component>
@@ -214,6 +222,11 @@
       <workItem from="1725450038813" duration="46318000" />
       <workItem from="1725531788123" duration="4287000" />
       <workItem from="1726311764588" duration="130000" />
+      <workItem from="1726788693308" duration="72000" />
+      <workItem from="1726788779101" duration="616000" />
+      <workItem from="1726789610306" duration="131000" />
+      <workItem from="1726789873762" duration="479000" />
+      <workItem from="1726790883596" duration="22548000" />
     </task>
     <servers />
   </component>
@@ -239,7 +252,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Genesis$setup_nltk.coverage" NAME="setup_nltk Coverage Results" MODIFIED="1723992917236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/blade_dashboard_navbar_html$block_controller.coverage" NAME="block_controller Coverage Results" MODIFIED="1725132352825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app_manager/block_manager" />
+    <SUITE FILE_PATH="coverage/blade_dashboard_navbar_html$block_controller.coverage" NAME="block_controller Coverage Results" MODIFIED="1726837528796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app_manager/block_manager" />
     <SUITE FILE_PATH="coverage/blade_dashboard_navbar_html$elastic_request_generator.coverage" NAME="elastic_request_generator Coverage Results" MODIFIED="1725460053489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app_manager/elastic_manager" />
     <SUITE FILE_PATH="coverage/blade_dashboard_navbar_html$crawl_controller.coverage" NAME="crawl_controller Coverage Results" MODIFIED="1725137500898" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/trustly/controllers/server_manager/crawl_index_manager" />
     <SUITE FILE_PATH="coverage/Genesis$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1724009636279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/modules/user_data_parser" />

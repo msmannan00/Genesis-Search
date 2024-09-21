@@ -1,6 +1,7 @@
 version: '3'
 services:
   web:
+    container_name: trusted-web
     build: .
     depends_on:
       - elasticsearch
@@ -18,6 +19,7 @@ services:
       - "8070"
 
   nginx:
+    container_name: trusted-web-nginx
     image: nginx:latest
     ports:
       - "8080:80"
@@ -28,6 +30,7 @@ services:
       - static_volume:/app/static
 
   elasticsearch:
+    container_name: trusted-web-elastic
     image: docker.elastic.co/elasticsearch/elasticsearch:7.17.5
     environment:
       - discovery.type=single-node
@@ -46,6 +49,7 @@ services:
           memory: 5G
 
   mongodb:
+    container_name: trusted-web-mongo
     image: mongo:5.0
     #environment:
     #  - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USERNAME}
