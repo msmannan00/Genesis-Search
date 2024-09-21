@@ -1,4 +1,4 @@
-#!/home/morgan-freeman/Workspace/Genesis-Search/venv/bin/python3
+#!/home/morgan-freeman/Workspace/Trustly-Search/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

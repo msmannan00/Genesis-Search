@@ -30,6 +30,7 @@ urlpatterns = [
   # crawler Feed Links
   path('user_index/', views.user_index, name='user_index'),
   path('crawl_index/', views.crawl_index, name='crawl_index'),
+  path('parser/', views.parser, name='parser'),
   path('feeder/unique', views.feeder_unique, name='feeder_unique'),
   path('feeder/', views.feeder, name='feeder'),
 ]
