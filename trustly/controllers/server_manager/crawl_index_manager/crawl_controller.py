@@ -54,11 +54,25 @@ class crawl_controller(request_handler):
 
             return HttpResponse(json.dumps(m_context))
 
+    def __handle_publish_feeder(self, p_data):
+        m_status, m_crawl_model = self.__m_session.invoke_trigger(CRAWL_COMMANDS.M_INIT, p_data)
+        m_crawl_model.m_data = json.loads(m_crawl_model.m_data)
+        file_path = os.path.join(settings.BASE_DIR, 'static', 'trustly', '.well-known', 'feeder', "crawl_data_unique.txt")
+
+        with open(file_path, 'w') as file:
+            for line in m_crawl_model.m_data:
+                file.write(f"{line}\n")
+
+        m_context = [m_status, m_crawl_model.m_data]
+        return HttpResponse(json.dumps(m_context))
+
     # External Request Callbacks
     def invoke_trigger(self, p_command, p_data):
 
         if p_command == CRAWL_COMMANDS.M_INIT:
             return self.__handle_request(p_data)
+        if p_command == CRAWL_COMMANDS.M_FETCH_FEEDER_PUBLISH:
+            return self.__handle_publish_feeder(p_data)
         if p_command == CRAWL_COMMANDS.M_FETCH_FEEDER:
             file_path = os.path.join(settings.BASE_DIR, 'static', 'trustly', '.well-known', 'feeder', "crawl_data.txt")
             return FileResponse(open(file_path, 'rb'), as_attachment=True, filename="crawl_data.txt")

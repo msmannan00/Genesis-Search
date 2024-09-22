@@ -109,6 +109,10 @@ def feeder_unique(request):
   return crawl_controller.getInstance().invoke_trigger(CRAWL_COMMANDS.M_FETCH_FEEDER_UNIQUE, request)
 
 @csrf_exempt
+def feeder_publish(request):
+  return crawl_controller.getInstance().invoke_trigger(CRAWL_COMMANDS.M_FETCH_FEEDER_PUBLISH, request)
+
+@csrf_exempt
 def feeder(request):
   return crawl_controller.getInstance().invoke_trigger(CRAWL_COMMANDS.M_FETCH_FEEDER, request)
 

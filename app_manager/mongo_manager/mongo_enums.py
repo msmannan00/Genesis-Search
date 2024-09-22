@@ -1,6 +1,4 @@
-from dotenv import load_dotenv
-import os
-load_dotenv()
+from trustly.controllers.helper_manager.env_handler import env_handler
 
 class MONGO_INDEX_COLLECTION:
   M_URL = "m_host"
@@ -24,8 +22,8 @@ class MONGO_CONNECTIONS:
   S_MONGO_DATABASE_NAME = 'trustly'
   S_MONGO_DATABASE_PORT = 27017
   S_MONGO_DATABASE_IP = 'mongodb'
-  S_MONGO_USERNAME = os.getenv('MONGO_ROOT_USERNAME')
-  S_MONGO_PASSWORD = os.getenv('MONGO_ROOT_PASSWORD')
+  S_MONGO_USERNAME = env_handler.get_instance().env('MONGO_ROOT_USERNAME')
+  S_MONGO_PASSWORD = env_handler.get_instance().env('MONGO_ROOT_PASSWORD')
 
 class MONGODB_KEYS:
   S_DOCUMENT = 'm_document'

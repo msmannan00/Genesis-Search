@@ -1,4 +1,4 @@
-import os
+from trustly.controllers.helper_manager.env_handler import env_handler
 
 
 class ELASTIC_CRUD_COMMANDS:
@@ -25,8 +25,8 @@ class ELASTIC_CONNECTIONS:
   S_DATABASE_NAME = 'trustly-elastic-search'
   S_DATABASE_PORT = 9400
   S_DATABASE_IP = 'http://elasticsearch'
-  S_ELASTIC_USERNAME = os.getenv('ELASTIC_ROOT_USERNAME')
-  S_ELASTIC_PASSWORD = os.getenv('ELASTIC_ROOT_PASSWORD')
+  S_ELASTIC_USERNAME = env_handler.get_instance().env('ELASTIC_ROOT_USERNAME')
+  S_ELASTIC_PASSWORD = env_handler.get_instance().env('ELASTIC_ROOT_PASSWORD')
 
 class ELASTIC_KEYS:
   S_ID = 'm_id'

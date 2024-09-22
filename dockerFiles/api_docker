@@ -21,7 +21,7 @@ ENV PYTHONUNBUFFERED=1
 COPY static/trustly/libs/nltk_data /root/nltk_data
 
 # Collect static files and apply migrations
-RUN python manage.py collectstatic --noinput && \
+RUN python manage.py collectstatic && \
     python manage.py migrate
 
 # Expose the port for Gunicorn

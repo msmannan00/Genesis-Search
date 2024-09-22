@@ -25,6 +25,12 @@ class mongo_controller:
     self.__link_connection()
 
   def __link_connection(self):
+    print("::::::::::::::::::::::::::::::::::::::::")
+    print(MONGO_CONNECTIONS.S_MONGO_DATABASE_PORT)
+    print(MONGO_CONNECTIONS.S_MONGO_USERNAME)
+    print(MONGO_CONNECTIONS.S_MONGO_PASSWORD)
+    print(MONGO_CONNECTIONS.S_MONGO_DATABASE_NAME)
+    print("::::::::::::::::::::::::::::::::::::::::")
     self.__m_connection = pymongo.MongoClient(MONGO_CONNECTIONS.S_MONGO_DATABASE_IP, MONGO_CONNECTIONS.S_MONGO_DATABASE_PORT, username=MONGO_CONNECTIONS.S_MONGO_USERNAME, password=MONGO_CONNECTIONS.S_MONGO_PASSWORD)[MONGO_CONNECTIONS.S_MONGO_DATABASE_NAME]
     self.__initialize_database()
 

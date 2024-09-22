@@ -11,13 +11,12 @@ class crawl_session_controller(request_handler):
 
     def __init_parameters(self, p_data):
         m_crawl_model = crawl_model()
-
         try:
-            # Parse JSON data from request body
             data = json.loads(p_data.body)
         except json.JSONDecodeError:
             print("Failed to decode JSON from request body")
-            return False, m_crawl_model
+            return False, m_crawl_model,
+
 
         if CRAWL_PARAM.M_CRAWL_REQUEST_COMMAND in data:
             m_crawl_model.m_command = int(data[CRAWL_PARAM.M_CRAWL_REQUEST_COMMAND])

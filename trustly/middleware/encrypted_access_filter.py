@@ -7,7 +7,7 @@ from app_manager.block_manager.block_enums import BLOCK_COMMAND
 
 class EncryptedAccessFilter(MiddlewareMixin):
   def process_request(self, request):
-    allowed_paths = ['/feeder', '/parser']
+    allowed_paths = ['/feeder', '/parser', 'feeder/publish', 'feeder/unique']
     if request.path in allowed_paths:
       if not block_controller.getInstance().invoke_trigger(BLOCK_COMMAND.S_VERIFY_REQUEST, request):
         return render(request, CONSTANTS.S_TEMPLATE_BLOCK_WEBSITE_PATH)

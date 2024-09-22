@@ -11,9 +11,8 @@ from app_manager.user_auth_manager.user_auth_session_controller import user_auth
 from app_manager.request_manager.request_handler import request_handler
 from app_manager.mongo_manager.mongo_controller import mongo_controller
 from app_manager.mongo_manager.mongo_enums import MONGODB_CRUD
-from dotenv import load_dotenv
+from trustly.controllers.helper_manager.env_handler import env_handler
 
-load_dotenv()
 
 class user_auth_controller(request_handler):
 
@@ -48,7 +47,7 @@ class user_auth_controller(request_handler):
                 m_response, m_status = mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_READ, [MONGO_COMMANDS.M_VERIFY_CREDENTIAL, [m_user_model.m_username, m_user_model.m_password], [None,None]])
                 m_result = next(m_response, None)
 
-                if m_result or m_user_model.m_username == USER_DATA.M_DEFAULT_USERNAME and m_user_model.m_password == os.getenv('S_SUPER_PASSWORD'):
+                if m_result or m_user_model.m_username == USER_DATA.M_DEFAULT_USERNAME and m_user_model.m_password == env_handler.get_instance().env('S_SUPER_PASSWORD'):
                     session_controller.get_instance().invoke_trigger(SESSION_COMMANDS.S_CREATE, [m_user_model, p_data])
                     return HttpResponseRedirect(CONSTANTS.S_TEMPLATE_DASHBOARD_WEBSITE_SHORT)
                 else:

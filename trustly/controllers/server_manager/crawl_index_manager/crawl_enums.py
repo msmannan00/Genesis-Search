@@ -6,6 +6,7 @@ class CRAWL_COMMANDS(enum.Enum):
     M_FETCH_PARSER = 2
     M_FETCH_FEEDER = 3
     M_FETCH_FEEDER_UNIQUE = 4
+    M_FETCH_FEEDER_PUBLISH = 5
 
 class CRAWL_PARAM:
     M_CRAWL_REQUEST_COMMAND = "pRequestCommand"

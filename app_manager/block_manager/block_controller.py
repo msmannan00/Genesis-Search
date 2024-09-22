@@ -1,15 +1,10 @@
 # Local Imports
 import base64
-import os
 import time
 from cryptography.fernet import Fernet
 from app_manager.block_manager.block_enums import BLOCK_PARAM, BLOCK_COMMAND
-from app_manager.session_manager.session_controller import session_controller
-from app_manager.session_manager.session_enums import SESSION_COMMANDS
 from app_manager.state_manager.states import APP_STATUS
-from dotenv import load_dotenv
-
-load_dotenv()
+from trustly.controllers.helper_manager.env_handler import env_handler
 
 
 class block_controller:
@@ -26,7 +21,7 @@ class block_controller:
 
   def __init__(self):
     block_controller.__instance = self
-    self.__m_fernet = Fernet(base64.urlsafe_b64encode(str.encode(os.getenv('S_FERNET_KEY'))))
+    self.__m_fernet = Fernet(base64.urlsafe_b64encode(str.encode(env_handler.get_instance().env('S_FERNET_KEY'))))
 
   def __on_verify(self, p_request):
     try:
@@ -40,7 +35,7 @@ class block_controller:
         m_secret_key = m_decoded_str[0]
         m_secret_time = int(m_decoded_str[1])
 
-        if m_secret_key.startswith(os.getenv('S_APP_BLOCK_KEY')):
+        if m_secret_key.startswith(env_handler.get_instance().env('S_APP_BLOCK_KEY')):
           m_time = m_secret_time
           if abs(time.time() - m_time) > 129600:
             return True

@@ -150,7 +150,13 @@ class elastic_controller(request_handler):
             "m_validity_score": {"type": "integer"},
             "m_content_summary": {"type": "text", "analyzer": "custom_text_analyzer"},
             "false_positive_count": {"type": "boolean"},
-            "m_update_date": {"type": "date"}
+            "m_update_date": {"type": "date"},
+            "m_content_type": {"type": "keyword"},
+            "m_section": {"type": "keyword"},
+            "m_names": {"type": "keyword"},
+            "m_emails": {"type": "keyword"},
+            "m_phone_numbers": {"type": "keyword"},
+            "m_clearnet_links": {"type": "keyword"}
           }
         }
       }
