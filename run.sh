@@ -1,6 +1,11 @@
-cp -r "static/trustly/libs/nltk_data" "$HOME/nltk_data"
-sudo apt-get install python3-setuptools
-python3 -m venv venv
-source env/bin/activate
-pip install -r requirements.txt
-python3 manage-dev.py runserver --noreload
+#!/bin/bash
+
+if [ "$1" == "build" ]; then
+    docker-compose down
+    docker system prune -a --volumes -f
+    docker-compose build --no-cache
+    docker-compose up
+else
+    docker-compose down
+    docker-compose up
+fi

@@ -19,6 +19,7 @@ ENV PYTHONUNBUFFERED=1
 
 COPY static/trustly/libs/nltk_data /root/nltk_data
 COPY static/trustly/.well-known trusted-web-main:/app/static/trustly/.well-known
+COPY static/trustly/.well-known/model/toxic-model.zip trusted-web-main:/app/static/trustly/.well-known/model/toxic-model.zip
 
 # Collect static files and apply migrations
 RUN python manage.py collectstatic && \

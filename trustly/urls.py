@@ -34,6 +34,7 @@ urlpatterns = [
   path('feeder/unique', views.feeder_unique, name='feeder_unique'),
   path('feeder/publish', views.feeder_publish, name='feeder_publish'),
   path('feeder/', views.feeder, name='feeder'),
+  path('model/toxic_model', views.toxic_model, name='toxic_model'),
 ]
 
 # handler400 = views.error_page_400

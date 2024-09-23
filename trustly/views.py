@@ -117,6 +117,10 @@ def feeder(request):
   return crawl_controller.getInstance().invoke_trigger(CRAWL_COMMANDS.M_FETCH_FEEDER, request)
 
 @csrf_exempt
+def toxic_model(request):
+  return crawl_controller.getInstance().invoke_trigger(CRAWL_COMMANDS.M_FETCH_MODEL, request)
+
+@csrf_exempt
 def maintenance(request):
   return maintenance_controller.getInstance().invoke_trigger(MAINTENANCE_MODEL_CALLBACK.M_INIT, request)
 
