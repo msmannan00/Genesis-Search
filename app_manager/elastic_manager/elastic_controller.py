@@ -154,6 +154,8 @@ class elastic_controller(request_handler):
             "m_content_type": {"type": "keyword"},
             "m_section": {"type": "keyword"},
             "m_names": {"type": "keyword"},
+            "m_archive_url": {"type": "keyword"},
+            "m_sub_url": {"type": "keyword"},
             "m_emails": {"type": "keyword"},
             "m_phone_numbers": {"type": "keyword"},
             "m_clearnet_links": {"type": "keyword"}

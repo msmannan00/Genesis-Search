@@ -19,9 +19,9 @@ class MONGODB_COLLECTIONS:
   S_URL_STATUS = 'm_url_status'
 
 class MONGO_CONNECTIONS:
-  S_MONGO_DATABASE_NAME = 'trustly'
+  S_MONGO_DATABASE_NAME = 'trustly-web'
   S_MONGO_DATABASE_PORT = 27017
-  S_MONGO_DATABASE_IP = 'mongodb'
+  S_MONGO_DATABASE_IP = 'mongo'
   S_MONGO_USERNAME = env_handler.get_instance().env('MONGO_ROOT_USERNAME')
   S_MONGO_PASSWORD = env_handler.get_instance().env('MONGO_ROOT_PASSWORD')
 

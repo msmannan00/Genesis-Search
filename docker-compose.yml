@@ -1,13 +1,12 @@
-version: '3'
 services:
   web:
-    container_name: trusted-web
+    container_name: trusted-web-main
     build:
       context: .
       dockerfile: dockerFiles/api_docker
     depends_on:
       - elasticsearch
-      - mongodb
+      - mongo
     env_file:
       - .env
     command: >
@@ -53,26 +52,36 @@ services:
         limits:
           memory: 5G
 
-  mongodb:
-    image: mongocamp/mongodb:5.0.9
-    container_name: trusted-web-mongo
-    env_file:
-      - .env
-    command: mongod --auth --quiet --logpath /dev/null
-    logging:
-      driver: none
-    volumes:
-      - ./data/db:/data/db
-    ports:
-      - "27020:27017"
+  mongo:
+    image: mongo:latest
+    container_name: trustly-web-mongodb
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+    ports:
+      - "27020:27017"
+    volumes:
+      - ./mongo-data:/data/db
+    command: >
+      bash -c "
+      mongod --auth --bind_ip_all --fork --logpath /var/log/mongodb.log &&
+      sleep 5 &&
+      mongosh \"mongodb://${MONGO_ROOT_USERNAME}:${MONGO_ROOT_PASSWORD}@localhost:27017/admin\" --eval '
+      db = db.getSiblingDB(\"trustly-web\");
+      if (db.getUser(\"${MONGO_ROOT_USERNAME}\") === null) {
+        db.createUser({
+          user: \"${MONGO_ROOT_USERNAME}\",
+          pwd: \"${MONGO_ROOT_PASSWORD}\",
+          roles: [{ role: \"readWrite\", db: \"trustly-web\" }]
+        });
+      }
+      ' && tail -f /var/log/mongodb.log
+      "
     deploy:
       resources:
         limits:
-          memory: 1G
+          memory: 5G
 
 volumes:
   esdata:

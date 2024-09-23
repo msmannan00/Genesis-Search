@@ -17,8 +17,8 @@ COPY . .
 ENV DJANGO_SETTINGS_MODULE=trustly.settings
 ENV PYTHONUNBUFFERED=1
 
-# Copy NLTK data (if necessary for your project)
 COPY static/trustly/libs/nltk_data /root/nltk_data
+COPY static/trustly/.well-known trusted-web-main:/app/static/trustly/.well-known
 
 # Collect static files and apply migrations
 RUN python manage.py collectstatic && \
