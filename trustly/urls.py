@@ -28,7 +28,7 @@ urlpatterns = [
   path('update_status/', views.update_status, name='manage_search'),
 
   # crawler Feed Links
-  path('user_index/', views.user_index, name='user_index'),
+  path('user_index', views.user_index, name='user_index'),
   path('crawl_index/', views.crawl_index, name='crawl_index'),
   path('parser/', views.parser, name='parser'),
   path('feeder/unique', views.feeder_unique, name='feeder_unique'),

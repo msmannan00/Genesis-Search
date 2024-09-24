@@ -20,9 +20,20 @@ download_file() {
     fi
 }
 
+remove_services() {
+    read -p "Are you sure you want to remove all services? (y/n) " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        docker-compose down --volumes
+        docker-compose rm -f
+    else
+        echo "Skipping service removal."
+        exit 1
+    fi
+}
+
 if [ "$1" == "build" ]; then
-    docker-compose down
-    docker system prune -a --volumes -f
+    remove_services
     download_file
     docker-compose build --no-cache
     docker-compose up

@@ -62,8 +62,10 @@ class crawl_controller(request_handler):
         m_crawl_model.m_data = json.loads(m_crawl_model.m_data)
         file_path = os.path.join(settings.BASE_DIR, 'static', 'trustly', '.well-known', 'feeder', "crawl_data_unique.txt")
 
-        with open(file_path, 'w') as file:
+        open(file_path, 'w').close()  # This clears the file by opening and closing in write mode
+        with open(file_path, 'a') as file:
             for line in m_crawl_model.m_data:
+                print(line, flush=True)
                 file.write(f"{line}\n")
 
         m_context = [m_status, m_crawl_model.m_data]
