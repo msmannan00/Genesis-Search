@@ -22,8 +22,7 @@ COPY static/trustly/.well-known trusted-web-main:/app/static/trustly/.well-known
 COPY static/trustly/.well-known/model/toxic-model.zip trusted-web-main:/app/static/trustly/.well-known/model/toxic-model.zip
 
 # Collect static files and apply migrations
-RUN python manage.py collectstatic && \
-    python manage.py migrate
+RUN python manage.py collectstatic && python manage.py migrate
 
 # Expose the port for Gunicorn
 EXPOSE 8070
