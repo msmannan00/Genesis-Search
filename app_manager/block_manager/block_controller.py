@@ -27,7 +27,7 @@ class block_controller:
     try:
 
       m_secret_token = p_request.headers.get(BLOCK_PARAM.M_SECRET_TOKEN)
-      if not m_secret_token and APP_STATUS.S_DEVELOPER is False:
+      if m_secret_token is not None and APP_STATUS.S_DEVELOPER is False:
         return True
 
       elif APP_STATUS.S_DEVELOPER is False:
@@ -46,7 +46,7 @@ class block_controller:
       return False
 
     except Exception:
-      return True
+      return False
 
   def invoke_trigger(self, p_commands, p_data=None):
     if p_commands == BLOCK_COMMAND.S_VERIFY_REQUEST:

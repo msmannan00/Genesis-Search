@@ -13,8 +13,9 @@ services:
       sh -c "python manage.py migrate &&
              python manage.py createsuperuser --no-input || true &&
              python manage.py cronjob_manager &
-             gunicorn trustly.wsgi:application --bind 0.0.0.0:8070"
+             gunicorn trustly.wsgi:application --bind 0.0.0.0:8070 --reload"
     volumes:
+      - .:/app
       - static_volume:/app/static
     expose:
       - "8070"

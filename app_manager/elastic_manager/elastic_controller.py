@@ -1,5 +1,4 @@
 # Local Imports
-from apscheduler.schedulers.background import BackgroundScheduler
 from elasticsearch import Elasticsearch
 from app_manager.log_manager.log_controller import log
 from app_manager.request_manager.request_handler import request_handler

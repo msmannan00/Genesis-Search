@@ -1,4 +1,4 @@
 
 class APP_STATUS:
-  S_DEVELOPER = True
+  S_DEVELOPER = False
   S_MAINTAINANCE = False
