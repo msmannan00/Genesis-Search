@@ -35,18 +35,31 @@ remove_services() {
 copy_files() {
     docker-compose exec web rm -rf /staticfiles/*
     docker-compose exec web rm -rf /static/*
-    docker cp  static/. trusted-web-main:/app/static/
+    docker cp static/. trusted-web-main:/app/static/
     docker-compose exec web python manage.py collectstatic --noinput
+}
+
+remove_conflicting_containers() {
+    container_names=("trustly-web-mongodb" "trusted-web-elastic" "trusted-web-main" "trusted-web-nginx")
+
+    for container_name in "${container_names[@]}"; do
+        if [[ $(docker ps -a --filter "name=$container_name" --format '{{.ID}}') ]]; then
+            echo "Stopping and removing conflicting container: $container_name"
+            docker rm -f "$container_name"
+        fi
+    done
 }
 
 if [ "$1" == "build" ]; then
     remove_services
     download_file
+    remove_conflicting_containers
     docker-compose build --no-cache
     copy_files
     docker-compose up
 else
     docker-compose down
+    remove_conflicting_containers
     download_file
     copy_files
     docker-compose up
