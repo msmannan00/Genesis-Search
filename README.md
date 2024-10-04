@@ -114,12 +114,12 @@ Ensure you have Docker and Docker Compose installed on your machine. Once instal
 
 ### 3. Build and Start the Search
 
-Use Docker Compose to build and run the crawler:
+Use Docker Compose to build and run the search:
 
 ```
 ./run.sh build
 ```
-to simply start the crawler run
+to simply start the search run
 ```
 ./run.sh
 ```
@@ -153,7 +153,7 @@ Genesis Search is licensed under the [MIT License](LICENSE).
 
 ## Disclaimer
 
-This project is intended for research purposes only. The authors of Genesis Crawler do not support or endorse illegal activities, and users of this project are responsible for ensuring their actions comply with the law.
+This project is intended for research purposes only. The authors of Genesis Search do not support or endorse illegal activities, and users of this project are responsible for ensuring their actions comply with the law.
 
 ## GitHub Repository
 
