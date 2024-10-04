@@ -33,11 +33,9 @@ remove_services() {
 }
 
 copy_files() {
-    docker cp  static/trustly/.well-known/. trusted-web-main:/app/static/trustly/.well-known/
-    docker cp  static/trustly/libs/nltk_data/. /root/nltk_data/
-    docker cp  static/trustly/.well-known/model/toxic-model.zip trusted-web-main:/app/static/trustly/.well-known/model/toxic-model.zip
-    docker cp  static/trustly/.well-known/. trusted-web-main:/app/static/trustly/.well-known/
     docker-compose exec web rm -rf /staticfiles/*
+    docker-compose exec web rm -rf /static/*
+    docker cp  static/. trusted-web-main:/app/static/
     docker-compose exec web python manage.py collectstatic --noinput
 }
 
@@ -45,11 +43,11 @@ if [ "$1" == "build" ]; then
     remove_services
     download_file
     docker-compose build --no-cache
-    docker-compose up -d
     copy_files
+    docker-compose up
 else
     docker-compose down
     download_file
-    docker-compose up -d
     copy_files
+    docker-compose up
 fi

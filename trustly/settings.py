@@ -35,7 +35,6 @@ MIDDLEWARE = [
   'trustly.middleware.cms_session_security.cms_session_security',
   'trustly.middleware.encrypted_access_filter.EncryptedAccessFilter',
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 ROOT_URLCONF = 'trustly.urls'
 
 SESSION_COOKIE_AGE = 600

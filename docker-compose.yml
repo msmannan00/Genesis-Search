@@ -18,6 +18,8 @@ services:
       - static_volume:/app/static
     expose:
       - "8070"
+    environment:
+      NLTK_DATA: /root/nltk_data
 
   nginx:
     container_name: trusted-web-nginx
@@ -62,21 +64,25 @@ services:
     ports:
       - "27020:27017"
     volumes:
-      - ./mongo-data:/data/db
+      - mongodata:/data/db
     command: >
       bash -c "
-      mongod --auth --bind_ip_all --fork --logpath /var/log/mongodb.log &&
+      mongod --bind_ip_all --fork --logpath /var/log/mongodb.log &&
+      sleep 10 &&
+      mongosh --eval '
+        db = db.getSiblingDB(\"admin\");
+        if (db.getUser(\"${MONGO_ROOT_USERNAME}\") === null) {
+          db.createUser({
+            user: \"${MONGO_ROOT_USERNAME}\",
+            pwd: \"${MONGO_ROOT_PASSWORD}\",
+            roles: [{ role: \"userAdminAnyDatabase\", db: \"admin\" }, { role: \"readWriteAnyDatabase\", db: \"admin\" }]
+          });
+        }
+      ' &&
+      mongod --shutdown &&
       sleep 5 &&
-      mongosh \"mongodb://${MONGO_ROOT_USERNAME}:${MONGO_ROOT_PASSWORD}@localhost:27017/admin\" --eval '
-      db = db.getSiblingDB(\"trustly-web\");
-      if (db.getUser(\"${MONGO_ROOT_USERNAME}\") === null) {
-        db.createUser({
-          user: \"${MONGO_ROOT_USERNAME}\",
-          pwd: \"${MONGO_ROOT_PASSWORD}\",
-          roles: [{ role: \"readWrite\", db: \"trustly-web\" }]
-        });
-      }
-      ' && tail -f /var/log/mongodb.log
+      mongod --auth --bind_ip_all --fork --logpath /var/log/mongodb.log &&
+      tail -f /var/log/mongodb.log
       "
     deploy:
       resources:
