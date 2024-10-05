@@ -36,6 +36,7 @@ copy_files() {
     docker-compose exec web rm -rf /staticfiles/*
     docker-compose exec web rm -rf /static/*
     docker cp static/. trusted-web-main:/app/static/
+    docker cp trustly/templates/. trusted-web-main:/app/trustly/templates/
     docker-compose exec web python manage.py collectstatic --noinput
 }
 
@@ -55,12 +56,25 @@ if [ "$1" == "build" ]; then
     download_file
     remove_conflicting_containers
     docker-compose build --no-cache
+    docker-compose up -d
+    sleep 2
     copy_files
-    docker-compose up
+    echo "search service started"
+elif [ "$1" == "stop" ]; then
+    docker-compose down
+    remove_conflicting_containers
+    echo "services stopped successfully."
+elif [ "$1" == "reload_cache" ]; then
+    copy_files
+    docker stop trusted-web-main
+    docker start trusted-web-main
+    echo "cache reloaded successfully."
 else
     docker-compose down
     remove_conflicting_containers
     download_file
+    docker-compose up -d
+    sleep 2
     copy_files
-    docker-compose up
+    echo "search service started"
 fi

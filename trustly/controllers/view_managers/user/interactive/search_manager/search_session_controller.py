@@ -3,6 +3,7 @@ import random
 import string
 from datetime import datetime
 
+from app_manager.log_manager.log_controller import log
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.constants.strings import GENERAL_STRINGS, SEARCH_STRINGS
 from trustly.controllers.helper_manager.helper_controller import helper_controller
@@ -171,40 +172,55 @@ class search_session_controller(request_handler):
         }
 
         random_id = ''.join(random.choices(string.ascii_letters, k=10))
+
+        m_update_date_str = p_document["m_update_date"]
+        m_update_date = datetime.fromisoformat(m_update_date_str)
+        current_time = datetime.now()
+        time_difference = (current_time - m_update_date).total_seconds() / 60
+
+        if time_difference < 7200:
+            expiry_status = 0
+        elif time_difference < 14400:
+            expiry_status = 1
+        else:
+            expiry_status = 2
+
         if "m_extra_tags" in p_document:
-            m_update_date_str = p_document["m_update_date"]
-            m_update_date = datetime.fromisoformat(m_update_date_str)
-            current_time = datetime.now()
-            time_difference = (current_time - m_update_date).total_seconds() / 60
-
-            if time_difference < 7200:
-                expiry_status = 0
-            elif time_difference < 14400:
-                expiry_status = 1
-            else:
-                expiry_status = 2
-
             mRelevanceContext = {
+                SEARCH_CALLBACK.M_URL: p_document[SEARCH_DOCUMENT_CALLBACK.M_SUB_HOST],
                 SEARCH_CALLBACK.M_TITLE: self.__normalize_text(m_title),
-                SEARCH_CALLBACK.M_URL: p_document[SEARCH_DOCUMENT_CALLBACK.M_HOST] + p_document[SEARCH_DOCUMENT_CALLBACK.M_SUB_HOST],
                 SEARCH_CALLBACK.M_DESCRIPTION: m_description,
                 SEARCH_CALLBACK.M_CONTACT_LINK: p_document["m_contact_link"],
-                SEARCH_CALLBACK.M_UPDATE_DATA: m_update_date_str,
                 SEARCH_CALLBACK.M_WEBLINK: p_document["m_weblink"],
                 SEARCH_CALLBACK.M_DUMPLINK: p_document["m_dumplink"],
-                SEARCH_CALLBACK.M_EXPIRY: expiry_status,
                 SEARCH_CALLBACK.M_MORE_ID: random_id,
-                SEARCH_CALLBACK.M_FULL_CONTENT: p_document["m_content"]
+                SEARCH_CALLBACK.M_FULL_CONTENT: p_document["m_content"],
+                SEARCH_CALLBACK.K_CONTENT_TYPE: p_document["m_content_type"],
+                SEARCH_CALLBACK.M_URL_DISPLAY_TYPE: "leak",
+                SEARCH_CALLBACK.M_UPDATE_DATA: m_update_date_str,
+                SEARCH_CALLBACK.M_EXPIRY: expiry_status
             }
         else:
             mRelevanceContext = {
                 SEARCH_CALLBACK.M_TITLE: self.__normalize_text(m_title),
-                SEARCH_CALLBACK.M_URL: p_document[SEARCH_DOCUMENT_CALLBACK.M_HOST] + p_document[SEARCH_DOCUMENT_CALLBACK.M_SUB_HOST],
+                SEARCH_CALLBACK.M_MORE_ID: random_id,
+                SEARCH_CALLBACK.M_URL: p_document[SEARCH_DOCUMENT_CALLBACK.M_SUB_HOST],
+                SEARCH_CALLBACK.M_SECTION: p_document["m_section"],
                 SEARCH_CALLBACK.M_DESCRIPTION: m_description,
-                SEARCH_CALLBACK.M_EXPIRY: 0,
+                SEARCH_CALLBACK.M_URL_DISPLAY_TYPE: "general",
+                SEARCH_CALLBACK.M_UPDATE_DATA: m_update_date_str,
+                SEARCH_CALLBACK.M_EXPIRY: expiry_status,
+                SEARCH_CALLBACK.K_CONTENT_TYPE: p_document["m_content_type"],
+                SEARCH_CALLBACK.M_NAME: p_document["m_names"],
+                SEARCH_CALLBACK.M_CONTENT: p_document["m_content"],
+                SEARCH_CALLBACK.M_DOCUMENT_LEAK: p_document["m_document"],
+                SEARCH_CALLBACK.M_VIDEO: p_document["m_video"],
+                SEARCH_CALLBACK.M_ARCHIVE_URL: p_document["m_archive_url"],
+                SEARCH_CALLBACK.M_EMAILS: p_document["m_emails"],
+                SEARCH_CALLBACK.M_PHONE_NUMBER: p_document["m_phone_numbers"],
             }
 
-        if p_search_model.m_safe_search == 'False' or (str(p_search_model.m_safe_search) == 'True' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'a' and mRelevanceContext[SEARCH_CALLBACK.K_SEARCH_TYPE] != 'adult'):
+        if p_search_model.m_safe_search == 'False' or (str(p_search_model.m_safe_search) == 'True'):
             return mRelevanceContext, mRelevanceContextOriginal
         else:
             return None, None

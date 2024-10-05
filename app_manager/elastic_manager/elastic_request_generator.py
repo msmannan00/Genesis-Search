@@ -30,6 +30,10 @@ class elastic_request_generator(request_handler):
     )
     m_user_query = m_user_query.lower()
 
+    # Define the must_not clause based on safe_search
+    must_not_clause = []
+    if m_safe_search == "True":
+      must_not_clause.append({"term": {"m_content_type": "toxic"}})
 
     # Modify query for search type "monitor"
     if m_search_type == "monitor":
@@ -44,7 +48,8 @@ class elastic_request_generator(request_handler):
                   {"match": {"m_title": {"query": m_user_query, "boost": 3}}},
                   {"match": {"m_content": {"query": m_user_query, "boost": 1.5}}},
                   {"match": {"m_important_content": {"query": m_user_query, "boost": 2}}},
-                ]
+                ],
+                "must_not": must_not_clause
               }
             },
             "functions": [
@@ -91,16 +96,11 @@ class elastic_request_generator(request_handler):
             }
           }
         },
-        "from": (m_page_number-1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
+        "from": (m_page_number - 1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
         "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE,
         "track_total_hits": True
       }
       return {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX, ELASTIC_KEYS.S_FILTER: m_query_statement}
-
-
-
-
-
 
     else:
       # Default query statement
@@ -119,7 +119,8 @@ class elastic_request_generator(request_handler):
                   {"match": {"m_content": {"query": m_user_query, "boost": 1}}},
                   {"match": {"m_content_tokens": {"query": m_user_query, "boost": 2}}},
                   {"match": {"m_keywords": {"query": m_user_query, "boost": 1.8}}},
-                ]
+                ],
+                "must_not": must_not_clause
               }
             },
             "functions": [
@@ -160,7 +161,7 @@ class elastic_request_generator(request_handler):
             }
           }
         },
-        "from": (m_page_number-1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
+        "from": (m_page_number - 1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE_GENERIC,
         "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE,
         "track_total_hits": True
       }
@@ -230,6 +231,7 @@ class elastic_request_generator(request_handler):
         "m_important_content": card.get("m_important_content", ""),
         "m_weblink": card.get("m_weblink", ""),
         "m_dumplink": card.get("m_dumplink", ""),
+        "m_content_type": card.get("m_content_type", ""),
         "m_extra_tags": card.get("m_extra_tags", []),
         "m_contact_link": contact_link,
         "m_update_date": current_timestamp,

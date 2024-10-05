@@ -76,7 +76,8 @@ class weg7sdx54bevnvulapqu6bpzwztryeflq3s23tegbmnhkbpqz637f2yd(leak_extractor_in
                 m_important_content=content,
                 m_weblink=weblinks,
                 m_dumplink=dumplinks,
-                m_extra_tags=extra_tags
+                m_extra_tags=extra_tags,
+                m_content_type = "general"
             )
             new_cards_data.append(card_data)
 

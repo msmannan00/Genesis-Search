@@ -21,14 +21,17 @@ class SEARCH_PARAM:
     M_SECURE_SERVICE = "pSite"
 
 class SEARCH_CALLBACK:
+    M_URL_DISPLAY_TYPE = "mUrlDisplayType"
     M_QUERY = "mSearchCallbackQuery"
     M_DOCUMENT = "mSearchCallbackRelevantDocument"
     M_TITLE = "mSearchCallbackRelevantDocumentTitle"
     M_URL = "mSearchCallbackRelevantDocumentURL"
     M_IMAGE_TYPE = "m_type"
     M_IMAGE_URL = "m_url"
+    M_SECTION = "mSection"
     M_DESCRIPTION = "mSearchCallbackRelevantDocumentDescription"
     K_SEARCH_TYPE = "mSearchCallbackRelevantSearchType"
+    K_CONTENT_TYPE = "mContentType"
     M_MAX_PAGINATION = "mSearchCallbackMaxPagination"
     M_QUERY_ERROR = "mSearchCallbackQueryError"
     M_QUERY_ERROR_URL = "mSearchCallbackQueryErrorURL"
@@ -49,6 +52,14 @@ class SEARCH_CALLBACK:
     M_EXPIRY = "mExpiry"
     M_MORE_ID = "mMoreID"
     M_FULL_CONTENT = "mContent"
+    M_DOCUMENT_LEAK = "mDocumentLeak"
+    M_VIDEO = "mVideo"
+    M_ARCHIVE_URL = "mArchiveUrl"
+    M_NAME = "mName"
+    M_EMAILS = "mEmails"
+    M_PHONE_NUMBER = "mPhoneNumber"
+    M_CONTENT = "mSearchContent"
+    M_CONTENT_TOKENS = "mContentTokens"
 
 class SEARCH_DOCUMENT_CALLBACK:
     M_TITLE = "m_title"

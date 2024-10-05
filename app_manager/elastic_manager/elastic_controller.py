@@ -71,6 +71,7 @@ class elastic_controller(request_handler):
         "mappings": {
           "dynamic": "strict",
           "properties": {
+            "m_content_type": {"type": "keyword"},
             "m_title": {
               "type": "text"
             },

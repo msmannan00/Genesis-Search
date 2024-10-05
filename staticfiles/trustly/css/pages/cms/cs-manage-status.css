@@ -1,0 +1,48 @@
+.manage_status{
+    height: 55em;
+}
+
+.manage_status-container {
+    padding: 2% 2% 2% 1.5%;
+    background: #fff;
+    max-width: 800px;
+    margin: 3%;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+    margin-top: 30px;
+    width: 100%;
+    margin-left: 0.5%;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 7px;
+}
+
+.table .thead-dark th{
+    border-color: #fff;
+}
+
+.badge {
+    padding: 5px 8px;
+}
+
+.manage_status-header--color {
+    color: #336699;
+}
+
+.manage_status-header--info-color {
+    color: #4d4d4d;
+}
+
+.manage_status_table{
+    background-color: #f8f8f8;
+}
+
+@media only screen and (max-width: 943px) {
+    .manage_status-container,
+    .table {
+        padding: 5% 5% 5% 5%;
+    }
+}
