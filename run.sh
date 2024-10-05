@@ -27,7 +27,7 @@ remove_services() {
         docker-compose down --volumes
         docker-compose rm -f
     else
-        echo "Skipping service removal."
+        echo "Operation aborted. Services will not be removed."
         exit 1
     fi
 }
