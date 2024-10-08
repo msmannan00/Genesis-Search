@@ -5,6 +5,7 @@ TrustlySearchServices/raw/classifier_output/training_data.csv
 **/__pycache__/
 .idea/*
 env/*
+staticfiles/*
 mongo-data/*
 static/trustly/.well-known/model/*
 db.sqlite3
