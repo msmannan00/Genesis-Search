@@ -11,9 +11,11 @@ from django.urls import resolve  # for resolving the route
 
 class EncryptedAccessFilter(MiddlewareMixin):
   def process_request(self, request):
-    allowed_paths = ['feeder', 'parser', 'feeder/publish', 'feeder/unique']
+    allowed_paths = ['feeder', 'parser', 'feeder_publish', 'feeder_unique']
     resolved_path = resolve(request.path_info).url_name
     m_status = session_controller.get_instance().invoke_trigger(SESSION_COMMANDS.S_EXISTS, request)
+    print(resolved_path, flush=True)
+    print(allowed_paths, flush=True)
     if not m_status and resolved_path in allowed_paths:
       if not block_controller.getInstance().invoke_trigger(BLOCK_COMMAND.S_VERIFY_REQUEST, request):
         return render(request, CONSTANTS.S_TEMPLATE_BLOCK_WEBSITE_PATH)

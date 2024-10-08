@@ -1,5 +1,6 @@
 import datetime
 import inspect
+import stat
 import sys
 import logging
 import os
@@ -66,7 +67,12 @@ class log:
   def __write_to_file(self, log_message):
     caller_class, caller_file, caller_line = self.get_caller_info()
     log_filename = datetime.datetime.now().strftime("%Y-%m-%d") + ".log"
-    log_filepath = os.path.join(RAW_PATH_CONSTANTS.LOG_DIRECTORY, log_filename)
+    log_filepath = os.path.join(os.path.join(os.getcwd(), 'logs'), log_filename)
+    with open(log_filepath, 'a') as log_file:
+      full_log_message = f"{log_message} - {caller_class} ({caller_file}:{caller_line})"
+      log_file.write(full_log_message + "\n")
+    os.chmod(log_filepath, stat.S_IRUSR | stat.S_IWUSR | stat.S_IRGRP | stat.S_IROTH)
+
     with open(log_filepath, 'a') as log_file:
       full_log_message = f"{log_message} - {caller_class} ({caller_file}:{caller_line})"
       log_file.write(full_log_message + "\n")

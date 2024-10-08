@@ -30,12 +30,10 @@ class elastic_request_generator(request_handler):
     )
     m_user_query = m_user_query.lower()
 
-    # Define the must_not clause based on safe_search
     must_not_clause = []
     if m_safe_search == "True":
       must_not_clause.append({"term": {"m_content_type": "toxic"}})
 
-    # Modify query for search type "monitor"
     if m_search_type == "monitor":
       m_query_statement = {
         "min_score": 0,
@@ -45,9 +43,14 @@ class elastic_request_generator(request_handler):
               "bool": {
                 "must": [],
                 "should": [
-                  {"match": {"m_title": {"query": m_user_query, "boost": 3}}},
-                  {"match": {"m_content": {"query": m_user_query, "boost": 1.5}}},
-                  {"match": {"m_important_content": {"query": m_user_query, "boost": 2}}},
+                  {
+                    "query_string": {
+                      "query": m_user_query,
+                      "fields": ["m_title^3", "m_content^1.5", "m_important_content^2"],
+                      "default_operator": "OR",  # Ensuring default behavior is "OR"
+                      "lenient": True  # Helps Elasticsearch handle syntax issues
+                    }
+                  }
                 ],
                 "must_not": must_not_clause
               }
@@ -103,7 +106,6 @@ class elastic_request_generator(request_handler):
       return {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX, ELASTIC_KEYS.S_FILTER: m_query_statement}
 
     else:
-      # Default query statement
       m_query_statement = {
         "min_score": 0,
         "query": {
@@ -112,13 +114,21 @@ class elastic_request_generator(request_handler):
               "bool": {
                 "must": [],
                 "should": [
-                  {"match": {"m_title": {"query": m_user_query, "boost": 3}}},
-                  {"match": {"m_meta_description": {"query": m_user_query, "boost": 2}}},
-                  {"match": {"m_content": {"query": m_user_query, "boost": 1.5}}},
-                  {"match": {"m_important_content": {"query": m_user_query, "boost": 1.5}}},
-                  {"match": {"m_content": {"query": m_user_query, "boost": 1}}},
-                  {"match": {"m_content_tokens": {"query": m_user_query, "boost": 2}}},
-                  {"match": {"m_keywords": {"query": m_user_query, "boost": 1.8}}},
+                  {
+                    "query_string": {
+                      "query": m_user_query,
+                      "fields": [
+                        "m_title^3",
+                        "m_meta_description^2",
+                        "m_content^1.5",
+                        "m_important_content^1.5",
+                        "m_content_tokens^2",
+                        "m_keywords^1.8"
+                      ],
+                      "default_operator": "OR",  # Ensure that it uses "OR" by default
+                      "lenient": True  # Handle potential errors in user queries
+                    }
+                  }
                 ],
                 "must_not": must_not_clause
               }

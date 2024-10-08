@@ -1,0 +1,2 @@
+ERROR - 07/10/2024 07:32:10 : ELASTIC 3 : [5] Something unexpected happened while reading : BadRequestError(400, 'search_phase_execution_exception', 'Failed to parse query [unsorted comments from old (v0.1]') - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:205)
+ERROR - 07/10/2024 07:32:10 : ELASTIC 3 : [5] Something unexpected happened while reading : BadRequestError(400, 'search_phase_execution_exception', 'Failed to parse query [unsorted comments from old (v0.1]') - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:205)

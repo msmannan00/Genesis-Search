@@ -1,0 +1,37 @@
+2024-10-06 23:39:16,149 - INFO - INFO - 06/10/2024 23:39:16 : Index leak_model already exists, skipping creation.
+INFO - 06/10/2024 23:39:16 : Index leak_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:173)
+INFO - 06/10/2024 23:39:16 : Index leak_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:173)
+2024-10-06 23:39:16,153 - INFO - INFO - 06/10/2024 23:39:16 : Index generic_model already exists, skipping creation.
+INFO - 06/10/2024 23:39:16 : Index generic_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:182)
+INFO - 06/10/2024 23:39:16 : Index generic_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:182)
+2024-10-06 23:45:00,333 - INFO - INFO - 06/10/2024 23:45:00 : Index leak_model already exists, skipping creation.
+INFO - 06/10/2024 23:45:00 : Index leak_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:173)
+INFO - 06/10/2024 23:45:00 : Index leak_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:173)
+2024-10-06 23:45:00,337 - INFO - INFO - 06/10/2024 23:45:00 : Index generic_model already exists, skipping creation.
+INFO - 06/10/2024 23:45:00 : Index generic_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:182)
+INFO - 06/10/2024 23:45:00 : Index generic_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:182)
+2024-10-06 23:45:53,621 - INFO - INFO - 06/10/2024 23:45:53 : Index leak_model already exists, skipping creation.
+INFO - 06/10/2024 23:45:53 : Index leak_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:173)
+INFO - 06/10/2024 23:45:53 : Index leak_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:173)
+2024-10-06 23:45:53,625 - INFO - INFO - 06/10/2024 23:45:53 : Index generic_model already exists, skipping creation.
+INFO - 06/10/2024 23:45:53 : Index generic_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:182)
+INFO - 06/10/2024 23:45:53 : Index generic_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:182)
+2024-10-06 23:46:40,646 - INFO - INFO - 06/10/2024 23:46:40 : Index leak_model already exists, skipping creation.
+INFO - 06/10/2024 23:46:40 : Index leak_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:173)
+INFO - 06/10/2024 23:46:40 : Index leak_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:173)
+2024-10-06 23:46:40,650 - INFO - INFO - 06/10/2024 23:46:40 : Index generic_model already exists, skipping creation.
+INFO - 06/10/2024 23:46:40 : Index generic_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:182)
+INFO - 06/10/2024 23:46:40 : Index generic_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:182)
+2024-10-06 23:48:10,223 - INFO - INFO - 06/10/2024 23:48:10 : Index leak_model already exists, skipping creation.
+INFO - 06/10/2024 23:48:10 : Index leak_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:173)
+INFO - 06/10/2024 23:48:10 : Index leak_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:173)
+2024-10-06 23:48:10,226 - INFO - INFO - 06/10/2024 23:48:10 : Index generic_model already exists, skipping creation.
+INFO - 06/10/2024 23:48:10 : Index generic_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:182)
+INFO - 06/10/2024 23:48:10 : Index generic_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:182)
+2024-10-06 23:48:57,455 - INFO - INFO - 06/10/2024 23:48:57 : Index leak_model already exists, skipping creation.
+INFO - 06/10/2024 23:48:57 : Index leak_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:173)
+INFO - 06/10/2024 23:48:57 : Index leak_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:173)
+2024-10-06 23:48:57,460 - INFO - INFO - 06/10/2024 23:48:57 : Index generic_model already exists, skipping creation.
+INFO - 06/10/2024 23:48:57 : Index generic_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:182)
+INFO - 06/10/2024 23:48:57 : Index generic_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:182)
+2024-10-07 07:32:10,913 - ERROR - ERROR - 07/10/2024 07:32:10 : ELASTIC 3 : [5] Something unexpected happened while reading : BadRequestError(400, 'search_phase_execution_exception', 'Failed to parse query [unsorted comments from old (v0.1]')
