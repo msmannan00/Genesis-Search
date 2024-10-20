@@ -33,7 +33,7 @@ class directory_session_controller(request_handler):
             DIRECTORY_CALLBACK.M_SECURE_SERVICE_NOTICE: p_links.m_site,
         }
 
-        if len(p_links.m_row_model_list) <= CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE:
+        if len(p_links.m_row_model_list) <= CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE-2:
             m_context[DIRECTORY_CALLBACK.M_MAX_PAGE_REACHED] = True
         else:
             m_context[DIRECTORY_CALLBACK.M_MAX_PAGE_REACHED] = False
