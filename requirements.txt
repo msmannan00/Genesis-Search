@@ -24,7 +24,7 @@ gunicorn==22.0.0
 simplejson==3.8.0
 scikit-learn==1.5.1
 elasticsearch==8.15.0
-django==5.1.1
+django
 pymongo==4.8.0
 django-appconf==1.0.6
 bunch==1.0.0
