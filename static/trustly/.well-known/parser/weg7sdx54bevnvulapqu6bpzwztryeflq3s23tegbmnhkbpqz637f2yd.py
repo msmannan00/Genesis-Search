@@ -48,6 +48,7 @@ class weg7sdx54bevnvulapqu6bpzwztryeflq3s23tegbmnhkbpqz637f2yd(leak_extractor_in
             cards_data=cards_data,
             contact_link=self.contact_page(),
             base_url=p_data_url,
+            content_type="leak",
             false_positive_count=false_positive_count
         )
 

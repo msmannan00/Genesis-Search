@@ -6,7 +6,6 @@ class MONGO_INDEX_COLLECTION:
 
 
 class MONGO_USER_COLLECTION:
-  S_DATABASE_DEFAULT_ENTRY_USER = {'m_username': 'admin', 'm_password': 'Imammehdi@00'}
   S_DATABASE_DEFAULT_ENTRY_STATUS = {'m_cronjob': 0, 'm_crawler': 0}
 
 

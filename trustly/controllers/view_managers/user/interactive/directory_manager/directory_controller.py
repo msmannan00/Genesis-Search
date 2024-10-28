@@ -1,5 +1,7 @@
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
+from app_manager.log_manager.log_controller import log
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.view_managers.user.interactive.directory_manager.directory_enums import DIRECTORY_MODEL_COMMANDS
 from trustly.controllers.view_managers.user.interactive.directory_manager.directory_model import directory_model
@@ -30,7 +32,10 @@ class directory_controller(request_handler):
     def invoke_trigger(self, p_command, p_data):
         if p_command == DIRECTORY_MODEL_COMMANDS.M_INIT:
             m_response, m_status = self.__m_directory_model.invoke_trigger(DIRECTORY_MODEL_COMMANDS.M_INIT, p_data)
-            return render(None, CONSTANTS.S_TEMPLATE_DIRECTORY_WEBSITE_PATH, m_response)
+            if m_status:
+                return render(None, CONSTANTS.S_TEMPLATE_DIRECTORY_WEBSITE_PATH, m_response)
+            else:
+                return redirect('/directory/?page=1')
         else:
             m_response = None
         return m_response

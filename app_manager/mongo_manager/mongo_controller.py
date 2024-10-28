@@ -41,10 +41,6 @@ class mongo_controller:
 
   def __initialize_database(self):
     try:
-      if MONGODB_COLLECTIONS.S_USER_MODEL not in self.__m_connection.list_collection_names():
-        m_user = self.__m_connection.create_collection(name=MONGODB_COLLECTIONS.S_USER_MODEL)
-        m_user.insert_one(MONGO_USER_COLLECTION.S_DATABASE_DEFAULT_ENTRY_USER)
-
       if MONGODB_COLLECTIONS.S_STATUS not in self.__m_connection.list_collection_names():
         m_status = self.__m_connection.get_collection(name=MONGODB_COLLECTIONS.S_STATUS)
         m_status.insert_one(MONGO_USER_COLLECTION.S_DATABASE_DEFAULT_ENTRY_STATUS)

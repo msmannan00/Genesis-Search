@@ -10,15 +10,15 @@ class DIRECTORY_SESSION_COMMANDS(enum.Enum):
     M_VALIDATE = 3
 
 class DIRECTORY_PARAMS:
-    M_PAGE_NUMBER = "mDirectoryParamPageNumber"
-    M_PAGE_NUMBER_NEXT = "mDirectoryParamPageNumberNext"
-    M_PAGE_NUMBER_PREV = "mDirectoryParamPageNumberPrev"
+    M_PAGE_NUMBER = "page"
     M_PAGE_MAX_REACHED = "mDirectoryParamPageNumberMaxReached"
     M_SECURE_SERVICE = "pSite"
     M_SAFE_BROWSER = "browser"
 
 class DIRECTORY_CALLBACK:
-    M_PAGE_NUMBER = "mDirectoryCallbackPageNumber"
+    M_PAGE_NUMBER = "page"
+    M_PAGE_NEXT = "mPageNext"
+    M_PAGE_BACK = "mPageBack"
     M_ONION_LINKS = "mDirectoryCallbackLinks"
     M_MAX_PAGE_REACHED = "mDirectoryCallbackPageNumberMaxReached"
     M_SECURE_SERVICE_NOTICE = "mUseSecureServiceNotice"

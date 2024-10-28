@@ -3,6 +3,7 @@ import json
 import math
 import time
 
+from app_manager.log_manager.log_controller import log
 from trustly.controllers.constants.enums import MONGO_COMMANDS
 from trustly.controllers.view_managers.cms.manage_search.class_model.manage_search_model import manage_search_data_model
 from trustly.controllers.view_managers.user.interactive.report_manager.class_model.report_data_model import report_data_model
@@ -51,7 +52,7 @@ class mongo_request_generator(request_handler):
   def __on_upload_unique_url_read(self):
     return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_UNIQUE_URL, MONGODB_KEYS.S_FILTER: {}, MONGODB_KEYS.S_VALUE: {}}
 
-  def __on_update_url_status(self, url, url_status=None, leak_status=None):
+  def __on_update_url_status(self, url, url_status=None, leak_status=None, content_type=None):
     update_values = {"url": url}
     current_date = datetime.datetime.utcnow()
 
@@ -60,6 +61,9 @@ class mongo_request_generator(request_handler):
 
     if leak_status is not None:
       update_values["leak_status_date"] = current_date
+
+    if content_type is not None:
+      update_values["content_type"] = content_type
 
     return {
       MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_URL_STATUS,
@@ -101,6 +105,6 @@ class mongo_request_generator(request_handler):
     if p_commands == MONGO_COMMANDS.M_CRONHEARTBEAT:
       return self.__on_update_status(p_data[0])
     if p_commands == MONGO_COMMANDS.M_UPDATE_URL_STATUS:
-      return self.__on_update_url_status(p_data[0], p_data[1], p_data[2])
+      return self.__on_update_url_status(p_data[0], p_data[1], p_data[2], p_data[3])
     if p_commands == MONGO_COMMANDS.M_GET_URL_STATUS:
       return self.__on_fetch_url_status()

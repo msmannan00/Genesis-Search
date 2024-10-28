@@ -7,8 +7,8 @@
                 <th scope="row" class="w-15">ID</th>
                 <th scope="col" class="w-50">Onion Service</th>
                 <th scope="col" class="w-10">Category</th>
-                <th scope="col" class="w-10">Leak Status</th>
                 <th scope="col" class="w-10">URL Status</th>
+                <th scope="col" class="w-10">Leak Status</th>
             </tr>
         </thead>
         <tbody>
@@ -34,16 +34,16 @@
                     <td class="onion__table-category"><b>Leak Data</b></td>
                     {% endif %}
 
-                     {% if mDoc.leak_status_date == 1 %}
-                        <td class="onion__table-leak-status"><b style="color: green;">Active</b></td>
-                    {% else %}
-                        <td class="onion__table-leak-status"><b style="color: red;">Inactive</b></td>
-                    {% endif %}
-
                     {% if mDoc.url_status_date == 1 %}
                         <td class="onion__table-url-status"><b style="color: green;">Active</b></td>
                     {% else %}
                         <td class="onion__table-url-status"><b style="color: red;">Inactive</b></td>
+                    {% endif %}
+
+                    {% if mDoc.leak_status_date == 1 %}
+                        <td class="onion__table-leak-status"><b style="color: green;">Active</b></td>
+                    {% else %}
+                        <td class="onion__table-leak-status"><b style="color: red;">Inactive</b></td>
                     {% endif %}
 
                 </tr>
