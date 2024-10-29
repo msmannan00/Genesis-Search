@@ -22,17 +22,7 @@
                     <td><a href="{{ mDoc.mURL }}" class="onion__table-url">{{ mDoc.url }}</a></td>
                     {% endif %}
 
-                    {% if mDoc.mContentType == 'g' %}
-                    <td class="onion__table-category"><b>General</b></td>
-                    {% elif mDoc.mContentType == 'b' %}
-                    <td class="onion__table-category"><b>Business</b></td>
-                    {% elif mDoc.mContentType in 'n news' %}
-                    <td class="onion__table-category"><b>News</b></td>
-                    {% elif mDoc.mContentType in 'i a adult' %}
-                    <td class="onion__table-category"><b>Restricted</b></td>
-                    {% else %}
-                    <td class="onion__table-category"><b>Leak Data</b></td>
-                    {% endif %}
+                    <td class="onion__table-category"><b>{{ mDoc.content_type }}</b></td>
 
                     {% if mDoc.url_status_date == 1 %}
                         <td class="onion__table-url-status"><b style="color: green;">Active</b></td>
