@@ -15,6 +15,7 @@ class login_session_controller(request_handler):
         return m_login_model
 
     def init_callbacks(self, p_report_model:login_data_model):
+
         m_context_response = {
             LOGIN_CALLBACK.M_ERROR: p_report_model.m_error
         }

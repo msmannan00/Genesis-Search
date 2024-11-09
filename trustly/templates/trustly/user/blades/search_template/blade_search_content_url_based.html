@@ -37,6 +37,7 @@
     </div>
 </div>
 {% endif %}-->
+
 <div class="search-result__content-webpages--container p-2 position-relative">
     <div class="rounded-circle position-absolute search-result__circle-status {% if mDoc.mExpiry == 0 %}bg-success{% elif mDoc.mExpiry == 1 %}bg-warning{% elif mDoc.mExpiry == 2 %}bg-danger{% endif %}"></div>
     <a href="{{ mDoc.mSearchCallbackRelevantDocumentURL }}">

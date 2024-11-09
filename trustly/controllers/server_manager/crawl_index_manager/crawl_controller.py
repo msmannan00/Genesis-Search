@@ -74,22 +74,11 @@ class crawl_controller(request_handler):
         m_context = [m_status, m_crawl_model.m_data]
         return HttpResponse(json.dumps(m_context))
 
-    def __download_toxic_model(self, p_data):
-        file_path = os.path.join(settings.BASE_DIR, 'static', 'trustly', '.well-known', 'model', "toxic-model.zip")
-        if os.path.exists(file_path):
-            response = FileResponse(open(file_path, 'rb'), content_type='application/zip')
-            response['Content-Disposition'] = 'attachment; filename="toxic-model.zip"'
-            return response
-        else:
-            return HttpResponseNotFound("File not found")
-
     # External Request Callbacks
     def invoke_trigger(self, p_command, p_data):
 
         if p_command == CRAWL_COMMANDS.M_INIT:
             return self.__handle_request(p_data)
-        if p_command == CRAWL_COMMANDS.M_FETCH_MODEL:
-            return self.__download_toxic_model(p_data)
         if p_command == CRAWL_COMMANDS.M_FETCH_FEEDER_PUBLISH:
             return self.__handle_publish_feeder(p_data)
         if p_command == CRAWL_COMMANDS.M_FETCH_FEEDER:

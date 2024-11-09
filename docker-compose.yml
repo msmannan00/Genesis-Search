@@ -44,16 +44,13 @@ services:
       - ELASTIC_PASSWORD=${ELASTIC_ROOT_PASSWORD}
       - xpack.security.enabled=false
       - xpack.security.transport.ssl.enabled=false
+      - ES_JAVA_OPTS=-Xms2g -Xmx2g
     env_file:
       - .env
     ports:
       - "9400:9400"
     volumes:
       - esdata:/usr/share/elasticsearch/data
-    deploy:
-      resources:
-        limits:
-          memory: 5G
 
   mongo:
     image: mongo:latest

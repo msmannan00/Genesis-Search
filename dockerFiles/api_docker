@@ -1,8 +1,17 @@
 # Use a slim version of Python to reduce image size
-FROM python:3.9-slim
+FROM python:3.11-slim AS base
 
 # Set the working directory
 WORKDIR /app
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    gcc \
+    g++ \
+    libblas-dev \
+    liblapack-dev \
+    gfortran \
+    --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 # Upgrade pip and install dependencies
 COPY requirements.txt ./

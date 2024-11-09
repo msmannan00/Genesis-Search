@@ -12,6 +12,15 @@ SECRET_KEY = 'django-insecure-ir+r3)d@v53u&qw-gfo&)&z%vda+scaq+0gw)9@u%zpjadip!3
 DEBUG = APP_STATUS.S_DEVELOPER
 
 ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = [
+  'http://localhost',
+  'http://127.0.0.1',
+  'http://localhost:3000',
+  'http://localhost:8080',
+  'http://localhost:8080',
+  'http://127.0.0.1:8080',
+  'http://0.0.0.0:8070',
+]
 
 INSTALLED_APPS = [
   'django.contrib.admin',
@@ -40,12 +49,11 @@ ROOT_URLCONF = 'trustly.urls'
 SESSION_COOKIE_AGE = 600
 SESSION_SAVE_EVERY_REQUEST = True
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_HTTPONLY = True
-CSRF_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SAMESITE = 'Lax'
 CSRF_COOKIE_SAMESITE = 'Lax'
+SESSION_COOKIE_SECURE = False
+
 
 TEMPLATES = [
   {
@@ -57,6 +65,7 @@ TEMPLATES = [
       'context_processors': [
         'django.template.context_processors.debug',
         'django.template.context_processors.request',
+        'django.template.context_processors.csrf'
         'django.template.context_processors.static',
         'django.contrib.auth.context_processors.auth',
         'django.contrib.messages.context_processors.messages',
@@ -100,7 +109,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# During development, you can use this
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]

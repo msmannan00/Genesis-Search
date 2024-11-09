@@ -18,7 +18,8 @@
 
     <div class="col-lg-12 login-form">
         <div class="col-lg-12 login-form">
-            <form action="/cms/manage_authentication" method="POST">
+            <form action="http://localhost:8080/cms/manage_authentication" method="POST">
+                <input type="hidden" name="csrfmiddlewaretoken" value="{{csrf_token}}">
                 <div class="form-group">
                     <label class="form-control-label">USERNAME</label>
                     <input id="pUsername" type="text" class="form-control login-input" name="pUsername">

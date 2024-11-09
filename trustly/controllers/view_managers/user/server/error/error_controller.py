@@ -30,5 +30,4 @@ class error_controller(request_handler):
     def invoke_trigger(self, p_command, p_data):
         if p_command == ERROR_MODEL_CALLBACK.M_INIT:
             m_response, m_status = self.__m_error_model.invoke_trigger(ERROR_MODEL_CALLBACK.M_INIT, p_data)
-            return render(None, CONSTANTS.S_TEMPLATE_ERROR_WEBSITE_PATH, m_response)
-
+            return render(None, CONSTANTS.S_TEMPLATE_ERROR_WEBSITE_PATH, m_response, status=m_response['mErrorCode'])

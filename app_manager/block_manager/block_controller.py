@@ -27,25 +27,25 @@ class block_controller:
     try:
 
       m_secret_token = p_request.headers.get(BLOCK_PARAM.M_SECRET_TOKEN)
-      if m_secret_token is not None and APP_STATUS.S_DEVELOPER is False:
-        return True
-
-      elif APP_STATUS.S_DEVELOPER is False:
+      if m_secret_token is not None:
         m_decoded_str = self.__m_fernet.decrypt(m_secret_token.encode()).decode("utf-8").split("----")
+
         m_secret_key = m_decoded_str[0]
         m_secret_time = int(m_decoded_str[1])
 
         if m_secret_key.startswith(env_handler.get_instance().env('S_APP_BLOCK_KEY')):
           m_time = m_secret_time
-          if abs(time.time() - m_time) > 129600:
+          if (time.time() - m_time - 60) < 30:
             return True
           else:
             return False
         return True
-
       return False
 
-    except Exception:
+    except Exception as ex:
+      print("ccc5", flush=True)
+      print(str(ex), flush=True)
+      print("ccc5", flush=True)
       return False
 
   def invoke_trigger(self, p_commands, p_data=None):

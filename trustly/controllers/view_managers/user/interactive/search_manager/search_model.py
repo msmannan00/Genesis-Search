@@ -29,10 +29,7 @@ class search_model(request_handler):
         total_pages = 0
 
         try:
-            # Extract the total number of hits from the response
             total_hits = p_paged_documents.get('hits', {}).get('total', {}).get('value', 0)
-
-            # Calculate total pages
             if total_hits > 0:
                 total_pages = total_hits / CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE
 

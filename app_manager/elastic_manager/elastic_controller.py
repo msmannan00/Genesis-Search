@@ -135,6 +135,8 @@ class elastic_controller(request_handler):
           "dynamic": "strict",
           "properties": {
             "m_hash": {"type": "text"},
+            "m_hash_url": {"type": "keyword"},
+            "m_hash_content": {"type": "keyword"},
             "m_base_url": {"type": "keyword"},
             "m_url": {"type": "keyword"},
             "m_title": {"type": "text"},

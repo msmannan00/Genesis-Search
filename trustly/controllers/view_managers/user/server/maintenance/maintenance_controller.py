@@ -30,5 +30,5 @@ class maintenance_controller(request_handler):
     def invoke_trigger(self, p_command, p_data):
         if p_command == MAINTENANCE_MODEL_CALLBACK.M_INIT:
             m_response, m_status = self.__m_maintenance_model.invoke_trigger(MAINTENANCE_MODEL_CALLBACK.M_INIT, p_data)
-            return render(None, CONSTANTS.S_TEMPLATE_MAINTENANCE_WEBSITE_PATH, m_response)
+            return render(None, CONSTANTS.S_TEMPLATE_MAINTENANCE_WEBSITE_PATH, m_response, status=500)
 

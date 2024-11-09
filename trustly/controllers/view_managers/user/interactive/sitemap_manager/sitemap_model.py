@@ -1,3 +1,5 @@
+from django.middleware.csrf import get_token
+
 from app_manager.mongo_manager.mongo_controller import mongo_controller
 from app_manager.mongo_manager.mongo_enums import MONGODB_CRUD
 from trustly.controllers.constants.enums import MONGO_COMMANDS
@@ -29,6 +31,8 @@ class sitemap_model(request_handler):
         if m_validity_status is True and GENERAL_STRINGS.S_GENERAL_ONION_DOMAIN in helper_controller.get_host(m_sitemap_data_model.m_url):
             self.__upload__website(m_sitemap_data_model)
 
+        csrf_token = get_token(p_data)
+        m_context_response["csrf_token"]=csrf_token
         return m_context_response, m_validity_status
 
     # External Request Callbacks

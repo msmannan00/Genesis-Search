@@ -46,9 +46,16 @@ class elastic_request_generator(request_handler):
                   {
                     "query_string": {
                       "query": m_user_query,
-                      "fields": ["m_title^3", "m_content^1.5", "m_important_content^2"],
-                      "default_operator": "OR",  # Ensuring default behavior is "OR"
-                      "lenient": True  # Helps Elasticsearch handle syntax issues
+                      "fields": [
+                        "m_title^3",
+                        "m_meta_description^2",
+                        "m_content^1.5",
+                        "m_important_content^1.5",
+                        "m_content_tokens^2",
+                        "m_keywords^1.8"
+                      ],
+                      "default_operator": "OR",
+                      "lenient": True
                     }
                   }
                 ],
@@ -71,35 +78,16 @@ class elastic_request_generator(request_handler):
             "boost_mode": "sum"
           }
         },
-        "highlight": {
-          "fields": {
-            "m_content": {},
-            "m_important_content": {}
-          }
-        },
-        "suggest": {
-          "important_content_suggestion": {
-            "text": m_user_query,
-            "term": {
-              "field": "m_important_content",
-              "min_word_length": 4,
-              "max_term_freq": 0.01,
-              "sort": "score",
-              "string_distance": "internal",
-            }
-          },
-          "content_suggestion": {
-            "text": m_user_query,
-            "term": {
-              "field": "m_content",
-              "min_word_length": 4,
-              "max_term_freq": 0.01,
-              "sort": "score",
-              "string_distance": "internal",
+        "aggs": {
+          "limited_base_url": {
+            "terms": {
+              "field": "m_base_url",
+              "size": 100,
+              "min_doc_count": 1
             }
           }
         },
-        "from": (m_page_number - 1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE,
+        "from": (m_page_number - 1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE_GENERIC,
         "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE,
         "track_total_hits": True
       }
@@ -125,8 +113,8 @@ class elastic_request_generator(request_handler):
                         "m_content_tokens^2",
                         "m_keywords^1.8"
                       ],
-                      "default_operator": "OR",  # Ensure that it uses "OR" by default
-                      "lenient": True  # Handle potential errors in user queries
+                      "default_operator": "OR",
+                      "lenient": True
                     }
                   }
                 ],
@@ -214,11 +202,15 @@ class elastic_request_generator(request_handler):
   def __index_query_general(self, p_index_data, p_index_name):
     index_entries = []
     current_timestamp = datetime.utcnow().isoformat()
+
     if isinstance(p_index_data, list):
       pass
     else:
       p_index_data['m_update_date'] = current_timestamp
+      p_index_data['m_hash_content'] = hashlib.sha256((p_index_data['m_important_content'] + p_index_data['m_title']).encode()).hexdigest()
+      p_index_data['m_hash_url'] = hashlib.sha256((p_index_data['m_url'] + p_index_data['m_title']).encode()).hexdigest()
       p_index_data['m_hash'] = p_index_data['m_url']
+
       index_entries.append({
         ELASTIC_KEYS.S_DOCUMENT: p_index_name,
         ELASTIC_KEYS.S_VALUE: p_index_data

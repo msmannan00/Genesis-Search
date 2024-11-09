@@ -75,6 +75,13 @@ class search_session_controller(request_handler):
             elif end_page == total_pages:
                 start_page = max(1, end_page - 4)
 
+        if p_search_model.m_page_number > total_pages:
+            p_search_model.m_page_number = total_pages
+
+        if len(p_relevance_context_list)<5:
+            total_pages = p_search_model.m_page_number
+            end_page = total_pages
+
         page_range = range(start_page, end_page + 1)
         m_context = {
             SEARCH_CALLBACK.M_QUERY: p_search_model.m_search_query,

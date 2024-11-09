@@ -14,7 +14,8 @@
         {% include 'trustly/user/blades/shared_blades/blade_light_header.html' %}
         <div>
             <p class="sitemap__form-header"> Submit your website </p>
-            <form method="POST" action="" enctype="multipart/form-data" class="sitemap__form">
+            <form method="POST" class="sitemap__form">
+                <input type="hidden" name="csrfmiddlewaretoken" value="{{csrf_token}}">
                 <p class="sitemap__form-description sitemap__form-description--top">Welcome to the process of website submission. It is to be noted that if you want to provide any onion service, you have to make sure that the service exists at the time of crawling. <br><br><br>Important Notice <b>(Secret Key)</b>
                 <ul class="sitemap__form-ul">
                     <li>Secret key is mandatory in website submission</li>

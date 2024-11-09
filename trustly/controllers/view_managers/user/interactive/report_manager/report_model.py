@@ -1,3 +1,5 @@
+from django.middleware.csrf import get_token
+
 from app_manager.mongo_manager.mongo_controller import mongo_controller
 from app_manager.mongo_manager.mongo_enums import MONGODB_CRUD
 from trustly.controllers.constants.enums import MONGO_COMMANDS
@@ -29,6 +31,8 @@ class report_model(request_handler):
             self.__report_website(m_report_data_model)
             m_context = {}
 
+        csrf_token = get_token(p_data)
+        m_context["csrf_token"]=csrf_token
         return m_context, m_status
 
     # External Request Callbacks

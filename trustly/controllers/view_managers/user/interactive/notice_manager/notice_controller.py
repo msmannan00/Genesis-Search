@@ -8,6 +8,8 @@ from trustly.controllers.view_managers.user.interactive.notice_manager.notice_en
 from trustly.controllers.view_managers.user.interactive.notice_manager.notice_model import notice_model
 from app_manager.request_manager.request_handler import request_handler
 from app_manager.state_manager.states import APP_STATUS
+from trustly.controllers.view_managers.user.server.error.error_controller import error_controller
+from trustly.controllers.view_managers.user.server.error.error_enums import ERROR_MODEL_CALLBACK
 
 
 class notice_controller(request_handler):
@@ -37,5 +39,4 @@ class notice_controller(request_handler):
             if m_status is True:
                 return render(None, CONSTANTS.S_TEMPLATE_NOTICE_WEBSITE_PATH, m_response)
             else:
-                return HttpResponseRedirect(redirect_to="../")
-
+                return error_controller.getInstance().invoke_trigger(ERROR_MODEL_CALLBACK.M_INIT, [p_data, 404])

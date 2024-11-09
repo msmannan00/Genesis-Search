@@ -1,4 +1,5 @@
 from django.http import HttpResponseRedirect
+from django.middleware.csrf import get_token
 from django.shortcuts import render
 
 from trustly.controllers.constants.constant import CONSTANTS
@@ -25,7 +26,8 @@ class login_model(request_handler):
         else:
             m_login_data_model = self.__m_session.invoke_trigger(LOGIN_SESSION_COMMANDS.M_INIT, p_data)
             m_context = self.__m_session.invoke_trigger(LOGIN_SESSION_COMMANDS.M_VALIDATE, m_login_data_model)
-
+            csrf_token = get_token(p_data)
+            m_context["csrf_token"]=csrf_token
             return render(None, CONSTANTS.S_TEMPLATE_LOGIN_WEBSITE_PATH, m_context)
 
     # External Request Handler

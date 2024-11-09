@@ -11,6 +11,7 @@
             {% if mSearchCallbackCurrentPageNumber == 1%}
                 <div class="search__page-navigation search__pagination--border-right" style="float:left;margin-right: 19px;text-decoration: none;opacity:0.45;cursor:context-menu;pointer-events:none;user-select:none"> &lsaquo;</div>
             {% else %}
+                <a href="?q={{mSearchCallbackQuery}}&mSearchParamSafeSearch={{mSearchCallbackSaveSearch}}&pSearchParamType={{mSearchCallbackRelevantSearchType}}&mSearchParamPage=1" class="search__page-navigation search__pagination--border-right" style="float:left;margin-right: 19px;text-decoration: none"> &lsaquo;&lsaquo;</a>
                 <a href="?q={{mSearchCallbackQuery}}&mSearchParamSafeSearch={{mSearchCallbackSaveSearch}}&pSearchParamType={{mSearchCallbackRelevantSearchType}}&mSearchParamPage={% if mSearchCallbackCurrentPageNumber != '1'%}{{mSearchCallbackCurrentPageNumber|add:-1}}{% endif %}" class="search__page-navigation search__pagination--border-right" style="float:left;margin-right: 19px;text-decoration: none"> &lsaquo;</a>
             {% endif %}
 
@@ -23,7 +24,12 @@
             {% endfor %}
 
             <!-- right arrow -->
-            <a href="?q={{mSearchCallbackQuery}}&mSearchParamSafeSearch={{mSearchCallbackSaveSearch}}&pSearchParamType={{mSearchCallbackRelevantSearchType}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber|add:1}}" class="search__page-navigation search__pagination--border-right search__pagination--border-left" style="text-decoration: none"> &rsaquo;</a>
+            {% if mSearchCallbackCurrentPageNumber >= mSearchCallbackMaxPagination%}
+                <div class="search__page-navigation search__pagination--border-right" style="float:left;margin-right: 19px;text-decoration: none;opacity:0.45;cursor:context-menu;pointer-events:none;user-select:none"> &rsaquo;</div>
+            {% else %}
+                <a href="?q={{mSearchCallbackQuery}}&mSearchParamSafeSearch={{mSearchCallbackSaveSearch}}&pSearchParamType={{mSearchCallbackRelevantSearchType}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber|add:1}}" class="search__page-navigation search__pagination--border-right search__pagination--border-left" style="text-decoration: none"> &rsaquo;</a>
+            {% endif %}
+
         </div>
 
     </form>
