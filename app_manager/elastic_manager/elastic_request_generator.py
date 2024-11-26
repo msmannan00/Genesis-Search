@@ -246,9 +246,97 @@ class elastic_request_generator(request_handler):
 
     return index_entries
 
+  def __generate_insight_queries(self):
+    queries = []
+
+    # Generic Queries
+    queries.append({
+      ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
+      ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"unique_urls": {"cardinality": {"field": "m_url.keyword"}}}}
+    })
+    queries.append({
+      ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
+      ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"unique_base_urls": {"cardinality": {"field": "m_base_url.keyword"}}}}
+    })
+    queries.append({
+      ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
+      ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"match_all": {}}}
+    })
+    queries.append({
+      ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
+      ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"avg_validity_score": {"avg": {"field": "m_validity_score"}}}}
+    })
+    queries.append({
+      ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
+      ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"exists": {"field": "m_important_content"}}}
+    })
+    queries.append({
+      ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
+      ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"exists": {"field": "m_meta_description"}}}
+    })
+    queries.append({
+      ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
+      ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"unique_keywords": {"cardinality": {"field": "m_keywords.keyword"}}}}
+    })
+    queries.append({
+      ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
+      ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"range": {"m_update_date": {"gte": "now-30d/d"}}}}
+    })
+    queries.append({
+      ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
+      ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"term": {"m_content_type.keyword": "general"}}}
+    })
+    queries.append({
+      ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
+      ELASTIC_KEYS.S_FILTER: {"size": 0,
+                              "aggs": {"total_phone_numbers": {"cardinality": {"field": "m_phone_numbers.keyword"}}}}
+    })
+    queries.append({
+      ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
+      ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"exists": {"field": "m_sub_url"}}}
+    })
+    queries.append({
+      ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
+      ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"unique_hashes": {"cardinality": {"field": "m_hash.keyword"}}}}
+    })
+
+    # Leak Model Queries
+    queries.append({
+      ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX,
+      ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"unique_hashes": {"cardinality": {"field": "m_hash.keyword"}}}}
+    })
+    queries.append({
+      ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX,
+      ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"unique_hash_urls": {"cardinality": {"field": "m_hash_url.keyword"}}}}
+    })
+    queries.append({
+      ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX,
+      ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"range": {"m_update_date": {"gte": "now-30d/d"}}}}
+    })
+    queries.append({
+      ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX,
+      ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"exists": {"field": "m_contact_link"}}}
+    })
+    queries.append({
+      ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX,
+      ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"unique_keywords": {"cardinality": {"field": "m_keywords.keyword"}}}}
+    })
+    queries.append({
+      ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX,
+      ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"exists": {"field": "m_title"}}}
+    })
+    queries.append({
+      ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX,
+      ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"exists": {"field": "m_meta_description"}}}
+    })
+
+    return queries
+
   def invoke_trigger(self, p_commands, p_data=None):
     if p_commands == ELASTIC_REQUEST_COMMANDS.S_SEARCH:
       return self.__on_search(p_data[0])
+    if p_commands == ELASTIC_REQUEST_COMMANDS.S_GENERATE_INSIGHT:
+      return self.__generate_insight_queries()
     if p_commands == ELASTIC_REQUEST_COMMANDS.S_ONION_LIST:
       return self.__onion_list(p_data[0])
     if p_commands == ELASTIC_REQUEST_COMMANDS.S_QUERY_RAW:

@@ -199,11 +199,27 @@ class elastic_controller(request_handler):
     try:
       result = self.__m_connection.search(index=p_data[ELASTIC_KEYS.S_DOCUMENT],
                                           body=p_data[ELASTIC_KEYS.S_FILTER])
-
       return True, result
-
     except Exception as ex:
-      print(ex)
+      log.g().e("ELASTIC 3 : " + MANAGE_ELASTIC_MESSAGES.S_READ_FAILURE + " : " + str(ex))
+      return False, str(ex)
+
+  def __insight(self, p_data):
+    try:
+      if not isinstance(p_data, list):
+        raise ValueError("p_data must be a list of queries.")
+
+      results = []
+      for query in p_data:
+        try:
+          result = self.__m_connection.search(index=query[ELASTIC_KEYS.S_DOCUMENT],
+                                              body=query[ELASTIC_KEYS.S_FILTER])
+          results.append({"query": query, "result": result})
+        except Exception as ex:
+          print("ELASTIC 3 : Failed to execute query : " + str(query) + " : " + str(ex), flush=True)
+          results.append({"query": query, "error": str(ex)})
+      return True, results
+    except Exception as ex:
       log.g().e("ELASTIC 3 : " + MANAGE_ELASTIC_MESSAGES.S_READ_FAILURE + " : " + str(ex))
       return False, str(ex)
 
@@ -242,3 +258,5 @@ class elastic_controller(request_handler):
       return self.__read(m_request)
     if p_commands == ELASTIC_CRUD_COMMANDS.S_INDEX:
       return self.__index(m_request)
+    if p_commands == ELASTIC_CRUD_COMMANDS.S_INSIGHT:
+      return self.__insight(m_request)

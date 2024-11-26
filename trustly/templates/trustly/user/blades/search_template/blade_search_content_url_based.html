@@ -48,9 +48,14 @@
             <hr class="search-content__webpages-divider">
             <label class="search-content__webpages-description">
                 <span class="search-content__webpages-description--category">
-                    {% if mDoc.mContentType == "toxic" %}
-                        <span class="text-danger">Toxic</span>{% elif mDoc.mContentType == "b" %}
-                        Business{% elif mDoc.mContentType == "n" %}News{% else %}General{% endif %}
+                    <label class="search-content__webpages-description">
+                        <span class="search-content__webpages-description--category">
+                            {% for content_type in mDoc.mContentType %}
+                                <span class="badge bg-info me-1 text-white ">{{ content_type }}</span>
+                            {% endfor %}
+                        </span>
+                        &nbsp;&nbsp;{% autoescape off %}{{ mDoc.mSearchCallbackRelevantDocumentDescription }}{% endautoescape %}
+                    </label>
                 </span>
                 &nbsp;&nbsp;{% autoescape off %}{{ mDoc.mSearchCallbackRelevantDocumentDescription }}{% endautoescape %}
             </label>
