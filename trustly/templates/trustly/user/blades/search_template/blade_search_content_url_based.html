@@ -47,17 +47,16 @@
             <label class="search-content__webpages-url"><span><b>Indexed Date</b>〡<span>{{ mDoc.mUpdateDate|slice:":10" }}</span></label><br>
             <hr class="search-content__webpages-divider">
             <label class="search-content__webpages-description">
-                <span class="search-content__webpages-description--category">
+                <span>
                     <label class="search-content__webpages-description">
-                        <span class="search-content__webpages-description--category">
+                        <span class="">
                             {% for content_type in mDoc.mContentType %}
                                 <span class="badge bg-info me-1 text-white ">{{ content_type }}</span>
                             {% endfor %}
                         </span>
-                        &nbsp;&nbsp;{% autoescape off %}{{ mDoc.mSearchCallbackRelevantDocumentDescription }}{% endautoescape %}
                     </label>
                 </span>
-                &nbsp;&nbsp;{% autoescape off %}{{ mDoc.mSearchCallbackRelevantDocumentDescription }}{% endautoescape %}
+                {% autoescape off %}{{ mDoc.mSearchCallbackRelevantDocumentDescription }}{% endautoescape %}
             </label>
         </div>
     </a>

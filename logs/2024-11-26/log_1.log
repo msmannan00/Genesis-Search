@@ -314,3 +314,5 @@ INFO - 26/11/2024 18:30:31 : Index leak_model already exists, skipping creation.
 INFO - 26/11/2024 18:30:31 : Index generic_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:184)
 INFO - 26/11/2024 18:30:36 : Index leak_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:175)
 INFO - 26/11/2024 18:30:36 : Index generic_model already exists, skipping creation. - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:184)
+INFO - 26/11/2024 23:20:09 : Created index: leak_model with mapping - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:173)
+INFO - 26/11/2024 23:20:09 : Created index: generic_model with mapping - elastic_controller (/app/app_manager/elastic_manager/elastic_controller.py:182)
