@@ -1,0 +1,330 @@
+{% load static %}
+
+{% if forloop.counter == 8 and mSearchCallbackRelevantBusiness|length > 1 %}
+    <h6 class="search-engine-highlights-header">Related Search Business</h6>
+    <ul class="list-group search-engine-highlights">
+        {% for mDoc in mSearchCallbackRelevantBusiness %}
+            <a class="search-engine-highlights-item" href="{{ mDoc.mSearchCallbackRelevantDocumentURL }}">
+                <img class="search-engine-highlights-item--glass disable-highlight"
+                     src="{% static 'trustly/images/search-icon-dark.png' %}" alt=""/>
+                &nbsp;&nbsp;&nbsp; {{ mDoc.mSearchCallbackRelevantDocumentDescription }}
+                &nbsp; {{ mDoc.mSearchCallbackRelevantDocumentTitle }}
+            </a>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if forloop.counter == 5 and mSearchCallbackRelevantDocumentNews|length > 1 %}
+    <h6 class="search-engine-highlights-header">Related Search News</h6>
+    <ul class="list-group search-engine-highlights">
+        {% for mDoc in mSearchCallbackRelevantDocumentNews %}
+            <a class="search-engine-highlights-item" href="{{ mDoc.mSearchCallbackRelevantDocumentURL }}">
+                <span>{{ mDoc.mSearchCallbackRelevantDocumentDescription }} &nbsp; {{ mDoc.mSearchCallbackRelevantDocumentTitle }}</span>
+            </a>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
+<!--{% if forloop.counter == 10 and mSearchCallbackRelevantDocumentFiles|length > 1 %}
+<hr class="search-engine-suggestion__catagory-divider">
+<div class="row search-engine-highlights--images-header">
+    <div class="col">
+        {% for mDoc in mSearchCallbackRelevantDocumentFiles %}
+        <a class="text-decoration-none" href="{{mDoc.mSearchCallbackRelevantDocumentURL}}
+    "> <img class="search-engine-highlights--images" src="{% static 'trustly/images/img_download.png' %}" alt=""> </a>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}-->
+
+<div class="search-result__content-webpages--container p-2 position-relative">
+    <div class="rounded-circle position-absolute search-result__circle-status {% if mDoc.mExpiry == 0 %}bg-success{% elif mDoc.mExpiry == 1 %}bg-warning{% elif mDoc.mExpiry == 2 %}bg-danger{% endif %}"></div>
+    <a href="{{ mDoc.mSearchCallbackRelevantDocumentURL }}">
+        <div class="search-result__content-webpages {% if mDoc.mContentType == 'toxic' %}search-result__content-webpages--danger{% else %}search-result__content-webpages--normal{% endif %}">
+            <label class="search-content__webpages-header ml-4">{{ mDoc.mSearchCallbackRelevantDocumentTitle }}</label><br>
+            <label class="search-content__webpages-url">{{ mDoc.mSearchCallbackRelevantDocumentURL }}</label><br>
+            <label class="search-content__webpages-url"><span><b>Indexed Date</b>〡<span>{{ mDoc.mUpdateDate|slice:":10" }}</span></label><br>
+            <hr class="search-content__webpages-divider">
+            <label class="search-content__webpages-description">
+                <span>
+                    <label class="search-content__webpages-description">
+                        <span class="">
+                            {% for content_type in mDoc.mContentType %}
+                                <span class="badge bg-info me-1 text-white ">{{ content_type }}</span>
+                            {% endfor %}
+                        </span>
+                    </label>
+                </span>
+                {% autoescape off %}{{ mDoc.mSearchCallbackRelevantDocumentDescription }}{% endautoescape %}
+            </label>
+        </div>
+    </a>
+    {% if mDoc.mUrlDisplayType == "leak" %}
+        <div class="ml-2 mt-3">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 mb-1 pl-0 pr-3">
+              <span class="btn btn-sm search-file__expanded--button w-100 d-flex align-items-center justify-content-center"
+                    data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}" aria-expanded="false"
+                    aria-controls="{{ mDoc.mMoreID }}"
+                    style="cursor: pointer; height: 38px;">
+                <i class="fas fa-chevron-down"></i>&nbsp; show more
+              </span>
+                    </div>
+                    <div class="col-md-3 col-sm-12 mb-1 pl-0 pr-3">
+              <span class="btn btn-sm btn-primary search-file__expanded--button w-100 d-flex align-items-center justify-content-center"
+                    data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}_2" aria-expanded="false"
+                    aria-controls="{{ mDoc.mMoreID }}_2"
+                    style="cursor: pointer; height: 38px;">
+                <i class="fas fa-chevron-down"></i>&nbsp; show content
+              </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse mt-2" id="{{ mDoc.mMoreID }}">
+                <div class="card w-100">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center"
+                            style="font-size: 14px; margin-left: 1px; cursor: pointer; word-break: break-word; white-space: normal;"
+                            onclick="window.open('{{ mDoc.mContactLink }}', '_blank')">
+                            <div>
+                                <b><span class="text-primary">Contact Link</span></b><br>
+                                <a href="{{ mDoc.mContactLink }}" target="_blank"
+                                   class="text-secondary">{{ mDoc.mContactLink }}</a>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                        </li>
+                        {% if mDoc.mDumpLink|length >= 2 %}
+                            <li class="list-group-item d-flex justify-content-between align-items-center"
+                                style="font-size: 14px; margin-left: 1px; cursor: pointer; word-break: break-word; white-space: normal;"
+                                onclick="window.open('{{ mDoc.mDumpLink|first }}', '_blank')">
+                                <div>
+                                    <b><span class="text-primary">Data Dump Links</span></b><br>
+                                    {% for link in mDoc.mDumpLink %}
+                                        <a href="{{ link }}" target="_blank" class="text-secondary">{{ link }}</a><br>
+                                    {% endfor %}
+                                </div>
+                                <i class="fas fa-arrow-right"></i>
+                            </li>
+                        {% endif %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center"
+                            style="font-size: 14px; margin-left: 1px; cursor: pointer; word-break: break-word; white-space: normal;"
+                            onclick="window.open('{{ mDoc.mWebLink|first }}', '_blank')">
+                            <div>
+                                <b><span class="text-primary">Extra Links</span></b><br>
+                                {% for link in mDoc.mWebLink %}
+                                    <a href="{{ link }}" target="_blank" class="text-secondary">{{ link }}</a><br>
+                                {% endfor %}
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="collapse mt-2" id="{{ mDoc.mMoreID }}_2">
+                <div class="card w-100">
+                    <div class="card-body" style="font-size: 14px">
+                        <b><span class="text-primary">Detailed Content</span></b><br><br>
+                        <p>{{ mDoc.mContent }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="ml-0 mt-3">
+            <div class="container">
+                <div class="row search-content__expanded-container">
+                    {% if mDoc.mDocumentLeak|length > 0 %}
+                    <div class="col-md-3 col-sm-12 mb-1 pl-0 pr-3">
+                        <button type="button" class="btn btn-sm btn-secondary search-file__expanded--button w-100"  
+                                data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}_document_leak" aria-expanded="false" aria-controls="{{ mDoc.mMoreID }}_document_leak">
+                            <i class="fas fa-chevron-down"></i> Document Leaks
+                        </button>
+                    </div>
+                    {% endif %}
+            
+                    {% if mDoc.mVideo|length > 0 %}
+                    <div class="col-md-3 col-sm-12 mb-1 pl-0 pr-3">
+                        <button type="button" class="btn btn-sm btn-secondary search-file__expanded--button w-100"  
+                                data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}_video" aria-expanded="false" aria-controls="{{ mDoc.mMoreID }}_video">
+                            <i class="fas fa-chevron-down"></i> Videos
+                        </button>
+                    </div>
+                    {% endif %}
+            
+                    {% if mDoc.mArchiveUrl|length > 0 %}
+                    <div class="col-md-3 col-sm-12 mb-1 pl-0 pr-3">
+                        <button type="button" class="btn btn-sm btn-secondary search-file__expanded--button w-100"  
+                                data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}_archive_url" aria-expanded="false" aria-controls="{{ mDoc.mMoreID }}_archive_url">
+                            <i class="fas fa-chevron-down"></i> Archive URLs
+                        </button>
+                    </div>
+                    {% endif %}
+            
+                    {% if mDoc.mName|length > 0 %}
+                    <div class="col-md-3 col-sm-12 mb-1 pl-0 pr-3">
+                        <button type="button" class="btn btn-sm btn-secondary search-file__expanded--button w-100"  
+                                data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}_name" aria-expanded="false" aria-controls="{{ mDoc.mMoreID }}_name">
+                            <i class="fas fa-chevron-down"></i> Names
+                        </button>
+                    </div>
+                    {% endif %}
+            
+                    {% if mDoc.mEmails|length > 0 %}
+                    <div class="col-md-3 col-sm-12 mb-1 pl-0 pr-3">
+                        <button type="button" class="btn btn-sm btn-secondary search-file__expanded--button w-100"  
+                                data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}_emails" aria-expanded="false" aria-controls="{{ mDoc.mMoreID }}_emails">
+                            <i class="fas fa-chevron-down"></i> Emails
+                        </button>
+                    </div>
+                    {% endif %}
+            
+                    {% if mDoc.mPhoneNumber|length > 0 %}
+                    <div class="col-md-3 col-sm-12 mb-1 pl-0 pr-3">
+                        <button type="button" class="btn btn-sm btn-secondary search-file__expanded--button w-100"  
+                                data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}_phone_numbers" aria-expanded="false" aria-controls="{{ mDoc.mMoreID }}_phone_numbers">
+                            <i class="fas fa-chevron-down"></i> Phone Numbers
+                        </button>
+                    </div>
+                    {% endif %}
+            
+                    {% if mDoc.mSection|length > 0 %}
+                    <div class="col-md-3 col-sm-12 mb-1 pl-0 pr-3">
+                        <button type="button" class="btn btn-sm btn-secondary search-file__expanded--button w-100"  
+                                data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}_sections" aria-expanded="false" aria-controls="{{ mDoc.mMoreID }}_sections">
+                            <i class="fas fa-chevron-down"></i> Sections
+                        </button>
+                    </div>
+                    {% endif %}
+            
+                    {% if mDoc.mSearchContent %}
+                    <div class="col-md-3 col-sm-12 mb-1 pl-0 pr-3">
+                        <button type="button" class="btn btn-sm btn-secondary search-file__expanded--button w-100"  
+                                data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}_content" aria-expanded="false" aria-controls="{{ mDoc.mMoreID }}_content">
+                            <i class="fas fa-chevron-down"></i> Content
+                        </button>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <!-- Collapsible sections -->
+            <div class="collapse mt-2" id="{{ mDoc.mMoreID }}_document_leak">
+                <div class="card card-body">
+                    <h5 class="text-primary">Document Leaks</h5>
+                    <ul class="list-group">
+                        {% for item in mDoc.mDocumentLeak %}
+                            <li class="list-group-item">{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="collapse mt-2" id="{{ mDoc.mMoreID }}_video">
+                <div class="card card-body">
+                    <h5 class="text-primary">Videos</h5>
+                    <ul class="list-group">
+                        {% for item in mDoc.mVideo %}
+                            <li class="list-group-item">{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="collapse mt-2" id="{{ mDoc.mMoreID }}_archive_url">
+                <div class="card card-body">
+                    <h5 class="text-primary">Archive URLs</h5>
+                    <ul class="list-group">
+                        {% for item in mDoc.mArchiveUrl %}
+                            <li class="list-group-item">{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="collapse mt-2" id="{{ mDoc.mMoreID }}_name">
+                <div class="card card-body">
+                    <h5 class="text-primary">Names</h5>
+                    <ul class="list-group">
+                        {% for item in mDoc.mName %}
+                            <li class="list-group-item">{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="collapse mt-2" id="{{ mDoc.mMoreID }}_emails">
+                <div class="card card-body">
+                    <h5 class="text-primary">Emails</h5>
+                    <ul class="list-group">
+                        {% for item in mDoc.mEmails %}
+                            <li class="list-group-item">{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="collapse mt-2" id="{{ mDoc.mMoreID }}_phone_numbers">
+                <div class="card card-body">
+                    <h5 class="text-primary">Phone Numbers</h5>
+                    <ul class="list-group">
+                        {% for item in mDoc.mPhoneNumber %}
+                            <li class="list-group-item">{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="collapse mt-2" id="{{ mDoc.mMoreID }}_sections">
+                <div class="card card-body">
+                    <h5 class="text-primary">Sections</h5>
+                    <ul class="list-group">
+                        {% for item in mDoc.mSection %}
+                            <li class="list-group-item">{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="collapse mt-2" id="{{ mDoc.mMoreID }}_content">
+                <div class="card card-body">
+                    <h5 class="text-primary">Content</h5>
+                    <p>{{ mDoc.mSearchContent }}</p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+</div>
+
+<div id="search-content__danger-popup_{{ mDoc.mSearchCallbackRelevantDocumentURL }}" class="overlay">
+    <div class="search-content__danger-popup-container">
+        <div class="content">
+            <div class="search-content__info-danger-container">
+                <p class="search-content__info-danger-header">Threat Found</p>
+                <p class="search-content__info-danger-body">Illegal content such as <b
+                        class="search-content__info-danger-porn">Porn</b> detected in requsted URL. Please be caution
+                    and select the steps below.</p>
+            </div>
+            <br><br>
+            <div class="search-content__danger-button-container">
+                <a href="{{ mDoc.mSearchCallbackRelevantDocumentURL }}" style="text-decoration: none;">
+                    <button class="search-content__danger-button search-content__danger-button-auto">Open Website
+                    </button>
+                </a>
+                <a href="../report?pReportParamURL={{ mDoc.mSearchCallbackRelevantDocumentURL }}"
+                   style="text-decoration: none;">
+                    <button class="search-content__danger-button search-content__danger-button-top">Report URL</button>
+                </a>
+                <a href="#search-content__danger-popup" style="text-decoration: none;">
+                    <button class="search-content__danger-button search-content__danger-button-top">Go Back</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

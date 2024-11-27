@@ -1,6 +1,12 @@
 CrawlerInstance/applicationController/predictions.csv
-OrionSearchServices/raw/classifier_output/training_data.csv
+TrustlySearchServices/raw/classifier_output/training_data.csv
 **/*.dll
 **/*.pyc
 **/__pycache__/
-.idea/workspace.xml
+.idea/*
+env/*
+staticfiles/*
+mongo-data/*
+static/trustly/.well-known/model/*
+db.sqlite3
+.env
