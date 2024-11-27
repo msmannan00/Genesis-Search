@@ -14,13 +14,12 @@ html, body {
 .content-wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 65vh;
 }
 
 /* Main content area that can grow to fill space */
-.main-content {
-    flex: 1;
-}
+/*.main-content {*/
+/*    flex: 1;*/
+/*}*/
 
 /* Footer styling */
 .footer {

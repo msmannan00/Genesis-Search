@@ -3,7 +3,7 @@
     padding-top: 10px;
     background: #f8f8f8;
     height: 50px;
-    border-bottom: 1px solid #e6e6e6;
+    border-bottom: 1px solid #092137BA;
 
 }
 
@@ -62,4 +62,97 @@
     background: #ededed;
     color: #336699;
   }
+}
+
+/* General Toolbar Styles */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Left-side Buttons */
+.toolbar__left {
+    display: flex;
+    gap: 24px; /* Space between buttons */
+}
+
+.toolbar__button {
+    background-color: transparent; /* Button background */
+    color: #99A2AB; /* Button text color */
+    border: none;
+    font-weight: 400;
+    font-size: 12px;
+    padding: 7px 5px;
+    cursor: pointer;
+}
+.toolbar__button:focus {
+    outline: none; /* Remove focus outline */
+}
+
+.toolbar__button--active {
+    border: none; /* Remove border */
+    outline: none; /* Remove focus outline */
+}
+.toolbar__button__selected {
+    border-bottom: 1px solid #FFFFFF;
+     color: #FFFFFF!important;
+}
+
+/* Right-side Switch */
+.toolbar__right {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between switch and text */
+}
+
+.toolbar__switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.toolbar__switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toolbar__slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #5F84A9;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.toolbar__slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.toolbar__switch input:checked + .toolbar__slider {
+    background-color: #2665A0 ; /* Green when enabled */
+}
+
+.toolbar__switch input:checked + .toolbar__slider:before {
+    transform: translateX(20px);
+}
+
+/* Safe Search Text */
+.toolbar__text {
+    font-size: 14px;
+    color: white;
 }

@@ -2,7 +2,7 @@
 {% include 'trustly/user/blades/blades_shared_initialization.html' %}
 {% include 'trustly/user/interactive/homepage/local_imports.html' %}
 
-<!--Local Imports-->
+<!-- Local Imports -->
 <html lang="en">
     <body class="gc--clear-selection">
 
@@ -12,19 +12,35 @@
         <!-- top bar -->
         {% include 'trustly/user/blades/home_template/blade_home_header.html' %}
 
-        <!-- side bar -->
-        {% include 'trustly/user/blades/home_template/blade_home_sidebar.html' %}
-
-        <!-- content -->
-        <div class="gc--clear-selection" >
+        <div class="gc--clear-selection">
             <div class="home">
+                {% include 'trustly/user/blades/home_template/blade_home_button.html' %}
                 {% include 'trustly/user/blades/home_template/blade_home_search.html' %}
-                {% include 'trustly/user/blades/home_template/blade_home_references.html' %}
+                {# {% include 'trustly/user/blades/home_template/blade_home_references.html' %} #}
+            </div>
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <div class="scroll-to-top">
+            <div class="scroll-to-top__content">
+                 <span class="scroll-to-top__text">Scroll to top</span>
+                <span class="scroll-to-top__icon">
+                    <!-- Base64 icon -->
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADeSURBVHgBpVPbDYJAELw7EHzAl4mJiTZnBbZgAbZgI1ZgAZbhF2CIaM6ZZI8cBhRwkgmbu51h97Kr1QestRE+MTgFQzmuhLnW+uXna0/IOAUX6jtyMbK1gYiX4ET1A6u50cTIQTpArCQ3YWDw96BH2W1I+F7GOY1ETIOo43ILnsELuOnImdEg7BCfwD24k7jNJNDoY91yQcERvHqGBzFrgAYrOqlxqNhCqcbj+a9BZjBNDwR3NRwF98JNYsZyBogr0TSWiWYc6fkPcUFxY5l8yGi73XAzwhXmW5XSco03+q5AT869urwAAAAASUVORK5CYII=" alt="Icon">
+                </span>
+               
             </div>
         </div>
 
         <!-- footer -->
-        {% include 'trustly/user/blades/shared_blades/blade_footer.html' %}
+        {# {% include 'trustly/user/blades/shared_blades/blade_footer.html' %} #}
 
+        <!-- Scroll to Top Script -->
+        <script>
+            const scrollToTopButton = document.querySelector('.scroll-to-top');
+            scrollToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        </script>
     </body>
 </html>
