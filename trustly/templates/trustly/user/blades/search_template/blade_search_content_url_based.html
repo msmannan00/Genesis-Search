@@ -47,16 +47,12 @@
             <label class="search-content__webpages-url"><span><b>Indexed Date</b>〡<span>{{ mDoc.mUpdateDate|slice:":10" }}</span></label><br>
             <hr class="search-content__webpages-divider">
             <label class="search-content__webpages-description">
-                <span>
-                    <label class="search-content__webpages-description">
-                        <span class="">
-                            {% for content_type in mDoc.mContentType %}
-                                <span class="badge bg-info me-1 text-white ">{{ content_type }}</span>
-                            {% endfor %}
-                        </span>
-                    </label>
+                <span class="search-content__webpages-description--category">
+                    {% if mDoc.mContentType == "toxic" %}
+                        <span class="text-danger">Toxic</span>{% elif mDoc.mContentType == "b" %}
+                        Business{% elif mDoc.mContentType == "n" %}News{% else %}General{% endif %}
                 </span>
-                {% autoescape off %}{{ mDoc.mSearchCallbackRelevantDocumentDescription }}{% endautoescape %}
+                &nbsp;&nbsp;{% autoescape off %}{{ mDoc.mSearchCallbackRelevantDocumentDescription }}{% endautoescape %}
             </label>
         </div>
     </a>

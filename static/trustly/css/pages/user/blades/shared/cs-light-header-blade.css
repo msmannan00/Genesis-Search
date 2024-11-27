@@ -2,23 +2,34 @@
 
 .light-header{
     color:#000000;
-    height: 60px;
-    text-align: right;
-    background-image: linear-gradient(to bottom, #f8f8f8, #f8f8f8) !important;
-    border-bottom-color:#ebebeb !important;
+    background-image: linear-gradient(90deg, rgba(21, 52, 84, 1) 0%, rgba(22, 56, 88, 1) 100%)!important;
+    border-bottom-color:#092137BA !important;
     border-style: solid;border-right-width: 0;
     border-left-width: 0;border-top-width: 0;
     border-bottom-width: 1px;
     overflow: hidden;
+    padding: 20px 0;
 }
 
 /* Light Header Overrize*/
-
-.light-header__menu{
-    padding-top: 13px;
-    margin-right: 10px;
+.toolbar__right label{
+    margin-bottom: 0px!important;
+}
+.light-header__menu {
+    display: flex;
+    justify-content: space-between; /* Align items to far left and far right */
+    align-items: center; /* Vertically center items */
+    padding: 0 20px; /* Add padding on left and right for spacing */
+}
+.light-header__brand {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
 }
 
+.light-header__menu-category svg {
+    fill: white; /* Make the SVG white */
+}
 .light-header__vertical-line {
   border-left: 1px solid #ebebeb;
   height: 30px;
@@ -130,18 +141,17 @@
     cursor: pointer;
     font-size: 14px;
     padding: 17px 10px 15px;
-	border-bottom: 4px solid #f8f8f8;
 }
 
-.light-header__menu-category:hover{
-    text-decoration: none;
-	animation-duration: 2s;
-    padding-top: 100px;
-	animation-name: light-header__catagory_animate_hover;
-	border-bottom: 4px solid #548ec4;
-	transition: border-bottom-color 0.25s ease-in-out;
-    -webkit-animation-fill-mode: forwards;
-}
+/*.light-header__menu-category:hover{*/
+/*    text-decoration: none;*/
+/*	animation-duration: 2s;*/
+/*    padding-top: 100px;*/
+/*	animation-name: light-header__catagory_animate_hover;*/
+/*	border-bottom: 4px solid #548ec4;*/
+/*	transition: border-bottom-color 0.25s ease-in-out;*/
+/*    -webkit-animation-fill-mode: forwards;*/
+/*}*/
 
 @keyframes light-header__catagory_animate_hover {
   10% {
@@ -170,9 +180,9 @@
         margin-left: 10px;
         width: 100px;
     }
-    .light-header__menu {
-        visibility: hidden;
-    }
+    /*.light-header__menu {*/
+    /*    visibility: hidden;*/
+    /*}*/
     .light-header__searchbox-icon{
         margin-top: 2px;
     }
