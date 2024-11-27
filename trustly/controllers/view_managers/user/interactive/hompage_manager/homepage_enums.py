@@ -14,3 +14,4 @@ class HOMEPAGE_PARAM:
 class HOMEPAGE_CALLBACK:
     M_REFERENCE = "mHomepageCallbackReference"
     M_SECURE_SERVICE_NOTICE = "mUseSecureServiceNotice"
+    M_STATISTICS = "mHomepageCallbackStatistics"
