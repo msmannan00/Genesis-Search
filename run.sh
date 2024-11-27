@@ -1,6 +1,3 @@
-#!/bin/bash
-
-
 remove_services() {
     read -p "Are you sure you want to remove all services? (y/n) " -n 1 -r
     echo
@@ -57,3 +54,4 @@ else
     copy_files
     echo "search service started"
 fi
+echo "asd"
