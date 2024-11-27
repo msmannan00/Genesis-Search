@@ -306,17 +306,17 @@
 /*}*/
 
 .search__form {
-    margin: 215px auto;
+    margin: 150px auto 305px;
     display: grid;
     justify-content: center;
     align-content: center;
 }
 
-/*@media (max-width: 1200px) {*/
-/*    .search__form {*/
-/*        width: 40%; !* For medium-sized screens *!*/
-/*    }*/
-/*}*/
+@media (max-width: 550px) {
+    .search__form {
+       margin: 150px auto!important;
+    }
+}
 
 /*@media (max-width: 768px) {*/
 /*    .search__form {*/
@@ -346,6 +346,7 @@ html::-webkit-scrollbar {
     margin: 0 auto;
     padding: 16px 100px;
     justify-content: space-between;
+    bottom: 50px;
 }
 
 .flex-item {
