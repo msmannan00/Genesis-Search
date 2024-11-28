@@ -2,17 +2,16 @@ import json
 import os
 import zipfile
 import io
-from django.http import HttpResponse, FileResponse, HttpResponseNotFound
-from app_manager.elastic_manager.elastic_controller import elastic_controller
-from app_manager.elastic_manager.elastic_enums import ELASTIC_REQUEST_COMMANDS, ELASTIC_INDEX
-from app_manager.log_manager.log_controller import log
-from app_manager.mongo_manager.mongo_controller import mongo_controller
-from app_manager.mongo_manager.mongo_enums import MONGODB_CRUD
+from django.http import HttpResponse, FileResponse
+from trustly.services.elastic_manager.elastic_controller import elastic_controller
+from trustly.services.elastic_manager.elastic_enums import ELASTIC_REQUEST_COMMANDS, ELASTIC_INDEX
+from trustly.services.mongo_manager.mongo_controller import mongo_controller
+from trustly.services.mongo_manager.mongo_enums import MONGODB_CRUD
 from trustly import settings
 from trustly.controllers.constants.enums import MONGO_COMMANDS
 from trustly.controllers.server_manager.crawl_index_manager.crawl_enums import CRAWL_COMMANDS, CRAWL_ERROR_CALLBACK
 from trustly.controllers.server_manager.crawl_index_manager.crawl_session_controller import crawl_session_controller
-from app_manager.request_manager.request_handler import request_handler
+from trustly.services.request_manager.request_handler import request_handler
 
 
 class crawl_controller(request_handler):

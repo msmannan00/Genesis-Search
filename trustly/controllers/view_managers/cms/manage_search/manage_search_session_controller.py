@@ -1,14 +1,15 @@
-from app_manager.session_manager.session_controller import session_controller
+from trustly.services.session_manager.session_controller import session_controller
 from trustly.controllers.view_managers.cms.manage_search.class_model.manage_search_model import manage_search_data_model
 from trustly.controllers.view_managers.cms.manage_search.manage_search_enums import MANAGE_SEARCH_SESSION_COMMANDS, MANAGE_SEARCH_PARAM, MANAGE_SEARCH_CALLBACK
-from app_manager.request_manager.request_handler import request_handler
-from app_manager.session_manager.session_enums import SESSION_KEYS, SESSION_COMMANDS
+from trustly.services.request_manager.request_handler import request_handler
+from trustly.services.session_manager.session_enums import SESSION_KEYS, SESSION_COMMANDS
 
 
 class manage_search_session_controller(request_handler):
 
     # Helper Methods
-    def __init_parameters(self, p_data):
+    @staticmethod
+    def __init_parameters(p_data):
         m_manage_search_model = manage_search_data_model()
         if SESSION_KEYS.S_USERNAME in p_data.session :
             if MANAGE_SEARCH_PARAM.M_MIN_RANGE in p_data.POST:
@@ -27,7 +28,8 @@ class manage_search_session_controller(request_handler):
         else :
             return {},None, False
 
-    def init_callbacks(self, p_manage_search_model:manage_search_data_model):
+    @staticmethod
+    def init_callbacks(p_manage_search_model:manage_search_data_model):
         m_context_response = {
             MANAGE_SEARCH_CALLBACK.M_MIN_RANGE: p_manage_search_model.m_min_range,
             MANAGE_SEARCH_CALLBACK.M_MAX_RANGE: p_manage_search_model.m_max_range,

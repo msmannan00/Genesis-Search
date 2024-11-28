@@ -20,7 +20,7 @@ RUN pip install --upgrade pip && \
 
 # Copy the rest of the application code into /app directory
 COPY . .
-COPY libs/nltk_data /root/nltk_data
+COPY static/trustly/libs/nltk_data /root/nltk_data
 
 # Set environment variables
 ENV DJANGO_SETTINGS_MODULE=trustly.settings

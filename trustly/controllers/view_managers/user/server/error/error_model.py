@@ -1,6 +1,6 @@
 from trustly.controllers.view_managers.user.server.error.error_enums import ERROR_MODEL_CALLBACK, ERROR_SESSION_COMMANDS
 from trustly.controllers.view_managers.user.server.error.error_session_controller import error_session_controller
-from app_manager.request_manager.request_handler import request_handler
+from trustly.services.request_manager.request_handler import request_handler
 
 
 class error_model(request_handler):

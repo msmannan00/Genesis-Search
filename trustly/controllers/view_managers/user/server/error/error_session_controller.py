@@ -1,13 +1,14 @@
 from trustly.controllers.constants.strings import GENERAL_STRINGS
 from trustly.controllers.view_managers.user.server.error.error_enums import ERROR_CALLBACK, ERROR_SESSION_COMMANDS, \
     ERROR_PARAM, ERROR_MESSAGE_CALLBACK
-from app_manager.request_manager.request_handler import request_handler
+from trustly.services.request_manager.request_handler import request_handler
 
 
 class error_session_controller(request_handler):
 
     # Helper Methods
-    def __init_parameters(self, p_data):
+    @staticmethod
+    def __init_parameters(p_data):
         m_param_data = p_data[0]
         m_error_code = p_data[1]
 

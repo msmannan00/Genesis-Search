@@ -2,14 +2,15 @@ import json
 
 from trustly.controllers.server_manager.crawl_index_manager.class_model.crawl_model import crawl_model
 from trustly.controllers.server_manager.crawl_index_manager.crawl_enums import CRAWL_PARAM, CRAWL_COMMANDS
-from app_manager.request_manager.request_handler import request_handler
+from trustly.services.request_manager.request_handler import request_handler
 
 
 class crawl_session_controller(request_handler):
 
     # Helper Methods
 
-    def __init_parameters(self, p_data):
+    @staticmethod
+    def __init_parameters(p_data):
         m_crawl_model = crawl_model()
         try:
             data = json.loads(p_data.body)

@@ -1,6 +1,6 @@
 from trustly.controllers.view_managers.user.interactive.hompage_manager.homepage_enums import HOMEPAGE_SESSION_COMMANDS, HOMEPAGE_MODEL_COMMANDS
 from trustly.controllers.view_managers.user.interactive.hompage_manager.homepage_session_controller import homepage_session_controller
-from app_manager.request_manager.request_handler import request_handler
+from trustly.services.request_manager.request_handler import request_handler
 
 
 class homepage_model(request_handler):

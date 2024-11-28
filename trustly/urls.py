@@ -1,4 +1,3 @@
-from django.contrib import admin
 from django.urls import path
 from trustly import views
 
@@ -25,7 +24,6 @@ urlpatterns = [
 
   # crawler Feed Links
   path('update_status/', views.update_status, name='manage_search'),
-  path('crawl_index/', views.crawl_index, name='crawl_index'),
   path('parser/', views.parser, name='parser'),
   path('feeder/unique', views.feeder_unique, name='feeder_unique'),
   path('feeder/publish', views.feeder_publish, name='feeder_publish'),

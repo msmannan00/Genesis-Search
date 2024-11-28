@@ -1,6 +1,6 @@
 from trustly.controllers.view_managers.user.interactive.notice_manager.notice_enums import NOTICE_SESSION_CALLBACK, NOTICE_MODEL_CALLBACK
 from trustly.controllers.view_managers.user.interactive.notice_manager.notice_session_controller import notice_session_controller
-from app_manager.request_manager.request_handler import request_handler
+from trustly.services.request_manager.request_handler import request_handler
 
 
 class notice_model(request_handler):

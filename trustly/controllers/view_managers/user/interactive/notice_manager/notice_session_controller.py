@@ -1,12 +1,13 @@
 from trustly.controllers.constants.strings import GENERAL_STRINGS
 from trustly.controllers.view_managers.user.interactive.notice_manager.notice_enums import NOTICE_CALLBACK, NOTICE_PARAM, NOTICE_SESSION_CALLBACK
-from app_manager.request_manager.request_handler import request_handler
+from trustly.services.request_manager.request_handler import request_handler
 
 
 class notice_session_controller(request_handler):
 
     # Helper Methods
-    def __init_parameters(self, p_data):
+    @staticmethod
+    def __init_parameters(p_data):
         # Local Variables
         m_status = False
         m_browser = False

@@ -15,7 +15,6 @@ urllib3==2.2.2
 stem==1.8.0
 Pillow==10.4.0
 thefuzz==0.19.0
-python-Levenshtein-wheels==0.13.2
 lxml==4.9.3
 django-bootstrap-v5==1.0.11
 python-dotenv==1.0.0

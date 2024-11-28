@@ -1,12 +1,12 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
-from app_manager.mongo_manager.mongo_controller import mongo_controller
-from app_manager.mongo_manager.mongo_enums import MONGODB_CRUD
+from trustly.services.mongo_manager.mongo_controller import mongo_controller
+from trustly.services.mongo_manager.mongo_enums import MONGODB_CRUD
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.constants.enums import MONGO_COMMANDS
 from trustly.controllers.view_managers.user.interactive.directory_manager.directory_enums import DIRECTORY_SESSION_COMMANDS, DIRECTORY_MODEL_COMMANDS
 from trustly.controllers.view_managers.user.interactive.directory_manager.directory_session_controller import directory_session_controller
-from app_manager.request_manager.request_handler import request_handler
+from trustly.services.request_manager.request_handler import request_handler
 
 
 class directory_model(request_handler):
@@ -20,9 +20,8 @@ class directory_model(request_handler):
         self.__m_session = directory_session_controller()
         pass
 
-    from datetime import datetime, timedelta
-
-    def __load_onion_links(self, p_directory_class_model):
+    @staticmethod
+    def __load_onion_links(p_directory_class_model):
         m_documents, m_status = mongo_controller.getInstance().invoke_trigger(
             MONGODB_CRUD.S_READ,
             [
@@ -35,7 +34,8 @@ class directory_model(request_handler):
         if m_status:
             m_documents = list(m_documents)
 
-            threshold_date = datetime.utcnow() - timedelta(days=5)
+            utc_now = datetime.now(timezone.utc)
+            threshold_date = utc_now - timedelta(days=5)
 
             for mDoc in m_documents:
                 if 'leak_status_date' in mDoc:

@@ -3,7 +3,8 @@ from django.utils.deprecation import MiddlewareMixin
 from django.urls import resolve
 
 class notification_routes_direct_access(MiddlewareMixin):
-    def process_request(self, request):
+    @staticmethod
+    def process_request(request):
         applicable_routes = [
             'cms_login',
             'cms',
@@ -29,7 +30,8 @@ class notification_routes_direct_access(MiddlewareMixin):
 
             request.session.modified = True
 
-    def process_response(self, request, response):
+    @staticmethod
+    def process_response(request, response):
         applicable_routes = [
             'cms_login',
             'cms',

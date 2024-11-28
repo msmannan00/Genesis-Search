@@ -13,10 +13,10 @@
 }
 .scroll-to-top {
     position: fixed;
-    bottom: 0px;
+    bottom: 0;
     width: 100%;
     z-index: 10000;
-    left: 0px;
+    left: 0;
     background: rgba(33, 75, 116, 0.81);
     height: 48px;
     display: flex;
@@ -60,15 +60,13 @@
     height:55px;
     margin-top:11px;
     margin-bottom:2px;
-    padding:0px;
-    padding-top:2px;
-    padding-bottom:2px;
+    padding: 2px 0;
     margin-left:5px !important;
 }
 
 @media only screen and (max-width: 943px) {
     .searchbar__logo--image {
-        font-size:13.5px;
+        font-size:13px;
         margin-left:15px !important;
     }
 }
@@ -118,9 +116,9 @@
     background: #174069;
     margin-top: -1px;
     padding: 40px 48px;
-    padding-bottom: 0px!important;
+    padding-bottom: 0!important;
     border-bottom : 1px solid #19334D;
-    margin-bottom: 0px!important;
+    margin-bottom: 0!important;
 }
 html::-webkit-scrollbar {
     display: none; /* Hides scrollbar for Chrome, Safari, Edge */
@@ -142,7 +140,7 @@ html::-webkit-scrollbar {
 .search-footer__search{
     color:#ff9999;
     padding-right: 18px;
-    font-size: 15.5px;
+    font-size: 15px;
     height: auto;
     margin-bottom: 0;
     background-color: #336699;
@@ -194,11 +192,11 @@ html::-webkit-scrollbar {
 }
 
 .searchbar_detail-header__search-icon-container{
-    margin-left:13.5px;
+    margin-left:13px;
 }
 
 .searchbar_detail-header__search-button-container{
-    margin-left: 26.5px;
+    margin-left: 26px;
 }
 
 .searchbar__searchbox{
@@ -461,7 +459,7 @@ html::-webkit-scrollbar {
     display: inline-block;
     width: 40px;
     height: 20px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .toolbar__switch input {

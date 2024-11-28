@@ -1,6 +1,6 @@
 .search-result__status{
     color: #77778c;
-    font-size: 13.3px;
+    font-size: 13px;
     font-family: sans-serif;
     margin-left: 8.5em;
     margin-bottom: 10px;
@@ -112,7 +112,7 @@
   height: 13px;
   width: 13px;
   left: 4px;
-  bottom: 3.5px;
+  bottom: 3px;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
@@ -218,7 +218,7 @@
     height: 25px;
 }
 .search-content__webpages-url{
-    font-size: 13.5px;
+    font-size: 13px;
     margin-top: -7px;
     width: 90%;
     white-space:nowrap;
@@ -238,7 +238,7 @@
     margin-top: -5px;
     word-wrap: break-word;
     font-family: arial,sans-serif;
-    font-size: 13.5px;
+    font-size: 13px;
     color:#666666;
     overflow-wrap: break-word;
     width: 100%;
@@ -292,7 +292,6 @@
 .search-file__item-header{
     white-space: nowrap !important;
     overflow: hidden  !important;
-    float: bottom  !important;
     margin-left: 1.1em  !important;
     margin-top: 6px  !important;
     font-size: 11px  !important;
@@ -314,7 +313,6 @@
     touch-action: none;
     white-space: nowrap !important;
     overflow: hidden  !important;
-    float: bottom  !important;
     margin-left: 1.1em  !important;
     margin-top: -5px  !important;
     color: #999999;
@@ -407,7 +405,7 @@
         font-weight: 500;
         cursor: pointer;
         height: 20px;
-        font-size: 15.5px;
+        font-size: 15px;
         font-family: arial,sans-serif;
     }
     .search-content__webpages-divider{
@@ -423,7 +421,7 @@
         line-height: 20px;
         cursor: pointer;
         font-family: arial,sans-serif;
-        font-size: 14.5px;
+        font-size: 14px;
         color:#666666;
     }
     .search-file__reference_container{

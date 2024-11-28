@@ -1,27 +1,18 @@
-/* Basic reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Ensure the body and html take up full height */
 html, body {
     height: 65%;
 }
 
-/* Flex container to hold the content and footer */
 .content-wrapper {
     display: flex;
     flex-direction: column;
 }
 
-/* Main content area that can grow to fill space */
-/*.main-content {*/
-/*    flex: 1;*/
-/*}*/
-
-/* Footer styling */
 .footer {
     background-color: #264d73;
     color: white;

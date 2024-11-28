@@ -3,13 +3,14 @@ from trustly.controllers.constants.strings import GENERAL_STRINGS
 from trustly.controllers.helper_manager.helper_controller import helper_controller
 from trustly.controllers.view_managers.user.interactive.report_manager.class_model.report_data_model import report_data_model
 from trustly.controllers.view_managers.user.interactive.report_manager.report_enums import REPORT_CALLBACK, REPORT_PARAM, REPORT_SESSION_COMMANDS
-from app_manager.request_manager.request_handler import request_handler
+from trustly.services.request_manager.request_handler import request_handler
 
 
 class report_session_controller(request_handler):
 
     # Helper Methods
-    def __init_parameters(self, p_data):
+    @staticmethod
+    def __init_parameters(p_data):
         m_report_data_model = report_data_model()
         if REPORT_PARAM.M_URL in p_data.POST:
             m_report_data_model.m_url = p_data.POST[REPORT_PARAM.M_URL]
@@ -24,7 +25,8 @@ class report_session_controller(request_handler):
 
         return m_report_data_model
 
-    def init_callbacks(self, p_report_model:report_data_model):
+    @staticmethod
+    def init_callbacks(p_report_model:report_data_model):
         m_context_response = {
             REPORT_CALLBACK.M_URL: p_report_model.m_url,
             REPORT_CALLBACK.M_EMAIL: p_report_model.m_email,

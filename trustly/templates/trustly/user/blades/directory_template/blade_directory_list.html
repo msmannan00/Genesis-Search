@@ -3,41 +3,52 @@
 <div class="onion__table--container">
     <table class="table table-striped directory__table">
         <thead>
-            <tr>
-                <th scope="row" class="w-15">ID</th>
-                <th scope="col" class="w-50">Onion Service</th>
-                <th scope="col" class="w-10">Category</th>
-                <th scope="col" class="w-10">URL Status</th>
-                <th scope="col" class="w-10">Leak Status</th>
-            </tr>
+        <tr>
+            <th scope="row" class="w-15">ID</th>
+            <th scope="col" class="w-50">Onion Service</th>
+            <th scope="col" class="w-10">Category</th>
+            <th scope="col" class="w-10">URL Status</th>
+            <th scope="col" class="w-10">Leak Status</th>
+        </tr>
         </thead>
         <tbody>
-            {% for mDoc in mDirectoryCallbackLinks %}
-                <tr>
-                    <td>{{ forloop.counter }}</td>
-                
-                    {% if mDoc.mContentType in 'i a adult' %}
+        {% for mDoc in mDirectoryCallbackLinks %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+
+                {% if mDoc.mContentType in 'i a adult' %}
                     <td><a href="/restricted" class="onion__table-url">{{ mDoc.url|slice:"0:20" }}</a>...</td>
-                    {% else %}
+                {% else %}
                     <td><a href="{{ mDoc.mURL }}" class="onion__table-url">{{ mDoc.url }}</a></td>
-                    {% endif %}
+                {% endif %}
 
-                    <td class="onion__table-category"><b>{{ mDoc.content_type }}</b></td>
+                <td class="onion__table-category">
+                    {% for category in mDoc.content_type %}
+                        <span class="badge badge-info">{{ category }}</span>
+                    {% endfor %}
+                </td>
 
-                    {% if mDoc.url_status_date == 1 %}
-                        <td class="onion__table-url-status"><b style="color: green;">Active</b></td>
-                    {% else %}
-                        <td class="onion__table-url-status"><b style="color: red;">Inactive</b></td>
-                    {% endif %}
+                {% if mDoc.url_status_date == 1 %}
+                    <td class="onion__table-url-status">Active</td>
+                {% else %}
+                    <td class="onion__table-url-status">Inactive</td>
+                {% endif %}
 
-                    {% if mDoc.leak_status_date == 1 %}
-                        <td class="onion__table-leak-status"><b style="color: green;">Active</b></td>
-                    {% else %}
-                        <td class="onion__table-leak-status"><b style="color: red;">Inactive</b></td>
-                    {% endif %}
+                {% if mDoc.leak_status_date == 1 %}
+                    <td class="onion__table-leak-status">
+                        <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background-color: green; margin-right: 5px;"></span>
+                        <b>Active</b>
+                    </td>
+                {% else %}
+                    <td class="onion__table-leak-status">
+                        <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background-color: red; margin-right: 5px;"></span>
+                        <b>Inactive</b>
+                    </td>
+                {% endif %}
 
-                </tr>
-            {% endfor %}
+
+            </tr>
+        {% endfor %}
         </tbody>
     </table>
 </div>

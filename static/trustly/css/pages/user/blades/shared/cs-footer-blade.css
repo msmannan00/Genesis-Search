@@ -1,4 +1,3 @@
-/*footer-bar style*/
 .footer {
     margin-top: 15vh;
 }
@@ -87,8 +86,6 @@
     font-weight: 500;
     font-family: arial,sans-serif;
 }
-
-/*footer-bar events*/
 
 .footer__catagories:hover{
 }

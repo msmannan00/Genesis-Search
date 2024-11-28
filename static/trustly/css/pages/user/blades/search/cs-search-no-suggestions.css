@@ -30,7 +30,7 @@
 }
 .search__no-suggestion--item
 {
-    font-size: 13.5px;
+    font-size: 13px;
     margin-top: -2px;
 }
 @media only screen and (max-width: 943px) {

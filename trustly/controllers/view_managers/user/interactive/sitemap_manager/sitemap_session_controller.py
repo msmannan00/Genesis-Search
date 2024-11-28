@@ -1,18 +1,19 @@
-from app_manager.mongo_manager.mongo_controller import mongo_controller
-from app_manager.mongo_manager.mongo_enums import MONGODB_CRUD
+from trustly.services.mongo_manager.mongo_controller import mongo_controller
+from trustly.services.mongo_manager.mongo_enums import MONGODB_CRUD
 from trustly.controllers.constants.enums import MONGO_COMMANDS
 from trustly.controllers.constants.message import SITEMAP_MESSAGES, GENERAL_MESSAGES
 from trustly.controllers.constants.strings import GENERAL_STRINGS, SITEMAP_STRINGS
 from trustly.controllers.helper_manager.helper_controller import helper_controller
 from trustly.controllers.view_managers.user.interactive.sitemap_manager.class_model.sitemap_data_model import sitemap_data_model
 from trustly.controllers.view_managers.user.interactive.sitemap_manager.sitemap_enums import SITEMAP_PARAM, SITEMAP_CALLBACK, SITEMAP_SESSION_COMMANDS
-from app_manager.request_manager.request_handler import request_handler
+from trustly.services.request_manager.request_handler import request_handler
 
 
 class sitemap_session_controller(request_handler):
 
     # Helper Methods
-    def __init_agreement(self, p_data, p_sitemap_data_model):
+    @staticmethod
+    def __init_agreement(p_data, p_sitemap_data_model):
         for m_count in range(1, 6):
             if (SITEMAP_PARAM.M_AGREEMENT + str(m_count)) in p_data.POST:
                 p_sitemap_data_model.m_agreement.append(SITEMAP_STRINGS.S_SITEMAP_RULE_DEFAULT_STATE)
@@ -44,7 +45,8 @@ class sitemap_session_controller(request_handler):
 
         return m_sitemap_data_model
 
-    def init_callbacks(self, p_sitemap_data_model:sitemap_data_model):
+    @staticmethod
+    def init_callbacks(p_sitemap_data_model:sitemap_data_model):
         m_context_response = {SITEMAP_CALLBACK.M_SECRETKEY: p_sitemap_data_model.m_secret_key,
                               SITEMAP_CALLBACK.M_NAME: p_sitemap_data_model.m_name,
                               SITEMAP_CALLBACK.M_URL: p_sitemap_data_model.m_url,

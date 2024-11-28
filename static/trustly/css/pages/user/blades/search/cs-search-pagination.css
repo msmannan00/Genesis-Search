@@ -42,7 +42,7 @@
     float:left;
 }
 .search__pagination--border-right:hover{
-    border-width: 0.8px;
+    border-width: 1px;
     border-left-width: 0;
 }
 .search__pagination--border-start-right{

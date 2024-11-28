@@ -2,9 +2,11 @@ import os
 from pathlib import Path
 from django.conf import settings
 from django.contrib import staticfiles
-from app_manager.elastic_manager.elastic_controller import elastic_controller
-from app_manager.state_manager.states import APP_STATUS
+from trustly.services.elastic_manager.elastic_controller import elastic_controller
+from trustly.services.state_manager.states import APP_STATUS
+import mimetypes
 
+mimetypes.add_type("image/svg+xml", ".svg", True)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-ir+r3)d@v53u&qw-gfo&)&z%vda+scaq+0gw)9@u%zpjadip!3'

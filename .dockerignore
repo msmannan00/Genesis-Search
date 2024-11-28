@@ -1,8 +1,42 @@
-.git
-__pycache__
+# Ignore Python cache and compiled files
+__pycache__/
 *.pyc
 *.pyo
-env/
-venv/
-node_modules/
+*.pyd
+
+# Ignore IDE configurations
+.idea/
+.vscode/
+
+# Ignore virtual environments
+.venv/
+
+# Ignore local logs
+logs/
 *.log
+
+# Ignore Docker-related files
+.dockerignore
+docker-compose.yml
+dockerFiles/
+manage-dev.py
+
+# Ignore local SQLite database
+db.sqlite3
+
+# Ignore local static and media files (use collectstatic in the container)
+staticfiles/
+
+# Ignore development tools/scripts
+run.sh
+README.md
+
+# Ignore sensitive environment files (if not explicitly needed)
+.env
+
+# Ignore nginx configuration (if not used inside the container)
+nginx/
+
+# Ignore git metadata
+.git/
+.gitignore

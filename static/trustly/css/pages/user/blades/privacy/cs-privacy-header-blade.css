@@ -1,5 +1,3 @@
-/* OVERRIDES */
-
 .privacy__status-bar{
     color:#000000;
     height: 60px;
@@ -10,8 +8,6 @@
     border-left-width: 0;border-top-width: 0;
     border-bottom-width: 1px;
 }
-
-/* Dark Header Overrize*/
 
 .privacy-header--menu{
     padding-top: 17px;
@@ -58,7 +54,7 @@
     margin-right: auto;
     width: 11%;
     max-width: 40px;
-    margin-top: 9.5px;
+    margin-top: 10px;
     cursor: pointer;
     margin-left: 10px;
     float: left;

@@ -1,15 +1,18 @@
-.onion__table--container{
-    padding-right: 5%;
-    margin-top: 50px;
-}
 .onion__table-id{
     text-align: center;
     font-size: 13px;
 }
+.directory__table tr:nth-child(even) {
+  background-color: #2A578459;
+}
+.directory__table tr:nth-child(odd) {
+  background-color: #174069;
+}
 .onion__table-url{
-    color: #737373;
+    color: #FFFFFF;
     overflow: hidden;
-    font-size: 13px;
+    font-size: 12px;
+    font-weight: 400;
     text-overflow: ellipsis;
     word-wrap: break-word;
     text-decoration: none;

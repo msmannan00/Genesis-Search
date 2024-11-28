@@ -3,7 +3,8 @@ from django.utils.deprecation import MiddlewareMixin
 
 class cms_session_security(MiddlewareMixin):
 
-    def process_request(self, request):
+    @staticmethod
+    def process_request(request):
         session_token = request.session.get('session_token')
         browser_token = request.COOKIES.get('browser_session_token')
 
@@ -17,7 +18,8 @@ class cms_session_security(MiddlewareMixin):
 
         request.session.modified = True
 
-    def process_response(self, request, response):
+    @staticmethod
+    def process_response(request, response):
         session_token = request.session.get('session_token')
         response.set_cookie('browser_session_token', session_token, max_age=600)
         return response

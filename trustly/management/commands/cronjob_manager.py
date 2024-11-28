@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 
-from app_manager.elastic_manager.elastic_controller import elastic_controller
+from trustly.services.elastic_manager.elastic_controller import elastic_controller
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.management.commands.scheduler import RepeatedTimer
 

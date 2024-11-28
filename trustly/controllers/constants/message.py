@@ -10,8 +10,8 @@ class REPORT_MESSAGES:
 # SITEMAP
 class SITEMAP_MESSAGES:
     S_SITEMAP_INVALID_SECRETKEY_ERROR = "Secret Key seems to be invalid"
-    S_SITEMAP_INVALID_SECRETKEY_MIN_SIZE = "Secret key too short. Recommeded [25 - 50]"
-    S_SITEMAP_INVALID_SECRETKEY_MIN_MAX = "Secret key too long. Recommeded [25 - 50]"
+    S_SITEMAP_INVALID_SECRETKEY_MIN_SIZE = "Secret key too short. Recommended [25 - 50]"
+    S_SITEMAP_INVALID_SECRETKEY_MIN_MAX = "Secret key too long. Recommended [25 - 50]"
     S_SITEMAP_URL_NOT_FOUND = "website doesn't exists in our server"
     S_SITEMAP_URL_ALREADY_EXISTS = "website already exists in our server"
     S_SITEMAP_KEY_ALREADY_EXISTS = "secret key already exists"

@@ -72,7 +72,8 @@ class spell_checker:
 
         return m_invalid_words
 
-    def generate_suggestions(self, p_query, p_suggestion_content):
+    @staticmethod
+    def generate_suggestions(p_query, p_suggestion_content):
 
         p_query = p_query.lower()
         if len(p_suggestion_content) == 0:

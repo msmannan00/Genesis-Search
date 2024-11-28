@@ -4,7 +4,7 @@ from django.shortcuts import render
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.view_managers.cms.dashboard.dashboard_enums import DASHBOARD_SESSION_COMMANDS, DASHBOARD_MODEL_CALLBACK
 from trustly.controllers.view_managers.cms.dashboard.dashboard_session_controller import dashboard_session_controller
-from app_manager.request_manager.request_handler import request_handler
+from trustly.services.request_manager.request_handler import request_handler
 
 class dashboard_model(request_handler):
 

@@ -1,12 +1,13 @@
 from trustly.controllers.view_managers.user.server.maintenance.maintenance_enums import MAINTENANCE_SESSION_COMMANDS, \
     MAINTENANCE_PARAM, MAINTENANCE_CALLBACK
-from app_manager.request_manager.request_handler import request_handler
+from trustly.services.request_manager.request_handler import request_handler
 
 
 class maintenance_session_controller(request_handler):
 
     # Helper Methods
-    def __init_parameters(self, p_data):
+    @staticmethod
+    def __init_parameters(p_data):
         m_context = {
             MAINTENANCE_CALLBACK.M_SECURE_SERVICE_NOTICE:"http",
         }

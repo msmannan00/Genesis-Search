@@ -1,15 +1,15 @@
-from app_manager.log_manager.log_controller import log
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.view_managers.user.interactive.directory_manager.directory_enums import DIRECTORY_CALLBACK, DIRECTORY_PARAMS, DIRECTORY_SESSION_COMMANDS
 from trustly.controllers.view_managers.user.interactive.directory_manager.directory_shared_model.directory_class_model import \
     directory_class_model
-from app_manager.request_manager.request_handler import request_handler
+from trustly.services.request_manager.request_handler import request_handler
 
 
 class directory_session_controller(request_handler):
 
     # Helper Methods
-    def __pre_init_parameters(self, p_data):
+    @staticmethod
+    def __pre_init_parameters(p_data):
         m_browser = False
         if DIRECTORY_PARAMS.M_PAGE_NUMBER in p_data.GET:
             m_num = int(p_data.GET[DIRECTORY_PARAMS.M_PAGE_NUMBER])
@@ -26,7 +26,8 @@ class directory_session_controller(request_handler):
 
         return m_directory_model, True, m_browser
 
-    def __init_parameters(self, p_links):
+    @staticmethod
+    def __init_parameters(p_links):
         m_context = {
             DIRECTORY_CALLBACK.M_PAGE_NUMBER: p_links.m_page_number,
             DIRECTORY_CALLBACK.M_PAGE_NEXT: p_links.m_page_number+1,

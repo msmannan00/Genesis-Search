@@ -2,20 +2,19 @@ import math
 import random
 import string
 from datetime import datetime
-
-from app_manager.log_manager.log_controller import log
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.constants.strings import GENERAL_STRINGS, SEARCH_STRINGS
 from trustly.controllers.helper_manager.helper_controller import helper_controller
 from trustly.controllers.view_managers.user.interactive.search_manager.search_data_model.query_model import query_model
 from trustly.controllers.view_managers.user.interactive.search_manager.search_enums import SEARCH_PARAM, SEARCH_CALLBACK, SEARCH_DOCUMENT_CALLBACK, SEARCH_SESSION_COMMANDS
-from app_manager.request_manager.request_handler import request_handler
+from trustly.services.request_manager.request_handler import request_handler
 
 
 class search_session_controller(request_handler):
 
     # Helper Methods
-    def __init_search_parameters(self, p_data):
+    @staticmethod
+    def __init_search_parameters(p_data):
         m_query_model = query_model()
 
         if SEARCH_PARAM.M_QUERY in p_data.GET:
@@ -34,7 +33,8 @@ class search_session_controller(request_handler):
 
         return m_query_model
 
-    def __get_page_number(self, p_search_model):
+    @staticmethod
+    def __get_page_number(p_search_model):
 
         min_range = 1
         if p_search_model.m_page_number==1:
@@ -60,7 +60,8 @@ class search_session_controller(request_handler):
 
         return min_range, max_range, m_max_page_reached
 
-    def init_callbacks(self, p_search_model:query_model, p_min_range, p_max_range, p_max_page_reached, p_relevance_context_list, p_related_business_list, p_related_news_list, p_related_files_list, total_pages):
+    @staticmethod
+    def init_callbacks(p_search_model:query_model, p_relevance_context_list, p_related_business_list, p_related_news_list, p_related_files_list, total_pages):
         current_page = p_search_model.m_page_number
         total_pages = math.ceil(total_pages)  # Ensure total_pages is an integer
 
@@ -101,7 +102,8 @@ class search_session_controller(request_handler):
 
         return m_context
 
-    def __generate_extra_context(self, p_document, p_relevance_context, p_related_files_list, m_links_counter):
+    @staticmethod
+    def __generate_extra_context(p_document, p_relevance_context, p_related_files_list, m_links_counter):
         if SEARCH_DOCUMENT_CALLBACK.M_IMAGE in p_document:
             m_images = p_document[SEARCH_DOCUMENT_CALLBACK.M_IMAGE]
         else:
@@ -122,7 +124,8 @@ class search_session_controller(request_handler):
 
         return p_related_business_list, p_related_news_list, p_relevance_context, m_continue
 
-    def ireplace(self, old, repl, text):
+    @staticmethod
+    def ireplace(old, repl, text):
         m_tokenize_description = text.split(" ")
         m_description = GENERAL_STRINGS.S_GENERAL_EMPTY
 
@@ -138,7 +141,7 @@ class search_session_controller(request_handler):
                 m_description += m_token + " "
         return m_description
 
-    def __generate_url_context(self, p_document, p_tokenized_query, p_search_model, total_pages):
+    def __generate_url_context(self, p_document, p_tokenized_query, p_search_model):
         m_title = p_document[SEARCH_DOCUMENT_CALLBACK.M_TITLE]
         if len(m_title) < 2:
             m_title = p_document[SEARCH_DOCUMENT_CALLBACK.M_HOST]
@@ -280,7 +283,8 @@ class search_session_controller(request_handler):
                 m_relevance_context_list.append({"mSearchCallbackRelevantDocumentURL": m_document_file})
         return m_relevance_context_list
 
-    def __normalize_text(self, p_text):
+    @staticmethod
+    def __normalize_text(p_text):
         return p_text.encode("ascii", "ignore").decode()
 
     def __init_parameters(self, p_document_list, p_search_model, total_pages):
@@ -301,7 +305,7 @@ class search_session_controller(request_handler):
             m_links_counter+=1
             if p_search_model.m_search_type != SEARCH_STRINGS.S_SEARCH_CONTENT_TYPE_IMAGE:
                 # Generate URL Context
-                m_relevance_context, m_relevance_context_original = self.__generate_url_context(m_document, p_tokenized_query, p_search_model, total_pages)
+                m_relevance_context, m_relevance_context_original = self.__generate_url_context(m_document, p_tokenized_query, p_search_model)
 
                 # Generate Extra Context
                 if p_search_model.m_page_number == 1 and m_relevance_context_original is not None and m_relevance_context_original is not None:
@@ -329,11 +333,8 @@ class search_session_controller(request_handler):
                 m_list, m_direct_url_list = self.__generate_document_content(m_document, p_search_model, m_direct_url_list)
                 m_relevance_context_list.extend(m_list)
 
-        # Pagination Calculator
-        min_range, max_range, m_max_page_reached = self.__get_page_number(p_search_model)
-
         # Init Callback
-        mContext = self.init_callbacks(p_search_model, min_range, max_range, m_max_page_reached, m_relevance_context_list, m_related_business_list, m_related_news_list, m_related_files_list, total_pages)
+        mContext = self.init_callbacks(p_search_model, m_relevance_context_list, m_related_business_list, m_related_news_list, m_related_files_list, total_pages)
 
         if p_search_model.m_total_documents >= CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE:
             mContext[SEARCH_CALLBACK.M_RESULT_COUNT] = helper_controller.on_create_random_search_count(p_search_model.m_total_documents)

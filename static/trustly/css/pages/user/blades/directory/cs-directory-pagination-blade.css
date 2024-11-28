@@ -2,21 +2,19 @@
     margin-left: 3.8em;
 }
 .onion__pagination{
-    color:darkgray;
-    font-size: 20px;
+    color:#fff!important;
+    font-size: 13px;
+    font-weight: 600;
     text-align: center;
     border:0;
-    background-color: #f2f2f2;
-    border-radius: 13%;
-    width:35px;
-    margin-top: -2px;
-    padding-top: 3px;
-    margin-left: 0;
-    padding-bottom: 7px;
+    background-color: #17406980;
+    border-radius: 8px;
+    padding: 8px;
+
 }
 .onion__pagination:hover{
     cursor:pointer;
-    color:#ffffff;
+    color:#fff;
     font-weight: bold;
     background: orange;
     border:0;
@@ -26,7 +24,7 @@
     float:left;
 }
 .onion__pagination--border-right:hover{
-    border-width: 0.8px;
+    border-width: 1px;
     border-left-width: 0;
 }
 .onion__pagination--border-right--extended{
@@ -57,21 +55,20 @@
     border-right: 4px solid #ffa500;
 }
 .onion__navigation{
-    width:39px;
-    font-size:17px;
+    font-size:13px;
+    padding: 7px 12px;
     text-decoration: none;
     text-align:center;
     margin-left: 3px;
-    height:41px;
-    border-radius: 5px;
-    margin-right: 3px;
-    padding-top: 7px;
+    border-radius: 8px;
     margin-top:-2px;
-    font-weight: bold;
+    font-weight: 600;
 
-    color: #1a0dab;
-    border-bottom: 4px solid #ffa500;
-    background: #f0f0f0;
+    color: #FFFFFF!important;
+    background: #174069;
+}
+.disable-highlight{
+    margin-bottom: 0!important;
 }
 @media only screen and (max-width: 943px) {
     .onion__pagination-container{

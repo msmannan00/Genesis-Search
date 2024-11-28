@@ -1,6 +1,6 @@
 from trustly.controllers.view_managers.user.server.maintenance.maintenance_enums import MAINTENANCE_MODEL_CALLBACK, MAINTENANCE_SESSION_COMMANDS
 from trustly.controllers.view_managers.user.server.maintenance.maintenance_session_controller import maintenance_session_controller
-from app_manager.request_manager.request_handler import request_handler
+from trustly.services.request_manager.request_handler import request_handler
 
 
 class maintenance_model(request_handler):

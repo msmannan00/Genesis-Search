@@ -6,29 +6,38 @@
 
 <!--script initialization-->
 <html lang="en">
-    <body>
+{% include 'trustly/user/blades/home_template/blade_home_header.html' %}
 
-        <span id="top"></span>
-        <!-- non onion url -->
-        {% include 'trustly/user/blades/shared_blades/blade_onion_warning.html' %}
-
-        <!--footer-->
-        {% include 'trustly/user/blades/shared_blades/blade_light_header.html' %}
-        <div class="directory">
-
-            <p class="directory__header"> Live Onion Services </p>
-            <p class="directory__description">Following list contains non-blocked Onion services. These services are divided into several catagories like news and shopping. Second column of this table represent such categories.</p><br>
-
-            {% include 'trustly/user/blades/directory_template/blade_directory_pagination.html' %}
-            {% include 'trustly/user/blades/directory_template/blade_directory_list.html' %}
-            <span id="bottom"></span>
-            <a href="#top" class="directory__scroller directory__scroller-top " id="btn"><i class="fas fa-angle-up"></i></a>
-            <a href="#bottom" id="btn" class="directory__scroller directory__scroller-bottom"><i class="fas fa-angle-down"></i></a>
+<body>
+<span id="top"></span>
+<div class="directory">
+    <div class="directory__main__div">
+        <div class="upper_heading">
+            <div class="padination__heading">
+                <p class="directory__header"> Live Onion Services </p>
+            </div>
+            <div class="pagination">
+                {% include 'trustly/user/blades/directory_template/blade_directory_pagination.html' %}
+            </div>
         </div>
+        {% include 'trustly/user/blades/directory_template/blade_directory_list.html' %}
+    </div>
+    <span id="bottom"></span>
+    <a href="#top" class="directory__scroller directory__scroller-top " id="btn"><i class="fas fa-angle-up"></i></a>
+    <a href="#bottom" id="btn" class="directory__scroller directory__scroller-bottom"><i class="fas fa-angle-down"></i></a>
+</div>
 
-        <!--footer-->
-        <span style="z-index: 10111; position: relative">
-            {% include 'trustly/user/blades/shared_blades/blade_footer.html' %}
+{% if mDirectoryCallbackLinks|length > 20 %}
+    <div class="scroll-to-top">
+        <div class="scroll-to-top__content">
+            <span class="scroll-to-top__text">Scroll to top</span>
+            <span class="scroll-to-top__icon">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADeSURBVHgBpVPbDYJAELw7EHzAl4mJiTZnBbZgAbZgI1ZgAZbhF2CIaM6ZZI8cBhRwkgmbu51h97Kr1QestRE+MTgFQzmuhLnW+uXna0/IOAUX6jtyMbK1gYiX4ET1A6u50cTIQTpArCQ3YWDw96BH2W1I+F7GOY1ETIOo43ILnsELuOnImdEg7BCfwD24k7jNJNDoY91yQcERvHqGBzFrgAYrOqlxqNhCqcbj+a9BZjBNDwR3NRwF98JNYsZyBogr0TSWiWYc6fkPcUFxY5l8yGi73XAzwhXmW5XSco03+q5AT869urwAAAAASUVORK5CYII="
+                 alt="Icon">
         </span>
-    </body>
+        </div>
+    </div>
+{% endif %}
+
+</body>
 </html>

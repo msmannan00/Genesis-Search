@@ -1,16 +1,17 @@
-from app_manager.elastic_manager.elastic_controller import elastic_controller
+from trustly.services.elastic_manager.elastic_controller import elastic_controller
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.constants.strings import GENERAL_STRINGS
 from trustly.controllers.helper_manager.helper_controller import helper_controller
 from trustly.controllers.view_managers.user.interactive.hompage_manager.homepage_enums import HOMEPAGE_CALLBACK, HOMEPAGE_PARAM, HOMEPAGE_SESSION_COMMANDS
-from app_manager.request_manager.request_handler import request_handler
-from app_manager.elastic_manager.elastic_enums import ELASTIC_CRUD_COMMANDS, ELASTIC_REQUEST_COMMANDS, ELASTIC_KEYS
+from trustly.services.request_manager.request_handler import request_handler
+from trustly.services.elastic_manager.elastic_enums import ELASTIC_CRUD_COMMANDS, ELASTIC_REQUEST_COMMANDS, ELASTIC_KEYS
 
 
 class homepage_session_controller(request_handler):
 
     # Helper Methods
-    def __init_parameters(self, p_data):
+    @staticmethod
+    def __init_parameters(p_data):
         import json
 
         results_dict = {}

@@ -3,16 +3,16 @@ import json
 from bson import json_util
 from django.shortcuts import render
 
-from app_manager.elastic_manager.elastic_enums import ELASTIC_CRUD_COMMANDS, ELASTIC_REQUEST_COMMANDS
-from app_manager.mongo_manager.mongo_controller import mongo_controller
+from trustly.services.elastic_manager.elastic_enums import ELASTIC_CRUD_COMMANDS, ELASTIC_REQUEST_COMMANDS
+from trustly.services.mongo_manager.mongo_controller import mongo_controller
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.constants.enums import MONGO_COMMANDS
 from trustly.controllers.view_managers.cms.manage_search.class_model.manage_search_model import manage_search_data_model
 from trustly.controllers.view_managers.cms.manage_search.manage_search_enums import MANAGE_SEARCH_SESSION_COMMANDS, MANAGE_SEARCH_MODEL_CALLBACK
 from trustly.controllers.view_managers.cms.manage_search.manage_search_session_controller import manage_search_session_controller
-from app_manager.request_manager.request_handler import request_handler
-from app_manager.elastic_manager import elastic_controller
-from app_manager.mongo_manager.mongo_enums import MONGODB_CRUD
+from trustly.services.request_manager.request_handler import request_handler
+from trustly.services.elastic_manager import elastic_controller
+from trustly.services.mongo_manager.mongo_enums import MONGODB_CRUD
 
 
 class manage_search_model(request_handler):
@@ -26,7 +26,8 @@ class manage_search_model(request_handler):
         self.__m_session = manage_search_session_controller()
         pass
 
-    def get_requested_data(self, p_manage_search_model:manage_search_data_model):
+    @staticmethod
+    def get_requested_data(p_manage_search_model:manage_search_data_model):
 
         if p_manage_search_model.m_query_type == "mongo-DB":
             m_response, m_status = mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_READ,[MONGO_COMMANDS.M_READ_RAW,[p_manage_search_model], [None,None]])

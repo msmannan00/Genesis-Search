@@ -2,23 +2,25 @@ import datetime
 import math
 import time
 
-from app_manager.session_manager.session_controller import session_controller
+from trustly.services.session_manager.session_controller import session_controller
 from trustly.controllers.view_managers.cms.manage_status.manage_status_enums import MANAGE_STATUS_SESSION_COMMANDS, MANAGE_STATUS_CALLBACK
-from app_manager.request_manager.request_handler import request_handler
-from app_manager.session_manager.session_enums import SESSION_KEYS, SESSION_COMMANDS
+from trustly.services.request_manager.request_handler import request_handler
+from trustly.services.session_manager.session_enums import SESSION_KEYS, SESSION_COMMANDS
 
 
 class manage_status_session_controller(request_handler):
 
     # Helper Methods
-    def __init_parameters(self, p_data):
+    @staticmethod
+    def __init_parameters(p_data):
         m_status = session_controller.get_instance().invoke_trigger(SESSION_COMMANDS.S_EXISTS, p_data)
         if SESSION_KEYS.S_USERNAME in p_data.session :
             return {}, m_status
         else :
             return {}, m_status
 
-    def __validate_parameters(self, p_data):
+    @staticmethod
+    def __validate_parameters(p_data):
         m_current_time = math.ceil(time.time()/60)
         m_cronjob_time = p_data['m_cronjob']
         m_crawler_time = p_data['m_crawler']

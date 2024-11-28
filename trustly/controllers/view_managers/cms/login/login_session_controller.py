@@ -1,12 +1,13 @@
 from trustly.controllers.view_managers.cms.login.class_model.login_data_model import login_data_model
 from trustly.controllers.view_managers.cms.login.login_enums import LOGIN_PARAM, LOGIN_SESSION_COMMANDS, LOGIN_CALLBACK, LOGIN_CALLBACK_MESSAGES
-from app_manager.request_manager.request_handler import request_handler
+from trustly.services.request_manager.request_handler import request_handler
 
 
 class login_session_controller(request_handler):
 
     # Helper Methods
-    def __init_parameters(self, p_data):
+    @staticmethod
+    def __init_parameters(p_data):
         m_login_model = login_data_model()
 
         if LOGIN_PARAM.M_ERROR in p_data.GET:
@@ -14,7 +15,8 @@ class login_session_controller(request_handler):
 
         return m_login_model
 
-    def init_callbacks(self, p_report_model:login_data_model):
+    @staticmethod
+    def init_callbacks(p_report_model:login_data_model):
 
         m_context_response = {
             LOGIN_CALLBACK.M_ERROR: p_report_model.m_error

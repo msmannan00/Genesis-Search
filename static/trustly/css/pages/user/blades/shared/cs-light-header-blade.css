@@ -11,15 +11,14 @@
     padding: 20px 0;
 }
 
-/* Light Header Overrize*/
 .toolbar__right label{
-    margin-bottom: 0px!important;
+    margin-bottom: 0 !important;
 }
 .light-header__menu {
     display: flex;
-    justify-content: space-between; /* Align items to far left and far right */
-    align-items: center; /* Vertically center items */
-    padding: 0 20px; /* Add padding on left and right for spacing */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 .light-header__brand {
     font-size: 20px;
@@ -43,7 +42,7 @@
     margin-right: auto;
     width: 11%;
     max-width: 40px;
-    margin-top: 9.5px;
+    margin-top: 10px;
     cursor: pointer;
     margin-left: 10px;
     float: left;
@@ -77,14 +76,14 @@
 
 .light-header__searchbox:hover {
 	outline: none;
-	box-shadow: 0 2.5px 2.5px -1.5px #cccccc !important;
+	box-shadow: 0 2px 2px -1.5px #cccccc !important;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 }
 
 .light-header__searchbox:focus{
 	outline: none;
-	box-shadow: 0 2.5px 2.5px -1.5px #cccccc !important;
+	box-shadow: 0 2px 2px -1.5px #cccccc !important;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 }
