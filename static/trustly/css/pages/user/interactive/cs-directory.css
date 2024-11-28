@@ -167,3 +167,42 @@ html {
     justify-content: end;
     align-items: center;
 }
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 10000;
+    left: 0px;
+    background: rgba(33, 75, 116, 0.81);
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+}
+
+/*.scroll-to-top:hover {*/
+/*    background: rgba(33, 75, 116, 0.5); !* Slightly increase opacity on hover *!*/
+/*}*/
+
+.scroll-to-top__content {
+    display: flex;
+    align-items: center;
+}
+
+.scroll-to-top__icon img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.scroll-to-top__text {
+    font-size: 12px;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin-right: 10px;
+}

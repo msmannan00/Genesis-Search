@@ -22,12 +22,16 @@
                     <td><a href="{{ mDoc.mURL }}" class="onion__table-url">{{ mDoc.url }}</a></td>
                 {% endif %}
 
-                <td class="onion__table-category"><b>{{ mDoc.content_type }}</b></td>
+                <td class="onion__table-category">
+                    {% for category in mDoc.content_type %}
+                        <span class="badge badge-info">{{ category }}</span>
+                    {% endfor %}
+                </td>
 
                 {% if mDoc.url_status_date == 1 %}
-                    <td class="onion__table-url-status"><b>Active</b></td>
+                    <td class="onion__table-url-status">Active</td>
                 {% else %}
-                    <td class="onion__table-url-status"><b>Inactive</b></td>
+                    <td class="onion__table-url-status">Inactive</td>
                 {% endif %}
 
                 {% if mDoc.leak_status_date == 1 %}
