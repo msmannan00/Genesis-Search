@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap'); /* Import Roboto font */
+
 .home-header{
     text-align: right;
     padding-top: 10px;
@@ -86,6 +88,7 @@
     font-size: 12px;
     padding: 7px 5px;
     cursor: pointer;
+    font-family: 'Roboto', sans-serif; /* Apply Roboto font */
 }
 .toolbar__button:focus {
     outline: none; /* Remove focus outline */

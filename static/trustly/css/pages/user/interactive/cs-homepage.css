@@ -2,7 +2,7 @@
     margin-left: -2px;
     min-height: 100vh;
     position: relative; /* Ensures pseudo-element aligns correctly */
-    background: linear-gradient(to bottom, rgba(18, 52, 84, 255), rgba(41, 87, 132, 255)) !important;
+    background: linear-gradient(to bottom, rgba(18, 52, 84, 255), rgba(41, 87, 132, 255), rgba(41, 87, 132, 255)) !important;
     color: white;
     overflow: hidden; /* Prevents pseudo-element overflow */
 }
@@ -15,7 +15,7 @@
     width: 100%;
     height: 100%;
     background: url("../../../../images/Bg.png");
-    background-size: cover;
+    background-size: contain;
     background-position: top;
     background-repeat: no-repeat;
     opacity: 0.07; /* Set opacity to 7% */
@@ -337,15 +337,23 @@ html::-webkit-scrollbar {
 /*        width: 90%; !* For small screens (phones) *!*/
 /*    }*/
 /*}*/
-
+html {
+    background-image: linear-gradient(90deg, rgba(21, 52, 84, 1) 0%, rgba(22, 56, 88, 1) 100%) !important;
+}
 
 .flex-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px; /* Adjust the spacing between items */
     margin: 0 auto;
-    padding: 16px 100px;
-    justify-content: space-between;
+    padding: 16px 48px;
+    justify-content: center;
+    bottom: 50px;
+    /*position: absolute;*/
+    /*overflow-y: scroll;*/
+    /*top: 70%;*/
+    /*-ms-overflow-style: none; !* IE and Edge *!*/
+    /*scrollbar-width: none; !* Firefox *!*/
 }
 
 .flex-item {
@@ -356,9 +364,9 @@ html::-webkit-scrollbar {
     display: flex;
     align-items: center; /* Align child content vertically */
     justify-content: center; /* Center child content horizontally */
-    flex: 1 1 calc(25% - 16px); /* 4 items per row */
-    /*max-width: calc(25% - 24px);*/
+    width: 400px;
     box-sizing: border-box;
+
 }
 
 .item-content {
@@ -404,51 +412,51 @@ html::-webkit-scrollbar {
     font-weight: 400;
 }
 
-@media (max-width: 1470px) {
-    /* Medium screens: 3 items */
-    .flex-item {
-        flex: 1 1 calc(25% - 16px);
-        max-width: calc(25% - 24px);
+/*@media (max-width: 1470px) {*/
+/*    !* Medium screens: 3 items *!*/
+/*    .flex-item {*/
+/*        flex: 1 1 calc(25% - 16px);*/
+/*        max-width: calc(25% - 24px);*/
 
-    }
+/*    }*/
 
-    .flex-container {
-        padding: 16px 48px !important;
-    }
-}
+/*    .flex-container {*/
+/*        padding: 16px 48px !important;*/
+/*    }*/
+/*}*/
 
-@media (max-width: 1270px) {
-    /* Medium screens: 3 items */
-    .flex-item {
-        flex: 1 1 calc(33.33% - 16px);
-        max-width: calc(33.33% - 24px);
-    }
-    .flex-container {
-        padding: 16px 48px !important;
-    }
-}
+/*@media (max-width: 1270px) {*/
+/*    !* Medium screens: 3 items *!*/
+/*    .flex-item {*/
+/*        flex: 1 1 calc(33.33% - 16px);*/
+/*        max-width: calc(33.33% - 24px);*/
+/*    }*/
+/*    .flex-container {*/
+/*        padding: 16px 48px !important;*/
+/*    }*/
+/*}*/
 
-@media (max-width: 992px) {
-    /* Tablet: 2 items */
-    .flex-item {
-        flex: 1 1 calc(50% - 16px);
-        max-width: calc(50% - 24px);
-    }
-    .flex-container {
-        padding: 16px 48px !important;
-    }
-}
+/*@media (max-width: 992px) {*/
+/*    !* Tablet: 2 items *!*/
+/*    .flex-item {*/
+/*        flex: 1 1 calc(50% - 16px);*/
+/*        max-width: calc(50% - 24px);*/
+/*    }*/
+/*    .flex-container {*/
+/*        padding: 16px 48px !important;*/
+/*    }*/
+/*}*/
 
-@media (max-width: 649px) {
-    /* Small screens: 1 item */
-    .flex-item {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-    .flex-container {
-        padding: 16px 48px !important;
-    }
-}
+/*@media (max-width: 649px) {*/
+/*    !* Small screens: 1 item *!*/
+/*    .flex-item {*/
+/*        flex: 1 1 100%;*/
+/*        max-width: 100%;*/
+/*    }*/
+/*    .flex-container {*/
+/*        padding: 16px 48px !important;*/
+/*    }*/
+/*}*/
 
 .example::-webkit-scrollbar {
     display: none;
@@ -459,7 +467,9 @@ html::-webkit-scrollbar {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
-
+.flex-container::-webkit-scrollbar {
+    display: none;
+}
 .scroll-to-top {
     position: fixed;
     bottom: 0px;
