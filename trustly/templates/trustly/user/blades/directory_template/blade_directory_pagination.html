@@ -4,7 +4,7 @@
     <div class="onion__pagination-container">
         <!-- left arrow -->
         {% if page == 1 %}
-        <a type="button" class="onion__pagination onion__pagination--border-right onion__pagination--border-right--extended onion__pagination--block">-</a>
+        <a type="button" class="onion__pagination onion__pagination--border-right onion__pagination--border-right--extended onion__pagination--block"> < </a>
         {% else %}
         <a type="button" href="/directory?page={{mPageBack}}" class="onion__pagination onion__pagination--border-right onion__pagination--border-right--extended onion__pagination--block-left">{{mPageBack}}</a>
         {% endif %}
@@ -14,7 +14,7 @@
 
         <!-- right arrow -->
         {% if mDirectoryCallbackPageNumberMaxReached == True %}
-        <a type="button" href="/directory?page={{page}}" class="onion__pagination onion__pagination--border-right onion__pagination--border-left onion__pagination--block">-</a>
+        <a type="button" href="/directory?page={{page}}" class="onion__pagination onion__pagination--border-right onion__pagination--border-left onion__pagination--block"> > </a>
         {% else %}
         <a type="button" href="/directory?page={{mPageNext}}" class="onion__pagination onion__pagination--border-right onion__pagination--border-left onion__pagination--block-right">{{mPageNext}}</a>
         {% endif %}
