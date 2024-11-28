@@ -33,7 +33,7 @@ if [ "$1" == "build" ]; then
     remove_services
     remove_conflicting_containers
     docker compose build --no-cache
-    docker compose up -d
+    docker compose up
     sleep 2
     copy_files
     echo "search service started"

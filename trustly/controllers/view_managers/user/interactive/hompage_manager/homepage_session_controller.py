@@ -50,12 +50,11 @@ class homepage_session_controller(request_handler):
                             "error": error
                         })
             results_dict = json.dumps(results, indent=4)
-            print(json.dumps(results, indent=4))
 
         except Exception as e:
             print(json.dumps({"error": str(e)}, indent=4))
 
-        print(results_dict, flush=True)
+        results_dict = json.loads(results_dict)
         m_context = {
             HOMEPAGE_CALLBACK.M_REFERENCE: helper_controller.load_json(CONSTANTS.S_REFERENCE_WEBSITE_URL),
             HOMEPAGE_CALLBACK.M_SECURE_SERVICE_NOTICE: GENERAL_STRINGS.S_GENERAL_HTTP,

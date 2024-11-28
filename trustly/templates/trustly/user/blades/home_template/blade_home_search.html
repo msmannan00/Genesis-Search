@@ -49,6 +49,7 @@
         {#    </div>#}
 </form>
 <div class="flex-container">
+    {% for item in mHomepageCallbackStatistics %}
     <div class="flex-item">
         <div class="item-content">
             <div class="item-icon">
@@ -56,59 +57,17 @@
                      alt="Icon"/>
             </div>
             <div class="item-text">
-                <span class="item-text-primary">1.9 M</span>
-                <span class="item-text-secondary">Clearnet</span>
+                <span class="item-text-primary">{{ item.total_documents|default:"N/A" }}</span>
+                <span class="item-text-secondary">{{ item.query_type|default:"Unknown" }}</span>
             </div>
             <div class="item-percentage">
-                +12%
+                Data Leak
             </div>
         </div>
     </div>
-    <div class="flex-item">
-        <div class="item-content">
-            <div class="item-icon">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHpSURBVHgB7ZfhdYIwEMePvg7gCIxgN3AENqhOUDaQTiCdADqBI+gGdAPoBLrB9e7lYo+AEgjaL/29d09MSP6X5O6iAB4gYkJ2ItvBX0DCJQowM08QAPmzIltCAJMdEOEDWcWOwERCdkCvPIaJdByg1azJCrIYHsBzT1uhnjdwZ4KC8N+BOXiGeTgPvUBBvaCPlXz9iqKoufZiLmU3UW2pFMJcT0hWi8VwWzyVOTVbeAQshNdZwz1RO2fJxCyHyBnA58QVLoZxcAy0zlWOcK/e2VB/KX0VtCvpZatOGMZO5lo6c2VKJ0YTN0xtGwucj0IJuOIcuJXqyyM0gVCorfwga2AcfHRv0D26d9r2TDnAR2KzqyF74caD8iiGiaC5xDSl079TffVFSzUeIQBHoHL6tr3ijgPFCDE+y6WsmtNqf00A26nIgdmJ/kEH0ERugSaAhjIlVeMSpy/pm9zHgRKHOWK7fLupmPbN7XsZHcleyb5Bio6YfW4o2s96x8AUoYU0cTbkvTP77MAYsF1omHxowGwO4O8Nadn7DJrFAexWOX5e+Ay0gVLBRND8QdErr9G3qGG7Eo76kSDCevw4cYLvAi4MevU2wm9hr2x3iz/JUp0RXmC3jo+Fa8AKQkCTPiX6/SZoRDQLFf4B8msWnVwE+TEAAAAASUVORK5CYII="
-                     alt="Icon"/>
-            </div>
-            <div class="item-text">
-                <span class="item-text-primary">1.9 M</span>
-                <span class="item-text-secondary">Clearnet</span>
-            </div>
-            <div class="item-percentage">
-                +12%
-            </div>
-        </div>
-    </div>
-    <div class="flex-item">
-        <div class="item-content">
-            <div class="item-icon">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHpSURBVHgB7ZfhdYIwEMePvg7gCIxgN3AENqhOUDaQTiCdADqBI+gGdAPoBLrB9e7lYo+AEgjaL/29d09MSP6X5O6iAB4gYkJ2ItvBX0DCJQowM08QAPmzIltCAJMdEOEDWcWOwERCdkCvPIaJdByg1azJCrIYHsBzT1uhnjdwZ4KC8N+BOXiGeTgPvUBBvaCPlXz9iqKoufZiLmU3UW2pFMJcT0hWi8VwWzyVOTVbeAQshNdZwz1RO2fJxCyHyBnA58QVLoZxcAy0zlWOcK/e2VB/KX0VtCvpZatOGMZO5lo6c2VKJ0YTN0xtGwucj0IJuOIcuJXqyyM0gVCorfwga2AcfHRv0D26d9r2TDnAR2KzqyF74caD8iiGiaC5xDSl079TffVFSzUeIQBHoHL6tr3ijgPFCDE+y6WsmtNqf00A26nIgdmJ/kEH0ERugSaAhjIlVeMSpy/pm9zHgRKHOWK7fLupmPbN7XsZHcleyb5Bio6YfW4o2s96x8AUoYU0cTbkvTP77MAYsF1omHxowGwO4O8Nadn7DJrFAexWOX5e+Ay0gVLBRND8QdErr9G3qGG7Eo76kSDCevw4cYLvAi4MevU2wm9hr2x3iz/JUp0RXmC3jo+Fa8AKQkCTPiX6/SZoRDQLFf4B8msWnVwE+TEAAAAASUVORK5CYII="
-                     alt="Icon"/>
-            </div>
-            <div class="item-text">
-                <span class="item-text-primary">1.9 M</span>
-                <span class="item-text-secondary">Clearnet</span>
-            </div>
-            <div class="item-percentage">
-                +12%
-            </div>
-        </div>
-    </div>
-    <div class="flex-item">
-        <div class="item-content">
-            <div class="item-icon">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHpSURBVHgB7ZfhdYIwEMePvg7gCIxgN3AENqhOUDaQTiCdADqBI+gGdAPoBLrB9e7lYo+AEgjaL/29d09MSP6X5O6iAB4gYkJ2ItvBX0DCJQowM08QAPmzIltCAJMdEOEDWcWOwERCdkCvPIaJdByg1azJCrIYHsBzT1uhnjdwZ4KC8N+BOXiGeTgPvUBBvaCPlXz9iqKoufZiLmU3UW2pFMJcT0hWi8VwWzyVOTVbeAQshNdZwz1RO2fJxCyHyBnA58QVLoZxcAy0zlWOcK/e2VB/KX0VtCvpZatOGMZO5lo6c2VKJ0YTN0xtGwucj0IJuOIcuJXqyyM0gVCorfwga2AcfHRv0D26d9r2TDnAR2KzqyF74caD8iiGiaC5xDSl079TffVFSzUeIQBHoHL6tr3ijgPFCDE+y6WsmtNqf00A26nIgdmJ/kEH0ERugSaAhjIlVeMSpy/pm9zHgRKHOWK7fLupmPbN7XsZHcleyb5Bio6YfW4o2s96x8AUoYU0cTbkvTP77MAYsF1omHxowGwO4O8Nadn7DJrFAexWOX5e+Ay0gVLBRND8QdErr9G3qGG7Eo76kSDCevw4cYLvAi4MevU2wm9hr2x3iz/JUp0RXmC3jo+Fa8AKQkCTPiX6/SZoRDQLFf4B8msWnVwE+TEAAAAASUVORK5CYII="
-                     alt="Icon"/>
-            </div>
-            <div class="item-text">
-                <span class="item-text-primary">1.9 M</span>
-                <span class="item-text-secondary">Clearnet</span>
-            </div>
-            <div class="item-percentage">
-                +12%
-            </div>
-        </div>
-    </div>
+    {% endfor %}
+</div>
+
 
 </div>
 
