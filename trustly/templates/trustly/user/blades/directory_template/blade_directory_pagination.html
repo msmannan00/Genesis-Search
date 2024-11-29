@@ -2,21 +2,47 @@
 
 <form class="disable-highlight" action="" method="GET">
     <div class="onion__pagination-container">
-        <!-- left arrow -->
+        <!-- First Page Button -->
         {% if page == 1 %}
-        <a type="button" class="onion__pagination onion__pagination--border-right onion__pagination--border-right--extended onion__pagination--block"> < </a>
+            <a type="button" class=onion__pagination"> <img
+                    src="{% static 'trustly/images/First.svg' %}" alt="First"> </a>
         {% else %}
-        <a type="button" href="/directory?page={{mPageBack}}" class="onion__pagination onion__pagination--border-right onion__pagination--border-right--extended onion__pagination--block-left">{{mPageBack}}</a>
+            <a type="button" href="/directory?page=1" class="onion__pagination"> <img
+                    src="{% static 'trustly/images/First.svg' %}" alt="First"> </a>
         {% endif %}
 
-        <input type="hidden" name="page" value="{{page}}">
-        <a class="onion__navigation onion__navigation--normal float-left">{{page}}</a>
-
-        <!-- right arrow -->
-        {% if mDirectoryCallbackPageNumberMaxReached == True %}
-        <a type="button" href="/directory?page={{page}}" class="onion__pagination onion__pagination--border-right onion__pagination--border-left onion__pagination--block"> > </a>
+        <!-- Previous Page Button -->
+        {% if page == 1 %}
+            <a type="button"
+               class="onion__pagination">
+                <img src="{% static 'trustly/images/Prev.svg' %}" alt="Prev">
+            </a>
         {% else %}
-        <a type="button" href="/directory?page={{mPageNext}}" class="onion__pagination onion__pagination--border-right onion__pagination--border-left onion__pagination--block-right">{{mPageNext}}</a>
+            <a type="button" href="/directory?page={{ mPageBack }}"
+               class="onion__pagination">{{ mPageBack }}</a>
+        {% endif %}
+
+        <input type="hidden" name="page" value="{{ page }}">
+        <a class="onion__pagination">{{ page }}</a>
+
+        <!-- Next Page Button -->
+        {% if mDirectoryCallbackPageNumberMaxReached == True %}
+            <a type="button"
+               class="onion__pagination">
+                <img src="{% static 'trustly/images/Next.svg' %}" alt="Next">
+            </a>
+        {% else %}
+            <a type="button" href="/directory?page={{ mPageNext }}"
+               class="onion__pagination">{{ mPageNext }}</a>
+        {% endif %}
+
+        <!-- Last Page Button -->
+        {% if mDirectoryCallbackPageNumberMaxReached == True %}
+            <a type="button" class="onion__pagination"> <img
+                    src="{% static 'trustly/images/Last.svg' %}" alt="Last"> </a>
+        {% else %}
+            <a type="button" href="/directory?page={{ mPageLast }}" class="onion__pagination">
+                <img src="{% static 'trustly/images/Last.svg' %}" alt="Last"> </a>
         {% endif %}
     </div>
 </form>

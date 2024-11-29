@@ -21,7 +21,7 @@
 }
 .onion__pagination--border-right{
     margin-right: 5px;
-    float:left;
+    /*float:left;*/
 }
 .onion__pagination--border-right:hover{
     border-width: 0.8px;
@@ -65,7 +65,7 @@
     font-weight: 600;
 
     color: #FFFFFF!important;
-    background: #174069;
+    background: #17406980;
 }
 .disable-highlight{
     margin-bottom: 0px!important;
