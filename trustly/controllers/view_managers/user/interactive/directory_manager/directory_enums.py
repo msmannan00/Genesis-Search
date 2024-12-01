@@ -17,11 +17,13 @@ class DIRECTORY_PARAMS:
 
 class DIRECTORY_CALLBACK:
     M_PAGE_NUMBER = "page"
-    M_PAGE_NEXT = "mPageNext"
-    M_PAGE_BACK = "mPageBack"
+    M_TOTAL_PAGES = "mTotalPage"
     M_ONION_LINKS = "mDirectoryCallbackLinks"
     M_MAX_PAGE_REACHED = "mDirectoryCallbackPageNumberMaxReached"
     M_SECURE_SERVICE_NOTICE = "mUseSecureServiceNotice"
+    M_START_PAGE = "mStartPage"
+    M_ENDPAGE = "mEndPage"
+    M_PAGINATION = "mPagination"
 
 class DIRECTORY_MODEL_CALLBACK:
     M_ID = "mID"

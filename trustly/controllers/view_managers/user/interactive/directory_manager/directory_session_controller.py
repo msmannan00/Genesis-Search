@@ -1,3 +1,5 @@
+import math
+
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.view_managers.user.interactive.directory_manager.directory_enums import DIRECTORY_CALLBACK, DIRECTORY_PARAMS, DIRECTORY_SESSION_COMMANDS
 from trustly.controllers.view_managers.user.interactive.directory_manager.directory_shared_model.directory_class_model import \
@@ -27,22 +29,40 @@ class directory_session_controller(request_handler):
         return m_directory_model, True, m_browser
 
     @staticmethod
-    def __init_parameters(p_links):
-        m_context = {
-            DIRECTORY_CALLBACK.M_PAGE_NUMBER: p_links.m_page_number,
-            DIRECTORY_CALLBACK.M_PAGE_NEXT: p_links.m_page_number+1,
-            DIRECTORY_CALLBACK.M_PAGE_BACK: p_links.m_page_number-1,
-            DIRECTORY_CALLBACK.M_SECURE_SERVICE_NOTICE: p_links.m_site,
-        }
+    def __init_parameters(p_links, p_count):
+        total_pages = max(1, math.ceil(p_count / CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE))
 
-        if len(p_links.m_row_model_list) <= CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE-2:
-            m_context[DIRECTORY_CALLBACK.M_MAX_PAGE_REACHED] = True
+        current_page = p_links.m_page_number
+        max_display_pages = 5
+        half_range = max_display_pages // 2
+
+        if total_pages <= max_display_pages:
+            start_page = 1
+            end_page = total_pages
+        elif current_page <= half_range:
+            start_page = 1
+            end_page = min(max_display_pages, total_pages)
+        elif current_page > total_pages - half_range:
+            start_page = max(1, total_pages - max_display_pages + 1)
+            end_page = total_pages
         else:
-            m_context[DIRECTORY_CALLBACK.M_MAX_PAGE_REACHED] = False
+            start_page = current_page - half_range
+            end_page = min(current_page + half_range, total_pages)
+
+        m_context = {
+            DIRECTORY_CALLBACK.M_PAGE_NUMBER: current_page,
+            DIRECTORY_CALLBACK.M_TOTAL_PAGES: total_pages,
+            DIRECTORY_CALLBACK.M_START_PAGE: start_page,
+            DIRECTORY_CALLBACK.M_ENDPAGE: end_page,
+            DIRECTORY_CALLBACK.M_PAGINATION: range(start_page, end_page + 1),
+            DIRECTORY_CALLBACK.M_SECURE_SERVICE_NOTICE: p_links.m_site,
+            DIRECTORY_CALLBACK.M_ONION_LINKS: p_links.m_row_model_list[:],
+            DIRECTORY_CALLBACK.M_MAX_PAGE_REACHED: len(p_links.m_row_model_list) <= CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE - 2,
+        }
 
         m_context[DIRECTORY_CALLBACK.M_ONION_LINKS] = p_links.m_row_model_list[0:len(p_links.m_row_model_list)]
 
-        if p_links.m_page_number>1 and len(p_links.m_row_model_list)==0:
+        if p_links.m_page_number > 1 and len(p_links.m_row_model_list) == 0:
             return m_context, False
         else:
             return m_context, True
@@ -55,5 +75,5 @@ class directory_session_controller(request_handler):
         if p_command == DIRECTORY_SESSION_COMMANDS.M_PRE_INIT:
             return self.__pre_init_parameters(p_data[0])
         if p_command == DIRECTORY_SESSION_COMMANDS.M_INIT:
-            return self.__init_parameters(p_data[0])
+            return self.__init_parameters(p_data[0], p_data[1])
 

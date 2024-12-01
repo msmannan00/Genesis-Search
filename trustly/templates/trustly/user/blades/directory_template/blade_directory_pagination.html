@@ -1,22 +1,46 @@
 {% load static %}
+<form class="disable-highlight clear-paddings" action="" method="GET">
+    <div class="">
+        <ul class="pagination">
+            <!-- Start Button -->
+            <li class="{% if page == 1 %}disabled{% endif %}">
+                <a href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page=1"
+                   style="text-decoration: none; color: inherit;">
+                    <img src="{% static 'trustly/images/nav-first.svg' %}" alt="Start">
+                </a>
+            </li>
 
-<form class="disable-highlight" action="" method="GET">
-    <div class="onion__pagination-container">
-        <!-- left arrow -->
-        {% if page == 1 %}
-        <a type="button" class="onion__pagination onion__pagination--border-right onion__pagination--border-right--extended onion__pagination--block"> < </a>
-        {% else %}
-        <a type="button" href="/directory?page={{mPageBack}}" class="onion__pagination onion__pagination--border-right onion__pagination--border-right--extended onion__pagination--block-left">{{mPageBack}}</a>
-        {% endif %}
+            <!-- Previous Button -->
+            <li class="{% if page == 1 %}disabled{% endif %}">
+                <a href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ page|add:"-1" }}"
+                   style="text-decoration: none; color: inherit;">
+                    <img src="{% static 'trustly/images/nav-prev.svg' %}" alt="Prev">
+                </a>
+            </li>
 
-        <input type="hidden" name="page" value="{{page}}">
-        <a class="onion__navigation onion__navigation--normal float-left">{{page}}</a>
+            <!-- Dynamic Page Numbers -->
+            {% for i in mPagination %}
+                <li class="{% if i == page %}active{% endif %}">
+                    <a href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ i }}"
+                       style="text-decoration: none; color: inherit;">{{ i }}</a>
+                </li>
+            {% endfor %}
 
-        <!-- right arrow -->
-        {% if mDirectoryCallbackPageNumberMaxReached == True %}
-        <a type="button" href="/directory?page={{page}}" class="onion__pagination onion__pagination--border-right onion__pagination--border-left onion__pagination--block"> > </a>
-        {% else %}
-        <a type="button" href="/directory?page={{mPageNext}}" class="onion__pagination onion__pagination--border-right onion__pagination--border-left onion__pagination--block-right">{{mPageNext}}</a>
-        {% endif %}
+            <!-- Next Button -->
+            <li class="{% if page == mTotalPage %}disabled{% endif %}">
+                <a href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ page|add:"1" }}"
+                   style="text-decoration: none; color: inherit;">
+                    <img src="{% static 'trustly/images/nav-next.svg' %}" alt="Next">
+                </a>
+            </li>
+
+            <!-- End Button -->
+            <li class="{% if page == mTotalPage %}disabled{% endif %}">
+                <a href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ mTotalPage }}"
+                   style="text-decoration: none; color: inherit;">
+                    <img src="{% static 'trustly/images/nav-last.svg' %}" alt="End">
+                </a>
+            </li>
+        </ul>
     </div>
 </form>

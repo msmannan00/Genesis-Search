@@ -11,29 +11,43 @@
     </div>
 </form>
 
-<div class="flex-container">
-    {% for item in mHomepageCallbackStatistics %}
+<div id="analytics">
+    {% for model_name, stats in mHomepageCallbackStatistics.items %}
+    <div class="flex-container">
+        {% for item in stats %}
         <div class="flex-item">
             <div class="item-content">
                 <div class="item-icon">
                     <img src="{% static 'trustly/images/cbimage.png' %}" alt="Brand Logo" width="57" height="12">
                 </div>
                 <div class="item-text">
-                    {% for key, value in item.items|slice:":2" %}
-                        {% if forloop.counter == 2 %}
-                            <span class="item-text-primary">{{ value|default:"0" }}</span>
-                            <span class="item-text-secondary">{{ key|default:"Unknown" }}</span>
+                    {% for key, value in item.items %}
+                    <span class="item-text-primary">
+                        {{ value.value|stringformat:"s"|slice:":12"|join:"" }}
+                    </span>
+                    <span class="item-text-secondary">{{ key|default:"Unknown" }}</span>
+                    <span class="item-text-secondary">
+                        {% if model_name == "generic_model" %}
+                            Generic Index
+                        {% elif model_name == "leak_model" %}
+                            Leak Index
+                        {% else %}
+                            {{ model_name }}
                         {% endif %}
+                    </span>
                     {% endfor %}
                 </div>
-                {% for key, value in item.items|slice:":2" %}
-                    {% if forloop.counter == 1 %}
-                        <div class="item-percentage">
-                            {{ value }}
-                        </div>
-                    {% endif %}
-                {% endfor %}
+                <div class="item-percentage">
+                    {% for key, value in item.items %}
+                    <span
+                            class="{% if value.change|slice:":1" == "+" %}text-success{% elif value.change|slice:":1" == "-" %}text-warning{% else %}text-body{% endif %}">
+                    <b>{{ value.change|default:"-" }}</b>
+                    </span>
+                    {% endfor %}
+                </div>
             </div>
         </div>
+        {% endfor %}
+    </div>
     {% endfor %}
 </div>

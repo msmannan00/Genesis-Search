@@ -1,77 +1,61 @@
-.onion__pagination-container{
-    margin-left: 3.8em;
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+    color: white; !important;
+    margin: 0 0 0 -4px;
+    float: right;
 }
-.onion__pagination{
-    color:#fff!important;
-    font-size: 13px;
-    font-weight: 600;
-    text-align: center;
-    border:0;
-    background-color: #17406980;
-    border-radius: 8px;
-    padding: 8px;
 
+.pagination li {
+    margin: 0 5px;
 }
-.onion__pagination:hover{
-    cursor:pointer;
-    color:#fff;
-    font-weight: bold;
-    background: orange;
-    border:0;
-}
-.onion__pagination--border-right{
-    margin-right: 5px;
-    float:left;
-}
-.onion__pagination--border-right:hover{
-    border-width: 1px;
-    border-left-width: 0;
-}
-.onion__pagination--border-right--extended{
-    float: left;
-    margin-right: 19px;
-}
-.onion__pagination--border-left{
-    float:left;
-    margin-left: 18px;
-}
-.onion__pagination--block{
-    opacity: 0.5;
-    pointer-events: none;
 
-}
-.onion__pagination--block{
-    opacity: 0.5;
-    pointer-events: none;
-}
-.onion__pagination--block-left{
-    opacity: 1;
-    pointer-events: auto;
-    border-left: 4px solid #ffa500;
-}
-.onion__pagination--block-right{
-    opacity: 1;
-    pointer-events: auto;
-    border-right: 4px solid #ffa500;
-}
-.onion__navigation{
-    font-size:13px;
-    padding: 7px 12px;
+.pagination li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background: #12335450;
+    border-radius: 10px;
     text-decoration: none;
-    text-align:center;
-    margin-left: 3px;
-    border-radius: 8px;
-    margin-top:-2px;
-    font-weight: 600;
+    font-size: 14px;
+    margin-left: -6px !important;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
 
-    color: #FFFFFF!important;
-    background: #174069;
+.pagination li a img {
+    width: 20px;
+    height: 20px;
 }
-.disable-highlight{
-    margin-bottom: 0!important;
+
+.pagination li a:hover {
+    background: #12335450;
+    transform: scale(1.1);
 }
+
+.pagination li.disabled a {
+    opacity: 0.4 !important;
+    color: white;
+    pointer-events: none;
+}
+
+.pagination li.active a {
+    background: #102A4685 !important;
+    color: white !important;
+    pointer-events: none;
+    font-weight: bold;
+}
+
 @media only screen and (max-width: 943px) {
-    .onion__pagination-container{
-        margin-left: 10px;
+    .pagination {
+        display: flex;
+        width: 50%;
+        justify-content: start;
+        align-items: flex-start !important;
+        float: left !important;
     }
 }

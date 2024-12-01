@@ -1,33 +1,47 @@
-.gc--clear-selection{
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    outline:none;
-    text-decoration:none;
-	text-underline: none;
-    user-select: none;
-}
-html, body {
-    overscroll-behavior: none !important;
-    background: red !important;
+@font-face {
+    font-family: 'Roboto';
+    src: url('/static/trustly/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
     font-family: 'Roboto';
-    src: url('../../fonts/Roboto-Bold.ttf') format('truetype');
-    font-weight: bold;
+    src: url('/static/trustly/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Roboto';
-    src: url('../../fonts/Roboto-Light.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+    src: url('/static/trustly/fonts/Roboto/Roboto-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
 }
+
 @font-face {
     font-family: 'Roboto';
-    src: url('../../fonts/Roboto-Regular.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+    src: url('/static/trustly/fonts/Roboto/Roboto-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+.gc--clear-selection {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    outline: none;
+    text-decoration: none !important;
+    text-underline: none;
+    user-select: none;
+}
+
+html {
+    background: rgba(41, 87, 132, 255) !important;
+}
+
+.clear-paddings {
+    margin: 0 !important;
+    padding: 0 !important;
 }

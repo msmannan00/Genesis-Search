@@ -45,6 +45,7 @@ MIDDLEWARE = [
   'trustly.middleware.notification_routes_direct_access.notification_routes_direct_access',
   'trustly.middleware.cms_session_security.cms_session_security',
   'trustly.middleware.encrypted_access_filter.EncryptedAccessFilter',
+  'trustly.middleware.service_ready_middleware.service_ready_middleware',
 ]
 ROOT_URLCONF = 'trustly.urls'
 
@@ -52,9 +53,8 @@ SESSION_COOKIE_AGE = 600
 SESSION_SAVE_EVERY_REQUEST = True
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_COOKIE_HTTPONLY = True
-SESSION_COOKIE_SAMESITE = 'Lax'
-CSRF_COOKIE_SAMESITE = 'Lax'
-SESSION_COOKIE_SECURE = False
+SESSION_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SECURE = True
 
 
 TEMPLATES = [
@@ -67,10 +67,10 @@ TEMPLATES = [
       'context_processors': [
         'django.template.context_processors.debug',
         'django.template.context_processors.request',
-        'django.template.context_processors.csrf'
+        'django.template.context_processors.csrf',
         'django.template.context_processors.static',
         'django.contrib.auth.context_processors.auth',
-        'django.contrib.messages.context_processors.messages',
+        'django.contrib.messages.context_processors.messages'
       ],
     },
   },

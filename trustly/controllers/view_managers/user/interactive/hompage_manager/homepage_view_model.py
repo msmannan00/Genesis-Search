@@ -30,7 +30,7 @@ class homepage_view_model(request_handler):
     def invoke_trigger(self, p_command, p_data):
         if p_command == HOMEPAGE_MODEL_COMMANDS.M_INIT:
             m_response, m_status = self.__m_homepage_model.invoke_trigger(HOMEPAGE_MODEL_COMMANDS.M_INIT, p_data)
-            return render(None, CONSTANTS.S_TEMPLATE_INDEX_PATH, m_response)
+            return render(p_data, CONSTANTS.S_TEMPLATE_INDEX_PATH, m_response)
         else:
             m_response = None
         return m_response

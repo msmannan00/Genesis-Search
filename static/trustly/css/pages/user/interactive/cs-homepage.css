@@ -1,10 +1,11 @@
 .home {
-    margin-left: -2px;
+    margin-left: 0;
     min-height: 100vh;
     position: relative;
     background: linear-gradient(to bottom, rgba(18, 52, 84, 255), rgba(41, 87, 132, 255), rgba(41, 87, 132, 255)) !important;
     color: white;
     overflow: hidden;
+    padding-bottom: 200px;
 }
 
 .home::before {
@@ -38,12 +39,12 @@
 }
 
 .home__searchbox {
-    border-radius: 6px;
-    height: 42px;
+    border-radius: 10px;
+    height: 46px;
     outline: none;
     border-color: #e7e7e7;
     width: 600px;
-    max-width: 500px;
+    max-width: 600px;
     display: block;
     font: 16px arial, sans-serif;
     color: #000000;
@@ -53,6 +54,7 @@
     -moz-transition: .0s;
     padding-left: 45px !important;
     transition: .0s;
+    margin-bottom: 23vh;
     margin-top: 20px;
     background: #fff url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGUSURBVHgBlVO9UsJAEL69oLbxAUBIo4/ADDCe6Ix20lpJaSc8AbGylNKWkg47Z/whzJABO30BieEF0jokOb8D4yQZBmRnktzu3fftt3sbYjErl4VgjNeI6Fz5UjIH7w/fD9vjseWwJaZFi0qlegfwPWN0AFAXoTda2CnnvJHNFr6n08k4TUCLzCctgEwpqWnbz+34ASGE7vuaieU1FNVt+6WTIABYANxfBk6Wd6z2LjOZoGBZlhfFuZRBQ9W6CqwMQFN9ZzNej8c5ET8kkh22xn6zvkO0SBDg0cNQdXu9EbEvJNPTBB429P8QoNQ99MpLEEgZDqJ7X2W4jbz6SCl7CQIiTTVPlErVxiqCICBTNTsMt614XHPdTyeXM3ahopXLFZjrTgapzHo2a9xKya9QRG80ekrOQbTAPJg40IJEBz15QMhTNYO4Nj9Icz+vBm44fL35UxAtoMQyjH2whwW4RUCKACEB72IGLjjf6aJfIKNaXCmxDUyIs3wQzPpxJRsRpElQbpNviMdEPjqatnWkfnPl/wBPq7SGRGo+2AAAAABJRU5ErkJggg==') no-repeat 16px center;
 }
@@ -299,7 +301,7 @@
 }
 
 .search__form {
-    margin: 215px auto;
+    margin: 105px auto;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -337,8 +339,12 @@ html {
     align-items: center;
     justify-content: center;
     width: 400px;
+    height: 135px;
     box-sizing: border-box;
+}
 
+.flex-item:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;;
 }
 
 .item-content {
@@ -433,7 +439,15 @@ html {
 .item-percentage {
     color: #90DF53;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 15px;
+}
+
+.section-title {
+    font-size: 16px !important;
+    opacity: 0.5;
+    line-height: 14;
+    width: 100%;
+    font-weight: bold;
 }
 
 @media only screen and (max-width: 600px) {

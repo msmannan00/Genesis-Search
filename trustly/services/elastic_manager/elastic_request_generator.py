@@ -257,73 +257,29 @@ class elastic_request_generator(request_handler):
 
   @staticmethod
   def __generate_insight_queries():
-    queries = [{
-        ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
-        ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"unique_urls": {"cardinality": {"field": "m_url.keyword"}}}}
-    }, {
-        ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
-        ELASTIC_KEYS.S_FILTER: {"size": 0,
-                                "aggs": {"unique_base_urls": {"cardinality": {"field": "m_base_url.keyword"}}}}
-    }, {
-        ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
-        ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"match_all": {}}}
-    }, {
-        ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
-        ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"avg_validity_score": {"avg": {"field": "m_validity_score"}}}}
-    }, {
-        ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
-        ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"exists": {"field": "m_important_content"}}}
-    }, {
-        ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
-        ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"exists": {"field": "m_meta_description"}}}
-    }, {
-        ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
-        ELASTIC_KEYS.S_FILTER: {"size": 0,
-                                "aggs": {"unique_keywords": {"cardinality": {"field": "m_keywords.keyword"}}}}
-    }, {
-        ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
-        ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"range": {"m_update_date": {"gte": "now-30d/d"}}}}
-    }, {
-        ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
-        ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"term": {"m_content_type.keyword": "general"}}}
-    }, {
-        ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
-        ELASTIC_KEYS.S_FILTER: {"size": 0,
-                                "aggs": {"total_phone_numbers": {"cardinality": {"field": "m_phone_numbers.keyword"}}}}
-    }, {
-        ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
-        ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"exists": {"field": "m_sub_url"}}}
-    }, {
-        ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX,
-        ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"unique_hashes": {"cardinality": {"field": "m_hash.keyword"}}}}
-    }, {
-        ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX,
-        ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"unique_hashes": {"cardinality": {"field": "m_hash.keyword"}}}}
-    }, {
-        ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX,
-        ELASTIC_KEYS.S_FILTER: {"size": 0,
-                                "aggs": {"unique_hash_urls": {"cardinality": {"field": "m_hash_url.keyword"}}}}
-    }, {
-        ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX,
-        ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"range": {"m_update_date": {"gte": "now-30d/d"}}}}
-    }, {
-        ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX,
-        ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"exists": {"field": "m_contact_link"}}}
-    }, {
-        ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX,
-        ELASTIC_KEYS.S_FILTER: {"size": 0,
-                                "aggs": {"unique_keywords": {"cardinality": {"field": "m_keywords.keyword"}}}}
-    }, {
-        ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX,
-        ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"exists": {"field": "m_title"}}}
-    }, {
-        ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX,
-        ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"exists": {"field": "m_meta_description"}}}
-    }]
+    queries = [
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Doc Count": {"value_count": {"field": "_id"}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Unique_Base_URLs": {"cardinality": {"field": "m_base_url"}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"URL / Doc": {"avg": {"script": "doc['m_sub_url'].size() > 0 ? doc['m_sub_url'].length : 0"}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Archive / Doc": {"avg": {"script": "doc['m_archive_url'].size() > 0 ? doc['m_archive_url'].length : 0"}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Email / Doc": {"avg": {"script": "doc['m_emails'].size() > 0 ? doc['m_emails'].length : 0"}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Phone / Doc": {"avg": {"script": "doc['m_phone_numbers'].size() > 0 ? doc['m_phone_numbers'].length : 0"}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Average Score": {"avg": {"field": "m_validity_score"}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Common Type": {"terms": {"field": "m_content_type", "size": 1}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"range": {"m_update_date": {"gte": "now-5d/d"}}}, "aggs": {"Updated 5 Days": {"value_count": {"field": "_id"}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"range": {"m_update_date": {"gte": "now-10d/d"}}}, "aggs": {"Updated 9 Days": {"value_count": {"field": "_id"}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Most Recent": {"max": {"field": "m_update_date"}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Oldest Update": {"min": {"field": "m_update_date"}}}}},
 
-    # Generic Queries
-
-    # Leak Model Queries
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Doc Count": {"value_count": {"field": "_id"}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Unique_Base_URLs": {"cardinality": {"field": "m_base_url"}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Dumps / Doc": {"avg": {"script": "doc['m_dumplink'].size() > 0 ? doc['m_dumplink'].length : 0"}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"URL / Doc": {"avg": {"script": "doc['m_weblink'].size() > 0 ? doc['m_weblink'].length : 0"}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"range": {"m_update_date": {"gte": "now-5d/d"}}}, "aggs": {"Updated 5 Days": {"value_count": {"field": "_id"}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"range": {"m_update_date": {"gte": "now-10d/d"}}}, "aggs": {"Updated 9 Days": {"value_count": {"field": "_id"}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Most Recent": {"max": {"field": "m_update_date"}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Oldest Update": {"min": {"field": "m_update_date"}}}}}
+    ]
 
     return queries
 

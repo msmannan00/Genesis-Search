@@ -1,7 +1,7 @@
 import math
 import random
 import string
-from datetime import datetime
+from datetime import datetime, timezone
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.constants.strings import GENERAL_STRINGS, SEARCH_STRINGS
 from trustly.controllers.helper_manager.helper_controller import helper_controller
@@ -185,7 +185,7 @@ class search_session_controller(request_handler):
 
         m_update_date_str = p_document["m_update_date"]
         m_update_date = datetime.fromisoformat(m_update_date_str)
-        current_time = datetime.now()
+        current_time = datetime.now(timezone.utc)
         time_difference = (current_time - m_update_date).total_seconds() / 60
 
         if time_difference < 7200:
@@ -206,7 +206,7 @@ class search_session_controller(request_handler):
                 SEARCH_CALLBACK.M_MORE_ID: random_id,
                 SEARCH_CALLBACK.M_FULL_CONTENT: p_document["m_content"],
                 SEARCH_CALLBACK.K_CONTENT_TYPE: p_document["m_content_type"],
-                SEARCH_CALLBACK.M_URL_DISPLAY_TYPE: "leak",
+                SEARCH_CALLBACK.M_URL_DISPLAY_TYPE: ["leak"],
                 SEARCH_CALLBACK.M_UPDATE_DATA: m_update_date_str,
                 SEARCH_CALLBACK.M_EXPIRY: expiry_status
             }

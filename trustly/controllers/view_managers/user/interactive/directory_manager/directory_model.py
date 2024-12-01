@@ -22,7 +22,7 @@ class directory_model(request_handler):
 
     @staticmethod
     def __load_onion_links(p_directory_class_model):
-        m_documents, m_status = mongo_controller.getInstance().invoke_trigger(
+        m_documents, count, m_status = mongo_controller.getInstance().invoke_trigger(
             MONGODB_CRUD.S_READ,
             [
                 MONGO_COMMANDS.M_GET_URL_STATUS,
@@ -33,35 +33,31 @@ class directory_model(request_handler):
 
         if m_status:
             m_documents = list(m_documents)
-
             utc_now = datetime.now(timezone.utc)
             threshold_date = utc_now - timedelta(days=5)
-
             for mDoc in m_documents:
-                if 'leak_status_date' in mDoc:
-                    if mDoc['leak_status_date'] < threshold_date:
-                        mDoc['leak_status_date'] = 0
-                    else:
-                        mDoc['leak_status_date'] = 1
+                if 'leak_status_date' in mDoc and isinstance(mDoc['leak_status_date'], datetime):
+                    mDoc['leak_status_date'] = mDoc['leak_status_date'].replace(tzinfo=timezone.utc) if mDoc[ 'leak_status_date'].tzinfo is None else \
+                    mDoc['leak_status_date']
+                    mDoc['leak_status_date'] = 1 if mDoc['leak_status_date'] >= threshold_date else 0
                 else:
                     mDoc['leak_status_date'] = 0
 
-                if 'url_status_date' in mDoc:
-                    if mDoc['url_status_date'] < threshold_date:
-                        mDoc['url_status_date'] = 0
-                    else:
-                        mDoc['url_status_date'] = 1
+                if 'url_status_date' in mDoc and isinstance(mDoc['url_status_date'], datetime):
+                    mDoc['url_status_date'] = mDoc['url_status_date'].replace(tzinfo=timezone.utc) if mDoc['url_status_date'].tzinfo is None else \
+                    mDoc['url_status_date']
+                    mDoc['url_status_date'] = 1 if mDoc['url_status_date'] >= threshold_date else 0
                 else:
                     mDoc['url_status_date'] = 0
 
-            return m_documents
+            return m_documents, count
         else:
-            return []
+            return [], count
 
     def __init_page(self, p_data):
         m_directory_class_model, m_status, _ = self.__m_session.invoke_trigger(DIRECTORY_SESSION_COMMANDS.M_PRE_INIT, [p_data])
-        m_directory_class_model.m_row_model_list  = self.__load_onion_links(m_directory_class_model)
-        m_context, m_status = self.__m_session.invoke_trigger(DIRECTORY_SESSION_COMMANDS.M_INIT, [m_directory_class_model])
+        m_directory_class_model.m_row_model_list, count  = self.__load_onion_links(m_directory_class_model)
+        m_context, m_status = self.__m_session.invoke_trigger(DIRECTORY_SESSION_COMMANDS.M_INIT, [m_directory_class_model, count])
 
         return m_context, m_status
 

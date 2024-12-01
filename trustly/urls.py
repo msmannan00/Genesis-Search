@@ -28,6 +28,8 @@ urlpatterns = [
   path('feeder/unique', views.feeder_unique, name='feeder_unique'),
   path('feeder/publish', views.feeder_publish, name='feeder_publish'),
   path('feeder/', views.feeder, name='feeder'),
+  path('crawl_index/', views.crawl_index, name='crawl_index'),
+
 ]
 
 handler400 = views.error_page_400

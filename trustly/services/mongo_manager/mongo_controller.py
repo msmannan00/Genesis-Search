@@ -59,14 +59,22 @@ class mongo_controller:
 
   def __read(self, p_data, p_skip, p_limit):
     try:
-      if p_limit is not None:
-        documents = self.__m_connection[p_data[MONGODB_KEYS.S_DOCUMENT]].find(p_data[MONGODB_KEYS.S_FILTER]).skip(p_skip).limit(p_limit)
-      else:
-        documents = self.__m_connection[p_data[MONGODB_KEYS.S_DOCUMENT]].find(p_data[MONGODB_KEYS.S_FILTER])
-      return documents, True
+      pipeline = [
+        {"$match": p_data[MONGODB_KEYS.S_FILTER]},
+        {
+          "$facet": {
+            "total_count": [{"$count": "count"}],
+            "documents": [{"$skip": p_skip}, {"$limit": p_limit}] if p_limit else [{"$skip": p_skip}]
+          }
+        }
+      ]
+      result = list(self.__m_connection[p_data[MONGODB_KEYS.S_DOCUMENT]].aggregate(pipeline))
+      total_count = result[0]["total_count"][0]["count"] if result[0]["total_count"] else 0
+      documents = result[0]["documents"]
+      return documents, total_count, True
     except Exception as ex:
       log.g().e("MONGO E3 : " + MANAGE_MONGO_MESSAGES.S_READ_FAILURE + " : " + str(ex))
-      return str(ex), False
+      return str(ex), 0, False
 
   def __replace(self, p_data, p_upsert):
     try:

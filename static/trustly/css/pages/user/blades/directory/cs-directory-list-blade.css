@@ -4,12 +4,15 @@
 }
 .directory__table tr:nth-child(even) {
   background-color: #2A578459;
+  min-height: 45px;
 }
 .directory__table tr:nth-child(odd) {
-  background-color: #174069;
+  background-color: #2A578429 !important;
+  min-height: 45px;
 }
+
 .onion__table-url{
-    color: #FFFFFF;
+    color: #fff;
     overflow: hidden;
     font-size: 12px;
     font-weight: 400;
@@ -17,23 +20,52 @@
     word-wrap: break-word;
     text-decoration: none;
 }
-.onion__table-category{
-    color: #0c5460;
-    text-align: left;
-    font-size: 13px;
-    margin-right: 25px;
-
+.status_default_pointer{
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #198754;
+    margin-right: 5px;
+}
+.status_inactive_pointer{
+    background-color: #ffc107 !important;
 }
 @media only screen and (max-width: 943px) {
     .onion__table--container{
         padding-right:4%;
     }
-    .onion__table-category{
-        color: #0c5460;
-        margin-right: 25px;
-        height: 100%;
-        vertical-align: middle !important;
-        border: 1px solid #e6e6e6;
-        background: #f7f7f7 !important;
+        table thead {
+        display: none;
+    }
+
+    table tr {
+        display: flex;
+        flex-direction: column;
+        padding: 1px;
+    }
+
+
+    table td[data-label] {
+        display: flex;
+        font-weight: bold;
+        border-bottom: 1px solid #2A5784 !important;
+    }
+
+    table td[data-label]::before {
+        content: attr(data-label);
+        font-weight: 100;
+        width: 50%;
+    }
+    .onion__table-url {
+        color: #FFFFFF;
+        font-size: 12px;
+        font-weight: 400;
+        text-decoration: none;
+        display: inline-block;
+        width: 20ch;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }

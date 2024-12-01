@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.decorators.csrf import ensure_csrf_cookie, csrf_protect
+from django.views.decorators.csrf import ensure_csrf_cookie, csrf_protect, csrf_exempt
 from trustly.services.block_manager.block_controller import block_controller
 from trustly.services.user_auth_manager.user_auth_controller import user_auth_controller
 from trustly.services.user_auth_manager.user_auth_enums import USER_AUTH_COMMANDS
@@ -94,6 +94,10 @@ def manage_search(request):
     return manage_search_view_model.getInstance().invoke_trigger(MANAGE_SEARCH_MODEL_CALLBACK.M_INIT, request)
   elif request.method == 'POST':
     return render(None, CONSTANTS.S_TEMPLATE_BLOCK_WEBSITE_PATH, None)
+
+@csrf_exempt
+def crawl_index(request):
+  return crawl_controller.getInstance().invoke_trigger(CRAWL_COMMANDS.M_INIT, request)
 
 @csrf_protect
 def manage_authentication(request):
