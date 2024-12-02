@@ -3,7 +3,7 @@ stop_docker() {
     docker compose stop
     docker cp static/. trusted-web-main:/app/static/
     docker cp trustly/templates/. trusted-web-main:/app/trustly/templates/
-    container_names=("trustly-web-mongodb" "trusted-web-elastic" "trusted-web-main" "trusted-web-nginx")
+    container_names=("trustly-web-mongodb" "trusted-web-elastic" "trusted-web-main" "trusted-web-nginx" "trusted-WEB-redis")
 
     for container_name in "${container_names[@]}"; do
         if [[ $(docker ps -a --filter "name=$container_name" --format '{{.ID}}') ]]; then
