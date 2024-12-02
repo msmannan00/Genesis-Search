@@ -134,12 +134,13 @@ class insight_job(request_handler):
 
         insight_old = redis_controller().invoke_trigger(
             REDIS_COMMANDS.S_GET_STRING,
-            [REDIS_KEYS.INSIGHT_OLD, REDIS_DEFAULT.INSIGHT_DEFAULT, None ]
+            [REDIS_KEYS.INSIGHT_OLD, REDIS_DEFAULT.INSIGHT_DEFAULT, None]
         )
+
         insight_new = str(results_dict)
         trending_insight = self.generate_insight_comparison(insight_old, insight_new)
 
-
-        redis_controller().invoke_trigger(REDIS_COMMANDS.S_SET_STRING, [REDIS_KEYS.INSIGHT_OLD, insight_old, None])
+        redis_controller().invoke_trigger(REDIS_COMMANDS.S_SET_STRING, [REDIS_KEYS.INSIGHT_OLD, insight_new, None])
         redis_controller().invoke_trigger(REDIS_COMMANDS.S_SET_STRING, [REDIS_KEYS.INSIGHT_NEW, insight_new, None])
         redis_controller().invoke_trigger(REDIS_COMMANDS.S_SET_STRING, [REDIS_KEYS.INSIGHT_STAT, trending_insight, None])
+

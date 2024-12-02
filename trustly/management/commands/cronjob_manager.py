@@ -9,4 +9,4 @@ from trustly.management.commands.scheduler import RepeatedTimer
 class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         RepeatedTimer(CONSTANTS.S_SETTINGS_INDEX_EXPIRY_TIMEOUT, elastic_controller.get_instance().purge_old_records, False)
-        RepeatedTimer(CONSTANTS.S_SETTINGS_INDEX_EXPIRY_TIMEOUT, insight_job.get_instance().init_trending_insights, True)
+        RepeatedTimer(CONSTANTS.S_SETTINGS_INDEX_STATS_TIMEOUT, insight_job.get_instance().init_trending_insights, False)

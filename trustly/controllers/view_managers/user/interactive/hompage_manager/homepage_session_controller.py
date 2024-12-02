@@ -13,7 +13,7 @@ class homepage_session_controller(request_handler):
 
     @staticmethod
     def __init_parameters(p_data):
-        results_dict = redis_controller().invoke_trigger(REDIS_COMMANDS.S_GET_STRING, [REDIS_KEYS.INSIGHT_STAT, REDIS_DEFAULT.INSIGHT_DEFAULT, None])
+        results_dict = redis_controller().invoke_trigger(REDIS_COMMANDS.S_GET_STRING, [REDIS_KEYS.INSIGHT_STAT, REDIS_DEFAULT.INSIGHT_STAT_DEFAULT, None])
         results_dict = ast.literal_eval(results_dict)
 
         m_context = {
