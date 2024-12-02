@@ -5,7 +5,7 @@
     max-width: 650px;
     padding: 10px 10px 20px;
     border-radius: 8px;
-    margin: 14px 13px 0 6.8em;
+    margin: 14px 13px 0 175px;
     background: #f9f9f9;
     border-left: 4px solid #ffcc66;
 }
@@ -15,7 +15,7 @@
     border-left: 4px solid #80bfff;
     max-width: 650px;
     border-radius: 8px !important;
-    margin: 14px 13px 30px 6.8em !important;
+    margin: 14px 13px 30px 175px !important;
 }
 .search-engine-highlights--images-header{
     max-width: 650px;

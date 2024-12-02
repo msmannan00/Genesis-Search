@@ -1,16 +1,20 @@
 {% load static %}
 
-<div class="toolbar">
+<div class="toolbar__search">
     <!-- Left-side Buttons -->
     <div class="toolbar__left">
-        <p class="search__results">
-            About 787 results found
-        </p>
+        {% if mSearchCallbackRelevantDocument|length > 10 %}
+            
+            <p class="search__results">
+                About {{ mSearchCallbackResultCount }} results found
+            </p>
+        {% endif %}
+
     </div>
 
     <!-- Right-side Switch -->
     <div class="toolbar__right">
-        <label class="toolbar__switch">
+        <label class="toolbar__switch" style="margin-bottom: 0px">
             <input type="checkbox">
             <span class="toolbar__slider"></span>
         </label>
