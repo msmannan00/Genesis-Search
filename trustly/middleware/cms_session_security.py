@@ -21,5 +21,12 @@ class cms_session_security(MiddlewareMixin):
     @staticmethod
     def process_response(request, response):
         session_token = request.session.get('session_token')
-        response.set_cookie('browser_session_token', session_token, max_age=600)
+        response.set_cookie(
+            'browser_session_token',
+            session_token,
+            max_age=600,
+            httponly=True,
+            secure=True,
+            samesite='None'
+        )
         return response
