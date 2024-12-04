@@ -1,3 +1,5 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a1f302d35c0f4f8c9293acabc5086512)](https://app.codacy.com/gh/msmannan00/Orion-Search/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+
 ![WebApp](https://github.com/msmannan00/Orion-Search/blob/trusted_main/documentation/homepage.png?raw=true)
 # Orion Search
 <table>
