@@ -3,14 +3,10 @@
 <table>
 <tr>
 <td>
-  A webapp using Quandl API to display history of stock growth in a given period of time. It helps predict the growth of stocks from the  charts of stock performace in any period of time. It helps to judge stocks, with the principle of momentum investing, which returns 1% per month on average.
+Orion Search Engine is a web-based search tool built on top of Docker that provides a user-friendly interface to explore and visualize data extracted by the Orion Crawler. The engine supports a vast array of functionalities, offering users the ability to search, filter, and visualize data across multiple categories. It integrates machine learning models for enhanced search relevance and content analysis.
 </td>
 </tr>
 </table>
-
-# Genesis Search Engine
-
-Genesis Search Engine is a web-based search tool built on top of Docker that provides a user-friendly interface to explore and visualize data extracted by the Genesis Crawler. The engine supports a vast array of functionalities, offering users the ability to search, filter, and visualize data across multiple categories. It integrates machine learning models for enhanced search relevance and content analysis.
 
 ## Features
 
@@ -22,7 +18,7 @@ Genesis Search Engine is a web-based search tool built on top of Docker that pro
 
 ## Technology Stack
 
-The Genesis Search Engine is built using various technologies to provide optimal search capabilities and data handling. Below is the list of libraries and frameworks used:
+The Orion Search Engine is built using various technologies to provide optimal search capabilities and data handling. Below is the list of libraries and frameworks used:
 
 ### Search Functionality
 
@@ -94,7 +90,7 @@ The Genesis Search Engine is built using various technologies to provide optimal
 
 ## Setup and Installation
 
-To get started with Genesis Search Engine, follow these steps:
+To get started with Orion Search Engine, follow these steps:
 
 ### 1. Clone the Repository
 
@@ -107,7 +103,7 @@ cd Genesis-Search
 
 ## Setup and Installation
 
-To get started with Genesis Search, follow these steps:
+To get started with Orion Search, follow these steps:
 
 ### 1. Clone the Repository
 
@@ -147,7 +143,7 @@ add custom parsers inside static/trustly/.well-known/parsers with same onion web
 
 ## Contribution
 
-We welcome contributions to improve Genesis Search. If you'd like to contribute, please fork the repository and submit a pull request.
+We welcome contributions to improve Orion Search. If you'd like to contribute, please fork the repository and submit a pull request.
 
 ### Steps to Contribute
 
@@ -159,11 +155,11 @@ We welcome contributions to improve Genesis Search. If you'd like to contribute,
 
 ## License
 
-Genesis Search is licensed under the [MIT License](LICENSE).
+Orion Search is licensed under the [MIT License](LICENSE).
 
 ## Disclaimer
 
-This project is intended for research purposes only. The authors of Genesis Search do not support or endorse illegal activities, and users of this project are responsible for ensuring their actions comply with the law.
+This project is intended for research purposes only. The authors of Orion Search do not support or endorse illegal activities, and users of this project are responsible for ensuring their actions comply with the law.
 
 ## GitHub Repository
 
