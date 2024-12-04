@@ -1,4 +1,4 @@
-# ![WebApp](https://raw.githubusercontent.com/msmannan00/Genesis-Search/refs/heads/trusted_main/documentation/homepage.png)
+![WebApp](https://raw.githubusercontent.com/msmannan00/Genesis-Search/refs/heads/trusted_main/documentation/homepage.png)
 # Orion Search
 <table>
 <tr>
