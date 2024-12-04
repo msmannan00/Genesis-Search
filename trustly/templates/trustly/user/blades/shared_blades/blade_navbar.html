@@ -10,7 +10,7 @@
         </a>
         <a href="/#analytics" >
             <button class="toolbar__button {% if request.path == '/xx' %}toolbar__button__selected{% endif %}">Analytics</button>
-            <img class="toolbar__button-rotate" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADeSURBVHgBpVPbDYJAELw7EHzAl4mJiTZnBbZgAbZgI1ZgAZbhF2CIaM6ZZI8cBhRwkgmbu51h97Kr1QestRE+MTgFQzmuhLnW+uXna0/IOAUX6jtyMbK1gYiX4ET1A6u50cTIQTpArCQ3YWDw96BH2W1I+F7GOY1ETIOo43ILnsELuOnImdEg7BCfwD24k7jNJNDoY91yQcERvHqGBzFrgAYrOqlxqNhCqcbj+a9BZjBNDwR3NRwF98JNYsZyBogr0TSWiWYc6fkPcUFxY5l8yGi73XAzwhXmW5XSco03+q5AT869urwAAAAASUVORK5CYII=" alt="Icon">
+            <img class="toolbar__button-rotate" width="24" height="24" src="{% static 'trustly/images/arrow_up.png' %}" alt="Icon">
         </a>
     </div>
 
@@ -19,6 +19,7 @@
             <input type="checkbox" id="safe-search" />
             <span class="toolbar__slider"></span>
         </label>
-        <span class="toolbar__text">Enable Safe Search</span>
+        <span id="safe-search-label" class="toolbar__text">Enable Safe Search</span>
     </div>
+
 </div>
