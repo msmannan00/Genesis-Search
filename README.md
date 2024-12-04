@@ -1,20 +1,28 @@
 # ![WebApp](https://raw.githubusercontent.com/msmannan00/Genesis-Search/refs/heads/trusted_main/documentation/homepage.png)
-# WebApp
+# Orion Search
 <table>
 <tr>
 <td>
 Orion Search Engine is a web-based search tool built on top of Docker that provides a user-friendly interface to explore and visualize data extracted by the Orion Crawler. The engine supports a vast array of functionalities, offering users the ability to search, filter, and visualize data across multiple categories. It integrates machine learning models for enhanced search relevance and content analysis.
 </td>
 </tr>
+<tr>
+<td>
+📒 ## Features
+
+**Docker-Based Deployment**: Quick setup and deployment using Docker.
+
+**Advanced Search Functionality**: Provides comprehensive search capabilities with various filters and options to refine search results.
+
+**Data Visualization**: Generates visual representations of the data, making it easier to analyze search results.
+
+**Customizable Search Parsers**: Allows for integrating custom parsers to refine data extraction from specific websites.
+
+**Integrated Machine Learning Models**: Incorporates NLP and machine learning models to provide search relevance, content categorization, and detection of specific data patterns.
+</td>
+</tr>
 </table>
 
-## Features
-
-- **Docker-Based Deployment**: Quick setup and deployment using Docker.
-- **Advanced Search Functionality**: Provides comprehensive search capabilities with various filters and options to refine search results.
-- **Data Visualization**: Generates visual representations of the data, making it easier to analyze search results.
-- **Customizable Search Parsers**: Allows for integrating custom parsers to refine data extraction from specific websites.
-- **Integrated Machine Learning Models**: Incorporates NLP and machine learning models to provide search relevance, content categorization, and detection of specific data patterns.
 
 ## Technology Stack
 
