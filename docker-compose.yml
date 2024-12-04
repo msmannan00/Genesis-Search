@@ -66,6 +66,12 @@ services:
     networks:
       backend:
         ipv4_address: 172.20.1.11
+    deploy:
+      resources:
+        limits:
+         memory: ${MEMORY_LIMIT}
+        reservations:
+          memory: ${MEMORY_RESERVATION}
 
   redis_server:
     container_name: trusted-web-redis
@@ -178,7 +184,9 @@ services:
     deploy:
       resources:
         limits:
-          memory: 5G
+         memory: ${MEMORY_LIMIT}
+        reservations:
+          memory: ${MEMORY_RESERVATION}
     networks:
       backend:
         ipv4_address: 172.20.1.14
