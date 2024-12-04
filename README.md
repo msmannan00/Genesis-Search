@@ -151,7 +151,7 @@ For specific website crawling, you can provide your own parsers. Load them onto 
 add custom parsers inside static/trustly/.well-known/parsers with same onion website name
 ```
 
-## Contribution
+## Contribution ❤️
 
 We welcome contributions to improve Orion Search. If you'd like to contribute, please fork the repository and submit a pull request.
 
