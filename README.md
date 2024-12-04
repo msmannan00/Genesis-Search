@@ -1,4 +1,4 @@
-# ![WebApp]([https://iharsh234.github.io/WebApp/images/demo/demo_landing.JPG](https://raw.githubusercontent.com/msmannan00/Genesis-Search/refs/heads/trusted_main/documentation/homepage.png))
+# ![WebApp](https://raw.githubusercontent.com/msmannan00/Genesis-Search/refs/heads/trusted_main/documentation/homepage.png)
 # WebApp
 <table>
 <tr>
