@@ -11,13 +11,15 @@ services:
         condition: service_started
     env_file:
       - .env
-    command: >
-      sh -c "
+    command:
+      - /bin/sh
+      - -c
+      - >
         python manage.py collectstatic --noinput &&
         python manage.py compress --follow-links --force &&
+        find /app/staticfiles -type f -exec gzip -k {} \; &&
         gunicorn trustly.wsgi:application --bind 0.0.0.0:8070 --reload &
         sleep 10 && python manage.py cronjob_manager
-        "
     volumes:
       - .:/app:cached
       - ./static:/app/static:cached
