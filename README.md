@@ -1,4 +1,4 @@
-![WebApp](https://github.com/msmannan00/Genesis-Search/blob/trusted_main/documentation/homepage.png?raw=true)
+![WebApp](https://github.com/msmannan00/Orion-Search/blob/trusted_main/documentation/homepage.png?raw=true)
 # Orion Search
 <table>
 <tr>
@@ -107,8 +107,8 @@ To get started with Orion Search Engine, follow these steps:
 Clone the repository from GitHub and navigate to the project directory.
 
 ```
-git clone https://github.com/msmannan00/Genesis-Search.git
-cd Genesis-Search
+git clone https://github.com/msmannan00/Orion-Search.git
+cd Orion-Search
 ```
 
 ## Setup and Installation
@@ -120,8 +120,8 @@ To get started with Orion Search, follow these steps:
 Clone the repository from GitHub and navigate to the project directory.
 
 ```
-https://github.com/msmannan00/Genesis-Search.git
-cd Genesis-Search
+https://github.com/msmannan00/Orion-Search.git
+cd Orion-Search
 ```
 
 #### 2. Install Dependencies
@@ -171,4 +171,4 @@ This project is intended for research purposes only. The authors of Orion Search
 
 ## GitHub Repository
 
-GitHub Repository URL: [https://github.com/msmannan00/Genesis-Search.git](https://github.com/msmannan00/Genesis-Search)
+GitHub Repository URL: [https://github.com/msmannan00/Orion-Search.git](https://github.com/msmannan00/Orion-Search)
