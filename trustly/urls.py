@@ -1,5 +1,6 @@
 from django.urls import path
-from trustly import views
+from trustly import views, settings
+from django.conf.urls.static import static
 
 urlpatterns = [
 
@@ -36,3 +37,4 @@ handler400 = views.error_page_400
 handler403 = views.error_page_403
 handler404 = views.error_page_404
 handler500 = views.error_page_500
+

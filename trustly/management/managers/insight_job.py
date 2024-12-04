@@ -87,7 +87,7 @@ class insight_job(request_handler):
                     if isinstance(entry, dict) and entry
                 }
 
-                all_metrics = set(old_entries.keys()).union(set(new_entries.keys()))
+                all_metrics = sorted(set(old_entries.keys()).union(set(new_entries.keys())))  # Sort metrics
 
                 for metric in all_metrics:
                     new_value = new_entries.get(metric, 0)
@@ -124,23 +124,37 @@ class insight_job(request_handler):
         except Exception as e:
             return f"Error processing insights: {str(e)}"
 
-    def init_trending_insights(self):
+    def init_trending_insights_daily(self):
         results_dict, grouped_results = {}, {"generic_model": [], "leak_model": []}
 
         try:
             results_dict = self.__fetch_elastic_insight(grouped_results)
-        except Exception as e:
-            results_dict = {"error": str(e)}
+        except Exception as _:
+            return
 
-        insight_old = redis_controller().invoke_trigger(
-            REDIS_COMMANDS.S_GET_STRING,
-            [REDIS_KEYS.INSIGHT_OLD, REDIS_DEFAULT.INSIGHT_DEFAULT, None]
-        )
-
+        insight_old = redis_controller().invoke_trigger(REDIS_COMMANDS.S_GET_STRING, [REDIS_KEYS.INSIGHT_NEW_DAY, REDIS_DEFAULT.INSIGHT_DEFAULT, None])
         insight_new = str(results_dict)
         trending_insight = self.generate_insight_comparison(insight_old, insight_new)
 
-        redis_controller().invoke_trigger(REDIS_COMMANDS.S_SET_STRING, [REDIS_KEYS.INSIGHT_OLD, insight_new, None])
-        redis_controller().invoke_trigger(REDIS_COMMANDS.S_SET_STRING, [REDIS_KEYS.INSIGHT_NEW, insight_new, None])
-        redis_controller().invoke_trigger(REDIS_COMMANDS.S_SET_STRING, [REDIS_KEYS.INSIGHT_STAT, trending_insight, None])
+        redis_controller().invoke_trigger(REDIS_COMMANDS.S_SET_STRING, [REDIS_KEYS.INSIGHT_OLD_DAY, insight_old, None])
+        redis_controller().invoke_trigger(REDIS_COMMANDS.S_SET_STRING, [REDIS_KEYS.INSIGHT_NEW_DAY, insight_new, None])
+        redis_controller().invoke_trigger(REDIS_COMMANDS.S_SET_STRING, [REDIS_KEYS.INSIGHT_STAT_DAY, trending_insight, None])
+
+
+    def init_trending_insights_weekly(self):
+        results_dict, grouped_results = {}, {"generic_model": [], "leak_model": []}
+
+        try:
+            results_dict = self.__fetch_elastic_insight(grouped_results)
+        except Exception as _:
+            return
+
+        insight_old = redis_controller().invoke_trigger(REDIS_COMMANDS.S_GET_STRING, [REDIS_KEYS.INSIGHT_NEW_WEEK, REDIS_DEFAULT.INSIGHT_DEFAULT, None])
+        insight_new = str(results_dict)
+        trending_insight = self.generate_insight_comparison(insight_old, insight_new)
+
+        redis_controller().invoke_trigger(REDIS_COMMANDS.S_SET_STRING, [REDIS_KEYS.INSIGHT_OLD_WEEK, insight_old, None])
+        redis_controller().invoke_trigger(REDIS_COMMANDS.S_SET_STRING, [REDIS_KEYS.INSIGHT_NEW_WEEK, insight_new, None])
+        redis_controller().invoke_trigger(REDIS_COMMANDS.S_SET_STRING, [REDIS_KEYS.INSIGHT_STAT_WEEK, trending_insight, None])
+
 

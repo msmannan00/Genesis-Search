@@ -41,6 +41,10 @@ html {
     background: rgba(41, 87, 132, 255) !important;
 }
 
+body{
+    min-height: 100vh;
+}
+
 .clear-paddings {
     margin: 0 !important;
     padding: 0 !important;

@@ -259,7 +259,7 @@ class elastic_request_generator(request_handler):
   def __generate_insight_queries():
     queries = [
       {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Doc Count": {"value_count": {"field": "_id"}}}}},
-      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Unique_Base_URLs": {"cardinality": {"field": "m_base_url"}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Unique URL": {"cardinality": {"field": "m_base_url"}}}}},
       {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"URL / Doc": {"avg": {"script": "doc['m_sub_url'].size() > 0 ? doc['m_sub_url'].length : 0"}}}}},
       {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Archive / Doc": {"avg": {"script": "doc['m_archive_url'].size() > 0 ? doc['m_archive_url'].length : 0"}}}}},
       {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Email / Doc": {"avg": {"script": "doc['m_emails'].size() > 0 ? doc['m_emails'].length : 0"}}}}},
@@ -272,7 +272,7 @@ class elastic_request_generator(request_handler):
       {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Oldest Update": {"min": {"field": "m_update_date"}}}}},
 
       {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Doc Count": {"value_count": {"field": "_id"}}}}},
-      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Unique_Base_URLs": {"cardinality": {"field": "m_base_url"}}}}},
+      {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Unique URL": {"cardinality": {"field": "m_base_url"}}}}},
       {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"Dumps / Doc": {"avg": {"script": "doc['m_dumplink'].size() > 0 ? doc['m_dumplink'].length : 0"}}}}},
       {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "aggs": {"URL / Doc": {"avg": {"script": "doc['m_weblink'].size() > 0 ? doc['m_weblink'].length : 0"}}}}},
       {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX, ELASTIC_KEYS.S_FILTER: {"size": 0, "query": {"range": {"m_update_date": {"gte": "now-5d/d"}}}, "aggs": {"Updated 5 Days": {"value_count": {"field": "_id"}}}}},

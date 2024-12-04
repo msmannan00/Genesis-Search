@@ -5,22 +5,39 @@ services:
       context: .
       dockerfile: dockerFiles/api_docker
     depends_on:
-      - elasticsearch
-      - mongo
+      elasticsearch:
+        condition: service_healthy
+      mongo:
+        condition: service_started
     env_file:
       - .env
     command: >
-      sh -c "python manage.py migrate &&
-             python manage.py createsuperuser --no-input || true &&
-             python manage.py cronjob_manager &
-             gunicorn trustly.wsgi:application --bind 0.0.0.0:8070 --reload"
+      sh -c "
+        python manage.py collectstatic --noinput &&
+        python manage.py compress --follow-links --force &&
+        gunicorn trustly.wsgi:application --bind 0.0.0.0:8070 --reload &
+        sleep 10 && python manage.py cronjob_manager
+        "
     volumes:
-      - .:/app
-      - static_volume:/app/static
+      - .:/app:cached
+      - ./static:/app/static:cached
+      - ./trustly/templates:/app/trustly/templates:cached
+      - ./staticfiles:/app/staticfiles:cached
     expose:
       - "8070"
     environment:
       NLTK_DATA: /root/nltk_data
+      DJANGO_SETTINGS_MODULE: trustly.settings
+      DISABLE_TEMPLATE_CACHING: "1"
+    networks:
+      backend:
+        ipv4_address: 172.20.1.10
+    healthcheck:
+      test: ["CMD-SHELL", "exit 0"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
 
   elasticsearch:
     container_name: trusted-web-elastic
@@ -39,15 +56,19 @@ services:
     ports:
       - "9400:9400"
     volumes:
-      - esdata:/usr/share/elasticsearch/data
+      - elastic:/usr/share/elasticsearch/data
     healthcheck:
       test: curl -f http://localhost:9400/_cluster/health || exit 1
       interval: 10s
       timeout: 5s
       retries: 3
+      start_period: 5s
+    networks:
+      backend:
+        ipv4_address: 172.20.1.11
 
   redis_server:
-    container_name: trusted-WEB-redis
+    container_name: trusted-web-redis
     image: redis:7.4.0
     logging:
       driver: none
@@ -55,6 +76,8 @@ services:
     restart: always
     env_file:
       - .env
+    volumes:
+      - redis:/data
     deploy:
       resources:
         limits:
@@ -64,6 +87,9 @@ services:
       interval: 10s
       timeout: 5s
       retries: 3
+    networks:
+      backend:
+        ipv4_address: 172.20.1.12
 
   nginx:
     container_name: trusted-web-nginx
@@ -74,7 +100,50 @@ services:
       - web
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - static_volume:/app/static
+      - ./static:/app/static:cached
+      - ./staticfiles:/app/staticfiles:cached
+      - media_volume:/app/media
+    networks:
+      backend:
+        ipv4_address: 172.20.1.13
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:80 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  traefik:
+    image: traefik:v2.10
+    container_name: trusted-web-traefik
+    ports:
+      - "8081:80"
+      - "8443:443"
+    command:
+      - "--entrypoints.web.address=:80"
+      - "--providers.file.directory=/etc/traefik"
+      - "--providers.docker=true"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./dockerFiles/traefik:/etc/traefik
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "exit 0"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  dozzle:
+    container_name: trusted-web-dozzle
+    image: amir20/dozzle:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dozzle.rule=Host(`dozzle.localhost`)"
+      - "traefik.http.services.dozzle.loadbalancer.server.port=8080"
+      - "traefik.http.routers.dozzle.middlewares=auth@file"
+    restart: unless-stopped
 
   mongo:
     image: mongo:latest
@@ -86,7 +155,7 @@ services:
     ports:
       - "27020:27017"
     volumes:
-      - mongodata:/data/db
+      - mongo:/data/db
     command: >
       bash -c "
       mongod --bind_ip_all --fork --logpath /var/log/mongodb.log &&
@@ -110,8 +179,26 @@ services:
       resources:
         limits:
           memory: 5G
+    networks:
+      backend:
+        ipv4_address: 172.20.1.14
+    healthcheck:
+      test: ["CMD-SHELL", "timeout 5 bash -c '</dev/tcp/localhost/27017' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  backend:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.1.0/24
 
 volumes:
-  esdata:
-  mongodata:
+  redis:
+  mongo:
+  elastic:
   static_volume:
+  media_volume:

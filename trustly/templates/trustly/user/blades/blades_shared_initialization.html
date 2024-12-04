@@ -1,4 +1,5 @@
 {% load static %}
+{% load compress %}
 
 <!DOCTYPE html>
 <head>
@@ -25,10 +26,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Helper Libraries -->
+    {% compress css %}
     <link rel="stylesheet" href="{% static 'trustly/libs/bootstrap.min.css' %}">
     <link href="{% static 'trustly/css/pages/user/blades/shared/cs-onion-warning-blade.css' %}" rel="stylesheet" />
     <link href="{% static 'trustly/css/pages/user/blades/shared/cs-toolbar.css' %}" rel="stylesheet" />
     <link href="{% static 'trustly/css/pages/cs-global-properties.css' %}" rel="stylesheet" />
+    {% endcompress %}
 
     <title>Orion Intelligence</title>
 

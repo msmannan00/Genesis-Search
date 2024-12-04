@@ -4,6 +4,7 @@ FROM python:3.11-slim AS base
 # Set the working directory
 WORKDIR /app
 
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
     gcc \
@@ -11,14 +12,15 @@ RUN apt-get update && apt-get install -y \
     libblas-dev \
     liblapack-dev \
     gfortran \
+    gettext \
     --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
-# Upgrade pip and install dependencies
+# Upgrade pip and install Python dependencies
 COPY requirements.txt ./
 RUN pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application code into /app directory
+# Copy the application code
 COPY . .
 COPY static/trustly/libs/nltk_data /root/nltk_data
 
@@ -26,6 +28,8 @@ COPY static/trustly/libs/nltk_data /root/nltk_data
 ENV DJANGO_SETTINGS_MODULE=trustly.settings
 ENV PYTHONUNBUFFERED=1
 
-# Expose the port for Gunicorn
-EXPOSE 8070
+# Collect static files
+RUN python manage.py collectstatic --noinput
 
+# Expose the application port for Gunicorn
+EXPOSE 8070

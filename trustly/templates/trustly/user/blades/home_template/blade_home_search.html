@@ -21,29 +21,25 @@
                     <img src="{% static 'trustly/images/cbimage.png' %}" alt="Brand Logo" width="57" height="12">
                 </div>
                 <div class="item-text">
-                    {% for key, value in item.items %}
                     <span class="item-text-primary">
-                        {{ value.value|stringformat:"s"|slice:":12"|join:"" }}
+                        {{ item.value }}
                     </span>
-                    <span class="item-text-secondary">{{ key|default:"Unknown" }}</span>
                     <span class="item-text-secondary">
+                        {{ item.name }}<br>
                         {% if model_name == "generic_model" %}
                             Generic Index
                         {% elif model_name == "leak_model" %}
                             Leak Index
-                        {% else %}
-                            {{ model_name }}
                         {% endif %}
                     </span>
-                    {% endfor %}
                 </div>
                 <div class="item-percentage">
-                    {% for key, value in item.items %}
-                    <span
-                            class="{% if value.change|slice:":1" == "+" %}text-success{% elif value.change|slice:":1" == "-" %}text-warning{% else %}text-body{% endif %}">
-                    <b>{{ value.change|default:"-" }}</b>
-                    </span>
-                    {% endfor %}
+                    <div class="{% if item.daily_change|slice:":1" == "+" %}text-success{% elif item.daily_change|slice:":1" == "-" %}text-warning{% else %}text-body{% endif %}">
+                        {{ item.daily_change|default:"-" }}
+                    </div><br>
+                    <div class="{% if item.weekly_change|slice:":1" == "+" %}text-success{% elif item.weekly_change|slice:":1" == "-" %}text-warning{% else %}text-body{% endif %}">
+                        {{ item.weekly_change|default:"-" }}
+                    </div>
                 </div>
             </div>
         </div>

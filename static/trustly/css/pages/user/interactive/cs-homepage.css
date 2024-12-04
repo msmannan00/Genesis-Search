@@ -375,7 +375,9 @@ html {
 .item-percentage {
     width: 50%;
     display: flex;
+    flex-direction: column;
     justify-content: end;
+    text-align:right
 }
 
 .item-text-primary {
