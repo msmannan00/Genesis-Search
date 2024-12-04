@@ -38,6 +38,12 @@ services:
       timeout: 10s
       retries: 3
       start_period: 10s
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 128M
 
   elasticsearch:
     container_name: trusted-web-elastic
@@ -50,7 +56,9 @@ services:
       - ELASTIC_PASSWORD=${ELASTIC_ROOT_PASSWORD}
       - xpack.security.enabled=false
       - xpack.security.transport.ssl.enabled=false
-      - ES_JAVA_OPTS=-Xms2g -Xmx2g
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - indices.memory.index_buffer_size=5%
+      - node.store.allow_mmap=false
     env_file:
       - .env
     ports:
@@ -78,10 +86,6 @@ services:
       - .env
     volumes:
       - redis:/data
-    deploy:
-      resources:
-        limits:
-          memory: 2G
     healthcheck:
       test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
       interval: 10s
@@ -90,6 +94,12 @@ services:
     networks:
       backend:
         ipv4_address: 172.20.1.12
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 128M
 
   nginx:
     container_name: trusted-web-nginx
@@ -111,39 +121,6 @@ services:
       interval: 30s
       timeout: 5s
       retries: 3
-
-  traefik:
-    image: traefik:v2.10
-    container_name: trusted-web-traefik
-    ports:
-      - "8081:80"
-      - "8443:443"
-    command:
-      - "--entrypoints.web.address=:80"
-      - "--providers.file.directory=/etc/traefik"
-      - "--providers.docker=true"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./dockerFiles/traefik:/etc/traefik
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD-SHELL", "exit 0"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 10s
-
-  dozzle:
-    container_name: trusted-web-dozzle
-    image: amir20/dozzle:latest
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.dozzle.rule=Host(`dozzle.localhost`)"
-      - "traefik.http.services.dozzle.loadbalancer.server.port=8080"
-      - "traefik.http.routers.dozzle.middlewares=auth@file"
-    restart: unless-stopped
 
   mongo:
     image: mongo:latest
@@ -175,10 +152,6 @@ services:
       mongod --auth --bind_ip_all --fork --logpath /var/log/mongodb.log &&
       tail -f /var/log/mongodb.log
       "
-    deploy:
-      resources:
-        limits:
-          memory: 5G
     networks:
       backend:
         ipv4_address: 172.20.1.14
@@ -187,6 +160,12 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 128M
 
 networks:
   backend:

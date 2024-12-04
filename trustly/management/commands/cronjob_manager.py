@@ -12,7 +12,10 @@ class Command(BaseCommand):
 
     @staticmethod
     def init_handles():
-        insight_job.get_instance().init_trending_insights_daily()
+        insight_old = redis_controller().invoke_trigger(REDIS_COMMANDS.S_GET_STRING, [REDIS_KEYS.INSIGHT_NEW_DAY, REDIS_DEFAULT.INSIGHT_DEFAULT, None])
+        if insight_old is REDIS_DEFAULT.INSIGHT_DEFAULT:
+            insight_job.get_instance().init_trending_insights_daily()
+            insight_job.get_instance().init_trending_insights_weekly()
 
 
     def handle(self, *args, **kwargs):

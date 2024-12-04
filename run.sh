@@ -15,10 +15,10 @@ configure_env(){
 }
 
 stop_docker
-configure_env
 if [ "$1" == "stop" ]; then
     echo "crawler service stopped"
 else
+    configure_env
     if [ "$1" == "build" ]; then
         sleep 5
         docker compose -p $PROJECT_NAME build

@@ -56,7 +56,9 @@ services:
       - ELASTIC_PASSWORD=${ELASTIC_ROOT_PASSWORD}
       - xpack.security.enabled=false
       - xpack.security.transport.ssl.enabled=false
-      - ES_JAVA_OPTS=-Xms2g -Xmx2g
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - indices.memory.index_buffer_size=5%
+      - node.store.allow_mmap=false
     env_file:
       - .env
     ports:
@@ -72,12 +74,6 @@ services:
     networks:
       backend:
         ipv4_address: 172.20.1.11
-    deploy:
-      resources:
-        limits:
-          memory: 512M
-        reservations:
-          memory: 128M
 
   redis_server:
     container_name: trusted-web-redis
