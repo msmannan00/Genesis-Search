@@ -23,6 +23,7 @@
 
 .toolbar__button-rotate{
     transform: rotate(180deg);
+    padding: 2px;
 }
 
 .toolbar__button:focus {

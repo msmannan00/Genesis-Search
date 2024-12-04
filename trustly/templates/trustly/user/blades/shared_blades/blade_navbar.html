@@ -3,10 +3,10 @@
 <div class="toolbar">
     <div class="toolbar__left">
         <a href="/">
-            <button class="toolbar__button {% if request.path == '/' %}toolbar__button__selected{% endif %}">Home</button>
+            <div class="toolbar__button {% if request.path == '/' %}toolbar__button__selected{% endif %}">Home</div>
         </a>
         <a href="/directory">
-            <button class="toolbar__button {% if request.path == '/directory/' %}toolbar__button__selected{% endif %}">Links</button>
+            <div class="toolbar__button {% if request.path == '/directory/' %}toolbar__button__selected{% endif %}">Links</div>
         </a>
         <a href="/#analytics" >
             <button class="toolbar__button {% if request.path == '/xx' %}toolbar__button__selected{% endif %}">Analytics</button>
