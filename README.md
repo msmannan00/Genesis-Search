@@ -1,3 +1,13 @@
+# ![WebApp]([https://iharsh234.github.io/WebApp/images/demo/demo_landing.JPG](https://raw.githubusercontent.com/msmannan00/Genesis-Search/refs/heads/trusted_main/documentation/homepage.png))
+# WebApp
+<table>
+<tr>
+<td>
+  A webapp using Quandl API to display history of stock growth in a given period of time. It helps predict the growth of stocks from the  charts of stock performace in any period of time. It helps to judge stocks, with the principle of momentum investing, which returns 1% per month on average.
+</td>
+</tr>
+</table>
+
 # Genesis Search Engine
 
 Genesis Search Engine is a web-based search tool built on top of Docker that provides a user-friendly interface to explore and visualize data extracted by the Genesis Crawler. The engine supports a vast array of functionalities, offering users the ability to search, filter, and visualize data across multiple categories. It integrates machine learning models for enhanced search relevance and content analysis.
