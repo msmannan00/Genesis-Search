@@ -10,6 +10,7 @@ Orion Search Engine is a web-based search tool built on top of Docker that provi
 <td>
 📒 Features
 
+
 **Docker-Based Deployment**: Quick setup and deployment using Docker.
 
 **Advanced Search Functionality**: Provides comprehensive search capabilities with various filters and options to refine search results.
@@ -19,6 +20,7 @@ Orion Search Engine is a web-based search tool built on top of Docker that provi
 **Customizable Search Parsers**: Allows for integrating custom parsers to refine data extraction from specific websites.
 
 **Integrated Machine Learning Models**: Incorporates NLP and machine learning models to provide search relevance, content categorization, and detection of specific data patterns.
+
 </td>
 </tr>
 </table>
