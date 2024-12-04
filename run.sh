@@ -25,6 +25,6 @@ else
     fi
 
     docker compose -p $PROJECT_NAME up
-    echo "crawler service started"
+    echo "server started"
 fi
 
