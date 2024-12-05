@@ -1,18 +1,16 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/a1f302d35c0f4f8c9293acabc5086512)](https://app.codacy.com/gh/msmannan00/Orion-Search/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
-![WebApp](https://github.com/msmannan00/Genesis-Search/blob/trusted_main/documentation/homepage.png?raw=true)
+![WebApp](https://github.com/msmannan00/Orion-Search/blob/trusted_main/documentation/homepage.png?raw=true)
 # Orion Search
 <table>
 <tr>
 <td>
-<br>
 Orion Search Engine is a web-based search tool built on top of Docker that provides a user-friendly interface to explore and visualize data extracted by the Orion Crawler. The engine supports a vast array of functionalities, offering users the ability to search, filter, and visualize data across multiple categories. It integrates machine learning models for enhanced search relevance and content analysis.
-<br><br>
 </td>
 </tr>
 <tr>
 <td>
-📒 #Features
+📒 Features
 <br><br>
 
 **1. Docker-Based Deployment**: Quick setup and deployment using Docker.
@@ -111,8 +109,8 @@ To get started with Orion Search Engine, follow these steps:
 Clone the repository from GitHub and navigate to the project directory.
 
 ```
-git clone https://github.com/msmannan00/Genesis-Search.git
-cd Genesis-Search
+git clone https://github.com/msmannan00/Orion-Search.git
+cd Orion-Search
 ```
 
 ## Setup and Installation
@@ -124,8 +122,8 @@ To get started with Orion Search, follow these steps:
 Clone the repository from GitHub and navigate to the project directory.
 
 ```
-https://github.com/msmannan00/Genesis-Search.git
-cd Genesis-Search
+https://github.com/msmannan00/Orion-Search.git
+cd Orion-Search
 ```
 
 #### 2. Install Dependencies
@@ -152,8 +150,18 @@ For specific website crawling, you can provide your own parsers. Load them onto 
 ```
 add custom parsers inside static/trustly/.well-known/parsers with same onion website name
 ```
+## Data Extraction Techniques
+This is a comprehensive flow diagram illustrating the functioning of the multithreaded crawler. It outlines the entire process, from initializing threads and managing task distribution to efficiently retrieving and processing data from multiple sources concurrently. The diagram highlights key components, such as task queues, thread synchronization mechanisms, and data handling workflows, providing a clear and detailed representation of the crawler's architecture and operational flow
 
-## Contribution ❤️
+![image(1)](https://github.com/user-attachments/assets/696cf009-a0f3-4995-91fe-58e53b128825)
+
+
+## Deep Data Linting Roadmap
+This document outlines the proposed solution and future roadmap for deep data linting, focusing on integrating insights from multiple sources into a unified platform. The solution emphasizes advanced data validation, cross-source correlation, and seamless integration to ensure comprehensive data quality checks. The roadmap highlights phased development, scalability enhancements, and feature expansions aimed at providing a robust and centralized approach to data insight and linting
+
+![linting(2)](https://github.com/user-attachments/assets/ce1885dc-e701-45f6-89ab-9f412b057373)
+
+## Contribution
 
 We welcome contributions to improve Orion Search. If you'd like to contribute, please fork the repository and submit a pull request.
 
@@ -175,4 +183,4 @@ This project is intended for research purposes only. The authors of Orion Search
 
 ## GitHub Repository
 
-GitHub Repository URL: [https://github.com/msmannan00/Genesis-Search.git](https://github.com/msmannan00/Genesis-Search)
+GitHub Repository URL: [https://github.com/msmannan00/Orion-Search.git](https://github.com/msmannan00/Orion-Search)
