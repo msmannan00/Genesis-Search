@@ -169,8 +169,8 @@
     padding-bottom: 2px;
 }
 .search-result__query-error--container{
-    margin-top: 25px;
-    margin-left: 7em;
+    /*margin-top: 25px;*/
+    margin-left: 60px;
 }
 .search-result__query-error--header{
     color: #ea4335;
@@ -187,7 +187,7 @@
 .search-result__content-webpages--container{
     width: 100%;
     max-width: 690px;
-    margin-left: 170px;
+    margin-left: 80px;
     padding: 30px;
 }
 .search-result__content-webpages{
