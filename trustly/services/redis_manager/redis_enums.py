@@ -8,12 +8,16 @@ class REDIS_CONNECTIONS:
 
 
 class REDIS_KEYS:
-  INSIGHT_OLD = "INSIGHT_OLD"
-  INSIGHT_NEW = "INSIGHT_NEW"
-  INSIGHT_STAT = "INSIGHT_STAT"
+  INSIGHT_OLD_DAY = "INSIGHT_OLD_DAY"
+  INSIGHT_NEW_DAY = "INSIGHT_NEW_DAY"
+  INSIGHT_STAT_DAY = "INSIGHT_STAT_DAY"
+  INSIGHT_OLD_WEEK = "INSIGHT_OLD_WEEK"
+  INSIGHT_NEW_WEEK = "INSIGHT_NEW_WEEK"
+  INSIGHT_STAT_WEEK = "INSIGHT_STAT_WEEK"
 
 class REDIS_DEFAULT:
-  INSIGHT_DEFAULT = "{'generic_model': [{'Doc Count': 0}, {'Unique_Base_URLs': 0}, {'URL / Doc': 0}, {'Archive / Doc': 0}, {'Email / Doc': 0}, {'Phone / Doc': 0}, {'Average Score': 0}, {'Common Type': 'general'}, {'Updated 5 Days': 0}, {'Updated 9 Days': 0}, {'Most Recent': '01 Dec'}, {'Oldest Update': '01 Dec'}], 'leak_model': [{'Doc Count': 0}, {'Unique_Base_URLs': 0}, {'Dumps / Doc': 0}, {'URL / Doc': 0}, {'Updated 5 Days': 0}, {'Updated 9 Days': 0}, {'Most Recent': '01 Dec'}, {'Oldest Update': '01 Dec'}]}"
+  INSIGHT_DEFAULT = "{'generic_model': [{'Doc Count': 0}, {'Unique URL': 0}, {'URL / Doc': 0}, {'Archive / Doc': 0}, {'Email / Doc': 0}, {'Phone / Doc': 0}, {'Average Score': 0}, {'Common Type': 'general'}, {'Updated 5 Days': 0}, {'Updated 9 Days': 0}, {'Most Recent': '01 Dec'}, {'Oldest Update': '01 Dec'}], 'leak_model': [{'Doc Count': 0}, {'Unique_Base_URLs': 0}, {'Dumps / Doc': 0}, {'URL / Doc': 0}, {'Updated 5 Days': 0}, {'Updated 9 Days': 0}, {'Most Recent': '01 Dec'}, {'Oldest Update': '01 Dec'}]}"
+  INSIGHT_STAT_DEFAULT = "{'generic_model': [{'Phone / Doc': {'value': 0, 'change': '+0.00%'}}, {'Unique URL': {'value': 0, 'change': '+0.00%'}}, {'Archive / Doc': {'value': 0, 'change': '+0.00%'}}, {'URL / Doc': {'value': 0, 'change': '+0.00%'}}, {'Doc Count': {'value': 0, 'change': '+0.00%'}}, {'Average Score': {'value': 0, 'change': '+0.00%'}}, {'Updated 9 Days': {'value': 0, 'change': '+0.00%'}}, {'Most Recent': {'value': '0', 'change': '-'}}, {'Email / Doc': {'value': 0, 'change': '+0.00%'}}, {'Oldest Update': {'value': '0', 'change': '-'}}, {'Updated 5 Days': {'value': 0, 'change': '+0.00%'}}, {'Common Type': {'value': 'general', 'change': '-'}}], 'leak_model': [{'Most Recent': {'value': '0', 'change': '-'}}, {'Unique_Base_URLs': {'value': 0, 'change': '+0.00%'}}, {'Dumps / Doc': {'value': 0, 'change': '+0.00%'}}, {'Updated 5 Days': {'value': 0, 'change': '+0.00%'}}, {'Oldest Update': {'value': '0', 'change': '-'}}, {'URL / Doc': {'value': 0, 'change': '+0.00%'}}, {'Doc Count': {'value': 0, 'change': '+0.00%'}}, {'Updated 9 Days': {'value': 0, 'change': '+0.00%'}}]}"
 
 class REDIS_COMMANDS:
   S_SET_BOOL = 1

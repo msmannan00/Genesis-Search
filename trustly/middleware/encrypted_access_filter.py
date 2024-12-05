@@ -1,3 +1,5 @@
+from trustly.controllers.view_managers.user.server.maintenance.maintenance_enums import MAINTENANCE_MODEL_CALLBACK
+from trustly.controllers.view_managers.user.server.maintenance.maintenance_view_model import maintenance_view_model
 from trustly.services.session_manager.session_controller import session_controller
 from trustly.services.session_manager.session_enums import SESSION_COMMANDS
 from django.utils.deprecation import MiddlewareMixin
@@ -11,9 +13,13 @@ from trustly.controllers.view_managers.user.server.error.error_enums import ERRO
 class EncryptedAccessFilter(MiddlewareMixin):
   @staticmethod
   def process_request(request):
-    allowed_paths = ['feeder', 'parser', 'feeder_publish', 'feeder_unique', 'update_status', 'crawl_index']
+    allowed_paths = ['feeder', 'parser', 'feeder_publish', 'feeder_unique', 'update_status', 'crawl_index', 'cms']
     resolved_path = resolve(request.path_info).url_name
     m_status = session_controller.get_instance().invoke_trigger(SESSION_COMMANDS.S_EXISTS, request)
+
     if not m_status and resolved_path in allowed_paths:
       if not block_controller.getInstance().invoke_trigger(BLOCK_COMMAND.S_VERIFY_REQUEST, request):
-        return error_view_model.getInstance().invoke_trigger(ERROR_MODEL_CALLBACK.M_INIT, [request, 404])
+        if resolved_path == 'cms':
+          return maintenance_view_model.getInstance().invoke_trigger(MAINTENANCE_MODEL_CALLBACK.M_INIT, request)
+        else:
+          return error_view_model.getInstance().invoke_trigger(ERROR_MODEL_CALLBACK.M_INIT, [request, 404])

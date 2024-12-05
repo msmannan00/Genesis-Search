@@ -53,39 +53,6 @@ services:
         reservations:
           memory: 128M
 
-  traefik:
-    image: traefik:v2.10
-    container_name: trusted-web-traefik
-    ports:
-      - "8081:80"
-      - "8443:443"
-    command:
-      - "--entrypoints.web.address=:80"
-      - "--providers.file.directory=/etc/traefik"
-      - "--providers.docker=true"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./dockerFiles/traefik:/etc/traefik
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD-SHELL", "exit 0"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 10s
-
-  dozzle:
-    container_name: trusted-web-dozzle
-    image: amir20/dozzle:latest
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.dozzle.rule=Host(`dozzle.localhost`)"
-      - "traefik.http.services.dozzle.loadbalancer.server.port=8080"
-      - "traefik.http.routers.dozzle.middlewares=auth@file"
-    restart: unless-stopped
-
   elasticsearch:
     container_name: trusted-web-elastic
     image: docker.elastic.co/elasticsearch/elasticsearch:7.17.5

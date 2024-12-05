@@ -3,13 +3,15 @@
     <div class="light-header__menu gs-disable-highlight">
 
         <span class="light-header__brand">
-            <a href="/"><img src="{% static 'trustly/images/brand-header-1.svg' %}" alt="O"></a>
+            <a href="/" aria-label="Go to Homepage" class="light-header__brand-link">
+                <img src="{% static 'trustly/images/brand-header-1.svg' %}" alt="Trustly Logo" width="57" height="20" />
+            </a>
         </span>
 
         <span>
-            <a href="/cms" class="light-header__menu-category light-header__menu-category--bold"
+            <a href="/cms" aria-label="Go to CMS Home" class="light-header__menu-category light-header__menu-category--bold"
                id="light-header__catagory-mobile--identifier">
-                <img src="{% static 'trustly/images/brand-header-2.svg' %}" alt="Menu Icon">
+                <img src="{% static 'trustly/images/brand-header-2.svg' %}" alt="Go to CMS Home" width="24" height="24">
             </a>
         </span>
     </div>

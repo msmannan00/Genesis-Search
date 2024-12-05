@@ -1,27 +1,32 @@
+#!/bin/bash
+
 PROJECT_NAME="trusted-search"
 stop_docker() {
-    docker compose stop
-    docker cp static/. trusted-web-main:/app/static/
-    docker cp trustly/templates/. trusted-web-main:/app/trustly/templates/
-    container_names=("trustly-web-mongodb" "trusted-web-elastic" "trusted-web-main" "trusted-web-nginx")
+    docker compose -p $PROJECT_NAME down --remove-orphans
+    docker volume prune -f
+}
 
-    for container_name in "${container_names[@]}"; do
-        if [[ $(docker ps -a --filter "name=$container_name" --format '{{.ID}}') ]]; then
-            docker rm -f "$container_name"
-        fi
-    done
+configure_env(){
+  PRODUCTION=$(grep '^PRODUCTION=' .env | cut -d '=' -f2 | tr -cd '[:digit:]')
+
+  if [ "$PRODUCTION" = "1" ]; then
+    cp nginx/nginx-prod.conf nginx/nginx.conf
+  elif [ "$PRODUCTION" = "0" ]; then
+    cp nginx/nginx-dev.conf nginx/nginx.conf
+  fi
 }
 
 stop_docker
 if [ "$1" == "stop" ]; then
     echo "crawler service stopped"
 else
+    configure_env
     if [ "$1" == "build" ]; then
-        download_and_extract_model
+        sleep 5
         docker compose -p $PROJECT_NAME build
     fi
 
     docker compose -p $PROJECT_NAME up
-    echo "crawler service started"
+    echo "server started"
 fi
 
