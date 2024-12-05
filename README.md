@@ -150,12 +150,8 @@ For specific website crawling, you can provide your own parsers. Load them onto 
 ```
 add custom parsers inside static/trustly/.well-known/parsers with same onion website name
 ```
-
-
 ![Screenshot 2![Uploading Deep Data Linting_page-0001.jpg…]()
-024-12-05 131938](https://github.com/user-attachments/assets/d5103475-43a8-48e2-a2ce-d4cb2517502a)
-
-
+![Deep Data Linting_page-0001](https://github.com/user-attachments/assets/118be6a1-1ce4-4dea-90c1-28ee91db1db9)
 
 ## Contribution
 
