@@ -152,10 +152,8 @@ add custom parsers inside static/trustly/.well-known/parsers with same onion web
 ```
 
 
-[Deep Data Linting.pdf](https://github.com/user-attachments/files/18019726/Deep.Data.Linting.pdf)
-
-
-![Screenshot 2024-12-05 131938](https://github.com/user-attachments/assets/d5103475-43a8-48e2-a2ce-d4cb2517502a)
+![Screenshot 2![Uploading Deep Data Linting_page-0001.jpg…]()
+024-12-05 131938](https://github.com/user-attachments/assets/d5103475-43a8-48e2-a2ce-d4cb2517502a)
 
 
 
