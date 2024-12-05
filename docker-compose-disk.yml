@@ -15,9 +15,15 @@ services:
       - /bin/sh
       - -c
       - >
-        python manage.py collectstatic --noinput &&
-        python manage.py compress --follow-links --force &&
-        find /app/staticfiles -type f -exec gzip -k {} \; &&
+        if [ "$PRODUCTION" = "1" ]; then
+          python manage.py collectstatic --noinput &&
+          echo "Production mode: Running compression..." &&
+          python manage.py compress --follow-links --force &&
+          echo "Production mode: Compressing static files..." &&
+          find /app/staticfiles -type f -exec gzip -k {} \;;
+        else
+          echo "Non-production mode: Skipping compression and gzip.";
+        fi &&
         gunicorn trustly.wsgi:application --bind 0.0.0.0:8070 --reload &
         sleep 10 && python manage.py cronjob_manager
     volumes:
