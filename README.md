@@ -14,6 +14,7 @@ Orion Search Engine is a web-based search tool built on top of Docker that provi
 <br>
 <tr>
 <td>
+<br>
 
 **1. Docker-Based Deployment**: Quick setup and deployment using Docker.
 
