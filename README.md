@@ -155,6 +155,12 @@ This is a comprehensive flow diagram illustrating the functioning of the multith
 
 ![architecture](https://github.com/user-attachments/assets/1cb373c3-0192-46e2-99b2-165049f6efa0)
 
+
+
+![Architecture_page-0001(1)(1)](https://github.com/user-attachments/assets/9362a26f-c9ab-4b44-9bff-253144f2343a)
+
+
+
 ## Deep Data Linting Roadmap
 This document outlines the proposed solution and future roadmap for deep data linting, focusing on integrating insights from multiple sources into a unified platform. The solution emphasizes advanced data validation, cross-source correlation, and seamless integration to ensure comprehensive data quality checks. The roadmap highlights phased development, scalability enhancements, and feature expansions aimed at providing a robust and centralized approach to data insight and linting
 
