@@ -3,10 +3,11 @@
     cursor: pointer;
     max-width: 650px;
     padding: 20px;
-    border-radius: 11px;
+    border-radius: 10px;
     margin: 14px 13px 0 90px;
     background: none;
     border: 1px solid #336BA1;
+    background: #2A578459 !important;
 }
 
 .search-engine-highlights {
