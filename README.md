@@ -151,6 +151,14 @@ For specific website crawling, you can provide your own parsers. Load them onto 
 add custom parsers inside static/trustly/.well-known/parsers with same onion website name
 ```
 
+
+[Deep Data Linting.pdf](https://github.com/user-attachments/files/18019726/Deep.Data.Linting.pdf)
+
+
+![Screenshot 2024-12-05 131938](https://github.com/user-attachments/assets/d5103475-43a8-48e2-a2ce-d4cb2517502a)
+
+
+
 ## Contribution
 
 We welcome contributions to improve Orion Search. If you'd like to contribute, please fork the repository and submit a pull request.
