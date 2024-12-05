@@ -153,12 +153,7 @@ add custom parsers inside static/trustly/.well-known/parsers with same onion web
 ## Data Extraction Techniques
 This is a comprehensive flow diagram illustrating the functioning of the multithreaded crawler. It outlines the entire process, from initializing threads and managing task distribution to efficiently retrieving and processing data from multiple sources concurrently. The diagram highlights key components, such as task queues, thread synchronization mechanisms, and data handling workflows, providing a clear and detailed representation of the crawler's architecture and operational flow
 
-![architecture](https://github.com/user-attachments/assets/1cb373c3-0192-46e2-99b2-165049f6efa0)
-
-
-
-![Architecture_page-0001(1)(1)](https://github.com/user-attachments/assets/9362a26f-c9ab-4b44-9bff-253144f2343a)
-
+![image(1)](https://github.com/user-attachments/assets/696cf009-a0f3-4995-91fe-58e53b128825)
 
 
 ## Deep Data Linting Roadmap
