@@ -15,34 +15,41 @@
     <div class="flex-container">
         {% for item in stats %}
         <div class="flex-item">
+            {% if forloop.first %}
+              {% if model_name == "generic_model" %}
+                <div class="analytics__header">Generic Index</div>
+              {% elif model_name == "leak_model" %}
+                <div class="analytics__header">Leaked Index</div>
+              {% endif %}
+            {% endif %}
             <div class="item-content">
                 <div class="item-icon">
-                    <img src="{% static 'trustly/images/cbimage.png' %}" alt="Brand Logo" width="32" height="32">
+                    <img src="{% static 'trustly/images/statistics/'|add:item.icon|add:'.png' %}" 
+                         alt="Brand Logo" width="32" height="32">
                 </div>
                 <div class="item-text">
-                    <span class="item-text-primary">
+                    <div class="item-text-primary">
                         {{ item.value }}
-                    </span>
-                    <span class="item-text-secondary">
+                    </div>
+                    <div class="item-text-secondary">
                         {{ item.name }}<br>
-                        {% if model_name == "generic_model" %}
-                            Generic Index
-                        {% elif model_name == "leak_model" %}
-                            Leak Index
-                        {% endif %}
-                    </span>
+                    </div>
                 </div>
                 <div class="item-percentage">
                     <div class="{% if item.daily_change|slice:":1" == "+" %}text-success{% elif item.daily_change|slice:":1" == "-" %}text-warning{% else %}text-body{% endif %}">
                         {{ item.daily_change|default:"-" }}
-                    </div><br>
+                    </div>
                     <div class="{% if item.weekly_change|slice:":1" == "+" %}text-success{% elif item.weekly_change|slice:":1" == "-" %}text-warning{% else %}text-body{% endif %}">
                         {{ item.weekly_change|default:"-" }}
                     </div>
+                    <br><br>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
+        {% if forloop.first %}
+            <br> <br> <br>
+        {% endif %}
     {% endfor %}
 </div>

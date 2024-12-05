@@ -20,7 +20,7 @@
     <div style="float: left" class="search-file__item-container">
 
         <a href="{% if mDoc.mSearchCallbackRelevantSearchType == 'a' %}#search-content__danger-popup_{{mDoc.mSearchCallbackRelevantDocumentURL}}{% else %} {{mDoc.mSearchCallbackRelevantDocumentURL}} {% endif %}">
-            <img src="{% if mDoc.mSearchCallbackRelevantSearchType == 'a' %} {% static 'trustly/images/blurredImage/blur-1.png' %} {% else %} {{mDoc.mSearchCallbackRelevantDocumentURL}} {% endif %}" class="search-file__item" alt="">
+            <img src="{% if mDoc.mSearchCallbackRelevantSearchType == 'a' %} {% static 'trustly/images/blurred/blur-1.png' %} {% else %} {{mDoc.mSearchCallbackRelevantDocumentURL}} {% endif %}" class="search-file__item" alt="">
         </a>
         <div style="clear: left"></div>
         <div class="search-file__info_container">
