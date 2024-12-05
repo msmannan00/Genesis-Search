@@ -150,7 +150,14 @@ For specific website crawling, you can provide your own parsers. Load them onto 
 ```
 add custom parsers inside static/trustly/.well-known/parsers with same onion website name
 ```
-![Screenshot 2![Uploading Deep Data Linting_page-0001.jpg…]()
+## Data Extraction Techniques
+This is a comprehensive flow diagram illustrating the functioning of the multithreaded crawler. It outlines the entire process, from initializing threads and managing task distribution to efficiently retrieving and processing data from multiple sources concurrently. The diagram highlights key components, such as task queues, thread synchronization mechanisms, and data handling workflows, providing a clear and detailed representation of the crawler's architecture and operational flow
+
+![Screenshot 2024-12-05 131938](https://github.com/user-attachments/assets/6fc9e5d6-f4b5-4425-8bc4-c34964fde0ed)
+
+## Deep Data Linting Roadmap
+This document outlines the proposed solution and future roadmap for deep data linting, focusing on integrating insights from multiple sources into a unified platform. The solution emphasizes advanced data validation, cross-source correlation, and seamless integration to ensure comprehensive data quality checks. The roadmap highlights phased development, scalability enhancements, and feature expansions aimed at providing a robust and centralized approach to data insight and linting
+
 ![Deep Data Linting_page-0001](https://github.com/user-attachments/assets/118be6a1-1ce4-4dea-90c1-28ee91db1db9)
 
 ## Contribution
