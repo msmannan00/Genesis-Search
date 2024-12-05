@@ -153,7 +153,7 @@ add custom parsers inside static/trustly/.well-known/parsers with same onion web
 ## Data Extraction Techniques
 This is a comprehensive flow diagram illustrating the functioning of the multithreaded crawler. It outlines the entire process, from initializing threads and managing task distribution to efficiently retrieving and processing data from multiple sources concurrently. The diagram highlights key components, such as task queues, thread synchronization mechanisms, and data handling workflows, providing a clear and detailed representation of the crawler's architecture and operational flow
 
-![architecture](https://github.com/user-attachments/assets/ad78c613-25e9-40f0-9f55-91c5b8bae826)
+![architecture](https://github.com/user-attachments/assets/1cb373c3-0192-46e2-99b2-165049f6efa0)
 
 ## Deep Data Linting Roadmap
 This document outlines the proposed solution and future roadmap for deep data linting, focusing on integrating insights from multiple sources into a unified platform. The solution emphasizes advanced data validation, cross-source correlation, and seamless integration to ensure comprehensive data quality checks. The roadmap highlights phased development, scalability enhancements, and feature expansions aimed at providing a robust and centralized approach to data insight and linting
