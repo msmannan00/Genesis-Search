@@ -142,110 +142,168 @@
         <div style="margin-bottom: 40px">
             <div class="container" style="padding-left: 0px">
                 <div class="accordion">
+                    {% if mDoc.mDocumentLeak|length > 0 %}
+                        <input type="radio" name="{{ forloop.counter }}-1" id="leaks-{{ forloop.counter }}-1" hidden>
+                    {% endif %}
+                    {% if mDoc.mVideo|length > 0 %}
+                        <input type="radio" name="{{ forloop.counter }}-1" id="video-{{ forloop.counter }}-1" hidden>
+                    {% endif %}
+                    {% if mDoc.mArchiveUrl|length > 0 %}
+                        <input type="radio" name="{{ forloop.counter }}-1" id="archiveURL-{{ forloop.counter }}-1"
+                               hidden>
+                    {% endif %}
+                    {% if mDoc.mName|length > 0 %}
+                        <input type="radio" name="{{ forloop.counter }}-1" id="name-{{ forloop.counter }}-1" hidden>
+                    {% endif %}
+                    {% if mDoc.mEmails|length > 0 %}
+                        <input type="radio" name="{{ forloop.counter }}-1" id="emails-{{ forloop.counter }}-1"
+                               class="mEmails" hidden>
+                    {% endif %}
+                    {% if mDoc.mPhoneNumber|length > 0 %}
+                        <input type="radio" name="{{ forloop.counter }}-1" id="PhoneNumber-{{ forloop.counter }}-1"
+                               hidden>
+                    {% endif %}
+                    {% if mDoc.mSection|length > 0 %}
+                        <input type="radio" name="{{ forloop.counter }}-1" id="section-{{ forloop.counter }}-1" hidden>
+                    {% endif %}
+                    {% if mDoc.mSearchContent %}
+                        <input type="radio" name="{{ forloop.counter }}-1" id="content-{{ forloop.counter }}-1"
+                               class="mSearchContent" hidden>
+                    {% endif %}
                     <!-- Accordion Item -->
-                    <input type="checkbox" id="accordion-item">
-                    <label class="accordion-header" for="accordion-item">
+                    <input type="checkbox" id="accordion-item-{{ forloop.counter }}">
+                    <label class="accordion-header" for="accordion-item-{{ forloop.counter }}">
                         <div class="accordian__header__items">
                             {% if mDoc.mDocumentLeak|length > 0 %}
-                                <div>
-                                    <button type="button"
-                                            class="search-file__expanded--button" style="width:auto !important"
-                                            data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}_document_leak"
-                                            aria-expanded="false" aria-controls="{{ mDoc.mMoreID }}_document_leak">
-                                        <i class="fas fa-chevron-down"></i> Document Leaks
-                                    </button>
+                                <div class="accordian__button__div">
+
+                                    <label for="leaks-{{ forloop.counter }}-1"
+                                           class="search-file__expanded--button" style="width:auto !important">
+                                        Document Leaks
+                                    </label>
                                 </div>
                             {% endif %}
                             {% if mDoc.mVideo|length > 0 %}
-                                <div>
-                                    <button type="button"
-                                            class="search-file__expanded--button" style="width:auto !important"
-                                            data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}_video"
-                                            aria-expanded="false"
-                                            aria-controls="{{ mDoc.mMoreID }}_video">
-                                        <i class="fas fa-chevron-down"></i> Videos
-                                    </button>
+                                <div class="accordian__button__div">
+                                    <label for="video-{{ forloop.counter }}-1"
+                                           class="search-file__expanded--button" style="width:auto !important"></label>
+                                    Videos
+                                </label>
                                 </div>
                             {% endif %}
-                            {% if mDoc.mArchiveUrl|length > 0 %}
-                                <div>
-                                    <button type="button"
-                                            class="search-file__expanded--button" style="width:auto !important"
-                                            data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}_archive_url"
-                                            aria-expanded="false" aria-controls="{{ mDoc.mMoreID }}_archive_url">
-                                        <i class="fas fa-chevron-down"></i> Archive URLs
-                                    </button>
-                                </div>
-                            {% endif %}
-
-                            {% if mDoc.mName|length > 0 %}
-                                <div>
-                                    <button type="button"
-                                            class="search-file__expanded--button" style="width:auto !important"
-                                            data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}_name"
-                                            aria-expanded="false"
-                                            aria-controls="{{ mDoc.mMoreID }}_name">
-                                        <i class="fas fa-chevron-down"></i> Names
-                                    </button>
-                                </div>
-                            {% endif %}
-
-                            {% if mDoc.mEmails|length > 0 %}
-                                <div>
-                                    <button type="button"
-                                            class="search-file__expanded--button" style="width:auto !important"
-                                            data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}_emails"
-                                            aria-expanded="false" aria-controls="{{ mDoc.mMoreID }}_emails">
-                                        <i class="fas fa-chevron-down"></i> Emails
-                                    </button>
-                                </div>
-                            {% endif %}
-
-                            {% if mDoc.mPhoneNumber|length > 0 %}
-                                <div>
-                                    <button type="button"
-                                            class="search-file__expanded--button" style="width:auto !important"
-                                            data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}_phone_numbers"
-                                            aria-expanded="false" aria-controls="{{ mDoc.mMoreID }}_phone_numbers">
-                                        <i class="fas fa-chevron-down"></i> Phone Numbers
-                                    </button>
-                                </div>
-                            {% endif %}
-
-                            {% if mDoc.mSection|length > 0 %}
-                                <div>
-                                    <button type="button"
-                                            class="search-file__expanded--button" style="width:auto !important"
-                                            data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}_sections"
-                                            aria-expanded="false" aria-controls="{{ mDoc.mMoreID }}_sections">
-                                        <i class="fas fa-chevron-down"></i> Sections
-                                    </button>
-                                </div>
-                            {% endif %}
-
-                            {% if mDoc.mSearchContent %}
-                                <div>
-                                    <button type="button"
-                                            class="search-file__expanded--button" style="width:auto !important"
-                                            data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}_content"
-                                            aria-expanded="false" aria-controls="{{ mDoc.mMoreID }}_content">
-                                        <i class="fas fa-chevron-down"></i> Content
-                                    </button>
-                                </div>
-                            {% endif %}
-                        </div>
-
-
-                        <img src="{% static 'trustly/images/search_dropdown.svg' %}" alt="Toggle Icon">
-                    </label>
-                    <div class="accordion-body">
-                        <strong>This is the accordion content.</strong> It is hidden by default and shown when the
-                        checkbox is checked. Add any content here.
+                {% if mDoc.mArchiveUrl|length > 0 %}
+                    <div class="accordian__button__div">
+                        <label for="archiveURL-{{ forloop.counter }}-1"
+                               class="search-file__expanded--button" style="width:auto !important">
+                            Archive URLs
+                        </label>
                     </div>
-                </div>
+                {% endif %}
 
+                {% if mDoc.mName|length > 0 %}
+                    <div class="accordian__button__div">
+                        <label for="name-{{ forloop.counter }}-1"
+                               class="search-file__expanded--button" style="width:auto !important">
+                            Names
+                        </label>
+                    </div>
+                {% endif %}
 
+                {% if mDoc.mEmails|length > 0 %}
+                    <div class="accordian__button__div">
+
+                        <label for="emails-{{ forloop.counter }}-1"
+                               class="search-file__expanded--button" style="width:auto !important">Emails
+                        </label>
+                    </div>
+                {% endif %}
+
+                {% if mDoc.mPhoneNumber|length > 0 %}
+                    <div class="accordian__button__div">
+                        <label for="PhoneNumber-{{ forloop.counter }}-1"
+                               class="search-file__expanded--button" style="width:auto !important">
+                            Phone Numbers
+                        </label>
+                    </div>
+                {% endif %}
+
+                {% if mDoc.mSection|length > 0 %}
+                    <div class="accordian__button__div">
+                        <label for="section-{{ forloop.counter }}-1"
+                               class="search-file__expanded--button" style="width:auto !important">
+                            Sections
+                        </label>
+                    </div>
+                {% endif %}
+
+                {% if mDoc.mSearchContent %}
+
+                    <div class="accordian__button__div">
+
+                        <label for="content-{{ forloop.counter }}-1"
+                               class="search-file__expanded--button" style="width:auto !important"> Content
+                        </label>
+                    </div>
+                {% endif %}
             </div>
+            <div class="accordian__header__icons">
+
+                <img class="download__image" src="{% static 'trustly/images/download.svg' %}"
+                     alt="download Icon">
+                <img class="share__image" src="{% static 'trustly/images/share.svg' %}"
+                     alt="share Icon">
+                <img class="toogle__image" src="{% static 'trustly/images/search_dropdown.svg' %}"
+                     alt="Toggle Icon">
+            </div>
+            </label>
+            <div class="accordion-body">
+                {% if mDoc.mDocumentLeak|length > 0 %}
+                    <table id="leaks__div__table">
+                        {% for leaks in  mDoc.mDocumentLeak %}
+                            <tr>
+                                <td>{{ leaks }}</td>
+                                <td>{{ leaks }}</td>
+                                <td>{{ leaks }}</td>
+                            </tr>
+                        {% endfor %}
+
+                    </table>
+
+                {% endif %}
+                {% if mDoc.mVideo|length > 0 %}
+                {% endif %}
+                {% if mDoc.mArchiveUrl|length > 0 %}
+                {% endif %}
+                {% if mDoc.mName|length > 0 %}
+                {% endif %}
+                {% if mDoc.mEmails|length > 0 %}
+                    <div class="accordian__content" id="email__div__table">
+                        <table >
+                            {% for leaks in  mDoc.mEmails %}
+                                <tr>
+                                    <td>{{ leaks }}</td>
+                                    <td>{{ leaks }}</td>
+                                    <td>{{ leaks }}</td>
+                                </tr>
+                            {% endfor %}
+
+                        </table>
+                    </div>
+                {% endif %}
+                {% if mDoc.mPhoneNumber|length > 0 %}
+                {% endif %}
+                {% if mDoc.mSection|length > 0 %}
+                {% endif %}
+                {% if mDoc.mSearchContent %}
+                    <div class="accordian__content" id="content__div">
+                        <p class="accordian__body__search__content" >{{ mDoc.mSearchContent }}</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+
+        </div>
         </div>
 
         <!-- Collapsible sections -->

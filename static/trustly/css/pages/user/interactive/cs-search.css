@@ -5,7 +5,7 @@
 
 .search_container {
     min-height: 95vh;
-    background-color: #174069;
+    background-image: linear-gradient(to bottom, rgba(18, 52, 84, 255), rgba(18, 52, 84, 255), rgba(41, 87, 132, 255)) !important;
 }
 
 .searchbar__logo:active {
@@ -117,12 +117,13 @@
 .searchbar {
     width: 100%;
     overflow: hidden;
-    background: #174069;
+    background-image: linear-gradient(90deg, rgba(21, 52, 84, 1) 0%, rgba(22, 56, 88, 1) 100%)!important;
     margin-top: -1px;
-    padding: 40px 48px;
+    padding: 40px 48px 15px 80px;
     padding-bottom: 0 !important;
     border-bottom: 1px solid #19334D;
     margin-bottom: 0 !important;
+    border-bottom: 1px solid #19334D;
 }
 
 html::-webkit-scrollbar {
@@ -211,7 +212,6 @@ html::-webkit-scrollbar {
     clear: left;
     width: 100%;
     max-width: 660px;
-    margin-left: 24px;
 }
 
 .searchbar_detail-header__search-input {
@@ -230,16 +230,18 @@ html::-webkit-scrollbar {
 
 .searchbar_detail-header__search-input:focus {
     outline: none;
-    box-shadow: 0 3px 3px -1.5px #cccccc !important;
+    border: none;
+    box-shadow: none !important;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
 }
 
 .searchbar_detail-header__search-input:hover {
     outline: none;
-    box-shadow: 0 3px 3px -1.5px #cccccc !important;
+    box-shadow: none !important;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
+    border: none;
 }
 
 .searchbar__search-categories {
@@ -247,7 +249,6 @@ html::-webkit-scrollbar {
     height: 15px;
     max-width: 1726px;
     margin-top: 30px;
-    margin-left: 135px;
     color: #1A73E8;
     pointer-events: auto;
 }
@@ -303,7 +304,7 @@ html::-webkit-scrollbar {
 .searchbar__search-items_active_default {
     text-decoration: none;
     color: #FFFFFF;
-    border-bottom: 4px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
     pointer-events: none;
 }
 
@@ -438,11 +439,11 @@ html::-webkit-scrollbar {
 
 .search__results {
     font-weight: 400;
-    margin-left: 160px;
+    margin-left: 60px;
     color: #D0D0D0;
     font-size: 12px;
     font-family: Roboto, Helvetica Neue, Arial, sans-serif;
-    margin-bottom: 0px!important;
+    margin-bottom: 0px !important;
 
 }
 
@@ -458,7 +459,7 @@ html::-webkit-scrollbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 16px;
+    padding: 16px;
     background: none;
     cursor: pointer;
     font-weight: bold;
@@ -472,14 +473,14 @@ html::-webkit-scrollbar {
     align-items: center;
 }
 
-/*.accordion-header:hover {*/
-/*    background-color: #e0e0e0;*/
-/*}*/
-
 /* Icon Image */
 .accordion-header img {
     width: 16px;
     height: 16px;
+
+}
+
+.toogle__image {
     transition: transform 0.3s ease;
     transform: rotate(0deg); /* Initial state pointing down */
 }
@@ -505,9 +506,33 @@ input[type="checkbox"]:checked ~ .accordion-body {
 }
 
 /* Rotate Icon When Open */
-input[type="checkbox"]:checked + .accordion-header img {
+input[type="checkbox"]:checked + .accordion-header .toogle__image {
     transform: rotate(180deg); /* Pointing upward */
 }
+
+/* Ensure only one accordion can be open at a time */
+input[type="checkbox"]:checked ~ .accordion-body {
+    max-height: 100px;
+    padding: 15px;
+}
+
+input[type="checkbox"]:not(:checked) ~ .accordion-body {
+    max-height: 0;
+    padding: 0;
+}
+
+/* Collapsing other accordion sections */
+.accordion input[type="checkbox"]:checked ~ .accordion-body {
+    max-height: max-content;
+    padding: 15px;
+    background: none;
+}
+
+.accordion input[type="checkbox"]:not(:checked) ~ .accordion-body {
+    max-height: 0;
+    padding: 0;
+}
+
 
 .search-file__expanded--button {
     background: none;
@@ -515,15 +540,146 @@ input[type="checkbox"]:checked + .accordion-header img {
     font-size: 12px;
     font-weight: 400;
     border: none;
-    border-right: 1px solid #FCFCFC12;
-    padding: 0px 16px;
+    padding: 11px;
+    position: relative;
+    top: -11px;
 
+}
+
+.search-file__expanded--button:focus {
+    border: none;
+    outline: none; /* Remove the default focus outline */
+    border-bottom: 1px solid #fff; /* Change to the desired color */
+}
+
+/* Optionally, add a bottom border for active state for mobile browsers */
+.search-file__expanded--button:active {
+    border: none;
+    outline: none !important;
+    border-bottom: 1px solid #fff;
+}
+
+.accordian__button__div {
+    /*padding: 0px 12px;*/
+    border-right: 1px solid #FCFCFC12;
+    height: 17px;
 }
 
 .toolbar__search {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 20px 40px 20px;
+    padding: 25px 48px 40px 20px;
+}
+
+.download__image,
+.share__image {
+    margin-right: 12px;
+    display: none; /* Initially hidden */
+}
+
+/* Show the divs when the corresponding accordion section is open */
+input[type="checkbox"]:checked ~ .accordion-header .download__image {
+    display: block !important;
+}
+
+input[type="checkbox"]:not(:checked) ~ .accordion-header .download__image {
+    display: none;
+}
+
+/* Collapsing other accordion sections */
+.accordion input[type="checkbox"]:checked ~ .accordion-header .download__image {
+    display: block !important;
+}
+
+.accordion input[type="checkbox"]:not(:checked) ~ .accordion-header .download__image {
+    display: none;
+}
+
+.accordian__header__icons {
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"]:checked ~ .accordion-header .share__image {
+    display: block !important;
+}
+
+input[type="checkbox"]:not(:checked) ~ .accordion-header .share__image {
+    display: none;
+}
+
+/* Collapsing other accordion sections */
+.accordion input[type="checkbox"]:checked ~ .accordion-header .share__image {
+    display: block !important;
+}
+
+.accordion input[type="checkbox"]:not(:checked) ~ .accordion-header .share__image {
+    display: none;
+}
+
+.accordian__body__search__content {
+    line-height: 20px;
+    cursor: pointer;
+    word-wrap: break-word;
+    font-family: Roboto, Helvetica Neue, Arial, sans-serif;
+    color: #D0D0D0;
+    width: 100%;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+/*.accordion-header .accordian__header__items .accordian__button__div:nth-child(1) .search-file__expanded--button {*/
+/*    border-bottom: 1px solid #fff;*/
+/*}*/
+input[type="checkbox"]:checked ~ .accordion-header .accordian__header__items .accordian__button__div:nth-child(1) .search-file__expanded--button {
+    border-bottom: 1px solid #fff;
+}
+
+input[type="checkbox"]:not(:checked) ~ .accordion-header .accordian__header__items .accordian__button__div:nth-child(1) .search-file__expanded--button {
+    border-bottom: none;
+}
+
+/* Collapsing other accordion sections */
+.accordion input[type="checkbox"]:checked ~ .accordion-header .accordian__header__items .accordian__button__div:nth-child(1) .search-file__expanded--button {
+    border-bottom: 1px solid #fff;
+}
+
+.accordion input[type="checkbox"]:not(:checked) ~ .accordion-header .accordian__header__items .accordian__button__div:nth-child(1) .search-file__expanded--button {
+    border-bottom: none;
+}
+
+.accordian__button__div input[type=radio] {
+    display: none;
+}
+
+
+/* Show the content div when the corresponding radio button is checked */
+#leaks__div__table {
+    display: none;
+}
+
+#email__div__table {
+    display: none;
+}
+
+#content__div {
+    display: none;
+}
+
+
+.accordion .search-file__expanded--button:checked ~ .accordion-body #leaks__div__table {
+    display: block;
+}
+.accordion .mEmails:checked ~ .accordion-body #email__div__table {
+    display: block;
+}
+
+.accordion .mSearchContent:checked ~ .accordion-body #content__div {
+    display: block;
+}
+
+.accordion-body .accordian__content:nth-child(1) {
+    display: block;
 }
 
