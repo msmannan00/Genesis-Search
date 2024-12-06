@@ -35,6 +35,7 @@
     text-decoration: none !important;
     text-underline: none;
     user-select: none;
+    color: white;
 }
 
 html {

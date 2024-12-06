@@ -67,6 +67,7 @@ class SEARCH_DOCUMENT_CALLBACK:
     M_SUB_HOST = "m_url"
     M_IMPORTANT_DESCRIPTION = "m_important_content"
     M_CONTENT_TYPE = "m_content_type"
+    M_CONTENT = "m_content"
     M_IMAGE = "m_images"
     M_DOCUMENT = "m_doc_url"
 

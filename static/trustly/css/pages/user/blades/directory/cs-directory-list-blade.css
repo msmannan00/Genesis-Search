@@ -31,6 +31,17 @@
 .status_inactive_pointer{
     background-color: #ffc107 !important;
 }
+.content--category{
+    font-weight: bold;
+    color: #D4D4D4;
+    padding: 6px 8px;
+    border-radius: 100px;
+    background: #FCFCFC0D;
+    font-size: 12px;
+    width: 50px !important;
+    font-family: Roboto, sans-serif;;
+}
+
 @media only screen and (max-width: 943px) {
     .onion__table--container{
         padding-right:4%;

@@ -17,7 +17,7 @@ class query_model:
         self.m_hate_query = p_hate_query
 
     def set_search_type(self, p_search_type):
-        if p_search_type != "all" and p_search_type != "images" and p_search_type != "doc" and p_search_type != "finance" and p_search_type != "news":
+        if p_search_type != "all" and p_search_type != "forums" and p_search_type != "marketplaces" and p_search_type != "news":
             self.m_search_type = SEARCH_STRINGS.S_SEARCH_TYPE_PARAM
         else:
             self.m_search_type = p_search_type

@@ -36,8 +36,8 @@
     border-radius: 100px;
     background: #FCFCFC0D;
     font-size: 12px;
-    font-weight: 500;
-
+    width: 50px !important;
+    font-family: Roboto, sans-serif;;
 }
 .search-result__safe-search-container--switch{
     border-radius: 0 5px 5px 0;
@@ -186,31 +186,20 @@
 }
 .search-result__content-webpages--container{
     width: 100%;
-    max-width: 690px;
-    margin-left: 80px;
+    max-width: 40vw;
+    margin-left: 70px;
     padding: 30px;
 }
 .search-result__content-webpages{
 
     box-shadow : none;
     cursor: pointer;
-    max-width: 650px;
-    padding: 10px 0px;
-    /*border-radius: 6px;*/
-    /*border: 1px solid #f0f0f0;*/
+    max-width: 40vw;
+    padding: 10px 0;
     background: none;
     overflow-wrap: break-word;
 }
 
-/*.search-result__content-webpages:hover{*/
-/*    text-decoration: none;*/
-/*    border: 1px solid #f0f0f0;*/
-/*    background: #f0f0f0;*/
-/*	animation-name: sbc_animate_hover;*/
-/*	animation-duration: 2s;*/
-/*	transition: border-bottom-color 0.25s ease-in-out;*/
-/*    -webkit-animation-fill-mode: forwards;*/
-/*}*/
 .search-content__webpages-header{
     white-space:nowrap;
     text-overflow:ellipsis;
@@ -219,18 +208,18 @@
     width: 90%;
     cursor: pointer;
     color: #fff;
-    margin-bottom: 0px;
-    font-size: 24px;
-    font-family: Roboto, sans-serif;;
-    /*height: 25px;*/
+    max-width: 800px;
+    margin-bottom: 0;
+    font-size: 22px;
+    font-family: Roboto, sans-serif;
 }
 .search-content__webpages-url{
-    margin-bottom: 8px;
     width: 90%;
     white-space:nowrap;
     text-overflow:ellipsis;
     overflow: hidden;
     cursor: pointer;
+    margin: 0;
     color:#fff ;
     font-weight: 400;
     font-size: 12px;
@@ -247,6 +236,8 @@
     font-family: Roboto, sans-serif;;
     color:#D0D0D0;
     overflow-wrap: break-word;
+    text-justify: auto;
+    max-width: 1000px;
     width: 100%;
     font-weight: 400;
     font-size: 14px;
@@ -313,7 +304,7 @@
 .search-result__circle-status{
     width: 12px;
     height: 12px;
-    top: 49px;
+    top: 53px;
     left: 9px;
 }
 .url__date{

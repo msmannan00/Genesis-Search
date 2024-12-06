@@ -14,7 +14,7 @@ html {
 
 .directory-container{
     min-height: 100vh;
-    padding: 40px;
+    padding: 40px 40px 100px;
 }
 
 .directory__header {

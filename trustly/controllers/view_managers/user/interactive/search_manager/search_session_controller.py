@@ -136,7 +136,7 @@ class search_session_controller(request_handler):
                 if ">" in m_description or "<" in m_description:
                     m_description += repl + " "
                 else:
-                    m_description += "<span style='color:#4d4d4d;font-weight:600'>" + m_token + "</span>" + " "
+                    m_description += "<span style='color:#fff;font-weight:600'>" + m_token + "</span>" + " "
             else:
                 m_description += m_token + " "
         return m_description
@@ -146,39 +146,40 @@ class search_session_controller(request_handler):
         if len(m_title) < 2:
             m_title = p_document[SEARCH_DOCUMENT_CALLBACK.M_HOST]
 
-        m_description = p_document[SEARCH_DOCUMENT_CALLBACK.M_IMPORTANT_DESCRIPTION] + GENERAL_STRINGS.S_GENERAL_CONTENT_CONTINUE
+        m_description = p_document[SEARCH_DOCUMENT_CALLBACK.M_IMPORTANT_DESCRIPTION] + p_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT] + GENERAL_STRINGS.S_GENERAL_CONTENT_CONTINUE
+        m_description = m_description[0:300]
         m_index = 10000
 
-        m_query = ' '.join(p_tokenized_query)
-        if m_query in m_description and m_query.count(" ")>2:
-            m_index = m_description.index(m_query)
-            if m_description[m_index-20:m_index].__contains__(" "):
-                m_space_index = m_description.index(" ", m_index-20,m_index)
-            else:
-                m_space_index = m_index
-            m_description = m_description[m_space_index:m_space_index+250]
-            m_description_original = m_description[m_space_index:m_space_index+250]
-            m_description = m_description.replace(m_query, "<span style=\"color:#4d4d4d;font-weight:600\">" + m_query + "</span>")
-        else:
-            for m_item in p_tokenized_query:
-                if m_item in m_description.lower():
-                    m_item_index = m_description.lower().index(m_item)
-                    if m_item_index < m_index:
-                        m_index = m_item_index
-
-            m_description = m_description[0:250]
-            m_description_original = m_description
-            for m_item in p_tokenized_query:
-                if helper_controller.is_stop_word(m_item.lower()) is True:
-                    continue
-                m_description = self.ireplace(m_item, "<span style=\"color:#4d4d4d;font-weight:600\">" + m_item + "</span>", m_description)
-
-        m_description = m_description.lstrip(" -")
+        # m_query = ' '.join(p_tokenized_query)
+        # if m_query in m_description and m_query.count(" ")>2:
+        #     m_index = m_description.index(m_query)
+        #     if m_description[m_index-20:m_index].__contains__(" "):
+        #         m_space_index = m_description.index(" ", m_index-20,m_index)
+        #     else:
+        #         m_space_index = m_index
+        #     m_description = m_description[m_space_index:m_space_index+1250]
+        #     m_description_original = m_description[m_space_index:m_space_index+1250]
+        #     m_description = m_description.replace(m_query, "<span style=\"color:#fff;font-weight:600\">" + m_query + "</span>")
+        # else:
+        #     for m_item in p_tokenized_query:
+        #         if m_item in m_description.lower():
+        #             m_item_index = m_description.lower().index(m_item)
+        #             if m_item_index < m_index:
+        #                 m_index = m_item_index
+        #
+        #     m_description = m_description[0:1250]
+        #     m_description_original = m_description
+        #     for m_item in p_tokenized_query:
+        #         if helper_controller.is_stop_word(m_item.lower()) is True:
+        #             continue
+        #         m_description = self.ireplace(m_item, "<span style=\"color:#fff;font-weight:600\">" + m_item + "</span>", m_description)
+        #
+        # m_description = m_description.lstrip(" -")
 
         mRelevanceContextOriginal = {
             SEARCH_CALLBACK.M_TITLE: self.__normalize_text(m_title),
             SEARCH_CALLBACK.M_URL: p_document[SEARCH_DOCUMENT_CALLBACK.M_HOST] + p_document[SEARCH_DOCUMENT_CALLBACK.M_SUB_HOST],
-            SEARCH_CALLBACK.M_DESCRIPTION: m_description_original,
+            SEARCH_CALLBACK.M_DESCRIPTION: m_description,
         }
 
         random_id = ''.join(random.choices(string.ascii_letters, k=10))

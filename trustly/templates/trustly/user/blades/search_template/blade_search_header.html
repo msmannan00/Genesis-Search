@@ -1,5 +1,10 @@
 {% load static %}
 <form class="searchbar" style="overflow: hidden;" method="GET" action="" enctype="multipart/form-data">
+            <div class="profile__button">
+                <a>
+                    <img src="{% static 'trustly/images/profile-icon.svg' %}" alt="Brand Logo">
+                </a>
+            </div>
     <div style="display: grid">
         <div style="margin-bottom: 12px">
             <a href="../../.." class="searchbar__logo" style="float:left">
@@ -34,33 +39,38 @@
                        value="{{ mSearchCallbackRelevantSearchType }}">
                 <button class="searchbar__searchbox-button disable-highlight" type="submit"><img
                         class="searchbar__searchbox-icon disable-highlight"
-                        src="{% static 'trustly/images/search-icon.png' %}"
+                        src="{% static 'trustly/images/magnifyingglass.svg' %}"
                         alt=""/></button>
-            </div>
-            <div class="profile__button">
-                <a>
-                    <img src="{% static 'trustly/images/profile-icon.svg' %}" alt="Brand Logo">
-                </a>
             </div>
         </div>
     </div>
     <!--change trustly type like image video audio-->
-    <div class="searchbar__search-categories">
+    <div>
         <span id="catagory_all"><a
                 href="/search?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&mSearchParamPage=1"
-                class="{% if mSearchCallbackRelevantSearchType == 'all' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--right disable-highlight"><b>All</b></a></span>
+                class="{% if mSearchCallbackRelevantSearchType == 'all' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--right disable-highlight">All</a></span>
         <span id="catagory_images"><a
                 href="/search?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType=monitor&mSearchParamPage=1"
-                class="{% if mSearchCallbackRelevantSearchType == 'monitor' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--width searchbar__search-items--left disable-highlight"><b>Monitor</b></a></span>
+                class="{% if mSearchCallbackRelevantSearchType == 'monitor' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--width searchbar__search-items--left disable-highlight">Monitor</a></span>
         <span id="catagory_images"><a
-                href="/search?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType=images&mSearchParamPage=1"
-                class="ml-3 {% if mSearchCallbackRelevantSearchType == 'images' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--width searchbar__search-items--left disable-highlight"><b>Image</b></a></span>
+                href="/search?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType=marketplaces&mSearchParamPage=1"
+                class="ml-3 {% if mSearchCallbackRelevantSearchType == 'marketplaces' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--width searchbar__search-items--left disable-highlight">Market</a></span>
         <span id="catagory_finance"><a
-                href="/search?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType=finance&mSearchParamPage=1"
-                class="ml-2 {% if mSearchCallbackRelevantSearchType == 'finance' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--width searchbar__search-items--left disable-highlight"><b>Finance</b></a></span>
+                href="/search?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType=forums&mSearchParamPage=1"
+                class="ml-2 {% if mSearchCallbackRelevantSearchType == 'forums' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--width searchbar__search-items--left disable-highlight">Forums</a></span>
         <span id="catagory_news"><a
                 href="/search?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType=news&mSearchParamPage=1"
-                class="{% if mSearchCallbackRelevantSearchType == 'news' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--left disable-highlight searchbar_detail-header__catagories--margin-right"><b>News</b></a></span>
+                class="{% if mSearchCallbackRelevantSearchType == 'news' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--left disable-highlight searchbar_detail-header__catagories--margin-right">News</a></span>
+
+        <span id="catagory_news" style="float: right"><a
+                href="/#analytics"
+                class="{% if mSearchCallbackRelevantSearchType == 'news' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--left disable-highlight searchbar_detail-header__catagories--margin-right">Analytics</a></span>
+        <span id="catagory_news" style="float: right"><a
+                href="/directory"
+                class="{% if mSearchCallbackRelevantSearchType == 'news' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--left disable-highlight searchbar_detail-header__catagories--margin-right">Links</a></span>
+        <span id="catagory_news" style="float: right"><a
+                href="/"
+                class="{% if mSearchCallbackRelevantSearchType == 'news' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--left disable-highlight searchbar_detail-header__catagories--margin-right">Home</a></span>
     </div>
 </form>
 

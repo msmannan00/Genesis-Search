@@ -30,8 +30,14 @@ class elastic_request_generator(request_handler):
       p_query_model.m_safe_search,
       p_query_model.m_page_number,
     )
+    must_clauses = []
     m_user_query = m_user_query.lower()
-
+    if p_query_model.m_search_type != "all":
+        must_clauses.append({
+            "terms": {
+                "m_content_type": [p_query_model.m_search_type]
+            }
+        })
     must_not_clause = []
     if m_safe_search == "True":
       must_not_clause.append({"term": {"m_content_type": "toxic"}})
@@ -94,7 +100,6 @@ class elastic_request_generator(request_handler):
         "track_total_hits": True
       }
       return {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_LEAK_INDEX, ELASTIC_KEYS.S_FILTER: m_query_statement}
-
     else:
       m_query_statement = {
         "min_score": 0,
@@ -102,7 +107,7 @@ class elastic_request_generator(request_handler):
           "function_score": {
             "query": {
               "bool": {
-                "must": [],
+                "must": must_clauses,
                 "should": [
                   {
                     "query_string": {
@@ -113,14 +118,14 @@ class elastic_request_generator(request_handler):
                         "m_content^1.5",
                         "m_important_content^1.5",
                         "m_content_tokens^2",
-                        "m_keywords^1.8"
+                        "m_keywords^1.8",
                       ],
                       "default_operator": "OR",
-                      "lenient": True
+                      "lenient": True,
                     }
                   }
                 ],
-                "must_not": must_not_clause
+                "must_not": must_not_clause,
               }
             },
             "functions": [
@@ -130,13 +135,13 @@ class elastic_request_generator(request_handler):
                     "origin": "now",
                     "scale": "30d",
                     "offset": "10d",
-                    "decay": 0.5
+                    "decay": 0.5,
                   }
                 },
-                "weight": 2
+                "weight": 2,
               }
             ],
-            "boost_mode": "sum"
+            "boost_mode": "sum",
           }
         },
         "suggest": {
@@ -148,7 +153,7 @@ class elastic_request_generator(request_handler):
               "max_term_freq": 0.01,
               "sort": "score",
               "string_distance": "internal",
-            }
+            },
           },
           "content_suggestion": {
             "text": m_user_query,
@@ -158,12 +163,12 @@ class elastic_request_generator(request_handler):
               "max_term_freq": 0.01,
               "sort": "score",
               "string_distance": "internal",
-            }
+            },
           }
         },
         "from": (m_page_number - 1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE_GENERIC,
         "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE,
-        "track_total_hits": True
+        "track_total_hits": True,
       }
       return {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: m_query_statement}
 
