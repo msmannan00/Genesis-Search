@@ -12,7 +12,7 @@ class Command(BaseCommand):
     @staticmethod
     def init_handles():
         insight = ast.literal_eval(redis_controller().invoke_trigger(REDIS_COMMANDS.S_GET_STRING, [REDIS_KEYS.INSIGHT_STAT_DAY, REDIS_DEFAULT.INSIGHT_STAT_DEFAULT, None]))
-        if insight['generic_model'][4]['Document Count']['value'] == 0:
+        if insight['generic_model'][0]['Document Count']['value'] == 0:
             insight_job.get_instance().init_trending_insights_daily()
             insight_job.get_instance().init_trending_insights_weekly()
 

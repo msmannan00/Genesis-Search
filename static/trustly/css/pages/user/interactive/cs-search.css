@@ -471,7 +471,7 @@ html::-webkit-scrollbar {
     border: 1px solid #FCFCFC12;
     border-radius: 8px;
     overflow: hidden;
-    height: 41px;
+    height: auto;
     background: #2A578480;
 }
 

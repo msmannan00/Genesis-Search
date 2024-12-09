@@ -1,8 +1,5 @@
-import json
 from datetime import datetime, timezone
-
 from django.http import JsonResponse
-
 from trustly.services.elastic_manager.elastic_controller import elastic_controller
 from trustly.services.elastic_manager.elastic_enums import ELASTIC_CRUD_COMMANDS, ELASTIC_REQUEST_COMMANDS, ELASTIC_KEYS
 from trustly.services.redis_manager.redis_controller import redis_controller
@@ -43,21 +40,21 @@ class insight_job(request_handler):
                 if result:
                     result_body = result.body if hasattr(result, 'body') else result
                     aggregations = result_body.get("aggregations", {})
+
                     if aggregations:
                         for agg_name, agg_value in aggregations.items():
                             if agg_name in ["Most Recent", "Oldest Update"]:
                                 epoch_value = agg_value.get("value", None)
                                 epoch_value = epoch_value or 0
                                 if epoch_value:
-                                    date_value = datetime.fromtimestamp(epoch_value / 1000, timezone.utc).strftime("%d %b")
+                                    date_value = datetime.fromtimestamp(epoch_value / 1000, timezone.utc).strftime(
+                                        "%d %b")
                                     grouped_results[query_type].append({agg_name: date_value})
                                 else:
                                     grouped_results[query_type].append({agg_name: "0"})
                             elif agg_name == "Common Type":
-                                # Handle Common Type explicitly for terms aggregation
                                 buckets = agg_value.get("buckets", [])
                                 if buckets:
-                                    # Extract the key of the most common type
                                     most_common_type = buckets[0].get("key", "general")
                                     grouped_results[query_type].append({agg_name: most_common_type})
                                 else:
@@ -68,6 +65,18 @@ class insight_job(request_handler):
                 elif error:
                     grouped_results[query_type].append({"error": error})
 
+            for query_type, results in grouped_results.items():
+                document_count = next(
+                    (item.get("Document Count") for item in results if "Document Count" in item), 0
+                ) or 1
+                for item in results:
+                    for key, value in item.items():
+                        if key.endswith("/Document") and document_count > 0:
+                            item[key] = round(value / document_count, 4)
+
+        print("::::::::::::::::::::::::::::::::::::", flush=True)
+        print(grouped_results, flush=True)
+        print("::::::::::::::::::::::::::::::::::::", flush=True)
         return grouped_results
 
     @staticmethod
@@ -76,8 +85,8 @@ class insight_job(request_handler):
             old_data = eval(insight_old)
             new_data = eval(insight_new)
 
-            key_order_generic = ["Phone/Documents", "Unique Base URLs", "Archive/Document", "URL/Documents", "Document Count", "Average Score", "Updated 9 Days ago", "Most Recent", "Email/Document", "Oldest Update", "Updated 5 Days ago", "Common Type"]
-            key_order_leak = ["Most Recent", "Unique Base URLs", "Dumps/Document", "Updated 5 Days ago", "Oldest Update", "URL/Documents", "Document Count", "Updated 9 Days ago"]
+            key_order_generic = ['Document Count', 'Most Recent', 'Oldest Update', 'Updated 5 Days ago', 'Updated 9 Days ago', 'Average Score', 'URL/Document', 'Archive/Document', 'Email/Document', 'Phone/Document', 'Clearnet/Document', 'Common Type']
+            key_order_leak = ['Most Recent', 'Unique Base URLs', 'Dumps/Document', 'Updated 5 Days ago', 'Oldest Update', 'URL/Documents', 'Document Count', 'Updated 9 Days ago']
 
             comparison_result = {"generic_model": [], "leak_model": []}
 
