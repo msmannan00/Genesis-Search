@@ -4,21 +4,20 @@ from trustly.services.request_manager.request_handler import request_handler
 
 
 class notice_model(request_handler):
+  # Private Variables
+  __instance = None
+  __m_session = None
 
-    # Private Variables
-    __instance = None
-    __m_session = None
+  # Initializations
+  def __init__(self):
+    self.__m_session = notice_session_controller()
 
-    # Initializations
-    def __init__(self):
-        self.__m_session = notice_session_controller()
+  def __init_page(self, p_data):
+    m_context, m_status, m_browser = self.__m_session.invoke_trigger(NOTICE_SESSION_CALLBACK.M_INIT, [p_data])
 
-    def __init_page(self, p_data):
-        m_context, m_status, m_browser = self.__m_session.invoke_trigger(NOTICE_SESSION_CALLBACK.M_INIT, [p_data])
+    return m_context, m_status, m_browser
 
-        return m_context, m_status, m_browser
-
-    # External Request Handler
-    def invoke_trigger(self, p_command, p_data):
-        if p_command == NOTICE_MODEL_CALLBACK.M_INIT:
-            return self.__init_page(p_data)
+  # External Request Handler
+  def invoke_trigger(self, p_command, p_data):
+    if p_command == NOTICE_MODEL_CALLBACK.M_INIT:
+      return self.__init_page(p_data)

@@ -6,18 +6,17 @@ from trustly.services.session_manager.session_enums import SESSION_KEYS, SESSION
 
 class dashboard_session_controller(request_handler):
 
-    # Helper Methods
+  # Helper Methods
 
-    @staticmethod
-    def __init_parameters(p_data):
-        m_status = session_controller.get_instance().invoke_trigger(SESSION_COMMANDS.S_EXISTS, p_data)
-        if SESSION_KEYS.S_USERNAME in p_data.session :
-            return {}, m_status
-        else :
-            return {}, m_status
+  @staticmethod
+  def __init_parameters(p_data):
+    m_status = session_controller.get_instance().invoke_trigger(SESSION_COMMANDS.S_EXISTS, p_data)
+    if SESSION_KEYS.S_USERNAME in p_data.session:
+      return {}, m_status
+    else:
+      return {}, m_status
 
-    # External Request Callbacks
-    def invoke_trigger(self, p_command, p_data):
-        if p_command == DASHBOARD_SESSION_COMMANDS.M_INIT:
-            return self.__init_parameters(p_data)
-
+  # External Request Callbacks
+  def invoke_trigger(self, p_command, p_data):
+    if p_command == DASHBOARD_SESSION_COMMANDS.M_INIT:
+      return self.__init_parameters(p_data)

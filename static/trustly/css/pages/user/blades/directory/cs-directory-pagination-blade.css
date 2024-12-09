@@ -1,61 +1,61 @@
 .pagination {
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
-    padding: 0;
-    color: white; !important;
-    margin: 0 0 0 -4px;
-    float: right;
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  padding: 0;
+  color: white !important;
+  margin: 0 0 0 -4px;
+  float: right;
 }
 
 .pagination li {
-    margin: 0 5px;
+  margin: 0 5px;
 }
 
 .pagination li a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 35px;
-    height: 35px;
-    background: #12335450;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 14px;
-    margin-left: -6px !important;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background: #12335450;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: -6px !important;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .pagination li a img {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .pagination li a:hover {
-    background: #12335450;
-    transform: scale(1.1);
+  background: #12335450;
+  transform: scale(1.1);
 }
 
 .pagination li.disabled a {
-    opacity: 0.4 !important;
-    color: white;
-    pointer-events: none;
+  opacity: 0.4 !important;
+  color: white;
+  pointer-events: none;
 }
 
 .pagination li.active a {
-    background: #102A4685 !important;
-    color: white !important;
-    pointer-events: none;
-    font-weight: bold;
+  background: #102A4685 !important;
+  color: white !important;
+  pointer-events: none;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 943px) {
-    .pagination {
-        display: flex;
-        width: 50%;
-        justify-content: start;
-        align-items: flex-start !important;
-        float: left !important;
-    }
+  .pagination {
+    display: flex;
+    width: 50%;
+    justify-content: start;
+    align-items: flex-start !important;
+    float: left !important;
+  }
 }

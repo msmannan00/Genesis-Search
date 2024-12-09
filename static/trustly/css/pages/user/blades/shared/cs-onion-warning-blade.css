@@ -1,33 +1,33 @@
-.non-onion__warning{
-    width:100%;
-    background-color:#ffb84d;
-    color:white;
-    padding: 11px 0 16px 15px;
-    margin-bottom: 0;
-    border-bottom: 1px solid #ffa31a;
+.non-onion__warning {
+  width: 100%;
+  background-color: #ffb84d;
+  color: white;
+  padding: 11px 0 16px 15px;
+  margin-bottom: 0;
+  border-bottom: 1px solid #ffa31a;
 }
 
-.non-onion__warning--href{
-    text-decoration:none;
-    color:white;
+.non-onion__warning--href {
+  text-decoration: none;
+  color: white;
 }
 
-.non-onion__warning--button{
-    cursor:pointer;
-    margin-right:10px;
-    padding-top:3px;
-    margin-top:-3px;
-    font-weight:bold;
-    height:35px;
-    padding-bottom:5px;
-    float:right;
-    background-color:#e68a00;
-    border-radius:4px;
-    width:70px;
-    text-align:center;
+.non-onion__warning--button {
+  cursor: pointer;
+  margin-right: 10px;
+  padding-top: 3px;
+  margin-top: -3px;
+  font-weight: bold;
+  height: 35px;
+  padding-bottom: 5px;
+  float: right;
+  background-color: #e68a00;
+  border-radius: 4px;
+  width: 70px;
+  text-align: center;
 }
 
-.non-onion__warning--button:hover{
-    background-color:#cc7a00;
-    color:white;
+.non-onion__warning--button:hover {
+  background-color: #cc7a00;
+  color: white;
 }

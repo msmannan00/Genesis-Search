@@ -3,11 +3,11 @@
     {% if mDoc.mContentType|length == 0 %}
         <span class="search-content__webpages-description--category">&nbsp;&nbsp;General&nbsp;&nbsp;</span>
     {% else %}
-    {% for tag in mDoc.mContentType %}
-        <span class="search-content__webpages-description--category">
+        {% for tag in mDoc.mContentType %}
+            <span class="search-content__webpages-description--category">
             &nbsp;&nbsp;{{ tag|capfirst }}&nbsp;&nbsp;
         </span>&nbsp;
-    {% endfor %}
+        {% endfor %}
     {% endif %}
     <div class="rounded-circle position-absolute search-result__circle-status {% if mDoc.mExpiry == 0 %}bg-success{% elif mDoc.mExpiry == 1 %}bg-warning{% elif mDoc.mExpiry == 2 %}bg-danger{% endif %}"></div>
     <a href="{{ mDoc.mSearchCallbackRelevantDocumentURL }}">
@@ -23,360 +23,43 @@
             </label>
         </div>
     </a>
-    {% if mDoc.mUrlDisplayType == "leak" %}
-        <div class="ml-2 mt-3">
 
-            <div class="container">
-                <div class="row">
-                    <div class="">
-              <span class="btn btn-sm search-file__expanded--button w-100 d-flex align-items-center justify-content-center"
-                    data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}" aria-expanded="false"
-                    aria-controls="{{ mDoc.mMoreID }}"
-                    style="cursor: pointer; height: 38px;">
-                <i class="fas fa-chevron-down"></i>&nbsp; show more
-              </span>
-                    </div>
-                    <div class="">
-              <span class="btn btn-sm btn-primary search-file__expanded--button w-100 d-flex align-items-center justify-content-center"
-                    data-toggle="collapse" data-target="#{{ mDoc.mMoreID }}_2" aria-expanded="false"
-                    aria-controls="{{ mDoc.mMoreID }}_2"
-                    style="cursor: pointer; height: 38px;">
-                <i class="fas fa-chevron-down"></i>&nbsp; show content
-              </span>
-                    </div>
+    <div class="accordion tabs">
+
+        <input type="radio" class="tabs__radio" name="{{ forloop.counter }}-1" id="section-{{ forloop.counter }}-1">
+        <label for="section-{{ forloop.counter }}-1" class="tabs__label">Section </label>
+        <div class="tabs__content">
+            {% for section in mDoc.mSection %}
+                <p class="tabs__content-header tabs__content-header--spacing">Section {{ forloop.counter }}</p>
+                <p class="accordian__body__search__content{% if not forloop.last %} tabs__content--divider{% endif %}">
+                    {{ section }}
+                </p>
+            {% endfor %}
+        </div>
+
+        {% if mDoc.mEmails|length > 0 %}
+            <div class="tabs__label--divider"></div>
+            <input type="radio" class="tabs__radio" name="{{ forloop.counter }}-1" id="emails-{{ forloop.counter }}-1">
+            <label for="emails-{{ forloop.counter }}-1" class="tabs__label">Emails</label>
+            <div class="tabs__content">
+                <div class="row mt-3 list-row">
+                    {% for email in mDoc.mEmails %}
+                        <div class="col-md-4 col-sm-6 col-12 mb-3">
+                            <p class="accordian__body__search__content">
+                                {{ forloop.counter }}.&nbsp;{{ email }}
+                            </p>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
+        {% endif %}
 
-            <div class="collapse mt-2" id="{{ mDoc.mMoreID }}">
-                <div class="card w-100">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex justify-content-between align-items-center"
-                            style="font-size: 14px; margin-left: 1px; cursor: pointer; word-break: break-word; white-space: normal;"
-                            onclick="window.open('{{ mDoc.mContactLink }}', '_blank')">
-                            <div>
-                                <b><span class="text-primary">Contact Link</span></b><br>
-                                <a href="{{ mDoc.mContactLink }}" target="_blank"
-                                   class="text-secondary">{{ mDoc.mContactLink }}</a>
-                            </div>
-                            <i class="fas fa-arrow-right"></i>
-                        </li>
-                        {% if mDoc.mDumpLink|length >= 2 %}
-                            <li class="list-group-item d-flex justify-content-between align-items-center"
-                                style="font-size: 14px; margin-left: 1px; cursor: pointer; word-break: break-word; white-space: normal;"
-                                onclick="window.open('{{ mDoc.mDumpLink|first }}', '_blank')">
-                                <div>
-                                    <b><span class="text-primary">Data Dump Links</span></b><br>
-                                    {% for link in mDoc.mDumpLink %}
-                                        <a href="{{ link }}" target="_blank" class="text-secondary">{{ link }}</a><br>
-                                    {% endfor %}
-                                </div>
-                                <i class="fas fa-arrow-right"></i>
-                            </li>
-                        {% endif %}
-                        <li class="list-group-item d-flex justify-content-between align-items-center"
-                            style="font-size: 14px; margin-left: 1px; cursor: pointer; word-break: break-word; white-space: normal;"
-                            onclick="window.open('{{ mDoc.mWebLink|first }}', '_blank')">
-                            <div>
-                                <b><span class="text-primary">Extra Links</span></b><br>
-                                {% for link in mDoc.mWebLink %}
-                                    <a href="{{ link }}" target="_blank" class="text-secondary">{{ link }}</a><br>
-                                {% endfor %}
-                            </div>
-                            <i class="fas fa-arrow-right"></i>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-
-            <div class="collapse mt-2" id="{{ mDoc.mMoreID }}_2">
-                <div class="card w-100">
-                    <div class="card-body" style="font-size: 14px">
-                        <b><span class="text-primary">Detailed Content</span></b><br><br>
-                        <p>{{ mDoc.mContent }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    {% else %}
-        <div style="margin-bottom: 15px">
-            <div class="container accordion-main">
-                <div class="accordion">
-                    {% if mDoc.mDocumentLeak|length > 0 %}
-                        <input type="radio" name="{{ forloop.counter }}-1" id="leaks-{{ forloop.counter }}-1" hidden>
-                    {% endif %}
-                    {% if mDoc.mVideo|length > 0 %}
-                        <input type="radio" name="{{ forloop.counter }}-1" id="video-{{ forloop.counter }}-1" hidden>
-                    {% endif %}
-                    {% if mDoc.mArchiveUrl|length > 0 %}
-                        <input type="radio" name="{{ forloop.counter }}-1" id="archiveURL-{{ forloop.counter }}-1"
-                               hidden>
-                    {% endif %}
-                    {% if mDoc.mName|length > 0 %}
-                        <input type="radio" name="{{ forloop.counter }}-1" id="name-{{ forloop.counter }}-1" hidden>
-                    {% endif %}
-                    {% if mDoc.mEmails|length > 0 %}
-                        <input type="radio" name="{{ forloop.counter }}-1" id="emails-{{ forloop.counter }}-1"
-                               class="mEmails" hidden>
-                    {% endif %}
-                    {% if mDoc.mPhoneNumber|length > 0 %}
-                        <input type="radio" name="{{ forloop.counter }}-1" id="PhoneNumber-{{ forloop.counter }}-1"
-                               hidden>
-                    {% endif %}
-                    {% if mDoc.mSection|length > 0 %}
-                        <input type="radio" name="{{ forloop.counter }}-1" id="section-{{ forloop.counter }}-1" hidden>
-                    {% endif %}
-                    {% if mDoc.mSearchContent %}
-                        <input type="radio" name="{{ forloop.counter }}-1" id="content-{{ forloop.counter }}-1"
-                               class="mSearchContent" hidden>
-                    {% endif %}
-                    <!-- Accordion Item -->
-                    <input type="checkbox" id="accordion-item-{{ forloop.counter }}">
-                    <label class="accordion-header" for="accordion-item-{{ forloop.counter }}">
-                        <div class="accordian__header__items">
-                            {% if mDoc.mDocumentLeak|length > 0 %}
-                                <div class="accordian__button__div">
-
-                                    <label for="leaks-{{ forloop.counter }}-1"
-                                           class="search-file__expanded--button" style="width:auto !important">
-                                        Document Leaks
-                                    </label>
-                                </div>
-                            {% endif %}
-                            {% if mDoc.mVideo|length > 0 %}
-                                <div class="accordian__button__div">
-                                    <label for="video-{{ forloop.counter }}-1"
-                                           class="search-file__expanded--button" style="width:auto !important"></label>
-                                    Videos
-                                </label>
-                                </div>
-                            {% endif %}
-                {% if mDoc.mArchiveUrl|length > 0 %}
-                    <div class="accordian__button__div">
-                        <label for="archiveURL-{{ forloop.counter }}-1"
-                               class="search-file__expanded--button" style="width:auto !important">
-                            Archive URLs
-                        </label>
-                    </div>
-                {% endif %}
-
-                {% if mDoc.mName|length > 0 %}
-                    <div class="accordian__button__div">
-                        <label for="name-{{ forloop.counter }}-1"
-                               class="search-file__expanded--button" style="width:auto !important">
-                            Names
-                        </label>
-                    </div>
-                {% endif %}
-
-                {% if mDoc.mEmails|length > 0 %}
-                    <div class="accordian__button__div">
-
-                        <label for="emails-{{ forloop.counter }}-1"
-                               class="search-file__expanded--button" style="width:auto !important">Emails
-                        </label>
-                    </div>
-                {% endif %}
-
-                {% if mDoc.mPhoneNumber|length > 0 %}
-                    <div class="accordian__button__div">
-                        <label for="PhoneNumber-{{ forloop.counter }}-1"
-                               class="search-file__expanded--button" style="width:auto !important">
-                            Phone Numbers
-                        </label>
-                    </div>
-                {% endif %}
-
-                {% if mDoc.mSection|length > 0 %}
-                    <div class="accordian__button__div">
-                        <label for="section-{{ forloop.counter }}-1"
-                               class="search-file__expanded--button" style="width:auto !important">
-                            Sections
-                        </label>
-                    </div>
-                {% endif %}
-
-                {% if mDoc.mSearchContent %}
-
-                    <div class="accordian__button__div">
-
-                        <label for="content-{{ forloop.counter }}-1"
-                               class="search-file__expanded--button" style="width:auto !important"> Content
-                        </label>
-                    </div>
-                {% endif %}
-            </div>
-            <div class="accordian__header__icons">
-
-                <img class="download__image" src="{% static 'trustly/images/download.svg' %}"
-                     alt="download Icon">
-                <img class="share__image" src="{% static 'trustly/images/share.svg' %}"
-                     alt="share Icon">
-                <img class="toogle__image" src="{% static 'trustly/images/search_dropdown.svg' %}"
-                     alt="Toggle Icon">
-            </div>
-            </label>
-            <div class="accordion-body">
-                {% if mDoc.mDocumentLeak|length > 0 %}
-                    <table id="leaks__div__table">
-                        {% for leaks in  mDoc.mDocumentLeak %}
-                            <tr>
-                                <td>{{ leaks }}</td>
-                                <td>{{ leaks }}</td>
-                                <td>{{ leaks }}</td>
-                            </tr>
-                        {% endfor %}
-
-                    </table>
-
-                {% endif %}
-                {% if mDoc.mVideo|length > 0 %}
-                {% endif %}
-                {% if mDoc.mArchiveUrl|length > 0 %}
-                {% endif %}
-                {% if mDoc.mName|length > 0 %}
-                {% endif %}
-                {% if mDoc.mEmails|length > 0 %}
-                    <div class="accordian__content" id="email__div__table">
-                        <table >
-                            {% for leaks in  mDoc.mEmails %}
-                                <tr>
-                                    <td>{{ leaks }}</td>
-                                    <td>{{ leaks }}</td>
-                                    <td>{{ leaks }}</td>
-                                </tr>
-                            {% endfor %}
-
-                        </table>
-                    </div>
-                {% endif %}
-                {% if mDoc.mPhoneNumber|length > 0 %}
-                {% endif %}
-                {% if mDoc.mSection|length > 0 %}
-                {% endif %}
-                {% if mDoc.mSearchContent %}
-                    <div class="accordian__content" id="content__div">
-                        <p class="accordian__body__search__content" >{{ mDoc.mSearchContent }}</p>
-                    </div>
-                {% endif %}
-            </div>
-        </div>
-
-
-        </div>
-        </div>
-
-        <!-- Collapsible sections -->
-        <div class="collapse mt-2" id="{{ mDoc.mMoreID }}_document_leak">
-            <div class="card card-body">
-                <h5 class="text-primary">Document Leaks</h5>
-                <ul class="list-group">
-                    {% for item in mDoc.mDocumentLeak %}
-                        <li class="list-group-item">{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-
-        <div class="collapse mt-2" id="{{ mDoc.mMoreID }}_video">
-            <div class="card card-body">
-                <h5 class="text-primary">Videos</h5>
-                <ul class="list-group">
-                    {% for item in mDoc.mVideo %}
-                        <li class="list-group-item">{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-
-        <div class="collapse mt-2" id="{{ mDoc.mMoreID }}_archive_url">
-            <div class="card card-body">
-                <h5 class="text-primary">Archive URLs</h5>
-                <ul class="list-group">
-                    {% for item in mDoc.mArchiveUrl %}
-                        <li class="list-group-item">{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-
-        <div class="collapse mt-2" id="{{ mDoc.mMoreID }}_name">
-            <div class="card card-body">
-                <h5 class="text-primary">Names</h5>
-                <ul class="list-group">
-                    {% for item in mDoc.mName %}
-                        <li class="list-group-item">{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-
-        <div class="collapse mt-2" id="{{ mDoc.mMoreID }}_emails">
-            <div class="card card-body">
-                <h5 class="text-primary">Emails</h5>
-                <ul class="list-group">
-                    {% for item in mDoc.mEmails %}
-                        <li class="list-group-item">{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-
-        <div class="collapse mt-2" id="{{ mDoc.mMoreID }}_phone_numbers">
-            <div class="card card-body">
-                <h5 class="text-primary">Phone Numbers</h5>
-                <ul class="list-group">
-                    {% for item in mDoc.mPhoneNumber %}
-                        <li class="list-group-item">{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-
-        <div class="collapse mt-2" id="{{ mDoc.mMoreID }}_sections">
-            <div class="card card-body">
-                <h5 class="text-primary">Sections</h5>
-                <ul class="list-group">
-                    {% for item in mDoc.mSection %}
-                        <li class="list-group-item">{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-
-        <div class="collapse mt-2" id="{{ mDoc.mMoreID }}_content">
-            <div class="card card-body">
-                <h5 class="text-primary">Content</h5>
-                <p>{{ mDoc.mSearchContent }}</p>
-            </div>
-        </div>
-        </div>
-    {% endif %}
-
-
-<div id="search-content__danger-popup_{{ mDoc.mSearchCallbackRelevantDocumentURL }}" class="overlay">
-    <div class="search-content__danger-popup-container">
-        <div class="content">
-            <div class="search-content__info-danger-container">
-                <p class="search-content__info-danger-header">Threat Found</p>
-                <p class="search-content__info-danger-body">Illegal content such as <b
-                        class="search-content__info-danger-porn">Porn</b> detected in requsted URL. Please be caution
-                    and select the steps below.</p>
-            </div>
-            <br><br>
-            <div class="search-content__danger-button-container">
-                <a href="{{ mDoc.mSearchCallbackRelevantDocumentURL }}" style="text-decoration: none;">
-                    <button class="search-content__danger-button search-content__danger-button-auto">Open Website
-                    </button>
-                </a>
-                <a href="../report?pReportParamURL={{ mDoc.mSearchCallbackRelevantDocumentURL }}"
-                   style="text-decoration: none;">
-                    <button class="search-content__danger-button search-content__danger-button-top">Report URL</button>
-                </a>
-                <a href="#search-content__danger-popup" style="text-decoration: none;">
-                    <button class="search-content__danger-button search-content__danger-button-top">Go Back</button>
-                </a>
-            </div>
+        <div class="tabs__label--divider"></div>
+        <input type="radio" class="tabs__radio" name="{{ forloop.counter }}-1" id="content-{{ forloop.counter }}-1">
+        <label for="content-{{ forloop.counter }}-1" class="tabs__label">Content</label>
+        <div class="tabs__content">
+            <p class="tabs__content-header">Raw Content</p>
+            <p class="accordian__body__search__content">{{ mDoc.mSearchContent }}</p>
         </div>
     </div>
 </div>

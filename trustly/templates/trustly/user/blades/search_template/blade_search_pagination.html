@@ -1,36 +1,36 @@
 {% load static %}
-
-<!--pagination-->
 {% if mSearchCallbackMaxPagination > 1 %}
-       <form class="search__pagination disable-highlight">
-
+    <form class="search__pagination disable-highlight">
         <div class="search__pagination-container">
-
-            <!-- left arrow -->
-
-            {% if mSearchCallbackCurrentPageNumber == 1%}
-                <div class="search__page-navigation search__pagination--border-right" style="float:left;margin-right: 19px;text-decoration: none;cursor:context-menu;pointer-events:none;user-select:none"> <img src="{% static 'trustly/images/nav-prev.svg' %}" alt="nav-prev"></div>
+            {% if mSearchCallbackCurrentPageNumber == 1 %}
+                <div class="search__page-navigation " disabled>
+                    <img src="{% static 'trustly/images/nav-prev.svg' %}" alt="nav-prev">
+                </div>
             {% else %}
-                <a href="?q={{mSearchCallbackQuery}}&mSearchParamSafeSearch={{mSearchCallbackSaveSearch}}&pSearchParamType={{mSearchCallbackRelevantSearchType}}&mSearchParamPage=1" class="search__page-navigation search__pagination--border-right" style="float:left;margin-right: 19px;text-decoration: none"> <img src="{% static 'trustly/images/nav-first.svg' %}" alt="nav-first"></a>
-                <a href="?q={{mSearchCallbackQuery}}&mSearchParamSafeSearch={{mSearchCallbackSaveSearch}}&pSearchParamType={{mSearchCallbackRelevantSearchType}}&mSearchParamPage={% if mSearchCallbackCurrentPageNumber != '1'%}{{mSearchCallbackCurrentPageNumber|add:-1}}{% endif %}" class="search__page-navigation search__pagination--border-right" style="float:left;margin-right: 19px;text-decoration: none"><img src="{% static 'trustly/images/nav-prev.svg' %}" alt="nav-prev"></a>
+                <a href="?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType={{ mSearchCallbackRelevantSearchType }}&mSearchParamPage=1" class="search__page-navigation ">
+                    <img src="{% static 'trustly/images/nav-first.svg' %}" alt="nav-first">
+                </a>
+                <a href="?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType={{ mSearchCallbackRelevantSearchType }}&mSearchParamPage=
+                        {% if mSearchCallbackCurrentPageNumber != '1' %}{{ mSearchCallbackCurrentPageNumber|add:-1 }}{% endif %}" class="search__page-navigation gc--clear-selection">
+                    <img src="{% static 'trustly/images/nav-prev.svg' %}" alt="nav-prev">
+                </a>
             {% endif %}
 
             {% for page in mSearchCallbackPageNumber %}
-                <a href="?q={{mSearchCallbackQuery}}&mSearchParamSafeSearch={{mSearchCallbackSaveSearch}}&pSearchParamType={{mSearchCallbackRelevantSearchType}}&mSearchParamPage={{page}}"
-                   class="search__navigation {% if page == mSearchCallbackCurrentPageNumber %}search__navigation--focus{% endif %}"
-                   style="float:left;color:#fff">
-                   {{page}}
+                <a href="?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType={{ mSearchCallbackRelevantSearchType }}&mSearchParamPage={{ page }}" class="search__navigation gc--clear-selection {% if page == mSearchCallbackCurrentPageNumber %}search__navigation--focus{% endif %}">
+                    {{ page }}
                 </a>
             {% endfor %}
 
-            <!-- right arrow -->
-            {% if mSearchCallbackCurrentPageNumber >= mSearchCallbackMaxPagination%}
-                <div class="search__page-navigation search__pagination--border-right" style="float:left;margin-right: 19px;text-decoration: none;cursor:context-menu;pointer-events:none;user-select:none"> &rsaquo;</div>
+            {% if mSearchCallbackCurrentPageNumber >= mSearchCallbackMaxPagination %}
+                <div class="search__page-navigation " disabled>
+                    &rsaquo;
+                </div>
             {% else %}
-                <a href="?q={{mSearchCallbackQuery}}&mSearchParamSafeSearch={{mSearchCallbackSaveSearch}}&pSearchParamType={{mSearchCallbackRelevantSearchType}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber|add:1}}" class="search__page-navigation search__pagination--border-right search__pagination--border-left" > <img src="{% static 'trustly/images/nav-next.svg' %}" alt="nav-next"></a>
+                <a href="?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType={{ mSearchCallbackRelevantSearchType }}&mSearchParamPage={{ mSearchCallbackCurrentPageNumber|add:1 }}" class="search__page-navigation gc--clear-selection">
+                    <img src="{% static 'trustly/images/nav-next.svg' %}" alt="nav-next">
+                </a>
             {% endif %}
-
         </div>
-
     </form>
 {% endif %}

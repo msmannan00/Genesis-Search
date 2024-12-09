@@ -1,112 +1,112 @@
 .toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
 .toolbar__left {
-    display: flex;
-    gap: 24px;
+  display: flex;
+  gap: 24px;
 }
 
 .toolbar__button {
-    background-color: transparent;
-    color: #99A2AB;
-    border: none;
-    font-weight: 500 !important;
-    font-size: 13px !important;;
-    padding: 7px 5px;
-    cursor: pointer;
-    font-family: 'Roboto', sans-serif !important;
+  background-color: transparent;
+  color: #99A2AB;
+  border: none;
+  font-weight: 500 !important;
+  font-size: 13px !important;;
+  padding: 7px 5px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif !important;
 }
 
-.toolbar__button-rotate{
-    transform: rotate(180deg);
-    padding: 2px;
+.toolbar__button-rotate {
+  transform: rotate(180deg);
+  padding: 2px;
 }
 
 .toolbar__button:focus {
-    outline: none;
+  outline: none;
 }
 
 .toolbar__button--active {
-    border: none;
-    outline: none;
+  border: none;
+  outline: none;
 }
 
 .toolbar__button__selected {
-    border-bottom: 1px solid #FFFFFF;
-    color: #fff !important;
+  border-bottom: 1px solid #FFFFFF;
+  color: #fff !important;
 }
 
 .toolbar__right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .toolbar__switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-    margin:0;
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin: 0;
 }
 
 .toolbar__switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .toolbar__slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #5F84A9;
-    border-radius: 20px;
-    transition: 0.4s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #5F84A9;
+  border-radius: 20px;
+  transition: 0.4s;
 }
 
 .toolbar__slider:before {
-    position: absolute;
-    content: "";
-    height: 14px;
-    width: 14px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    border-radius: 50%;
-    transition: 0.4s;
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
 }
 
 .toolbar__switch input:checked + .toolbar__slider {
-    background-color: #2665A0;
+  background-color: #2665A0;
 }
 
 .toolbar__switch input:checked + .toolbar__slider:before {
-    transform: translateX(20px);
+  transform: translateX(20px);
 }
 
 .toolbar__text {
-    font-size: 14px;
-    color: white;
+  font-size: 14px;
+  color: white;
 }
 
 @media (max-width: 768px) {
-    .toolbar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-    }
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
 
-    .toolbar__left,
-    .toolbar__right {
-        width: 100%;
-        display: flex;
-        justify-content: flex-start;
-    }
+  .toolbar__left,
+  .toolbar__right {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
 }

@@ -5,7 +5,7 @@ from trustly.controllers.view_managers.user.server.maintenance.maintenance_enums
 
 
 class maintenance_mode_middleware(MiddlewareMixin):
-    @staticmethod
-    def process_request(request):
-        if APP_STATUS.S_MAINTAINANCE is True:
-            return maintenance_view_model.getInstance().invoke_trigger(MAINTENANCE_MODEL_CALLBACK.M_INIT, request)
+  @staticmethod
+  def process_request(request):
+    if APP_STATUS.S_MAINTAINANCE is True:
+      return maintenance_view_model.getInstance().invoke_trigger(MAINTENANCE_MODEL_CALLBACK.M_INIT, request)

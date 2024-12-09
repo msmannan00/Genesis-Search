@@ -9,34 +9,33 @@ from trustly.controllers.view_managers.user.interactive.report_manager.report_en
 from trustly.controllers.view_managers.user.interactive.report_manager.report_session_controller import report_session_controller
 from trustly.services.request_manager.request_handler import request_handler
 
+
 class report_model(request_handler):
+  # Private Variables
+  __instance = None
+  __m_session = None
 
-    # Private Variables
-    __instance = None
-    __m_session = None
+  # Initializations
+  def __init__(self):
+    self.__m_session = report_session_controller()
+    pass
 
-    # Initializations
-    def __init__(self):
-        self.__m_session = report_session_controller()
-        pass
+  @staticmethod
+  def __report_website(m_report_data_model):
+    mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_CREATE, [MONGO_COMMANDS.M_REPORT_URL, [m_report_data_model], [True]])
 
-    @staticmethod
-    def __report_website(m_report_data_model):
-        mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_CREATE, [MONGO_COMMANDS.M_REPORT_URL, [m_report_data_model],[True]])
+  def __init_page(self, p_data):
+    m_report_data_model = self.__m_session.invoke_trigger(REPORT_SESSION_COMMANDS.M_INIT, [p_data])
+    m_report_data_model, m_context, m_status = self.__m_session.invoke_trigger(REPORT_SESSION_COMMANDS.M_VALIDATE, [m_report_data_model, p_data])
+    if m_status is True and GENERAL_STRINGS.S_GENERAL_ONION_DOMAIN in helper_controller.get_host(m_context[REPORT_CALLBACK.M_URL]):
+      self.__report_website(m_report_data_model)
+      m_context = {}
 
-    def __init_page(self, p_data):
+    csrf_token = get_token(p_data)
+    m_context["csrf_token"] = csrf_token
+    return m_context, m_status
 
-        m_report_data_model = self.__m_session.invoke_trigger(REPORT_SESSION_COMMANDS.M_INIT, [p_data])
-        m_report_data_model, m_context, m_status = self.__m_session.invoke_trigger(REPORT_SESSION_COMMANDS.M_VALIDATE, [m_report_data_model, p_data])
-        if m_status is True and GENERAL_STRINGS.S_GENERAL_ONION_DOMAIN in helper_controller.get_host(m_context[REPORT_CALLBACK.M_URL]):
-            self.__report_website(m_report_data_model)
-            m_context = {}
-
-        csrf_token = get_token(p_data)
-        m_context["csrf_token"]=csrf_token
-        return m_context, m_status
-
-    # External Request Callbacks
-    def invoke_trigger(self, p_command, p_data):
-        if p_command == REPORT_MODEL_COMMANDS.M_INIT:
-            return self.__init_page(p_data)
+  # External Request Callbacks
+  def invoke_trigger(self, p_command, p_data):
+    if p_command == REPORT_MODEL_COMMANDS.M_INIT:
+      return self.__init_page(p_data)

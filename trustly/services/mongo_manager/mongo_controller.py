@@ -25,15 +25,9 @@ class mongo_controller:
     self.__link_connection()
 
   def __link_connection(self):
-    connection_params = {
-     'host': MONGO_CONNECTIONS.S_MONGO_DATABASE_IP,
-     'port': MONGO_CONNECTIONS.S_MONGO_DATABASE_PORT,
-    }
+    connection_params = {'host': MONGO_CONNECTIONS.S_MONGO_DATABASE_IP, 'port': MONGO_CONNECTIONS.S_MONGO_DATABASE_PORT, }
 
-    auth_params = {
-      'username': MONGO_CONNECTIONS.S_MONGO_USERNAME,
-      'password': MONGO_CONNECTIONS.S_MONGO_PASSWORD
-    }
+    auth_params = {'username': MONGO_CONNECTIONS.S_MONGO_USERNAME, 'password': MONGO_CONNECTIONS.S_MONGO_PASSWORD}
 
     connection_params.update({k: v for k, v in auth_params.items() if v})
     self.__m_connection = pymongo.MongoClient(MONGO_CONNECTIONS.S_MONGO_DATABASE_IP, MONGO_CONNECTIONS.S_MONGO_DATABASE_PORT, username=MONGO_CONNECTIONS.S_MONGO_USERNAME, password=MONGO_CONNECTIONS.S_MONGO_PASSWORD)[MONGO_CONNECTIONS.S_MONGO_DATABASE_NAME]
@@ -59,15 +53,7 @@ class mongo_controller:
 
   def __read(self, p_data, p_skip, p_limit):
     try:
-      pipeline = [
-        {"$match": p_data[MONGODB_KEYS.S_FILTER]},
-        {
-          "$facet": {
-            "total_count": [{"$count": "count"}],
-            "documents": [{"$skip": p_skip}, {"$limit": p_limit}] if p_limit else [{"$skip": p_skip}]
-          }
-        }
-      ]
+      pipeline = [{"$match": p_data[MONGODB_KEYS.S_FILTER]}, {"$facet": {"total_count": [{"$count": "count"}], "documents": [{"$skip": p_skip}, {"$limit": p_limit}] if p_limit else [{"$skip": p_skip}]}}]
       result = list(self.__m_connection[p_data[MONGODB_KEYS.S_DOCUMENT]].aggregate(pipeline))
       total_count = result[0]["total_count"][0]["count"] if result[0]["total_count"] else 0
       documents = result[0]["documents"]

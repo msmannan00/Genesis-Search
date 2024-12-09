@@ -4,22 +4,21 @@ from trustly.services.request_manager.request_handler import request_handler
 
 
 class homepage_model(request_handler):
+  # Private Variables
+  __instance = None
+  __m_session = None
 
-    # Private Variables
-    __instance = None
-    __m_session = None
+  # Initializations
+  def __init__(self):
+    self.__m_session = homepage_session_controller()
+    pass
 
-    # Initializations
-    def __init__(self):
-        self.__m_session = homepage_session_controller()
-        pass
+  def __init_page(self, p_data):
+    m_context, m_status = self.__m_session.invoke_trigger(HOMEPAGE_SESSION_COMMANDS.M_INIT, p_data)
 
-    def __init_page(self, p_data):
-        m_context, m_status = self.__m_session.invoke_trigger(HOMEPAGE_SESSION_COMMANDS.M_INIT, p_data)
+    return m_context, m_status
 
-        return m_context, m_status
-
-    # External Request Handler
-    def invoke_trigger(self, p_command, p_data):
-        if p_command == HOMEPAGE_MODEL_COMMANDS.M_INIT:
-            return self.__init_page(p_data)
+  # External Request Handler
+  def invoke_trigger(self, p_command, p_data):
+    if p_command == HOMEPAGE_MODEL_COMMANDS.M_INIT:
+      return self.__init_page(p_data)

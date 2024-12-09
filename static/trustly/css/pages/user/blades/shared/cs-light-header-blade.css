@@ -1,34 +1,37 @@
-/* OVERRIDES */
-
-.light-header{
-    color:#000000;
-    background-image: linear-gradient(90deg, rgba(21, 52, 84, 1) 0%, rgba(22, 56, 88, 1) 100%)!important;
-    border-bottom-color:#092137BA !important;
-    border-style: solid;border-right-width: 0;
-    border-left-width: 0;border-top-width: 0;
-    border-bottom-width: 1px;
-    overflow: hidden;
-    padding: 20px 0;
+.light-header {
+  color: #000000;
+  background-image: linear-gradient(90deg, rgba(21, 52, 84, 1) 0%, rgba(22, 56, 88, 1) 100%) !important;
+  border-bottom-color: #092137BA !important;
+  border-style: solid;
+  border-right-width: 0;
+  border-left-width: 0;
+  border-top-width: 0;
+  border-bottom-width: 1px;
+  overflow: hidden;
+  padding: 20px 0;
 }
 
-.toolbar__right label{
-    margin-bottom: 0 !important;
+.toolbar__right label {
+  margin-bottom: 0 !important;
 }
+
 .light-header__menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
+
 .light-header__brand {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
 }
 
 .light-header__menu-category svg {
-    fill: white; /* Make the SVG white */
+  fill: white;
 }
+
 .light-header__vertical-line {
   border-left: 1px solid #ebebeb;
   height: 30px;
@@ -36,121 +39,110 @@
   margin-right: 15px;
 }
 
-.light-header__logo{
-    height: auto;
-    display: block;
-    margin-right: auto;
-    width: 11%;
-    max-width: 40px;
-    margin-top: 10px;
-    cursor: pointer;
-    margin-left: 10px;
-    float: left;
+.light-header__logo {
+  height: auto;
+  display: block;
+  margin-right: auto;
+  width: 11%;
+  max-width: 40px;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-left: 10px;
+  float: left;
 }
 
-.light-header__form{
-    margin-top: -50px;
-    float: left;
-    width: 100%;
-    margin-left: 50px;
-    padding-right: 70px;
+.light-header__form {
+  margin-top: -50px;
+  float: left;
+  width: 100%;
+  margin-left: 50px;
+  padding-right: 70px;
 }
 
 
-.light-header__searchbox{
-    border-radius: 7px;
-    align-self: center;
-    height:44px;
-    width:85%;
-    max-width: 575px;
-    display:block;
-    font:14px arial,sans-serif;
-    padding-left:10px;
-    padding-right:15px;
-    margin-left: 10px;
-    float: left;
-    border: 1px solid #ededed !important;
-    margin-top: 7px;
-    color: #595959 !important;
+.light-header__searchbox {
+  border-radius: 7px;
+  align-self: center;
+  height: 44px;
+  width: 85%;
+  max-width: 575px;
+  display: block;
+  font: 14px arial, sans-serif;
+  padding-left: 10px;
+  padding-right: 15px;
+  margin-left: 10px;
+  float: left;
+  border: 1px solid #ededed !important;
+  margin-top: 7px;
+  color: #595959 !important;
 }
 
 .light-header__searchbox:hover {
-	outline: none;
-	box-shadow: 0 2px 2px -1.5px #cccccc !important;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
+  outline: none;
+  box-shadow: 0 2px 2px -1.5px #cccccc !important;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
 }
 
-.light-header__searchbox:focus{
-	outline: none;
-	box-shadow: 0 2px 2px -1.5px #cccccc !important;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
+.light-header__searchbox:focus {
+  outline: none;
+  box-shadow: 0 2px 2px -1.5px #cccccc !important;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
 }
 
-.light-header__searchbox-icon{
-    width: 17px !important;
-    margin-top: 5px;
-    margin-right: 38px;
+.light-header__searchbox-icon {
+  width: 17px !important;
+  margin-top: 5px;
+  margin-right: 38px;
 }
 
 
-.light-header__searchbox-button{
-    height: 25px;
-    width: 30px;
-    float: left !important;
-    opacity: 1;
-    cursor: pointer;
-    padding-left: -10px;
-    padding-right: 10px;
-    background-color: white;
-    margin-left: -38px;
-    margin-top: 15px;
-    outline: none;
-    border: 0;
-    z-index: 100;
+.light-header__searchbox-button {
+  height: 25px;
+  width: 30px;
+  float: left !important;
+  opacity: 1;
+  cursor: pointer;
+  padding-left: -10px;
+  padding-right: 10px;
+  background-color: white;
+  margin-left: -38px;
+  margin-top: 15px;
+  outline: none;
+  border: 0;
+  z-index: 100;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
   color: #bfbfbf !important;
-  opacity: 1; /* Firefox */
+  opacity: 1;
 }
 
-::-moz-placeholder { /* Firefox 19+ */
-  color: #bfbfbf !important;
-}
-:-moz-placeholder { /* Firefox 18- */
+::-moz-placeholder {
   color: #bfbfbf !important;
 }
 
-/*light-header style*/
-
-.light-header__menu-category--bold{
-    font-weight: bold;
-    color:#1967d2 !important;
-    margin-right: 15px !important;
+:-moz-placeholder {
+  color: #bfbfbf !important;
 }
 
-.light-header__menu-category--disabled{
-    color: #999999;
+.light-header__menu-category--bold {
+  font-weight: bold;
+  color: #1967d2 !important;
+  margin-right: 15px !important;
 }
 
-.light-header__menu-category{
-    margin-right: 22px;
-    cursor: pointer;
-    font-size: 14px;
-    padding: 17px 10px 15px;
+.light-header__menu-category--disabled {
+  color: #999999;
 }
 
-/*.light-header__menu-category:hover{*/
-/*    text-decoration: none;*/
-/*	animation-duration: 2s;*/
-/*    padding-top: 100px;*/
-/*	animation-name: light-header__catagory_animate_hover;*/
-/*	border-bottom: 4px solid #548ec4;*/
-/*	transition: border-bottom-color 0.25s ease-in-out;*/
-/*    -webkit-animation-fill-mode: forwards;*/
-/*}*/
+.light-header__menu-category {
+  margin-right: 22px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 17px 10px 15px;
+}
 
 @keyframes light-header__catagory_animate_hover {
   10% {
@@ -163,27 +155,26 @@
   }
 }
 
-.light-header__menu-category:focus{
-    color: #8c8c8c;
-    text-decoration: none;
-    border-bottom: 4px solid #595959;
+.light-header__menu-category:focus {
+  color: #8c8c8c;
+  text-decoration: none;
+  border-bottom: 4px solid #595959;
 }
 
 @media only screen and (max-width: 1100px) {
-    .light-header__searchbox {
-        width:100%;
-        max-width: initial;
-        margin-left:10px;
-    }
-    .light-header__logo {
-        margin-left: 10px;
-        width: 100px;
-    }
-    /*.light-header__menu {*/
-    /*    visibility: hidden;*/
-    /*}*/
-    .light-header__searchbox-icon{
-        margin-top: 2px;
-    }
+  .light-header__searchbox {
+    width: 100%;
+    max-width: initial;
+    margin-left: 10px;
+  }
+
+  .light-header__logo {
+    margin-left: 10px;
+    width: 100px;
+  }
+
+  .light-header__searchbox-icon {
+    margin-top: 2px;
+  }
 }
 

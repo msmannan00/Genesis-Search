@@ -10,46 +10,39 @@ from trustly.services.session_manager.session_enums import SESSION_KEYS, SESSION
 
 class manage_status_session_controller(request_handler):
 
-    # Helper Methods
-    @staticmethod
-    def __init_parameters(p_data):
-        m_status = session_controller.get_instance().invoke_trigger(SESSION_COMMANDS.S_EXISTS, p_data)
-        if SESSION_KEYS.S_USERNAME in p_data.session :
-            return {}, m_status
-        else :
-            return {}, m_status
+  # Helper Methods
+  @staticmethod
+  def __init_parameters(p_data):
+    m_status = session_controller.get_instance().invoke_trigger(SESSION_COMMANDS.S_EXISTS, p_data)
+    if SESSION_KEYS.S_USERNAME in p_data.session:
+      return {}, m_status
+    else:
+      return {}, m_status
 
-    @staticmethod
-    def __validate_parameters(p_data):
-        m_current_time = math.ceil(time.time()/60)
-        m_cronjob_time = p_data['m_cronjob']
-        m_crawler_time = p_data['m_crawler']
-        m_cronjob_notice = "running"
+  @staticmethod
+  def __validate_parameters(p_data):
+    m_current_time = math.ceil(time.time() / 60)
+    m_cronjob_time = p_data['m_cronjob']
+    m_crawler_time = p_data['m_crawler']
+    m_cronjob_notice = "running"
 
-        if (m_current_time - int(m_crawler_time))>10:
-            m_crawler_notice = "not running"
-        elif (m_current_time - int(m_crawler_time))>5:
-            m_crawler_notice = "un-responsive"
-        else:
-            m_crawler_notice = "running"
+    if (m_current_time - int(m_crawler_time)) > 10:
+      m_crawler_notice = "not running"
+    elif (m_current_time - int(m_crawler_time)) > 5:
+      m_crawler_notice = "un-responsive"
+    else:
+      m_crawler_notice = "running"
 
-        m_cronjob_time = datetime.datetime.fromtimestamp(m_cronjob_time*60).strftime('%Y-%m-%d %H:%M')
-        m_crawler_time = datetime.datetime.fromtimestamp(m_crawler_time*60).strftime('%Y-%m-%d %H:%M')
+    m_cronjob_time = datetime.datetime.fromtimestamp(m_cronjob_time * 60).strftime('%Y-%m-%d %H:%M')
+    m_crawler_time = datetime.datetime.fromtimestamp(m_crawler_time * 60).strftime('%Y-%m-%d %H:%M')
 
-        m_context_response = {
-            MANAGE_STATUS_CALLBACK.M_CRONJOB_NOTICE : m_cronjob_notice,
-            MANAGE_STATUS_CALLBACK.M_CRONJOB_TIME : m_cronjob_time,
-            MANAGE_STATUS_CALLBACK.M_CRAWLER_NOTICE : m_crawler_notice,
-            MANAGE_STATUS_CALLBACK.M_CRAWLER_TIME : m_crawler_time
-        }
+    m_context_response = {MANAGE_STATUS_CALLBACK.M_CRONJOB_NOTICE: m_cronjob_notice, MANAGE_STATUS_CALLBACK.M_CRONJOB_TIME: m_cronjob_time, MANAGE_STATUS_CALLBACK.M_CRAWLER_NOTICE: m_crawler_notice, MANAGE_STATUS_CALLBACK.M_CRAWLER_TIME: m_crawler_time}
 
-        return m_context_response
+    return m_context_response
 
-
-    # External Request Callbacks
-    def invoke_trigger(self, p_command, p_data):
-        if p_command == MANAGE_STATUS_SESSION_COMMANDS.M_INIT:
-            return self.__init_parameters(p_data)
-        if p_command == MANAGE_STATUS_SESSION_COMMANDS.M_VALIDATE:
-            return self.__validate_parameters(p_data)
-
+  # External Request Callbacks
+  def invoke_trigger(self, p_command, p_data):
+    if p_command == MANAGE_STATUS_SESSION_COMMANDS.M_INIT:
+      return self.__init_parameters(p_data)
+    if p_command == MANAGE_STATUS_SESSION_COMMANDS.M_VALIDATE:
+      return self.__validate_parameters(p_data)

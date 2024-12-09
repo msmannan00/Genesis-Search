@@ -2,37 +2,37 @@
 <form class="disable-highlight clear-paddings" action="" method="GET">
     <div class="">
         <ul class="pagination">
-            <!-- Start Button -->
             <li class="{% if page == 1 %}disabled{% endif %}">
-                <a href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page=1" >
+                <a href="?
+                        {% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page=1">
                     <img src="{% static 'trustly/images/nav-first.svg' %}" alt="Start">
                 </a>
             </li>
 
-            <!-- Previous Button -->
             <li class="{% if page == 1 %}disabled{% endif %}">
-                <a href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ page|add:"-1" }}" >
+                <a href="?
+                        {% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ page|add:"-1" }}">
                     <img src="{% static 'trustly/images/nav-prev.svg' %}" alt="Prev">
                 </a>
             </li>
 
-            <!-- Dynamic Page Numbers -->
             {% for i in mPagination %}
                 <li class="{% if i == page %}active{% endif %}">
-                    <a href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ i }}">{{ i }}</a>
+                    <a href="?
+                            {% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ i }}">{{ i }}</a>
                 </li>
             {% endfor %}
 
-            <!-- Next Button -->
             <li class="{% if page == mTotalPage %}disabled{% endif %}">
-                <a href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ page|add:"1" }}">
+                <a href="?
+                        {% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ page|add:"1" }}">
                     <img src="{% static 'trustly/images/nav-next.svg' %}" alt="Next">
                 </a>
             </li>
 
-            <!-- End Button -->
             <li class="{% if page == mTotalPage %}disabled{% endif %}">
-                <a href="?{% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ mTotalPage }}">
+                <a href="?
+                        {% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ mTotalPage }}">
                     <img src="{% static 'trustly/images/nav-last.svg' %}" alt="End">
                 </a>
             </li>

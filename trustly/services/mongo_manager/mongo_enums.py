@@ -1,5 +1,6 @@
 from trustly.controllers.helper_manager.env_handler import env_handler
 
+
 class MONGO_INDEX_COLLECTION:
   M_URL = "m_host"
   M_CONTENT_TYPE = "m_content_type"
@@ -17,12 +18,14 @@ class MONGODB_COLLECTIONS:
   S_STATUS = 'm_status'
   S_URL_STATUS = 'm_url_status'
 
+
 class MONGO_CONNECTIONS:
   S_MONGO_DATABASE_NAME = 'trustly-web'
   S_MONGO_DATABASE_PORT = 27017
   S_MONGO_DATABASE_IP = 'mongo'
   S_MONGO_USERNAME = env_handler.get_instance().env('MONGO_ROOT_USERNAME')
   S_MONGO_PASSWORD = env_handler.get_instance().env('MONGO_ROOT_PASSWORD')
+
 
 class MONGODB_KEYS:
   S_DOCUMENT = 'm_document'

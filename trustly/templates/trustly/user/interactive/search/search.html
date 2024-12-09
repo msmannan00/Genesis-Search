@@ -1,8 +1,7 @@
 {% load static %}
 
 <!-- local imports -->
-{% include 'trustly/user/blades/blades_shared_initialization.html' %}
-{% include 'trustly/user/interactive/search/local_imports.html' %}
+{% include 'trustly/user/blades/blades_shared_initialization.html' %}{% include 'trustly/user/interactive/search/local_imports.html' %}
 
 <html lang="en">
 
@@ -27,14 +26,6 @@
     {% include 'trustly/user/blades/search_template/blade_search_pagination.html' %}
 </div>
 
-{#        <!-- footer -->#}
-{#        {% include 'trustly/user/blades/shared_blades/blade_footer.html' %}#}
-{##}
-{#        <!-- content warning -->#}
-{#        <div class="search-footer__search">#}
-{#            <div class="search__content-warning"><span><b>Notice</b> </span><span class="search__description"> We don't own any of the content. We are just showing their links so if you found something disturbing<a href="/report" class="search-footer__report-link"><b> - Report Us</b></a></span></div>#}
-{#        </div>#}
-<!-- Scroll to Top Button -->
 {% include 'trustly/user/blades/shared_blades/blade_footer.html' %}
 
 </body>

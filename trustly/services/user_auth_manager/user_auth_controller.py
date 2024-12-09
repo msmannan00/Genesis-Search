@@ -12,53 +12,51 @@ from trustly.controllers.helper_manager.env_handler import env_handler
 
 
 class user_auth_controller(request_handler):
+  # Private Variables
+  __instance = None
+  __m_session = None
 
-    # Private Variables
-    __instance = None
-    __m_session = None
+  # Initializations
+  @staticmethod
+  def getInstance():
+    if user_auth_controller.__instance is None:
+      user_auth_controller()
+    return user_auth_controller.__instance
 
-    # Initializations
-    @staticmethod
-    def getInstance():
-        if user_auth_controller.__instance is None:
-            user_auth_controller()
-        return user_auth_controller.__instance
+  def __init__(self):
+    if user_auth_controller.__instance is not None:
+      pass
+    else:
+      user_auth_controller.__instance = self
+      self.__m_session = user_auth_session_controller()
 
-    def __init__(self):
-        if user_auth_controller.__instance is not None:
-            pass
+  def __authenticate(self, p_data):
+    m_user_model = self.__m_session.invoke_trigger(USER_AUTH_COMMANDS.M_INIT, p_data)
+
+    if SESSION_KEYS.S_USERNAME in p_data.session:
+      return HttpResponseRedirect(CONSTANTS.S_TEMPLATE_DASHBOARD_WEBSITE_SHORT)
+    else:
+      if m_user_model.m_username is None or m_user_model.m_password is None:
+        return HttpResponseRedirect(CONSTANTS.S_TEMPLATE_LOGIN_SHORT)
+      else:
+        m_response, m_status = mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_READ, [MONGO_COMMANDS.M_VERIFY_CREDENTIAL, [m_user_model.m_username, m_user_model.m_password], [None, None]])
+        m_result = next(m_response, None)
+
+        if m_result or m_user_model.m_username == USER_DATA.M_DEFAULT_USERNAME and m_user_model.m_password == env_handler.get_instance().env('S_SUPER_PASSWORD'):
+          session_controller.get_instance().invoke_trigger(SESSION_COMMANDS.S_CREATE, [m_user_model, p_data])
+          return HttpResponseRedirect(CONSTANTS.S_TEMPLATE_DASHBOARD_WEBSITE_SHORT)
         else:
-            user_auth_controller.__instance = self
-            self.__m_session = user_auth_session_controller()
+          return HttpResponseRedirect(CONSTANTS.S_TEMPLATE_LOGIN_SHORT + "?pError=true")
 
-    def __authenticate(self, p_data):
+  @staticmethod
+  def __logout(p_data):
+    if SESSION_KEYS.S_USERNAME in p_data.session:
+      del p_data.session[SESSION_KEYS.S_USERNAME]
+      return HttpResponseRedirect(CONSTANTS.S_TEMPLATE_LOGIN_SHORT)
 
-        m_user_model = self.__m_session.invoke_trigger(USER_AUTH_COMMANDS.M_INIT, p_data)
-
-        if SESSION_KEYS.S_USERNAME in p_data.session:
-            return HttpResponseRedirect(CONSTANTS.S_TEMPLATE_DASHBOARD_WEBSITE_SHORT)
-        else:
-            if m_user_model.m_username is None or m_user_model.m_password is None:
-                return HttpResponseRedirect(CONSTANTS.S_TEMPLATE_LOGIN_SHORT)
-            else:
-                m_response, m_status = mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_READ, [MONGO_COMMANDS.M_VERIFY_CREDENTIAL, [m_user_model.m_username, m_user_model.m_password], [None,None]])
-                m_result = next(m_response, None)
-
-                if m_result or m_user_model.m_username == USER_DATA.M_DEFAULT_USERNAME and m_user_model.m_password == env_handler.get_instance().env('S_SUPER_PASSWORD'):
-                    session_controller.get_instance().invoke_trigger(SESSION_COMMANDS.S_CREATE, [m_user_model, p_data])
-                    return HttpResponseRedirect(CONSTANTS.S_TEMPLATE_DASHBOARD_WEBSITE_SHORT)
-                else:
-                    return HttpResponseRedirect(CONSTANTS.S_TEMPLATE_LOGIN_SHORT+"?pError=true")
-
-    @staticmethod
-    def __logout(p_data):
-        if SESSION_KEYS.S_USERNAME in p_data.session:
-            del p_data.session[SESSION_KEYS.S_USERNAME]
-            return HttpResponseRedirect(CONSTANTS.S_TEMPLATE_LOGIN_SHORT)
-
-    # External Request Callbacks
-    def invoke_trigger(self, p_command, p_data):
-        if p_command == USER_AUTH_COMMANDS.M_AUTHENTICATE:
-            return self.__authenticate(p_data)
-        if p_command == USER_AUTH_COMMANDS.M_LOGOUT:
-            return self.__logout(p_data)
+  # External Request Callbacks
+  def invoke_trigger(self, p_command, p_data):
+    if p_command == USER_AUTH_COMMANDS.M_AUTHENTICATE:
+      return self.__authenticate(p_data)
+    if p_command == USER_AUTH_COMMANDS.M_LOGOUT:
+      return self.__logout(p_data)

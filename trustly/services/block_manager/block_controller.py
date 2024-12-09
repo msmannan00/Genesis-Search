@@ -24,7 +24,6 @@ class block_controller:
 
   def __on_verify(self, p_request):
     try:
-
       m_secret_token = p_request.headers.get(BLOCK_PARAM.M_SECRET_TOKEN)
       if m_secret_token is not None:
         m_decoded_str = self.__m_fernet.decrypt(m_secret_token.encode()).decode("utf-8").split("----")

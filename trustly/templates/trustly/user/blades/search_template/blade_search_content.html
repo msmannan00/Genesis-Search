@@ -3,17 +3,7 @@
 <!-- safe Trustly -->
 {% include 'trustly/user/blades/search_template/blade_search_safe_search.html' %}
 
-<!-- no Trustly results -->
-{% if mSearchCallbackRelevantDocument|length == 0 %}
-    {% include 'trustly/user/blades/search_template/blade_search_no_suggestion.html' %}
-{% endif %}
-
 <!-- trustly content url based -->
 {% for mDoc in mSearchCallbackRelevantDocument %}
     {% include 'trustly/user/blades/search_template/blade_search_content_url_based.html' %}
 {% endfor %}
-
-
-{% if mSearchCallbackRelevantDocument|length >= 8 %}
-    {% include 'trustly/user/blades/search_template/blade_search_engine_suggestion.html' %}
-{% endif %}

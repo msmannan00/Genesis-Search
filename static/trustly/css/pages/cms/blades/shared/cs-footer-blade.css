@@ -1,4 +1,3 @@
-/*footer-bar style*/
 .footer__footer-bar{
     background-color:#264d73;
     border-style: solid;
@@ -83,8 +82,6 @@
     font-weight: 500;
     font-family: arial,sans-serif;
 }
-
-/*footer-bar events*/
 
 .footer__catagories:hover{
 }

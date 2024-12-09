@@ -2,61 +2,66 @@
 
 <div class="onion__table--container clear-paddings">
     <table class="table table-striped directory__table clear-paddings">
-<thead>
-    <tr>
-        <th scope="row" class="column-id">ID</th>
-        <th scope="col" class="column-service-url">Service URL</th>
-        <th scope="col" class="column-category">Category</th>
-        <th scope="col" class="column-url-status">URL Status</th>
-        <th scope="col" class="column-leak-status">Leak Status</th>
-    </tr>
-</thead>
+        <thead>
+        <tr>
+            <th scope="row" class="column-id">ID</th>
+            <th scope="col" class="column-service-url">Service URL</th>
+            <th scope="col" class="column-category">Category</th>
+            <th scope="col" class="column-url-status">URL Status</th>
+            <th scope="col" class="column-leak-status">Leak Status</th>
+        </tr>
+        </thead>
         <tbody>
-            <!-- Loop for Dynamic Data -->
-            {% for mDoc in mDirectoryCallbackLinks %}
-                <tr>
-                    <td data-label="ID">{{ forloop.counter }}</td>
+        {% for mDoc in mDirectoryCallbackLinks %}
+            <tr>
+                <td data-label="ID">{{ forloop.counter }}</td>
 
-                    {% if mDoc.mContentType in 'i a adult' %}
-                        <td data-label="Onion Service"><a href="/restricted" class="onion__table-url text-decoration-none text-reset">{{ mDoc.url|slice:"0:20" }}</a>...</td>
-                    {% else %}
-                        <td data-label="Onion Service"><a href="{{ mDoc.mURL }}" class="onion__table-url text-decoration-none text-reset">{{ mDoc.url }}</a></td>
-                    {% endif %}
-
-                    <td data-label="search-content__webpages-description--category">
-                        {% for category in mDoc.content_type %}
-                            <span class="content--category">
-                                &nbsp;&nbsp;{{ category|capfirst }}&nbsp;&nbsp;
-                            </span>&nbsp;
-                        {% endfor %}
+                {% if mDoc.mContentType in 'i a adult' %}
+                    <td data-label="Onion Service">
+                        <a href="/restricted" class="onion__table-url text-decoration-none text-reset">{{ mDoc.url|slice:"0:20" }}</a>...
                     </td>
+                {% else %}
+                    <td data-label="Onion Service">
+                        <a href="{{ mDoc.mURL }}" class="onion__table-url text-decoration-none text-reset">{{ mDoc.url }}</a>
+                    </td>
+                {% endif %}
 
-                    {% if mDoc.url_status_date == 1 %}
-                        <td data-label="URL Status" class="onion__table-leak-status">
-                            <span class="status_default_pointer"></span>
-                            Active
-                        </td>
-                    {% else %}
-                        <td data-label="URL Status" class="onion__table-leak-status">
-                            <span class="status_default_pointer status_inactive_pointer"></span>
-                            Inactive
-                        </td>
-                    {% endif %}
+                <td data-label="search-content__webpages-description--category">
+                    <div class="d-flex flex-wrap">
+                        {% for category in mDoc.content_type %}
+                            <div class="content--category px-2 py-1">
+                                {{ category|capfirst }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </td>
+
+                {% if mDoc.url_status_date == 1 %}
+                    <td data-label="URL Status" class="onion__table-leak-status">
+                        <span class="status_default_pointer"></span>
+                        Active
+                    </td>
+                {% else %}
+                    <td data-label="URL Status" class="onion__table-leak-status">
+                        <span class="status_default_pointer status_inactive_pointer"></span>
+                        Inactive
+                    </td>
+                {% endif %}
 
 
-                    {% if mDoc.leak_status_date == 1 %}
-                        <td data-label="Leak Status" class="onion__table-leak-status">
-                            <span class="status_default_pointer"></span>
-                            Active
-                        </td>
-                    {% else %}
-                        <td data-label="Leak Status" class="onion__table-leak-status">
-                            <span class="status_default_pointer status_inactive_pointer"></span>
-                            Inactive
-                        </td>
-                    {% endif %}
-                </tr>
-            {% endfor %}
+                {% if mDoc.leak_status_date == 1 %}
+                    <td data-label="Leak Status" class="onion__table-leak-status">
+                        <span class="status_default_pointer"></span>
+                        Active
+                    </td>
+                {% else %}
+                    <td data-label="Leak Status" class="onion__table-leak-status">
+                        <span class="status_default_pointer status_inactive_pointer"></span>
+                        Inactive
+                    </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
         </tbody>
     </table>
 </div>

@@ -7,16 +7,11 @@ class redis_controller:
   __redis = None
 
   def __init__(self):
-    self.__redis = redis.StrictRedis(
-      port=REDIS_CONNECTIONS.S_DATABASE_PORT,
-      host=REDIS_CONNECTIONS.S_DATABASE_IP,
-      password=REDIS_CONNECTIONS.S_DATABASE_PASSWORD,
-      decode_responses=True
-    )
+    self.__redis = redis.StrictRedis(port=REDIS_CONNECTIONS.S_DATABASE_PORT, host=REDIS_CONNECTIONS.S_DATABASE_IP, password=REDIS_CONNECTIONS.S_DATABASE_PASSWORD, decode_responses=True)
 
   @classmethod
   def destroy_instance(cls):
-      cls.__instance = None
+    cls.__instance = None
 
   def close_connection(self):
     self.__redis.close()

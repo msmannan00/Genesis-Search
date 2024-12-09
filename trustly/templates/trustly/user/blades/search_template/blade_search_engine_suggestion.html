@@ -1,22 +1,17 @@
 {% load static %}
 
 <div class="search-engine-suggestion mb-3">
-    <p class="search-content__description disable-highlight" id="search_desc"><span><b>Can't find what you are looking for ? </b></span><br>
-        <br><span
-                class="search-content__description--text-color">Search from other popular hidden web search engines</span>
+    <p class="search-content__description disable-highlight" id="search_desc">
+        <span><b>Can't find what you are looking for ? </b></span><br>
+        <br><span class="search-content__description--text-color">Search from other popular hidden web search engines</span>
     </p>
-    <div style="display: flex">
-        <a type="button" class="search-content__triggers "
-           href="https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/?q={{ mSearchCallbackQuery }}">&nbsp;&nbsp;<img
-                style="width:20px;height:20px;margin-top:-2px;" src="{% static 'trustly/images/duckduckgo.png' %}"
-                alt=""/>&nbsp;&nbsp;DuckDuckGo&nbsp;&nbsp;
+    <div>
+        <a type="button" class="search-content__triggers " href="https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/?q={{ mSearchCallbackQuery }}">&nbsp;&nbsp;<img style="width:20px;height:20px;margin-top:-2px;" src="{% static 'trustly/images/duckduckgo.png' %}" alt=""/>&nbsp;&nbsp;DuckDuckGo&nbsp;&nbsp;
             <img src="{% static 'trustly/images/dropdown.svg' %}" alt="suggest"></a>
-        <input autocomplete="off" autocapitalize="none" type="search" class="content__triggers__input__search"
-               maxlength="150" name="q">
-        <button class="searchbar__searchbox-button__search disable-highlight" type="submit"><img
-                class="searchbar__searchbox-icon disable-highlight"
-                src="{% static 'trustly/images/magnifyingglass.svg' %}"
-                alt="suggest"/></button>
+        <input autocomplete="off" autocapitalize="none" type="search" class="content__triggers__input__search" maxlength="150" name="q">
+        <button class="searchbar__searchbox-button__search disable-highlight" type="submit">
+            <img class="searchbar__searchbox-icon disable-highlight" src="{% static 'trustly/images/magnifyingglass.svg' %}" alt="suggest"/>
+        </button>
     </div>
 </div>
 

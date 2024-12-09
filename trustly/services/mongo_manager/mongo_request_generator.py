@@ -10,6 +10,7 @@ from trustly.services.request_manager.request_handler import request_handler
 from trustly.services.mongo_manager.mongo_enums import MONGODB_KEYS, MONGODB_COLLECTIONS
 from datetime import datetime, timezone
 
+
 class mongo_request_generator(request_handler):
 
   def __init__(self):
@@ -76,18 +77,11 @@ class mongo_request_generator(request_handler):
     if content_type is not None:
       update_values["content_type"] = content_type
 
-    return {
-      MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_URL_STATUS,
-      MONGODB_KEYS.S_FILTER: {"url": url},
-      MONGODB_KEYS.S_VALUE: {"$set": update_values}
-    }
+    return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_URL_STATUS, MONGODB_KEYS.S_FILTER: {"url": url}, MONGODB_KEYS.S_VALUE: {"$set": update_values}}
 
   @staticmethod
   def __on_fetch_url_status():
-    return {
-      MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_URL_STATUS,
-      MONGODB_KEYS.S_FILTER: {},
-    }
+    return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_URL_STATUS, MONGODB_KEYS.S_FILTER: {}, }
 
   def invoke_trigger(self, p_commands, p_data=None):
     if p_commands == MONGO_COMMANDS.M_VERIFY_CREDENTIAL:

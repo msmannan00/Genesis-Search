@@ -15,81 +15,64 @@ from trustly.services.request_manager.request_handler import request_handler
 
 
 class directory_model(request_handler):
+  # Private Variables
+  __instance = None
+  __m_session = None
 
-    # Private Variables
-    __instance = None
-    __m_session = None
+  # Initializations
+  def __init__(self):
+    self.__m_session = directory_session_controller()
+    pass
 
-    # Initializations
-    def __init__(self):
-        self.__m_session = directory_session_controller()
-        pass
+  @staticmethod
+  def __load_onion_links(p_directory_class_model):
+    m_documents, count, m_status = mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_READ, [MONGO_COMMANDS.M_GET_URL_STATUS, [], [(p_directory_class_model.m_page_number - 1) * CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE, CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE]])
 
-    @staticmethod
-    def __load_onion_links(p_directory_class_model):
-        m_documents, count, m_status = mongo_controller.getInstance().invoke_trigger(
-            MONGODB_CRUD.S_READ,
-            [
-                MONGO_COMMANDS.M_GET_URL_STATUS,
-                [],
-                [(p_directory_class_model.m_page_number - 1) * CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE,
-                 CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE]
-            ]
-        )
+    if m_status:
+      m_documents = list(m_documents)
+      utc_now = datetime.now(timezone.utc)
+      threshold_date = utc_now - timedelta(days=5)
 
-        if m_status:
-            m_documents = list(m_documents)
-            utc_now = datetime.now(timezone.utc)
-            threshold_date = utc_now - timedelta(days=5)
-
-            for mDoc in m_documents:
-                if 'leak_status_date' in mDoc and isinstance(mDoc['leak_status_date'], datetime):
-                    mDoc['leak_status_date'] = mDoc['leak_status_date'].replace(tzinfo=timezone.utc) if mDoc[
-                                                                                                            'leak_status_date'].tzinfo is None else \
-                        mDoc['leak_status_date']
-                    mDoc['leak_status_date'] = 1 if mDoc['leak_status_date'] >= threshold_date else 0
-                else:
-                    mDoc['leak_status_date'] = 0
-
-                if 'url_status_date' in mDoc and isinstance(mDoc['url_status_date'], datetime):
-                    mDoc['url_status_date'] = mDoc['url_status_date'].replace(tzinfo=timezone.utc) if mDoc[
-                                                                                                          'url_status_date'].tzinfo is None else \
-                        mDoc['url_status_date']
-                    mDoc['url_status_date'] = 1 if mDoc['url_status_date'] >= threshold_date else 0
-                else:
-                    mDoc['url_status_date'] = 0
-
-                # Convert ObjectId to string
-                for key, value in mDoc.items():
-                    if isinstance(value, ObjectId):
-                        mDoc[key] = str(value)
-
-            return m_documents, count
+      for mDoc in m_documents:
+        if 'leak_status_date' in mDoc and isinstance(mDoc['leak_status_date'], datetime):
+          mDoc['leak_status_date'] = mDoc['leak_status_date'].replace(tzinfo=timezone.utc) if mDoc['leak_status_date'].tzinfo is None else mDoc['leak_status_date']
+          mDoc['leak_status_date'] = 1 if mDoc['leak_status_date'] >= threshold_date else 0
         else:
-            return [], count
+          mDoc['leak_status_date'] = 0
 
-    def __fetch_list(self, p_data):
-        m_directory_class_model, m_status, _ = self.__m_session.invoke_trigger(DIRECTORY_SESSION_COMMANDS.M_PRE_INIT,
-                                                                               [p_data])
-        m_result, count = self.__load_onion_links(m_directory_class_model)
+        if 'url_status_date' in mDoc and isinstance(mDoc['url_status_date'], datetime):
+          mDoc['url_status_date'] = mDoc['url_status_date'].replace(tzinfo=timezone.utc) if mDoc['url_status_date'].tzinfo is None else mDoc['url_status_date']
+          mDoc['url_status_date'] = 1 if mDoc['url_status_date'] >= threshold_date else 0
+        else:
+          mDoc['url_status_date'] = 0
 
-        # Prepare the response
-        response_data = {
-            "results": m_result,
-            "page": m_directory_class_model.m_page_number
-        }
-        return JsonResponse(response_data)
+        # Convert ObjectId to string
+        for key, value in mDoc.items():
+          if isinstance(value, ObjectId):
+            mDoc[key] = str(value)
 
-    def __init_page(self, p_data):
-        m_directory_class_model, m_status, _ = self.__m_session.invoke_trigger(DIRECTORY_SESSION_COMMANDS.M_PRE_INIT, [p_data])
-        m_directory_class_model.m_row_model_list, count  = self.__load_onion_links(m_directory_class_model)
-        m_context, m_status = self.__m_session.invoke_trigger(DIRECTORY_SESSION_COMMANDS.M_INIT, [m_directory_class_model, count])
+      return m_documents, count
+    else:
+      return [], count
 
-        return m_context, m_status
+  def __fetch_list(self, p_data):
+    m_directory_class_model, m_status, _ = self.__m_session.invoke_trigger(DIRECTORY_SESSION_COMMANDS.M_PRE_INIT, [p_data])
+    m_result, count = self.__load_onion_links(m_directory_class_model)
 
-    # External Request Callbacks
-    def invoke_trigger(self, p_command, p_data):
-        if p_command == DIRECTORY_MODEL_COMMANDS.M_INIT:
-            return self.__init_page(p_data)
-        if p_command == DIRECTORY_MODEL_COMMANDS.M_FETCH_LIST:
-            return self.__fetch_list(p_data)
+    # Prepare the response
+    response_data = {"results": m_result, "page": m_directory_class_model.m_page_number}
+    return JsonResponse(response_data)
+
+  def __init_page(self, p_data):
+    m_directory_class_model, m_status, _ = self.__m_session.invoke_trigger(DIRECTORY_SESSION_COMMANDS.M_PRE_INIT, [p_data])
+    m_directory_class_model.m_row_model_list, count = self.__load_onion_links(m_directory_class_model)
+    m_context, m_status = self.__m_session.invoke_trigger(DIRECTORY_SESSION_COMMANDS.M_INIT, [m_directory_class_model, count])
+
+    return m_context, m_status
+
+  # External Request Callbacks
+  def invoke_trigger(self, p_command, p_data):
+    if p_command == DIRECTORY_MODEL_COMMANDS.M_INIT:
+      return self.__init_page(p_data)
+    if p_command == DIRECTORY_MODEL_COMMANDS.M_FETCH_LIST:
+      return self.__fetch_list(p_data)

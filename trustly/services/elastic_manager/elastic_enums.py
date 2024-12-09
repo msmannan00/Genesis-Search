@@ -29,6 +29,7 @@ class ELASTIC_CONNECTIONS:
   S_ELASTIC_USERNAME = env_handler.get_instance().env('ELASTIC_ROOT_USERNAME')
   S_ELASTIC_PASSWORD = env_handler.get_instance().env('ELASTIC_ROOT_PASSWORD')
 
+
 class ELASTIC_KEYS:
   S_ID = 'm_id'
   S_DOCUMENT = 'm_document'
