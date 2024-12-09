@@ -58,13 +58,15 @@ class directory_model(request_handler):
 
       page_number = (int(m_directory_class_model.m_page_number) if isinstance(m_directory_class_model.m_page_number, int) and m_directory_class_model.m_page_number > 0 else 1)
 
-      results = m_result if isinstance(m_result, list) else []
+      results = []
+      if isinstance(m_result, list):
+        results = [item if isinstance(item, dict) else {} for item in m_result]
 
       response_data = {"results": results, "page": page_number}
       return JsonResponse(response_data)
 
     except Exception as e:
-      logger.exception("Error in __fetch_list: %s", str(e))
+      logger.error("Error in __fetch_list: %s", str(e))
       return JsonResponse({"error": "An internal error occurred."}, status=500)
 
   def __init_page(self, p_data):
