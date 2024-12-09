@@ -1,10 +1,6 @@
-import json
 from datetime import datetime, timedelta, timezone
-
 from bson import ObjectId
-from django.db.models.expressions import result
 from django.http import JsonResponse
-
 from trustly.services.mongo_manager.mongo_controller import mongo_controller
 from trustly.services.mongo_manager.mongo_enums import MONGODB_CRUD
 from trustly.controllers.constants.constant import CONSTANTS
@@ -56,12 +52,20 @@ class directory_model(request_handler):
       return [], count
 
   def __fetch_list(self, p_data):
-    m_directory_class_model, m_status, _ = self.__m_session.invoke_trigger(DIRECTORY_SESSION_COMMANDS.M_PRE_INIT, [p_data])
-    m_result, count = self.__load_onion_links(m_directory_class_model)
+    try:
+      m_directory_class_model, m_status, _ = self.__m_session.invoke_trigger(DIRECTORY_SESSION_COMMANDS.M_PRE_INIT, [p_data])
+      m_result, count = self.__load_onion_links(m_directory_class_model)
 
-    # Prepare the response
-    response_data = {"results": m_result, "page": m_directory_class_model.m_page_number}
-    return JsonResponse(response_data)
+      page_number = (int(m_directory_class_model.m_page_number) if isinstance(m_directory_class_model.m_page_number, int) and m_directory_class_model.m_page_number > 0 else 1)
+
+      results = m_result if isinstance(m_result, list) else []
+
+      response_data = {"results": results, "page": page_number}
+      return JsonResponse(response_data)
+
+    except Exception as e:
+      logger.exception("Error in __fetch_list: %s", str(e))
+      return JsonResponse({"error": "An internal error occurred."}, status=500)
 
   def __init_page(self, p_data):
     m_directory_class_model, m_status, _ = self.__m_session.invoke_trigger(DIRECTORY_SESSION_COMMANDS.M_PRE_INIT, [p_data])
