@@ -2,7 +2,7 @@ import math
 import random
 import string
 from datetime import datetime, timezone
-
+from django.utils.safestring import mark_safe
 from numpy.core.defchararray import lower
 
 from trustly.controllers.constants.constant import CONSTANTS
@@ -184,11 +184,17 @@ class search_session_controller(request_handler):
     return pattern.sub(lambda match: f'<span class="highlight-description">{match.group(0)}</span>', text)
 
   def __generate_url_context(self, p_document, p_tokenized_query, p_search_model):
+
     m_title = p_document[SEARCH_DOCUMENT_CALLBACK.M_TITLE]
     if len(m_title) < 2:
       m_title = p_document[SEARCH_DOCUMENT_CALLBACK.M_HOST]
 
-    m_description = self.__clip_sections(p_document[SEARCH_DOCUMENT_CALLBACK.M_SECTION], p_tokenized_query, 300, "--------" + p_document[SEARCH_DOCUMENT_CALLBACK.M_IMPORTANT_DESCRIPTION][0:300])
+    if SEARCH_DOCUMENT_CALLBACK.M_SECTION in p_document:
+      m_description = self.__clip_sections(p_document[SEARCH_DOCUMENT_CALLBACK.M_SECTION], p_tokenized_query, 300, p_document[SEARCH_DOCUMENT_CALLBACK.M_IMPORTANT_DESCRIPTION][0:300])
+    else:
+      m_description = self.__clip_sections([p_document[SEARCH_DOCUMENT_CALLBACK.M_IMPORTANT_DESCRIPTION]], p_tokenized_query, 300, p_document[SEARCH_DOCUMENT_CALLBACK.M_CONTENT][0:300])
+
+    m_description = m_description.replace('<dir>', ' ').replace('</dir>', ' ')
     m_description = self.highlight_tokens_in_text(m_description, p_tokenized_query)
 
     mRelevanceContextOriginal = {SEARCH_CALLBACK.M_TITLE: self.__normalize_text(m_title), SEARCH_CALLBACK.M_URL: p_document[SEARCH_DOCUMENT_CALLBACK.M_HOST] + p_document[SEARCH_DOCUMENT_CALLBACK.M_SUB_HOST], SEARCH_CALLBACK.M_DESCRIPTION: m_description, }
@@ -208,7 +214,7 @@ class search_session_controller(request_handler):
       expiry_status = 2
 
     if "m_extra_tags" in p_document:
-      mRelevanceContext = {SEARCH_CALLBACK.M_URL: p_document[SEARCH_DOCUMENT_CALLBACK.M_SUB_HOST], SEARCH_CALLBACK.M_TITLE: self.__normalize_text(m_title), SEARCH_CALLBACK.M_DESCRIPTION: m_description, SEARCH_CALLBACK.M_CONTACT_LINK: p_document["m_contact_link"], SEARCH_CALLBACK.M_WEBLINK: p_document["m_weblink"], SEARCH_CALLBACK.M_DUMPLINK: p_document["m_dumplink"], SEARCH_CALLBACK.M_MORE_ID: random_id, SEARCH_CALLBACK.M_FULL_CONTENT: p_document["m_content"], SEARCH_CALLBACK.K_CONTENT_TYPE: p_document["m_content_type"], SEARCH_CALLBACK.M_URL_DISPLAY_TYPE: ["leak"], SEARCH_CALLBACK.M_UPDATE_DATA: m_update_date_str, SEARCH_CALLBACK.M_CREATION_DATA: p_document["m_creation_date"], SEARCH_CALLBACK.M_EXPIRY: expiry_status}
+      mRelevanceContext = {SEARCH_CALLBACK.M_URL: p_document[SEARCH_DOCUMENT_CALLBACK.M_SUB_HOST], SEARCH_CALLBACK.M_TITLE: self.__normalize_text(m_title), SEARCH_CALLBACK.M_DESCRIPTION: m_description, SEARCH_CALLBACK.M_CONTACT_LINK: p_document["m_contact_link"], SEARCH_CALLBACK.M_WEBLINK: p_document["m_weblink"], SEARCH_CALLBACK.M_DUMPLINK: p_document["m_dumplink"], SEARCH_CALLBACK.M_MORE_ID: random_id, SEARCH_CALLBACK.M_FULL_CONTENT: p_document["m_content"], SEARCH_CALLBACK.K_CONTENT_TYPE: [p_document["m_content_type"]], SEARCH_CALLBACK.M_URL_DISPLAY_TYPE: ["leak"], SEARCH_CALLBACK.M_UPDATE_DATA: m_update_date_str, SEARCH_CALLBACK.M_CREATION_DATA: p_document["m_creation_date"], SEARCH_CALLBACK.M_EXPIRY: expiry_status}
     else:
       mRelevanceContext = {SEARCH_CALLBACK.M_TITLE: self.__normalize_text(m_title), SEARCH_CALLBACK.M_MORE_ID: random_id, SEARCH_CALLBACK.M_URL: p_document[SEARCH_DOCUMENT_CALLBACK.M_SUB_HOST], SEARCH_CALLBACK.M_SECTION: p_document["m_section"], SEARCH_CALLBACK.M_DESCRIPTION: m_description, SEARCH_CALLBACK.M_URL_DISPLAY_TYPE: "general", SEARCH_CALLBACK.M_UPDATE_DATA: m_update_date_str, SEARCH_CALLBACK.M_EXPIRY: expiry_status, SEARCH_CALLBACK.K_CONTENT_TYPE: p_document["m_content_type"], SEARCH_CALLBACK.M_NAME: p_document["m_names"], SEARCH_CALLBACK.M_CONTENT: p_document["m_content"], SEARCH_CALLBACK.M_DOCUMENT_LEAK: p_document["m_document"], SEARCH_CALLBACK.M_VIDEO: p_document["m_video"], SEARCH_CALLBACK.M_ARCHIVE_URL: p_document["m_archive_url"], SEARCH_CALLBACK.M_CREATION_DATA: p_document["m_creation_date"], SEARCH_CALLBACK.M_EMAILS: p_document["m_emails"], SEARCH_CALLBACK.M_PHONE_NUMBER: p_document["m_phone_numbers"], }
 

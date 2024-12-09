@@ -4,6 +4,7 @@
 
 html {
   background: #1c4d7d !important;
+  scroll-behavior: smooth;
 }
 
 .search_container {
@@ -239,6 +240,23 @@ html::-webkit-scrollbar {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   border: none;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10000;
+  left: 0;
+  background: rgba(33, 75, 116, 0.81);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
 }
 
 .searchbar__search-categories {

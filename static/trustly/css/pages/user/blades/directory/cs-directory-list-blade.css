@@ -109,4 +109,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  .status_default_pointer {
+    margin-top: 6px;
+    margin-right: 15px;
+  }
 }

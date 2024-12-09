@@ -110,12 +110,6 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@media only screen and (max-width: 943px) {
-  .footer {
-    margin-top: 10vh;
-  }
-}
-
 .scroll-to-top {
   position: fixed;
   bottom: 0;
@@ -131,4 +125,10 @@
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background 0.3s ease;
+}
+
+@media only screen and (max-width: 943px) {
+  .footer {
+    margin-top: 10vh;
+  }
 }
