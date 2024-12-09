@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.decorators.csrf import ensure_csrf_cookie, csrf_protect, csrf_exempt
+from django.views.decorators.csrf import ensure_csrf_cookie, csrf_exempt
 from trustly.services.block_manager.block_controller import block_controller
 from trustly.services.user_auth_manager.user_auth_controller import user_auth_controller
 from trustly.services.user_auth_manager.user_auth_enums import USER_AUTH_COMMANDS
@@ -29,12 +29,9 @@ from trustly.controllers.view_managers.user.interactive.notice_manager.notice_vi
 from trustly.controllers.view_managers.user.interactive.notice_manager.notice_enums import NOTICE_MODEL_CALLBACK
 from trustly.controllers.view_managers.user.interactive.policy_manager.policy_view_model import policy_view_model
 from trustly.controllers.view_managers.user.interactive.policy_manager.policy_enums import POLICY_MODEL_CALLBACK
-from trustly.controllers.view_managers.user.interactive.report_manager.report_view_model import report_view_model
-from trustly.controllers.view_managers.user.interactive.report_manager.report_enums import REPORT_MODEL_COMMANDS
 from trustly.controllers.view_managers.user.interactive.search_manager.search_view_model import search_view_model
 from trustly.controllers.view_managers.user.interactive.search_manager.search_enums import SEARCH_MODEL_COMMANDS
-from trustly.controllers.view_managers.user.interactive.sitemap_manager.sitemap_view_model import sitemap_view_model
-from trustly.controllers.view_managers.user.interactive.sitemap_manager.sitemap_enums import SITEMAP_MODEL_COMMANDS
+
 def index(request):
   return homepage_view_model.getInstance().invoke_trigger(HOMEPAGE_MODEL_COMMANDS.M_INIT, request)
 
@@ -44,16 +41,8 @@ def command(request):
 def privacy(request):
   return policy_view_model.getInstance().invoke_trigger(POLICY_MODEL_CALLBACK.M_INIT, request)
 
-@ensure_csrf_cookie
-def report(request):
-  return report_view_model.getInstance().invoke_trigger(REPORT_MODEL_COMMANDS.M_INIT, request)
-
 def notice(request):
   return notice_view_model.getInstance().invoke_trigger(NOTICE_MODEL_CALLBACK.M_INIT, request)
-
-@ensure_csrf_cookie
-def sitemap(request):
-  return sitemap_view_model.getInstance().invoke_trigger(SITEMAP_MODEL_COMMANDS.M_INIT, request)
 
 def secretkey(request):
   return secret_key_view_model.getInstance().invoke_trigger(SECRET_KEY_MODEL_CALLBACK.M_INIT, request)
@@ -98,10 +87,6 @@ def manage_search(request):
 @csrf_exempt
 def crawl_index(request):
   return crawl_controller.getInstance().invoke_trigger(CRAWL_COMMANDS.M_INIT, request)
-
-@csrf_protect
-def manage_authentication(request):
-  return user_auth_controller.getInstance().invoke_trigger(USER_AUTH_COMMANDS.M_AUTHENTICATE, request)
 
 def update_status(request):
   return external_request_controller.getInstance().invoke_trigger(EXTERNAL_REQUEST_COMMANDS.M_UPDATE_MODULE_STATUS, request)

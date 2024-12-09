@@ -173,12 +173,12 @@
     margin-left: 60px;
 }
 .search-result__query-error--header{
-    color: #ea4335;
+    color: #ffc107;
     font-size: 18px;
     font-weight: 600;
 }
 .search-result__query-error--info{
-    color: #1a0dab;
+    color: #fff;
     font-size: 17px;
     font-weight: 600;
     font-style: italic;
@@ -189,7 +189,14 @@
     max-width: 40vw;
     margin-left: 70px;
     padding: 30px;
+    margin-bottom: 30px;
 }
+
+.highlight-description{
+    color:#66ccff;
+    font-weight:600;
+}
+
 .search-result__content-webpages{
 
     box-shadow : none;
@@ -212,6 +219,9 @@
     margin-bottom: 0;
     font-size: 22px;
     font-family: Roboto, sans-serif;
+}
+.search-content__webpages-url--clock{
+    margin-top: -3px;
 }
 .search-content__webpages-url{
     width: 90%;

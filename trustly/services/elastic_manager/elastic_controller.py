@@ -1,4 +1,6 @@
 # Local Imports
+from datetime import datetime, timezone
+
 from elasticsearch import Elasticsearch
 from trustly.services.log_manager.log_controller import log
 from trustly.services.request_manager.request_handler import request_handler
@@ -105,6 +107,9 @@ class elastic_controller(request_handler):
             },
             "m_update_date": {
               "type": "date"
+            },
+            "m_creation_date": {
+              "type": "date"
             }
           }
         }
@@ -152,6 +157,7 @@ class elastic_controller(request_handler):
             "m_content_summary": {"type": "text", "analyzer": "custom_text_analyzer"},
             "false_positive_count": {"type": "boolean"},
             "m_update_date": {"type": "date"},
+            "m_creation_date": {"type": "date"},
             "m_content_type": {"type": "keyword"},
             "m_section": {"type": "keyword"},
             "m_names": {"type": "keyword"},
@@ -224,14 +230,21 @@ class elastic_controller(request_handler):
 
   def __index(self, p_data):
     try:
+      def ensure_creation_date(entry):
+        if "m_creation_date" not in entry[ELASTIC_KEYS.S_VALUE]:
+          entry[ELASTIC_KEYS.S_VALUE]["m_creation_date"] = datetime.now(timezone.utc).isoformat()
+        return entry
+
       if isinstance(p_data, list):
         for entry in p_data:
+          entry = ensure_creation_date(entry)
           self.__m_connection.index(
             id=entry[ELASTIC_KEYS.S_VALUE]["m_hash"],
             body=entry[ELASTIC_KEYS.S_VALUE],
             index=entry[ELASTIC_KEYS.S_DOCUMENT]
           )
       else:
+        p_data = ensure_creation_date(p_data)
         self.__m_connection.index(
           id=p_data[ELASTIC_KEYS.S_VALUE]["m_hash"],
           body=p_data[ELASTIC_KEYS.S_VALUE],

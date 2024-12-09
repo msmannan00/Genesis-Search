@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-
+import ast
 from trustly.management.managers.insight_job import insight_job
 from trustly.services.elastic_manager.elastic_controller import elastic_controller
 from trustly.controllers.constants.constant import CONSTANTS
@@ -11,8 +11,8 @@ class Command(BaseCommand):
 
     @staticmethod
     def init_handles():
-        insight_old = redis_controller().invoke_trigger(REDIS_COMMANDS.S_GET_STRING, [REDIS_KEYS.INSIGHT_NEW_DAY, REDIS_DEFAULT.INSIGHT_DEFAULT, None])
-        if str(insight_old) == str(REDIS_DEFAULT.INSIGHT_DEFAULT):
+        insight = ast.literal_eval(redis_controller().invoke_trigger(REDIS_COMMANDS.S_GET_STRING, [REDIS_KEYS.INSIGHT_STAT_DAY, REDIS_DEFAULT.INSIGHT_STAT_DEFAULT, None]))
+        if insight['generic_model'][4]['Document Count']['value'] == 0:
             insight_job.get_instance().init_trending_insights_daily()
             insight_job.get_instance().init_trending_insights_weekly()
 

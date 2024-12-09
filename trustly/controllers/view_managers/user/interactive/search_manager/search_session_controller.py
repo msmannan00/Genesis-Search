@@ -2,13 +2,16 @@ import math
 import random
 import string
 from datetime import datetime, timezone
+
+from numpy.core.defchararray import lower
+
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.constants.strings import GENERAL_STRINGS, SEARCH_STRINGS
 from trustly.controllers.helper_manager.helper_controller import helper_controller
 from trustly.controllers.view_managers.user.interactive.search_manager.search_data_model.query_model import query_model
 from trustly.controllers.view_managers.user.interactive.search_manager.search_enums import SEARCH_PARAM, SEARCH_CALLBACK, SEARCH_DOCUMENT_CALLBACK, SEARCH_SESSION_COMMANDS
 from trustly.services.request_manager.request_handler import request_handler
-
+import re
 
 class search_session_controller(request_handler):
 
@@ -141,40 +144,80 @@ class search_session_controller(request_handler):
                 m_description += m_token + " "
         return m_description
 
+    @staticmethod
+    def __clip_sections(sections, words_to_highlight, max_width, fallback_text):
+        sections = [section.lower() for section in sections]
+        words_to_highlight = lower(words_to_highlight)
+        pattern = re.compile(r'\b(' + '|'.join(map(re.escape, words_to_highlight)) + r')\b', re.IGNORECASE)
+        combined_text = ". ".join(sections)
+        match = pattern.search(combined_text)
+        first_occurrence, matched_token = (match.start(), match.group()) if match else (None, None)
+        start = 0
+        was_deadend = False
+        if first_occurrence is None:
+            first_occurrence = 0
+
+        if first_occurrence - 50 < 0:
+            start = 0
+        else:
+            first_occurrence_pointer = max(0, first_occurrence - 100) + combined_text[max(0, first_occurrence - 100):first_occurrence].rfind(
+                '.') if first_occurrence else None
+            if first_occurrence_pointer is None:
+                first_occurrence_pointer = max(0, first_occurrence - 100) + combined_text[max(0, first_occurrence - 100):first_occurrence].rfind(
+                    ' ') if first_occurrence else None
+                if first_occurrence_pointer is not None:
+                    start = first_occurrence_pointer
+            else:
+                start = first_occurrence_pointer + 1
+
+        if first_occurrence + max_width + 100 > len(combined_text):
+            end = len(combined_text)
+        else:
+            first_occurrence_pointer = (first_occurrence + max_width + combined_text[
+                                                                       first_occurrence + max_width:first_occurrence + max_width + 100].rfind(
+                '.')) if first_occurrence and combined_text[
+                                              first_occurrence + max_width:first_occurrence + max_width + 100].rfind(
+                '.') != -1 else None
+            if first_occurrence_pointer is None:
+                first_occurrence_pointer = (first_occurrence + max_width + combined_text[
+                                                                           first_occurrence + max_width:first_occurrence + max_width + 100].rfind(
+                    ' ')) if first_occurrence and combined_text[
+                                                  first_occurrence + max_width:first_occurrence + max_width + 100].rfind(
+                    ' ') != -1 else None
+                if first_occurrence_pointer is not None:
+                    end = first_occurrence_pointer
+                else:
+                    end = first_occurrence + max_width
+                was_deadend = True
+            else:
+                end = first_occurrence_pointer
+        extracted_text = combined_text[start:end].strip()
+
+        if len(extracted_text) < 10:
+            return fallback_text
+        elif was_deadend:
+            return extracted_text + "..."
+        else:
+            return extracted_text
+
+    @staticmethod
+    def highlight_tokens_in_text(text, words_to_highlight):
+        tokens = words_to_highlight.split() if isinstance(words_to_highlight, str) else words_to_highlight
+        pattern = re.compile(r'\b\w*(' + '|'.join(map(re.escape, tokens)) + r')\w*\b', re.IGNORECASE)
+
+        def replace_with_highlight(match):
+            return f'<span class="highlight-description">{match.group(0)}</span>'
+
+        highlighted_text = pattern.sub(replace_with_highlight, text)
+        return highlighted_text
+
     def __generate_url_context(self, p_document, p_tokenized_query, p_search_model):
         m_title = p_document[SEARCH_DOCUMENT_CALLBACK.M_TITLE]
         if len(m_title) < 2:
             m_title = p_document[SEARCH_DOCUMENT_CALLBACK.M_HOST]
 
-        m_description = " ".join(p_document[SEARCH_DOCUMENT_CALLBACK.M_SECTION])
-        m_description = m_description[0:300]
-        m_index = 10000
-
-        m_query = ' '.join(p_tokenized_query)
-        if m_query in m_description and m_query.count(" ")>2:
-            m_index = m_description.index(m_query)
-            if m_description[m_index-20:m_index].__contains__(" "):
-                m_space_index = m_description.index(" ", m_index-20,m_index)
-            else:
-                m_space_index = m_index
-            m_description = m_description[m_space_index:m_space_index+1250]
-            m_description_original = m_description[m_space_index:m_space_index+1250]
-            m_description = m_description.replace(m_query, "<span style=\"color:#fff;font-weight:600\">" + m_query + "</span>")
-        else:
-            for m_item in p_tokenized_query:
-                if m_item in m_description.lower():
-                    m_item_index = m_description.lower().index(m_item)
-                    if m_item_index < m_index:
-                        m_index = m_item_index
-
-            m_description = m_description[0:1250]
-            m_description_original = m_description
-            for m_item in p_tokenized_query:
-                if helper_controller.is_stop_word(m_item.lower()) is True:
-                    continue
-                m_description = self.ireplace(m_item, "<span style=\"color:#fff;font-weight:600\">" + m_item + "</span>", m_description)
-
-        m_description = m_description.lstrip(" -")
+        m_description = self.__clip_sections(p_document[SEARCH_DOCUMENT_CALLBACK.M_SECTION], p_tokenized_query, 300, "--------"+ p_document[SEARCH_DOCUMENT_CALLBACK.M_IMPORTANT_DESCRIPTION][0:300])
+        m_description = self.highlight_tokens_in_text(m_description, p_tokenized_query)
 
         mRelevanceContextOriginal = {
             SEARCH_CALLBACK.M_TITLE: self.__normalize_text(m_title),
@@ -209,6 +252,7 @@ class search_session_controller(request_handler):
                 SEARCH_CALLBACK.K_CONTENT_TYPE: p_document["m_content_type"],
                 SEARCH_CALLBACK.M_URL_DISPLAY_TYPE: ["leak"],
                 SEARCH_CALLBACK.M_UPDATE_DATA: m_update_date_str,
+                SEARCH_CALLBACK.M_CREATION_DATA: p_document["m_creation_date"],
                 SEARCH_CALLBACK.M_EXPIRY: expiry_status
             }
         else:
@@ -227,6 +271,7 @@ class search_session_controller(request_handler):
                 SEARCH_CALLBACK.M_DOCUMENT_LEAK: p_document["m_document"],
                 SEARCH_CALLBACK.M_VIDEO: p_document["m_video"],
                 SEARCH_CALLBACK.M_ARCHIVE_URL: p_document["m_archive_url"],
+                SEARCH_CALLBACK.M_CREATION_DATA: p_document["m_creation_date"],
                 SEARCH_CALLBACK.M_EMAILS: p_document["m_emails"],
                 SEARCH_CALLBACK.M_PHONE_NUMBER: p_document["m_phone_numbers"],
             }

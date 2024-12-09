@@ -1,4 +1,6 @@
+import json
 
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from trustly.controllers.constants.constant import CONSTANTS
 from trustly.controllers.view_managers.user.interactive.directory_manager.directory_enums import DIRECTORY_MODEL_COMMANDS
@@ -28,7 +30,9 @@ class directory_view_model(request_handler):
 
     # External Request Callbacks
     def invoke_trigger(self, p_command, p_data):
-        if p_command == DIRECTORY_MODEL_COMMANDS.M_INIT:
+        if p_command == DIRECTORY_MODEL_COMMANDS.M_FETCH_LIST:
+            return self.__m_directory_model.invoke_trigger(DIRECTORY_MODEL_COMMANDS.M_FETCH_LIST, p_data)
+        elif p_command == DIRECTORY_MODEL_COMMANDS.M_INIT:
             m_response, m_status = self.__m_directory_model.invoke_trigger(DIRECTORY_MODEL_COMMANDS.M_INIT, p_data)
             if m_status:
                 return render(p_data, CONSTANTS.S_TEMPLATE_DIRECTORY_WEBSITE_PATH, m_response)

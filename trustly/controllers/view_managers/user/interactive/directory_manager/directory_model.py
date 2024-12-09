@@ -1,4 +1,9 @@
+import json
 from datetime import datetime, timedelta, timezone
+
+from bson import ObjectId
+from django.db.models.expressions import result
+from django.http import JsonResponse
 
 from trustly.services.mongo_manager.mongo_controller import mongo_controller
 from trustly.services.mongo_manager.mongo_enums import MONGODB_CRUD
@@ -27,7 +32,8 @@ class directory_model(request_handler):
             [
                 MONGO_COMMANDS.M_GET_URL_STATUS,
                 [],
-                [(p_directory_class_model.m_page_number - 1) * CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE, CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE]
+                [(p_directory_class_model.m_page_number - 1) * CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE,
+                 CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE]
             ]
         )
 
@@ -35,24 +41,44 @@ class directory_model(request_handler):
             m_documents = list(m_documents)
             utc_now = datetime.now(timezone.utc)
             threshold_date = utc_now - timedelta(days=5)
+
             for mDoc in m_documents:
                 if 'leak_status_date' in mDoc and isinstance(mDoc['leak_status_date'], datetime):
-                    mDoc['leak_status_date'] = mDoc['leak_status_date'].replace(tzinfo=timezone.utc) if mDoc[ 'leak_status_date'].tzinfo is None else \
-                    mDoc['leak_status_date']
+                    mDoc['leak_status_date'] = mDoc['leak_status_date'].replace(tzinfo=timezone.utc) if mDoc[
+                                                                                                            'leak_status_date'].tzinfo is None else \
+                        mDoc['leak_status_date']
                     mDoc['leak_status_date'] = 1 if mDoc['leak_status_date'] >= threshold_date else 0
                 else:
                     mDoc['leak_status_date'] = 0
 
                 if 'url_status_date' in mDoc and isinstance(mDoc['url_status_date'], datetime):
-                    mDoc['url_status_date'] = mDoc['url_status_date'].replace(tzinfo=timezone.utc) if mDoc['url_status_date'].tzinfo is None else \
-                    mDoc['url_status_date']
+                    mDoc['url_status_date'] = mDoc['url_status_date'].replace(tzinfo=timezone.utc) if mDoc[
+                                                                                                          'url_status_date'].tzinfo is None else \
+                        mDoc['url_status_date']
                     mDoc['url_status_date'] = 1 if mDoc['url_status_date'] >= threshold_date else 0
                 else:
                     mDoc['url_status_date'] = 0
 
+                # Convert ObjectId to string
+                for key, value in mDoc.items():
+                    if isinstance(value, ObjectId):
+                        mDoc[key] = str(value)
+
             return m_documents, count
         else:
             return [], count
+
+    def __fetch_list(self, p_data):
+        m_directory_class_model, m_status, _ = self.__m_session.invoke_trigger(DIRECTORY_SESSION_COMMANDS.M_PRE_INIT,
+                                                                               [p_data])
+        m_result, count = self.__load_onion_links(m_directory_class_model)
+
+        # Prepare the response
+        response_data = {
+            "results": m_result,
+            "page": m_directory_class_model.m_page_number
+        }
+        return JsonResponse(response_data)
 
     def __init_page(self, p_data):
         m_directory_class_model, m_status, _ = self.__m_session.invoke_trigger(DIRECTORY_SESSION_COMMANDS.M_PRE_INIT, [p_data])
@@ -65,3 +91,5 @@ class directory_model(request_handler):
     def invoke_trigger(self, p_command, p_data):
         if p_command == DIRECTORY_MODEL_COMMANDS.M_INIT:
             return self.__init_page(p_data)
+        if p_command == DIRECTORY_MODEL_COMMANDS.M_FETCH_LIST:
+            return self.__fetch_list(p_data)

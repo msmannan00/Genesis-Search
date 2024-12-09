@@ -1,6 +1,5 @@
 from django.urls import path
-from trustly import views, settings
-from django.conf.urls.static import static
+from trustly import views, api
 
 urlpatterns = [
 
@@ -9,9 +8,7 @@ urlpatterns = [
   path('cms/', views.cms_login, name='cms'),
   path('cms/dashboard/', views.cms_dashboard, name='dashboard'),
   path('privacy/', views.privacy, name='privacy'),
-  path('report/', views.report, name='report'),
   path('notice/', views.notice, name='notice'),
-  path('sitemap/', views.sitemap, name='sitemap'),
   path('secretkey/', views.secretkey, name='secretkey'),
   path('directory/', views.directory, name='directory'),
   path('search/', views.search, name='search'),
@@ -20,7 +17,6 @@ urlpatterns = [
   # hotlinks
   path('cms/login/', views.cms_login, name='cms'),
   path('cms/manage_status/', views.manage_status, name='manage_status'),
-  path('cms/manage_authentication', views.manage_authentication, name='manage_search'),
   path('cms/logout', views.manage_logout, name='cms_logout'),
 
   # crawler Feed Links
@@ -30,7 +26,8 @@ urlpatterns = [
   path('feeder/publish', views.feeder_publish, name='feeder_publish'),
   path('feeder/', views.feeder, name='feeder'),
   path('crawl_index/', views.crawl_index, name='crawl_index'),
-
+  path('api/directory/', api.get_directory, name='api/directory'),
+  path('api/insight/', api.get_insight, name='api/insight'),
 ]
 
 handler400 = views.error_page_400

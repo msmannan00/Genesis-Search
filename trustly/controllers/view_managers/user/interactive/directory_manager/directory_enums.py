@@ -3,6 +3,7 @@ import enum
 
 class DIRECTORY_MODEL_COMMANDS(enum.Enum):
     M_INIT = 1
+    M_FETCH_LIST = 2
 
 class DIRECTORY_SESSION_COMMANDS(enum.Enum):
     M_PRE_INIT = 1

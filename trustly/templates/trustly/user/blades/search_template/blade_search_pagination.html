@@ -27,7 +27,7 @@
             {% if mSearchCallbackCurrentPageNumber >= mSearchCallbackMaxPagination%}
                 <div class="search__page-navigation search__pagination--border-right" style="float:left;margin-right: 19px;text-decoration: none;cursor:context-menu;pointer-events:none;user-select:none"> &rsaquo;</div>
             {% else %}
-                <a href="?q={{mSearchCallbackQuery}}&mSearchParamSafeSearch={{mSearchCallbackSaveSearch}}&pSearchParamType={{mSearchCallbackRelevantSearchType}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber|add:1}}" class="search__page-navigation search__pagination--border-right search__pagination--border-left" style="text-decoration: none"> <img src="{% static 'trustly/images/nav-next.svg' %}" alt="nav-next"></a>
+                <a href="?q={{mSearchCallbackQuery}}&mSearchParamSafeSearch={{mSearchCallbackSaveSearch}}&pSearchParamType={{mSearchCallbackRelevantSearchType}}&mSearchParamPage={{mSearchCallbackCurrentPageNumber|add:1}}" class="search__page-navigation search__pagination--border-right search__pagination--border-left" > <img src="{% static 'trustly/images/nav-next.svg' %}" alt="nav-next"></a>
             {% endif %}
 
         </div>

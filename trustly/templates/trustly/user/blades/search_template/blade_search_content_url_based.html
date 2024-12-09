@@ -14,7 +14,7 @@
         <div class="search-result__content-webpages {% if mDoc.mContentType == 'toxic' %}search-result__content-webpages--danger{% else %}search-result__content-webpages--normal{% endif %}">
 
             <label class="search-content__webpages-header ml-4">{{ mDoc.mSearchCallbackRelevantDocumentTitle }}</label>
-            <label class="search-content__webpages-url"><img src="{% static 'trustly/images/clock.svg' %}" alt="clock"><span class="url__date">{{ mDoc.mUpdateDate|slice:":10" }}</span></label><br>
+            <label class="search-content__webpages-url"><img class="search-content__webpages-url--clock" src="{% static 'trustly/images/clock.svg' %}" alt="clock"><span class="url__date">{{ mDoc.mCreationDate|slice:":10" }} - {{ mDoc.mUpdateDate|slice:":10" }}</span></label><br>
             <label class="search-content__webpages-url">{{ mDoc.mSearchCallbackRelevantDocumentURL }}</label>
 
             <hr class="search-content__webpages-divider">
@@ -100,7 +100,7 @@
         </div>
     {% else %}
         <div style="margin-bottom: 15px">
-            <div class="container accordion-main" style="padding-left: 0px">
+            <div class="container accordion-main">
                 <div class="accordion">
                     {% if mDoc.mDocumentLeak|length > 0 %}
                         <input type="radio" name="{{ forloop.counter }}-1" id="leaks-{{ forloop.counter }}-1" hidden>

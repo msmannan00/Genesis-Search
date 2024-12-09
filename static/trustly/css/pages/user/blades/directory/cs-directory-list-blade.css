@@ -38,8 +38,29 @@
     border-radius: 100px;
     background: #FCFCFC0D;
     font-size: 12px;
-    width: 50px !important;
+    width: auto;
+    height: 30px !important;
     font-family: Roboto, sans-serif;;
+}
+
+.column-id {
+    width: 15%;
+}
+
+.column-service-url {
+    width: 40%;
+}
+
+.column-category {
+    width: 25%;
+}
+
+.column-url-status {
+    width: 10%;
+}
+
+.column-leak-status {
+    width: 10%;
 }
 
 @media only screen and (max-width: 943px) {

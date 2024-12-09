@@ -11,9 +11,9 @@
         {% endif %}
         {% if mSearchCallbackQueryError != '' %}
             <h6 class="search-result__query-error--container"><span class="search-result__query-error--header">Did you mean: </span><span
-                    class="search-result__query-error--info"><a
+                    class="search-result__query-error--info"><a class="gc--clear-selection"
                     href="?q={{ mSearchCallbackQueryErrorURL }}&pSearchParamType={{ mSearchCallbackRelevantSearchType }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}">{% autoescape off %}
-                {{ mSearchCallbackQueryError }}{% endautoescape %}</a></span></h6>
+                {{ mSearchCallbackQueryError }}{% endautoescape %}</a> ?</span></h6>
         {% endif %}
 
     </div>

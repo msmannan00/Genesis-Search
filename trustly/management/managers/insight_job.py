@@ -1,4 +1,7 @@
+import json
 from datetime import datetime, timezone
+
+from django.http import JsonResponse
 
 from trustly.services.elastic_manager.elastic_controller import elastic_controller
 from trustly.services.elastic_manager.elastic_enums import ELASTIC_CRUD_COMMANDS, ELASTIC_REQUEST_COMMANDS, ELASTIC_KEYS
@@ -73,56 +76,47 @@ class insight_job(request_handler):
             old_data = eval(insight_old)
             new_data = eval(insight_new)
 
+            key_order_generic = ["Phone/Documents", "Unique Base URLs", "Archive/Document", "URL/Documents", "Document Count", "Average Score", "Updated 9 Days ago", "Most Recent", "Email/Document", "Oldest Update", "Updated 5 Days ago", "Common Type"]
+            key_order_leak = ["Most Recent", "Unique Base URLs", "Dumps/Document", "Updated 5 Days ago", "Oldest Update", "URL/Documents", "Document Count", "Updated 9 Days ago"]
+
             comparison_result = {"generic_model": [], "leak_model": []}
 
-            for key in ["generic_model", "leak_model"]:
-                old_entries = {
-                    list(entry.keys())[0]: list(entry.values())[0]
-                    for entry in old_data.get(key, [])
-                    if isinstance(entry, dict) and entry
-                }
-                new_entries = {
-                    list(entry.keys())[0]: list(entry.values())[0]
-                    for entry in new_data.get(key, [])
-                    if isinstance(entry, dict) and entry
-                }
+            for key, key_order in zip(comparison_result.keys(), [key_order_generic, key_order_leak]):
+                old_entries = {list(e.keys())[0]: list(e.values())[0] for e in old_data.get(key, []) if
+                               isinstance(e, dict)}
+                new_entries = {list(e.keys())[0]: list(e.values())[0] for e in new_data.get(key, []) if
+                               isinstance(e, dict)}
 
-                all_metrics = sorted(set(old_entries.keys()).union(set(new_entries.keys())))  # Sort metrics
-
-                for metric in all_metrics:
-                    new_value = new_entries.get(metric, 0)
-                    old_value = old_entries.get(metric, 0)
-
-                    if isinstance(new_value, (int, float)):
-                        new_value = round(new_value, 5)
-                    if isinstance(old_value, (int, float)):
-                        old_value = round(old_value, 5)
+                for metric in key_order:
+                    new_value = round(new_entries.get(metric, 0), 5) if isinstance(new_entries.get(metric, 0),
+                                                                                   (int, float)) else new_entries.get(
+                        metric, 0)
+                    old_value = round(old_entries.get(metric, 0), 5) if isinstance(old_entries.get(metric, 0),
+                                                                                   (int, float)) else old_entries.get(
+                        metric, 0)
 
                     if isinstance(new_value, (int, float)) and isinstance(old_value, (int, float)):
                         if old_value == 0:
-                            change_percentage = new_value
+                            change = f"+{new_value:0.2f}%" if new_value > 0 else f"{new_value:0.2f}%"
                         else:
-                            change_percentage = ((new_value - old_value) / abs(old_value)) * 100
-
-                        formatted_change = f"{round(change_percentage, 2):+.2f}%"
-                        comparison_result[key].append({
-                            metric: {
-                                "value": new_value,
-                                "change": formatted_change
-                            }
-                        })
+                            percentage_change = ((new_value - old_value) / abs(old_value)) * 100
+                            sign = "+" if percentage_change > 0 else ""
+                            change = f"{sign}{percentage_change:0.2f}%"
                     else:
-                        comparison_result[key].append({
-                            metric: {
-                                "value": new_value,
-                                "change": "-"
-                            }
-                        })
+                        change = "-"
+
+                    comparison_result[key].append({metric: {"value": new_value, "change": change}})
 
             return str(comparison_result)
 
         except Exception as e:
             return f"Error processing insights: {str(e)}"
+
+    def get_trending_insights(self):
+        insight_old = redis_controller().invoke_trigger(REDIS_COMMANDS.S_GET_STRING, [REDIS_KEYS.INSIGHT_NEW_DAY, REDIS_DEFAULT.INSIGHT_DEFAULT, None])
+        insight = eval(insight_old)
+
+        return JsonResponse(insight)
 
     def init_trending_insights_daily(self):
         results_dict, grouped_results = {}, {"generic_model": [], "leak_model": []}
@@ -139,7 +133,6 @@ class insight_job(request_handler):
         redis_controller().invoke_trigger(REDIS_COMMANDS.S_SET_STRING, [REDIS_KEYS.INSIGHT_OLD_DAY, insight_old, None])
         redis_controller().invoke_trigger(REDIS_COMMANDS.S_SET_STRING, [REDIS_KEYS.INSIGHT_NEW_DAY, insight_new, None])
         redis_controller().invoke_trigger(REDIS_COMMANDS.S_SET_STRING, [REDIS_KEYS.INSIGHT_STAT_DAY, trending_insight, None])
-
 
     def init_trending_insights_weekly(self):
         results_dict, grouped_results = {}, {"generic_model": [], "leak_model": []}

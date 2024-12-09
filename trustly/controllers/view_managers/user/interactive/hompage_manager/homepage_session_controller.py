@@ -50,13 +50,11 @@ class homepage_session_controller(request_handler):
                 day_entry["name"] = day_key
                 day_entry["daily_change"] = day_entry.pop("change", "-")
 
-                # Add icon field by sanitizing the name
                 day_entry["icon"] = day_key.replace("/", "")
 
-                # Check if the key exists in weekly stats and matches
                 if i < len(week_stats):
                     week_key = list(week_stats[i].keys())[0]
-                    if week_key == day_key:  # Compare keys before adding weekly value
+                    if week_key == day_key:
                         day_entry["weekly_change"] = list(week_stats[i].values())[0]["change"]
                     else:
                         day_entry["weekly_change"] = "-"

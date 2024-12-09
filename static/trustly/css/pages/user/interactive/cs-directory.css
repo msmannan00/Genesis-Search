@@ -152,6 +152,10 @@ html {
         border-bottom: 0;
         border-top: 0;
     }
+    .directory-container{
+        min-height: 100vh;
+        padding: 40px 20px 100px;
+    }
     .directory__scroller-top {
         right: 50px
     }

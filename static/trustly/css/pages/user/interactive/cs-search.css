@@ -9,14 +9,23 @@ html{
 
 .search_container {
     margin: 0;
-    max-height: 100vh;
+    height: 100vh;
     background-image: linear-gradient(to bottom, #174069 0%, #1c4d7d 100%) !important;
+}
+
+.searchbar__logo--container{
+    margin-bottom: 12px
+}
+
+.searchbar__logo--grid{
+    display: grid;
 }
 
 .searchbar__logo:active {
     opacity: 0.5;
     transition: opacity 0.3s;
     width: 100%;
+    float: left;
 }
 
 .scroll-to-top {
@@ -406,6 +415,10 @@ html::-webkit-scrollbar {
     margin: 0 auto;
 }
 
+.searchbar__nav_right {
+    float: right;
+}
+
 @media only screen and (max-width: 943px) {
     .searchbar__search-categories {
         margin-left: 10px;
@@ -465,6 +478,7 @@ html::-webkit-scrollbar {
 .accordion-main{
     margin: 0;
     max-width: 1000px;
+    padding-left: 0;
 }
 
 /* Accordion Header */

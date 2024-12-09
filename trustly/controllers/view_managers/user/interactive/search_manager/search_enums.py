@@ -46,6 +46,7 @@ class SEARCH_CALLBACK:
     M_SECURE_SERVICE_NOTICE = "mUseSecureServiceNotice"
     M_HATE_QUERY = "mSearchCallHateQuery"
     M_UPDATE_DATA = "mUpdateDate"
+    M_CREATION_DATA = "mCreationDate"
     M_WEBLINK = "mWebLink"
     M_DUMPLINK = "mDumpLink"
     M_CONTACT_LINK = "mContactLink"

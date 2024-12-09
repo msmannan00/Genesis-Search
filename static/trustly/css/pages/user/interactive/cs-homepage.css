@@ -384,6 +384,10 @@ html {
     text-align:right
 }
 
+.item-percentage--text-body{
+    color: #ccc;
+}
+
 .item-text-primary {
     font-size: 32px;
     font-weight: 700;
@@ -473,6 +477,19 @@ html {
 @media only screen and (max-width: 943px) {
     .home {
         min-height: 100%;
+    }
+    .search__form{
+        margin-bottom: 0 !important;
+        margin-top: 50px !important;
+    }
+    .home__searchbox{
+        margin-bottom: 100px;
+    }
+    .flex-item{
+        margin: 0;
+    }
+    .flex-container {
+        padding: 0;
     }
 
     .home__search-button-container {
