@@ -49,7 +49,7 @@ class mongo_controller:
       return True, MANAGE_MONGO_MESSAGES.S_INSERT_SUCCESS
     except Exception as ex:
       log.g().e("MONGO E2 : " + MANAGE_MONGO_MESSAGES.S_INSERT_FAILURE + " : " + str(ex))
-      return False, str(ex)
+      return False, MANAGE_MONGO_MESSAGES.S_INSERT_FAILURE
 
   def __read(self, p_data, p_skip, p_limit):
     try:
@@ -60,7 +60,7 @@ class mongo_controller:
       return documents, total_count, True
     except Exception as ex:
       log.g().e("MONGO E3 : " + MANAGE_MONGO_MESSAGES.S_READ_FAILURE + " : " + str(ex))
-      return str(ex), 0, False
+      return MANAGE_MONGO_MESSAGES.S_READ_FAILURE, 0, False
 
   def __replace(self, p_data, p_upsert):
     try:
@@ -78,7 +78,7 @@ class mongo_controller:
 
     except Exception as ex:
       log.g().e("MONGO E4 : " + MANAGE_MONGO_MESSAGES.S_UPDATE_FAILURE + " : " + str(ex))
-      return False, str(ex)
+      return False, MANAGE_MONGO_MESSAGES.S_UPDATE_FAILURE
 
   def __delete(self, p_data):
     try:
@@ -86,7 +86,7 @@ class mongo_controller:
       return documents, MANAGE_MONGO_MESSAGES.S_DELETE_SUCCESS
     except Exception as ex:
       log.g().e("MONGO E5 : " + MANAGE_MONGO_MESSAGES.S_DELETE_FAILURE + " : " + str(ex))
-      return False, str(ex)
+      return False, MANAGE_MONGO_MESSAGES.S_DELETE_FAILURE
 
   def invoke_trigger(self, p_commands, p_data=None):
     pass
