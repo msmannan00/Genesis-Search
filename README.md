@@ -143,3 +143,7 @@ This project is intended for research purposes only. The authors of Orion Search
 ## GitHub Repository
 
 GitHub Repository URL: [https://github.com/msmannan00/Orion-Search.git](https://github.com/msmannan00/Orion-Search)
+
+## Project Information
+
+https://www.canva.com/design/DAF8Sa8KkDE/1H8z3RVausdHIMcE98Kvfg/edit
