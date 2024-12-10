@@ -35,16 +35,36 @@ Orion Browser Engine is a web-based search tool built on top of Docker that prov
 
 ## Technology Stack
 
-<p align="left">
-  <img src="https://w7.pngwing.com/pngs/956/695/png-transparent-mongodb-original-wordmark-logo-icon.png" alt="MongoDB" height="30" hspace="10">
-  <img src="https://upload.wikimedia.org/wikipedia/en/6/6b/Redis_Logo.svg" alt="Redis" height="30" hspace="10">
-  <img src="https://docs.celeryproject.org/en/stable/_static/celery_512.png" alt="Celery" height="30" hspace="10">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" height="30" hspace="10">
-  <img src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2018/09/tor-logo.jpeg" alt="Tor" height="30" hspace="10">
-  <img src="https://doc.traefik.io/traefik/assets/img/traefik.logo.png" alt="Traefik" height="30" hspace="10">
-</p>
-
 The Orion Search Engine is built using various technologies to provide optimal search capabilities and data handling. Below is the list of libraries and frameworks used:
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://w7.pngwing.com/pngs/956/695/png-transparent-mongodb-original-wordmark-logo-icon.png" alt="MongoDB" height="50">
+      <br>MongoDB
+    </td>
+    <td align="center">
+      <img src="https://upload.wikimedia.org/wikipedia/en/6/6b/Redis_Logo.svg" alt="Redis" height="50">
+      <br>Redis
+    </td>
+    <td align="center">
+      <img src="https://docs.celeryproject.org/en/stable/_static/celery_512.png" alt="Celery" height="50">
+      <br>Celery
+    </td>
+    <td align="center">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" height="50">
+      <br>Python
+    </td>
+    <td align="center">
+      <img src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2018/09/tor-logo.jpeg" alt="Tor" height="50">
+      <br>Tor
+    </td>
+    <td align="center">
+      <img src="https://doc.traefik.io/traefik/assets/img/traefik.logo.png" alt="Traefik" height="50">
+      <br>Traefik
+    </td>
+  </tr>
+</table>
 
 #### 1. **Search Functionality**
 
