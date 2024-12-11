@@ -15,6 +15,15 @@
 
         <!-- top bar -->
         {% include 'trustly/user/blades/search_template/blade_search_header.html' %}
+        {% include 'trustly/user/blades/search_template/blade_search_safe_search.html' %}
+        <div class="row">
+            <div class="search__results__div">
+                {% include 'trustly/user/blades/search_template/blade_search_content.html' %}
+            </div>
+            <div class="search__content__right__div">
+                {% include 'trustly/user/blades/search_template/blade_keyword_insight_dropdown.html' %}
+            </div>
+        </div>
 
         <!-- content bar -->
         {% include 'trustly/user/blades/search_template/blade_search_content.html' %}
