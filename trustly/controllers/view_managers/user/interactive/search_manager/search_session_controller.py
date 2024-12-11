@@ -184,7 +184,6 @@ class search_session_controller(request_handler):
     return pattern.sub(lambda match: f'<span class="highlight-description">{match.group(0)}</span>', text)
 
   def __generate_url_context(self, p_document, p_tokenized_query, p_search_model):
-
     m_title = p_document[SEARCH_DOCUMENT_CALLBACK.M_TITLE]
     if len(m_title) < 2:
       m_title = p_document[SEARCH_DOCUMENT_CALLBACK.M_HOST]
@@ -282,13 +281,18 @@ class search_session_controller(request_handler):
       p_document_list = p_document_list[0:CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE]
 
     m_links_counter = 0
+    for text in p_document_list:
+      print(text['m_title'])
+      print(text['m_url'])
+
+    unique_urls = [{'m_title': urls['m_title'], 'm_url': urls['m_url']} for urls in p_document_list]
+
     for m_document in p_document_list:
       m_links_counter += 1
       if p_search_model.m_search_type != SEARCH_STRINGS.S_SEARCH_CONTENT_TYPE_IMAGE:
         # Generate URL Context
         m_relevance_context, m_relevance_context_original = self.__generate_url_context(m_document, p_tokenized_query, p_search_model)
 
-        # Generate Extra Context
         if p_search_model.m_page_number == 1 and m_relevance_context_original is not None and m_relevance_context_original is not None:
           m_related_business_list_re, m_related_news_list_re, m_relevance_context_original, m_continue = self.__generate_extra_context(m_document, m_relevance_context_original, m_related_files_list, m_links_counter)
           if len(m_related_business_list) < 5 and len(m_related_business_list_re) > 0:
@@ -302,20 +306,25 @@ class search_session_controller(request_handler):
         if m_relevance_context is not None:
           m_relevance_context_list.append(m_relevance_context)
 
-
-      # Generate Image Context
       elif p_search_model.m_search_type == SEARCH_STRINGS.S_SEARCH_CONTENT_TYPE_IMAGE:
         m_list, m_direct_url_list = self.__generate_image_content(m_document, p_search_model, m_direct_url_list)
         if len(m_list) > 0:
           m_relevance_context_list.extend(m_list)
 
-      # Generate Document Context
       elif p_search_model.m_search_type == SEARCH_STRINGS.S_SEARCH_CONTENT_TYPE_DOCUMENT:
         m_list, m_direct_url_list = self.__generate_document_content(m_document, p_search_model, m_direct_url_list)
         m_relevance_context_list.extend(m_list)
 
-    # Init Callback
+    m_emails = []
+    for document in p_document_list:
+      if 'm_emails' in document and isinstance(document['m_emails'], list):
+        m_emails.extend(document['m_emails'])
+    m_emails = list(set(m_emails))
+
     mContext = self.init_callbacks(p_search_model, m_relevance_context_list, m_related_business_list, m_related_news_list, m_related_files_list, total_pages)
+
+    # Create the 'analytics' dictionary and add both m_emails and unique_urls to it
+    mContext['analytics'] = {'m_emails': m_emails, 'unique_urls': unique_urls}
 
     if p_search_model.m_total_documents >= CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE:
       mContext[SEARCH_CALLBACK.M_RESULT_COUNT] = helper_controller.on_create_random_search_count(p_search_model.m_total_documents)

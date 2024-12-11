@@ -207,7 +207,7 @@
 
 
 .keyword-insights-accordion {
-    width: 100%;
+    width: 520px;
     max-width: 600px;
     margin: 0 auto;
     border: 1px solid #FCFCFC12;
@@ -255,9 +255,9 @@ input[type="checkbox"]:checked ~ .keyword-insights-content {
     padding: 15px 15px 0px 15px;
 }
 
-.search__content__right__div {
-    padding-right: 80px;
-}
+/*.search__content__right__div {*/
+/*    padding-right: 80px;*/
+/*}*/
 
 .keyword-insights-accordion label {
     margin-bottom: 0px;
@@ -295,7 +295,7 @@ input[type="checkbox"]:checked ~ .keyword-insights-content {
 
 
 .Results_General_Coverage-accordion {
-    width: 100%;
+    width: 520px;
     max-width: 600px;
     margin: 0 auto;
     border: 1px solid #FCFCFC12;
@@ -543,6 +543,29 @@ input[type="checkbox"]:checked ~ .threat_actor-content {
         padding-right: 0px;
     }
 }
+.search__results__div{
+    width: 70%;
+}
+.search__content__right__div{
+    width: 30%;
+    padding-right: 30px;
+}
+@media only screen and (max-width: 600px) {
+    .search__results__div{
+        width: 100%!important;
+    }
+    .search__content__right__div{
+        width: 100%!important;
+    }
+}
+@media only screen and (max-width: 1800px) {
+    .search__results__div{
+        width: 60%;
+    }
+    .search__content__right__div{
+        width: 40%;
+    }
+}
 @media only screen and (max-width: 1400px) {
     .search__results__div{
         padding-left: 20px;
@@ -554,11 +577,11 @@ input[type="checkbox"]:checked ~ .threat_actor-content {
         width: 100%;
     }
 }
-.search__content__right__div{
-    width: 55%;
-}
+/*.search__content__right__div{*/
+/*    width: 55%;*/
+/*}*/
 .unique_url-accordion {
-    width: 100%;
+    width: 520px;
     max-width: 600px;
     margin: 0 auto;
     border: 1px solid #FCFCFC12;
@@ -681,7 +704,7 @@ input[type="checkbox"]:checked ~ .unique_url-content {
 
 
 .unique__email-accordion {
-    width: 100%;
+    width: 520px;
     max-width: 600px;
     margin: 0 auto;
     border: 1px solid #FCFCFC12;
@@ -722,6 +745,7 @@ input[type="checkbox"]:checked + .unique__email-header::after {
 .unique__email-content {
     max-height: 0;
     overflow-y: scroll;
+    overflow-x: hidden;
     /*transition: max-height 0.3s ease-out;*/
 }
 

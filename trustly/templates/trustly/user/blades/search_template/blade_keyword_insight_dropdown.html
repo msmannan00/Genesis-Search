@@ -72,66 +72,13 @@
   </label>
   <div class="unique_url-content">
     <ul class="unique_url__ul">
-      <li>
-        <p class=" unique_url__text"><span class="unique_url__text__span"></span>Email Dumps leaked on Telegram
-          channel</p>
-        <h6 class="unique_url__url">
-          www.xyzurl.com/Trusted-Internet?node-id=60-271&node-type=frame&t=awYGvOuyCrZvMUbr-0</h6>
-      </li>
-      <li>
-        <p class=" unique_url__text"><span class="unique_url__text__span"></span>Email Dumps leaked on Telegram
-          channel</p>
-        <h6 class="unique_url__url">
-          www.xyzurl.com/Trusted-Internet?node-id=60-271&node-type=frame&t=awYGvOuyCrZvMUbr-0</h6>
-      </li>
-      <li>
-        <p class=" unique_url__text"><span class="unique_url__text__span"></span>Email Dumps leaked on Telegram
-          channel</p>
-        <h6 class="unique_url__url">
-          www.xyzurl.com/Trusted-Internet?node-id=60-271&node-type=frame&t=awYGvOuyCrZvMUbr-0</h6>
-      </li>
-      <li>
-        <p class=" unique_url__text"><span class="unique_url__text__span"></span>Email Dumps leaked on Telegram
-          channel</p>
-        <h6 class="unique_url__url">
-          www.xyzurl.com/Trusted-Internet?node-id=60-271&node-type=frame&t=awYGvOuyCrZvMUbr-0</h6>
-      </li>
-      <li>
-        <p class=" unique_url__text"><span class="unique_url__text__span"></span>Email Dumps leaked on Telegram
-          channel</p>
-        <h6 class="unique_url__url">
-          www.xyzurl.com/Trusted-Internet?node-id=60-271&node-type=frame&t=awYGvOuyCrZvMUbr-0</h6>
-      </li>
-      <li>
-        <p class=" unique_url__text"><span class="unique_url__text__span"></span>Email Dumps leaked on Telegram
-          channel</p>
-        <h6 class="unique_url__url">
-          www.xyzurl.com/Trusted-Internet?node-id=60-271&node-type=frame&t=awYGvOuyCrZvMUbr-0</h6>
-      </li>
-      <li>
-        <p class=" unique_url__text"><span class="unique_url__text__span"></span>Email Dumps leaked on Telegram
-          channel</p>
-        <h6 class="unique_url__url">
-          www.xyzurl.com/Trusted-Internet?node-id=60-271&node-type=frame&t=awYGvOuyCrZvMUbr-0</h6>
-      </li>
-      <li>
-        <p class=" unique_url__text"><span class="unique_url__text__span"></span>Email Dumps leaked on Telegram
-          channel</p>
-        <h6 class="unique_url__url">
-          www.xyzurl.com/Trusted-Internet?node-id=60-271&node-type=frame&t=awYGvOuyCrZvMUbr-0</h6>
-      </li>
-      <li>
-        <p class=" unique_url__text"><span class="unique_url__text__span"></span>Email Dumps leaked on Telegram
-          channel</p>
-        <h6 class="unique_url__url">
-          www.xyzurl.com/Trusted-Internet?node-id=60-271&node-type=frame&t=awYGvOuyCrZvMUbr-0</h6>
-      </li>
-      <li>
-        <p class=" unique_url__text"><span class="unique_url__text__span"></span>Email Dumps leaked on Telegram
-          channel</p>
-        <h6 class="unique_url__url">
-          www.xyzurl.com/Trusted-Internet?node-id=60-271&node-type=frame&t=awYGvOuyCrZvMUbr-0</h6>
-      </li>
+      {% for urls in analytics.unique_urls %}
+        <li>
+          <p class=" unique_url__text"><span class="unique_url__text__span"></span>{{ urls.m_title }}</p>
+          <h6 class="unique_url__url">
+            {{ urls.m_url }}</h6>
+        </li>
+      {% endfor %}
 
 
     </ul>
@@ -148,27 +95,17 @@
 
   </label>
   <div class="unique__email-content">
-    <div class="email-row">
-      <div class="email-column">1- syed@gmail.com</div>
-      <div class="email-column">2- syed@gmail.com</div>
-      <div class="email-column">3- syed@gmail.com</div>
-    </div>
-    <div class="email-row">
-      <div class="email-column">4- syed@gmail.com</div>
-      <div class="email-column">5- syed@gmail.com</div>
-      <div class="email-column">6- syed@gmail.com</div>
-    </div>
-    <div class="email-row">
-      <div class="email-column">7- syed@gmail.com</div>
-      <div class="email-column">8- syed@gmail.com</div>
-      <div class="email-column">9- syed@gmail.com</div>
-    </div>
-    <div class="email-row">
-      <div class="email-column">10- syed@gmail.com</div>
-      <div class="email-column">11- syed@gmail.com</div>
-      <div class="email-column">12- syed@gmail.com</div>
-    </div>
+    {% for i in analytics.m_emails %}
+      {% if forloop.counter0|divisibleby:3 %}
+        <div class="email-row">
+      {% endif %}
+    <div class="email-column">{{ forloop.counter }}- {{ i }}</div>
+    {% if forloop.counter|divisibleby:3 or forloop.last %}
+      </div>
+    {% endif %}
+    {% endfor %}
   </div>
+
 </div>
 {#<div class="threat_actor-accordion">#}
 {#    <input type="checkbox" id="threat_actor-toggle">#}
