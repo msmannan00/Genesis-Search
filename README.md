@@ -37,86 +37,34 @@ Orion Browser Engine is a web-based search tool built on top of Docker that prov
 
 The Orion Search Engine is built using various technologies to provide optimal search capabilities and data handling. Below is the list of libraries and frameworks used:
 
-#### 1. **Search Functionality**
-
-- **elasticsearch==8.15.0**: For indexing and searching data.
-- **pymongo==4.8.0**: For handling MongoDB-based data storage.
-
-#### 2. **Web Framework**
-
-- **django==4.2.15**: To provide the web interface and routing.
-- **django-bootstrap-v5==1.0.11**: For responsive and modern UI.
-
-#### 3. **Data Processing**
-
-- **pandas==2.1.1**, **numpy==1.26.0**: For efficient data manipulation and analysis.
-- **scikit-learn==1.5.1**: For machine learning tasks, such as classification and clustering.
-- **gensim==4.3.3**: For natural language processing tasks.
-
-#### 4. **NLP & Similarity Matching**
-
-- **nltk==3.9.0**: For natural language processing tasks and text analysis.
-- **html-similarity==0.3.3**: To compare and find similarities between different HTML pages.
-- **jaccard-index==0.0.3**: For calculating similarity between sets of data.
-- **thefuzz==0.19.0**: Fuzzy string matching for search accuracy.
-- **textblob==0.17.1**: For processing textual data, including sentiment analysis.
-- **autocorrect==2.6.1**: For automatic text corrections.
-- **stopwords==1.0.0**: For handling stopwords in natural language processing.
-
-#### 5. **Networking & Proxies**
-
-- **requests[socks]==2.31.0**, **urllib3==2.1.0**, **PySocks==1.7.1**: For handling proxy-based requests and secure data fetching.
-- **stem==1.8.0**: For interacting with Tor.
-
-#### 6. **Data Caching**
-
-- **redis==5.1.1**: For caching search queries and improving performance.
-
-#### 7. **Security & Encryption**
-
-- **cryptography==41.0.3**: For securing sensitive data and communication.
-
-#### 8. **Logging & Monitoring**
-
-- **raven==6.10.0**: For error logging and system monitoring.
-
-#### 9. **Task Management**
-
-- **celery==5.3.4**, **apscheduler==3.10.1**: For managing background tasks, such as indexing and updating search data.
-
-#### 10. **Visualization**
-
-- **Pillow==9.3.0**: For image processing.
-- **termcolor==2.3.0**: For colored terminal text output.
-
-#### 11. **Machine Learning & AI**
-
-- **scikit-learn==1.5.1**, **gensim==4.3.3**: For machine learning tasks, such as classification, clustering, and natural language processing.
-
-#### 12. **Additional Libraries**
-
-- **beautifulsoup4==4.12.3**: For parsing and extracting data from HTML and XML documents.
-- **lxml==4.9.3**: For processing XML and HTML documents.
-- **pyprobables==0.6.0**: For probabilistic data structures like Bloom filters.
-- **validators==0.20.0**: For validating URLs and other types of data.
-- **simplejson==3.8.0**: For handling JSON data.
-- **gunicorn==20.1.0**: For running the application in production.
-- **python-dotenv==1.0.0**: For managing environment variables.
-- **python-Levenshtein-wheels==0.13.2**: For string matching using the Levenshtein distance.
-- **bunch==1.0.0**: For handling grouped data in a Pythonic way.
-
-## Setup and Installation
-
-To get started with Orion Search Engine, follow these steps:
-
-### 1. Clone the Repository
-
-Clone the repository from GitHub and navigate to the project directory.
-
-```
-git clone https://github.com/msmannan00/Orion-Search.git
-cd Orion-Search
-```
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://w7.pngwing.com/pngs/956/695/png-transparent-mongodb-original-wordmark-logo-icon.png" alt="MongoDB" height="50">
+      <br>MongoDB
+    </td>
+    <td align="center">
+      <img src="https://upload.wikimedia.org/wikipedia/en/6/6b/Redis_Logo.svg" alt="Redis" height="50">
+      <br>Redis
+    </td>
+    <td align="center">
+      <img src="https://docs.celeryproject.org/en/stable/_static/celery_512.png" alt="Celery" height="50">
+      <br>Celery
+    </td>
+    <td align="center">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" height="50">
+      <br>Python
+    </td>
+    <td align="center">
+      <img src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2018/09/tor-logo.jpeg" alt="Tor" height="50">
+      <br>Tor
+    </td>
+    <td align="center">
+      <img src="https://doc.traefik.io/traefik/assets/img/traefik.logo.png" alt="Traefik" height="50">
+      <br>Traefik
+    </td>
+  </tr>
+</table>
 
 ## Setup and Installation
 
@@ -195,3 +143,7 @@ This project is intended for research purposes only. The authors of Orion Search
 ## GitHub Repository
 
 GitHub Repository URL: [https://github.com/msmannan00/Orion-Search.git](https://github.com/msmannan00/Orion-Search)
+
+## Project Information
+
+https://www.canva.com/design/DAF8Sa8KkDE/1H8z3RVausdHIMcE98Kvfg/edit
