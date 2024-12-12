@@ -276,55 +276,62 @@ class search_session_controller(request_handler):
     m_direct_url_list = []
 
     p_tokenized_query = p_search_model.m_search_query.lower().split(" ")
+    print(p_document_list)
+
+    total_p_document_list_length = len(p_document_list)
 
     if p_search_model.m_page_number != 1:
-      p_document_list = p_document_list[0:CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE]
+      p_document_list = p_document_list[:CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE]
+
+    m_documents_length = len(p_document_list)
+
+    m_clearnet_links_count = sum(len(doc['m_clearnet_links']) for doc in p_document_list if 'm_clearnet_links' in doc)
+
+    # Count total number of entries in 'm_document' arrays
+    m_document_count = sum(len(doc['m_document']) for doc in p_document_list if 'm_document' in doc)
+
+    unique_urls = [{'m_title': doc.get('m_title', 'Untitled'), 'm_url': doc.get('m_url')} for doc in p_document_list if 'm_url' in doc]
 
     m_links_counter = 0
-    for text in p_document_list:
-      print(text['m_title'])
-      print(text['m_url'])
-
-    unique_urls = [{'m_title': urls['m_title'], 'm_url': urls['m_url']} for urls in p_document_list]
+    active_links = 0
+    seldom_active_links = 0
+    inactive_links = 0
 
     for m_document in p_document_list:
       m_links_counter += 1
       if p_search_model.m_search_type != SEARCH_STRINGS.S_SEARCH_CONTENT_TYPE_IMAGE:
-        # Generate URL Context
         m_relevance_context, m_relevance_context_original = self.__generate_url_context(m_document, p_tokenized_query, p_search_model)
-
-        if p_search_model.m_page_number == 1 and m_relevance_context_original is not None and m_relevance_context_original is not None:
-          m_related_business_list_re, m_related_news_list_re, m_relevance_context_original, m_continue = self.__generate_extra_context(m_document, m_relevance_context_original, m_related_files_list, m_links_counter)
-          if len(m_related_business_list) < 5 and len(m_related_business_list_re) > 0:
-            m_related_business_list.extend(m_related_business_list_re)
-          if len(m_related_news_list) < 5 and len(m_related_news_list_re) > 0:
-            m_related_news_list.extend(m_related_news_list_re)
-
-          if m_continue is True:
-            continue
-
-        if m_relevance_context is not None:
+        if m_relevance_context:
           m_relevance_context_list.append(m_relevance_context)
 
-      elif p_search_model.m_search_type == SEARCH_STRINGS.S_SEARCH_CONTENT_TYPE_IMAGE:
-        m_list, m_direct_url_list = self.__generate_image_content(m_document, p_search_model, m_direct_url_list)
-        if len(m_list) > 0:
-          m_relevance_context_list.extend(m_list)
+        if m_relevance_context_original and p_search_model.m_page_number == 1:
+          (m_related_business_list_re, m_related_news_list_re, m_relevance_context_original, m_continue) = self.__generate_extra_context(m_document, m_relevance_context_original, m_related_files_list, m_links_counter)
+          if len(m_related_business_list) < 5 and m_related_business_list_re:
+            m_related_business_list.extend(m_related_business_list_re)
+          if len(m_related_news_list) < 5 and m_related_news_list_re:
+            m_related_news_list.extend(m_related_news_list_re)
+          if m_continue:
+            continue
 
-      elif p_search_model.m_search_type == SEARCH_STRINGS.S_SEARCH_CONTENT_TYPE_DOCUMENT:
-        m_list, m_direct_url_list = self.__generate_document_content(m_document, p_search_model, m_direct_url_list)
-        m_relevance_context_list.extend(m_list)
+      if 'm_creation_date' in m_document and 'm_update_date' in m_document:
+        try:
+          m_creation_date = datetime.fromisoformat(m_document['m_creation_date'].replace('Z', '+00:00'))
+          m_update_date = datetime.fromisoformat(m_document['m_update_date'].replace('Z', '+00:00'))
+          days_difference = (m_update_date - m_creation_date).days
 
-    m_emails = []
-    for document in p_document_list:
-      if 'm_emails' in document and isinstance(document['m_emails'], list):
-        m_emails.extend(document['m_emails'])
-    m_emails = list(set(m_emails))
+          if days_difference <= 5:
+            active_links += 1
+          elif days_difference <= 10:
+            seldom_active_links += 1
+          else:
+            inactive_links += 1
+        except ValueError:
+          pass
+
+    m_emails = list({email for doc in p_document_list if 'm_emails' in doc and isinstance(doc['m_emails'], list) for email in doc['m_emails']})
 
     mContext = self.init_callbacks(p_search_model, m_relevance_context_list, m_related_business_list, m_related_news_list, m_related_files_list, total_pages)
-
-    # Create the 'analytics' dictionary and add both m_emails and unique_urls to it
-    mContext['analytics'] = {'m_emails': m_emails, 'unique_urls': unique_urls}
+    mContext['analytics'] = {'m_emails': m_emails, 'unique_urls': unique_urls, 'total_p_document_list_length': total_p_document_list_length, 'm_documents_length': m_documents_length, 'm_clearnet_links_count': m_clearnet_links_count, 'm_document_count': m_document_count, 'active_links': active_links, 'seldom_active_links': seldom_active_links, 'inactive_links': inactive_links, }
 
     if p_search_model.m_total_documents >= CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE:
       mContext[SEARCH_CALLBACK.M_RESULT_COUNT] = helper_controller.on_create_random_search_count(p_search_model.m_total_documents)
@@ -333,7 +340,6 @@ class search_session_controller(request_handler):
 
     return mContext, True
 
-  # External Request Callbacks
   def invoke_trigger(self, p_command, p_data):
     if p_command == SEARCH_SESSION_COMMANDS.INIT_SEARCH_PARAMETER:
       return self.__init_search_parameters(p_data[0])
