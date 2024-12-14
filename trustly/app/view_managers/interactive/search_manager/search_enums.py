@@ -3,10 +3,12 @@ import enum
 
 class SEARCH_MODEL_COMMANDS(enum.Enum):
   M_INIT = 1
+  M_FETCH_RESULT = 2
 
 
 class USER_INDEX_MODEL_COMMANDS(enum.Enum):
   M_INIT = 1
+  M_FETCH_RESULT = 2
 
 
 class SEARCH_SESSION_COMMANDS(enum.Enum):
@@ -46,6 +48,7 @@ class SEARCH_CALLBACK:
   M_UPDATE_DATA = "mUpdateDate"
   M_CREATION_DATA = "mCreationDate"
   M_WEBLINK = "mWebLink"
+  M_EXTRALINK = "mExtraLink"
   M_DUMPLINK = "mDumpLink"
   M_CONTACT_LINK = "mContactLink"
   M_EXPIRY = "mExpiry"

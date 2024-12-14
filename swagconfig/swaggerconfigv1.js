@@ -1,5 +1,3 @@
-import {SwaggerUIBundle} from "../staticfiles/drf-yasg/swagger-ui-dist";
-
 window.onload = function () {
     SwaggerUIBundle({
         url: "/swagconfig.json",

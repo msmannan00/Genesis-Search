@@ -27,13 +27,16 @@ class search_view_model(request_handler):
 
   # External Request Callbacks
   def invoke_trigger(self, p_command, p_data):
-    if p_command == SEARCH_MODEL_COMMANDS.M_INIT:
-      m_status, m_response = self.__m_search_model.invoke_trigger(SEARCH_MODEL_COMMANDS.M_INIT, p_data)
-      if m_status is True:
-        return render(None, CONSTANTS.S_TEMPLATE_SEARCH_WEBSITE_PATH, m_response)
-      else:
-        return HttpResponseRedirect(redirect_to=CONSTANTS.S_TEMPLATE_PARENT)
+    if p_command == SEARCH_MODEL_COMMANDS.M_FETCH_RESULT:
+      return self.__m_search_model.invoke_trigger(SEARCH_MODEL_COMMANDS.M_FETCH_RESULT, p_data)
     else:
-      m_response = None
+      if p_command == SEARCH_MODEL_COMMANDS.M_INIT:
+        m_status, m_response = self.__m_search_model.invoke_trigger(SEARCH_MODEL_COMMANDS.M_INIT, p_data)
+        if m_status is True:
+          return render(None, CONSTANTS.S_TEMPLATE_SEARCH_WEBSITE_PATH, m_response)
+        else:
+          return HttpResponseRedirect(redirect_to=CONSTANTS.S_TEMPLATE_PARENT)
+      else:
+        m_response = None
 
     return m_response

@@ -87,9 +87,9 @@ class spell_checker:
     m_query_text = GENERAL_STRINGS.S_GENERAL_EMPTY
     for m_key in m_content.keys():
       if len(m_query_text) > 0:
-        m_query_text = m_query_text.replace(m_key, "<span style=\"color:#336699;font-weight:bold;font-size:17\">" + m_content[m_key] + "</span>")
+        m_query_text = m_query_text.replace(m_key, "<b>" + m_content[m_key] + "</b>")
       else:
-        m_query_text = p_query.replace(m_key, "<span style=\"color:#336699\">" + m_content[m_key] + "</span>")
+        m_query_text = p_query.replace(m_key, "<b>" + m_content[m_key] + "</b>")
       m_query = m_query.replace(m_key, m_content[m_key])
 
     return m_query, m_query_text

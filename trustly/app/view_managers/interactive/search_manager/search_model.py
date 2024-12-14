@@ -1,3 +1,5 @@
+from django.http import JsonResponse
+
 from trustly.services.elastic_manager.elastic_controller import elastic_controller
 from trustly.services.elastic_manager.elastic_enums import ELASTIC_CRUD_COMMANDS, ELASTIC_REQUEST_COMMANDS
 from trustly.app.constants.constant import CONSTANTS
@@ -82,7 +84,18 @@ class search_model(request_handler):
     mStatus, mResult = self.__query_results(p_data)
     return mStatus, mResult
 
+  def __api_result(self, p_data):
+    m_query_model = self.__m_session.invoke_trigger(SEARCH_SESSION_COMMANDS.INIT_SEARCH_PARAMETER, [p_data])
+    if m_query_model.m_search_query == GENERAL_STRINGS.S_GENERAL_EMPTY:
+      return False, None
+    m_status, m_documents = elastic_controller.get_instance().invoke_trigger(ELASTIC_CRUD_COMMANDS.S_READ, [ELASTIC_REQUEST_COMMANDS.S_SEARCH, [m_query_model], [None]])
+    m_parsed_documents, m_suggestions_content, total_pages = self.__parse_filtered_documents(m_documents)
+    return JsonResponse({"Result":m_parsed_documents, "Suggestions":m_suggestions_content, "Page Count":total_pages})
+
+
   # External Request Callbacks
   def invoke_trigger(self, p_command, p_data):
     if p_command == SEARCH_MODEL_COMMANDS.M_INIT:
       return self.__init_page(p_data)
+    if p_command == SEARCH_MODEL_COMMANDS.M_FETCH_RESULT:
+      return self.__api_result(p_data)

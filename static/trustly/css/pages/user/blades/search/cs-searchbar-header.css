@@ -98,14 +98,17 @@
 
 .searchbar__search-items--right {
   margin-right: -2px;
+  outline: none;
 }
 
 .searchbar__search-items--width {
   width: 55px !important;
+  outline: none;
 }
 
 .searchbar__search-items--left {
   margin-left: 0;
+  outline: none;
 }
 
 .searchbar__detail-header-catagories-margin-right {
@@ -118,23 +121,28 @@
   display: block;
   width: 49px;
   font-family: Roboto, sans-serif;
-  height: 31px;
+  height: 37px;
+  border: none;
+  background: none;
   float: left;
   text-align: center;
   user-select: none;
   margin-right: 30px;
+  outline: none;
 }
 
 .searchbar__search-items:hover:not(.active) {
   color: #fff;
   text-decoration: none;
   border-bottom: 2px solid #fff;
+  outline: none;
 }
 
 .searchbar__search-items:hover.active {
   text-decoration: none;
   color: #fff;
   border-bottom: 2px solid #fff;
+  outline: none;
 }
 
 .searchbar__search-items-active-default {
@@ -146,6 +154,10 @@
 
 .searchbar__nav-right {
   float: right;
+}
+
+.searchbar__search-items:focus {
+  outline: none;
 }
 
 @media only screen and (max-width: 1400px) {
@@ -161,6 +173,7 @@
 
   .searchbar__search-items {
     margin-right: 15px;
+    outline: none;
   }
 
   .searchbar__detail-header-search-input {

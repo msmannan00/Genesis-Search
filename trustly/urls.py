@@ -20,6 +20,9 @@ urlpatterns = [
   path('crawl_index/', views.crawl_index, name='crawl_index'),
   path('api/directory/', api.get_directory, name='api/directory'),
   path('api/insight/', api.get_insight, name='api/insight'),
+
+  path('api/search/', api.get_search_result, name='api/search'),
+
 ]
 
 handler400 = views.error_page_400

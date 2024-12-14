@@ -41,18 +41,53 @@
                 <p class="search-result__accordian-body">{{ mDoc.mSearchCallbackRelevantDocumentDescription }}</p>
             </div>
 
-            {% if mDoc.mEmails|length > 0 %}
+            {% if mDoc.mDumpLink|length > 0 %}
                 <div class="search-result-tabs-label"></div>
-                <input type="radio" class="search-result__tabs-radio" name="{{ forloop.counter }}-1" id="emails-{{ forloop.counter }}-1">
-                <label for="emails-{{ forloop.counter }}-1" class="search-result__label">Emails</label>
+                <input type="radio" class="search-result__tabs-radio" name="{{ forloop.counter }}-1" id="dumps-{{ forloop.counter }}-1">
+                <label for="dumps-{{ forloop.counter }}-1" class="search-result__label">Dumps</label>
                 <div class="search-result__tabs-content">
                     <div class="row mt-3 list-row">
-                        {% for email in mDoc.mEmails %}
-                            <div class="col-md-4 col-sm-6 col-12 mb-3">
-                                <p class="search-result__accordian-body">
-                                    {{ forloop.counter }}.&nbsp;{{ email }}
-                                </p>
-                            </div>
+                        {% for dump in mDoc.mDumpLink %}
+                            <p class="search-result__accordian-body search-result__accordian-body-padding"> {{ forloop.counter }}.&nbsp;{{ dump }} </p>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if mDoc.mContactLink|length > 0 %}
+                <div class="search-result-tabs-label"></div>
+                <input type="radio" class="search-result__tabs-radio" name="{{ forloop.counter }}-1" id="contact-{{ forloop.counter }}-1">
+                <label for="contact-{{ forloop.counter }}-1" class="search-result__label">Contacts</label>
+                <div class="search-result__tabs-content">
+                    <div class="row mt-3 list-row">
+                        {% for contact in mDoc.mContactLink %}
+                            <p class="search-result__accordian-body search-result__accordian-body-padding"> {{ forloop.counter }}.&nbsp;{{ contact }} </p>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if mDoc.mWebLink|length > 0 %}
+                <div class="search-result-tabs-label"></div>
+                <input type="radio" class="search-result__tabs-radio" name="{{ forloop.counter }}-1" id="weblink-{{ forloop.counter }}-1">
+                <label for="weblink-{{ forloop.counter }}-1" class="search-result__label">Web Links</label>
+                <div class="search-result__tabs-content">
+                    <div class="row mt-3 list-row">
+                        {% for weblink in mDoc.mWebLink %}
+                            <p class="search-result__accordian-body search-result__accordian-body-padding"> {{ forloop.counter }}.&nbsp;{{ weblink }} </p>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if mDoc.mExtraLink|length > 0 %}
+                <div class="search-result-tabs-label"></div>
+                <input type="radio" class="search-result__tabs-radio" name="{{ forloop.counter }}-1" id="extralink-{{ forloop.counter }}-1">
+                <label for="extralink-{{ forloop.counter }}-1" class="search-result__label">Extra Links</label>
+                <div class="search-result__tabs-content">
+                    <div class="row mt-3 list-row">
+                        {% for extralink in mDoc.mExtraLink %}
+                            <p class="search-result__accordian-body search-result__accordian-body-padding"> {{ forloop.counter }}.&nbsp;{{ extralink }} </p>
                         {% endfor %}
                     </div>
                 </div>
@@ -94,11 +129,7 @@
                     <div class="search-result__tabs-content">
                         <div class="row mt-3 list-row">
                             {% for email in mDoc.mEmails %}
-                                <div class="col-md-4 col-sm-6 col-12 mb-3">
-                                    <p class="search-result__accordian-body">
-                                        {{ forloop.counter }}.&nbsp;{{ email }}
-                                    </p>
-                                </div>
+                                <p class="search-result__accordian-body search-result__accordian-body-padding"> {{ forloop.counter }}.&nbsp;{{ email }} </p>
                             {% endfor %}
                         </div>
                     </div>
@@ -112,9 +143,7 @@
                         <div class="row mt-3 list-row">
                             {% for email in mDoc.mName %}
                                 <div class="col-md-4 col-sm-6 col-12 mb-3">
-                                    <p class="search-result__accordian-body">
-                                        {{ forloop.counter }}.&nbsp;{{ email }}
-                                    </p>
+                                    <p class="search-result__accordian-body search-result__accordian-body-padding"> {{ forloop.counter }}.&nbsp;{{ email }} </p>
                                 </div>
                             {% endfor %}
                         </div>
@@ -129,7 +158,7 @@
                         <div class="row mt-3 list-row">
                             {% for email in mDoc.mPhoneNumber %}
                                 <div class="col-md-4 col-sm-6 col-12 mb-3">
-                                    <p class="search-result__accordian-body">
+                                    <p class="search-result__accordian-body search-result__accordian-body-padding">
                                         {{ forloop.counter }}.&nbsp;{{ email }}
                                     </p>
                                 </div>
@@ -145,11 +174,7 @@
                     <div class="search-result__tabs-content">
                         <div class="row mt-3 list-row">
                             {% for email in mDoc.mArchiveUrl %}
-                                <div class="col-md-4 col-sm-6 col-12 mb-3">
-                                    <p class="search-result__accordian-body">
-                                        {{ forloop.counter }}.&nbsp;{{ email }}
-                                    </p>
-                                </div>
+                                <p class="search-result__accordian-body search-result__accordian-body-padding"> {{ forloop.counter }}.&nbsp;{{ email }} </p>
                             {% endfor %}
                         </div>
                     </div>
@@ -162,16 +187,11 @@
                     <div class="search-result__tabs-content">
                         <div class="row mt-3 list-row">
                             {% for email in mDoc.mVideo %}
-                                <div class="col-md-4 col-sm-6 col-12 mb-3">
-                                    <p class="search-result__accordian-body">
-                                        {{ forloop.counter }}.&nbsp;{{ email }}
-                                    </p>
-                                </div>
+                                <p class="search-result__accordian-body search-result__accordian-body-padding"> {{ forloop.counter }}.&nbsp;{{ email }} </p>
                             {% endfor %}
                         </div>
                     </div>
                 {% endif %}
-
 
                 {% if mDoc.mDocumentLeak|length > 0 %}
                     <div class="search-result-tabs-label"></div>
@@ -180,11 +200,7 @@
                     <div class="search-result__tabs-content">
                         <div class="row mt-3 list-row">
                             {% for email in mDoc.mDocumentLeak %}
-                                <div class="col-md-4 col-sm-6 col-12 mb-3">
-                                    <p class="search-result__accordian-body">
-                                        {{ forloop.counter }}.&nbsp;{{ email }}
-                                    </p>
-                                </div>
+                                <p class="search-result__accordian-body search-result__accordian-body-padding"> {{ forloop.counter }}.&nbsp;{{ email }} </p>
                             {% endfor %}
                         </div>
                     </div>
