@@ -1,25 +1,17 @@
 from django.urls import path
 from trustly import views, api
 
+
 urlpatterns = [
 
   # redirections
   path('', views.index, name='home'),
-  path('cms/', views.cms_login, name='cms'),
-  path('cms/dashboard/', views.cms_dashboard, name='dashboard'),
   path('privacy/', views.privacy, name='privacy'),
   path('notice/', views.notice, name='notice'),
-  path('secretkey/', views.secretkey, name='secretkey'),
   path('directory/', views.directory, name='directory'),
   path('search/', views.search, name='search'),
-  path('restricted/', views.restricted_static, name='restricted'),
-
-  # hotlinks
-  path('cms/login/', views.cms_login, name='cms'),
-  path('cms/manage_status/', views.manage_status, name='manage_status'),
-  path('cms/logout', views.manage_logout, name='cms_logout'),
-
-  # crawler Feed Links
+  path('restricted/', views.block, name='restricted'),
+  path('cms/', views.block, name='cms'),
   path('update_status/', views.update_status, name='manage_search'),
   path('parser/', views.parser, name='parser'),
   path('feeder/unique', views.feeder_unique, name='feeder_unique'),

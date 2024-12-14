@@ -1,40 +1,37 @@
 {% load static %}
 <form class="disable-highlight clear-paddings" action="" method="GET">
-    <div class="">
-        <ul class="pagination">
+    <div>
+        <ul class="directory-pagination">
             <li class="{% if page == 1 %}disabled{% endif %}">
-                <a href="?
-                        {% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page=1">
+                <button type="submit" name="page" value="1" {% if page == 1 %}disabled{% endif %}>
                     <img src="{% static 'trustly/images/nav-first.svg' %}" alt="Start">
-                </a>
+                </button>
             </li>
 
             <li class="{% if page == 1 %}disabled{% endif %}">
-                <a href="?
-                        {% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ page|add:"-1" }}">
+                <button type="submit" name="page" value="{{ page|add:"-1" }}" {% if page == 1 %}disabled{% endif %}>
                     <img src="{% static 'trustly/images/nav-prev.svg' %}" alt="Prev">
-                </a>
+                </button>
             </li>
 
             {% for i in mPagination %}
                 <li class="{% if i == page %}active{% endif %}">
-                    <a href="?
-                            {% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ i }}">{{ i }}</a>
+                    <button type="submit" name="page" value="{{ i }}" {% if i == page %}disabled{% endif %}>
+                        {{ i }}
+                    </button>
                 </li>
             {% endfor %}
 
             <li class="{% if page == mTotalPage %}disabled{% endif %}">
-                <a href="?
-                        {% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ page|add:"1" }}">
+                <button type="submit" name="page" value="{{ page|add:"1" }}" {% if page == mTotalPage %}disabled{% endif %}>
                     <img src="{% static 'trustly/images/nav-next.svg' %}" alt="Next">
-                </a>
+                </button>
             </li>
 
             <li class="{% if page == mTotalPage %}disabled{% endif %}">
-                <a href="?
-                        {% for key, value in request.GET.items %}{% if key != 'page' %}{{ key }}={{ value }}&{% endif %}{% endfor %}page={{ mTotalPage }}">
+                <button type="submit" name="page" value="{{ mTotalPage }}" {% if page == mTotalPage %}disabled{% endif %}>
                     <img src="{% static 'trustly/images/nav-last.svg' %}" alt="End">
-                </a>
+                </button>
             </li>
         </ul>
     </div>

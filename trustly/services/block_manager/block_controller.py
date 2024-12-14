@@ -3,7 +3,7 @@ import base64
 import time
 from cryptography.fernet import Fernet
 from trustly.services.block_manager.block_enums import BLOCK_PARAM, BLOCK_COMMAND
-from trustly.controllers.helper_manager.env_handler import env_handler
+from trustly.app.helper_manager.env_handler import env_handler
 
 
 class block_controller:
@@ -41,9 +41,6 @@ class block_controller:
       return False
 
     except Exception as ex:
-      print("ccc5", flush=True)
-      print(str(ex), flush=True)
-      print("ccc5", flush=True)
       return False
 
   def invoke_trigger(self, p_commands, p_data=None):

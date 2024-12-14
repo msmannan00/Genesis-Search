@@ -10,7 +10,7 @@
   margin-bottom: 160px;
 }
 
-.search__page-navigation {
+.search__pagination-navigation {
   color: #FFFFFF;
   font-size: 13px;
   text-align: center;
@@ -26,33 +26,9 @@
   padding-bottom: 7px;
 }
 
-.search__page-navigation:hover {
+.search__pagination-navigation:hover {
   cursor: pointer;
   text-decoration: none;
-}
-
-.search__navigation--focus {
-  text-decoration: none;
-  background-color: #123354 !important;
-}
-
-.search__pagination--border-right {
-  margin-right: 5px;
-  float: left;
-}
-
-.search__pagination--border-start-right {
-  margin-right: 19px;
-  float: left;
-}
-
-.search__pagination--block {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.search__pagination-icon--border-left {
-  margin-left: 15px;
 }
 
 .search__navigation {
@@ -68,21 +44,12 @@
   padding-top: 7px;
   margin-top: -2px;
   font-weight: 600;
+  color: rgb(208, 208, 208)
 }
 
 .search__navigation:hover {
   text-decoration: none;
-}
-
-.search__navigation--normal {
-  color: darkgray;
-  background: #f9f9f9;
-  border-bottom: 4px solid #cccccc;
-}
-
-.search__pagination--border-left {
-  float: left;
-  margin-left: 18px;
+  color: #fff;
 }
 
 .search__pagination-container a.active {
@@ -90,17 +57,12 @@
   border-bottom: 3px solid #404040;
 }
 
-.search__pagination {
-  display: flex;
-  align-items: center;
-}
-
 .search__pagination-container {
   display: flex;
   align-items: center;
 }
 
-.search__page-navigation {
+.search__pagination-navigation {
   float: left;
   margin-right: 3px;
   margin-left: 3px;
@@ -108,45 +70,15 @@
   padding: 5px;
 }
 
-.search__pagination--border-right {
-  border-right: 1px solid #ddd;
-}
-
-.search__pagination--border-left {
-  border-left: 1px solid #ddd;
-}
-
-.search__page-navigation[disabled],
-.search__page-navigation[disabled]:hover {
+.search__pagination-navigation[disabled],
+.search__pagination-navigation[disabled]:hover {
   cursor: context-menu;
   pointer-events: none;
   user-select: none;
   color: #bbb;
-  background-color: #17406950;
+  opacity: 0.5;
 }
 
-.search__navigation {
-  float: left;
-  color: #D0D0D0;
-  padding: 5px 10px;
-  text-decoration: none;
-  border-radius: 8px;
-}
-
-.search__navigation:hover {
-  float: left;
-  color: #fff;
-  padding: 5px 10px;
-  text-decoration: none;
-}
-
-.search__navigation--focus {
-  border-radius: 8px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #17406990;
-
-}
 
 @media only screen and (max-width: 943px) {
   .search__pagination {

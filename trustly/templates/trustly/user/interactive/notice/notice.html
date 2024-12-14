@@ -6,13 +6,7 @@
 <!--script initialization-->
 <html lang="en">
     <body >
-
-        <!-- non onion url -->
-        {% include 'trustly/user/blades/shared_blades/blade_onion_warning.html' %}
-
-        <!--footer-->
-        {% include 'trustly/user/blades/shared_blades/blade_light_header.html' %}
-
+    
         {% if mNoticeCallbackType == 'report' %}
             {% include 'trustly/user/blades/notice_template/blade_report_website_notice.html' %}
         {% elif mNoticeCallbackType == 'upload' %}

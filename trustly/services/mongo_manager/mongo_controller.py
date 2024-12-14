@@ -2,7 +2,7 @@
 import pymongo
 
 from trustly.services.log_manager.log_controller import log
-from trustly.services.mongo_manager.mongo_enums import MONGO_CONNECTIONS, MONGODB_COLLECTIONS, MONGODB_KEYS, MANAGE_MONGO_MESSAGES, MONGODB_CRUD, MONGO_USER_COLLECTION
+from trustly.services.mongo_manager.mongo_enums import MONGO_CONNECTIONS, MONGODB_KEYS, MANAGE_MONGO_MESSAGES, MONGODB_CRUD
 from trustly.services.mongo_manager.mongo_request_generator import mongo_request_generator
 
 
@@ -31,17 +31,6 @@ class mongo_controller:
 
     connection_params.update({k: v for k, v in auth_params.items() if v})
     self.__m_connection = pymongo.MongoClient(MONGO_CONNECTIONS.S_MONGO_DATABASE_IP, MONGO_CONNECTIONS.S_MONGO_DATABASE_PORT, username=MONGO_CONNECTIONS.S_MONGO_USERNAME, password=MONGO_CONNECTIONS.S_MONGO_PASSWORD)[MONGO_CONNECTIONS.S_MONGO_DATABASE_NAME]
-    self.__initialize_database()
-
-  def __initialize_database(self):
-    try:
-      if MONGODB_COLLECTIONS.S_STATUS not in self.__m_connection.list_collection_names():
-        m_status = self.__m_connection.get_collection(name=MONGODB_COLLECTIONS.S_STATUS)
-        m_status.insert_one(MONGO_USER_COLLECTION.S_DATABASE_DEFAULT_ENTRY_STATUS)
-
-    except Exception as ex:
-      print(ex)
-      pass
 
   def __create(self, p_data):
     try:

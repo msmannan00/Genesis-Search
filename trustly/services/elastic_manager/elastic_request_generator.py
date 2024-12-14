@@ -3,18 +3,13 @@ import hashlib
 import json
 from datetime import datetime, timedelta, timezone
 
-from trustly.controllers.constants.constant import CONSTANTS
-from trustly.controllers.view_managers.cms.manage_search.class_model.manage_search_model import manage_search_data_model
-from trustly.controllers.view_managers.user.interactive.search_manager.tokenizer import tokenizer
+from trustly.app.constants.constant import CONSTANTS
 from trustly.services.request_manager.request_handler import request_handler
 from trustly.services.elastic_manager.elastic_enums import ELASTIC_KEYS, ELASTIC_REQUEST_COMMANDS, ELASTIC_INDEX
 
 
 class elastic_request_generator(request_handler):
   __m_tokenizer = None
-
-  def __init__(self):
-    self.__m_tokenizer = tokenizer()
 
   @staticmethod
   def generate_data_hash(data):
@@ -31,7 +26,7 @@ class elastic_request_generator(request_handler):
       must_clauses.append({"terms": {"m_content_type": [p_query_model.m_search_type]}})
     must_not_clause = []
     if m_safe_search == "True":
-      must_not_clause.append({"term": {"m_content_type": "toxic"}})
+      must_not_clause.append({"term": {"m_content_type": "adult"}})
 
     if m_search_type == "monitor":
       m_query_statement = {"min_score": 0, "query": {"function_score": {"query": {"bool": {"must": [], "should": [{"query_string": {"query": m_user_query, "fields": ["m_title^3", "m_meta_description^2", "m_content^1.5", "m_important_content^1.5", "m_content_tokens^2", "m_keywords^1.8"], "default_operator": "OR", "lenient": True}}], "must_not": must_not_clause}}, "functions": [{"gauss": {"m_update_date": {"origin": "now", "scale": "30d", "offset": "10d", "decay": 0.5}}, "weight": 2}], "boost_mode": "sum"}}, "aggs": {"limited_base_url": {"terms": {"field": "m_base_url", "size": 100, "min_doc_count": 1}}}, "from": (m_page_number - 1) * CONSTANTS.S_SETTINGS_SEARCHED_DOCUMENT_SIZE_GENERIC, "size": CONSTANTS.S_SETTINGS_FETCHED_DOCUMENT_SIZE, "track_total_hits": True}
@@ -46,11 +41,6 @@ class elastic_request_generator(request_handler):
     m_query = {"from": (p_page_number - 1) * 5000, "size": 5001, "query": {"match": {"m_sub_host": ''}}, "_source": ["m_host", "m_content_type"]}
 
     return {ELASTIC_KEYS.S_DOCUMENT: ELASTIC_INDEX.S_GENERIC_INDEX, ELASTIC_KEYS.S_FILTER: m_query}
-
-  @staticmethod
-  def __query_raw(p_data: manage_search_data_model):
-    m_query = {"from": p_data.m_min_range, "size": p_data.m_max_range, "query": json.loads(json.dumps(json.loads(p_data.m_query))), "_source": ["m_host", "m_content_type"]}
-    return {ELASTIC_KEYS.S_DOCUMENT: p_data.m_query_collection, ELASTIC_KEYS.S_FILTER: m_query}
 
   @staticmethod
   def __clear_expire_index():
@@ -107,8 +97,6 @@ class elastic_request_generator(request_handler):
       return self.__generate_insight_queries()
     if p_commands == ELASTIC_REQUEST_COMMANDS.S_ONION_LIST:
       return self.__onion_list(p_data[0])
-    if p_commands == ELASTIC_REQUEST_COMMANDS.S_QUERY_RAW:
-      return self.__query_raw(p_data[0])
     if p_commands == ELASTIC_REQUEST_COMMANDS.S_CLEAR_EXPIRE_INDEX:
       return self.__clear_expire_index()
     if p_commands == ELASTIC_REQUEST_COMMANDS.S_INDEX_GENERAL:

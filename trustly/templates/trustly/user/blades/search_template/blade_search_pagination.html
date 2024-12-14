@@ -3,15 +3,15 @@
     <form class="search__pagination disable-highlight">
         <div class="search__pagination-container">
             {% if mSearchCallbackCurrentPageNumber == 1 %}
-                <div class="search__page-navigation " disabled>
+                <div class="search__pagination-navigation " disabled>
                     <img src="{% static 'trustly/images/nav-prev.svg' %}" alt="nav-prev">
                 </div>
             {% else %}
-                <a href="?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType={{ mSearchCallbackRelevantSearchType }}&mSearchParamPage=1" class="search__page-navigation ">
+                <a href="?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType={{ mSearchCallbackRelevantSearchType }}&mSearchParamPage=1" class="search__pagination-navigation ">
                     <img src="{% static 'trustly/images/nav-first.svg' %}" alt="nav-first">
                 </a>
                 <a href="?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType={{ mSearchCallbackRelevantSearchType }}&mSearchParamPage=
-                        {% if mSearchCallbackCurrentPageNumber != '1' %}{{ mSearchCallbackCurrentPageNumber|add:-1 }}{% endif %}" class="search__page-navigation gc--clear-selection">
+                        {% if mSearchCallbackCurrentPageNumber != '1' %}{{ mSearchCallbackCurrentPageNumber|add:-1 }}{% endif %}" class="search__pagination-navigation gc--clear-selection">
                     <img src="{% static 'trustly/images/nav-prev.svg' %}" alt="nav-prev">
                 </a>
             {% endif %}
@@ -23,11 +23,11 @@
             {% endfor %}
 
             {% if mSearchCallbackCurrentPageNumber >= mSearchCallbackMaxPagination %}
-                <div class="search__page-navigation " disabled>
+                <div class="search__pagination-navigation " disabled>
                     &rsaquo;
                 </div>
             {% else %}
-                <a href="?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType={{ mSearchCallbackRelevantSearchType }}&mSearchParamPage={{ mSearchCallbackCurrentPageNumber|add:1 }}" class="search__page-navigation gc--clear-selection">
+                <a href="?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType={{ mSearchCallbackRelevantSearchType }}&mSearchParamPage={{ mSearchCallbackCurrentPageNumber|add:1 }}" class="search__pagination-navigation gc--clear-selection">
                     <img src="{% static 'trustly/images/nav-next.svg' %}" alt="nav-next">
                 </a>
             {% endif %}

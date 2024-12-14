@@ -1,37 +1,34 @@
 {% load static %}
 {% include 'trustly/user/blades/blades_shared_initialization.html' %}
-{% include 'trustly/user/server/error/local_imports.html' %}
+{% include 'trustly/user/server/maintenance/local_imports.html' %}
 
 
-<!--script initialization-->
 <html lang="en">
     <body>
-
-        <!-- non onion url -->
-        {% include 'trustly/user/blades/shared_blades/blade_onion_warning.html' %}
-
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="error__container">
-                        <h2>
-                            Oops! Error {{mErrorCode}}</h2><br>
-                            <hr class="error__header"><br>
-                        <h1>
+                    <div class="maintenance">
+                        <h2 class="maintenance__header-title">
+                            Oops! Server Error {{ mErrorCode }}</h2><br>
+                            <hr class="maintenance__header-divider"><br>
+                        <h1 class="maintenance__main-title">
                             Something went wrong!</h1>
-                            <p>{{mErrorMessage}}</p>
-                        <div class="error__action">
-                            <a href="http://zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion/wiki/index.php/Main_Page"  class="btn btn-info btn-lg error__action--button"><span class="glyphicon glyphicon-home">
+                        <div class="maintenance__message">
+                            <p>{{ mErrorMessage }}</p>
+                        </div><br>
+                        <div class="maintenance__actions">
+                            <a href="http://zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion/wiki/index.php/Main_Page"  class="btn btn-info btn-lg maintenance__action-button"><span class="glyphicon glyphicon-home">
                             </span>Explore Hidden Wiki</a>
                         </div>
-                        <div class="error__action">
-                            <a href="/" class="btn btn-info btn-lg error__action--button"><span class="glyphicon glyphicon-home">
+                        <div class="maintenance__actions">
+                            <a href="/" class="btn btn-info btn-lg maintenance__action-button"><span class="glyphicon glyphicon-home">
                             </span>Homepage</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                     <img src="{% static 'trustly/images/server-icon.svg' %}" alt="Brand Logo">
+                     <img src="{% static 'trustly/images/server-icon.svg' %}" alt="Brand Logo" class="maintenance__image">
                 </div>
             </div>
         </div>

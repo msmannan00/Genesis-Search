@@ -1,28 +1,29 @@
 {% load static %}
 
-<div class="toolbar__search">
-  <div class="toolbar__left">
-    {% if mSearchCallbackRelevantDocument|length > 0 %}
+<div class="safe__search-toolbar">
+    <div>
+        {% if mSearchCallbackRelevantDocument|length > 0 %}
+            <p class="safe__search-toolbar-results">About {{ mSearchCallbackResultCount }} results found </p>
+        {% endif %}
+        {% if mSearchCallbackQueryError != '' %}
+            <h6 class="safe__search-toolbar-error">
+                <span class="safe__search-toolbar-error-header">Did you mean: </span><span class="safe__search-toolbar-error-info"><a class="gc--clear-selection" href="?q={{ mSearchCallbackQueryErrorURL }}&pSearchParamType={{ mSearchCallbackRelevantSearchType }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}">{% autoescape off %}
+                {{ mSearchCallbackQueryError }}{% endautoescape %}</a> ?</span></h6>
+        {% endif %}
 
-      <p class="search__results">About {{ mSearchCallbackResultCount }} results found </p>
-    {% endif %}
-    {% if mSearchCallbackQueryError != '' %}
-      <h6 class="search-result__query-error--container">
-        <span class="search-result__query-error--header">Did you mean: </span><span class="search-result__query-error--info"><a class="gc--clear-selection" href="?q={{ mSearchCallbackQueryErrorURL }}&pSearchParamType={{ mSearchCallbackRelevantSearchType }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}">{% autoescape off %}
-        {{ mSearchCallbackQueryError }}{% endautoescape %}</a> ?</span></h6>
-    {% endif %}
-
-  </div>
-
-  <form method="get" action="/search/">
-    <div class="toolbar__right">
-      <label for="safe-search" class="toolbar__switch">
-        <input type="checkbox" id="safe-search" name="mSearchParamSafeSearch" value="True" />
-        <span class="toolbar__slider"></span>
-      </label>
-      <span id="safe-search-label" class="toolbar__text">Enable Safe Search</span>
     </div>
-  </form>
+
+    <form method="get" action="/search">
+        <div class="safe__search-toolbar-right">
+            <label for="safe-search" class="safe__search-toolbar-switch">
+                <a href="/search?q={{ mSearchCallbackQuery }}&mSearchParamPage=1&pSearchParamType={{ mSearchCallbackRelevantSearchType }}&mSearchParamSafeSearch={% if mSearchCallbackSaveSearch == 'True' %}False{% else %}True{% endif %}" >
+                    <input type="checkbox" id="safe-search" {% if mSearchCallbackSaveSearch == "True" %}checked{% endif %} />
+                    <span class="safe__search-toolbar--slider"></span>
+                </a>
+            </label>
+            <span id="safe-search-label" class="safe__search-toolbar--text">Enable Safe Search</span>
+        </div>
+    </form>
 
 
 </div>

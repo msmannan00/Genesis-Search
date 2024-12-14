@@ -12,7 +12,7 @@ html {
   );
 }
 
-.directory-container {
+.directory__container {
   min-height: 100vh;
   padding: 40px 40px 100px;
 }
@@ -21,243 +21,40 @@ html {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   background: none;
-  color: #ffffff;
+  color: #fff;
   font-size: 18px;
   margin-bottom: 0;
 }
 
-.directory__description {
-  font: 14px arial, sans-serif;
-  color: #808080;
-  max-width: 650px;
-  padding-left: 4.4em;
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
-
-.directory__scroller {
-  text-decoration: none !important;
-  background: #28282B !important;
-  color: white !important;
-  text-align: center !important;
-  padding-bottom: 30px !important;
-  font-size: 20px !important;
-  width: 50px;
-  height: 50px;
-  opacity: 0.85;
-  display: none;
-}
-
-.directory__scroller_container {
-  background: #b36b00;
-  width: 123px;
-  border-radius: 6px;
-  opacity: 0.8;
-  text-decoration: none !important;
-  color: white !important;
-  text-align: center !important;
-  padding-bottom: 30px !important;
-  font-size: 20px !important;
-  height: 65px;
-}
-
-.directory__scroller:hover {
-  cursor: pointer;
-  background: #000000 !important;
-}
-
-.directory__table--head {
-  border-bottom: 0 !important;
-}
-
-.directory__table {
-  background: #12335450;
-  table-layout: fixed;
-  margin-bottom: 0 !important;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  overflow: hidden;
-  padding: 0 !important;
-}
-
-.footer__catagories--directory {
-  border-bottom: 4px solid whitesmoke;
-}
-
-.table td, .table th {
-  border: none !important;
-}
-
-#top {
-}
-
-.directory__table tr {
-  border-bottom: 1px solid #FCFCFC12;
-  border-top: 1px solid #FCFCFC12;
-}
-
-.directory__table tr th {
-  color: #D0D0D0;
-  font-size: 12px;
-  font-weight: 500;
-  font-family: 'Inter', sans-serif;
-
-}
-
-.directory__table tr td {
-  color: #FFFFFF;
-  font-size: 15px;
-  font-weight: 400;
-  font-family: 'Inter', sans-serif;
-
-}
-
-#middle {
-  margin-top: 500px;
-}
-
-#btn {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  z-index: 99;
-  font-size: 15px;
-  border: none;
-  outline: none;
-  background-color: gray;
-  color: darkgray;
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 4px;
-}
-
-.directory__scroller-top {
-  position: fixed;
-  top: 21em !important;
-  right: 20px !important;
-}
-
-.directory__scroller-bottom {
-  position: fixed;
-  top: 24em !important;
-  right: 20px !important;
-}
-
-#btn:hover {
-  background-color: white;
-}
-
-.directory__main__div {
+.directory__main-container {
   border-radius: 8px;
   border: 1px solid #FCFCFC12;
 }
 
-.upper_heading {
+.directory__upper-heading {
   display: flex;
   align-items: center;
   padding: 16px;
   height: 64px;
 }
 
-.padination__heading {
+.directory__pagination-heading {
   width: 50%;
   display: flex;
   justify-content: start;
   align-items: center;
 }
 
-.pagination {
-  display: flex;
-  width: 50%;
-  justify-content: end;
-  align-items: center;
-}
-
-.scroll-to-top {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 10000;
-  left: 0;
-  background: rgba(33, 75, 116, 0.81);
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0 16px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease;
-}
-
-.scroll-to-top__content {
-  display: flex;
-  align-items: center;
-}
-
-.scroll-to-top__icon img {
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
-}
-
-.scroll-to-top__text {
-  font-size: 12px;
-  font-weight: 400;
-  color: #FFFFFF;
-  margin-right: 10px;
-}
-
 @media only screen and (max-width: 943px) {
-  .directory__table tr {
-    border-bottom: 0;
-    border-top: 0;
-  }
-
-  .directory-container {
+  .directory__container {
     min-height: 100vh;
     padding: 40px 20px 100px;
   }
 
-  .directory__scroller-top {
-    right: 50px
-  }
-
-  .directory__scroller-bottom {
-    right: 50px
-  }
-
-  .directory__scroller {
-    display: block;
-  }
-
-  .directory__scroller_container {
-    margin-left: -40px;
-  }
-
-  .directory__description {
-    padding-left: 15px;
-    padding-right: 20px;
-    margin-top: 30px;
-  }
-
-  .directory__table {
-    margin-left: 10px;
-  }
-
-  .upper_heading {
+  .directory__upper-heading {
     flex-direction: column;
     align-items: start !important;
     gap: 16px;
     height: 120px !important;
   }
-
-  .directory__table tr th {
-    font-size: 12px;
-  }
-
-  .directory__table tr td {
-    font-size: 12px;
-  }
-
 }

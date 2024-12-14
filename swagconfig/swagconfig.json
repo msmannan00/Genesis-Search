@@ -1,0 +1,142 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Trusted Web API",
+    "description": "API documentation for directory and insight endpoints."
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/api/directory/": {
+      "get": {
+        "operationId": "directory",
+        "summary": "Get Directory",
+        "description": "Retrieve the list of existing onion URLs being monitored by this system, with pagination.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "description": "Page number to retrieve (default is 1, items per page is 1000).",
+            "type": "integer",
+            "default": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "directories": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "page": {
+                  "type": "integer",
+                  "description": "Current page number"
+                },
+                "size": {
+                  "type": "integer",
+                  "description": "Number of items per page"
+                },
+                "total": {
+                  "type": "integer",
+                  "description": "Total number of directories available"
+                }
+              }
+            },
+            "examples": {
+              "application/json": {
+                "directories": [
+                  "http://example1.onion",
+                  "http://example2.onion"
+                ],
+                "page": 1,
+                "size": 1000,
+                "total": 2000
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/insight/": {
+      "get": {
+        "operationId": "insight",
+        "summary": "Retrieve System Insights",
+        "description": "Provides a detailed summary of the system, including total documents, URLs, and other statistical insights.",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response containing system insights.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "generic_model": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Document Count": {
+                        "type": "integer",
+                        "example": 3341
+                      },
+                      "Most Recent": {
+                        "type": "string",
+                        "example": "09 Dec"
+                      }
+                    }
+                  }
+                },
+                "leak_model": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Document Count": {
+                        "type": "integer",
+                        "example": 118
+                      },
+                      "Most Recent": {
+                        "type": "string",
+                        "example": "09 Dec"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "examples": {
+              "application/json": {
+                "generic_model": [
+                  {
+                    "Document Count": 3341,
+                    "Most Recent": "09 Dec"
+                  }
+                ],
+                "leak_model": [
+                  {
+                    "Document Count": 118,
+                    "Most Recent": "09 Dec"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

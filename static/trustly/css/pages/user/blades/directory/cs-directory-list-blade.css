@@ -1,29 +1,49 @@
-.onion__table-id {
-  text-align: center;
-  font-size: 13px;
+.table td, .table th {
+  border: none !important;
 }
 
-.directory__table tr:nth-child(even) {
+.directory-list__table tr {
+  border-bottom: 1px solid #FCFCFC12;
+  border-top: 1px solid #FCFCFC12;
+}
+
+.directory-list__table tr th {
+  color: #D0D0D0;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+
+}
+
+.directory-list__table tr td {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+
+}
+
+.directory-list__table tr:nth-child(even) {
   background-color: #2A578459;
   min-height: 45px;
 }
 
-.directory__table tr:nth-child(odd) {
+.directory-list__table tr:nth-child(odd) {
   background-color: #2A578429 !important;
   min-height: 45px;
 }
 
-.onion__table-url {
-  color: #fff;
+.directory-list__table {
+  background: #12335450;
+  table-layout: fixed;
+  margin-bottom: 0 !important;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   overflow: hidden;
-  font-size: 12px;
-  font-weight: 400;
-  text-overflow: ellipsis;
-  word-wrap: break-word;
-  text-decoration: none;
+  padding: 0 !important;
 }
 
-.status_default_pointer {
+.directory-list__status-default-pointer {
   display: inline-block;
   width: 6px;
   height: 6px;
@@ -32,11 +52,11 @@
   margin-right: 5px;
 }
 
-.status_inactive_pointer {
+.directory-list__status-inactive-pointer {
   background-color: #ffc107 !important;
 }
 
-.content--category {
+.directory-list__content-category {
   font-weight: bold;
   color: #D4D4D4;
   border-radius: 100px;
@@ -46,24 +66,24 @@
   margin-right: 10px;
 }
 
-.column-service-url {
+.directory-list__column-service-url {
   width: 40%;
 }
 
-.column-category {
+.directory-list__column-category {
   width: 25%;
 }
 
-.column-url-status {
+.directory-list__column-url-status {
   width: 10%;
 }
 
-.column-leak-status {
+.directory-list__column-leak-status {
   width: 10%;
 }
 
 @media only screen and (max-width: 943px) {
-  .content--category {
+  .directory-list__content-category {
     padding-bottom: 0 !important;
     padding-left: 15px !important;
     padding-right: 15px !important;
@@ -71,7 +91,7 @@
     margin-top: 5px;
   }
 
-  .onion__table--container {
+  .directory-list__container {
     padding-right: 4%;
   }
 
@@ -98,8 +118,8 @@
     width: 50%;
   }
 
-  .onion__table-url {
-    color: #FFFFFF;
+  .directory-list__table-url {
+    color: #fff;
     font-size: 12px;
     font-weight: 400;
     text-decoration: none;
@@ -109,8 +129,27 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .status_default_pointer {
+
+  .directory-list__status-default-pointer {
     margin-top: 6px;
     margin-right: 15px;
   }
+
+  .directory-list__table tr {
+    border-bottom: 0;
+    border-top: 0;
+  }
+
+  .directory-list__table {
+    margin-left: 10px;
+  }
+
+  .directory-list__table tr th {
+    font-size: 12px;
+  }
+
+  .directory-list__table tr td {
+    font-size: 12px;
+  }
+
 }

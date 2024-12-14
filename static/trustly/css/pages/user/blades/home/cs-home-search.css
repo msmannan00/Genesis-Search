@@ -1,0 +1,35 @@
+.home__searchbox {
+  border-radius: 10px;
+  height: 46px;
+  outline: none;
+  border-color: #ffffff;
+  width: 600px;
+  max-width: 600px;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  color: #3C3C43;
+  letter-spacing: -0.41px;
+  font-size: 17px;
+  background-size: 20px 20px;
+  padding: 15px 12px !important;
+  -moz-transition: .0s;
+  padding-left: 45px !important;
+  padding-top: 2px;
+  transition: .0s;
+  margin-bottom: 23vh;
+  margin-top: 20px;
+  background: #fff url('/static/trustly/images/magnifyingglass.svg') no-repeat 16px center;
+}
+
+.home__searchbox::placeholder {
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  color: #000000;
+  opacity: 1;
+}
+
+.home__searchbox::placeholder {
+  font-size: 17px;
+  padding-left: 10px;
+  color: #000000;
+}

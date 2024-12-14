@@ -1,4 +1,4 @@
-from trustly.controllers.helper_manager.env_handler import env_handler
+from trustly.app.helper_manager.env_handler import env_handler
 
 
 class REDIS_CONNECTIONS:

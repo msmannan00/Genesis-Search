@@ -1,36 +1,25 @@
 from django.shortcuts import render
-from django.views.decorators.csrf import ensure_csrf_cookie, csrf_exempt
+from django.views.decorators.csrf import csrf_exempt
+
+from trustly.app.view_managers.interactive.directory_manager.directory_view_model import directory_view_model
+from trustly.app.view_managers.interactive.hompage_manager.homepage_enums import HOMEPAGE_MODEL_COMMANDS
+from trustly.app.view_managers.interactive.hompage_manager.homepage_view_model import homepage_view_model
+from trustly.app.view_managers.interactive.notice_manager.notice_view_model import notice_view_model
+from trustly.app.view_managers.interactive.policy_manager.policy_view_model import policy_view_model
+from trustly.app.view_managers.interactive.search_manager.search_enums import SEARCH_MODEL_COMMANDS
+from trustly.app.view_managers.interactive.search_manager.search_view_model import search_view_model
+from trustly.app.view_managers.server.error.error_enums import ERROR_MODEL_CALLBACK
 from trustly.services.block_manager.block_controller import block_controller
-from trustly.services.user_auth_manager.user_auth_controller import user_auth_controller
-from trustly.services.user_auth_manager.user_auth_enums import USER_AUTH_COMMANDS
-from trustly.controllers.constants.constant import CONSTANTS
-from trustly.controllers.server_manager.crawl_index_manager.crawl_controller import crawl_controller
-from trustly.controllers.server_manager.crawl_index_manager.crawl_enums import CRAWL_COMMANDS
-from trustly.controllers.server_manager.external_request_manager.external_request_controller import external_request_controller
-from trustly.controllers.server_manager.external_request_manager.external_request_enums import EXTERNAL_REQUEST_COMMANDS
-from trustly.controllers.view_managers.cms.dashboard.dashboard_view_model import dashboard_view_model
-from trustly.controllers.view_managers.cms.dashboard.dashboard_enums import DASHBOARD_MODEL_CALLBACK
-from trustly.controllers.view_managers.cms.login.login_view_model import login_view_model
-from trustly.controllers.view_managers.cms.login.login_enums import LOGIN_MODEL_CALLBACK
-from trustly.controllers.view_managers.cms.manage_search.manage_search_view_model import manage_search_view_model
-from trustly.controllers.view_managers.cms.manage_search.manage_search_enums import MANAGE_SEARCH_MODEL_CALLBACK
-from trustly.controllers.view_managers.cms.manage_status.manage_status_view_model import manage_status_view_model
-from trustly.controllers.view_managers.cms.manage_status.manage_status_enums import MANAGE_STATUS_MODEL_CALLBACK
-from trustly.controllers.view_managers.user.server.block_manager.block_enums import BLOCK_MODEL_CALLBACK
-from trustly.controllers.view_managers.user.server.error.error_view_model import error_view_model
-from trustly.controllers.view_managers.user.server.error.error_enums import ERROR_MODEL_CALLBACK
-from trustly.controllers.view_managers.user.server.secret_key.secret_key_view_model import secret_key_view_model
-from trustly.controllers.view_managers.user.server.secret_key.secret_key_enums import SECRET_KEY_MODEL_CALLBACK
-from trustly.controllers.view_managers.user.interactive.directory_manager.directory_view_model import directory_view_model
-from trustly.controllers.view_managers.user.interactive.directory_manager.directory_enums import DIRECTORY_MODEL_COMMANDS
-from trustly.controllers.view_managers.user.interactive.hompage_manager.homepage_view_model import homepage_view_model
-from trustly.controllers.view_managers.user.interactive.hompage_manager.homepage_enums import HOMEPAGE_MODEL_COMMANDS
-from trustly.controllers.view_managers.user.interactive.notice_manager.notice_view_model import notice_view_model
-from trustly.controllers.view_managers.user.interactive.notice_manager.notice_enums import NOTICE_MODEL_CALLBACK
-from trustly.controllers.view_managers.user.interactive.policy_manager.policy_view_model import policy_view_model
-from trustly.controllers.view_managers.user.interactive.policy_manager.policy_enums import POLICY_MODEL_CALLBACK
-from trustly.controllers.view_managers.user.interactive.search_manager.search_view_model import search_view_model
-from trustly.controllers.view_managers.user.interactive.search_manager.search_enums import SEARCH_MODEL_COMMANDS
+from trustly.app.constants.constant import CONSTANTS
+from trustly.app.server_manager.crawl_index_manager.crawl_controller import crawl_controller
+from trustly.app.server_manager.crawl_index_manager.crawl_enums import CRAWL_COMMANDS
+from trustly.app.server_manager.external_request_manager.external_request_controller import external_request_controller
+from trustly.app.server_manager.external_request_manager.external_request_enums import EXTERNAL_REQUEST_COMMANDS
+from trustly.app.view_managers.server.block_manager.block_enums import BLOCK_MODEL_CALLBACK
+from trustly.app.view_managers.server.error.error_view_model import error_view_model
+from trustly.app.view_managers.interactive.directory_manager.directory_enums import DIRECTORY_MODEL_COMMANDS
+from trustly.app.view_managers.interactive.notice_manager.notice_enums import NOTICE_MODEL_CALLBACK
+from trustly.app.view_managers.interactive.policy_manager.policy_enums import POLICY_MODEL_CALLBACK
 
 def index(request):
   return homepage_view_model.getInstance().invoke_trigger(HOMEPAGE_MODEL_COMMANDS.M_INIT, request)
@@ -44,8 +33,6 @@ def privacy(request):
 def notice(request):
   return notice_view_model.getInstance().invoke_trigger(NOTICE_MODEL_CALLBACK.M_INIT, request)
 
-def secretkey(request):
-  return secret_key_view_model.getInstance().invoke_trigger(SECRET_KEY_MODEL_CALLBACK.M_INIT, request)
 
 def directory(request):
   return directory_view_model.getInstance().invoke_trigger(DIRECTORY_MODEL_COMMANDS.M_INIT, request)
@@ -68,34 +55,12 @@ def feeder(request):
 def block(request):
   return block_controller.getInstance().invoke_trigger(BLOCK_MODEL_CALLBACK.M_INIT, request)
 
-def restricted_static(request):
-  return render(None, CONSTANTS.S_TEMPLATE_RESTRICTED_WEBSITE_PATH)
-
-@ensure_csrf_cookie
-def cms_login(request):
-  return login_view_model.getInstance().invoke_trigger(LOGIN_MODEL_CALLBACK.M_INIT, request)
-
-def manage_status(request):
-  return manage_status_view_model.getInstance().invoke_trigger(MANAGE_STATUS_MODEL_CALLBACK.M_INIT, request)
-
-def manage_search(request):
-  if request.method == 'GET':
-    return manage_search_view_model.getInstance().invoke_trigger(MANAGE_SEARCH_MODEL_CALLBACK.M_INIT, request)
-  elif request.method == 'POST':
-    return render(None, CONSTANTS.S_TEMPLATE_BLOCK_WEBSITE_PATH, None)
-
 @csrf_exempt
 def crawl_index(request):
   return crawl_controller.getInstance().invoke_trigger(CRAWL_COMMANDS.M_INIT, request)
 
 def update_status(request):
   return external_request_controller.getInstance().invoke_trigger(EXTERNAL_REQUEST_COMMANDS.M_UPDATE_MODULE_STATUS, request)
-
-def manage_logout(request):
-  return user_auth_controller.getInstance().invoke_trigger(USER_AUTH_COMMANDS.M_LOGOUT, request)
-
-def cms_dashboard(request):
-  return dashboard_view_model.getInstance().invoke_trigger(DASHBOARD_MODEL_CALLBACK.M_INIT, request)
 
 def error_page_400(request, exception=None):
   return error_view_model.getInstance().invoke_trigger(ERROR_MODEL_CALLBACK.M_INIT, [request, 400])

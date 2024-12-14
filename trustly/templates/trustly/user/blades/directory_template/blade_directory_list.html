@@ -1,14 +1,14 @@
 {% load static %}
 
-<div class="onion__table--container clear-paddings">
-    <table class="table table-striped directory__table clear-paddings">
+<div class="directory-list__container clear-paddings">
+    <table class="table table-striped directory-list__table clear-paddings">
         <thead>
         <tr>
-            <th scope="row" class="column-id">ID</th>
-            <th scope="col" class="column-service-url">Service URL</th>
-            <th scope="col" class="column-category">Category</th>
-            <th scope="col" class="column-url-status">URL Status</th>
-            <th scope="col" class="column-leak-status">Leak Status</th>
+            <th scope="row" class="directory-list__column-id">ID</th>
+            <th scope="col" class="directory-list__column-service-url">Service URL</th>
+            <th scope="col" class="directory-list__column-category">Category</th>
+            <th scope="col" class="directory-list__column-url-status">URL Status</th>
+            <th scope="col" class="directory-list__column-leak-status">Leak Status</th>
         </tr>
         </thead>
         <tbody>
@@ -18,18 +18,18 @@
 
                 {% if mDoc.mContentType in 'i a adult' %}
                     <td data-label="Onion Service">
-                        <a href="/restricted" class="onion__table-url text-decoration-none text-reset">{{ mDoc.url|slice:"0:20" }}</a>...
+                        <a href="/restricted" class="directory-list__table-url text-decoration-none text-reset">{{ mDoc.url|slice:"0:20" }}</a>...
                     </td>
                 {% else %}
                     <td data-label="Onion Service">
-                        <a href="{{ mDoc.mURL }}" class="onion__table-url text-decoration-none text-reset">{{ mDoc.url }}</a>
+                        <a href="{{ mDoc.mURL }}" class="directory-list__table-url text-decoration-none text-reset">{{ mDoc.url }}</a>
                     </td>
                 {% endif %}
 
                 <td data-label="search-content__webpages-description--category">
                     <div class="d-flex flex-wrap">
                         {% for category in mDoc.content_type %}
-                            <div class="content--category px-2 py-1">
+                            <div class="directory-list__content-category px-2 py-1">
                                 {{ category|capfirst }}
                             </div>
                         {% endfor %}
@@ -38,12 +38,12 @@
 
                 {% if mDoc.url_status_date == 1 %}
                     <td data-label="URL Status" class="onion__table-leak-status">
-                        <span class="status_default_pointer"></span>
+                        <span class="directory-list__status-default-pointer"></span>
                         Active
                     </td>
                 {% else %}
                     <td data-label="URL Status" class="onion__table-leak-status">
-                        <span class="status_default_pointer status_inactive_pointer"></span>
+                        <span class="directory-list__status-default-pointer directory-list__status-inactive-pointer"></span>
                         Inactive
                     </td>
                 {% endif %}
@@ -51,12 +51,12 @@
 
                 {% if mDoc.leak_status_date == 1 %}
                     <td data-label="Leak Status" class="onion__table-leak-status">
-                        <span class="status_default_pointer"></span>
+                        <span class="directory-list__status-default-pointer"></span>
                         Active
                     </td>
                 {% else %}
                     <td data-label="Leak Status" class="onion__table-leak-status">
-                        <span class="status_default_pointer status_inactive_pointer"></span>
+                        <span class="directory-list__status-default-pointer directory-list__status-inactive-pointer"></span>
                         Inactive
                     </td>
                 {% endif %}

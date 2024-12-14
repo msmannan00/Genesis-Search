@@ -1,22 +1,20 @@
 {% load static %}
 <form class="searchbar" method="GET" action="" enctype="multipart/form-data">
-    <div class="profile__button">
+    <div class="searchbar__profile-button">
         <a>
             <img src="{% static 'trustly/images/profile-icon.svg' %}" alt="Brand Logo">
         </a>
     </div>
-    <div class="searchbar__logo--grid">
-        <div class="searchbar__logo--container">
+    <div class="searchbar__logo-grid">
+        <div class="searchbar__logo-container">
             <a href="../../.." class="searchbar__logo">
                 <img src="{% static 'trustly/images/search-logo.svg' %}" alt="Brand Logo">
             </a>
         </div>
 
-        <div class="header__div">
-            <!--trustly box-->
+        <div class="searchbar__header">
             <div class="searchbar__searchbox">
-
-                <input autocomplete="off" autocapitalize="none" type="search" class="searchbar_detail-header__search-input" maxlength="150" name="q" value="{{ mSearchCallbackQuery }}">
+                <input autocomplete="off" autocapitalize="none" type="search" class="searchbar__detail-header-search-input" maxlength="150" name="q" value="{{ mSearchCallbackQuery }}">
                 <input autocomplete="off" autocapitalize="none" type="hidden" class="form-control" name="mSearchParamPage" value="1">
                 <input autocomplete="off" autocapitalize="none" type="hidden" class="form-control" name="mSearchParamSafeSearch" value="{{ mSearchCallbackSaveSearch }}">
                 <input autocomplete="off" autocapitalize="none" type="hidden" class="form-control" name="pSearchParamType" value="{{ mSearchCallbackRelevantSearchType }}">
@@ -26,17 +24,17 @@
             </div>
         </div>
     </div>
-    <!--change trustly type like image video audio-->
-    <div>
-        <span id="catagory_all"><a href="/search?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&mSearchParamPage=1" class="{% if mSearchCallbackRelevantSearchType == 'all' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--right disable-highlight">All</a></span>
-        <span id="catagory_images"><a href="/search?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType=monitor&mSearchParamPage=1" class="{% if mSearchCallbackRelevantSearchType == 'monitor' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--width searchbar__search-items--left disable-highlight">Monitor</a></span>
-        <span id="catagory_images"><a href="/search?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType=marketplaces&mSearchParamPage=1" class="ml-3 {% if mSearchCallbackRelevantSearchType == 'marketplaces' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--width searchbar__search-items--left disable-highlight">Market</a></span>
-        <span id="catagory_finance"><a href="/search?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType=forums&mSearchParamPage=1" class="ml-2 {% if mSearchCallbackRelevantSearchType == 'forums' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--width searchbar__search-items--left disable-highlight">Forums</a></span>
-        <span id="catagory_news"><a href="/search?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType=news&mSearchParamPage=1" class="{% if mSearchCallbackRelevantSearchType == 'news' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--left disable-highlight searchbar_detail-header__catagories--margin-right">News</a></span>
 
-        <span id="catagory_analytics" class="searchbar__nav_right"><a href="/#analytics" class="{% if mSearchCallbackRelevantSearchType == 'news' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--left disable-highlight searchbar_detail-header__catagories--margin-right">Analytics</a></span>
-        <span id="catagory_directory" class="searchbar__nav_right"><a href="/directory" class="{% if mSearchCallbackRelevantSearchType == 'news' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--left disable-highlight searchbar_detail-header__catagories--margin-right">Links</a></span>
-        <span id="catagory_index" class="searchbar__nav_right"><a href="/" class="{% if mSearchCallbackRelevantSearchType == 'news' %} searchbar__search-items_active_default {% endif %} searchbar__search-items searchbar__search-items--left disable-highlight searchbar_detail-header__catagories--margin-right">Home</a></span>
+    <div>
+        <span id="catagory_all"><a href="/search?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&mSearchParamPage=1" class="{% if mSearchCallbackRelevantSearchType == 'all' %} searchbar__search-items-active-default {% endif %} searchbar__search-items searchbar__search-items--right disable-highlight">All</a></span>
+        <span id="catagory_images"><a href="/search?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType=monitor&mSearchParamPage=1" class="{% if mSearchCallbackRelevantSearchType == 'monitor' %} searchbar__search-items-active-default {% endif %} searchbar__search-items searchbar__search-items--width searchbar__search-items--left disable-highlight">Monitor</a></span>
+        <span id="catagory_images"><a href="/search?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType=marketplaces&mSearchParamPage=1" class="ml-3 {% if mSearchCallbackRelevantSearchType == 'marketplaces' %} searchbar__search-items-active-default {% endif %} searchbar__search-items searchbar__search-items--width searchbar__search-items--left disable-highlight">Market</a></span>
+        <span id="catagory_finance"><a href="/search?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType=forums&mSearchParamPage=1" class="ml-2 {% if mSearchCallbackRelevantSearchType == 'forums' %} searchbar__search-items-active-default {% endif %} searchbar__search-items searchbar__search-items--width searchbar__search-items--left disable-highlight">Forums</a></span>
+        <span id="catagory_news"><a href="/search?q={{ mSearchCallbackQuery }}&mSearchParamSafeSearch={{ mSearchCallbackSaveSearch }}&pSearchParamType=news&mSearchParamPage=1" class="{% if mSearchCallbackRelevantSearchType == 'news' %} searchbar__search-items-active-default {% endif %} searchbar__search-items searchbar__search-items--left disable-highlight searchbar__detail-header-catagories-margin-right">News</a></span>
+
+        <span id="catagory_analytics" class="searchbar__nav-right"><a href="/#analytics" class="searchbar__search-items searchbar__search-items--left disable-highlight searchbar__detail-header-catagories-margin-right">Analytics</a></span>
+        <span id="catagory_directory" class="searchbar__nav-right"><a href="/directory" class="searchbar__search-items searchbar__search-items--left disable-highlight searchbar__detail-header-catagories-margin-right">Links</a></span>
+        <span id="catagory_index" class="searchbar__nav-right"><a href="/" class="searchbar__search-items searchbar__search-items--left disable-highlight searchbar__detail-header-catagories-margin-right">Home</a></span>
     </div>
 </form>
 

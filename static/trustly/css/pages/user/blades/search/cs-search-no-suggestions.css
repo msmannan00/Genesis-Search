@@ -1,4 +1,4 @@
-.search__no-suggestion--main-container {
+.search__no-suggestion-main-container {
   min-height: 50vh;
 }
 
@@ -11,14 +11,14 @@
   background: #2A578459;
 }
 
-.search__no-suggestion--header {
+.search__no-suggestion-header {
   float: left;
   font-size: 15px;
   color: #FFFFFF;
   font-weight: 400;
 }
 
-.search__no-suggestion--text {
+.search__no-suggestion-text {
   font-size: 15px;
   margin-top: -10px;
   width: 100%;
@@ -27,13 +27,13 @@
   font-weight: 400;
 }
 
-.search__no-suggestion--container {
+.search__no-suggestion-container {
   clear: left;
   margin-left: 12px;
   padding: 0;
 }
 
-.search__no-suggestion--item {
+.search__no-suggestion-item {
   font-size: 13px;
   margin-top: -2px;
   color: #FFFFFF;

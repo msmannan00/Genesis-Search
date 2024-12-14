@@ -1,57 +1,65 @@
-.pagination {
+.directory-pagination {
   display: flex;
-  justify-content: flex-end;
-  list-style: none;
-  padding: 0;
-  color: white !important;
-  margin: 0 0 0 -4px;
-  float: right;
+  width: 50%;
+  justify-content: end;
+  align-items: center;
+  float:right;
+  margin-top:8px
 }
 
-.pagination li {
+.directory-pagination li {
   margin: 0 5px;
 }
 
-.pagination li a {
+.directory-pagination li button {
   display: flex;
+  border: 0;
   justify-content: center;
   align-items: center;
   width: 35px;
   height: 35px;
   background: #12335450;
+  color: grey;
   border-radius: 10px;
   text-decoration: none;
   font-size: 14px;
   margin-left: -6px !important;
   font-weight: bold;
+  outline: none;
   transition: background-color 0.3s, transform 0.3s;
 }
 
-.pagination li a img {
+.directory-pagination li button img {
   width: 20px;
   height: 20px;
 }
 
-.pagination li a:hover {
+.directory-pagination li button:hover {
   background: #12335450;
+  color: white;
   transform: scale(1.1);
+  border: 0;
 }
 
-.pagination li.disabled a {
+.directory-pagination li.disabled button {
+  border: 0;
   opacity: 0.4 !important;
   color: white;
   pointer-events: none;
+  outline: none;
 }
 
-.pagination li.active a {
+.directory-pagination li.active button{
   background: #102A4685 !important;
   color: white !important;
+  border: 0;
   pointer-events: none;
   font-weight: bold;
+  outline: none;
 }
 
 @media only screen and (max-width: 943px) {
-  .pagination {
+  .directory-pagination {
     display: flex;
     width: 50%;
     justify-content: start;

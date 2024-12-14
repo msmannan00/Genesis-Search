@@ -1,4 +1,4 @@
-from trustly.controllers.helper_manager.env_handler import env_handler
+from trustly.app.helper_manager.env_handler import env_handler
 
 
 class ELASTIC_CRUD_COMMANDS:
@@ -40,7 +40,6 @@ class ELASTIC_KEYS:
 class ELASTIC_REQUEST_COMMANDS:
   S_SEARCH = 1
   S_ONION_LIST = 2
-  S_QUERY_RAW = 3
   S_INDEX_GENERAL = 4
   S_INDEX_LEAK = 5
   S_CLEAR_EXPIRE_INDEX = 6

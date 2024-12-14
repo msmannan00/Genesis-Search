@@ -1559,12 +1559,12 @@ END Footer Area
     padding-top: 20px;
 }
 
-.pagination {
+.directory-pagination {
     text-align: center;
     width: 100%;
 }
 
-.pagination ul {
+.directory-pagination ul {
     display: inline-block;
     background: #ff6818;
     padding: 4px 7px;
@@ -1572,12 +1572,12 @@ END Footer Area
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
 
-.pagination ul li {
+.directory-pagination ul li {
     display: inline-block;
 }
 
-.pagination ul li a,
-.pagination ul li span {
+.directory-pagination ul li a,
+.directory-pagination ul li span {
     display: block;
     padding: 10px 10px;
     color: #fff;
@@ -1585,8 +1585,8 @@ END Footer Area
     font-weight: 500;
 }
 
-.pagination ul li a:hover,
-.pagination ul li span {
+.directory-pagination ul li a:hover,
+.directory-pagination ul li span {
     color: #444;
 }
 

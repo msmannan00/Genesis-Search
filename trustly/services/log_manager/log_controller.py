@@ -101,7 +101,8 @@ class log:
       formatted_log = f"{log_type} - {current_time} : {p_log}"
     return formatted_log
 
-  def __cleanup_old_logs(self, retention_days=30):
+  @staticmethod
+  def __cleanup_old_logs(retention_days=30):
     try:
       now = datetime.datetime.now().date()
       if log.__last_cleanup_date == now:

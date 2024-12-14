@@ -1,3 +1,4 @@
+from abc import ABC
 from datetime import datetime, timezone
 from django.http import JsonResponse
 from trustly.services.elastic_manager.elastic_controller import elastic_controller
@@ -7,7 +8,7 @@ from trustly.services.redis_manager.redis_enums import REDIS_COMMANDS, REDIS_KEY
 from trustly.services.request_manager.request_handler import request_handler
 
 
-class insight_job(request_handler):
+class insight_job(request_handler, ABC):
   __instance = None
 
   # Initializations
@@ -68,9 +69,6 @@ class insight_job(request_handler):
             if key.endswith("/Document") and document_count > 0:
               item[key] = round(value / document_count, 4)
 
-    print("::::::::::::::::::::::::::::::::::::", flush=True)
-    print(grouped_results, flush=True)
-    print("::::::::::::::::::::::::::::::::::::", flush=True)
     return grouped_results
 
   @staticmethod
@@ -109,7 +107,8 @@ class insight_job(request_handler):
     except Exception as e:
       return f"Error processing insights: {str(e)}"
 
-  def get_trending_insights(self):
+  @staticmethod
+  def get_trending_insights():
     insight_old = redis_controller().invoke_trigger(REDIS_COMMANDS.S_GET_STRING, [REDIS_KEYS.INSIGHT_NEW_DAY, REDIS_DEFAULT.INSIGHT_DEFAULT, None])
     insight = eval(insight_old)
 

@@ -11,28 +11,23 @@
 <div class="search_container">
     <div class="search">
 
-        <!-- non onion url -->
-        {% include 'trustly/user/blades/shared_blades/blade_onion_warning.html' %}
-
         <!-- top bar -->
         {% include 'trustly/user/blades/search_template/blade_search_header.html' %}
         {% include 'trustly/user/blades/search_template/blade_search_safe_search.html' %}
         <div class="row">
-            <div class="search__results__div">
+            <div class="search__results">
                 {% include 'trustly/user/blades/search_template/blade_search_content.html' %}
+                {% if mSearchCallbackRelevantDocument|length == 0 %}
+                    {% include 'trustly/user/blades/search_template/blade_search_no_suggestion.html' %}
+                {% endif %}
             </div>
-            <div class="search__content__right__div">
-                {% include 'trustly/user/blades/search_template/blade_keyword_insight_dropdown.html' %}
+            <div class="search__content__right">
+                {% include 'trustly/user/blades/search_template/blade_search_insight.html' %}
             </div>
         </div>
-
-        <!-- content bar -->
-        {% include 'trustly/user/blades/search_template/blade_search_content.html' %}
     </div>
 
     <!-- pagination -->
-
-
     {% include 'trustly/user/blades/search_template/blade_search_pagination.html' %}
 </div>
 
