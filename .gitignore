@@ -13,3 +13,11 @@ db.sqlite3
 .env
 db.sqlite3
 .env
+swagconfig/index.css.gz
+swagconfig/index.html.gz
+swagconfig/swagger-initializer.js
+swagconfig/swagger-initializer.js.gz
+swagconfig/swagger-ui-bundle.js.gz
+swagconfig/swagger-ui-standalone-preset.js.gz
+swagconfig/swagger-ui.css.gz
+swagconfig/swaggerconfigv1.js.gz
