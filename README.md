@@ -26,7 +26,7 @@ Designed with flexibility and scalability in mind, Orion enables OSINT experts t
     <tr>
       <td><a href="https://github.com/msmannan00/Orion-Browser">Orion Browser</a></td>
       <td style="text-align:center"><img src="https://app.codacy.com/project/badge/Grade/94c252c8ce904c4cbbc4146a463b4d9e" alt="Codacy Badge"></td>
-      <td style="text-align:center"><img src="https://github.com/msmannan00/Orion-Browser/actions/workflows/codeql.yml/badge.svg" alt="CodeQL"></td>
+      <td style="text-align:center"><img src="https://github.com/msmannan00/Orion-Browser/actions/workflows/github-code-scanning/codeql/badge.svg" alt="CodeQL"></td>
     </tr>
     <tr>
       <td><a href="https://github.com/msmannan00/Orion-Crawler">Orion Crawler</a></td>
@@ -45,8 +45,8 @@ Designed with flexibility and scalability in mind, Orion enables OSINT experts t
     </tr>
     <tr>
       <td><a href="https://github.com/msmannan00/Globaleaks-Canary">Globaleaks Canary</a></td>
-      <td style="text-align:center"><img src="https://app.codacy.com/project/badge/Grade/5bb27be281134d82a4808e0ab6617be1" alt="Codacy Badge"></td>
       <td style="text-align:center"><img src="https://app.codacy.com/project/badge/Grade/1e26f9b0bf504a2e8c5bf0fb22cf9e0b" alt="Codacy Badge"></td>
+      <td style="text-align:center"> - </td>
     </tr>    
   </tbody>
 </table>
