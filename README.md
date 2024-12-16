@@ -12,7 +12,46 @@ The platform integrates seamlessly with machine learning models, enhancing searc
 Designed with flexibility and scalability in mind, Orion enables OSINT experts to feed data directly into the platform, ensuring up-to-date and comprehensive datasets. Whether for investigative research, competitive analysis, or general information gathering, Orion provides a unified ecosystem that enhances the workflow of professionals who rely on actionable insights.<br>
 <br>
 
-## 🛠️Technology Stack
+## 1. Repository Quality and Build Status
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th style="text-align:left">Repository</th>
+      <th style="text-align:center">Codacy</th>
+      <th style="text-align:center">CodeQL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/msmannan00/Orion-Browser">Orion Browser</a></td>
+      <td style="text-align:center"><img src="https://app.codacy.com/project/badge/Grade/94c252c8ce904c4cbbc4146a463b4d9e" alt="Codacy Badge"></td>
+      <td style="text-align:center"><img src="https://github.com/msmannan00/Orion-Browser/actions/workflows/codeql.yml/badge.svg" alt="CodeQL"></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/msmannan00/Orion-Crawler">Orion Crawler</a></td>
+      <td style="text-align:center"><img src="https://app.codacy.com/project/badge/Grade/94c252c8ce904c4cbbc4146a463b4d9e" alt="Codacy Badge"></td>
+      <td style="text-align:center"><img src="https://github.com/msmannan00/Orion-Crawler/actions/workflows/github-code-scanning/codeql/badge.svg" alt="CodeQL"></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/msmannan00/Orion-Search">Orion Search</a></td>
+      <td style="text-align:center"><img src="https://app.codacy.com/project/badge/Grade/a1f302d35c0f4f8c9293acabc5086512" alt="Codacy Badge"></td>
+      <td style="text-align:center"><img src="https://github.com/msmannan00/Orion-Search/actions/workflows/github-code-scanning/codeql/badge.svg" alt="CodeQL"></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/msmannan00/Orion-Collector">Orion Collector</a></td>
+      <td style="text-align:center"><img src="https://app.codacy.com/project/badge/Grade/a1f302d35c0f4f8c9293acabc5086512" alt="Codacy Badge"></td>
+      <td style="text-align:center"><img src="https://github.com/msmannan00/Orion-Collector/actions/workflows/github-code-scanning/codeql/badge.svg" alt="CodeQL"></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/msmannan00/Globaleaks-Canary">Globaleaks Canary</a></td>
+      <td style="text-align:center"><img src="https://app.codacy.com/project/badge/Grade/5bb27be281134d82a4808e0ab6617be1" alt="Codacy Badge"></td>
+      <td style="text-align:center"> - </td>
+    </tr>
+  </tbody>
+</table>
+
+## 2. Technology Stack
 
 The Orion platform is built using various technologies to provide optimal search capabilities and data handling. Below is the list of libraries and frameworks used:
 
@@ -26,7 +65,7 @@ The Orion platform is built using various technologies to provide optimal search
 ![java](https://badgen.net/badge/browser/java/cyan)
 ![kotlin](https://badgen.net/badge/browser/kotlin/yellow)
 
-## 📦Associated Repositories
+## 3. Associated Repositories
 
 | Repository                                                                 | Description                                                                                                 | Stats                                                                                                     |
 |----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
@@ -37,18 +76,18 @@ The Orion platform is built using various technologies to provide optimal search
 | [Globaleaks Canary](https://github.com/msmannan00/Globaleaks-Canary)       | A tool for passive intelligence and whistleblowing.                                                     | ![Stars](https://img.shields.io/github/stars/msmannan00/Globaleaks-Canary?style=social) ![Forks](https://img.shields.io/github/forks/msmannan00/Globaleaks-Canary?style=social) |
 
 
-## 🔍Data Extraction Techniques
+## 4. Data Extraction Techniques
 This is a comprehensive flow diagram illustrating the functioning of the multithreaded crawler. It outlines the entire process, from initializing threads and managing task distribution to efficiently retrieving and processing data from multiple sources concurrently. The diagram highlights key components, such as task queues, thread synchronization mechanisms, and data handling workflows, providing a clear and detailed representation of the crawler's architecture and operational flow
 
 ![image(1)](https://github.com/user-attachments/assets/696cf009-a0f3-4995-91fe-58e53b128825)
 
 
-## 📈Deep Data Linting Roadmap
+## 5. Deep Data Linting Roadmap
 This document outlines the proposed solution and future roadmap for deep data linting, focusing on integrating insights from multiple sources into a unified platform. The solution emphasizes advanced data validation, cross-source correlation, and seamless integration to ensure comprehensive data quality checks. The roadmap highlights phased development, scalability enhancements, and feature expansions aimed at providing a robust and centralized approach to data insight and linting
 
 ![linting(2)](https://github.com/user-attachments/assets/ce1885dc-e701-45f6-89ab-9f412b057373)
 
-## ⚙️Browser Support
+## 6. Browser Support
 
 Orion Browser is an Android application designed to provide a secure, private browsing experience by leveraging onion routing technology. This browser empowers users to access hidden web content anonymously, unblock restricted sites, and browse freely while safeguarding their online identity.
 
