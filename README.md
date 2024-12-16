@@ -3,68 +3,28 @@
 
 ![homepage](https://github.com/user-attachments/assets/37fcf444-40be-46c9-8bd8-45a22d824141)
 
-# Orion Browser
-<table>
-<tr>
-<td>
+# Orion Platform
 <br>
-Orion Browser Engine is a web-based search tool built on top of Docker that provides a user-friendly interface to explore and visualize data extracted by the Orion Crawler. The engine supports a vast array of functionalities, offering users the ability to search, filter, and visualize data across multiple categories. It integrates machine learning models for enhanced search relevance and content analysis.
+Orion Platform is a comprehensive, web-based solution that combines the functionality of a browser, search engine, crawler, and data aggregation tools to empower OSINT (Open Source Intelligence) experts. Built on top of Docker, Orion provides a user-friendly interface to explore, search, and visualize data extracted by its powerful Orion Crawler.<br><br>
+
+The platform integrates seamlessly with machine learning models, enhancing search relevance and enabling advanced content analysis. Orion supports a broad range of functionalities, including the ability to search, filter, and visualize data across multiple categories, making it an invaluable tool for data exploration and intelligence gathering.<br>
+
+Designed with flexibility and scalability in mind, Orion enables OSINT experts to feed data directly into the platform, ensuring up-to-date and comprehensive datasets. Whether for investigative research, competitive analysis, or general information gathering, Orion provides a unified ecosystem that enhances the workflow of professionals who rely on actionable insights.<br>
 <br>
-<br>
-</td>
-</tr>
-<br>
-<tr>
-<td>
-<br>
-
-**1. Docker-Based Deployment**: Quick setup and deployment using Docker.
-
-**2. Advanced Search Functionality**: Provides comprehensive search capabilities with various filters and options to refine search results.
-
-**3. Data Visualization**: Generates visual representations of the data, making it easier to analyze search results.
-
-**4. Customizable Search Parsers**: Allows for integrating custom parsers to refine data extraction from specific websites.
-
-**5. Integrated Machine Learning Models**: Incorporates NLP and machine learning models to provide search relevance, content categorization, and detection of specific data patterns.
-<br><br>
-</td>
-</tr>
-</table>
-
 
 ## Technology Stack
 
-The Orion Search Engine is built using various technologies to provide optimal search capabilities and data handling. Below is the list of libraries and frameworks used:
+The Orion platform is built using various technologies to provide optimal search capabilities and data handling. Below is the list of libraries and frameworks used:
 
-<table>
-  <tr>
-    <td align="center">
-      <img src="https://w7.pngwing.com/pngs/956/695/png-transparent-mongodb-original-wordmark-logo-icon.png" alt="MongoDB" height="50">
-      <br>MongoDB
-    </td>
-    <td align="center">
-      <img src="https://upload.wikimedia.org/wikipedia/en/6/6b/Redis_Logo.svg" alt="Redis" height="50">
-      <br>Redis
-    </td>
-    <td align="center">
-      <img src="https://docs.celeryproject.org/en/stable/_static/celery_512.png" alt="Celery" height="50">
-      <br>Celery
-    </td>
-    <td align="center">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" height="50">
-      <br>Python
-    </td>
-    <td align="center">
-      <img src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2018/09/tor-logo.jpeg" alt="Tor" height="50">
-      <br>Tor
-    </td>
-    <td align="center">
-      <img src="https://doc.traefik.io/traefik/assets/img/traefik.logo.png" alt="Traefik" height="50">
-      <br>Traefik
-    </td>
-  </tr>
-</table>
+![MongoDB](https://badgen.net/badge/search-crawler/MongoDB/green)
+![Redis](https://badgen.net/badge/search-crawler/Redis/red)
+![Celery](https://badgen.net/badge/crawler/Celery/red)
+![Python](https://badgen.net/badge/search-crawler/Python/blue)
+![Tor](https://badgen.net/badge/search-crawler/Tor/purple)
+![Traefik](https://badgen.net/badge/search/Traefik/orange)
+![elastic](https://badgen.net/badge/search/elastic/pink)
+![java](https://badgen.net/badge/browser/java/cyan)
+![kotlin](https://badgen.net/badge/browser/kotlin/yellow)
 
 ## Data Extraction Techniques
 This is a comprehensive flow diagram illustrating the functioning of the multithreaded crawler. It outlines the entire process, from initializing threads and managing task distribution to efficiently retrieving and processing data from multiple sources concurrently. The diagram highlights key components, such as task queues, thread synchronization mechanisms, and data handling workflows, providing a clear and detailed representation of the crawler's architecture and operational flow
