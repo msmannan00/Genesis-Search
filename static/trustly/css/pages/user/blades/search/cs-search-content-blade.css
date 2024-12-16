@@ -21,7 +21,7 @@
   padding-left: 20px;
 }
 
-.highlight-description{
+.highlight-description {
   font-weight: bold;
   color: #00bfff;
 }
@@ -185,8 +185,11 @@
 }
 
 .search-result__tabs-radio:checked + .search-result__label + .search-result__tabs-content {
-  max-height: 1500px;
+  max-height: 350px;
+  overflow-y: scroll;
   opacity: 1;
+  scrollbar-width: thin;
+  scrollbar-color: #2A5784 #2A578459;
 }
 
 .search-result__tabs-radio:checked + .search-result__label {

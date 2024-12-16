@@ -39,6 +39,10 @@ input[type="checkbox"]:checked ~ .search-insights__content {
   padding: 15px 15px 0 15px;
 }
 
+input[type="checkbox"]:checked ~ .search-insights__header img {
+  transform: rotate(180deg);
+}
+
 .search-insights__container label {
   margin-bottom: 0;
   font-size: 13px;
@@ -130,19 +134,26 @@ input[type="checkbox"]:checked ~ .search-insights__content {
   transition: transform 0.3s;
   cursor: pointer;
   font-family: Roboto, sans-serif;
+  margin-right: -4px;
 }
 
 .search-insights__unique-url-content {
   max-height: 0;
+  opacity: 0;
   overflow-y: hidden;
   transition: max-height 0.3s ease;
 }
 
 input[type="checkbox"]:checked ~ .search-insights__unique-url-content {
   max-height: 250px;
+  opacity: 1;
   overflow-y: auto;
   position: relative;
   mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+
+input[type="checkbox"]:checked ~ .search-insights__unique-url-header img {
+  transform: rotate(180deg);
 }
 
 input[type="checkbox"]:checked ~ .search-insights__unique-url-content {
@@ -158,7 +169,7 @@ input[type="checkbox"]:checked ~ .search-insights__unique-url-content {
   color: #D0D0D0;
 }
 
-.search-insight__unique_url__url{
+.search-insight__unique_url__url {
   color: #fff;
   font-size: 12px;
 }
@@ -214,7 +225,10 @@ input[type="checkbox"]:checked ~ .search-insights__unique-url-content {
   scrollbar-width: thin;
   scrollbar-color: #2A5784 #2A578459;
 }
-
+.search-insights__email-content{
+  scrollbar-width: thin;
+  scrollbar-color: #2A5784 #2A578459;
+}
 
 .search-insights__email-accordion {
   width: 520px;
@@ -241,6 +255,7 @@ input[type="checkbox"]:checked ~ .search-insights__unique-url-content {
   height: 16px;
   transition: transform 0.3s;
   cursor: pointer;
+  margin-right: -4px;
 }
 
 input[type="checkbox"] {
@@ -249,6 +264,7 @@ input[type="checkbox"] {
 
 .search-insights__email-content {
   max-height: 0;
+  opacity: 0;
   overflow-y: scroll;
   overflow-x: hidden;
   transition: max-height 0.3s ease, padding 0.3s ease;
@@ -256,12 +272,15 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked ~ .search-insights__email-content {
   max-height: 250px;
+  opacity: 1;
   padding: 15px 15px 0 0;
   overflow-y: auto;
   position: relative;
   mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
 }
-
+input[type="checkbox"]:checked ~ .search-insights__email-header img {
+  transform: rotate(180deg);
+}
 .search-insights__email-content {
   scroll-behavior: smooth;
 }
@@ -340,9 +359,9 @@ input[type="checkbox"]:checked ~ .search-insights__email-content {
   }
 
   @media only screen and (max-width: 1000px) {
-  .search-insights__container {
-    width: 95vw;
-  }
+    .search-insights__container {
+      width: 95vw;
+    }
   }
 
 }

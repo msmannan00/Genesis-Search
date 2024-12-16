@@ -39,6 +39,7 @@ html {
 
   .search__results {
     width: 100vw !important;
+    padding-bottom: 0px;
   }
 
   .search {

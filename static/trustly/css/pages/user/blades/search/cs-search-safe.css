@@ -54,3 +54,13 @@
   }
 
 }
+
+@media only screen and (max-width: 600px) {
+  .safe__search-toolbar {
+    margin-left: 3px;
+  }
+
+  .search-result__content-webpages-container {
+    padding-left: 0px!important;
+  }
+}
