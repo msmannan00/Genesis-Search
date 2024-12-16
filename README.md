@@ -66,43 +66,6 @@ The Orion Search Engine is built using various technologies to provide optimal s
   </tr>
 </table>
 
-## Setup and Installation
-
-To get started with Orion Search, follow these steps:
-
-#### 1. Clone the Repository
-
-Clone the repository from GitHub and navigate to the project directory.
-
-```
-https://github.com/msmannan00/Orion-Search.git
-cd Orion-Search
-```
-
-#### 2. Install Dependencies
-
-Ensure you have Docker and Docker Compose installed on your machine. Once installed, the dependencies will be handled via Docker Compose.
-
-#### 3. Build and Start the Search
-
-Use Docker Compose to build and run the search:
-
-```
-./run.sh build
-```
-to simply start the search run
-```
-./run.sh
-```
-
-This will start the search engine, which can now begin visualizing collected data.
-
-#### 4. Customizing Parsers (Optional for Specific Crawler)
-
-For specific website crawling, you can provide your own parsers. Load them onto the server and configure the crawler to use these custom parsers for enhanced scraping capabilities.
-```
-add custom parsers inside static/trustly/.well-known/parsers with same onion website name
-```
 ## Data Extraction Techniques
 This is a comprehensive flow diagram illustrating the functioning of the multithreaded crawler. It outlines the entire process, from initializing threads and managing task distribution to efficiently retrieving and processing data from multiple sources concurrently. The diagram highlights key components, such as task queues, thread synchronization mechanisms, and data handling workflows, providing a clear and detailed representation of the crawler's architecture and operational flow
 
