@@ -12,7 +12,7 @@ load_dotenv()
 
 SECRET_KEY = os.getenv('S_FERNET_KEY')
 
-DEBUG = True
+DEBUG = os.getenv("PRODUCTION", "0") == "1"
 PRODUCTION_DOMAIN = os.getenv('PRODUCTION_DOMAIN', 'your-production-domain.com')
 
 ALLOWED_HOSTS = ['*'] if DEBUG else [PRODUCTION_DOMAIN]

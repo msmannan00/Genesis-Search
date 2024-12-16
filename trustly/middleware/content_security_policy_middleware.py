@@ -18,6 +18,7 @@ class content_security_policy_middleware(MiddlewareMixin):
             "base-uri 'self'; "
             "upgrade-insecure-requests; "
             "report-uri /csp-report-endpoint/; "
-            "report-to csp-endpoint;"
+            "report-to csp-endpoint; "
+            "require-trusted-types-for 'script';"
         )
         return response
