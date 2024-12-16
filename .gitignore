@@ -9,9 +9,6 @@ logs/*
 staticfiles/*
 mongo-data/*
 static/trustly/.well-known/model/*
-db.sqlite3
-.env
-db.sqlite3
 .env
 swagconfig/index.css.gz
 swagconfig/index.html.gz
