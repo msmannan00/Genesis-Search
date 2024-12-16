@@ -12,7 +12,7 @@ The platform integrates seamlessly with machine learning models, enhancing searc
 Designed with flexibility and scalability in mind, Orion enables OSINT experts to feed data directly into the platform, ensuring up-to-date and comprehensive datasets. Whether for investigative research, competitive analysis, or general information gathering, Orion provides a unified ecosystem that enhances the workflow of professionals who rely on actionable insights.<br>
 <br>
 
-## Technology Stack
+## 🛠️Technology Stack
 
 The Orion platform is built using various technologies to provide optimal search capabilities and data handling. Below is the list of libraries and frameworks used:
 
@@ -26,24 +26,35 @@ The Orion platform is built using various technologies to provide optimal search
 ![java](https://badgen.net/badge/browser/java/cyan)
 ![kotlin](https://badgen.net/badge/browser/kotlin/yellow)
 
-## Data Extraction Techniques
+## 📦Associated Repositories
+
+| Repository                                                                 | Description                                                                                                 | Stats                                                                                                     |
+|----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| [Orion Browser](https://github.com/msmannan00/Orion-Browser)               | A harvester-based browser used to scrape data as you browse.                                             | ![Stars](https://img.shields.io/github/stars/msmannan00/Orion-Browser?style=social) ![Forks](https://img.shields.io/github/forks/msmannan00/Orion-Browser?style=social) |
+| [Orion Crawler](https://github.com/msmannan00/Orion-Crawler)               | Used for monitoring and continuously crawling the hidden web.                                            | ![Stars](https://img.shields.io/github/stars/msmannan00/Orion-Crawler?style=social) ![Forks](https://img.shields.io/github/forks/msmannan00/Orion-Crawler?style=social) |
+| [Orion Search](https://github.com/msmannan00/Orion-Search)                 | A platform to visualize extracted data.                                                                 | ![Stars](https://img.shields.io/github/stars/msmannan00/Orion-Search?style=social) ![Forks](https://img.shields.io/github/forks/msmannan00/Orion-Search?style=social) |
+| [Orion Collector](https://github.com/msmannan00/Orion-Collector)           | Simplifies the task of creating custom crawling scripts for multiple websites.                          | ![Stars](https://img.shields.io/github/stars/msmannan00/Orion-Collector?style=social) ![Forks](https://img.shields.io/github/forks/msmannan00/Orion-Collector?style=social) |
+| [Globaleaks Canary](https://github.com/msmannan00/Globaleaks-Canary)       | A tool for passive intelligence and whistleblowing.                                                     | ![Stars](https://img.shields.io/github/stars/msmannan00/Globaleaks-Canary?style=social) ![Forks](https://img.shields.io/github/forks/msmannan00/Globaleaks-Canary?style=social) |
+
+
+## 🔍Data Extraction Techniques
 This is a comprehensive flow diagram illustrating the functioning of the multithreaded crawler. It outlines the entire process, from initializing threads and managing task distribution to efficiently retrieving and processing data from multiple sources concurrently. The diagram highlights key components, such as task queues, thread synchronization mechanisms, and data handling workflows, providing a clear and detailed representation of the crawler's architecture and operational flow
 
 ![image(1)](https://github.com/user-attachments/assets/696cf009-a0f3-4995-91fe-58e53b128825)
 
 
-## Deep Data Linting Roadmap
+## 📈Deep Data Linting Roadmap
 This document outlines the proposed solution and future roadmap for deep data linting, focusing on integrating insights from multiple sources into a unified platform. The solution emphasizes advanced data validation, cross-source correlation, and seamless integration to ensure comprehensive data quality checks. The roadmap highlights phased development, scalability enhancements, and feature expansions aimed at providing a robust and centralized approach to data insight and linting
 
 ![linting(2)](https://github.com/user-attachments/assets/ce1885dc-e701-45f6-89ab-9f412b057373)
 
-### Browser Support
+## ⚙️Browser Support
 
 Orion Browser is an Android application designed to provide a secure, private browsing experience by leveraging onion routing technology. This browser empowers users to access hidden web content anonymously, unblock restricted sites, and browse freely while safeguarding their online identity.
 
 ![JPJ pdf](https://github.com/user-attachments/assets/399fd130-988d-4e0d-acef-2f60d6220a81)
 
-## Contribution
+## 🌟Contribution
 
 We welcome contributions to improve Orion Search. If you'd like to contribute, please fork the repository and submit a pull request.
 
