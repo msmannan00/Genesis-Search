@@ -1,5 +1,10 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/a1f302d35c0f4f8c9293acabc5086512)](https://app.codacy.com/gh/msmannan00/Orion-Search/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-![CodeQL Analysis](https://github.com/msmannan00/Genesis-Search/actions/workflows/github-code-scanning/codeql/badge.svg)
+[![CodeQL Analysis](https://github.com/msmannan00/Genesis-Search/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/msmannan00/Genesis-Search/actions/workflows/github-code-scanning/codeql)
+[![MDN HTTP Observatory](https://img.shields.io/badge/observatory-A%2B-brightgreen)](https://developer.mozilla.org/en-US/observatory/analyze?host=orion.whistleaks.com)
+[![Security Headers](https://img.shields.io/badge/security%20headers-A%2B-brightgreen)](https://securityheaders.com/?q=https%3A%2F%orion.whistleaks.com%2F)
+[![SSLLabs](https://img.shields.io/static/v1?label=SSLLabs&message=A%2B&color=brightgreen)](https://www.ssllabs.com/ssltest/analyze.html?d=orion.whistleaks.com&latest)
+[![PageSpeed Insights](https://img.shields.io/badge/PageSpeed%20Insights-100%25-brightgreen)](https://pagespeed.web.dev/analysis/https-orion-whistleaks-com/r5jf6x7xj5?form_factor=desktop)
+
 
 ![homepage](https://github.com/user-attachments/assets/37fcf444-40be-46c9-8bd8-45a22d824141)
 
@@ -13,43 +18,13 @@ Designed with flexibility and scalability in mind, Orion enables OSINT experts t
 <br>
 
 ## 1. Repository Quality and Build Status
-
-<table style="width:100%">
-  <thead>
-    <tr>
-      <th style="text-align:left">Repository</th>
-      <th style="text-align:center">Codacy</th>
-      <th style="text-align:center">CodeQL</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://github.com/msmannan00/Orion-Browser">Orion Browser</a></td>
-      <td style="text-align:center"><img src="https://app.codacy.com/project/badge/Grade/94c252c8ce904c4cbbc4146a463b4d9e" alt="Codacy Badge"></td>
-      <td style="text-align:center"><img src="https://github.com/msmannan00/Orion-Browser/actions/workflows/github-code-scanning/codeql/badge.svg" alt="CodeQL"></td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/msmannan00/Orion-Crawler">Orion Crawler</a></td>
-      <td style="text-align:center"><img src="https://app.codacy.com/project/badge/Grade/94c252c8ce904c4cbbc4146a463b4d9e" alt="Codacy Badge"></td>
-      <td style="text-align:center"><img src="https://github.com/msmannan00/Orion-Crawler/actions/workflows/github-code-scanning/codeql/badge.svg" alt="CodeQL"></td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/msmannan00/Orion-Search">Orion Search</a></td>
-      <td style="text-align:center"><img src="https://app.codacy.com/project/badge/Grade/a1f302d35c0f4f8c9293acabc5086512" alt="Codacy Badge"></td>
-      <td style="text-align:center"><img src="https://github.com/msmannan00/Orion-Search/actions/workflows/github-code-scanning/codeql/badge.svg" alt="CodeQL"></td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/msmannan00/Orion-Collector">Orion Collector</a></td>
-      <td style="text-align:center"><img src="https://app.codacy.com/project/badge/Grade/a1f302d35c0f4f8c9293acabc5086512" alt="Codacy Badge"></td>
-      <td style="text-align:center"><img src="https://github.com/msmannan00/Orion-Collector/actions/workflows/github-code-scanning/codeql/badge.svg" alt="CodeQL"></td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/msmannan00/Globaleaks-Canary">Globaleaks Canary</a></td>
-      <td style="text-align:center"><img src="https://app.codacy.com/project/badge/Grade/1e26f9b0bf504a2e8c5bf0fb22cf9e0b" alt="Codacy Badge"></td>
-      <td style="text-align:center"> - </td>
-    </tr>    
-  </tbody>
-</table>
+| Repository                                     | Codacy                                                                                   | CodeQL                                                                                               | MDN HTTP Observatory                                                                                          | Security Headers                                                                                             | SSLLabs                                                                                                      |
+|-----------------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| [Orion Search](https://github.com/msmannan00/Orion-Search)   | ![Codacy Badge](https://app.codacy.com/project/badge/Grade/a1f302d35c0f4f8c9293acabc5086512) | ![CodeQL](https://github.com/msmannan00/Orion-Search/actions/workflows/github-code-scanning/codeql/badge.svg)   | [![Status](https://img.shields.io/badge/observatory-A%2B-brightgreen)](https://developer.mozilla.org/en-US/observatory/analyze?host=orion.whistleaks.com) | [![Status](https://img.shields.io/badge/security%20headers-A%2B-brightgreen)](https://securityheaders.com/?q=https%3A%2F%2Forion.whistleaks.com%2F) | [![Status](https://img.shields.io/static/v1?label=SSLLabs&message=A%2B&color=%3CCOLOR%3E)](https://www.ssllabs.com/ssltest/analyze.html?d=orion.whistleaks.com&latest) |
+| [Orion Crawler](https://github.com/msmannan00/Orion-Crawler) | ![Codacy Badge](https://app.codacy.com/project/badge/Grade/94c252c8ce904c4cbbc4146a463b4d9e) | ![CodeQL](https://github.com/msmannan00/Orion-Crawler/actions/workflows/github-code-scanning/codeql/badge.svg) | -                                                                                                            | -                                                                                                            | -                                                                                                           |
+| [Orion Collector](https://github.com/msmannan00/Orion-Collector) | ![Codacy Badge](https://app.codacy.com/project/badge/Grade/a1f302d35c0f4f8c9293acabc5086512) | ![CodeQL](https://github.com/msmannan00/Orion-Collector/actions/workflows/github-code-scanning/codeql/badge.svg) | -                                                                                                            | -                                                                                                            | -                                                                                                           |
+| [Globaleaks Canary](https://github.com/msmannan00/Globaleaks-Canary) | ![Codacy Badge](https://app.codacy.com/project/badge/Grade/1e26f9b0bf504a2e8c5bf0fb22cf9e0b) | -                                                                                                   | -                                                                                                            | -                                                                                                            | -                                                                                                           |
+| [Orion Browser](https://github.com/msmannan00/Orion-Browser) | ![Codacy Badge](https://app.codacy.com/project/badge/Grade/94c252c8ce904c4cbbc4146a463b4d9e) | ![CodeQL](https://github.com/msmannan00/Orion-Browser/actions/workflows/github-code-scanning/codeql/badge.svg) | -                                                                                                            | -                                                                                                            | -                                                                                                           |
 
 ## 2. Technology Stack
 
