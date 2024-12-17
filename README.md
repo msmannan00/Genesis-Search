@@ -5,8 +5,7 @@
 [![SSLLabs](https://img.shields.io/static/v1?label=SSLLabs&message=A%2B&color=brightgreen)](https://www.ssllabs.com/ssltest/analyze.html?d=orion.whistleaks.com&latest)
 [![PageSpeed Insights](https://img.shields.io/badge/PageSpeed%20Insights-100%25-brightgreen)](https://pagespeed.web.dev/analysis/https-orion-whistleaks-com/r5jf6x7xj5?form_factor=desktop)
 
-
-![homepage](https://orion-search.readthedocs.io)
+![homepage](https://github.com/user-attachments/assets/37fcf444-40be-46c9-8bd8-45a22d824141)
 
 # Orion Platform
 DOCUMENTATION  https://orion-search.readthedocs.io
