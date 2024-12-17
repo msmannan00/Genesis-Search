@@ -98,4 +98,6 @@ GitHub Repository URL: [https://github.com/msmannan00/Orion-Search.git](https://
 
 https://www.canva.com/design/DAF8Sa8KkDE/1H8z3RVausdHIMcE98Kvfg/edit
 
-DOCUMENTATION https://orion-search.readthedocs.io/en/latest/index.html
+## Documentation
+
+https://orion-search.readthedocs.io/en/latest/index.html
