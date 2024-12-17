@@ -1,0 +1,42 @@
+name: Update Docsify from Wiki
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at midnight
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Fetch GitHub Wiki content
+        run: |
+          git clone https://github.com/${{ github.repository }}.wiki.git wiki
+          rm -rf docs/*
+          cp -r wiki/* docs/
+          echo "GitHub Wiki content has been copied to the Docsify docs folder."
+
+      - name: Update Docsify Main Page
+        run: |
+          echo "# Documentation" > docs/README.md
+          echo "This documentation is auto-generated from the GitHub Wiki." >> docs/README.md
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add .
+          git commit -m "Auto-update Docsify from GitHub Wiki"
+          git push origin main
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
