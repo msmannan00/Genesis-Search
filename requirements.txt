@@ -35,5 +35,4 @@ bunch==1.0.0
 nltk==3.9.0
 sphinx
 myst-parser
-myst_parser
 sphinx_rtd_theme
