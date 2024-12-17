@@ -89,10 +89,11 @@ services:
     image: traefik:v2.10
     container_name: trusted-web-traefik
     ports:
-      - "8081:80"
-      - "8443:443"
+      - "9090:9090"
+      - "9443:9443"
     command:
-      - "--entrypoints.web.address=:80"
+      - "--entrypoints.web.address=:9090"
+      - "--entrypoints.websecure.address=:9443"
       - "--providers.file.directory=/etc/traefik"
       - "--providers.docker=true"
     volumes:
