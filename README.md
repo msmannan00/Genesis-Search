@@ -9,7 +9,7 @@
 ![homepage](https://orion-search.readthedocs.io)
 
 # Orion Platform
-DOCUMENTATION https://orion-search.readthedocs.io/en/latest/index.html
+DOCUMENTATION  https://orion-search.readthedocs.io
 
 <br>
 Orion Platform is a comprehensive, web-based solution that combines the functionality of a browser, search engine, crawler, and data aggregation tools to empower OSINT (Open Source Intelligence) experts. Built on top of Docker, Orion provides a user-friendly interface to explore, search, and visualize data extracted by its powerful Orion Crawler.<br><br>
