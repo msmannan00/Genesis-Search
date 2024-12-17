@@ -8,14 +8,17 @@
 </head>
 <body>
   <div id="app"></div>
-  <script>
-    window.$docsify = {
-      name: 'Orion Platform',
-      repo: 'https://github.com/msmannan00/Orion-Search',
-      loadSidebar: true,
-      subMaxLevel: 2
+<script>
+  window.$docsify = {
+    name: 'Orion Platform',
+    repo: 'https://github.com/msmannan00/Orion-Search',
+    loadSidebar: true,        <!-- Enable the sidebar -->
+    subMaxLevel: 6,           <!-- Show all headings in sidebar -->
+    alias: {
+      '/.*/_sidebar.md': '/_sidebar.md'  <!-- Loads sidebar for all routes -->
     }
-  </script>
+  };
+</script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 </body>
 </html>
