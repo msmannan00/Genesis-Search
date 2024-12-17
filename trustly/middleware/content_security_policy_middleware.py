@@ -1,7 +1,14 @@
+import os
+
 from django.utils.deprecation import MiddlewareMixin
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 class content_security_policy_middleware(MiddlewareMixin):
+    DEBUG = os.getenv("PRODUCTION", "0") != "1"
+
     def process_response(self, request, response):
         response['Content-Security-Policy'] = (
             "default-src 'self'; "
@@ -18,7 +25,25 @@ class content_security_policy_middleware(MiddlewareMixin):
             "base-uri 'self'; "
             "upgrade-insecure-requests; "
             "report-uri /csp-report-endpoint/; "
-            "report-to csp-endpoint; "
             "require-trusted-types-for 'script';"
         )
+
+        if not self.DEBUG:
+            response['Strict-Transport-Security'] = (
+                "max-age=31536000; includeSubDomains; preload"
+            )
+
+        response['Permissions-Policy'] = (
+            "accelerometer=(), "
+            "camera=(), "
+            "geolocation=(), "
+            "gyroscope=(), "
+            "magnetometer=(), "
+            "microphone=(), "
+            "payment=(), "
+            "usb=(), "
+            "fullscreen=(), "
+            "xr-spatial-tracking=()"
+        )
+
         return response
