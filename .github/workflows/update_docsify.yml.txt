@@ -1,11 +1,9 @@
-name: Update Docsify from Wiki
+name: Update Docsify from GitHub Wiki
 
 on:
   push:
     branches:
-      - main  # Trigger on push to the main branch
-  schedule:
-    - cron: '0 0 * * *'  # Runs daily at midnight
+      - trusted-main
 
 jobs:
   update-docs:
@@ -17,23 +15,23 @@ jobs:
 
       - name: Fetch GitHub Wiki content
         run: |
-          git clone https://github.com/${{ github.repository }}.wiki.git wiki
+          git clone https://github.com/msmannan00/Orion-Search.wiki.git wiki
           rm -rf docs/*
           cp -r wiki/* docs/
-          echo "GitHub Wiki content has been copied to the Docsify docs folder."
+          echo "GitHub Wiki content copied to Docsify docs folder."
 
-      - name: Update Docsify Main Page
+      - name: Initialize Docsify Main Page
         run: |
-          echo "# Documentation" > docs/README.md
-          echo "This documentation is auto-generated from the GitHub Wiki." >> docs/README.md
+          echo "# Orion Search Documentation" > docs/README.md
+          echo "This site is auto-generated from the GitHub Wiki." >> docs/README.md
 
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add .
+          git add docs/
           git commit -m "Auto-update Docsify from GitHub Wiki"
-          git push origin main
+          git push origin trusted-main
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
