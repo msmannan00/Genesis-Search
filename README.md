@@ -1,126 +1,74 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/a1f302d35c0f4f8c9293acabc5086512)](https://app.codacy.com/gh/msmannan00/Orion-Search/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-![CodeQL Analysis](https://github.com/msmannan00/Genesis-Search/actions/workflows/github-code-scanning/codeql/badge.svg)
+[![CodeQL Analysis](https://github.com/msmannan00/Genesis-Search/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/msmannan00/Genesis-Search/actions/workflows/github-code-scanning/codeql)
+[![MDN HTTP Observatory](https://img.shields.io/badge/observatory-A%2B-brightgreen)](https://developer.mozilla.org/en-US/observatory/analyze?host=orion.whistleaks.com)
+[![Security Headers](https://img.shields.io/badge/security%20headers-A%2B-brightgreen)](https://securityheaders.com/?q=https%3A%2F%orion.whistleaks.com%2F)
+[![SSLLabs](https://img.shields.io/static/v1?label=SSLLabs&message=A%2B&color=brightgreen)](https://www.ssllabs.com/ssltest/analyze.html?d=orion.whistleaks.com&latest)
+[![PageSpeed Insights](https://img.shields.io/badge/PageSpeed%20Insights-100%25-brightgreen)](https://pagespeed.web.dev/analysis/https-orion-whistleaks-com/r5jf6x7xj5?form_factor=desktop)
+
 
 ![homepage](https://github.com/user-attachments/assets/37fcf444-40be-46c9-8bd8-45a22d824141)
 
-# Orion Browser
-<table>
-<tr>
-<td>
+# Orion Platform
 <br>
-Orion Browser Engine is a web-based search tool built on top of Docker that provides a user-friendly interface to explore and visualize data extracted by the Orion Crawler. The engine supports a vast array of functionalities, offering users the ability to search, filter, and visualize data across multiple categories. It integrates machine learning models for enhanced search relevance and content analysis.
-<br>
-<br>
-</td>
-</tr>
-<br>
-<tr>
-<td>
+Orion Platform is a comprehensive, web-based solution that combines the functionality of a browser, search engine, crawler, and data aggregation tools to empower OSINT (Open Source Intelligence) experts. Built on top of Docker, Orion provides a user-friendly interface to explore, search, and visualize data extracted by its powerful Orion Crawler.<br><br>
+
+The platform integrates seamlessly with machine learning models, enhancing search relevance and enabling advanced content analysis. Orion supports a broad range of functionalities, including the ability to search, filter, and visualize data across multiple categories, making it an invaluable tool for data exploration and intelligence gathering.<br>
+
+Designed with flexibility and scalability in mind, Orion enables OSINT experts to feed data directly into the platform, ensuring up-to-date and comprehensive datasets. Whether for investigative research, competitive analysis, or general information gathering, Orion provides a unified ecosystem that enhances the workflow of professionals who rely on actionable insights.<br>
 <br>
 
-**1. Docker-Based Deployment**: Quick setup and deployment using Docker.
+## 1. Repository Quality and Build Status
+| Repository                                     | Codacy                                                                                   | CodeQL                                                                                               | MDN HTTP Observatory                                                                                          | Security Headers                                                                                             | SSLLabs                                                                                                      |
+|-----------------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| [Orion Search](https://github.com/msmannan00/Orion-Search)   | ![Codacy Badge](https://app.codacy.com/project/badge/Grade/a1f302d35c0f4f8c9293acabc5086512) | ![CodeQL](https://github.com/msmannan00/Orion-Search/actions/workflows/github-code-scanning/codeql/badge.svg)   | [![Status](https://img.shields.io/badge/observatory-A%2B-brightgreen)](https://developer.mozilla.org/en-US/observatory/analyze?host=orion.whistleaks.com) | [![Status](https://img.shields.io/badge/security%20headers-A%2B-brightgreen)](https://securityheaders.com/?q=https%3A%2F%2Forion.whistleaks.com%2F) | [![Status](https://img.shields.io/static/v1?label=SSLLabs&message=A%2B&color=%3CCOLOR%3E)](https://www.ssllabs.com/ssltest/analyze.html?d=orion.whistleaks.com&latest) |
+| [Orion Crawler](https://github.com/msmannan00/Orion-Crawler) | ![Codacy Badge](https://app.codacy.com/project/badge/Grade/94c252c8ce904c4cbbc4146a463b4d9e) | ![CodeQL](https://github.com/msmannan00/Orion-Crawler/actions/workflows/github-code-scanning/codeql/badge.svg) | -                                                                                                            | -                                                                                                            | -                                                                                                           |
+| [Orion Collector](https://github.com/msmannan00/Orion-Collector) | ![Codacy Badge](https://app.codacy.com/project/badge/Grade/a1f302d35c0f4f8c9293acabc5086512) | ![CodeQL](https://github.com/msmannan00/Orion-Collector/actions/workflows/github-code-scanning/codeql/badge.svg) | -                                                                                                            | -                                                                                                            | -                                                                                                           |
+| [Globaleaks Canary](https://github.com/msmannan00/Globaleaks-Canary) | ![Codacy Badge](https://app.codacy.com/project/badge/Grade/1e26f9b0bf504a2e8c5bf0fb22cf9e0b) | -                                                                                                   | -                                                                                                            | -                                                                                                            | -                                                                                                           |
+| [Orion Browser](https://github.com/msmannan00/Orion-Browser) | ![Codacy Badge](https://app.codacy.com/project/badge/Grade/94c252c8ce904c4cbbc4146a463b4d9e) | ![CodeQL](https://github.com/msmannan00/Orion-Browser/actions/workflows/github-code-scanning/codeql/badge.svg) | -                                                                                                            | -                                                                                                            | -                                                                                                           |
 
-**2. Advanced Search Functionality**: Provides comprehensive search capabilities with various filters and options to refine search results.
+## 2. Technology Stack
 
-**3. Data Visualization**: Generates visual representations of the data, making it easier to analyze search results.
+The Orion platform is built using various technologies to provide optimal search capabilities and data handling. Below is the list of libraries and frameworks used:
 
-**4. Customizable Search Parsers**: Allows for integrating custom parsers to refine data extraction from specific websites.
+![MongoDB](https://badgen.net/badge/search-crawler/MongoDB/green)
+![Redis](https://badgen.net/badge/search-crawler/Redis/red)
+![Celery](https://badgen.net/badge/crawler/Celery/red)
+![Python](https://badgen.net/badge/search-crawler/Python/blue)
+![Tor](https://badgen.net/badge/search-crawler/Tor/purple)
+![Traefik](https://badgen.net/badge/search/Traefik/orange)
+![elastic](https://badgen.net/badge/search/elastic/pink)
+![java](https://badgen.net/badge/browser/java/cyan)
+![kotlin](https://badgen.net/badge/browser/kotlin/yellow)
 
-**5. Integrated Machine Learning Models**: Incorporates NLP and machine learning models to provide search relevance, content categorization, and detection of specific data patterns.
-<br><br>
-</td>
-</tr>
-</table>
+## 3. Associated Repositories
+
+| Repository                                                                 | Description                                                                                                 | Stats                                                                                                     |
+|----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| [Orion Browser](https://github.com/msmannan00/Orion-Browser)               | A harvester-based browser used to scrape data as you browse.                                             | ![Stars](https://img.shields.io/github/stars/msmannan00/Orion-Browser?style=social) ![Forks](https://img.shields.io/github/forks/msmannan00/Orion-Browser?style=social) |
+| [Orion Crawler](https://github.com/msmannan00/Orion-Crawler)               | Used for monitoring and continuously crawling the hidden web.                                            | ![Stars](https://img.shields.io/github/stars/msmannan00/Orion-Crawler?style=social) ![Forks](https://img.shields.io/github/forks/msmannan00/Orion-Crawler?style=social) |
+| [Orion Search](https://github.com/msmannan00/Orion-Search)                 | A platform to visualize extracted data.                                                                 | ![Stars](https://img.shields.io/github/stars/msmannan00/Orion-Search?style=social) ![Forks](https://img.shields.io/github/forks/msmannan00/Orion-Search?style=social) |
+| [Orion Collector](https://github.com/msmannan00/Orion-Collector)           | Simplifies the task of creating custom crawling scripts for multiple websites.                          | ![Stars](https://img.shields.io/github/stars/msmannan00/Orion-Collector?style=social) ![Forks](https://img.shields.io/github/forks/msmannan00/Orion-Collector?style=social) |
+| [Globaleaks Canary](https://github.com/msmannan00/Globaleaks-Canary)       | A tool for passive intelligence and whistleblowing.                                                     | ![Stars](https://img.shields.io/github/stars/msmannan00/Globaleaks-Canary?style=social) ![Forks](https://img.shields.io/github/forks/msmannan00/Globaleaks-Canary?style=social) |
 
 
-## Technology Stack
-
-The Orion Search Engine is built using various technologies to provide optimal search capabilities and data handling. Below is the list of libraries and frameworks used:
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="https://w7.pngwing.com/pngs/956/695/png-transparent-mongodb-original-wordmark-logo-icon.png" alt="MongoDB" height="50">
-      <br>MongoDB
-    </td>
-    <td align="center">
-      <img src="https://upload.wikimedia.org/wikipedia/en/6/6b/Redis_Logo.svg" alt="Redis" height="50">
-      <br>Redis
-    </td>
-    <td align="center">
-      <img src="https://docs.celeryproject.org/en/stable/_static/celery_512.png" alt="Celery" height="50">
-      <br>Celery
-    </td>
-    <td align="center">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" height="50">
-      <br>Python
-    </td>
-    <td align="center">
-      <img src="https://static1.xdaimages.com/wordpress/wp-content/uploads/2018/09/tor-logo.jpeg" alt="Tor" height="50">
-      <br>Tor
-    </td>
-    <td align="center">
-      <img src="https://doc.traefik.io/traefik/assets/img/traefik.logo.png" alt="Traefik" height="50">
-      <br>Traefik
-    </td>
-  </tr>
-</table>
-
-## Setup and Installation
-
-To get started with Orion Search, follow these steps:
-
-#### 1. Clone the Repository
-
-Clone the repository from GitHub and navigate to the project directory.
-
-```
-https://github.com/msmannan00/Orion-Search.git
-cd Orion-Search
-```
-
-#### 2. Install Dependencies
-
-Ensure you have Docker and Docker Compose installed on your machine. Once installed, the dependencies will be handled via Docker Compose.
-
-#### 3. Build and Start the Search
-
-Use Docker Compose to build and run the search:
-
-```
-./run.sh build
-```
-to simply start the search run
-```
-./run.sh
-```
-
-This will start the search engine, which can now begin visualizing collected data.
-
-#### 4. Customizing Parsers (Optional for Specific Crawler)
-
-For specific website crawling, you can provide your own parsers. Load them onto the server and configure the crawler to use these custom parsers for enhanced scraping capabilities.
-```
-add custom parsers inside static/trustly/.well-known/parsers with same onion website name
-```
-## Data Extraction Techniques
+## 4. Data Extraction Techniques
 This is a comprehensive flow diagram illustrating the functioning of the multithreaded crawler. It outlines the entire process, from initializing threads and managing task distribution to efficiently retrieving and processing data from multiple sources concurrently. The diagram highlights key components, such as task queues, thread synchronization mechanisms, and data handling workflows, providing a clear and detailed representation of the crawler's architecture and operational flow
 
 ![image(1)](https://github.com/user-attachments/assets/696cf009-a0f3-4995-91fe-58e53b128825)
 
 
-## Deep Data Linting Roadmap
+## 5. Deep Data Linting Roadmap
 This document outlines the proposed solution and future roadmap for deep data linting, focusing on integrating insights from multiple sources into a unified platform. The solution emphasizes advanced data validation, cross-source correlation, and seamless integration to ensure comprehensive data quality checks. The roadmap highlights phased development, scalability enhancements, and feature expansions aimed at providing a robust and centralized approach to data insight and linting
 
 ![linting(2)](https://github.com/user-attachments/assets/ce1885dc-e701-45f6-89ab-9f412b057373)
 
-### Browser Support
+## 6. Browser Support
 
 Orion Browser is an Android application designed to provide a secure, private browsing experience by leveraging onion routing technology. This browser empowers users to access hidden web content anonymously, unblock restricted sites, and browse freely while safeguarding their online identity.
 
 ![JPJ pdf](https://github.com/user-attachments/assets/399fd130-988d-4e0d-acef-2f60d6220a81)
 
-## Contribution
+## 🌟Contribution
 
 We welcome contributions to improve Orion Search. If you'd like to contribute, please fork the repository and submit a pull request.
 
