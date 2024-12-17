@@ -8,8 +8,8 @@ release = '1.0.0'
 # -- General configuration ---------------------------------------------------
 extensions = ['myst_parser']
 source_suffix = ['.rst', '.md']
-master_doc = 'index'  # Entry point for Sphinx
+master_doc = 'index'
+html_theme = 'sphinx_rtd_theme'
 
 # -- Options for HTML output -------------------------------------------------
-html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
