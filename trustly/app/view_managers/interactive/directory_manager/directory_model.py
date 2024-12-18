@@ -1,3 +1,4 @@
+import json
 from datetime import datetime, timedelta, timezone
 from bson import ObjectId
 from django.http import JsonResponse
@@ -22,7 +23,7 @@ class directory_model(request_handler):
 
   @staticmethod
   def __load_onion_links(p_directory_class_model):
-    m_documents, count, m_status = mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_READ, [MONGO_COMMANDS.M_GET_URL_STATUS, [], [(p_directory_class_model.m_page_number - 1) * CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE, CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE]])
+    m_documents, count, m_status = mongo_controller.getInstance().invoke_trigger(MONGODB_CRUD.S_READ, [MONGO_COMMANDS.M_GET_URL_STATUS, [p_directory_class_model.m_content_type], [(p_directory_class_model.m_page_number - 1) * CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE, CONSTANTS.S_SETTINGS_DIRECTORY_LIST_MAX_SIZE]])
 
     if m_status:
       m_documents = list(m_documents)

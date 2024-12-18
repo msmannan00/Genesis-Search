@@ -27,6 +27,7 @@ else
     fi
 
     docker compose -p $PROJECT_NAME up
+    docker exec -it trusted-web-main /bin/sh -c "python manage.py migrate"
     echo "server started"
 fi
 

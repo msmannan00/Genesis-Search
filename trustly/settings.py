@@ -5,16 +5,12 @@ from dotenv import load_dotenv
 from trustly.services.state_manager.states import APP_STATUS
 
 mimetypes.add_type("image/svg+xml", ".svg", True)
-
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 load_dotenv()
 
 SECRET_KEY = os.getenv('S_FERNET_KEY')
-
-DEBUG = os.getenv("PRODUCTION", "0") == "1"
+DEBUG = os.getenv("PRODUCTION", "0") != "1"
 PRODUCTION_DOMAIN = os.getenv('PRODUCTION_DOMAIN', 'your-production-domain.com')
-
 ALLOWED_HOSTS = ['*'] if DEBUG else [PRODUCTION_DOMAIN]
 
 CSRF_TRUSTED_ORIGINS = (
@@ -31,6 +27,7 @@ CSRF_TRUSTED_ORIGINS = (
         f'https://{PRODUCTION_DOMAIN}',
     ]
 )
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -59,7 +56,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'trustly.urls'
-
 WSGI_APPLICATION = 'trustly.wsgi.application'
 
 DATABASES = {
@@ -82,21 +78,17 @@ SECURE_HSTS_PRELOAD = not DEBUG
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
 X_FRAME_OPTIONS = 'DENY'
-
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https') if not DEBUG else None
 
-if DEBUG:
-    template_loaders = [
-        ('django.template.loaders.cached.Loader', [
-            'django.template.loaders.filesystem.Loader',
-            'django.template.loaders.app_directories.Loader',
-        ]),
-    ]
-else:
-    template_loaders = [
+TEMPLATES_LOADERS = [
+    ('django.template.loaders.cached.Loader', [
         'django.template.loaders.filesystem.Loader',
         'django.template.loaders.app_directories.Loader',
-    ]
+    ])
+] if not DEBUG else [
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+]
 
 TEMPLATES = [
     {
@@ -112,7 +104,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-            'loaders': template_loaders,
+            'loaders': TEMPLATES_LOADERS,
         },
     },
 ]
@@ -124,23 +116,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/app/staticfiles/'
-STATICFILES_DIRS = [
-    '/app/static',
-]
-
+STATICFILES_DIRS = ['/app/static']
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
 ]
 
-COMPRESS_ENABLED = DEBUG
-COMPRESS_OFFLINE = DEBUG
-COMPRESS_CSS_FILTERS = [
-    'compressor.filters.cssmin.CSSMinFilter',
-]
-COMPRESS_JS_FILTERS = [
-    'compressor.filters.jsmin.JSMinFilter',
-]
+COMPRESS_ENABLED = not DEBUG
+COMPRESS_OFFLINE = not DEBUG
+COMPRESS_CSS_FILTERS = ['compressor.filters.cssmin.CSSMinFilter']
+COMPRESS_JS_FILTERS = ['compressor.filters.jsmin.JSMinFilter']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

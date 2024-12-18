@@ -24,6 +24,14 @@
             "description": "Page number to retrieve (default is 1) item per page is 1000",
             "type": "integer",
             "default": 1
+          },
+          {
+            "name": "content_type",
+            "in": "query",
+            "required": false,
+            "description": "Filter directories by specific content type (e.g., leaks, marketplaces).",
+            "type": "string",
+            "example": "leaks"
           }
         ],
         "responses": {
@@ -88,7 +96,10 @@
                   {
                     "_id": "6755985e8890c1efb5853055",
                     "url": "http://22mwrxptlt7l3nv6bcl5cp3xly3chzno3qdehjanord6qdsrrsr7tqid.onion",
-                    "content_type": ["leaks", "marketplaces"],
+                    "content_type": [
+                      "leaks",
+                      "marketplaces"
+                    ],
                     "url_status_date": 0,
                     "leak_status_date": 0
                   }
