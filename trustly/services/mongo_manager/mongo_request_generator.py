@@ -63,8 +63,8 @@ class mongo_request_generator(request_handler):
     return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_URL_STATUS, MONGODB_KEYS.S_FILTER: {"url": url}, MONGODB_KEYS.S_VALUE: {"$set": update_values}}
 
   @staticmethod
-  def __on_fetch_url_status():
-    return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_URL_STATUS, MONGODB_KEYS.S_FILTER: {}, }
+  def __on_fetch_url_status(p_content_type):
+    return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_URL_STATUS, MONGODB_KEYS.S_FILTER: {"content_type": {"$elemMatch": {"$regex": p_content_type}}}}
 
   def invoke_trigger(self, p_commands, p_data=None):
     if p_commands == MONGO_COMMANDS.M_VERIFY_CREDENTIAL:
@@ -90,4 +90,4 @@ class mongo_request_generator(request_handler):
     if p_commands == MONGO_COMMANDS.M_UPDATE_URL_STATUS:
       return self.__on_update_url_status(p_data[0], p_data[1], p_data[2], p_data[3])
     if p_commands == MONGO_COMMANDS.M_GET_URL_STATUS:
-      return self.__on_fetch_url_status()
+      return self.__on_fetch_url_status(p_data[0])

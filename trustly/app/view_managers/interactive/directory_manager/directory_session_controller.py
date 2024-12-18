@@ -17,10 +17,15 @@ class directory_session_controller(request_handler):
     else:
       m_num = 1
 
+    if DIRECTORY_PARAMS.M_CONTENT_TYPE in p_data.GET:
+      m_type = p_data.GET[DIRECTORY_PARAMS.M_CONTENT_TYPE]
+    else:
+      m_type = ""
+
     if m_num < 1:
       m_num = 1
 
-    m_directory_model = directory_class_model(m_num, None)
+    m_directory_model = directory_class_model(m_num, None, m_type)
 
     if DIRECTORY_PARAMS.M_SECURE_SERVICE in p_data.GET:
       m_directory_model.m_site = p_data.GET[DIRECTORY_PARAMS.M_SECURE_SERVICE]
