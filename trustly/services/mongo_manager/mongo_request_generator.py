@@ -16,7 +16,6 @@ class mongo_request_generator(request_handler):
   def __on_verify_credentials(p_username, p_password):
     return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_USER_MODEL, MONGODB_KEYS.S_FILTER: {"m_username": {'$eq': p_username}, "m_password": {'$eq': p_password}}}
 
-
   @staticmethod
   def __on_fetch_service_by_url(p_url):
     return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_SUBMIT, MONGODB_KEYS.S_FILTER: {"m_url": p_url}}
@@ -64,7 +63,11 @@ class mongo_request_generator(request_handler):
 
   @staticmethod
   def __on_fetch_url_status(p_content_type):
-    return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_URL_STATUS, MONGODB_KEYS.S_FILTER: {"content_type": {"$elemMatch": {"$regex": p_content_type}}}}
+    content_type_list = [ctype.strip() for ctype in p_content_type.split(',')]
+
+    query_filter = {"content_type": {"$elemMatch": {"$in": content_type_list}}}
+
+    return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_URL_STATUS, MONGODB_KEYS.S_FILTER: query_filter}
 
   def invoke_trigger(self, p_commands, p_data=None):
     if p_commands == MONGO_COMMANDS.M_VERIFY_CREDENTIAL:
