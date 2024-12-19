@@ -55,6 +55,9 @@ class mongo_request_generator(request_handler):
 
     if leak_status is not None:
       update_values["leak_status_date"] = current_date
+      update_values["index"] = "monitor"
+    else:
+      update_values["index"] = "general"
 
     if content_type is not None:
       update_values["content_type"] = content_type
@@ -62,10 +65,13 @@ class mongo_request_generator(request_handler):
     return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_URL_STATUS, MONGODB_KEYS.S_FILTER: {"url": url}, MONGODB_KEYS.S_VALUE: {"$set": update_values}}
 
   @staticmethod
-  def __on_fetch_url_status(p_content_type):
-    content_type_list = [ctype.strip() for ctype in p_content_type.split(',')]
+  def __on_fetch_url_status(p_content_type, p_index):
+    content_type_list = [ctype.strip() for ctype in p_content_type.split(',') if p_content_type]
 
-    query_filter = {"content_type": {"$elemMatch": {"$in": content_type_list}}}
+    if content_type_list:
+      query_filter = {"content_type": {"$elemMatch": {"$in": content_type_list}}}
+    else:
+      query_filter = {}
 
     return {MONGODB_KEYS.S_DOCUMENT: MONGODB_COLLECTIONS.S_URL_STATUS, MONGODB_KEYS.S_FILTER: query_filter}
 
@@ -93,4 +99,4 @@ class mongo_request_generator(request_handler):
     if p_commands == MONGO_COMMANDS.M_UPDATE_URL_STATUS:
       return self.__on_update_url_status(p_data[0], p_data[1], p_data[2], p_data[3])
     if p_commands == MONGO_COMMANDS.M_GET_URL_STATUS:
-      return self.__on_fetch_url_status(p_data[0])
+      return self.__on_fetch_url_status(p_data[0], p_data[1])

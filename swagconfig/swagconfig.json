@@ -32,6 +32,14 @@
             "description": "Filter directories by specific content type (e.g., leaks, marketplaces).",
             "type": "string",
             "example": "leaks"
+          },
+          {
+            "name": "index",
+            "in": "query",
+            "required": false,
+            "description": "Filter directories by a specific index string.",
+            "type": "string",
+            "example": "onion123"
           }
         ],
         "responses": {

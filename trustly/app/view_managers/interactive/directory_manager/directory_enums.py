@@ -14,6 +14,7 @@ class DIRECTORY_SESSION_COMMANDS(enum.Enum):
 class DIRECTORY_PARAMS:
   M_PAGE_NUMBER = "page"
   M_CONTENT_TYPE = "content_type"
+  M_INDEX = "index"
   M_SECURE_SERVICE = "pSite"
 
 
@@ -32,3 +33,4 @@ class DIRECTORY_MODEL_CALLBACK:
   M_ID = "mID"
   M_URL = "mURL"
   M_CONTENT_TYPE = "mContentType"
+  M_INDEX = "mIndex"
