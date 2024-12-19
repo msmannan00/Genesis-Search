@@ -126,8 +126,7 @@ html {
 .directory__main-index-filter {
   position: relative;
   display: inline-block;
-  margin-left: 45px;
-  margin-top: 9px;
+  margin-right: 10px;
 }
 
 /* Reuse existing styles for consistency */
@@ -191,14 +190,17 @@ html {
 
 @media only screen and (max-width: 600px) {
   .directory__upper-heading {
-    height: 170px !important;
+    /*height: 170px !important;*/
   }
 
   .directory__pagination-heading {
     width: 100%;
   }
   .directory__main-index-filter{
-    margin-left: 90px;
+    display: none;
+  }
+  .directory__main-contentType-filter{
+    display: none;
   }
 
 }
